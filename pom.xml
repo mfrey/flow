@@ -21,11 +21,9 @@
 	</properties>
 	
 	<modules>
-<!--
 		<module>de.hs_rm.cs.vs.dsm.flow</module>
-		<module>de.hs_rm.cs.vs.dsm.flow.generator</module>
+		<module>de.hs_rm.cs.vs.dsm.flow.tests</module>
 		<module>de.hs_rm.cs.vs.dsm.flow.ui</module>
--->
 		<module>de.hs_rm.cs.vs.dsm.owl</module>
 		<module>de.hs_rm.cs.vs.dsm.owl.edit</module>
 		<module>de.hs_rm.cs.vs.dsm.owl.editor</module>
