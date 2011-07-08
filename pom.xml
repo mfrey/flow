@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<prerequisites>
+		<maven>3.0</maven>
+	</prerequisites>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.hs_rm.cs.vs.dsm</groupId>
+	<artifactId>DataStreamMiner</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<tycho-version>0.12.0</tycho-version>
+		<build.qualifier>'v'yyyyMMddHHmm</build.qualifier>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<modules>
+<!--
+		<module>de.hs_rm.cs.vs.dsm.flow</module>
+		<module>de.hs_rm.cs.vs.dsm.flow.generator</module>
+		<module>de.hs_rm.cs.vs.dsm.flow.ui</module>
+-->
+		<module>de.hs_rm.cs.vs.dsm.owl</module>
+		<module>de.hs_rm.cs.vs.dsm.owl.edit</module>
+		<module>de.hs_rm.cs.vs.dsm.owl.editor</module>
+<!--
+		<module>de.hs_rm.cs.vs.dsm.flow.feature</module>
+		<module>de.hs_rm.cs.vs.dsm.flow.platform.feature</module>
+		<module>de.hs_rm.cs.vs.dsm.flow.product</module>
+-->
+
+		<!-- This should be fixed <module>de.hs_rm.cs.vs.dsm.owl.tests</module> -->
+	</modules>
+	
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh-external</artifactId>
+				<version>1.0-beta-6</version>
+			</extension>
+		</extensions>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<resolver>p2</resolver>
+					<target>
+						<artifact>
+							<groupId>de.hs_rm.cs.vs.dsm</groupId>
+							<artifactId>de.hs_rm.cs.vs.dsm.flow.product</artifactId>
+							<version>1.0.0-SNAPSHOT</version>
+							<classifier>datastreamminer</classifier>
+						</artifact>
+					</target>
+					<ignoreTychoRepositories>false</ignoreTychoRepositories>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-packaging-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<format>${build.qualifier}</format>
+					<target>site</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<!-- To avoid the upload of all project during deploy, the default configuration 
+						is to skip deployment -->
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<docletArtifact>
+						<groupId>com.google.doclava</groupId>
+						<artifactId>doclava</artifactId>
+						<version>1.0.3</version>
+					</docletArtifact>
+					<doclet>com.google.doclava.Doclava</doclet>
+					<!-- bootclasspath required by Sun's JVM -->
+					<bootclasspath>${sun.boot.class.path}</bootclasspath>
+					<additionalparam>
+						-quiet
+						-federate JDK
+						http://download.oracle.com/javase/6/docs/api/index.html?
+						-federationxml JDK
+						http://doclava.googlecode.com/svn/static/api/openjdk-6.xml
+						-hdf
+						project.name "${project.name}"
+						-d
+						${project.build.directory}/apidocs
+					</additionalparam>
+					<useStandardDocletOptions>false</useStandardDocletOptions>
+					<!-- Apple's JVM sometimes requires more memory -->
+					<additionalJOption>-J-Xmx1024m</additionalJOption>
+				</configuration>
+			</plugin>
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.codehaus.mojo</groupId>
+										<artifactId>aspectj-maven-plugin</artifactId>
+										<versionRange>[1.0,)</versionRange>
+										<goals>
+											<goal>test-compile</goal>
+											<goal>compile</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
