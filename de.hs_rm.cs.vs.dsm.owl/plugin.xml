@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http:///org/eclipse/owl.ecore"
+            class="owl.OwlPackage"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http:///org/eclipse/rdfs.ecore"
+            class="rdfs.RdfsPackage"/>
+   </extension>
+
+   <!-- Created an extension point for the OWL Resource Factory -->
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+   		<parser type="owl" class="owl.util.OWLResourceFactoryImpl"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: de.hs_rm.cs.vs.dsm.OWL
+Bundle-SymbolicName: de.hs_rm.cs.vs.dsm.owl;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-ClassPath: .,
+ libs/owlapi-bin.jar
+Bundle-Vendor: Hochschule RheinMain
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: owl,
+ owl.impl,
+ owl.util,
+ rdfs,
+ rdfs.impl,
+ rdfs.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy

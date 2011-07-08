@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="owl.presentation.OwlModelWizardID"
+            name="%_UI_OwlModelWizard_label"
+            class="owl.presentation.OwlModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/OwlModelFile.gif">
+         <description>%_UI_OwlModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="owl.presentation.OwlEditorID"
+            name="%_UI_OwlEditor_label"
+            icon="icons/full/obj16/OwlModelFile.gif"
+            extensions="owl"
+            class="owl.presentation.OwlEditor"
+            contributorClass="owl.presentation.OwlActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="rdfs.presentation.RdfsModelWizardID"
+            name="%_UI_RdfsModelWizard_label"
+            class="rdfs.presentation.RdfsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RdfsModelFile.gif">
+         <description>%_UI_RdfsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="rdfs.presentation.RdfsEditorID"
+            name="%_UI_RdfsEditor_label"
+            icon="icons/full/obj16/RdfsModelFile.gif"
+            extensions="rdfs"
+            class="rdfs.presentation.RdfsEditor"
+            contributorClass="rdfs.presentation.RdfsActionBarContributor">
+      </editor>
+   </extension>   
+</plugin>

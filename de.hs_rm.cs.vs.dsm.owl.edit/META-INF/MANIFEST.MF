@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: de.hs_rm.cs.vs.dsm.owl.Edit
+Bundle-SymbolicName: de.hs_rm.cs.vs.dsm.owl.edit;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: owl.provider.OwlEditPlugin$Implementation
+Bundle-Vendor: Hochschule RheinMain
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: owl.provider,
+ rdfs.provider
+Require-Bundle: org.eclipse.core.runtime,
+ de.hs_rm.cs.vs.dsm.owl;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy
