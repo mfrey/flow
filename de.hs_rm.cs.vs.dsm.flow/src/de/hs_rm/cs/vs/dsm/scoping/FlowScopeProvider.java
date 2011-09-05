@@ -3,15 +3,35 @@
  */
 package de.hs_rm.cs.vs.dsm.scoping;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtext.scoping.IScope;
+import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
+
+import de.hs_rm.cs.vs.dsm.flow.StreamAccess;
+import de.hs_rm.cs.vs.dsm.flow.StreamElement;
 
 /**
  * This class contains custom scoping description.
  * 
  * see : http://www.eclipse.org/Xtext/documentation/latest/xtext.html#scoping
  * on how and when to use it 
- *
+ * 
  */
 public class FlowScopeProvider extends AbstractDeclarativeScopeProvider {
-
+	/**
+	 * The method offers a scoping mechanism for StreamAccess elements.
+	 * 
+	 * @param pStreamAccess - The element which scope should be resolved
+	 * @param pReference - A representation of the model object 
+	 * 
+	 * @return A hierarchical container
+	 */
+	public IScope scope_StreamAccess_element(StreamAccess pStreamAccess, EReference pReference){
+		// The original element list
+		EList<StreamElement> elementList = pStreamAccess.getReference().getReference().getElements();
+		// Return the list 
+		return Scopes.scopeFor(elementList);
+	}
 }

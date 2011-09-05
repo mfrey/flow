@@ -3,9 +3,27 @@
  */
 package de.hs_rm.cs.vs.dsm;
 
+import org.eclipse.xtext.naming.IQualifiedNameProvider;
+import org.eclipse.xtext.resource.IResourceServiceProvider;
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 public class FlowRuntimeModule extends de.hs_rm.cs.vs.dsm.AbstractFlowRuntimeModule {
-
+	/**
+	 * The function registers a resource service provider implementation for the language 
+	 */
+	public Class<? extends IResourceServiceProvider> bindIResourceServiceProvider() {
+		return FlowResourceProvider.class;
+	}
+	/**
+	 * The function registers a qualified name provider implementation for the language 
+	 */
+	// TODO: Versucht Probleme mit dem Import, aber warum?
+	/*
+	@Override
+	public Class<? extends IQualifiedNameProvider> bindIQualifiedNameProvider() {
+		return FlowSimpleNameProvider.class;
+	}
+	*/
 }

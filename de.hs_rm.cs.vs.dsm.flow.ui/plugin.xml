@@ -135,6 +135,10 @@
             class="de.hs_rm.cs.vs.dsm.ui.FlowExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
             uriExtension="flw">
         </resourceServiceProvider>
+        <resourceServiceProvider
+            class="de.hs_rm.cs.vs.dsm.ui.FlowExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            uriExtension="owl">
+        </resourceServiceProvider>
     </extension>
 
 
@@ -185,6 +189,18 @@
       <markerResolutionGenerator
             class="de.hs_rm.cs.vs.dsm.ui.FlowExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
       </markerResolutionGenerator>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.xtext.projectwiz"
+            class="de.hs_rm.cs.vs.dsm.ui.FlowExecutableExtensionFactory:de.hs_rm.cs.vs.dsm.ui.wizard.FlowNewProjectWizard"
+            icon="icons/editor.gif"
+            id="de.hs_rm.cs.vs.dsm.ui.wizard.FlowNewProjectWizard"
+            name="Flow Project"
+            project="true">
+      </wizard>
    </extension>
 
    	<!-- Rename Refactoring -->

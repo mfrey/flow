@@ -19,37 +19,43 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Model");
-		private final Assignment cGreetingsAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cGreetingsGreetingParserRuleCall_0 = (RuleCall)cGreetingsAssignment.eContents().get(0);
+		private final Assignment cModelAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cModelPackageDeclarationParserRuleCall_0 = (RuleCall)cModelAssignment.eContents().get(0);
 		
 		//Model:
-		//	greetings+=Greeting*;
+		//	model+=PackageDeclaration+;
 		public ParserRule getRule() { return rule; }
 
-		//greetings+=Greeting*
-		public Assignment getGreetingsAssignment() { return cGreetingsAssignment; }
+		//model+=PackageDeclaration+
+		public Assignment getModelAssignment() { return cModelAssignment; }
 
-		//Greeting
-		public RuleCall getGreetingsGreetingParserRuleCall_0() { return cGreetingsGreetingParserRuleCall_0; }
+		//PackageDeclaration
+		public RuleCall getModelPackageDeclarationParserRuleCall_0() { return cModelPackageDeclarationParserRuleCall_0; }
 	}
 
-	public class GreetingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Greeting");
+	public class PackageDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PackageDeclaration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHelloKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cPackageKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cExclamationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cElementsModelElementParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//Greeting:
-		//	"Hello" name=ID "!";
+		/// **
+		// * A package consists of multiple model elements of the language
+		// * / PackageDeclaration:
+		//	"package" name=ID "{" elements+=ModelElement* "}" ";";
 		public ParserRule getRule() { return rule; }
 
-		//"Hello" name=ID "!"
+		//"package" name=ID "{" elements+=ModelElement* "}" ";"
 		public Group getGroup() { return cGroup; }
 
-		//"Hello"
-		public Keyword getHelloKeyword_0() { return cHelloKeyword_0; }
+		//"package"
+		public Keyword getPackageKeyword_0() { return cPackageKeyword_0; }
 
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -57,13 +63,1145 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
-		//"!"
-		public Keyword getExclamationMarkKeyword_2() { return cExclamationMarkKeyword_2; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+
+		//elements+=ModelElement*
+		public Assignment getElementsAssignment_3() { return cElementsAssignment_3; }
+
+		//ModelElement
+		public RuleCall getElementsModelElementParserRuleCall_3_0() { return cElementsModelElementParserRuleCall_3_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+
+		//";"
+		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
+	}
+
+	public class ModelElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ModelElement");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cPackageDeclarationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cImportParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cTestElementParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cTestAssignParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cStreamDeclarationParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cOperatorParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cStreamDefinitionParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		
+		//ModelElement:
+		//	PackageDeclaration | Import | TestElement | TestAssign | StreamDeclaration | Operator | StreamDefinition;
+		public ParserRule getRule() { return rule; }
+
+		//PackageDeclaration | Import | TestElement | TestAssign | StreamDeclaration | Operator | StreamDefinition
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//PackageDeclaration
+		public RuleCall getPackageDeclarationParserRuleCall_0() { return cPackageDeclarationParserRuleCall_0; }
+
+		//Import
+		public RuleCall getImportParserRuleCall_1() { return cImportParserRuleCall_1; }
+
+		//TestElement
+		public RuleCall getTestElementParserRuleCall_2() { return cTestElementParserRuleCall_2; }
+
+		//TestAssign
+		public RuleCall getTestAssignParserRuleCall_3() { return cTestAssignParserRuleCall_3; }
+
+		//StreamDeclaration
+		public RuleCall getStreamDeclarationParserRuleCall_4() { return cStreamDeclarationParserRuleCall_4; }
+
+		//Operator
+		public RuleCall getOperatorParserRuleCall_5() { return cOperatorParserRuleCall_5; }
+
+		//StreamDefinition
+		public RuleCall getStreamDefinitionParserRuleCall_6() { return cStreamDefinitionParserRuleCall_6; }
+	}
+
+	public class StreamDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StreamDeclaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cStreamKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cElementsStreamElementParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//StreamDeclaration:
+		//	"stream" name=ID "{" elements+=StreamElement+ "}" ";";
+		public ParserRule getRule() { return rule; }
+
+		//"stream" name=ID "{" elements+=StreamElement+ "}" ";"
+		public Group getGroup() { return cGroup; }
+
+		//"stream"
+		public Keyword getStreamKeyword_0() { return cStreamKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+
+		//elements+=StreamElement+
+		public Assignment getElementsAssignment_3() { return cElementsAssignment_3; }
+
+		//StreamElement
+		public RuleCall getElementsStreamElementParserRuleCall_3_0() { return cElementsStreamElementParserRuleCall_3_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+
+		//";"
+		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
+	}
+
+	public class StreamElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StreamElement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cTypeJvmTypeCrossReference_0_0 = (CrossReference)cTypeAssignment_0.eContents().get(0);
+		private final RuleCall cTypeJvmTypeIDTerminalRuleCall_0_0_1 = (RuleCall)cTypeJvmTypeCrossReference_0_0.eContents().get(1);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//StreamElement:
+		//	type=[jvmTypes::JvmType] name=ID ";";
+		public ParserRule getRule() { return rule; }
+
+		//type=[jvmTypes::JvmType] name=ID ";"
+		public Group getGroup() { return cGroup; }
+
+		//type=[jvmTypes::JvmType]
+		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+
+		//[jvmTypes::JvmType]
+		public CrossReference getTypeJvmTypeCrossReference_0_0() { return cTypeJvmTypeCrossReference_0_0; }
+
+		//ID
+		public RuleCall getTypeJvmTypeIDTerminalRuleCall_0_0_1() { return cTypeJvmTypeIDTerminalRuleCall_0_0_1; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+	}
+
+	public class ImportElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Import");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cImportURIAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cImportURISTRINGTerminalRuleCall_1_0 = (RuleCall)cImportURIAssignment_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		/// **
+		// * The Import rule defines a import statement for referring to other *.flw files as well as 
+		// * files of knowledge representations such as *.owl or UML constraints suchs as *.ocl
+		// * / Import:
+		//	"import" importURI=STRING ";";
+		public ParserRule getRule() { return rule; }
+
+		//"import" importURI=STRING ";"
+		public Group getGroup() { return cGroup; }
+
+		//"import"
+		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
+
+		//importURI=STRING
+		public Assignment getImportURIAssignment_1() { return cImportURIAssignment_1; }
+
+		//STRING
+		public RuleCall getImportURISTRINGTerminalRuleCall_1_0() { return cImportURISTRINGTerminalRuleCall_1_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+	}
+
+	public class TestElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TestElement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cVarKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//TestElement:
+		//	"var" name=ID;
+		public ParserRule getRule() { return rule; }
+
+		//"var" name=ID
+		public Group getGroup() { return cGroup; }
+
+		//"var"
+		public Keyword getVarKeyword_0() { return cVarKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+
+	public class TestAssignElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TestAssign");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLetKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cLeftAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cLeftTestElementCrossReference_1_0 = (CrossReference)cLeftAssignment_1.eContents().get(0);
+		private final RuleCall cLeftTestElementIDTerminalRuleCall_1_0_1 = (RuleCall)cLeftTestElementCrossReference_1_0.eContents().get(1);
+		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cRightAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cRightTestElementCrossReference_3_0 = (CrossReference)cRightAssignment_3.eContents().get(0);
+		private final RuleCall cRightTestElementIDTerminalRuleCall_3_0_1 = (RuleCall)cRightTestElementCrossReference_3_0.eContents().get(1);
+		
+		//TestAssign:
+		//	"let" left=[TestElement] "=" right=[TestElement];
+		public ParserRule getRule() { return rule; }
+
+		//"let" left=[TestElement] "=" right=[TestElement]
+		public Group getGroup() { return cGroup; }
+
+		//"let"
+		public Keyword getLetKeyword_0() { return cLetKeyword_0; }
+
+		//left=[TestElement]
+		public Assignment getLeftAssignment_1() { return cLeftAssignment_1; }
+
+		//[TestElement]
+		public CrossReference getLeftTestElementCrossReference_1_0() { return cLeftTestElementCrossReference_1_0; }
+
+		//ID
+		public RuleCall getLeftTestElementIDTerminalRuleCall_1_0_1() { return cLeftTestElementIDTerminalRuleCall_1_0_1; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
+
+		//right=[TestElement]
+		public Assignment getRightAssignment_3() { return cRightAssignment_3; }
+
+		//[TestElement]
+		public CrossReference getRightTestElementCrossReference_3_0() { return cRightTestElementCrossReference_3_0; }
+
+		//ID
+		public RuleCall getRightTestElementIDTerminalRuleCall_3_0_1() { return cRightTestElementIDTerminalRuleCall_3_0_1; }
+	}
+
+	public class OWLTestElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OWLTestElement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cOwlKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cElementAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cElementOWLClassCrossReference_1_0 = (CrossReference)cElementAssignment_1.eContents().get(0);
+		private final RuleCall cElementOWLClassIDTerminalRuleCall_1_0_1 = (RuleCall)cElementOWLClassCrossReference_1_0.eContents().get(1);
+		
+		//OWLTestElement:
+		//	"owl" element=[OWL::OWLClass];
+		public ParserRule getRule() { return rule; }
+
+		//"owl" element=[OWL::OWLClass]
+		public Group getGroup() { return cGroup; }
+
+		//"owl"
+		public Keyword getOwlKeyword_0() { return cOwlKeyword_0; }
+
+		//element=[OWL::OWLClass]
+		public Assignment getElementAssignment_1() { return cElementAssignment_1; }
+
+		//[OWL::OWLClass]
+		public CrossReference getElementOWLClassCrossReference_1_0() { return cElementOWLClassCrossReference_1_0; }
+
+		//ID
+		public RuleCall getElementOWLClassIDTerminalRuleCall_1_0_1() { return cElementOWLClassIDTerminalRuleCall_1_0_1; }
+	}
+
+	public class OperatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Operator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cElementJoinOperatorParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cTagOperatorParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cCountOperatorParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cStandardDeviationOperatorParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cAverageOperatorParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cOutputOperatorParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		
+		//Operator:
+		//	ElementJoinOperator | TagOperator | CountOperator | StandardDeviationOperator | AverageOperator | OutputOperator;
+		public ParserRule getRule() { return rule; }
+
+		//ElementJoinOperator | TagOperator | CountOperator | StandardDeviationOperator | AverageOperator | OutputOperator
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//ElementJoinOperator
+		public RuleCall getElementJoinOperatorParserRuleCall_0() { return cElementJoinOperatorParserRuleCall_0; }
+
+		//TagOperator
+		public RuleCall getTagOperatorParserRuleCall_1() { return cTagOperatorParserRuleCall_1; }
+
+		//CountOperator
+		public RuleCall getCountOperatorParserRuleCall_2() { return cCountOperatorParserRuleCall_2; }
+
+		//StandardDeviationOperator
+		public RuleCall getStandardDeviationOperatorParserRuleCall_3() { return cStandardDeviationOperatorParserRuleCall_3; }
+
+		//AverageOperator
+		public RuleCall getAverageOperatorParserRuleCall_4() { return cAverageOperatorParserRuleCall_4; }
+
+		//OutputOperator
+		public RuleCall getOutputOperatorParserRuleCall_5() { return cOutputOperatorParserRuleCall_5; }
+	}
+
+	public class VariableElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Variable");
+		private final RuleCall cVariableDeclarationParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//Variable:
+		//	VariableDeclaration;
+		public ParserRule getRule() { return rule; }
+
+		//VariableDeclaration
+		public RuleCall getVariableDeclarationParserRuleCall() { return cVariableDeclarationParserRuleCall; }
+	}
+
+	public class VariableDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VariableDeclaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cTypeJvmTypeCrossReference_0_0 = (CrossReference)cTypeAssignment_0.eContents().get(0);
+		private final RuleCall cTypeJvmTypeIDTerminalRuleCall_0_0_1 = (RuleCall)cTypeJvmTypeCrossReference_0_0.eContents().get(1);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//VariableDeclaration:
+		//	type=[jvmTypes::JvmType] name=ID;
+		public ParserRule getRule() { return rule; }
+
+		//type=[jvmTypes::JvmType] name=ID
+		public Group getGroup() { return cGroup; }
+
+		//type=[jvmTypes::JvmType]
+		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+
+		//[jvmTypes::JvmType]
+		public CrossReference getTypeJvmTypeCrossReference_0_0() { return cTypeJvmTypeCrossReference_0_0; }
+
+		//ID
+		public RuleCall getTypeJvmTypeIDTerminalRuleCall_0_0_1() { return cTypeJvmTypeIDTerminalRuleCall_0_0_1; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+
+	public class StreamDefinitionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StreamDefinition");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cReferenceAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cReferenceStreamDeclarationCrossReference_0_0 = (CrossReference)cReferenceAssignment_0.eContents().get(0);
+		private final RuleCall cReferenceStreamDeclarationIDTerminalRuleCall_0_0_1 = (RuleCall)cReferenceStreamDeclarationCrossReference_0_0.eContents().get(1);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//StreamDefinition:
+		//	reference=[StreamDeclaration] name=ID ";";
+		public ParserRule getRule() { return rule; }
+
+		//reference=[StreamDeclaration] name=ID ";"
+		public Group getGroup() { return cGroup; }
+
+		//reference=[StreamDeclaration]
+		public Assignment getReferenceAssignment_0() { return cReferenceAssignment_0; }
+
+		//[StreamDeclaration]
+		public CrossReference getReferenceStreamDeclarationCrossReference_0_0() { return cReferenceStreamDeclarationCrossReference_0_0; }
+
+		//ID
+		public RuleCall getReferenceStreamDeclarationIDTerminalRuleCall_0_0_1() { return cReferenceStreamDeclarationIDTerminalRuleCall_0_0_1; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+	}
+
+	public class StreamAccessElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StreamAccess");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cReferenceAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cReferenceStreamDefinitionCrossReference_0_0 = (CrossReference)cReferenceAssignment_0.eContents().get(0);
+		private final RuleCall cReferenceStreamDefinitionIDTerminalRuleCall_0_0_1 = (RuleCall)cReferenceStreamDefinitionCrossReference_0_0.eContents().get(1);
+		private final Keyword cFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cElementAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cElementVariableDeclarationCrossReference_2_0 = (CrossReference)cElementAssignment_2.eContents().get(0);
+		private final RuleCall cElementVariableDeclarationIDTerminalRuleCall_2_0_1 = (RuleCall)cElementVariableDeclarationCrossReference_2_0.eContents().get(1);
+		
+		/// **
+		// * Elements of a stream are accessed by a a stream definition followed by a dot 
+		// * / StreamAccess:
+		//	reference=[StreamDefinition] "." element=[VariableDeclaration];
+		public ParserRule getRule() { return rule; }
+
+		//reference=[StreamDefinition] "." element=[VariableDeclaration]
+		public Group getGroup() { return cGroup; }
+
+		//reference=[StreamDefinition]
+		public Assignment getReferenceAssignment_0() { return cReferenceAssignment_0; }
+
+		//[StreamDefinition]
+		public CrossReference getReferenceStreamDefinitionCrossReference_0_0() { return cReferenceStreamDefinitionCrossReference_0_0; }
+
+		//ID
+		public RuleCall getReferenceStreamDefinitionIDTerminalRuleCall_0_0_1() { return cReferenceStreamDefinitionIDTerminalRuleCall_0_0_1; }
+
+		//"."
+		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
+
+		//element=[VariableDeclaration]
+		public Assignment getElementAssignment_2() { return cElementAssignment_2; }
+
+		//[VariableDeclaration]
+		public CrossReference getElementVariableDeclarationCrossReference_2_0() { return cElementVariableDeclarationCrossReference_2_0; }
+
+		//ID
+		public RuleCall getElementVariableDeclarationIDTerminalRuleCall_2_0_1() { return cElementVariableDeclarationIDTerminalRuleCall_2_0_1; }
+	}
+
+	public class StreamOperatorParameterElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StreamOperatorParameter");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cStreamAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cStreamStreamDefinitionCrossReference_0_0 = (CrossReference)cStreamAssignment_0.eContents().get(0);
+		private final RuleCall cStreamStreamDefinitionIDTerminalRuleCall_0_0_1 = (RuleCall)cStreamStreamDefinitionCrossReference_0_0.eContents().get(1);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cBarrierAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cBarrierBarrierOperatorParserRuleCall_1_1_0 = (RuleCall)cBarrierAssignment_1_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		
+		//StreamOperatorParameter:
+		//	stream=[StreamDefinition] ("[" barrier=BarrierOperator "]")?;
+		public ParserRule getRule() { return rule; }
+
+		//stream=[StreamDefinition] ("[" barrier=BarrierOperator "]")?
+		public Group getGroup() { return cGroup; }
+
+		//stream=[StreamDefinition]
+		public Assignment getStreamAssignment_0() { return cStreamAssignment_0; }
+
+		//[StreamDefinition]
+		public CrossReference getStreamStreamDefinitionCrossReference_0_0() { return cStreamStreamDefinitionCrossReference_0_0; }
+
+		//ID
+		public RuleCall getStreamStreamDefinitionIDTerminalRuleCall_0_0_1() { return cStreamStreamDefinitionIDTerminalRuleCall_0_0_1; }
+
+		//("[" barrier=BarrierOperator "]")?
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"["
+		public Keyword getLeftSquareBracketKeyword_1_0() { return cLeftSquareBracketKeyword_1_0; }
+
+		//barrier=BarrierOperator
+		public Assignment getBarrierAssignment_1_1() { return cBarrierAssignment_1_1; }
+
+		//BarrierOperator
+		public RuleCall getBarrierBarrierOperatorParserRuleCall_1_1_0() { return cBarrierBarrierOperatorParserRuleCall_1_1_0; }
+
+		//"]"
+		public Keyword getRightSquareBracketKeyword_1_2() { return cRightSquareBracketKeyword_1_2; }
+	}
+
+	public class CountOperatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CountOperator");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCountKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cParameterAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cParameterStreamAccessParserRuleCall_2_0 = (RuleCall)cParameterAssignment_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cStreamAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cStreamStreamOperatorParameterParserRuleCall_4_0 = (RuleCall)cStreamAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		/// **
+		// * The CountOperator rule defines a count operator which counts an element
+		// * of a stream.
+		// * / CountOperator:
+		//	"count" "(" parameter=StreamAccess "," stream=StreamOperatorParameter ")";
+		public ParserRule getRule() { return rule; }
+
+		//"count" "(" parameter=StreamAccess "," stream=StreamOperatorParameter ")"
+		public Group getGroup() { return cGroup; }
+
+		//"count"
+		public Keyword getCountKeyword_0() { return cCountKeyword_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//parameter=StreamAccess
+		public Assignment getParameterAssignment_2() { return cParameterAssignment_2; }
+
+		//StreamAccess
+		public RuleCall getParameterStreamAccessParserRuleCall_2_0() { return cParameterStreamAccessParserRuleCall_2_0; }
+
+		//","
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+
+		//stream=StreamOperatorParameter
+		public Assignment getStreamAssignment_4() { return cStreamAssignment_4; }
+
+		//StreamOperatorParameter
+		public RuleCall getStreamStreamOperatorParameterParserRuleCall_4_0() { return cStreamStreamOperatorParameterParserRuleCall_4_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+	}
+
+	public class StandardDeviationOperatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StandardDeviationOperator");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cStdKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cParameterAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cParameterStreamAccessParserRuleCall_2_0 = (RuleCall)cParameterAssignment_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cStreamAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cStreamStreamOperatorParameterParserRuleCall_4_0 = (RuleCall)cStreamAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		/// **
+		// * The StandardDeviationOperator rule defines a operator which calculates the standard
+		// * deviation of an element.
+		// * / StandardDeviationOperator:
+		//	"std" "(" parameter=StreamAccess "," stream=StreamOperatorParameter ")";
+		public ParserRule getRule() { return rule; }
+
+		//"std" "(" parameter=StreamAccess "," stream=StreamOperatorParameter ")"
+		public Group getGroup() { return cGroup; }
+
+		//"std"
+		public Keyword getStdKeyword_0() { return cStdKeyword_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//parameter=StreamAccess
+		public Assignment getParameterAssignment_2() { return cParameterAssignment_2; }
+
+		//StreamAccess
+		public RuleCall getParameterStreamAccessParserRuleCall_2_0() { return cParameterStreamAccessParserRuleCall_2_0; }
+
+		//","
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+
+		//stream=StreamOperatorParameter
+		public Assignment getStreamAssignment_4() { return cStreamAssignment_4; }
+
+		//StreamOperatorParameter
+		public RuleCall getStreamStreamOperatorParameterParserRuleCall_4_0() { return cStreamStreamOperatorParameterParserRuleCall_4_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+	}
+
+	public class AverageOperatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AverageOperator");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cAvgKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cParameterAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cParameterStreamAccessParserRuleCall_2_0 = (RuleCall)cParameterAssignment_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cStreamAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cStreamStreamOperatorParameterParserRuleCall_4_0 = (RuleCall)cStreamAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		/// **
+		// * The AverageOperator rule defines a operator which calculates the average
+		// * of an element.
+		// * / AverageOperator:
+		//	"avg" "(" parameter=StreamAccess "," stream=StreamOperatorParameter ")";
+		public ParserRule getRule() { return rule; }
+
+		//"avg" "(" parameter=StreamAccess "," stream=StreamOperatorParameter ")"
+		public Group getGroup() { return cGroup; }
+
+		//"avg"
+		public Keyword getAvgKeyword_0() { return cAvgKeyword_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//parameter=StreamAccess
+		public Assignment getParameterAssignment_2() { return cParameterAssignment_2; }
+
+		//StreamAccess
+		public RuleCall getParameterStreamAccessParserRuleCall_2_0() { return cParameterStreamAccessParserRuleCall_2_0; }
+
+		//","
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+
+		//stream=StreamOperatorParameter
+		public Assignment getStreamAssignment_4() { return cStreamAssignment_4; }
+
+		//StreamOperatorParameter
+		public RuleCall getStreamStreamOperatorParameterParserRuleCall_4_0() { return cStreamStreamOperatorParameterParserRuleCall_4_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+	}
+
+	public class ElementJoinOperatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ElementJoinOperator");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cEjoinKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Assignment cElementParametersAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final RuleCall cElementParametersStreamAccessParserRuleCall_2_0_0 = (RuleCall)cElementParametersAssignment_2_0.eContents().get(0);
+		private final Assignment cVariableElementParametersAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
+		private final CrossReference cVariableElementParametersVariableCrossReference_2_1_0 = (CrossReference)cVariableElementParametersAssignment_2_1.eContents().get(0);
+		private final RuleCall cVariableElementParametersVariableIDTerminalRuleCall_2_1_0_1 = (RuleCall)cVariableElementParametersVariableCrossReference_2_1_0.eContents().get(1);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cElementParametersAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cElementParametersStreamAccessParserRuleCall_3_1_0 = (RuleCall)cElementParametersAssignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cVariableElementParametersAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final CrossReference cVariableElementParametersVariableCrossReference_4_1_0 = (CrossReference)cVariableElementParametersAssignment_4_1.eContents().get(0);
+		private final RuleCall cVariableElementParametersVariableIDTerminalRuleCall_4_1_0_1 = (RuleCall)cVariableElementParametersVariableCrossReference_4_1_0.eContents().get(1);
+		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cParameterAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cParameterStreamOperatorParameterParserRuleCall_6_0 = (RuleCall)cParameterAssignment_6.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		
+		/// **
+		// * The ElementJoinOperator rule defines a join operation on a stream and another stream element
+		// * and/or variable.
+		// * / ElementJoinOperator:
+		//	"ejoin" "(" (elementParameters+=StreamAccess | variableElementParameters+=[Variable]) (","
+		//	elementParameters+=StreamAccess)* ("," variableElementParameters+=[Variable])* "," parameter=StreamOperatorParameter
+		//	")";
+		public ParserRule getRule() { return rule; }
+
+		//"ejoin" "(" (elementParameters+=StreamAccess | variableElementParameters+=[Variable]) (","
+		//elementParameters+=StreamAccess)* ("," variableElementParameters+=[Variable])* "," parameter=StreamOperatorParameter
+		//")"
+		public Group getGroup() { return cGroup; }
+
+		//"ejoin"
+		public Keyword getEjoinKeyword_0() { return cEjoinKeyword_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//elementParameters+=StreamAccess | variableElementParameters+=[Variable]
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+
+		//elementParameters+=StreamAccess
+		public Assignment getElementParametersAssignment_2_0() { return cElementParametersAssignment_2_0; }
+
+		//StreamAccess
+		public RuleCall getElementParametersStreamAccessParserRuleCall_2_0_0() { return cElementParametersStreamAccessParserRuleCall_2_0_0; }
+
+		//variableElementParameters+=[Variable]
+		public Assignment getVariableElementParametersAssignment_2_1() { return cVariableElementParametersAssignment_2_1; }
+
+		//[Variable]
+		public CrossReference getVariableElementParametersVariableCrossReference_2_1_0() { return cVariableElementParametersVariableCrossReference_2_1_0; }
+
+		//ID
+		public RuleCall getVariableElementParametersVariableIDTerminalRuleCall_2_1_0_1() { return cVariableElementParametersVariableIDTerminalRuleCall_2_1_0_1; }
+
+		//("," elementParameters+=StreamAccess)*
+		public Group getGroup_3() { return cGroup_3; }
+
+		//","
+		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+
+		//elementParameters+=StreamAccess
+		public Assignment getElementParametersAssignment_3_1() { return cElementParametersAssignment_3_1; }
+
+		//StreamAccess
+		public RuleCall getElementParametersStreamAccessParserRuleCall_3_1_0() { return cElementParametersStreamAccessParserRuleCall_3_1_0; }
+
+		//("," variableElementParameters+=[Variable])*
+		public Group getGroup_4() { return cGroup_4; }
+
+		//","
+		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
+
+		//variableElementParameters+=[Variable]
+		public Assignment getVariableElementParametersAssignment_4_1() { return cVariableElementParametersAssignment_4_1; }
+
+		//[Variable]
+		public CrossReference getVariableElementParametersVariableCrossReference_4_1_0() { return cVariableElementParametersVariableCrossReference_4_1_0; }
+
+		//ID
+		public RuleCall getVariableElementParametersVariableIDTerminalRuleCall_4_1_0_1() { return cVariableElementParametersVariableIDTerminalRuleCall_4_1_0_1; }
+
+		//","
+		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
+
+		//parameter=StreamOperatorParameter
+		public Assignment getParameterAssignment_6() { return cParameterAssignment_6; }
+
+		//StreamOperatorParameter
+		public RuleCall getParameterStreamOperatorParameterParserRuleCall_6_0() { return cParameterStreamOperatorParameterParserRuleCall_6_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
+	}
+
+	public class TagOperatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TagOperator");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTagKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cParametersAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cParametersTagElementParserRuleCall_2_0 = (RuleCall)cParametersAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cParametersAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cParametersTagElementParserRuleCall_3_1_0 = (RuleCall)cParametersAssignment_3_1.eContents().get(0);
+		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cStreamAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cStreamStreamOperatorParameterParserRuleCall_5_0 = (RuleCall)cStreamAssignment_5.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		/// **
+		// * The TagOperator rule tags elements of a stream with elements of an ontology
+		// * / TagOperator:
+		//	"tag" "(" parameters+=TagElement ("," parameters+=TagElement)* "," stream=StreamOperatorParameter ")";
+		public ParserRule getRule() { return rule; }
+
+		//"tag" "(" parameters+=TagElement ("," parameters+=TagElement)* "," stream=StreamOperatorParameter ")"
+		public Group getGroup() { return cGroup; }
+
+		//"tag"
+		public Keyword getTagKeyword_0() { return cTagKeyword_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//parameters+=TagElement
+		public Assignment getParametersAssignment_2() { return cParametersAssignment_2; }
+
+		//TagElement
+		public RuleCall getParametersTagElementParserRuleCall_2_0() { return cParametersTagElementParserRuleCall_2_0; }
+
+		//("," parameters+=TagElement)*
+		public Group getGroup_3() { return cGroup_3; }
+
+		//","
+		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+
+		//parameters+=TagElement
+		public Assignment getParametersAssignment_3_1() { return cParametersAssignment_3_1; }
+
+		//TagElement
+		public RuleCall getParametersTagElementParserRuleCall_3_1_0() { return cParametersTagElementParserRuleCall_3_1_0; }
+
+		//","
+		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
+
+		//stream=StreamOperatorParameter
+		public Assignment getStreamAssignment_5() { return cStreamAssignment_5; }
+
+		//StreamOperatorParameter
+		public RuleCall getStreamStreamOperatorParameterParserRuleCall_5_0() { return cStreamStreamOperatorParameterParserRuleCall_5_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
+	}
+
+	public class TagElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TagElement");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cTagClassElementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cTagObjectPropertyElementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cTagDataTypePropertyElementParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		/// **
+		// * The overall tag element rule for certain elements of owl ontology. Since a owl class, object property
+		// * and datatype property don't share a common 'supertype' it's not possible to use one rule. In addition
+		// * you have to use extra keywords. For example class, objectproperty, datatype ...
+		// * / TagElement:
+		//	TagClassElement | TagObjectPropertyElement | TagDataTypePropertyElement;
+		public ParserRule getRule() { return rule; }
+
+		//TagClassElement | TagObjectPropertyElement | TagDataTypePropertyElement
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//TagClassElement
+		public RuleCall getTagClassElementParserRuleCall_0() { return cTagClassElementParserRuleCall_0; }
+
+		//TagObjectPropertyElement
+		public RuleCall getTagObjectPropertyElementParserRuleCall_1() { return cTagObjectPropertyElementParserRuleCall_1; }
+
+		//TagDataTypePropertyElement
+		public RuleCall getTagDataTypePropertyElementParserRuleCall_2() { return cTagDataTypePropertyElementParserRuleCall_2; }
+	}
+
+	public class TagClassElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TagClassElement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cReferenceAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cReferenceStreamAccessParserRuleCall_0_0 = (RuleCall)cReferenceAssignment_0.eContents().get(0);
+		private final Keyword cIsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cClassKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cElementAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cElementOWLClassCrossReference_3_0 = (CrossReference)cElementAssignment_3.eContents().get(0);
+		private final RuleCall cElementOWLClassSTRINGTerminalRuleCall_3_0_1 = (RuleCall)cElementOWLClassCrossReference_3_0.eContents().get(1);
+		
+		/// **
+		// * The tag element for a owl class
+		// * / TagClassElement:
+		//	reference=StreamAccess "is" "class" element=[OWL::OWLClass|STRING];
+		public ParserRule getRule() { return rule; }
+
+		//reference=StreamAccess "is" "class" element=[OWL::OWLClass|STRING]
+		public Group getGroup() { return cGroup; }
+
+		//reference=StreamAccess
+		public Assignment getReferenceAssignment_0() { return cReferenceAssignment_0; }
+
+		//StreamAccess
+		public RuleCall getReferenceStreamAccessParserRuleCall_0_0() { return cReferenceStreamAccessParserRuleCall_0_0; }
+
+		//"is"
+		public Keyword getIsKeyword_1() { return cIsKeyword_1; }
+
+		//"class"
+		public Keyword getClassKeyword_2() { return cClassKeyword_2; }
+
+		//element=[OWL::OWLClass|STRING]
+		public Assignment getElementAssignment_3() { return cElementAssignment_3; }
+
+		//[OWL::OWLClass|STRING]
+		public CrossReference getElementOWLClassCrossReference_3_0() { return cElementOWLClassCrossReference_3_0; }
+
+		//STRING
+		public RuleCall getElementOWLClassSTRINGTerminalRuleCall_3_0_1() { return cElementOWLClassSTRINGTerminalRuleCall_3_0_1; }
+	}
+
+	public class TagObjectPropertyElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TagObjectPropertyElement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cReferenceAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cReferenceStreamAccessParserRuleCall_0_0 = (RuleCall)cReferenceAssignment_0.eContents().get(0);
+		private final Keyword cIsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cObjectpropertyKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cElementAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cElementOWLObjectPropertyCrossReference_3_0 = (CrossReference)cElementAssignment_3.eContents().get(0);
+		private final RuleCall cElementOWLObjectPropertySTRINGTerminalRuleCall_3_0_1 = (RuleCall)cElementOWLObjectPropertyCrossReference_3_0.eContents().get(1);
+		
+		/// **
+		// * The tag element for a owl object property
+		// * / TagObjectPropertyElement:
+		//	reference=StreamAccess "is" "objectproperty" element=[OWL::OWLObjectProperty|STRING];
+		public ParserRule getRule() { return rule; }
+
+		//reference=StreamAccess "is" "objectproperty" element=[OWL::OWLObjectProperty|STRING]
+		public Group getGroup() { return cGroup; }
+
+		//reference=StreamAccess
+		public Assignment getReferenceAssignment_0() { return cReferenceAssignment_0; }
+
+		//StreamAccess
+		public RuleCall getReferenceStreamAccessParserRuleCall_0_0() { return cReferenceStreamAccessParserRuleCall_0_0; }
+
+		//"is"
+		public Keyword getIsKeyword_1() { return cIsKeyword_1; }
+
+		//"objectproperty"
+		public Keyword getObjectpropertyKeyword_2() { return cObjectpropertyKeyword_2; }
+
+		//element=[OWL::OWLObjectProperty|STRING]
+		public Assignment getElementAssignment_3() { return cElementAssignment_3; }
+
+		//[OWL::OWLObjectProperty|STRING]
+		public CrossReference getElementOWLObjectPropertyCrossReference_3_0() { return cElementOWLObjectPropertyCrossReference_3_0; }
+
+		//STRING
+		public RuleCall getElementOWLObjectPropertySTRINGTerminalRuleCall_3_0_1() { return cElementOWLObjectPropertySTRINGTerminalRuleCall_3_0_1; }
+	}
+
+	public class TagDataTypePropertyElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TagDataTypePropertyElement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cReferenceAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cReferenceStreamAccessParserRuleCall_0_0 = (RuleCall)cReferenceAssignment_0.eContents().get(0);
+		private final Keyword cIsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cDatatypeKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cElementAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cElementOWLDatatypePropertyCrossReference_3_0 = (CrossReference)cElementAssignment_3.eContents().get(0);
+		private final RuleCall cElementOWLDatatypePropertySTRINGTerminalRuleCall_3_0_1 = (RuleCall)cElementOWLDatatypePropertyCrossReference_3_0.eContents().get(1);
+		
+		/// **
+		// * The tag element for a datatype property
+		// * / TagDataTypePropertyElement:
+		//	reference=StreamAccess "is" "datatype" element=[OWL::OWLDatatypeProperty|STRING];
+		public ParserRule getRule() { return rule; }
+
+		//reference=StreamAccess "is" "datatype" element=[OWL::OWLDatatypeProperty|STRING]
+		public Group getGroup() { return cGroup; }
+
+		//reference=StreamAccess
+		public Assignment getReferenceAssignment_0() { return cReferenceAssignment_0; }
+
+		//StreamAccess
+		public RuleCall getReferenceStreamAccessParserRuleCall_0_0() { return cReferenceStreamAccessParserRuleCall_0_0; }
+
+		//"is"
+		public Keyword getIsKeyword_1() { return cIsKeyword_1; }
+
+		//"datatype"
+		public Keyword getDatatypeKeyword_2() { return cDatatypeKeyword_2; }
+
+		//element=[OWL::OWLDatatypeProperty|STRING]
+		public Assignment getElementAssignment_3() { return cElementAssignment_3; }
+
+		//[OWL::OWLDatatypeProperty|STRING]
+		public CrossReference getElementOWLDatatypePropertyCrossReference_3_0() { return cElementOWLDatatypePropertyCrossReference_3_0; }
+
+		//STRING
+		public RuleCall getElementOWLDatatypePropertySTRINGTerminalRuleCall_3_0_1() { return cElementOWLDatatypePropertySTRINGTerminalRuleCall_3_0_1; }
+	}
+
+	public class OutputOperatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OutputOperator");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cOutKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cParameterAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cParameterOutputOperatorParameterParserRuleCall_2_0 = (RuleCall)cParameterAssignment_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cLocationAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cLocationSTRINGTerminalRuleCall_4_0 = (RuleCall)cLocationAssignment_4.eContents().get(0);
+		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cStreamAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cStreamStreamOperatorParameterParserRuleCall_6_0 = (RuleCall)cStreamAssignment_6.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cSemicolonKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		
+		/// **
+		// * The OutputOperator rule defines a operator which prints the content of the
+		// * a stream specified in parameter to a location specified in location.
+		// * / OutputOperator:
+		//	"out" "(" parameter=OutputOperatorParameter "," location=STRING "," stream=StreamOperatorParameter ")" ";";
+		public ParserRule getRule() { return rule; }
+
+		//"out" "(" parameter=OutputOperatorParameter "," location=STRING "," stream=StreamOperatorParameter ")" ";"
+		public Group getGroup() { return cGroup; }
+
+		//"out"
+		public Keyword getOutKeyword_0() { return cOutKeyword_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//parameter=OutputOperatorParameter
+		public Assignment getParameterAssignment_2() { return cParameterAssignment_2; }
+
+		//OutputOperatorParameter
+		public RuleCall getParameterOutputOperatorParameterParserRuleCall_2_0() { return cParameterOutputOperatorParameterParserRuleCall_2_0; }
+
+		//","
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+
+		//location=STRING
+		public Assignment getLocationAssignment_4() { return cLocationAssignment_4; }
+
+		//STRING
+		public RuleCall getLocationSTRINGTerminalRuleCall_4_0() { return cLocationSTRINGTerminalRuleCall_4_0; }
+
+		//","
+		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
+
+		//stream=StreamOperatorParameter
+		public Assignment getStreamAssignment_6() { return cStreamAssignment_6; }
+
+		//StreamOperatorParameter
+		public RuleCall getStreamStreamOperatorParameterParserRuleCall_6_0() { return cStreamStreamOperatorParameterParserRuleCall_6_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
+
+		//";"
+		public Keyword getSemicolonKeyword_8() { return cSemicolonKeyword_8; }
+	}
+
+	public class OutputOperatorParameterElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OutputOperatorParameter");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cElementAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cElementStreamAccessParserRuleCall_0_0 = (RuleCall)cElementAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cElementAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cElementStreamAccessParserRuleCall_1_1_0 = (RuleCall)cElementAssignment_1_1.eContents().get(0);
+		
+		/// **
+		// * Parameter for the OutputOperator which are stream elements
+		// * / OutputOperatorParameter:
+		//	element+=StreamAccess ("," element+=StreamAccess)*;
+		public ParserRule getRule() { return rule; }
+
+		//element+=StreamAccess ("," element+=StreamAccess)*
+		public Group getGroup() { return cGroup; }
+
+		//element+=StreamAccess
+		public Assignment getElementAssignment_0() { return cElementAssignment_0; }
+
+		//StreamAccess
+		public RuleCall getElementStreamAccessParserRuleCall_0_0() { return cElementStreamAccessParserRuleCall_0_0; }
+
+		//("," element+=StreamAccess)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//","
+		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
+
+		//element+=StreamAccess
+		public Assignment getElementAssignment_1_1() { return cElementAssignment_1_1; }
+
+		//StreamAccess
+		public RuleCall getElementStreamAccessParserRuleCall_1_1_0() { return cElementStreamAccessParserRuleCall_1_1_0; }
+	}
+
+	public class BarrierOperatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BarrierOperator");
+		private final RuleCall cWindowOperatorParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		/// **
+		// * The BarrierOperator is a rule which summarizes the barrier operators of the
+		// * language. At present the language supports only two barrier operators.
+		// * / BarrierOperator:
+		//	WindowOperator;
+		public ParserRule getRule() { return rule; }
+
+		//WindowOperator
+		public RuleCall getWindowOperatorParserRuleCall() { return cWindowOperatorParserRuleCall; }
+	}
+
+	public class WindowOperatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WindowOperator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Assignment cSettingAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final Keyword cSettingLastKeyword_0_0_0 = (Keyword)cSettingAssignment_0_0.eContents().get(0);
+		private final Assignment cValueAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cValueNUMBERTerminalRuleCall_0_1_0 = (RuleCall)cValueAssignment_0_1.eContents().get(0);
+		private final Assignment cUnitAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final Alternatives cUnitAlternatives_0_2_0 = (Alternatives)cUnitAssignment_0_2.eContents().get(0);
+		private final Keyword cUnitMinKeyword_0_2_0_0 = (Keyword)cUnitAlternatives_0_2_0.eContents().get(0);
+		private final Keyword cUnitHrsKeyword_0_2_0_1 = (Keyword)cUnitAlternatives_0_2_0.eContents().get(1);
+		private final Keyword cUnitSecKeyword_0_2_0_2 = (Keyword)cUnitAlternatives_0_2_0.eContents().get(2);
+		private final Keyword cUnitElementsKeyword_0_2_0_3 = (Keyword)cUnitAlternatives_0_2_0.eContents().get(3);
+		private final Assignment cSettingAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final Keyword cSettingNowKeyword_1_0 = (Keyword)cSettingAssignment_1.eContents().get(0);
+		
+		/// **
+		// * The WindowOperator rule defines a window operator which is part of several operators. It
+		// * defines sliding window over a stream. 
+		// * / WindowOperator:
+		//	setting="last" value=NUMBER unit=("min" | "hrs" | "sec" | "elements")? | setting="now";
+		public ParserRule getRule() { return rule; }
+
+		//setting="last" value=NUMBER unit=("min" | "hrs" | "sec" | "elements")? | setting="now"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//setting="last" value=NUMBER unit=("min" | "hrs" | "sec" | "elements")?
+		public Group getGroup_0() { return cGroup_0; }
+
+		//setting="last"
+		public Assignment getSettingAssignment_0_0() { return cSettingAssignment_0_0; }
+
+		//"last"
+		public Keyword getSettingLastKeyword_0_0_0() { return cSettingLastKeyword_0_0_0; }
+
+		//value=NUMBER
+		public Assignment getValueAssignment_0_1() { return cValueAssignment_0_1; }
+
+		//NUMBER
+		public RuleCall getValueNUMBERTerminalRuleCall_0_1_0() { return cValueNUMBERTerminalRuleCall_0_1_0; }
+
+		//unit=("min" | "hrs" | "sec" | "elements")?
+		public Assignment getUnitAssignment_0_2() { return cUnitAssignment_0_2; }
+
+		//"min" | "hrs" | "sec" | "elements"
+		public Alternatives getUnitAlternatives_0_2_0() { return cUnitAlternatives_0_2_0; }
+
+		//"min"
+		public Keyword getUnitMinKeyword_0_2_0_0() { return cUnitMinKeyword_0_2_0_0; }
+
+		//"hrs"
+		public Keyword getUnitHrsKeyword_0_2_0_1() { return cUnitHrsKeyword_0_2_0_1; }
+
+		//"sec"
+		public Keyword getUnitSecKeyword_0_2_0_2() { return cUnitSecKeyword_0_2_0_2; }
+
+		//"elements"
+		public Keyword getUnitElementsKeyword_0_2_0_3() { return cUnitElementsKeyword_0_2_0_3; }
+
+		//setting="now"
+		public Assignment getSettingAssignment_1() { return cSettingAssignment_1; }
+
+		//"now"
+		public Keyword getSettingNowKeyword_1_0() { return cSettingNowKeyword_1_0; }
 	}
 	
 	
 	private ModelElements pModel;
-	private GreetingElements pGreeting;
+	private PackageDeclarationElements pPackageDeclaration;
+	private ModelElementElements pModelElement;
+	private StreamDeclarationElements pStreamDeclaration;
+	private StreamElementElements pStreamElement;
+	private ImportElements pImport;
+	private TestElementElements pTestElement;
+	private TestAssignElements pTestAssign;
+	private OWLTestElementElements pOWLTestElement;
+	private OperatorElements pOperator;
+	private VariableElements pVariable;
+	private VariableDeclarationElements pVariableDeclaration;
+	private StreamDefinitionElements pStreamDefinition;
+	private StreamAccessElements pStreamAccess;
+	private StreamOperatorParameterElements pStreamOperatorParameter;
+	private CountOperatorElements pCountOperator;
+	private StandardDeviationOperatorElements pStandardDeviationOperator;
+	private AverageOperatorElements pAverageOperator;
+	private ElementJoinOperatorElements pElementJoinOperator;
+	private TagOperatorElements pTagOperator;
+	private TagElementElements pTagElement;
+	private TagClassElementElements pTagClassElement;
+	private TagObjectPropertyElementElements pTagObjectPropertyElement;
+	private TagDataTypePropertyElementElements pTagDataTypePropertyElement;
+	private OutputOperatorElements pOutputOperator;
+	private OutputOperatorParameterElements pOutputOperatorParameter;
+	private BarrierOperatorElements pBarrierOperator;
+	private WindowOperatorElements pWindowOperator;
+	private TerminalRule tNUMBER;
+	private TerminalRule tINT;
 	
 	private final GrammarProvider grammarProvider;
 
@@ -87,7 +1225,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
-	//	greetings+=Greeting*;
+	//	model+=PackageDeclaration+;
 	public ModelElements getModelAccess() {
 		return (pModel != null) ? pModel : (pModel = new ModelElements());
 	}
@@ -96,26 +1234,336 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		return getModelAccess().getRule();
 	}
 
-	//Greeting:
-	//	"Hello" name=ID "!";
-	public GreetingElements getGreetingAccess() {
-		return (pGreeting != null) ? pGreeting : (pGreeting = new GreetingElements());
+	/// **
+	// * A package consists of multiple model elements of the language
+	// * / PackageDeclaration:
+	//	"package" name=ID "{" elements+=ModelElement* "}" ";";
+	public PackageDeclarationElements getPackageDeclarationAccess() {
+		return (pPackageDeclaration != null) ? pPackageDeclaration : (pPackageDeclaration = new PackageDeclarationElements());
 	}
 	
-	public ParserRule getGreetingRule() {
-		return getGreetingAccess().getRule();
+	public ParserRule getPackageDeclarationRule() {
+		return getPackageDeclarationAccess().getRule();
 	}
+
+	//ModelElement:
+	//	PackageDeclaration | Import | TestElement | TestAssign | StreamDeclaration | Operator | StreamDefinition;
+	public ModelElementElements getModelElementAccess() {
+		return (pModelElement != null) ? pModelElement : (pModelElement = new ModelElementElements());
+	}
+	
+	public ParserRule getModelElementRule() {
+		return getModelElementAccess().getRule();
+	}
+
+	//StreamDeclaration:
+	//	"stream" name=ID "{" elements+=StreamElement+ "}" ";";
+	public StreamDeclarationElements getStreamDeclarationAccess() {
+		return (pStreamDeclaration != null) ? pStreamDeclaration : (pStreamDeclaration = new StreamDeclarationElements());
+	}
+	
+	public ParserRule getStreamDeclarationRule() {
+		return getStreamDeclarationAccess().getRule();
+	}
+
+	//StreamElement:
+	//	type=[jvmTypes::JvmType] name=ID ";";
+	public StreamElementElements getStreamElementAccess() {
+		return (pStreamElement != null) ? pStreamElement : (pStreamElement = new StreamElementElements());
+	}
+	
+	public ParserRule getStreamElementRule() {
+		return getStreamElementAccess().getRule();
+	}
+
+	/// **
+	// * The Import rule defines a import statement for referring to other *.flw files as well as 
+	// * files of knowledge representations such as *.owl or UML constraints suchs as *.ocl
+	// * / Import:
+	//	"import" importURI=STRING ";";
+	public ImportElements getImportAccess() {
+		return (pImport != null) ? pImport : (pImport = new ImportElements());
+	}
+	
+	public ParserRule getImportRule() {
+		return getImportAccess().getRule();
+	}
+
+	//TestElement:
+	//	"var" name=ID;
+	public TestElementElements getTestElementAccess() {
+		return (pTestElement != null) ? pTestElement : (pTestElement = new TestElementElements());
+	}
+	
+	public ParserRule getTestElementRule() {
+		return getTestElementAccess().getRule();
+	}
+
+	//TestAssign:
+	//	"let" left=[TestElement] "=" right=[TestElement];
+	public TestAssignElements getTestAssignAccess() {
+		return (pTestAssign != null) ? pTestAssign : (pTestAssign = new TestAssignElements());
+	}
+	
+	public ParserRule getTestAssignRule() {
+		return getTestAssignAccess().getRule();
+	}
+
+	//OWLTestElement:
+	//	"owl" element=[OWL::OWLClass];
+	public OWLTestElementElements getOWLTestElementAccess() {
+		return (pOWLTestElement != null) ? pOWLTestElement : (pOWLTestElement = new OWLTestElementElements());
+	}
+	
+	public ParserRule getOWLTestElementRule() {
+		return getOWLTestElementAccess().getRule();
+	}
+
+	//Operator:
+	//	ElementJoinOperator | TagOperator | CountOperator | StandardDeviationOperator | AverageOperator | OutputOperator;
+	public OperatorElements getOperatorAccess() {
+		return (pOperator != null) ? pOperator : (pOperator = new OperatorElements());
+	}
+	
+	public ParserRule getOperatorRule() {
+		return getOperatorAccess().getRule();
+	}
+
+	//Variable:
+	//	VariableDeclaration;
+	public VariableElements getVariableAccess() {
+		return (pVariable != null) ? pVariable : (pVariable = new VariableElements());
+	}
+	
+	public ParserRule getVariableRule() {
+		return getVariableAccess().getRule();
+	}
+
+	//VariableDeclaration:
+	//	type=[jvmTypes::JvmType] name=ID;
+	public VariableDeclarationElements getVariableDeclarationAccess() {
+		return (pVariableDeclaration != null) ? pVariableDeclaration : (pVariableDeclaration = new VariableDeclarationElements());
+	}
+	
+	public ParserRule getVariableDeclarationRule() {
+		return getVariableDeclarationAccess().getRule();
+	}
+
+	//StreamDefinition:
+	//	reference=[StreamDeclaration] name=ID ";";
+	public StreamDefinitionElements getStreamDefinitionAccess() {
+		return (pStreamDefinition != null) ? pStreamDefinition : (pStreamDefinition = new StreamDefinitionElements());
+	}
+	
+	public ParserRule getStreamDefinitionRule() {
+		return getStreamDefinitionAccess().getRule();
+	}
+
+	/// **
+	// * Elements of a stream are accessed by a a stream definition followed by a dot 
+	// * / StreamAccess:
+	//	reference=[StreamDefinition] "." element=[VariableDeclaration];
+	public StreamAccessElements getStreamAccessAccess() {
+		return (pStreamAccess != null) ? pStreamAccess : (pStreamAccess = new StreamAccessElements());
+	}
+	
+	public ParserRule getStreamAccessRule() {
+		return getStreamAccessAccess().getRule();
+	}
+
+	//StreamOperatorParameter:
+	//	stream=[StreamDefinition] ("[" barrier=BarrierOperator "]")?;
+	public StreamOperatorParameterElements getStreamOperatorParameterAccess() {
+		return (pStreamOperatorParameter != null) ? pStreamOperatorParameter : (pStreamOperatorParameter = new StreamOperatorParameterElements());
+	}
+	
+	public ParserRule getStreamOperatorParameterRule() {
+		return getStreamOperatorParameterAccess().getRule();
+	}
+
+	/// **
+	// * The CountOperator rule defines a count operator which counts an element
+	// * of a stream.
+	// * / CountOperator:
+	//	"count" "(" parameter=StreamAccess "," stream=StreamOperatorParameter ")";
+	public CountOperatorElements getCountOperatorAccess() {
+		return (pCountOperator != null) ? pCountOperator : (pCountOperator = new CountOperatorElements());
+	}
+	
+	public ParserRule getCountOperatorRule() {
+		return getCountOperatorAccess().getRule();
+	}
+
+	/// **
+	// * The StandardDeviationOperator rule defines a operator which calculates the standard
+	// * deviation of an element.
+	// * / StandardDeviationOperator:
+	//	"std" "(" parameter=StreamAccess "," stream=StreamOperatorParameter ")";
+	public StandardDeviationOperatorElements getStandardDeviationOperatorAccess() {
+		return (pStandardDeviationOperator != null) ? pStandardDeviationOperator : (pStandardDeviationOperator = new StandardDeviationOperatorElements());
+	}
+	
+	public ParserRule getStandardDeviationOperatorRule() {
+		return getStandardDeviationOperatorAccess().getRule();
+	}
+
+	/// **
+	// * The AverageOperator rule defines a operator which calculates the average
+	// * of an element.
+	// * / AverageOperator:
+	//	"avg" "(" parameter=StreamAccess "," stream=StreamOperatorParameter ")";
+	public AverageOperatorElements getAverageOperatorAccess() {
+		return (pAverageOperator != null) ? pAverageOperator : (pAverageOperator = new AverageOperatorElements());
+	}
+	
+	public ParserRule getAverageOperatorRule() {
+		return getAverageOperatorAccess().getRule();
+	}
+
+	/// **
+	// * The ElementJoinOperator rule defines a join operation on a stream and another stream element
+	// * and/or variable.
+	// * / ElementJoinOperator:
+	//	"ejoin" "(" (elementParameters+=StreamAccess | variableElementParameters+=[Variable]) (","
+	//	elementParameters+=StreamAccess)* ("," variableElementParameters+=[Variable])* "," parameter=StreamOperatorParameter
+	//	")";
+	public ElementJoinOperatorElements getElementJoinOperatorAccess() {
+		return (pElementJoinOperator != null) ? pElementJoinOperator : (pElementJoinOperator = new ElementJoinOperatorElements());
+	}
+	
+	public ParserRule getElementJoinOperatorRule() {
+		return getElementJoinOperatorAccess().getRule();
+	}
+
+	/// **
+	// * The TagOperator rule tags elements of a stream with elements of an ontology
+	// * / TagOperator:
+	//	"tag" "(" parameters+=TagElement ("," parameters+=TagElement)* "," stream=StreamOperatorParameter ")";
+	public TagOperatorElements getTagOperatorAccess() {
+		return (pTagOperator != null) ? pTagOperator : (pTagOperator = new TagOperatorElements());
+	}
+	
+	public ParserRule getTagOperatorRule() {
+		return getTagOperatorAccess().getRule();
+	}
+
+	/// **
+	// * The overall tag element rule for certain elements of owl ontology. Since a owl class, object property
+	// * and datatype property don't share a common 'supertype' it's not possible to use one rule. In addition
+	// * you have to use extra keywords. For example class, objectproperty, datatype ...
+	// * / TagElement:
+	//	TagClassElement | TagObjectPropertyElement | TagDataTypePropertyElement;
+	public TagElementElements getTagElementAccess() {
+		return (pTagElement != null) ? pTagElement : (pTagElement = new TagElementElements());
+	}
+	
+	public ParserRule getTagElementRule() {
+		return getTagElementAccess().getRule();
+	}
+
+	/// **
+	// * The tag element for a owl class
+	// * / TagClassElement:
+	//	reference=StreamAccess "is" "class" element=[OWL::OWLClass|STRING];
+	public TagClassElementElements getTagClassElementAccess() {
+		return (pTagClassElement != null) ? pTagClassElement : (pTagClassElement = new TagClassElementElements());
+	}
+	
+	public ParserRule getTagClassElementRule() {
+		return getTagClassElementAccess().getRule();
+	}
+
+	/// **
+	// * The tag element for a owl object property
+	// * / TagObjectPropertyElement:
+	//	reference=StreamAccess "is" "objectproperty" element=[OWL::OWLObjectProperty|STRING];
+	public TagObjectPropertyElementElements getTagObjectPropertyElementAccess() {
+		return (pTagObjectPropertyElement != null) ? pTagObjectPropertyElement : (pTagObjectPropertyElement = new TagObjectPropertyElementElements());
+	}
+	
+	public ParserRule getTagObjectPropertyElementRule() {
+		return getTagObjectPropertyElementAccess().getRule();
+	}
+
+	/// **
+	// * The tag element for a datatype property
+	// * / TagDataTypePropertyElement:
+	//	reference=StreamAccess "is" "datatype" element=[OWL::OWLDatatypeProperty|STRING];
+	public TagDataTypePropertyElementElements getTagDataTypePropertyElementAccess() {
+		return (pTagDataTypePropertyElement != null) ? pTagDataTypePropertyElement : (pTagDataTypePropertyElement = new TagDataTypePropertyElementElements());
+	}
+	
+	public ParserRule getTagDataTypePropertyElementRule() {
+		return getTagDataTypePropertyElementAccess().getRule();
+	}
+
+	/// **
+	// * The OutputOperator rule defines a operator which prints the content of the
+	// * a stream specified in parameter to a location specified in location.
+	// * / OutputOperator:
+	//	"out" "(" parameter=OutputOperatorParameter "," location=STRING "," stream=StreamOperatorParameter ")" ";";
+	public OutputOperatorElements getOutputOperatorAccess() {
+		return (pOutputOperator != null) ? pOutputOperator : (pOutputOperator = new OutputOperatorElements());
+	}
+	
+	public ParserRule getOutputOperatorRule() {
+		return getOutputOperatorAccess().getRule();
+	}
+
+	/// **
+	// * Parameter for the OutputOperator which are stream elements
+	// * / OutputOperatorParameter:
+	//	element+=StreamAccess ("," element+=StreamAccess)*;
+	public OutputOperatorParameterElements getOutputOperatorParameterAccess() {
+		return (pOutputOperatorParameter != null) ? pOutputOperatorParameter : (pOutputOperatorParameter = new OutputOperatorParameterElements());
+	}
+	
+	public ParserRule getOutputOperatorParameterRule() {
+		return getOutputOperatorParameterAccess().getRule();
+	}
+
+	/// **
+	// * The BarrierOperator is a rule which summarizes the barrier operators of the
+	// * language. At present the language supports only two barrier operators.
+	// * / BarrierOperator:
+	//	WindowOperator;
+	public BarrierOperatorElements getBarrierOperatorAccess() {
+		return (pBarrierOperator != null) ? pBarrierOperator : (pBarrierOperator = new BarrierOperatorElements());
+	}
+	
+	public ParserRule getBarrierOperatorRule() {
+		return getBarrierOperatorAccess().getRule();
+	}
+
+	/// **
+	// * The WindowOperator rule defines a window operator which is part of several operators. It
+	// * defines sliding window over a stream. 
+	// * / WindowOperator:
+	//	setting="last" value=NUMBER unit=("min" | "hrs" | "sec" | "elements")? | setting="now";
+	public WindowOperatorElements getWindowOperatorAccess() {
+		return (pWindowOperator != null) ? pWindowOperator : (pWindowOperator = new WindowOperatorElements());
+	}
+	
+	public ParserRule getWindowOperatorRule() {
+		return getWindowOperatorAccess().getRule();
+	}
+
+	/// ** Definition of numbers (float as well as integer) * / terminal NUMBER returns ecore::EBigDecimal:
+	//	"0".."9"* ("." "0".."9"+)?;
+	public TerminalRule getNUMBERRule() {
+		return (tNUMBER != null) ? tNUMBER : (tNUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NUMBER"));
+	} 
+
+	/// ** Fixes a antlr issue * / terminal INT returns ecore::EInt:
+	//	"this one has been deactivated";
+	public TerminalRule getINTRule() {
+		return (tINT != null) ? tINT : (tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INT"));
+	} 
 
 	//terminal ID:
 	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
-	} 
-
-	//terminal INT returns ecore::EInt:
-	//	"0".."9"+;
-	public TerminalRule getINTRule() {
-		return gaTerminals.getINTRule();
 	} 
 
 	//terminal STRING:

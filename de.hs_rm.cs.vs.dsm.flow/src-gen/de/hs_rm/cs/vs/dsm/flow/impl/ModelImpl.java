@@ -6,8 +6,8 @@
 package de.hs_rm.cs.vs.dsm.flow.impl;
 
 import de.hs_rm.cs.vs.dsm.flow.FlowPackage;
-import de.hs_rm.cs.vs.dsm.flow.Greeting;
 import de.hs_rm.cs.vs.dsm.flow.Model;
+import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration;
 
 import java.util.Collection;
 
@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.ModelImpl#getGreetings <em>Greetings</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.ModelImpl#getModel <em>Model</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,14 +39,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getGreetings() <em>Greetings</em>}' containment reference list.
+   * The cached value of the '{@link #getModel() <em>Model</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGreetings()
+   * @see #getModel()
    * @generated
    * @ordered
    */
-  protected EList<Greeting> greetings;
+  protected EList<PackageDeclaration> model;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,13 +74,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Greeting> getGreetings()
+  public EList<PackageDeclaration> getModel()
   {
-    if (greetings == null)
+    if (model == null)
     {
-      greetings = new EObjectContainmentEList<Greeting>(Greeting.class, this, FlowPackage.MODEL__GREETINGS);
+      model = new EObjectContainmentEList<PackageDeclaration>(PackageDeclaration.class, this, FlowPackage.MODEL__MODEL);
     }
-    return greetings;
+    return model;
   }
 
   /**
@@ -93,8 +93,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case FlowPackage.MODEL__GREETINGS:
-        return ((InternalEList<?>)getGreetings()).basicRemove(otherEnd, msgs);
+      case FlowPackage.MODEL__MODEL:
+        return ((InternalEList<?>)getModel()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -109,8 +109,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case FlowPackage.MODEL__GREETINGS:
-        return getGreetings();
+      case FlowPackage.MODEL__MODEL:
+        return getModel();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -126,9 +126,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case FlowPackage.MODEL__GREETINGS:
-        getGreetings().clear();
-        getGreetings().addAll((Collection<? extends Greeting>)newValue);
+      case FlowPackage.MODEL__MODEL:
+        getModel().clear();
+        getModel().addAll((Collection<? extends PackageDeclaration>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -144,8 +144,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case FlowPackage.MODEL__GREETINGS:
-        getGreetings().clear();
+      case FlowPackage.MODEL__MODEL:
+        getModel().clear();
         return;
     }
     super.eUnset(featureID);
@@ -161,8 +161,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case FlowPackage.MODEL__GREETINGS:
-        return greetings != null && !greetings.isEmpty();
+      case FlowPackage.MODEL__MODEL:
+        return model != null && !model.isEmpty();
     }
     return super.eIsSet(featureID);
   }

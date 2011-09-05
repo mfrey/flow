@@ -187,6 +187,18 @@
       </markerResolutionGenerator>
    </extension>
 
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.xtext.projectwiz"
+            class="de.hs_rm.cs.vs.dsm.ui.FlowExecutableExtensionFactory:de.hs_rm.cs.vs.dsm.ui.wizard.FlowNewProjectWizard"
+            icon="icons/editor.gif"
+            id="de.hs_rm.cs.vs.dsm.ui.wizard.FlowNewProjectWizard"
+            name="Flow Project"
+            project="true">
+      </wizard>
+   </extension>
+
    	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 

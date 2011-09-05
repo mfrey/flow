@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: owl.presentation.OwlEditorPlugin$Implementation
 Bundle-Vendor: Hochschule RheinMain
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: owl.presentation,
  rdfs.presentation
 Require-Bundle: org.eclipse.core.runtime,
