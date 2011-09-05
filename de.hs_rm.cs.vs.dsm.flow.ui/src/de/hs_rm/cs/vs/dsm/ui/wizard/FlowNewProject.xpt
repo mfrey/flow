@@ -1,0 +1,28 @@
+«IMPORT de::hs_rm::cs::vs::dsm::ui::wizard»
+
+«DEFINE main FOR FlowProjectInfo»
+«EXPAND model FOR this»
+«EXPAND workflow FOR this»
+«ENDDEFINE»
+
+«DEFINE model FOR FlowProjectInfo»
+«FILE "src/model/Model.flw"-»
+/*
+ * This is an example model
+ */
+Hello Xtext!
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE workflow FOR FlowProjectInfo»
+«FILE "src/Generator.mwe2"-»
+module Generator
+
+var targetDir = "src-gen"
+var modelPath = "src/model"
+
+Workflow {
+	component = @workflow.FlowGenerator auto-inject {}
+}
+«ENDFILE»
+«ENDDEFINE»
