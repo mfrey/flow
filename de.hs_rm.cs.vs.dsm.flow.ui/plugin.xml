@@ -2,7 +2,6 @@
 <?eclipse version="3.0"?>
 
 <plugin>
-
     <extension
             point="org.eclipse.ui.editors">
         <editor
@@ -247,5 +246,19 @@
             extensions="flw">
     </provider>
   </extension>
+  
+     <extension
+         id="Application"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+         <run
+               class="de.hs_rm.cs.vs.dsm.ui.ApplicationImpl">
+         </run>
+      </application>
+   </extension>
+  
 
 </plugin>

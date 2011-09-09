@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: de.hs_rm.cs.vs.dsm.OWL
 Bundle-SymbolicName: de.hs_rm.cs.vs.dsm.owl;singleton:=true
-Bundle-Version: 0.0.1.qualifier
+Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .,
  libs/owlapi-bin.jar
 Bundle-Vendor: Hochschule RheinMain

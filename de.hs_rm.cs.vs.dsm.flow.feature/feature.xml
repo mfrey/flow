@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="de.hs_rm.cs.vs.dsm.flow.feature"
+      label="Flow Feature"
+      version="1.0.0.qualifier"
+      provider-name="Hochschule RheinMain"
+      os="linux,win32"
+      ws="gtk,win32"
+      nl="de_DE,en_US"
+      arch="x86,x86_64">
+
+   <description url="http://www.example.com">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <plugin
+         id="de.hs_rm.cs.vs.dsm.flow"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.hs_rm.cs.vs.dsm.flow.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.hs_rm.cs.vs.dsm.flow.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.hs_rm.cs.vs.dsm.owl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.hs_rm.cs.vs.dsm.owl.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.hs_rm.cs.vs.dsm.owl.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

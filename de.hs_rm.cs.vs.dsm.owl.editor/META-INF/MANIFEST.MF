@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: de.hs_rm.cs.vs.dsm.owl.Editor
 Bundle-SymbolicName: de.hs_rm.cs.vs.dsm.owl.editor;singleton:=true
-Bundle-Version: 0.0.1.qualifier
+Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: owl.presentation.OwlEditorPlugin$Implementation
 Bundle-Vendor: Hochschule RheinMain

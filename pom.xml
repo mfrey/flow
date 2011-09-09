@@ -24,15 +24,11 @@
 		<module>de.hs_rm.cs.vs.dsm.flow</module>
 		<module>de.hs_rm.cs.vs.dsm.flow.tests</module>
 		<module>de.hs_rm.cs.vs.dsm.flow.ui</module>
+		<module>de.hs_rm.cs.vs.dsm.flow.feature</module>
+		<module>de.hs_rm.cs.vs.dsm.flow.product</module>
 		<module>de.hs_rm.cs.vs.dsm.owl</module>
 		<module>de.hs_rm.cs.vs.dsm.owl.edit</module>
 		<module>de.hs_rm.cs.vs.dsm.owl.editor</module>
-<!--
-		<module>de.hs_rm.cs.vs.dsm.flow.feature</module>
-		<module>de.hs_rm.cs.vs.dsm.flow.platform.feature</module>
-		<module>de.hs_rm.cs.vs.dsm.flow.product</module>
--->
-
 		<!-- This should be fixed <module>de.hs_rm.cs.vs.dsm.owl.tests</module> -->
 	</modules>
 	
@@ -78,6 +74,13 @@
 				<configuration>
 					<format>${build.qualifier}</format>
 					<target>site</target>
+    					<environments>
+      					  <environment>
+        				    <os>linux</os>
+        				    <ws>gtk</ws>
+        				    <arch>x86_64</arch>
+                                          </environment>
+    					</environments>
 				</configuration>
 			</plugin>
 			<plugin>

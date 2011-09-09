@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: de.hs_rm.cs.vs.dsm.flow.tests
-Bundle-Vendor: My Company
-Bundle-Version: 1.0.0
+Bundle-Vendor: Hochschule RheinMain 
+Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: de.hs_rm.cs.vs.dsm.flow.tests; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: de.hs_rm.cs.vs.dsm.flow,

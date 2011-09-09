@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="de_hs_rm_cs_vs_dsm_flow_product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="de.hs_rm.cs.vs.dsm.flow.ui.Application"
+            name="Flow Product">
+         <property
+               name="appName"
+               value="Flow Product">
+         </property>
+      </product>
+   </extension>
+
+</plugin>
