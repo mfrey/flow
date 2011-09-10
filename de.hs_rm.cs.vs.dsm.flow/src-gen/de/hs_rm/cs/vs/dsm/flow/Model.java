@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.Model#getModel <em>Model</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.Model#getModels <em>Models</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,19 +28,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Model</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Models</b></em>' containment reference list.
    * The list contents are of type {@link de.hs_rm.cs.vs.dsm.flow.PackageDeclaration}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Model</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Models</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Model</em>' containment reference list.
-   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getModel_Model()
+   * @return the value of the '<em>Models</em>' containment reference list.
+   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getModel_Models()
    * @model containment="true"
    * @generated
    */
-  EList<PackageDeclaration> getModel();
+  EList<PackageDeclaration> getModels();
 
 } // Model

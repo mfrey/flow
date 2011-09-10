@@ -70,31 +70,84 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.MODEL: return createModel();
       case FlowPackage.PACKAGE_DECLARATION: return createPackageDeclaration();
       case FlowPackage.MODEL_ELEMENT: return createModelElement();
-      case FlowPackage.STREAM_DECLARATION: return createStreamDeclaration();
-      case FlowPackage.STREAM_ELEMENT: return createStreamElement();
       case FlowPackage.IMPORT: return createImport();
-      case FlowPackage.TEST_ELEMENT: return createTestElement();
-      case FlowPackage.TEST_ASSIGN: return createTestAssign();
-      case FlowPackage.OWL_TEST_ELEMENT: return createOWLTestElement();
-      case FlowPackage.OPERATOR: return createOperator();
-      case FlowPackage.VARIABLE: return createVariable();
-      case FlowPackage.VARIABLE_DECLARATION: return createVariableDeclaration();
-      case FlowPackage.STREAM_DEFINITION: return createStreamDefinition();
+      case FlowPackage.STREAM_STATEMENT: return createStreamStatement();
+      case FlowPackage.STATEMENT: return createStatement();
+      case FlowPackage.VARIABLE_STATEMENT: return createVariableStatement();
       case FlowPackage.STREAM_ACCESS: return createStreamAccess();
+      case FlowPackage.STREAM_DECLARATION_ACCESS: return createStreamDeclarationAccess();
+      case FlowPackage.STREAM_DEFINITION: return createStreamDefinition();
+      case FlowPackage.JOIN_OPERATOR: return createJoinOperator();
       case FlowPackage.STREAM_OPERATOR_PARAMETER: return createStreamOperatorParameter();
-      case FlowPackage.COUNT_OPERATOR: return createCountOperator();
-      case FlowPackage.STANDARD_DEVIATION_OPERATOR: return createStandardDeviationOperator();
-      case FlowPackage.AVERAGE_OPERATOR: return createAverageOperator();
       case FlowPackage.ELEMENT_JOIN_OPERATOR: return createElementJoinOperator();
+      case FlowPackage.FILTER_OPERATOR: return createFilterOperator();
+      case FlowPackage.SPLIT_OPERATOR: return createSplitOperator();
+      case FlowPackage.MATCH_OPERATOR: return createMatchOperator();
+      case FlowPackage.SYMMETRIC_DIFFERENCE_OPERATOR: return createSymmetricDifferenceOperator();
+      case FlowPackage.DIFFERENCE_OPERATOR: return createDifferenceOperator();
+      case FlowPackage.MAP_OPERATOR: return createMapOperator();
+      case FlowPackage.FUNCTION_STATEMENT: return createFunctionStatement();
+      case FlowPackage.INPUT_OPERATOR: return createInputOperator();
+      case FlowPackage.RETURN_TYPE_OPERATOR: return createReturnTypeOperator();
+      case FlowPackage.NO_RETURN_TYPE_OPERATOR: return createNoReturnTypeOperator();
       case FlowPackage.TAG_OPERATOR: return createTagOperator();
+      case FlowPackage.UN_TAG_OPERATOR: return createUnTagOperator();
+      case FlowPackage.UN_TAG_ELEMENT: return createUnTagElement();
       case FlowPackage.TAG_ELEMENT: return createTagElement();
       case FlowPackage.TAG_CLASS_ELEMENT: return createTagClassElement();
       case FlowPackage.TAG_OBJECT_PROPERTY_ELEMENT: return createTagObjectPropertyElement();
       case FlowPackage.TAG_DATA_TYPE_PROPERTY_ELEMENT: return createTagDataTypePropertyElement();
-      case FlowPackage.OUTPUT_OPERATOR: return createOutputOperator();
-      case FlowPackage.OUTPUT_OPERATOR_PARAMETER: return createOutputOperatorParameter();
       case FlowPackage.BARRIER_OPERATOR: return createBarrierOperator();
       case FlowPackage.WINDOW_OPERATOR: return createWindowOperator();
+      case FlowPackage.MARKER_OPERATOR: return createMarkerOperator();
+      case FlowPackage.SWRL_OPERATOR: return createSWRLOperator();
+      case FlowPackage.SWRL_RULE: return createSWRLRule();
+      case FlowPackage.ANTECEDENT_RULE: return createAntecedentRule();
+      case FlowPackage.CONSEQUENT_RULE: return createConsequentRule();
+      case FlowPackage.RULE: return createRule();
+      case FlowPackage.OCL_OPERATOR: return createOCLOperator();
+      case FlowPackage.COUNT_OPERATOR: return createCountOperator();
+      case FlowPackage.STANDARD_DEVIATION_OPERATOR: return createStandardDeviationOperator();
+      case FlowPackage.AVERAGE_OPERATOR: return createAverageOperator();
+      case FlowPackage.OUTPUT_OPERATOR: return createOutputOperator();
+      case FlowPackage.OUTPUT_OPERATOR_PARAMETER: return createOutputOperatorParameter();
+      case FlowPackage.PROCESSING_EXPRESSION: return createProcessingExpression();
+      case FlowPackage.BLOCK_EXPRESSION: return createBlockExpression();
+      case FlowPackage.RETURN_STATEMENT: return createReturnStatement();
+      case FlowPackage.CONDITIONAL_EXPRESSIONS: return createConditionalExpressions();
+      case FlowPackage.IF_ELSE_CONDITION: return createIfElseCondition();
+      case FlowPackage.SWITCH_CASE_CONDITION: return createSwitchCaseCondition();
+      case FlowPackage.CASE_STATEMENT: return createCaseStatement();
+      case FlowPackage.FUNCTION_DEFINITION: return createFunctionDefinition();
+      case FlowPackage.RETURN_VARIABLE: return createReturnVariable();
+      case FlowPackage.RETURNABLE: return createReturnable();
+      case FlowPackage.VARIABLE_DECLARATION: return createVariableDeclaration();
+      case FlowPackage.WHILE_LOOP_DEFINITION: return createWhileLoopDefinition();
+      case FlowPackage.VARIABLE: return createVariable();
+      case FlowPackage.VARIABLE_DEFINITION: return createVariableDefinition();
+      case FlowPackage.NUMBER_VARIABLE_DEFINITION: return createNumberVariableDefinition();
+      case FlowPackage.STRING_VARIABLE_DEFINITION: return createStringVariableDefinition();
+      case FlowPackage.BOOLEAN_VARIABLE_DEFINITION: return createBooleanVariableDefinition();
+      case FlowPackage.STRUCTURE_DECLARATION: return createStructureDeclaration();
+      case FlowPackage.STREAM_DECLARATION: return createStreamDeclaration();
+      case FlowPackage.STREAM_ELEMENT: return createStreamElement();
+      case FlowPackage.STRUCTURE_ELEMENTS: return createStructureElements();
+      case FlowPackage.EXPRESSION: return createExpression();
+      case FlowPackage.DATA_TYPE: return createDataType();
+      case FlowPackage.SIMPLE_DATA_TYPE: return createSimpleDataType();
+      case FlowPackage.COMPLEX_DATA_TYPE: return createComplexDataType();
+      case FlowPackage.INTEGER_DATA_TYPE: return createIntegerDataType();
+      case FlowPackage.BOOLEAN_DATA_TYPE: return createBooleanDataType();
+      case FlowPackage.FLOAT_DATA_TYPE: return createFloatDataType();
+      case FlowPackage.STRING_DATA_TYPE: return createStringDataType();
+      case FlowPackage.BOOLEAN_OPERATION: return createBooleanOperation();
+      case FlowPackage.PLUS: return createPlus();
+      case FlowPackage.MINUS: return createMinus();
+      case FlowPackage.MULTI: return createMulti();
+      case FlowPackage.DIV: return createDiv();
+      case FlowPackage.NUMBER_LITERAL: return createNumberLiteral();
+      case FlowPackage.VARIABLE_CALL: return createVariableCall();
+      case FlowPackage.FUNCTION_CALL: return createFunctionCall();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -138,28 +191,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public StreamDeclaration createStreamDeclaration()
-  {
-    StreamDeclarationImpl streamDeclaration = new StreamDeclarationImpl();
-    return streamDeclaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public StreamElement createStreamElement()
-  {
-    StreamElementImpl streamElement = new StreamElementImpl();
-    return streamElement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Import createImport()
   {
     ImportImpl import_ = new ImportImpl();
@@ -171,10 +202,10 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TestElement createTestElement()
+  public StreamStatement createStreamStatement()
   {
-    TestElementImpl testElement = new TestElementImpl();
-    return testElement;
+    StreamStatementImpl streamStatement = new StreamStatementImpl();
+    return streamStatement;
   }
 
   /**
@@ -182,10 +213,10 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TestAssign createTestAssign()
+  public Statement createStatement()
   {
-    TestAssignImpl testAssign = new TestAssignImpl();
-    return testAssign;
+    StatementImpl statement = new StatementImpl();
+    return statement;
   }
 
   /**
@@ -193,54 +224,10 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public OWLTestElement createOWLTestElement()
+  public VariableStatement createVariableStatement()
   {
-    OWLTestElementImpl owlTestElement = new OWLTestElementImpl();
-    return owlTestElement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Operator createOperator()
-  {
-    OperatorImpl operator = new OperatorImpl();
-    return operator;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Variable createVariable()
-  {
-    VariableImpl variable = new VariableImpl();
-    return variable;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VariableDeclaration createVariableDeclaration()
-  {
-    VariableDeclarationImpl variableDeclaration = new VariableDeclarationImpl();
-    return variableDeclaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public StreamDefinition createStreamDefinition()
-  {
-    StreamDefinitionImpl streamDefinition = new StreamDefinitionImpl();
-    return streamDefinition;
+    VariableStatementImpl variableStatement = new VariableStatementImpl();
+    return variableStatement;
   }
 
   /**
@@ -259,43 +246,43 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public StreamDeclarationAccess createStreamDeclarationAccess()
+  {
+    StreamDeclarationAccessImpl streamDeclarationAccess = new StreamDeclarationAccessImpl();
+    return streamDeclarationAccess;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StreamDefinition createStreamDefinition()
+  {
+    StreamDefinitionImpl streamDefinition = new StreamDefinitionImpl();
+    return streamDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public JoinOperator createJoinOperator()
+  {
+    JoinOperatorImpl joinOperator = new JoinOperatorImpl();
+    return joinOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public StreamOperatorParameter createStreamOperatorParameter()
   {
     StreamOperatorParameterImpl streamOperatorParameter = new StreamOperatorParameterImpl();
     return streamOperatorParameter;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public CountOperator createCountOperator()
-  {
-    CountOperatorImpl countOperator = new CountOperatorImpl();
-    return countOperator;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public StandardDeviationOperator createStandardDeviationOperator()
-  {
-    StandardDeviationOperatorImpl standardDeviationOperator = new StandardDeviationOperatorImpl();
-    return standardDeviationOperator;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AverageOperator createAverageOperator()
-  {
-    AverageOperatorImpl averageOperator = new AverageOperatorImpl();
-    return averageOperator;
   }
 
   /**
@@ -314,10 +301,142 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public FilterOperator createFilterOperator()
+  {
+    FilterOperatorImpl filterOperator = new FilterOperatorImpl();
+    return filterOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SplitOperator createSplitOperator()
+  {
+    SplitOperatorImpl splitOperator = new SplitOperatorImpl();
+    return splitOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MatchOperator createMatchOperator()
+  {
+    MatchOperatorImpl matchOperator = new MatchOperatorImpl();
+    return matchOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SymmetricDifferenceOperator createSymmetricDifferenceOperator()
+  {
+    SymmetricDifferenceOperatorImpl symmetricDifferenceOperator = new SymmetricDifferenceOperatorImpl();
+    return symmetricDifferenceOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DifferenceOperator createDifferenceOperator()
+  {
+    DifferenceOperatorImpl differenceOperator = new DifferenceOperatorImpl();
+    return differenceOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MapOperator createMapOperator()
+  {
+    MapOperatorImpl mapOperator = new MapOperatorImpl();
+    return mapOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FunctionStatement createFunctionStatement()
+  {
+    FunctionStatementImpl functionStatement = new FunctionStatementImpl();
+    return functionStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InputOperator createInputOperator()
+  {
+    InputOperatorImpl inputOperator = new InputOperatorImpl();
+    return inputOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ReturnTypeOperator createReturnTypeOperator()
+  {
+    ReturnTypeOperatorImpl returnTypeOperator = new ReturnTypeOperatorImpl();
+    return returnTypeOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NoReturnTypeOperator createNoReturnTypeOperator()
+  {
+    NoReturnTypeOperatorImpl noReturnTypeOperator = new NoReturnTypeOperatorImpl();
+    return noReturnTypeOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public TagOperator createTagOperator()
   {
     TagOperatorImpl tagOperator = new TagOperatorImpl();
     return tagOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public UnTagOperator createUnTagOperator()
+  {
+    UnTagOperatorImpl unTagOperator = new UnTagOperatorImpl();
+    return unTagOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public UnTagElement createUnTagElement()
+  {
+    UnTagElementImpl unTagElement = new UnTagElementImpl();
+    return unTagElement;
   }
 
   /**
@@ -369,6 +488,138 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public BarrierOperator createBarrierOperator()
+  {
+    BarrierOperatorImpl barrierOperator = new BarrierOperatorImpl();
+    return barrierOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WindowOperator createWindowOperator()
+  {
+    WindowOperatorImpl windowOperator = new WindowOperatorImpl();
+    return windowOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MarkerOperator createMarkerOperator()
+  {
+    MarkerOperatorImpl markerOperator = new MarkerOperatorImpl();
+    return markerOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SWRLOperator createSWRLOperator()
+  {
+    SWRLOperatorImpl swrlOperator = new SWRLOperatorImpl();
+    return swrlOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SWRLRule createSWRLRule()
+  {
+    SWRLRuleImpl swrlRule = new SWRLRuleImpl();
+    return swrlRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AntecedentRule createAntecedentRule()
+  {
+    AntecedentRuleImpl antecedentRule = new AntecedentRuleImpl();
+    return antecedentRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ConsequentRule createConsequentRule()
+  {
+    ConsequentRuleImpl consequentRule = new ConsequentRuleImpl();
+    return consequentRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Rule createRule()
+  {
+    RuleImpl rule = new RuleImpl();
+    return rule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OCLOperator createOCLOperator()
+  {
+    OCLOperatorImpl oclOperator = new OCLOperatorImpl();
+    return oclOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CountOperator createCountOperator()
+  {
+    CountOperatorImpl countOperator = new CountOperatorImpl();
+    return countOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StandardDeviationOperator createStandardDeviationOperator()
+  {
+    StandardDeviationOperatorImpl standardDeviationOperator = new StandardDeviationOperatorImpl();
+    return standardDeviationOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AverageOperator createAverageOperator()
+  {
+    AverageOperatorImpl averageOperator = new AverageOperatorImpl();
+    return averageOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public OutputOperator createOutputOperator()
   {
     OutputOperatorImpl outputOperator = new OutputOperatorImpl();
@@ -391,10 +642,10 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BarrierOperator createBarrierOperator()
+  public ProcessingExpression createProcessingExpression()
   {
-    BarrierOperatorImpl barrierOperator = new BarrierOperatorImpl();
-    return barrierOperator;
+    ProcessingExpressionImpl processingExpression = new ProcessingExpressionImpl();
+    return processingExpression;
   }
 
   /**
@@ -402,10 +653,395 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public WindowOperator createWindowOperator()
+  public BlockExpression createBlockExpression()
   {
-    WindowOperatorImpl windowOperator = new WindowOperatorImpl();
-    return windowOperator;
+    BlockExpressionImpl blockExpression = new BlockExpressionImpl();
+    return blockExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ReturnStatement createReturnStatement()
+  {
+    ReturnStatementImpl returnStatement = new ReturnStatementImpl();
+    return returnStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ConditionalExpressions createConditionalExpressions()
+  {
+    ConditionalExpressionsImpl conditionalExpressions = new ConditionalExpressionsImpl();
+    return conditionalExpressions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IfElseCondition createIfElseCondition()
+  {
+    IfElseConditionImpl ifElseCondition = new IfElseConditionImpl();
+    return ifElseCondition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SwitchCaseCondition createSwitchCaseCondition()
+  {
+    SwitchCaseConditionImpl switchCaseCondition = new SwitchCaseConditionImpl();
+    return switchCaseCondition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CaseStatement createCaseStatement()
+  {
+    CaseStatementImpl caseStatement = new CaseStatementImpl();
+    return caseStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FunctionDefinition createFunctionDefinition()
+  {
+    FunctionDefinitionImpl functionDefinition = new FunctionDefinitionImpl();
+    return functionDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ReturnVariable createReturnVariable()
+  {
+    ReturnVariableImpl returnVariable = new ReturnVariableImpl();
+    return returnVariable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Returnable createReturnable()
+  {
+    ReturnableImpl returnable = new ReturnableImpl();
+    return returnable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableDeclaration createVariableDeclaration()
+  {
+    VariableDeclarationImpl variableDeclaration = new VariableDeclarationImpl();
+    return variableDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WhileLoopDefinition createWhileLoopDefinition()
+  {
+    WhileLoopDefinitionImpl whileLoopDefinition = new WhileLoopDefinitionImpl();
+    return whileLoopDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Variable createVariable()
+  {
+    VariableImpl variable = new VariableImpl();
+    return variable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableDefinition createVariableDefinition()
+  {
+    VariableDefinitionImpl variableDefinition = new VariableDefinitionImpl();
+    return variableDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NumberVariableDefinition createNumberVariableDefinition()
+  {
+    NumberVariableDefinitionImpl numberVariableDefinition = new NumberVariableDefinitionImpl();
+    return numberVariableDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringVariableDefinition createStringVariableDefinition()
+  {
+    StringVariableDefinitionImpl stringVariableDefinition = new StringVariableDefinitionImpl();
+    return stringVariableDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BooleanVariableDefinition createBooleanVariableDefinition()
+  {
+    BooleanVariableDefinitionImpl booleanVariableDefinition = new BooleanVariableDefinitionImpl();
+    return booleanVariableDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StructureDeclaration createStructureDeclaration()
+  {
+    StructureDeclarationImpl structureDeclaration = new StructureDeclarationImpl();
+    return structureDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StreamDeclaration createStreamDeclaration()
+  {
+    StreamDeclarationImpl streamDeclaration = new StreamDeclarationImpl();
+    return streamDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StreamElement createStreamElement()
+  {
+    StreamElementImpl streamElement = new StreamElementImpl();
+    return streamElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StructureElements createStructureElements()
+  {
+    StructureElementsImpl structureElements = new StructureElementsImpl();
+    return structureElements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression createExpression()
+  {
+    ExpressionImpl expression = new ExpressionImpl();
+    return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataType createDataType()
+  {
+    DataTypeImpl dataType = new DataTypeImpl();
+    return dataType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SimpleDataType createSimpleDataType()
+  {
+    SimpleDataTypeImpl simpleDataType = new SimpleDataTypeImpl();
+    return simpleDataType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ComplexDataType createComplexDataType()
+  {
+    ComplexDataTypeImpl complexDataType = new ComplexDataTypeImpl();
+    return complexDataType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IntegerDataType createIntegerDataType()
+  {
+    IntegerDataTypeImpl integerDataType = new IntegerDataTypeImpl();
+    return integerDataType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BooleanDataType createBooleanDataType()
+  {
+    BooleanDataTypeImpl booleanDataType = new BooleanDataTypeImpl();
+    return booleanDataType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FloatDataType createFloatDataType()
+  {
+    FloatDataTypeImpl floatDataType = new FloatDataTypeImpl();
+    return floatDataType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringDataType createStringDataType()
+  {
+    StringDataTypeImpl stringDataType = new StringDataTypeImpl();
+    return stringDataType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BooleanOperation createBooleanOperation()
+  {
+    BooleanOperationImpl booleanOperation = new BooleanOperationImpl();
+    return booleanOperation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Plus createPlus()
+  {
+    PlusImpl plus = new PlusImpl();
+    return plus;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Minus createMinus()
+  {
+    MinusImpl minus = new MinusImpl();
+    return minus;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Multi createMulti()
+  {
+    MultiImpl multi = new MultiImpl();
+    return multi;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Div createDiv()
+  {
+    DivImpl div = new DivImpl();
+    return div;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NumberLiteral createNumberLiteral()
+  {
+    NumberLiteralImpl numberLiteral = new NumberLiteralImpl();
+    return numberLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableCall createVariableCall()
+  {
+    VariableCallImpl variableCall = new VariableCallImpl();
+    return variableCall;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FunctionCall createFunctionCall()
+  {
+    FunctionCallImpl functionCall = new FunctionCallImpl();
+    return functionCall;
   }
 
   /**

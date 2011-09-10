@@ -3,7 +3,7 @@
  */
 package de.hs_rm.cs.vs.dsm;
 
-import org.eclipse.xtext.naming.IQualifiedNameProvider;
+//import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.resource.IResourceServiceProvider;
 
 /**
@@ -13,9 +13,9 @@ public class FlowRuntimeModule extends de.hs_rm.cs.vs.dsm.AbstractFlowRuntimeMod
 	/**
 	 * The function registers a resource service provider implementation for the language 
 	 */
-	public Class<? extends IResourceServiceProvider> bindIResourceServiceProvider() {
-		return FlowResourceProvider.class;
-	}
+	//public Class<? extends IResourceServiceProvider> bindIResourceServiceProvider() {
+	//	return FlowResourceProvider.class;
+	//}
 	/**
 	 * The function registers a qualified name provider implementation for the language 
 	 */

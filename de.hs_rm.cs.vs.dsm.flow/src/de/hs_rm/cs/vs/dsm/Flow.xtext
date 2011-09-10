@@ -1,21 +1,24 @@
-grammar de.hs_rm.cs.vs.dsm.Flow with org.eclipse.xtext.common.Terminals
-   
+grammar de.hs_rm.cs.vs.dsm.Flow
+
+/** Define hidden terminal symbols */
+hidden(WS, ML_COMMENT, SL_COMMENT)
+
 /** Import of the ecore model */
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 /** Import of the base ocl ecore model */
 //import "platform:/resource/de.hs_rm.cs.vs.dsm.flow/model/BaseCST.ecore" as base
 /** Import of the ocl ecore model */
 //import "platform:/resource/org.eclipse.ocl.examples.xtext.base/model/EssentialOCLCST.ecore" as essential
-
-/** Referring to Java types */
-import "http://www.eclipse.org/xtext/common/JavaVMTypes" as jvmTypes
 /** Import of an owl ecore model */
 import "platform:/resource/de.hs_rm.cs.vs.dsm.flow/model/owl.ecore" as OWL
 /** Generate the grammar for the language flow */
 generate flow "http://www.hs_rm.de/cs/vs/dsm/Flow"
 
+/**
+ * The model of the language consists of multiple packages
+ */
 Model:
-	model+=(PackageDeclaration)+; 
+	(models+=PackageDeclaration)+; 
 
 /**
  * A package consists of multiple model elements of the language
@@ -23,83 +26,72 @@ Model:
 PackageDeclaration:
 	'package' name=ID '{'
 		(elements+=ModelElement)*
-	'}'';';
+	'}';
 
 ModelElement:
-	PackageDeclaration | Import | TestElement | TestAssign | StreamDeclaration | Operator |
-	StreamDefinition; 
-	
-	
-StreamDeclaration:
-	'stream' name=ID '{'
-		elements+=(StreamElement)+
-	'}'';'
-;
+	PackageDeclaration | Import | StructureDeclaration | 
+	StreamDeclaration | FunctionDefinition | ProcessingExpression;
 
-StreamElement:
-	type=[jvmTypes::JvmType] name=ID';';
-	
+/* 
+TestRule:
+	'testrule1234' var=[base::DetailCS];
+*/
+
 /**
- * The Import rule defines a import statement for referring to other *.flw files as well as 
- * files of knowledge representations such as *.owl or UML constraints suchs as *.ocl
+ * The Import rule defines a import statement for referring to other *.flow files as well as 
+ * files of knowledge representations such as *.owl and *.ocl
  */
 Import:
-	'import' importURI=STRING ';';
-	
-TestElement:
-	'var' name=ID;
+	'import' importURI=STRING;
 
-TestAssign:
-	'let' left=[TestElement] '=' right=[TestElement];	
-	
-OWLTestElement:
-	'owl' element=[OWL::OWLClass];
+/**
+ * Every stream expression has at least one return type and one operation. Multiple
+ * return types are seperated by a comma. 
+ */
+StreamStatement:
+	returnStream+=[StreamDefinition] (',' returnStream+=[StreamDefinition])*  
+	'=' expression=ReturnTypeOperator ';'; 
 
-// TODO: Operatoren nach Operatoren mit Rueckgabetyp und ohne Rueckgabetyp auftrennen
-Operator: 
-	ElementJoinOperator | SymmetricDifferenceOperator | DifferenceOperator | SplitOperator |
-	TagOperator | 
-	CountOperator | StandardDeviationOperator | AverageOperator |
-	OutputOperator;
+Statement:
+	VariableStatement;
 
+/**
+ * A variable statement refers to an existing variable and 'assigns' the variable an 
+ * expression.
+ */
+VariableStatement:
+	reference=[Variable] '=' expression=Expression ';';
 
-Variable:
-	VariableDeclaration;
-	
-VariableDeclaration:
-	type=[jvmTypes::JvmType] name=ID;
-
-StreamDefinition:
-	reference=[StreamDeclaration] name=ID';';
 /**
  * Elements of a stream are accessed by a a stream definition followed by a dot 
  */
 StreamAccess:
 	reference=[StreamDefinition]'.'element=[VariableDeclaration];
-	
+
+/**
+ * Elements of a stream declaration are accessed by a a stream declaration followed by 
+ * a colon. 
+ */
+StreamDeclarationAccess:
+	reference=[StreamDeclaration]':'element=[VariableDeclaration];
+
+/**
+ * A stream definition creates a stream with a referenced to a declared stream.
+ * This could be list of multiple streams seperated by a comma.
+ */
+StreamDefinition:
+	reference=[StreamDeclaration] name=ID';';
+
+/**
+ * The JoinOperator rule defines a join operation on two streams.
+ */	
+JoinOperator:
+	'join' '('parameters+=StreamOperatorParameter ',' 
+	  parameters+=StreamOperatorParameter
+	   (',' parameters+=StreamOperatorParameter)* ')';
+
 StreamOperatorParameter:
 	stream=[StreamDefinition] ('['barrier=BarrierOperator']')?;
-
-/**
- * The CountOperator rule defines a count operator which counts an element
- * of a stream.
- */
-CountOperator:
-	'count''('parameter=StreamAccess ',' stream=StreamOperatorParameter ')';	
-
-/**
- * The StandardDeviationOperator rule defines a operator which calculates the standard
- * deviation of an element.
- */		
-StandardDeviationOperator:
-	'std''('parameter=StreamAccess ',' stream=StreamOperatorParameter ')';	
-
-/**
- * The AverageOperator rule defines a operator which calculates the average
- * of an element.
- */			
-AverageOperator:
-	'avg''('parameter=StreamAccess ',' stream=StreamOperatorParameter ')';	
 
 /**
  * The ElementJoinOperator rule defines a join operation on a stream and another stream element
@@ -109,14 +101,84 @@ ElementJoinOperator:
 	'ejoin''('(elementParameters+=StreamAccess | variableElementParameters+=[Variable]) 
 	  (',' elementParameters+=StreamAccess)* (',' variableElementParameters+=[Variable])*
 	  ',' parameter=StreamOperatorParameter ')';
+
+/**
+ * The FilterOperator rule defines a filter operation on a stream. The expression of the operator 
+ * is a conditional expression which defines if a element of a stream is forwarded in a outgoing
+ * stream or not.
+ */
+FilterOperator:
+	'filter' '(' expression+=Expression (',' expression+=Expression)* ',' stream=StreamOperatorParameter')';
+
+/**
+ * The SplitOperator rule duplicates a stream
+ */
+SplitOperator:
+	'split''('parameter=StreamOperatorParameter')';
 	
+/**
+ * The MatchOperator rule joins two streams depending on a expression and does a calculation
+ * based on a second expression.
+ */
+MatchOperator:
+	'match''('expression=Expression ',' calculation=Expression ',' stream+=StreamOperatorParameter (','stream+=StreamOperatorParameter)* ')';
+	
+/**
+ * The SymmetricDifferenceOperator rule determines the symmetric difference (of a set) of 
+ * multiple streams.
+ */
+SymmetricDifferenceOperator:
+	'sdif''('parameters+=StreamOperatorParameter ',' 
+		parameters+=StreamOperatorParameter (',' parameters+=StreamOperatorParameter)*')';
+		
+/**
+ * The DifferenceOperator rule determines the difference (of a set) of multiple streams.
+ */
+DifferenceOperator:
+	'diff''('parameters+=StreamOperatorParameter ',' 
+		parameters+=StreamOperatorParameter (',' parameters+=StreamOperatorParameter)*')';
+
+MapOperator:
+	'map''('functionList+=FunctionStatement (',' functionList+=FunctionStatement)*	',' stream=StreamOperatorParameter ')';
+
+FunctionStatement:
+	element=StreamAccess '=' function=[FunctionDefinition]('('(arguments+=Expression(',' arguments+=Expression)*)?')');
+
+InputOperator:
+	'in' '('location=STRING ',' regexp=STRING ',' model=[StreamDeclaration]')';
+
+/**
+ * The rule summarizes the operators which have a return type
+ */
+ReturnTypeOperator:
+	InputOperator | JoinOperator | SymmetricDifferenceOperator | DifferenceOperator | 
+	TagOperator | UnTagOperator | FilterOperator | SplitOperator | CountOperator | 
+	StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | 
+	MapOperator | OCLOperator | SWRLOperator;
+
+/**
+ * The rule summarizes the operators which have no return type
+ */
+NoReturnTypeOperator:
+	OutputOperator;
+
 /**
  * The TagOperator rule tags elements of a stream with elements of an ontology
  */
 TagOperator:
 	'tag''('parameters+=TagElement (',' parameters+=TagElement)* 
 	',' stream=StreamOperatorParameter')';
-	
+
+/**
+ * The rule summarizes the operators which have no return type
+ */
+UnTagOperator:
+	'untag''('parameters+=UnTagElement(',' parameters+=UnTagElement)* 
+	',' stream=StreamOperatorParameter')';
+
+UnTagElement:
+	element=[OWL::OWLClass|STRING] 'is' reference=StreamAccess; 
+
 /**
  * The overall tag element rule for certain elements of owl ontology. Since a owl class, object property
  * and datatype property don't share a common 'supertype' it's not possible to use one rule. In addition
@@ -141,26 +203,14 @@ TagObjectPropertyElement:
  * The tag element for a datatype property
  */
 TagDataTypePropertyElement:
-	reference=StreamAccess 'is' 'datatype' element=[OWL::OWLDatatypeProperty|STRING];
-	
-/**
- * The OutputOperator rule defines a operator which prints the content of the
- * a stream specified in parameter to a location specified in location.
- */	
-OutputOperator:
-	'out''('parameter=OutputOperatorParameter ',' location=STRING ',' stream=StreamOperatorParameter ')' ';';
-/**
- * Parameter for the OutputOperator which are stream elements
- */
-OutputOperatorParameter:
-	element+=StreamAccess (',' element+=StreamAccess)*;
-	
+	reference=StreamAccess 'is' 'datatype' element=[OWL::OWLDatatypeProperty|STRING]; 
+
 /**
  * The BarrierOperator is a rule which summarizes the barrier operators of the
  * language. At present the language supports only two barrier operators.
  */
 BarrierOperator:
-	WindowOperator;
+	WindowOperator | MarkerOperator;
 
 /**
  * The WindowOperator rule defines a window operator which is part of several operators. It
@@ -170,30 +220,307 @@ WindowOperator:
 	(setting='last' value=NUMBER (unit=('min' | 'hrs' | 'sec' | 'elements'))? | setting='now');
 
 /**
- * The SymmetricDifferenceOperator rule determines the symmetric difference (of a set) of 
- * multiple streams.
- */
-SymmetricDifferenceOperator:
-	'sdif''('parameters+=StreamOperatorParameter ',' 
-		parameters+=StreamOperatorParameter (',' parameters+=StreamOperatorParameter)*')';
-		
-/**
- * The DifferenceOperator rule determines the difference (of a set) of multiple streams.
- */
-DifferenceOperator:
-	'diff''('parameters+=StreamOperatorParameter ',' 
-		parameters+=StreamOperatorParameter (',' parameters+=StreamOperatorParameter)*')';	
+ * The MarkerOperator rule defines a marker operator which is part of several operators. It
+ * defines a marker element in a stream. A marker element is a element which approves on a 
+ * certain criteria (expression).
+ */	
+MarkerOperator:
+	'marker' expression=Expression;
 
 /**
- * The SplitOperator rule duplicates a stream
+ * The SWRL rule defines a swrl operator which applies a swrl rule to elements
+ * of a stream.
  */
-SplitOperator:
-	'split''('parameter=StreamOperatorParameter')';
+SWRLOperator:
+	'swrl''('rule=SWRLRule ',' barrier+=StreamOperatorParameter (',' barrier+=StreamOperatorParameter)*')';
+
+SWRLRule:
+	'Implies' '(' antecedent=AntecedentRule ',' consequent=ConsequentRule ')';
+
+AntecedentRule:
+	'Antecedent' '(' atoms+=Rule (',' atoms+=Rule)* ')';
+
+ConsequentRule:
+	'Consequent' '(' atoms+=Rule (',' atoms+=Rule)* ')';
+
+Rule:
+	name=[OWL::OWLObjectProperty|STRING] '(' '?' variable+=StreamAccess (','  '?' variable+=StreamAccess )* ')';
+
+/*
+OCLOperator:
+  'ocl''('constraint=OCLConstraint ',' stream+=[StreamDefinition] 
+    (',' stream+=[StreamDefinition])* ')';
+
+OCLConstraint:
+  OperationContextDeclarationConstraint;
+
+OperationContextDeclarationConstraint returns OperationContextDeclarationConstraint:
+  'context' operation=OperationReferenceCS '('(parameters+=ParameterCS 
+    (',' parameters+=ParameterCS)*)?')' ':' (type=TypeExpCS)?
+    ((preconditions+=PreconditionCS) | (postconditions+=PostconditionCS) | 
+    (bodies+=BodyCS))*
+
+OperationReferenceCS returns base::OperationRefCS:
+  SimpleOperationRefCS;
+
+SimpleOperationRefCS returns base::SimpleOperationRefCS:
+  operation=[base::OperationCS|Identifier];
+
+ParameterCS returns essential::VariableCS:
+  (name=SimpleName ':')? type=TypeExpCS;
+
+PreconditionCS returns PreCS :
+  'pre' (name=SimpleName)? ':' expression=ExpCS;
+
+PostconditionCS returns PostCS:
+  'post' (name=SimpleName)? ':' expression=ExpCS;
+
+BodyCS returns BodyCS:
+  'body' (name=SimpleName)? ':' expression=ExpCS;
+ */
+
+/**
+ * The CountOperator rule defines a count operator which counts an element
+ * of a stream.
+ */
+OCLOperator:
+	'ocl''('constraint=STRING ',' stream=StreamOperatorParameter ')';
+	
+/**
+ * The CountOperator rule defines a count operator which counts an element
+ * of a stream.
+ */
+CountOperator:
+	'count''('parameter=StreamAccess ',' stream=StreamOperatorParameter ')';	
+
+/**
+ * The StandardDeviationOperator rule defines a operator which calculates the standard
+ * deviation of an element.
+ */		
+StandardDeviationOperator:
+	'std''('parameter=StreamAccess ',' stream=StreamOperatorParameter ')';	
+
+/**
+ * The AverageOperator rule defines a operator which calculates the average
+ * of an element.
+ */			
+AverageOperator:
+	'avg''('parameter=StreamAccess ',' stream=StreamOperatorParameter ')';	
+
+/**
+ * The OutputOperator rule defines a operator which prints the content of the
+ * a stream specified in parameter to a location specified in location.
+ */	
+OutputOperator:
+	'out''('parameter=OutputOperatorParameter ',' location=STRING ',' stream+=StreamOperatorParameter ')' ';';
+
+OutputOperatorParameter:
+	element+=StreamAccess (',' element+=StreamAccess)*;
+
+	
+/**
+ * Processing expressions could consist of variables (declaration and definition),
+ * statemens (expressions with assignments), stream definitions and stream 
+ * expressions.
+ */
+ProcessingExpression:
+	Variable | Statement | StreamStatement | StreamDefinition | StreamAccess  | 
+	NoReturnTypeOperator;
+
+/**
+ * Block expression could consists of variable (declaration and definition), statements 
+ * (expression with assignments), loops (for and while) and conditional expressions (if
+   and switch/case).
+ */
+BlockExpression:
+	Variable | Statement | WhileLoopDefinition | ConditionalExpressions | ReturnStatement;
+
+/**
+ * A return statements consists of a return variable and is usually used in conditions and 
+ * functions.
+ */
+ReturnStatement:
+	'return' returnVariable=ReturnVariable;
+
+/**
+ * Definition of if/else and switch/case conditions. A conditional expression
+ * could be a if/else or switch/case condition.
+ */
+ConditionalExpressions:
+	IfElseCondition | SwitchCaseCondition;
+
+/**
+ * The IfElseCondition rule defines a if/else statement. The 'else' part of the
+ * statement is optional. 
+ */
+IfElseCondition:
+	'if' '(' condition=Expression ')' '{' 
+		ifAction+=(BlockExpression)* 		
+	'}'( 'else' '{'
+		elseAction+=(BlockExpression)*
+	'}')?;
+
+/**
+ * The SwitchCaseCondition rule defines a switch/case statement. The default 
+ * statement defines a default case.  
+ */
+SwitchCaseCondition:
+	'switch' '(' condition=Expression ')' '{' 
+		caseExpression+=(CaseStatement)* 'default' ':' defaultExpression=Expression ';'
+	'}';
+
+/**
+ * A SwitchCaseCondition consists of numerous CaseStatements which itself
+ * define a condition and a action.
+ */
+CaseStatement:
+	'case' condition=Expression ':' action=Expression ';';
+
+// Funktionsdefinition muss aufgebohrt werden, fuer Stream Argumente
+FunctionDefinition:	
+	type=DataType name=ID '('(arguments+=ParameterDeclaration 
+	(',' arguments+=ParameterDeclaration)*)?')' '{' (statements+=BlockExpression)* 
+	(returnValue=ReturnStatement)'}';
+
+/** A return variable is of type returnable */
+ReturnVariable:
+	returnable=[Returnable] ';';
+
+/** A return variable could be a variable or the parameter of a function. */
+Returnable : 
+	Variable | ParameterDeclaration;
+
+/** A parameter declaration */
+ParameterDeclaration returns VariableDeclaration:
+	type=DataType name=ID;
+
+WhileLoopDefinition:
+	'while' '(' condition=Expression ')' '{' 
+		statements+=(BlockExpression)*
+	'}';
+
+Variable:
+	VariableDeclaration | VariableDefinition;
+
+VariableDefinition:
+	NumberVariableDefinition | StringVariableDefinition | BooleanVariableDefinition;
+
+VariableDeclaration:
+	type=DataType name=ID';';
+	
+NumberVariableDefinition:
+	type=SimpleDataType name=ID '=' value=NUMBER';';
+
+StringVariableDefinition:
+	type=StringDataType name=ID '=' value=STRING ';';	
+
+BooleanVariableDefinition:
+	type=BooleanDataType name=ID '=' value=BOOLVALUE ';';	
+
+/** The declaration of the 'structure' element. */
+StructureDeclaration:
+	/** A structure has a name and consists of at least one element */
+	'structure' name=ID '{'(elements+=VariableDeclaration)+'}' ';';
+
+/** The declaration of the 'stream' element. */
+StreamDeclaration:
+	/** Every stream begins with the stream keyword and has a name */
+	'stream' name=ID '{'
+	    /** Also, every stream consists of a number of elements, at least of one element*/
+		elements+=(StreamElement)+
+	'}'';';
+
+/** A stream element is a structure element or a variable */
+StreamElement:
+	StructureElements | VariableDeclaration;
+
+/** A structure element references to an existing structure */
+StructureElements:
+	'use' element=[StructureDeclaration] ';';
+
+Expression returns Expression:
+	Or;
+
+Or returns Expression:
+	And ({BooleanOperation.left=current} operator="||" right=And)*;
+
+And returns Expression:
+	RelationalExpression ({BooleanOperation.left=current} operator="&&" 
+	right=RelationalExpression)*;
+
+RelationalExpression returns Expression:
+	Addition ({BooleanOperation.left=current} 
+	operator=("==" | "!=" | ">=" | "<=" | ">" | "<") right=Addition)*;
+
+Addition returns Expression:
+	Multiplication (({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*;
+
+Multiplication returns Expression:
+	PrimaryExpression (({Multi.left=current} '*' | {Div.left=current} '/') 
+	right=PrimaryExpression)*;
+
+PrimaryExpression returns Expression:
+	'(' Expression ')' |
+	{NumberLiteral} value=NUMBER | {VariableCall} variable=[Variable] | 
+	{StreamAccess} streamVariable=StreamAccess | 
+	{FunctionCall} func=[FunctionDefinition]
+	('(' (arguments+=Expression (',' arguments+=Expression)*)? ')');	
 
 /** Definition of numbers (float as well as integer) */
 terminal NUMBER returns ecore::EBigDecimal:
 	('0'..'9')* ('.' ('0'..'9')+)?;
 
+/** Definition of boolean values */
+terminal BOOLVALUE returns ecore::EBoolean:
+	'true' | 'false';
+
 /** Fixes a antlr issue */
 terminal INT returns ecore::EInt:
 	'this one has been deactivated';
+
+/** Definition of the available datatypes */
+ DataType returns DataType:
+	SimpleDataType | ComplexDataType;
+
+/** Definition of the simple datatype */
+ SimpleDataType returns SimpleDataType:
+	IntegerDataType | FloatDataType | BooleanDataType;
+
+/** Definition of the complex datatype */
+ ComplexDataType returns ComplexDataType:
+	StringDataType;
+
+/** Definition of the integer datatype */
+IntegerDataType:
+	'int' {IntegerDataType};
+
+/** Definition of the bool datatype */
+ BooleanDataType:
+	'bool' {BooleanDataType};
+	
+/** Definition of the float datatype */
+ FloatDataType:
+	'float' {FloatDataType};
+
+/** Definition of the string datatype */
+StringDataType:
+	'string' {StringDataType};	
+
+/**
+ * The following rules reuse rule statements of the standard xtext grammar since it is
+ * only possible to add one additional grammar to a grammar while using the 'with'
+ * statement.
+ */
+	
+/** A definition of a identifier from the Xtext standard grammar */
+terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+/** A definition of a string from the Xtext standard grammar */
+terminal STRING: 
+  '"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
+  "'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | !('\\'|"'") )* "'"; 
+/** A multiline comment terminal from the Xtext standard grammar */
+terminal ML_COMMENT: '/*' -> '*/';
+/** A single line terminal from the Xtext standard grammar */
+terminal SL_COMMENT: '//' !('\n'|'\r')* ('\r'? '\n')?;
+/** A whitespace terminal from the Xtext standard grammar */
+terminal WS: (' '|'\t'|'\r'|'\n')+;

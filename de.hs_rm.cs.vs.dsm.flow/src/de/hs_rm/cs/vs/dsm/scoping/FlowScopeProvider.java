@@ -11,6 +11,7 @@ import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 
 import de.hs_rm.cs.vs.dsm.flow.StreamAccess;
 import de.hs_rm.cs.vs.dsm.flow.StreamElement;
+import de.hs_rm.cs.vs.dsm.flow.StructureElements;
 
 /**
  * This class contains custom scoping description.
@@ -31,7 +32,24 @@ public class FlowScopeProvider extends AbstractDeclarativeScopeProvider {
 	public IScope scope_StreamAccess_element(StreamAccess pStreamAccess, EReference pReference){
 		// The original element list
 		EList<StreamElement> elementList = pStreamAccess.getReference().getReference().getElements();
-		// Return the list 
-		return Scopes.scopeFor(elementList);
+		// The result list
+		EList<StreamElement> resultList = pStreamAccess.getReference().getReference().getElements();
+		// Iterator variable for replacing items in the result list
+		int i = 0;
+				
+		for(StreamElement element : elementList){
+			if(element instanceof StructureElements){
+				// Cast to the structure element
+				StructureElements str = (StructureElements)element;
+				// Get the list structure elements;
+				resultList.addAll(i, str.getElement().getElements());
+			}else{
+				// Add the standard element to the result list
+				resultList.add(element);
+			}
+			// Iterate through the set
+			i++;
+		}
+		return Scopes.scopeFor(resultList);
 	}
 }

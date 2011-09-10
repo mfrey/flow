@@ -6,6 +6,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
@@ -13,10 +15,14 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class AbstractFlowSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected FlowGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_PrimaryExpression_LeftParenthesisKeyword_0_0_a;
+	protected AbstractElementAlias match_PrimaryExpression_LeftParenthesisKeyword_0_0_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (FlowGrammarAccess) access;
+		match_PrimaryExpression_LeftParenthesisKeyword_0_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_0_0());
+		match_PrimaryExpression_LeftParenthesisKeyword_0_0_p = new TokenAlias(false, true, grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_0_0());
 	}
 	
 	@Override
@@ -29,7 +35,27 @@ public class AbstractFlowSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		if (!transition.isSyntacticallyAmbiguous())
 			return;
-		acceptNodes(transition, fromNode, toNode);
+		if(match_PrimaryExpression_LeftParenthesisKeyword_0_0_a.equals(transition.getAmbiguousSyntax()))
+			emit_PrimaryExpression_LeftParenthesisKeyword_0_0_a(semanticObject, transition, fromNode, toNode);
+		else if(match_PrimaryExpression_LeftParenthesisKeyword_0_0_p.equals(transition.getAmbiguousSyntax()))
+			emit_PrimaryExpression_LeftParenthesisKeyword_0_0_p(semanticObject, transition, fromNode, toNode);
+		else acceptNodes(transition, fromNode, toNode);
 	}
 
+	/**
+	 * Syntax:
+	 *     '('*
+	 */
+	protected void emit_PrimaryExpression_LeftParenthesisKeyword_0_0_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     '('+
+	 */
+	protected void emit_PrimaryExpression_LeftParenthesisKeyword_0_0_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
 }

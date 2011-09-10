@@ -53,24 +53,6 @@ public interface FlowFactory extends EFactory
   ModelElement createModelElement();
 
   /**
-   * Returns a new object of class '<em>Stream Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Stream Declaration</em>'.
-   * @generated
-   */
-  StreamDeclaration createStreamDeclaration();
-
-  /**
-   * Returns a new object of class '<em>Stream Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Stream Element</em>'.
-   * @generated
-   */
-  StreamElement createStreamElement();
-
-  /**
    * Returns a new object of class '<em>Import</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -80,67 +62,31 @@ public interface FlowFactory extends EFactory
   Import createImport();
 
   /**
-   * Returns a new object of class '<em>Test Element</em>'.
+   * Returns a new object of class '<em>Stream Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Test Element</em>'.
+   * @return a new object of class '<em>Stream Statement</em>'.
    * @generated
    */
-  TestElement createTestElement();
+  StreamStatement createStreamStatement();
 
   /**
-   * Returns a new object of class '<em>Test Assign</em>'.
+   * Returns a new object of class '<em>Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Test Assign</em>'.
+   * @return a new object of class '<em>Statement</em>'.
    * @generated
    */
-  TestAssign createTestAssign();
+  Statement createStatement();
 
   /**
-   * Returns a new object of class '<em>OWL Test Element</em>'.
+   * Returns a new object of class '<em>Variable Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>OWL Test Element</em>'.
+   * @return a new object of class '<em>Variable Statement</em>'.
    * @generated
    */
-  OWLTestElement createOWLTestElement();
-
-  /**
-   * Returns a new object of class '<em>Operator</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Operator</em>'.
-   * @generated
-   */
-  Operator createOperator();
-
-  /**
-   * Returns a new object of class '<em>Variable</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable</em>'.
-   * @generated
-   */
-  Variable createVariable();
-
-  /**
-   * Returns a new object of class '<em>Variable Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Declaration</em>'.
-   * @generated
-   */
-  VariableDeclaration createVariableDeclaration();
-
-  /**
-   * Returns a new object of class '<em>Stream Definition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Stream Definition</em>'.
-   * @generated
-   */
-  StreamDefinition createStreamDefinition();
+  VariableStatement createVariableStatement();
 
   /**
    * Returns a new object of class '<em>Stream Access</em>'.
@@ -152,6 +98,33 @@ public interface FlowFactory extends EFactory
   StreamAccess createStreamAccess();
 
   /**
+   * Returns a new object of class '<em>Stream Declaration Access</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Stream Declaration Access</em>'.
+   * @generated
+   */
+  StreamDeclarationAccess createStreamDeclarationAccess();
+
+  /**
+   * Returns a new object of class '<em>Stream Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Stream Definition</em>'.
+   * @generated
+   */
+  StreamDefinition createStreamDefinition();
+
+  /**
+   * Returns a new object of class '<em>Join Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Join Operator</em>'.
+   * @generated
+   */
+  JoinOperator createJoinOperator();
+
+  /**
    * Returns a new object of class '<em>Stream Operator Parameter</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -159,33 +132,6 @@ public interface FlowFactory extends EFactory
    * @generated
    */
   StreamOperatorParameter createStreamOperatorParameter();
-
-  /**
-   * Returns a new object of class '<em>Count Operator</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Count Operator</em>'.
-   * @generated
-   */
-  CountOperator createCountOperator();
-
-  /**
-   * Returns a new object of class '<em>Standard Deviation Operator</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Standard Deviation Operator</em>'.
-   * @generated
-   */
-  StandardDeviationOperator createStandardDeviationOperator();
-
-  /**
-   * Returns a new object of class '<em>Average Operator</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Average Operator</em>'.
-   * @generated
-   */
-  AverageOperator createAverageOperator();
 
   /**
    * Returns a new object of class '<em>Element Join Operator</em>'.
@@ -197,6 +143,96 @@ public interface FlowFactory extends EFactory
   ElementJoinOperator createElementJoinOperator();
 
   /**
+   * Returns a new object of class '<em>Filter Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Filter Operator</em>'.
+   * @generated
+   */
+  FilterOperator createFilterOperator();
+
+  /**
+   * Returns a new object of class '<em>Split Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Split Operator</em>'.
+   * @generated
+   */
+  SplitOperator createSplitOperator();
+
+  /**
+   * Returns a new object of class '<em>Match Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Match Operator</em>'.
+   * @generated
+   */
+  MatchOperator createMatchOperator();
+
+  /**
+   * Returns a new object of class '<em>Symmetric Difference Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Symmetric Difference Operator</em>'.
+   * @generated
+   */
+  SymmetricDifferenceOperator createSymmetricDifferenceOperator();
+
+  /**
+   * Returns a new object of class '<em>Difference Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Difference Operator</em>'.
+   * @generated
+   */
+  DifferenceOperator createDifferenceOperator();
+
+  /**
+   * Returns a new object of class '<em>Map Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Map Operator</em>'.
+   * @generated
+   */
+  MapOperator createMapOperator();
+
+  /**
+   * Returns a new object of class '<em>Function Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Statement</em>'.
+   * @generated
+   */
+  FunctionStatement createFunctionStatement();
+
+  /**
+   * Returns a new object of class '<em>Input Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Input Operator</em>'.
+   * @generated
+   */
+  InputOperator createInputOperator();
+
+  /**
+   * Returns a new object of class '<em>Return Type Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Return Type Operator</em>'.
+   * @generated
+   */
+  ReturnTypeOperator createReturnTypeOperator();
+
+  /**
+   * Returns a new object of class '<em>No Return Type Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>No Return Type Operator</em>'.
+   * @generated
+   */
+  NoReturnTypeOperator createNoReturnTypeOperator();
+
+  /**
    * Returns a new object of class '<em>Tag Operator</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -204,6 +240,24 @@ public interface FlowFactory extends EFactory
    * @generated
    */
   TagOperator createTagOperator();
+
+  /**
+   * Returns a new object of class '<em>Un Tag Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Un Tag Operator</em>'.
+   * @generated
+   */
+  UnTagOperator createUnTagOperator();
+
+  /**
+   * Returns a new object of class '<em>Un Tag Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Un Tag Element</em>'.
+   * @generated
+   */
+  UnTagElement createUnTagElement();
 
   /**
    * Returns a new object of class '<em>Tag Element</em>'.
@@ -242,6 +296,114 @@ public interface FlowFactory extends EFactory
   TagDataTypePropertyElement createTagDataTypePropertyElement();
 
   /**
+   * Returns a new object of class '<em>Barrier Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Barrier Operator</em>'.
+   * @generated
+   */
+  BarrierOperator createBarrierOperator();
+
+  /**
+   * Returns a new object of class '<em>Window Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Window Operator</em>'.
+   * @generated
+   */
+  WindowOperator createWindowOperator();
+
+  /**
+   * Returns a new object of class '<em>Marker Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Marker Operator</em>'.
+   * @generated
+   */
+  MarkerOperator createMarkerOperator();
+
+  /**
+   * Returns a new object of class '<em>SWRL Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SWRL Operator</em>'.
+   * @generated
+   */
+  SWRLOperator createSWRLOperator();
+
+  /**
+   * Returns a new object of class '<em>SWRL Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SWRL Rule</em>'.
+   * @generated
+   */
+  SWRLRule createSWRLRule();
+
+  /**
+   * Returns a new object of class '<em>Antecedent Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Antecedent Rule</em>'.
+   * @generated
+   */
+  AntecedentRule createAntecedentRule();
+
+  /**
+   * Returns a new object of class '<em>Consequent Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Consequent Rule</em>'.
+   * @generated
+   */
+  ConsequentRule createConsequentRule();
+
+  /**
+   * Returns a new object of class '<em>Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rule</em>'.
+   * @generated
+   */
+  Rule createRule();
+
+  /**
+   * Returns a new object of class '<em>OCL Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>OCL Operator</em>'.
+   * @generated
+   */
+  OCLOperator createOCLOperator();
+
+  /**
+   * Returns a new object of class '<em>Count Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Count Operator</em>'.
+   * @generated
+   */
+  CountOperator createCountOperator();
+
+  /**
+   * Returns a new object of class '<em>Standard Deviation Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Standard Deviation Operator</em>'.
+   * @generated
+   */
+  StandardDeviationOperator createStandardDeviationOperator();
+
+  /**
+   * Returns a new object of class '<em>Average Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Average Operator</em>'.
+   * @generated
+   */
+  AverageOperator createAverageOperator();
+
+  /**
    * Returns a new object of class '<em>Output Operator</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -260,22 +422,337 @@ public interface FlowFactory extends EFactory
   OutputOperatorParameter createOutputOperatorParameter();
 
   /**
-   * Returns a new object of class '<em>Barrier Operator</em>'.
+   * Returns a new object of class '<em>Processing Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Barrier Operator</em>'.
+   * @return a new object of class '<em>Processing Expression</em>'.
    * @generated
    */
-  BarrierOperator createBarrierOperator();
+  ProcessingExpression createProcessingExpression();
 
   /**
-   * Returns a new object of class '<em>Window Operator</em>'.
+   * Returns a new object of class '<em>Block Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Window Operator</em>'.
+   * @return a new object of class '<em>Block Expression</em>'.
    * @generated
    */
-  WindowOperator createWindowOperator();
+  BlockExpression createBlockExpression();
+
+  /**
+   * Returns a new object of class '<em>Return Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Return Statement</em>'.
+   * @generated
+   */
+  ReturnStatement createReturnStatement();
+
+  /**
+   * Returns a new object of class '<em>Conditional Expressions</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Conditional Expressions</em>'.
+   * @generated
+   */
+  ConditionalExpressions createConditionalExpressions();
+
+  /**
+   * Returns a new object of class '<em>If Else Condition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>If Else Condition</em>'.
+   * @generated
+   */
+  IfElseCondition createIfElseCondition();
+
+  /**
+   * Returns a new object of class '<em>Switch Case Condition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Switch Case Condition</em>'.
+   * @generated
+   */
+  SwitchCaseCondition createSwitchCaseCondition();
+
+  /**
+   * Returns a new object of class '<em>Case Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Case Statement</em>'.
+   * @generated
+   */
+  CaseStatement createCaseStatement();
+
+  /**
+   * Returns a new object of class '<em>Function Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Definition</em>'.
+   * @generated
+   */
+  FunctionDefinition createFunctionDefinition();
+
+  /**
+   * Returns a new object of class '<em>Return Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Return Variable</em>'.
+   * @generated
+   */
+  ReturnVariable createReturnVariable();
+
+  /**
+   * Returns a new object of class '<em>Returnable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Returnable</em>'.
+   * @generated
+   */
+  Returnable createReturnable();
+
+  /**
+   * Returns a new object of class '<em>Variable Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Declaration</em>'.
+   * @generated
+   */
+  VariableDeclaration createVariableDeclaration();
+
+  /**
+   * Returns a new object of class '<em>While Loop Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>While Loop Definition</em>'.
+   * @generated
+   */
+  WhileLoopDefinition createWhileLoopDefinition();
+
+  /**
+   * Returns a new object of class '<em>Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable</em>'.
+   * @generated
+   */
+  Variable createVariable();
+
+  /**
+   * Returns a new object of class '<em>Variable Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Definition</em>'.
+   * @generated
+   */
+  VariableDefinition createVariableDefinition();
+
+  /**
+   * Returns a new object of class '<em>Number Variable Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Number Variable Definition</em>'.
+   * @generated
+   */
+  NumberVariableDefinition createNumberVariableDefinition();
+
+  /**
+   * Returns a new object of class '<em>String Variable Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Variable Definition</em>'.
+   * @generated
+   */
+  StringVariableDefinition createStringVariableDefinition();
+
+  /**
+   * Returns a new object of class '<em>Boolean Variable Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Variable Definition</em>'.
+   * @generated
+   */
+  BooleanVariableDefinition createBooleanVariableDefinition();
+
+  /**
+   * Returns a new object of class '<em>Structure Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Structure Declaration</em>'.
+   * @generated
+   */
+  StructureDeclaration createStructureDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Stream Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Stream Declaration</em>'.
+   * @generated
+   */
+  StreamDeclaration createStreamDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Stream Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Stream Element</em>'.
+   * @generated
+   */
+  StreamElement createStreamElement();
+
+  /**
+   * Returns a new object of class '<em>Structure Elements</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Structure Elements</em>'.
+   * @generated
+   */
+  StructureElements createStructureElements();
+
+  /**
+   * Returns a new object of class '<em>Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression</em>'.
+   * @generated
+   */
+  Expression createExpression();
+
+  /**
+   * Returns a new object of class '<em>Data Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type</em>'.
+   * @generated
+   */
+  DataType createDataType();
+
+  /**
+   * Returns a new object of class '<em>Simple Data Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Simple Data Type</em>'.
+   * @generated
+   */
+  SimpleDataType createSimpleDataType();
+
+  /**
+   * Returns a new object of class '<em>Complex Data Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Complex Data Type</em>'.
+   * @generated
+   */
+  ComplexDataType createComplexDataType();
+
+  /**
+   * Returns a new object of class '<em>Integer Data Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Integer Data Type</em>'.
+   * @generated
+   */
+  IntegerDataType createIntegerDataType();
+
+  /**
+   * Returns a new object of class '<em>Boolean Data Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Data Type</em>'.
+   * @generated
+   */
+  BooleanDataType createBooleanDataType();
+
+  /**
+   * Returns a new object of class '<em>Float Data Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Float Data Type</em>'.
+   * @generated
+   */
+  FloatDataType createFloatDataType();
+
+  /**
+   * Returns a new object of class '<em>String Data Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Data Type</em>'.
+   * @generated
+   */
+  StringDataType createStringDataType();
+
+  /**
+   * Returns a new object of class '<em>Boolean Operation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Operation</em>'.
+   * @generated
+   */
+  BooleanOperation createBooleanOperation();
+
+  /**
+   * Returns a new object of class '<em>Plus</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Plus</em>'.
+   * @generated
+   */
+  Plus createPlus();
+
+  /**
+   * Returns a new object of class '<em>Minus</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Minus</em>'.
+   * @generated
+   */
+  Minus createMinus();
+
+  /**
+   * Returns a new object of class '<em>Multi</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multi</em>'.
+   * @generated
+   */
+  Multi createMulti();
+
+  /**
+   * Returns a new object of class '<em>Div</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Div</em>'.
+   * @generated
+   */
+  Div createDiv();
+
+  /**
+   * Returns a new object of class '<em>Number Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Number Literal</em>'.
+   * @generated
+   */
+  NumberLiteral createNumberLiteral();
+
+  /**
+   * Returns a new object of class '<em>Variable Call</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Call</em>'.
+   * @generated
+   */
+  VariableCall createVariableCall();
+
+  /**
+   * Returns a new object of class '<em>Function Call</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Call</em>'.
+   * @generated
+   */
+  FunctionCall createFunctionCall();
 
   /**
    * Returns the package supported by this factory.

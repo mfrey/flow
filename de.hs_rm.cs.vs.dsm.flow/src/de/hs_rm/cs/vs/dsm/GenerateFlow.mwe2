@@ -14,7 +14,6 @@ Workflow {
         scanClassPath = true
         platformUri = "${runtimeProject}/.."
 		registerGenModelFile = "platform:/resource/de.hs_rm.cs.vs.dsm.flow/model/owl.genmodel"
-		registerGenModelFile = "platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel"
 	}
        
 
@@ -87,7 +86,7 @@ Workflow {
             // generator API
             fragment = generator.GeneratorFragment {
                 generateMwe = true
-                generateJavaMain = true
+//                generateJavaMain = true
             }
 
             // formatter API

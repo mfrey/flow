@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.ModelImpl#getModel <em>Model</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.ModelImpl#getModels <em>Models</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,14 +39,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getModel() <em>Model</em>}' containment reference list.
+   * The cached value of the '{@link #getModels() <em>Models</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getModel()
+   * @see #getModels()
    * @generated
    * @ordered
    */
-  protected EList<PackageDeclaration> model;
+  protected EList<PackageDeclaration> models;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,13 +74,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<PackageDeclaration> getModel()
+  public EList<PackageDeclaration> getModels()
   {
-    if (model == null)
+    if (models == null)
     {
-      model = new EObjectContainmentEList<PackageDeclaration>(PackageDeclaration.class, this, FlowPackage.MODEL__MODEL);
+      models = new EObjectContainmentEList<PackageDeclaration>(PackageDeclaration.class, this, FlowPackage.MODEL__MODELS);
     }
-    return model;
+    return models;
   }
 
   /**
@@ -93,8 +93,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case FlowPackage.MODEL__MODEL:
-        return ((InternalEList<?>)getModel()).basicRemove(otherEnd, msgs);
+      case FlowPackage.MODEL__MODELS:
+        return ((InternalEList<?>)getModels()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -109,8 +109,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case FlowPackage.MODEL__MODEL:
-        return getModel();
+      case FlowPackage.MODEL__MODELS:
+        return getModels();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -126,9 +126,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case FlowPackage.MODEL__MODEL:
-        getModel().clear();
-        getModel().addAll((Collection<? extends PackageDeclaration>)newValue);
+      case FlowPackage.MODEL__MODELS:
+        getModels().clear();
+        getModels().addAll((Collection<? extends PackageDeclaration>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -144,8 +144,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case FlowPackage.MODEL__MODEL:
-        getModel().clear();
+      case FlowPackage.MODEL__MODELS:
+        getModels().clear();
         return;
     }
     super.eUnset(featureID);
@@ -161,8 +161,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case FlowPackage.MODEL__MODEL:
-        return model != null && !model.isEmpty();
+      case FlowPackage.MODEL__MODELS:
+        return models != null && !models.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -97,21 +97,6 @@ public class FlowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FlowPackage.STREAM_DECLARATION:
-      {
-        StreamDeclaration streamDeclaration = (StreamDeclaration)theEObject;
-        T result = caseStreamDeclaration(streamDeclaration);
-        if (result == null) result = caseModelElement(streamDeclaration);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FlowPackage.STREAM_ELEMENT:
-      {
-        StreamElement streamElement = (StreamElement)theEObject;
-        T result = caseStreamElement(streamElement);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case FlowPackage.IMPORT:
       {
         Import import_ = (Import)theEObject;
@@ -120,57 +105,33 @@ public class FlowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FlowPackage.TEST_ELEMENT:
+      case FlowPackage.STREAM_STATEMENT:
       {
-        TestElement testElement = (TestElement)theEObject;
-        T result = caseTestElement(testElement);
-        if (result == null) result = caseModelElement(testElement);
+        StreamStatement streamStatement = (StreamStatement)theEObject;
+        T result = caseStreamStatement(streamStatement);
+        if (result == null) result = caseProcessingExpression(streamStatement);
+        if (result == null) result = caseModelElement(streamStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FlowPackage.TEST_ASSIGN:
+      case FlowPackage.STATEMENT:
       {
-        TestAssign testAssign = (TestAssign)theEObject;
-        T result = caseTestAssign(testAssign);
-        if (result == null) result = caseModelElement(testAssign);
+        Statement statement = (Statement)theEObject;
+        T result = caseStatement(statement);
+        if (result == null) result = caseProcessingExpression(statement);
+        if (result == null) result = caseBlockExpression(statement);
+        if (result == null) result = caseModelElement(statement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FlowPackage.OWL_TEST_ELEMENT:
+      case FlowPackage.VARIABLE_STATEMENT:
       {
-        OWLTestElement owlTestElement = (OWLTestElement)theEObject;
-        T result = caseOWLTestElement(owlTestElement);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FlowPackage.OPERATOR:
-      {
-        Operator operator = (Operator)theEObject;
-        T result = caseOperator(operator);
-        if (result == null) result = caseModelElement(operator);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FlowPackage.VARIABLE:
-      {
-        Variable variable = (Variable)theEObject;
-        T result = caseVariable(variable);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FlowPackage.VARIABLE_DECLARATION:
-      {
-        VariableDeclaration variableDeclaration = (VariableDeclaration)theEObject;
-        T result = caseVariableDeclaration(variableDeclaration);
-        if (result == null) result = caseVariable(variableDeclaration);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FlowPackage.STREAM_DEFINITION:
-      {
-        StreamDefinition streamDefinition = (StreamDefinition)theEObject;
-        T result = caseStreamDefinition(streamDefinition);
-        if (result == null) result = caseModelElement(streamDefinition);
+        VariableStatement variableStatement = (VariableStatement)theEObject;
+        T result = caseVariableStatement(variableStatement);
+        if (result == null) result = caseStatement(variableStatement);
+        if (result == null) result = caseProcessingExpression(variableStatement);
+        if (result == null) result = caseBlockExpression(variableStatement);
+        if (result == null) result = caseModelElement(variableStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -178,6 +139,33 @@ public class FlowSwitch<T> extends Switch<T>
       {
         StreamAccess streamAccess = (StreamAccess)theEObject;
         T result = caseStreamAccess(streamAccess);
+        if (result == null) result = caseProcessingExpression(streamAccess);
+        if (result == null) result = caseExpression(streamAccess);
+        if (result == null) result = caseModelElement(streamAccess);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.STREAM_DECLARATION_ACCESS:
+      {
+        StreamDeclarationAccess streamDeclarationAccess = (StreamDeclarationAccess)theEObject;
+        T result = caseStreamDeclarationAccess(streamDeclarationAccess);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.STREAM_DEFINITION:
+      {
+        StreamDefinition streamDefinition = (StreamDefinition)theEObject;
+        T result = caseStreamDefinition(streamDefinition);
+        if (result == null) result = caseProcessingExpression(streamDefinition);
+        if (result == null) result = caseModelElement(streamDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.JOIN_OPERATOR:
+      {
+        JoinOperator joinOperator = (JoinOperator)theEObject;
+        T result = caseJoinOperator(joinOperator);
+        if (result == null) result = caseReturnTypeOperator(joinOperator);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -188,39 +176,90 @@ public class FlowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FlowPackage.COUNT_OPERATOR:
-      {
-        CountOperator countOperator = (CountOperator)theEObject;
-        T result = caseCountOperator(countOperator);
-        if (result == null) result = caseOperator(countOperator);
-        if (result == null) result = caseModelElement(countOperator);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FlowPackage.STANDARD_DEVIATION_OPERATOR:
-      {
-        StandardDeviationOperator standardDeviationOperator = (StandardDeviationOperator)theEObject;
-        T result = caseStandardDeviationOperator(standardDeviationOperator);
-        if (result == null) result = caseOperator(standardDeviationOperator);
-        if (result == null) result = caseModelElement(standardDeviationOperator);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FlowPackage.AVERAGE_OPERATOR:
-      {
-        AverageOperator averageOperator = (AverageOperator)theEObject;
-        T result = caseAverageOperator(averageOperator);
-        if (result == null) result = caseOperator(averageOperator);
-        if (result == null) result = caseModelElement(averageOperator);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case FlowPackage.ELEMENT_JOIN_OPERATOR:
       {
         ElementJoinOperator elementJoinOperator = (ElementJoinOperator)theEObject;
         T result = caseElementJoinOperator(elementJoinOperator);
-        if (result == null) result = caseOperator(elementJoinOperator);
-        if (result == null) result = caseModelElement(elementJoinOperator);
+        if (result == null) result = caseReturnTypeOperator(elementJoinOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.FILTER_OPERATOR:
+      {
+        FilterOperator filterOperator = (FilterOperator)theEObject;
+        T result = caseFilterOperator(filterOperator);
+        if (result == null) result = caseReturnTypeOperator(filterOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.SPLIT_OPERATOR:
+      {
+        SplitOperator splitOperator = (SplitOperator)theEObject;
+        T result = caseSplitOperator(splitOperator);
+        if (result == null) result = caseReturnTypeOperator(splitOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.MATCH_OPERATOR:
+      {
+        MatchOperator matchOperator = (MatchOperator)theEObject;
+        T result = caseMatchOperator(matchOperator);
+        if (result == null) result = caseReturnTypeOperator(matchOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.SYMMETRIC_DIFFERENCE_OPERATOR:
+      {
+        SymmetricDifferenceOperator symmetricDifferenceOperator = (SymmetricDifferenceOperator)theEObject;
+        T result = caseSymmetricDifferenceOperator(symmetricDifferenceOperator);
+        if (result == null) result = caseReturnTypeOperator(symmetricDifferenceOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.DIFFERENCE_OPERATOR:
+      {
+        DifferenceOperator differenceOperator = (DifferenceOperator)theEObject;
+        T result = caseDifferenceOperator(differenceOperator);
+        if (result == null) result = caseReturnTypeOperator(differenceOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.MAP_OPERATOR:
+      {
+        MapOperator mapOperator = (MapOperator)theEObject;
+        T result = caseMapOperator(mapOperator);
+        if (result == null) result = caseReturnTypeOperator(mapOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.FUNCTION_STATEMENT:
+      {
+        FunctionStatement functionStatement = (FunctionStatement)theEObject;
+        T result = caseFunctionStatement(functionStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.INPUT_OPERATOR:
+      {
+        InputOperator inputOperator = (InputOperator)theEObject;
+        T result = caseInputOperator(inputOperator);
+        if (result == null) result = caseReturnTypeOperator(inputOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.RETURN_TYPE_OPERATOR:
+      {
+        ReturnTypeOperator returnTypeOperator = (ReturnTypeOperator)theEObject;
+        T result = caseReturnTypeOperator(returnTypeOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.NO_RETURN_TYPE_OPERATOR:
+      {
+        NoReturnTypeOperator noReturnTypeOperator = (NoReturnTypeOperator)theEObject;
+        T result = caseNoReturnTypeOperator(noReturnTypeOperator);
+        if (result == null) result = caseProcessingExpression(noReturnTypeOperator);
+        if (result == null) result = caseModelElement(noReturnTypeOperator);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -228,8 +267,22 @@ public class FlowSwitch<T> extends Switch<T>
       {
         TagOperator tagOperator = (TagOperator)theEObject;
         T result = caseTagOperator(tagOperator);
-        if (result == null) result = caseOperator(tagOperator);
-        if (result == null) result = caseModelElement(tagOperator);
+        if (result == null) result = caseReturnTypeOperator(tagOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.UN_TAG_OPERATOR:
+      {
+        UnTagOperator unTagOperator = (UnTagOperator)theEObject;
+        T result = caseUnTagOperator(unTagOperator);
+        if (result == null) result = caseReturnTypeOperator(unTagOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.UN_TAG_ELEMENT:
+      {
+        UnTagElement unTagElement = (UnTagElement)theEObject;
+        T result = caseUnTagElement(unTagElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -264,22 +317,6 @@ public class FlowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FlowPackage.OUTPUT_OPERATOR:
-      {
-        OutputOperator outputOperator = (OutputOperator)theEObject;
-        T result = caseOutputOperator(outputOperator);
-        if (result == null) result = caseOperator(outputOperator);
-        if (result == null) result = caseModelElement(outputOperator);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FlowPackage.OUTPUT_OPERATOR_PARAMETER:
-      {
-        OutputOperatorParameter outputOperatorParameter = (OutputOperatorParameter)theEObject;
-        T result = caseOutputOperatorParameter(outputOperatorParameter);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case FlowPackage.BARRIER_OPERATOR:
       {
         BarrierOperator barrierOperator = (BarrierOperator)theEObject;
@@ -292,6 +329,421 @@ public class FlowSwitch<T> extends Switch<T>
         WindowOperator windowOperator = (WindowOperator)theEObject;
         T result = caseWindowOperator(windowOperator);
         if (result == null) result = caseBarrierOperator(windowOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.MARKER_OPERATOR:
+      {
+        MarkerOperator markerOperator = (MarkerOperator)theEObject;
+        T result = caseMarkerOperator(markerOperator);
+        if (result == null) result = caseBarrierOperator(markerOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.SWRL_OPERATOR:
+      {
+        SWRLOperator swrlOperator = (SWRLOperator)theEObject;
+        T result = caseSWRLOperator(swrlOperator);
+        if (result == null) result = caseReturnTypeOperator(swrlOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.SWRL_RULE:
+      {
+        SWRLRule swrlRule = (SWRLRule)theEObject;
+        T result = caseSWRLRule(swrlRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.ANTECEDENT_RULE:
+      {
+        AntecedentRule antecedentRule = (AntecedentRule)theEObject;
+        T result = caseAntecedentRule(antecedentRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.CONSEQUENT_RULE:
+      {
+        ConsequentRule consequentRule = (ConsequentRule)theEObject;
+        T result = caseConsequentRule(consequentRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.RULE:
+      {
+        Rule rule = (Rule)theEObject;
+        T result = caseRule(rule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.OCL_OPERATOR:
+      {
+        OCLOperator oclOperator = (OCLOperator)theEObject;
+        T result = caseOCLOperator(oclOperator);
+        if (result == null) result = caseReturnTypeOperator(oclOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.COUNT_OPERATOR:
+      {
+        CountOperator countOperator = (CountOperator)theEObject;
+        T result = caseCountOperator(countOperator);
+        if (result == null) result = caseReturnTypeOperator(countOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.STANDARD_DEVIATION_OPERATOR:
+      {
+        StandardDeviationOperator standardDeviationOperator = (StandardDeviationOperator)theEObject;
+        T result = caseStandardDeviationOperator(standardDeviationOperator);
+        if (result == null) result = caseReturnTypeOperator(standardDeviationOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.AVERAGE_OPERATOR:
+      {
+        AverageOperator averageOperator = (AverageOperator)theEObject;
+        T result = caseAverageOperator(averageOperator);
+        if (result == null) result = caseReturnTypeOperator(averageOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.OUTPUT_OPERATOR:
+      {
+        OutputOperator outputOperator = (OutputOperator)theEObject;
+        T result = caseOutputOperator(outputOperator);
+        if (result == null) result = caseNoReturnTypeOperator(outputOperator);
+        if (result == null) result = caseProcessingExpression(outputOperator);
+        if (result == null) result = caseModelElement(outputOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.OUTPUT_OPERATOR_PARAMETER:
+      {
+        OutputOperatorParameter outputOperatorParameter = (OutputOperatorParameter)theEObject;
+        T result = caseOutputOperatorParameter(outputOperatorParameter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.PROCESSING_EXPRESSION:
+      {
+        ProcessingExpression processingExpression = (ProcessingExpression)theEObject;
+        T result = caseProcessingExpression(processingExpression);
+        if (result == null) result = caseModelElement(processingExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.BLOCK_EXPRESSION:
+      {
+        BlockExpression blockExpression = (BlockExpression)theEObject;
+        T result = caseBlockExpression(blockExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.RETURN_STATEMENT:
+      {
+        ReturnStatement returnStatement = (ReturnStatement)theEObject;
+        T result = caseReturnStatement(returnStatement);
+        if (result == null) result = caseBlockExpression(returnStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.CONDITIONAL_EXPRESSIONS:
+      {
+        ConditionalExpressions conditionalExpressions = (ConditionalExpressions)theEObject;
+        T result = caseConditionalExpressions(conditionalExpressions);
+        if (result == null) result = caseBlockExpression(conditionalExpressions);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.IF_ELSE_CONDITION:
+      {
+        IfElseCondition ifElseCondition = (IfElseCondition)theEObject;
+        T result = caseIfElseCondition(ifElseCondition);
+        if (result == null) result = caseConditionalExpressions(ifElseCondition);
+        if (result == null) result = caseBlockExpression(ifElseCondition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.SWITCH_CASE_CONDITION:
+      {
+        SwitchCaseCondition switchCaseCondition = (SwitchCaseCondition)theEObject;
+        T result = caseSwitchCaseCondition(switchCaseCondition);
+        if (result == null) result = caseConditionalExpressions(switchCaseCondition);
+        if (result == null) result = caseBlockExpression(switchCaseCondition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.CASE_STATEMENT:
+      {
+        CaseStatement caseStatement = (CaseStatement)theEObject;
+        T result = caseCaseStatement(caseStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.FUNCTION_DEFINITION:
+      {
+        FunctionDefinition functionDefinition = (FunctionDefinition)theEObject;
+        T result = caseFunctionDefinition(functionDefinition);
+        if (result == null) result = caseModelElement(functionDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.RETURN_VARIABLE:
+      {
+        ReturnVariable returnVariable = (ReturnVariable)theEObject;
+        T result = caseReturnVariable(returnVariable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.RETURNABLE:
+      {
+        Returnable returnable = (Returnable)theEObject;
+        T result = caseReturnable(returnable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.VARIABLE_DECLARATION:
+      {
+        VariableDeclaration variableDeclaration = (VariableDeclaration)theEObject;
+        T result = caseVariableDeclaration(variableDeclaration);
+        if (result == null) result = caseVariable(variableDeclaration);
+        if (result == null) result = caseStreamElement(variableDeclaration);
+        if (result == null) result = caseReturnable(variableDeclaration);
+        if (result == null) result = caseProcessingExpression(variableDeclaration);
+        if (result == null) result = caseBlockExpression(variableDeclaration);
+        if (result == null) result = caseModelElement(variableDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.WHILE_LOOP_DEFINITION:
+      {
+        WhileLoopDefinition whileLoopDefinition = (WhileLoopDefinition)theEObject;
+        T result = caseWhileLoopDefinition(whileLoopDefinition);
+        if (result == null) result = caseBlockExpression(whileLoopDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.VARIABLE:
+      {
+        Variable variable = (Variable)theEObject;
+        T result = caseVariable(variable);
+        if (result == null) result = caseProcessingExpression(variable);
+        if (result == null) result = caseBlockExpression(variable);
+        if (result == null) result = caseReturnable(variable);
+        if (result == null) result = caseModelElement(variable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.VARIABLE_DEFINITION:
+      {
+        VariableDefinition variableDefinition = (VariableDefinition)theEObject;
+        T result = caseVariableDefinition(variableDefinition);
+        if (result == null) result = caseVariable(variableDefinition);
+        if (result == null) result = caseProcessingExpression(variableDefinition);
+        if (result == null) result = caseBlockExpression(variableDefinition);
+        if (result == null) result = caseReturnable(variableDefinition);
+        if (result == null) result = caseModelElement(variableDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.NUMBER_VARIABLE_DEFINITION:
+      {
+        NumberVariableDefinition numberVariableDefinition = (NumberVariableDefinition)theEObject;
+        T result = caseNumberVariableDefinition(numberVariableDefinition);
+        if (result == null) result = caseVariableDefinition(numberVariableDefinition);
+        if (result == null) result = caseVariable(numberVariableDefinition);
+        if (result == null) result = caseProcessingExpression(numberVariableDefinition);
+        if (result == null) result = caseBlockExpression(numberVariableDefinition);
+        if (result == null) result = caseReturnable(numberVariableDefinition);
+        if (result == null) result = caseModelElement(numberVariableDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.STRING_VARIABLE_DEFINITION:
+      {
+        StringVariableDefinition stringVariableDefinition = (StringVariableDefinition)theEObject;
+        T result = caseStringVariableDefinition(stringVariableDefinition);
+        if (result == null) result = caseVariableDefinition(stringVariableDefinition);
+        if (result == null) result = caseVariable(stringVariableDefinition);
+        if (result == null) result = caseProcessingExpression(stringVariableDefinition);
+        if (result == null) result = caseBlockExpression(stringVariableDefinition);
+        if (result == null) result = caseReturnable(stringVariableDefinition);
+        if (result == null) result = caseModelElement(stringVariableDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.BOOLEAN_VARIABLE_DEFINITION:
+      {
+        BooleanVariableDefinition booleanVariableDefinition = (BooleanVariableDefinition)theEObject;
+        T result = caseBooleanVariableDefinition(booleanVariableDefinition);
+        if (result == null) result = caseVariableDefinition(booleanVariableDefinition);
+        if (result == null) result = caseVariable(booleanVariableDefinition);
+        if (result == null) result = caseProcessingExpression(booleanVariableDefinition);
+        if (result == null) result = caseBlockExpression(booleanVariableDefinition);
+        if (result == null) result = caseReturnable(booleanVariableDefinition);
+        if (result == null) result = caseModelElement(booleanVariableDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.STRUCTURE_DECLARATION:
+      {
+        StructureDeclaration structureDeclaration = (StructureDeclaration)theEObject;
+        T result = caseStructureDeclaration(structureDeclaration);
+        if (result == null) result = caseModelElement(structureDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.STREAM_DECLARATION:
+      {
+        StreamDeclaration streamDeclaration = (StreamDeclaration)theEObject;
+        T result = caseStreamDeclaration(streamDeclaration);
+        if (result == null) result = caseModelElement(streamDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.STREAM_ELEMENT:
+      {
+        StreamElement streamElement = (StreamElement)theEObject;
+        T result = caseStreamElement(streamElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.STRUCTURE_ELEMENTS:
+      {
+        StructureElements structureElements = (StructureElements)theEObject;
+        T result = caseStructureElements(structureElements);
+        if (result == null) result = caseStreamElement(structureElements);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.EXPRESSION:
+      {
+        Expression expression = (Expression)theEObject;
+        T result = caseExpression(expression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.DATA_TYPE:
+      {
+        DataType dataType = (DataType)theEObject;
+        T result = caseDataType(dataType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.SIMPLE_DATA_TYPE:
+      {
+        SimpleDataType simpleDataType = (SimpleDataType)theEObject;
+        T result = caseSimpleDataType(simpleDataType);
+        if (result == null) result = caseDataType(simpleDataType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.COMPLEX_DATA_TYPE:
+      {
+        ComplexDataType complexDataType = (ComplexDataType)theEObject;
+        T result = caseComplexDataType(complexDataType);
+        if (result == null) result = caseDataType(complexDataType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.INTEGER_DATA_TYPE:
+      {
+        IntegerDataType integerDataType = (IntegerDataType)theEObject;
+        T result = caseIntegerDataType(integerDataType);
+        if (result == null) result = caseSimpleDataType(integerDataType);
+        if (result == null) result = caseDataType(integerDataType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.BOOLEAN_DATA_TYPE:
+      {
+        BooleanDataType booleanDataType = (BooleanDataType)theEObject;
+        T result = caseBooleanDataType(booleanDataType);
+        if (result == null) result = caseSimpleDataType(booleanDataType);
+        if (result == null) result = caseDataType(booleanDataType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.FLOAT_DATA_TYPE:
+      {
+        FloatDataType floatDataType = (FloatDataType)theEObject;
+        T result = caseFloatDataType(floatDataType);
+        if (result == null) result = caseSimpleDataType(floatDataType);
+        if (result == null) result = caseDataType(floatDataType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.STRING_DATA_TYPE:
+      {
+        StringDataType stringDataType = (StringDataType)theEObject;
+        T result = caseStringDataType(stringDataType);
+        if (result == null) result = caseComplexDataType(stringDataType);
+        if (result == null) result = caseDataType(stringDataType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.BOOLEAN_OPERATION:
+      {
+        BooleanOperation booleanOperation = (BooleanOperation)theEObject;
+        T result = caseBooleanOperation(booleanOperation);
+        if (result == null) result = caseExpression(booleanOperation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.PLUS:
+      {
+        Plus plus = (Plus)theEObject;
+        T result = casePlus(plus);
+        if (result == null) result = caseExpression(plus);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.MINUS:
+      {
+        Minus minus = (Minus)theEObject;
+        T result = caseMinus(minus);
+        if (result == null) result = caseExpression(minus);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.MULTI:
+      {
+        Multi multi = (Multi)theEObject;
+        T result = caseMulti(multi);
+        if (result == null) result = caseExpression(multi);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.DIV:
+      {
+        Div div = (Div)theEObject;
+        T result = caseDiv(div);
+        if (result == null) result = caseExpression(div);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.NUMBER_LITERAL:
+      {
+        NumberLiteral numberLiteral = (NumberLiteral)theEObject;
+        T result = caseNumberLiteral(numberLiteral);
+        if (result == null) result = caseExpression(numberLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.VARIABLE_CALL:
+      {
+        VariableCall variableCall = (VariableCall)theEObject;
+        T result = caseVariableCall(variableCall);
+        if (result == null) result = caseExpression(variableCall);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.FUNCTION_CALL:
+      {
+        FunctionCall functionCall = (FunctionCall)theEObject;
+        T result = caseFunctionCall(functionCall);
+        if (result == null) result = caseExpression(functionCall);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -348,38 +800,6 @@ public class FlowSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Stream Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Stream Declaration</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseStreamDeclaration(StreamDeclaration object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Stream Element</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Stream Element</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseStreamElement(StreamElement object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Import</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -396,113 +816,49 @@ public class FlowSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Test Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Stream Statement</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Test Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Stream Statement</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTestElement(TestElement object)
+  public T caseStreamStatement(StreamStatement object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Test Assign</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Statement</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Test Assign</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Statement</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTestAssign(TestAssign object)
+  public T caseStatement(Statement object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>OWL Test Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Variable Statement</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>OWL Test Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Variable Statement</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseOWLTestElement(OWLTestElement object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Operator</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Operator</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseOperator(Operator object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseVariable(Variable object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable Declaration</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseVariableDeclaration(VariableDeclaration object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Stream Definition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Stream Definition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseStreamDefinition(StreamDefinition object)
+  public T caseVariableStatement(VariableStatement object)
   {
     return null;
   }
@@ -524,6 +880,54 @@ public class FlowSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Stream Declaration Access</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Stream Declaration Access</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStreamDeclarationAccess(StreamDeclarationAccess object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Stream Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Stream Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStreamDefinition(StreamDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Join Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Join Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseJoinOperator(JoinOperator object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Stream Operator Parameter</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -535,54 +939,6 @@ public class FlowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStreamOperatorParameter(StreamOperatorParameter object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Count Operator</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Count Operator</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseCountOperator(CountOperator object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Standard Deviation Operator</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Standard Deviation Operator</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseStandardDeviationOperator(StandardDeviationOperator object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Average Operator</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Average Operator</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAverageOperator(AverageOperator object)
   {
     return null;
   }
@@ -604,6 +960,166 @@ public class FlowSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Filter Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Filter Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFilterOperator(FilterOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Split Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Split Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSplitOperator(SplitOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Match Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Match Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMatchOperator(MatchOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Symmetric Difference Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Symmetric Difference Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSymmetricDifferenceOperator(SymmetricDifferenceOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Difference Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Difference Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDifferenceOperator(DifferenceOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Map Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Map Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMapOperator(MapOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Function Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunctionStatement(FunctionStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Input Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Input Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInputOperator(InputOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Return Type Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Return Type Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReturnTypeOperator(ReturnTypeOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>No Return Type Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>No Return Type Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNoReturnTypeOperator(NoReturnTypeOperator object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Tag Operator</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -615,6 +1131,38 @@ public class FlowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTagOperator(TagOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Un Tag Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Un Tag Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUnTagOperator(UnTagOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Un Tag Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Un Tag Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUnTagElement(UnTagElement object)
   {
     return null;
   }
@@ -684,6 +1232,198 @@ public class FlowSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Barrier Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Barrier Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBarrierOperator(BarrierOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Window Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Window Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWindowOperator(WindowOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Marker Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Marker Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMarkerOperator(MarkerOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SWRL Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SWRL Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSWRLOperator(SWRLOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SWRL Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SWRL Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSWRLRule(SWRLRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Antecedent Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Antecedent Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAntecedentRule(AntecedentRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Consequent Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Consequent Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConsequentRule(ConsequentRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRule(Rule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>OCL Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>OCL Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOCLOperator(OCLOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Count Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Count Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCountOperator(CountOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Standard Deviation Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Standard Deviation Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStandardDeviationOperator(StandardDeviationOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Average Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Average Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAverageOperator(AverageOperator object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Output Operator</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -716,33 +1456,593 @@ public class FlowSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Barrier Operator</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Processing Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Barrier Operator</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Processing Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBarrierOperator(BarrierOperator object)
+  public T caseProcessingExpression(ProcessingExpression object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Window Operator</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Block Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Window Operator</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Block Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseWindowOperator(WindowOperator object)
+  public T caseBlockExpression(BlockExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Return Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Return Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReturnStatement(ReturnStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Conditional Expressions</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Conditional Expressions</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConditionalExpressions(ConditionalExpressions object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>If Else Condition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>If Else Condition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIfElseCondition(IfElseCondition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Switch Case Condition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Switch Case Condition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSwitchCaseCondition(SwitchCaseCondition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Case Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Case Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCaseStatement(CaseStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Function Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunctionDefinition(FunctionDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Return Variable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Return Variable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReturnVariable(ReturnVariable object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Returnable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Returnable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReturnable(Returnable object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariableDeclaration(VariableDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>While Loop Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>While Loop Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWhileLoopDefinition(WhileLoopDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariable(Variable object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariableDefinition(VariableDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Number Variable Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Number Variable Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNumberVariableDefinition(NumberVariableDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Variable Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Variable Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringVariableDefinition(StringVariableDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Variable Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Variable Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBooleanVariableDefinition(BooleanVariableDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Structure Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Structure Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStructureDeclaration(StructureDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Stream Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Stream Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStreamDeclaration(StreamDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Stream Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Stream Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStreamElement(StreamElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Structure Elements</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Structure Elements</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStructureElements(StructureElements object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpression(Expression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataType(DataType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Simple Data Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Simple Data Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSimpleDataType(SimpleDataType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Complex Data Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Complex Data Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComplexDataType(ComplexDataType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Integer Data Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Integer Data Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIntegerDataType(IntegerDataType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Data Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Data Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBooleanDataType(BooleanDataType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Float Data Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Float Data Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFloatDataType(FloatDataType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Data Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Data Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringDataType(StringDataType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Operation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Operation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBooleanOperation(BooleanOperation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Plus</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Plus</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePlus(Plus object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Minus</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Minus</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMinus(Minus object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Multi</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Multi</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMulti(Multi object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Div</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Div</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDiv(Div object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Number Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Number Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNumberLiteral(NumberLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable Call</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable Call</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariableCall(VariableCall object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Function Call</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function Call</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunctionCall(FunctionCall object)
   {
     return null;
   }

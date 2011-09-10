@@ -5,35 +5,88 @@
  */
 package de.hs_rm.cs.vs.dsm.flow.impl;
 
+import de.hs_rm.cs.vs.dsm.flow.AntecedentRule;
 import de.hs_rm.cs.vs.dsm.flow.AverageOperator;
 import de.hs_rm.cs.vs.dsm.flow.BarrierOperator;
+import de.hs_rm.cs.vs.dsm.flow.BlockExpression;
+import de.hs_rm.cs.vs.dsm.flow.BooleanDataType;
+import de.hs_rm.cs.vs.dsm.flow.BooleanOperation;
+import de.hs_rm.cs.vs.dsm.flow.BooleanVariableDefinition;
+import de.hs_rm.cs.vs.dsm.flow.CaseStatement;
+import de.hs_rm.cs.vs.dsm.flow.ComplexDataType;
+import de.hs_rm.cs.vs.dsm.flow.ConditionalExpressions;
+import de.hs_rm.cs.vs.dsm.flow.ConsequentRule;
 import de.hs_rm.cs.vs.dsm.flow.CountOperator;
+import de.hs_rm.cs.vs.dsm.flow.DataType;
+import de.hs_rm.cs.vs.dsm.flow.DifferenceOperator;
+import de.hs_rm.cs.vs.dsm.flow.Div;
 import de.hs_rm.cs.vs.dsm.flow.ElementJoinOperator;
+import de.hs_rm.cs.vs.dsm.flow.Expression;
+import de.hs_rm.cs.vs.dsm.flow.FilterOperator;
+import de.hs_rm.cs.vs.dsm.flow.FloatDataType;
 import de.hs_rm.cs.vs.dsm.flow.FlowFactory;
 import de.hs_rm.cs.vs.dsm.flow.FlowPackage;
+import de.hs_rm.cs.vs.dsm.flow.FunctionCall;
+import de.hs_rm.cs.vs.dsm.flow.FunctionDefinition;
+import de.hs_rm.cs.vs.dsm.flow.FunctionStatement;
+import de.hs_rm.cs.vs.dsm.flow.IfElseCondition;
 import de.hs_rm.cs.vs.dsm.flow.Import;
+import de.hs_rm.cs.vs.dsm.flow.InputOperator;
+import de.hs_rm.cs.vs.dsm.flow.IntegerDataType;
+import de.hs_rm.cs.vs.dsm.flow.JoinOperator;
+import de.hs_rm.cs.vs.dsm.flow.MapOperator;
+import de.hs_rm.cs.vs.dsm.flow.MarkerOperator;
+import de.hs_rm.cs.vs.dsm.flow.MatchOperator;
+import de.hs_rm.cs.vs.dsm.flow.Minus;
 import de.hs_rm.cs.vs.dsm.flow.Model;
 import de.hs_rm.cs.vs.dsm.flow.ModelElement;
-import de.hs_rm.cs.vs.dsm.flow.OWLTestElement;
-import de.hs_rm.cs.vs.dsm.flow.Operator;
+import de.hs_rm.cs.vs.dsm.flow.Multi;
+import de.hs_rm.cs.vs.dsm.flow.NoReturnTypeOperator;
+import de.hs_rm.cs.vs.dsm.flow.NumberLiteral;
+import de.hs_rm.cs.vs.dsm.flow.NumberVariableDefinition;
+import de.hs_rm.cs.vs.dsm.flow.OCLOperator;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperatorParameter;
 import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration;
+import de.hs_rm.cs.vs.dsm.flow.Plus;
+import de.hs_rm.cs.vs.dsm.flow.ProcessingExpression;
+import de.hs_rm.cs.vs.dsm.flow.ReturnStatement;
+import de.hs_rm.cs.vs.dsm.flow.ReturnTypeOperator;
+import de.hs_rm.cs.vs.dsm.flow.ReturnVariable;
+import de.hs_rm.cs.vs.dsm.flow.Returnable;
+import de.hs_rm.cs.vs.dsm.flow.Rule;
+import de.hs_rm.cs.vs.dsm.flow.SWRLOperator;
+import de.hs_rm.cs.vs.dsm.flow.SWRLRule;
+import de.hs_rm.cs.vs.dsm.flow.SimpleDataType;
+import de.hs_rm.cs.vs.dsm.flow.SplitOperator;
 import de.hs_rm.cs.vs.dsm.flow.StandardDeviationOperator;
+import de.hs_rm.cs.vs.dsm.flow.Statement;
 import de.hs_rm.cs.vs.dsm.flow.StreamAccess;
 import de.hs_rm.cs.vs.dsm.flow.StreamDeclaration;
+import de.hs_rm.cs.vs.dsm.flow.StreamDeclarationAccess;
 import de.hs_rm.cs.vs.dsm.flow.StreamDefinition;
 import de.hs_rm.cs.vs.dsm.flow.StreamElement;
 import de.hs_rm.cs.vs.dsm.flow.StreamOperatorParameter;
+import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
+import de.hs_rm.cs.vs.dsm.flow.StringDataType;
+import de.hs_rm.cs.vs.dsm.flow.StringVariableDefinition;
+import de.hs_rm.cs.vs.dsm.flow.StructureDeclaration;
+import de.hs_rm.cs.vs.dsm.flow.StructureElements;
+import de.hs_rm.cs.vs.dsm.flow.SwitchCaseCondition;
+import de.hs_rm.cs.vs.dsm.flow.SymmetricDifferenceOperator;
 import de.hs_rm.cs.vs.dsm.flow.TagClassElement;
 import de.hs_rm.cs.vs.dsm.flow.TagDataTypePropertyElement;
 import de.hs_rm.cs.vs.dsm.flow.TagElement;
 import de.hs_rm.cs.vs.dsm.flow.TagObjectPropertyElement;
 import de.hs_rm.cs.vs.dsm.flow.TagOperator;
-import de.hs_rm.cs.vs.dsm.flow.TestAssign;
-import de.hs_rm.cs.vs.dsm.flow.TestElement;
+import de.hs_rm.cs.vs.dsm.flow.UnTagElement;
+import de.hs_rm.cs.vs.dsm.flow.UnTagOperator;
 import de.hs_rm.cs.vs.dsm.flow.Variable;
+import de.hs_rm.cs.vs.dsm.flow.VariableCall;
 import de.hs_rm.cs.vs.dsm.flow.VariableDeclaration;
+import de.hs_rm.cs.vs.dsm.flow.VariableDefinition;
+import de.hs_rm.cs.vs.dsm.flow.VariableStatement;
+import de.hs_rm.cs.vs.dsm.flow.WhileLoopDefinition;
 import de.hs_rm.cs.vs.dsm.flow.WindowOperator;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -42,8 +95,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import org.eclipse.xtext.common.types.TypesPackage;
 
 import owl.OwlPackage;
 
@@ -83,20 +134,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass streamDeclarationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass streamElementEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass importEClass = null;
 
   /**
@@ -104,49 +141,21 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass testElementEClass = null;
+  private EClass streamStatementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass testAssignEClass = null;
+  private EClass statementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass owlTestElementEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass operatorEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass variableEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass variableDeclarationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass streamDefinitionEClass = null;
+  private EClass variableStatementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -160,28 +169,28 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass streamDeclarationAccessEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass streamDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass joinOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass streamOperatorParameterEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass countOperatorEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass standardDeviationOperatorEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass averageOperatorEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -195,7 +204,91 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass filterOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass splitOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass matchOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass symmetricDifferenceOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass differenceOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass mapOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass functionStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass inputOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass returnTypeOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass noReturnTypeOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass tagOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass unTagOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass unTagElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -230,6 +323,90 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass barrierOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass windowOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass markerOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass swrlOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass swrlRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass antecedentRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass consequentRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ruleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass oclOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass countOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass standardDeviationOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass averageOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass outputOperatorEClass = null;
 
   /**
@@ -244,14 +421,259 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass barrierOperatorEClass = null;
+  private EClass processingExpressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass windowOperatorEClass = null;
+  private EClass blockExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass returnStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass conditionalExpressionsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ifElseConditionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass switchCaseConditionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass caseStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass functionDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass returnVariableEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass returnableEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass variableDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass whileLoopDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass variableEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass variableDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass numberVariableDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stringVariableDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass booleanVariableDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass structureDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass streamDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass streamElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass structureElementsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass expressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dataTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass simpleDataTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass complexDataTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass integerDataTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass booleanDataTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass floatDataTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stringDataTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass booleanOperationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass plusEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass minusEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass multiEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass divEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass numberLiteralEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass variableCallEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass functionCallEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -303,7 +725,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     // Initialize simple dependencies
     OwlPackage.eINSTANCE.eClass();
-    TypesPackage.eINSTANCE.eClass();
     RdfsPackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
@@ -336,7 +757,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Model()
+  public EReference getModel_Models()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -386,66 +807,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getStreamDeclaration()
-  {
-    return streamDeclarationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getStreamDeclaration_Name()
-  {
-    return (EAttribute)streamDeclarationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getStreamDeclaration_Elements()
-  {
-    return (EReference)streamDeclarationEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getStreamElement()
-  {
-    return streamElementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getStreamElement_Type()
-  {
-    return (EReference)streamElementEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getStreamElement_Name()
-  {
-    return (EAttribute)streamElementEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getImport()
   {
     return importEClass;
@@ -466,9 +827,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTestElement()
+  public EClass getStreamStatement()
   {
-    return testElementEClass;
+    return streamStatementEClass;
   }
 
   /**
@@ -476,9 +837,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTestElement_Name()
+  public EReference getStreamStatement_ReturnStream()
   {
-    return (EAttribute)testElementEClass.getEStructuralFeatures().get(0);
+    return (EReference)streamStatementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -486,9 +847,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTestAssign()
+  public EReference getStreamStatement_Expression()
   {
-    return testAssignEClass;
+    return (EReference)streamStatementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -496,9 +857,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTestAssign_Left()
+  public EClass getStatement()
   {
-    return (EReference)testAssignEClass.getEStructuralFeatures().get(0);
+    return statementEClass;
   }
 
   /**
@@ -506,9 +867,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTestAssign_Right()
+  public EClass getVariableStatement()
   {
-    return (EReference)testAssignEClass.getEStructuralFeatures().get(1);
+    return variableStatementEClass;
   }
 
   /**
@@ -516,9 +877,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getOWLTestElement()
+  public EReference getVariableStatement_Reference()
   {
-    return owlTestElementEClass;
+    return (EReference)variableStatementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -526,89 +887,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getOWLTestElement_Element()
+  public EReference getVariableStatement_Expression()
   {
-    return (EReference)owlTestElementEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getOperator()
-  {
-    return operatorEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getVariable()
-  {
-    return variableEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getVariableDeclaration()
-  {
-    return variableDeclarationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getVariableDeclaration_Type()
-  {
-    return (EReference)variableDeclarationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getVariableDeclaration_Name()
-  {
-    return (EAttribute)variableDeclarationEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getStreamDefinition()
-  {
-    return streamDefinitionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getStreamDefinition_Reference()
-  {
-    return (EReference)streamDefinitionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getStreamDefinition_Name()
-  {
-    return (EAttribute)streamDefinitionEClass.getEStructuralFeatures().get(1);
+    return (EReference)variableStatementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -646,6 +927,96 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getStreamAccess_StreamVariable()
+  {
+    return (EReference)streamAccessEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStreamDeclarationAccess()
+  {
+    return streamDeclarationAccessEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStreamDeclarationAccess_Reference()
+  {
+    return (EReference)streamDeclarationAccessEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStreamDeclarationAccess_Element()
+  {
+    return (EReference)streamDeclarationAccessEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStreamDefinition()
+  {
+    return streamDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStreamDefinition_Reference()
+  {
+    return (EReference)streamDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStreamDefinition_Name()
+  {
+    return (EAttribute)streamDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getJoinOperator()
+  {
+    return joinOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getJoinOperator_Parameters()
+  {
+    return (EReference)joinOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getStreamOperatorParameter()
   {
     return streamOperatorParameterEClass;
@@ -669,6 +1040,706 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
   public EReference getStreamOperatorParameter_Barrier()
   {
     return (EReference)streamOperatorParameterEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getElementJoinOperator()
+  {
+    return elementJoinOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getElementJoinOperator_ElementParameters()
+  {
+    return (EReference)elementJoinOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getElementJoinOperator_VariableElementParameters()
+  {
+    return (EReference)elementJoinOperatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getElementJoinOperator_Parameter()
+  {
+    return (EReference)elementJoinOperatorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFilterOperator()
+  {
+    return filterOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFilterOperator_Expression()
+  {
+    return (EReference)filterOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFilterOperator_Stream()
+  {
+    return (EReference)filterOperatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSplitOperator()
+  {
+    return splitOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSplitOperator_Parameter()
+  {
+    return (EReference)splitOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMatchOperator()
+  {
+    return matchOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMatchOperator_Expression()
+  {
+    return (EReference)matchOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMatchOperator_Calculation()
+  {
+    return (EReference)matchOperatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMatchOperator_Stream()
+  {
+    return (EReference)matchOperatorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSymmetricDifferenceOperator()
+  {
+    return symmetricDifferenceOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSymmetricDifferenceOperator_Parameters()
+  {
+    return (EReference)symmetricDifferenceOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDifferenceOperator()
+  {
+    return differenceOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDifferenceOperator_Parameters()
+  {
+    return (EReference)differenceOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMapOperator()
+  {
+    return mapOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMapOperator_FunctionList()
+  {
+    return (EReference)mapOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMapOperator_Stream()
+  {
+    return (EReference)mapOperatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFunctionStatement()
+  {
+    return functionStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionStatement_Element()
+  {
+    return (EReference)functionStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionStatement_Function()
+  {
+    return (EReference)functionStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionStatement_Arguments()
+  {
+    return (EReference)functionStatementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInputOperator()
+  {
+    return inputOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInputOperator_Location()
+  {
+    return (EAttribute)inputOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInputOperator_Regexp()
+  {
+    return (EAttribute)inputOperatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInputOperator_Model()
+  {
+    return (EReference)inputOperatorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getReturnTypeOperator()
+  {
+    return returnTypeOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNoReturnTypeOperator()
+  {
+    return noReturnTypeOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTagOperator()
+  {
+    return tagOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTagOperator_Parameters()
+  {
+    return (EReference)tagOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTagOperator_Stream()
+  {
+    return (EReference)tagOperatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getUnTagOperator()
+  {
+    return unTagOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getUnTagOperator_Parameters()
+  {
+    return (EReference)unTagOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getUnTagOperator_Stream()
+  {
+    return (EReference)unTagOperatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getUnTagElement()
+  {
+    return unTagElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getUnTagElement_Element()
+  {
+    return (EReference)unTagElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getUnTagElement_Reference()
+  {
+    return (EReference)unTagElementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTagElement()
+  {
+    return tagElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTagElement_Reference()
+  {
+    return (EReference)tagElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTagClassElement()
+  {
+    return tagClassElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTagClassElement_Element()
+  {
+    return (EReference)tagClassElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTagObjectPropertyElement()
+  {
+    return tagObjectPropertyElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTagObjectPropertyElement_Element()
+  {
+    return (EReference)tagObjectPropertyElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTagDataTypePropertyElement()
+  {
+    return tagDataTypePropertyElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTagDataTypePropertyElement_Element()
+  {
+    return (EReference)tagDataTypePropertyElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBarrierOperator()
+  {
+    return barrierOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWindowOperator()
+  {
+    return windowOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWindowOperator_Setting()
+  {
+    return (EAttribute)windowOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWindowOperator_Value()
+  {
+    return (EAttribute)windowOperatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWindowOperator_Unit()
+  {
+    return (EAttribute)windowOperatorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMarkerOperator()
+  {
+    return markerOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMarkerOperator_Expression()
+  {
+    return (EReference)markerOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSWRLOperator()
+  {
+    return swrlOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSWRLOperator_Rule()
+  {
+    return (EReference)swrlOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSWRLOperator_Barrier()
+  {
+    return (EReference)swrlOperatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSWRLRule()
+  {
+    return swrlRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSWRLRule_Antecedent()
+  {
+    return (EReference)swrlRuleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSWRLRule_Consequent()
+  {
+    return (EReference)swrlRuleEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAntecedentRule()
+  {
+    return antecedentRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAntecedentRule_Atoms()
+  {
+    return (EReference)antecedentRuleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getConsequentRule()
+  {
+    return consequentRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getConsequentRule_Atoms()
+  {
+    return (EReference)consequentRuleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRule()
+  {
+    return ruleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRule_Name()
+  {
+    return (EReference)ruleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRule_Variable()
+  {
+    return (EReference)ruleEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getOCLOperator()
+  {
+    return oclOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getOCLOperator_Constraint()
+  {
+    return (EAttribute)oclOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOCLOperator_Stream()
+  {
+    return (EReference)oclOperatorEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -766,156 +1837,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getElementJoinOperator()
-  {
-    return elementJoinOperatorEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getElementJoinOperator_ElementParameters()
-  {
-    return (EReference)elementJoinOperatorEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getElementJoinOperator_VariableElementParameters()
-  {
-    return (EReference)elementJoinOperatorEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getElementJoinOperator_Parameter()
-  {
-    return (EReference)elementJoinOperatorEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getTagOperator()
-  {
-    return tagOperatorEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getTagOperator_Parameters()
-  {
-    return (EReference)tagOperatorEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getTagOperator_Stream()
-  {
-    return (EReference)tagOperatorEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getTagElement()
-  {
-    return tagElementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getTagElement_Reference()
-  {
-    return (EReference)tagElementEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getTagClassElement()
-  {
-    return tagClassElementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getTagClassElement_Element()
-  {
-    return (EReference)tagClassElementEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getTagObjectPropertyElement()
-  {
-    return tagObjectPropertyElementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getTagObjectPropertyElement_Element()
-  {
-    return (EReference)tagObjectPropertyElementEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getTagDataTypePropertyElement()
-  {
-    return tagDataTypePropertyElementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getTagDataTypePropertyElement_Element()
-  {
-    return (EReference)tagDataTypePropertyElementEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getOutputOperator()
   {
     return outputOperatorEClass;
@@ -976,9 +1897,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBarrierOperator()
+  public EClass getProcessingExpression()
   {
-    return barrierOperatorEClass;
+    return processingExpressionEClass;
   }
 
   /**
@@ -986,9 +1907,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getWindowOperator()
+  public EClass getBlockExpression()
   {
-    return windowOperatorEClass;
+    return blockExpressionEClass;
   }
 
   /**
@@ -996,9 +1917,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getWindowOperator_Setting()
+  public EClass getReturnStatement()
   {
-    return (EAttribute)windowOperatorEClass.getEStructuralFeatures().get(0);
+    return returnStatementEClass;
   }
 
   /**
@@ -1006,9 +1927,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getWindowOperator_Value()
+  public EReference getReturnStatement_ReturnVariable()
   {
-    return (EAttribute)windowOperatorEClass.getEStructuralFeatures().get(1);
+    return (EReference)returnStatementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1016,9 +1937,769 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getWindowOperator_Unit()
+  public EClass getConditionalExpressions()
   {
-    return (EAttribute)windowOperatorEClass.getEStructuralFeatures().get(2);
+    return conditionalExpressionsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getConditionalExpressions_Condition()
+  {
+    return (EReference)conditionalExpressionsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIfElseCondition()
+  {
+    return ifElseConditionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIfElseCondition_IfAction()
+  {
+    return (EReference)ifElseConditionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIfElseCondition_ElseAction()
+  {
+    return (EReference)ifElseConditionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSwitchCaseCondition()
+  {
+    return switchCaseConditionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSwitchCaseCondition_CaseExpression()
+  {
+    return (EReference)switchCaseConditionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSwitchCaseCondition_DefaultExpression()
+  {
+    return (EReference)switchCaseConditionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCaseStatement()
+  {
+    return caseStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCaseStatement_Condition()
+  {
+    return (EReference)caseStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCaseStatement_Action()
+  {
+    return (EReference)caseStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFunctionDefinition()
+  {
+    return functionDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionDefinition_Type()
+  {
+    return (EReference)functionDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFunctionDefinition_Name()
+  {
+    return (EAttribute)functionDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionDefinition_Arguments()
+  {
+    return (EReference)functionDefinitionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionDefinition_Statements()
+  {
+    return (EReference)functionDefinitionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionDefinition_ReturnValue()
+  {
+    return (EReference)functionDefinitionEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getReturnVariable()
+  {
+    return returnVariableEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getReturnVariable_Returnable()
+  {
+    return (EReference)returnVariableEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getReturnable()
+  {
+    return returnableEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVariableDeclaration()
+  {
+    return variableDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVariableDeclaration_Type()
+  {
+    return (EReference)variableDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWhileLoopDefinition()
+  {
+    return whileLoopDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWhileLoopDefinition_Condition()
+  {
+    return (EReference)whileLoopDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWhileLoopDefinition_Statements()
+  {
+    return (EReference)whileLoopDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVariable()
+  {
+    return variableEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getVariable_Name()
+  {
+    return (EAttribute)variableEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVariableDefinition()
+  {
+    return variableDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNumberVariableDefinition()
+  {
+    return numberVariableDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNumberVariableDefinition_Type()
+  {
+    return (EReference)numberVariableDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNumberVariableDefinition_Value()
+  {
+    return (EAttribute)numberVariableDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStringVariableDefinition()
+  {
+    return stringVariableDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStringVariableDefinition_Type()
+  {
+    return (EReference)stringVariableDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStringVariableDefinition_Value()
+  {
+    return (EAttribute)stringVariableDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBooleanVariableDefinition()
+  {
+    return booleanVariableDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBooleanVariableDefinition_Type()
+  {
+    return (EReference)booleanVariableDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBooleanVariableDefinition_Value()
+  {
+    return (EAttribute)booleanVariableDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStructureDeclaration()
+  {
+    return structureDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStructureDeclaration_Name()
+  {
+    return (EAttribute)structureDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStructureDeclaration_Elements()
+  {
+    return (EReference)structureDeclarationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStreamDeclaration()
+  {
+    return streamDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStreamDeclaration_Name()
+  {
+    return (EAttribute)streamDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStreamDeclaration_Elements()
+  {
+    return (EReference)streamDeclarationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStreamElement()
+  {
+    return streamElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStructureElements()
+  {
+    return structureElementsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStructureElements_Element()
+  {
+    return (EReference)structureElementsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExpression()
+  {
+    return expressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDataType()
+  {
+    return dataTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSimpleDataType()
+  {
+    return simpleDataTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getComplexDataType()
+  {
+    return complexDataTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIntegerDataType()
+  {
+    return integerDataTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBooleanDataType()
+  {
+    return booleanDataTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFloatDataType()
+  {
+    return floatDataTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStringDataType()
+  {
+    return stringDataTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBooleanOperation()
+  {
+    return booleanOperationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBooleanOperation_Left()
+  {
+    return (EReference)booleanOperationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBooleanOperation_Operator()
+  {
+    return (EAttribute)booleanOperationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBooleanOperation_Right()
+  {
+    return (EReference)booleanOperationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPlus()
+  {
+    return plusEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPlus_Left()
+  {
+    return (EReference)plusEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPlus_Right()
+  {
+    return (EReference)plusEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMinus()
+  {
+    return minusEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMinus_Left()
+  {
+    return (EReference)minusEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMinus_Right()
+  {
+    return (EReference)minusEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMulti()
+  {
+    return multiEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMulti_Left()
+  {
+    return (EReference)multiEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMulti_Right()
+  {
+    return (EReference)multiEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDiv()
+  {
+    return divEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDiv_Left()
+  {
+    return (EReference)divEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDiv_Right()
+  {
+    return (EReference)divEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNumberLiteral()
+  {
+    return numberLiteralEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNumberLiteral_Value()
+  {
+    return (EAttribute)numberLiteralEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVariableCall()
+  {
+    return variableCallEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVariableCall_Variable()
+  {
+    return (EReference)variableCallEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFunctionCall()
+  {
+    return functionCallEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionCall_Func()
+  {
+    return (EReference)functionCallEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionCall_Arguments()
+  {
+    return (EReference)functionCallEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1052,7 +2733,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__MODEL);
+    createEReference(modelEClass, MODEL__MODELS);
 
     packageDeclarationEClass = createEClass(PACKAGE_DECLARATION);
     createEAttribute(packageDeclarationEClass, PACKAGE_DECLARATION__NAME);
@@ -1060,67 +2741,91 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     modelElementEClass = createEClass(MODEL_ELEMENT);
 
-    streamDeclarationEClass = createEClass(STREAM_DECLARATION);
-    createEAttribute(streamDeclarationEClass, STREAM_DECLARATION__NAME);
-    createEReference(streamDeclarationEClass, STREAM_DECLARATION__ELEMENTS);
-
-    streamElementEClass = createEClass(STREAM_ELEMENT);
-    createEReference(streamElementEClass, STREAM_ELEMENT__TYPE);
-    createEAttribute(streamElementEClass, STREAM_ELEMENT__NAME);
-
     importEClass = createEClass(IMPORT);
     createEAttribute(importEClass, IMPORT__IMPORT_URI);
 
-    testElementEClass = createEClass(TEST_ELEMENT);
-    createEAttribute(testElementEClass, TEST_ELEMENT__NAME);
+    streamStatementEClass = createEClass(STREAM_STATEMENT);
+    createEReference(streamStatementEClass, STREAM_STATEMENT__RETURN_STREAM);
+    createEReference(streamStatementEClass, STREAM_STATEMENT__EXPRESSION);
 
-    testAssignEClass = createEClass(TEST_ASSIGN);
-    createEReference(testAssignEClass, TEST_ASSIGN__LEFT);
-    createEReference(testAssignEClass, TEST_ASSIGN__RIGHT);
+    statementEClass = createEClass(STATEMENT);
 
-    owlTestElementEClass = createEClass(OWL_TEST_ELEMENT);
-    createEReference(owlTestElementEClass, OWL_TEST_ELEMENT__ELEMENT);
+    variableStatementEClass = createEClass(VARIABLE_STATEMENT);
+    createEReference(variableStatementEClass, VARIABLE_STATEMENT__REFERENCE);
+    createEReference(variableStatementEClass, VARIABLE_STATEMENT__EXPRESSION);
 
-    operatorEClass = createEClass(OPERATOR);
+    streamAccessEClass = createEClass(STREAM_ACCESS);
+    createEReference(streamAccessEClass, STREAM_ACCESS__REFERENCE);
+    createEReference(streamAccessEClass, STREAM_ACCESS__ELEMENT);
+    createEReference(streamAccessEClass, STREAM_ACCESS__STREAM_VARIABLE);
 
-    variableEClass = createEClass(VARIABLE);
-
-    variableDeclarationEClass = createEClass(VARIABLE_DECLARATION);
-    createEReference(variableDeclarationEClass, VARIABLE_DECLARATION__TYPE);
-    createEAttribute(variableDeclarationEClass, VARIABLE_DECLARATION__NAME);
+    streamDeclarationAccessEClass = createEClass(STREAM_DECLARATION_ACCESS);
+    createEReference(streamDeclarationAccessEClass, STREAM_DECLARATION_ACCESS__REFERENCE);
+    createEReference(streamDeclarationAccessEClass, STREAM_DECLARATION_ACCESS__ELEMENT);
 
     streamDefinitionEClass = createEClass(STREAM_DEFINITION);
     createEReference(streamDefinitionEClass, STREAM_DEFINITION__REFERENCE);
     createEAttribute(streamDefinitionEClass, STREAM_DEFINITION__NAME);
 
-    streamAccessEClass = createEClass(STREAM_ACCESS);
-    createEReference(streamAccessEClass, STREAM_ACCESS__REFERENCE);
-    createEReference(streamAccessEClass, STREAM_ACCESS__ELEMENT);
+    joinOperatorEClass = createEClass(JOIN_OPERATOR);
+    createEReference(joinOperatorEClass, JOIN_OPERATOR__PARAMETERS);
 
     streamOperatorParameterEClass = createEClass(STREAM_OPERATOR_PARAMETER);
     createEReference(streamOperatorParameterEClass, STREAM_OPERATOR_PARAMETER__STREAM);
     createEReference(streamOperatorParameterEClass, STREAM_OPERATOR_PARAMETER__BARRIER);
-
-    countOperatorEClass = createEClass(COUNT_OPERATOR);
-    createEReference(countOperatorEClass, COUNT_OPERATOR__PARAMETER);
-    createEReference(countOperatorEClass, COUNT_OPERATOR__STREAM);
-
-    standardDeviationOperatorEClass = createEClass(STANDARD_DEVIATION_OPERATOR);
-    createEReference(standardDeviationOperatorEClass, STANDARD_DEVIATION_OPERATOR__PARAMETER);
-    createEReference(standardDeviationOperatorEClass, STANDARD_DEVIATION_OPERATOR__STREAM);
-
-    averageOperatorEClass = createEClass(AVERAGE_OPERATOR);
-    createEReference(averageOperatorEClass, AVERAGE_OPERATOR__PARAMETER);
-    createEReference(averageOperatorEClass, AVERAGE_OPERATOR__STREAM);
 
     elementJoinOperatorEClass = createEClass(ELEMENT_JOIN_OPERATOR);
     createEReference(elementJoinOperatorEClass, ELEMENT_JOIN_OPERATOR__ELEMENT_PARAMETERS);
     createEReference(elementJoinOperatorEClass, ELEMENT_JOIN_OPERATOR__VARIABLE_ELEMENT_PARAMETERS);
     createEReference(elementJoinOperatorEClass, ELEMENT_JOIN_OPERATOR__PARAMETER);
 
+    filterOperatorEClass = createEClass(FILTER_OPERATOR);
+    createEReference(filterOperatorEClass, FILTER_OPERATOR__EXPRESSION);
+    createEReference(filterOperatorEClass, FILTER_OPERATOR__STREAM);
+
+    splitOperatorEClass = createEClass(SPLIT_OPERATOR);
+    createEReference(splitOperatorEClass, SPLIT_OPERATOR__PARAMETER);
+
+    matchOperatorEClass = createEClass(MATCH_OPERATOR);
+    createEReference(matchOperatorEClass, MATCH_OPERATOR__EXPRESSION);
+    createEReference(matchOperatorEClass, MATCH_OPERATOR__CALCULATION);
+    createEReference(matchOperatorEClass, MATCH_OPERATOR__STREAM);
+
+    symmetricDifferenceOperatorEClass = createEClass(SYMMETRIC_DIFFERENCE_OPERATOR);
+    createEReference(symmetricDifferenceOperatorEClass, SYMMETRIC_DIFFERENCE_OPERATOR__PARAMETERS);
+
+    differenceOperatorEClass = createEClass(DIFFERENCE_OPERATOR);
+    createEReference(differenceOperatorEClass, DIFFERENCE_OPERATOR__PARAMETERS);
+
+    mapOperatorEClass = createEClass(MAP_OPERATOR);
+    createEReference(mapOperatorEClass, MAP_OPERATOR__FUNCTION_LIST);
+    createEReference(mapOperatorEClass, MAP_OPERATOR__STREAM);
+
+    functionStatementEClass = createEClass(FUNCTION_STATEMENT);
+    createEReference(functionStatementEClass, FUNCTION_STATEMENT__ELEMENT);
+    createEReference(functionStatementEClass, FUNCTION_STATEMENT__FUNCTION);
+    createEReference(functionStatementEClass, FUNCTION_STATEMENT__ARGUMENTS);
+
+    inputOperatorEClass = createEClass(INPUT_OPERATOR);
+    createEAttribute(inputOperatorEClass, INPUT_OPERATOR__LOCATION);
+    createEAttribute(inputOperatorEClass, INPUT_OPERATOR__REGEXP);
+    createEReference(inputOperatorEClass, INPUT_OPERATOR__MODEL);
+
+    returnTypeOperatorEClass = createEClass(RETURN_TYPE_OPERATOR);
+
+    noReturnTypeOperatorEClass = createEClass(NO_RETURN_TYPE_OPERATOR);
+
     tagOperatorEClass = createEClass(TAG_OPERATOR);
     createEReference(tagOperatorEClass, TAG_OPERATOR__PARAMETERS);
     createEReference(tagOperatorEClass, TAG_OPERATOR__STREAM);
+
+    unTagOperatorEClass = createEClass(UN_TAG_OPERATOR);
+    createEReference(unTagOperatorEClass, UN_TAG_OPERATOR__PARAMETERS);
+    createEReference(unTagOperatorEClass, UN_TAG_OPERATOR__STREAM);
+
+    unTagElementEClass = createEClass(UN_TAG_ELEMENT);
+    createEReference(unTagElementEClass, UN_TAG_ELEMENT__ELEMENT);
+    createEReference(unTagElementEClass, UN_TAG_ELEMENT__REFERENCE);
 
     tagElementEClass = createEClass(TAG_ELEMENT);
     createEReference(tagElementEClass, TAG_ELEMENT__REFERENCE);
@@ -1134,6 +2839,50 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     tagDataTypePropertyElementEClass = createEClass(TAG_DATA_TYPE_PROPERTY_ELEMENT);
     createEReference(tagDataTypePropertyElementEClass, TAG_DATA_TYPE_PROPERTY_ELEMENT__ELEMENT);
 
+    barrierOperatorEClass = createEClass(BARRIER_OPERATOR);
+
+    windowOperatorEClass = createEClass(WINDOW_OPERATOR);
+    createEAttribute(windowOperatorEClass, WINDOW_OPERATOR__SETTING);
+    createEAttribute(windowOperatorEClass, WINDOW_OPERATOR__VALUE);
+    createEAttribute(windowOperatorEClass, WINDOW_OPERATOR__UNIT);
+
+    markerOperatorEClass = createEClass(MARKER_OPERATOR);
+    createEReference(markerOperatorEClass, MARKER_OPERATOR__EXPRESSION);
+
+    swrlOperatorEClass = createEClass(SWRL_OPERATOR);
+    createEReference(swrlOperatorEClass, SWRL_OPERATOR__RULE);
+    createEReference(swrlOperatorEClass, SWRL_OPERATOR__BARRIER);
+
+    swrlRuleEClass = createEClass(SWRL_RULE);
+    createEReference(swrlRuleEClass, SWRL_RULE__ANTECEDENT);
+    createEReference(swrlRuleEClass, SWRL_RULE__CONSEQUENT);
+
+    antecedentRuleEClass = createEClass(ANTECEDENT_RULE);
+    createEReference(antecedentRuleEClass, ANTECEDENT_RULE__ATOMS);
+
+    consequentRuleEClass = createEClass(CONSEQUENT_RULE);
+    createEReference(consequentRuleEClass, CONSEQUENT_RULE__ATOMS);
+
+    ruleEClass = createEClass(RULE);
+    createEReference(ruleEClass, RULE__NAME);
+    createEReference(ruleEClass, RULE__VARIABLE);
+
+    oclOperatorEClass = createEClass(OCL_OPERATOR);
+    createEAttribute(oclOperatorEClass, OCL_OPERATOR__CONSTRAINT);
+    createEReference(oclOperatorEClass, OCL_OPERATOR__STREAM);
+
+    countOperatorEClass = createEClass(COUNT_OPERATOR);
+    createEReference(countOperatorEClass, COUNT_OPERATOR__PARAMETER);
+    createEReference(countOperatorEClass, COUNT_OPERATOR__STREAM);
+
+    standardDeviationOperatorEClass = createEClass(STANDARD_DEVIATION_OPERATOR);
+    createEReference(standardDeviationOperatorEClass, STANDARD_DEVIATION_OPERATOR__PARAMETER);
+    createEReference(standardDeviationOperatorEClass, STANDARD_DEVIATION_OPERATOR__STREAM);
+
+    averageOperatorEClass = createEClass(AVERAGE_OPERATOR);
+    createEReference(averageOperatorEClass, AVERAGE_OPERATOR__PARAMETER);
+    createEReference(averageOperatorEClass, AVERAGE_OPERATOR__STREAM);
+
     outputOperatorEClass = createEClass(OUTPUT_OPERATOR);
     createEReference(outputOperatorEClass, OUTPUT_OPERATOR__PARAMETER);
     createEAttribute(outputOperatorEClass, OUTPUT_OPERATOR__LOCATION);
@@ -1142,12 +2891,123 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     outputOperatorParameterEClass = createEClass(OUTPUT_OPERATOR_PARAMETER);
     createEReference(outputOperatorParameterEClass, OUTPUT_OPERATOR_PARAMETER__ELEMENT);
 
-    barrierOperatorEClass = createEClass(BARRIER_OPERATOR);
+    processingExpressionEClass = createEClass(PROCESSING_EXPRESSION);
 
-    windowOperatorEClass = createEClass(WINDOW_OPERATOR);
-    createEAttribute(windowOperatorEClass, WINDOW_OPERATOR__SETTING);
-    createEAttribute(windowOperatorEClass, WINDOW_OPERATOR__VALUE);
-    createEAttribute(windowOperatorEClass, WINDOW_OPERATOR__UNIT);
+    blockExpressionEClass = createEClass(BLOCK_EXPRESSION);
+
+    returnStatementEClass = createEClass(RETURN_STATEMENT);
+    createEReference(returnStatementEClass, RETURN_STATEMENT__RETURN_VARIABLE);
+
+    conditionalExpressionsEClass = createEClass(CONDITIONAL_EXPRESSIONS);
+    createEReference(conditionalExpressionsEClass, CONDITIONAL_EXPRESSIONS__CONDITION);
+
+    ifElseConditionEClass = createEClass(IF_ELSE_CONDITION);
+    createEReference(ifElseConditionEClass, IF_ELSE_CONDITION__IF_ACTION);
+    createEReference(ifElseConditionEClass, IF_ELSE_CONDITION__ELSE_ACTION);
+
+    switchCaseConditionEClass = createEClass(SWITCH_CASE_CONDITION);
+    createEReference(switchCaseConditionEClass, SWITCH_CASE_CONDITION__CASE_EXPRESSION);
+    createEReference(switchCaseConditionEClass, SWITCH_CASE_CONDITION__DEFAULT_EXPRESSION);
+
+    caseStatementEClass = createEClass(CASE_STATEMENT);
+    createEReference(caseStatementEClass, CASE_STATEMENT__CONDITION);
+    createEReference(caseStatementEClass, CASE_STATEMENT__ACTION);
+
+    functionDefinitionEClass = createEClass(FUNCTION_DEFINITION);
+    createEReference(functionDefinitionEClass, FUNCTION_DEFINITION__TYPE);
+    createEAttribute(functionDefinitionEClass, FUNCTION_DEFINITION__NAME);
+    createEReference(functionDefinitionEClass, FUNCTION_DEFINITION__ARGUMENTS);
+    createEReference(functionDefinitionEClass, FUNCTION_DEFINITION__STATEMENTS);
+    createEReference(functionDefinitionEClass, FUNCTION_DEFINITION__RETURN_VALUE);
+
+    returnVariableEClass = createEClass(RETURN_VARIABLE);
+    createEReference(returnVariableEClass, RETURN_VARIABLE__RETURNABLE);
+
+    returnableEClass = createEClass(RETURNABLE);
+
+    variableDeclarationEClass = createEClass(VARIABLE_DECLARATION);
+    createEReference(variableDeclarationEClass, VARIABLE_DECLARATION__TYPE);
+
+    whileLoopDefinitionEClass = createEClass(WHILE_LOOP_DEFINITION);
+    createEReference(whileLoopDefinitionEClass, WHILE_LOOP_DEFINITION__CONDITION);
+    createEReference(whileLoopDefinitionEClass, WHILE_LOOP_DEFINITION__STATEMENTS);
+
+    variableEClass = createEClass(VARIABLE);
+    createEAttribute(variableEClass, VARIABLE__NAME);
+
+    variableDefinitionEClass = createEClass(VARIABLE_DEFINITION);
+
+    numberVariableDefinitionEClass = createEClass(NUMBER_VARIABLE_DEFINITION);
+    createEReference(numberVariableDefinitionEClass, NUMBER_VARIABLE_DEFINITION__TYPE);
+    createEAttribute(numberVariableDefinitionEClass, NUMBER_VARIABLE_DEFINITION__VALUE);
+
+    stringVariableDefinitionEClass = createEClass(STRING_VARIABLE_DEFINITION);
+    createEReference(stringVariableDefinitionEClass, STRING_VARIABLE_DEFINITION__TYPE);
+    createEAttribute(stringVariableDefinitionEClass, STRING_VARIABLE_DEFINITION__VALUE);
+
+    booleanVariableDefinitionEClass = createEClass(BOOLEAN_VARIABLE_DEFINITION);
+    createEReference(booleanVariableDefinitionEClass, BOOLEAN_VARIABLE_DEFINITION__TYPE);
+    createEAttribute(booleanVariableDefinitionEClass, BOOLEAN_VARIABLE_DEFINITION__VALUE);
+
+    structureDeclarationEClass = createEClass(STRUCTURE_DECLARATION);
+    createEAttribute(structureDeclarationEClass, STRUCTURE_DECLARATION__NAME);
+    createEReference(structureDeclarationEClass, STRUCTURE_DECLARATION__ELEMENTS);
+
+    streamDeclarationEClass = createEClass(STREAM_DECLARATION);
+    createEAttribute(streamDeclarationEClass, STREAM_DECLARATION__NAME);
+    createEReference(streamDeclarationEClass, STREAM_DECLARATION__ELEMENTS);
+
+    streamElementEClass = createEClass(STREAM_ELEMENT);
+
+    structureElementsEClass = createEClass(STRUCTURE_ELEMENTS);
+    createEReference(structureElementsEClass, STRUCTURE_ELEMENTS__ELEMENT);
+
+    expressionEClass = createEClass(EXPRESSION);
+
+    dataTypeEClass = createEClass(DATA_TYPE);
+
+    simpleDataTypeEClass = createEClass(SIMPLE_DATA_TYPE);
+
+    complexDataTypeEClass = createEClass(COMPLEX_DATA_TYPE);
+
+    integerDataTypeEClass = createEClass(INTEGER_DATA_TYPE);
+
+    booleanDataTypeEClass = createEClass(BOOLEAN_DATA_TYPE);
+
+    floatDataTypeEClass = createEClass(FLOAT_DATA_TYPE);
+
+    stringDataTypeEClass = createEClass(STRING_DATA_TYPE);
+
+    booleanOperationEClass = createEClass(BOOLEAN_OPERATION);
+    createEReference(booleanOperationEClass, BOOLEAN_OPERATION__LEFT);
+    createEAttribute(booleanOperationEClass, BOOLEAN_OPERATION__OPERATOR);
+    createEReference(booleanOperationEClass, BOOLEAN_OPERATION__RIGHT);
+
+    plusEClass = createEClass(PLUS);
+    createEReference(plusEClass, PLUS__LEFT);
+    createEReference(plusEClass, PLUS__RIGHT);
+
+    minusEClass = createEClass(MINUS);
+    createEReference(minusEClass, MINUS__LEFT);
+    createEReference(minusEClass, MINUS__RIGHT);
+
+    multiEClass = createEClass(MULTI);
+    createEReference(multiEClass, MULTI__LEFT);
+    createEReference(multiEClass, MULTI__RIGHT);
+
+    divEClass = createEClass(DIV);
+    createEReference(divEClass, DIV__LEFT);
+    createEReference(divEClass, DIV__RIGHT);
+
+    numberLiteralEClass = createEClass(NUMBER_LITERAL);
+    createEAttribute(numberLiteralEClass, NUMBER_LITERAL__VALUE);
+
+    variableCallEClass = createEClass(VARIABLE_CALL);
+    createEReference(variableCallEClass, VARIABLE_CALL__VARIABLE);
+
+    functionCallEClass = createEClass(FUNCTION_CALL);
+    createEReference(functionCallEClass, FUNCTION_CALL__FUNC);
+    createEReference(functionCallEClass, FUNCTION_CALL__ARGUMENTS);
   }
 
   /**
@@ -1175,7 +3035,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     setNsURI(eNS_URI);
 
     // Obtain other dependent packages
-    TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
     OwlPackage theOwlPackage = (OwlPackage)EPackage.Registry.INSTANCE.getEPackage(OwlPackage.eNS_URI);
 
     // Create type parameters
@@ -1184,27 +3043,75 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     // Add supertypes to classes
     packageDeclarationEClass.getESuperTypes().add(this.getModelElement());
-    streamDeclarationEClass.getESuperTypes().add(this.getModelElement());
     importEClass.getESuperTypes().add(this.getModelElement());
-    testElementEClass.getESuperTypes().add(this.getModelElement());
-    testAssignEClass.getESuperTypes().add(this.getModelElement());
-    operatorEClass.getESuperTypes().add(this.getModelElement());
-    variableDeclarationEClass.getESuperTypes().add(this.getVariable());
-    streamDefinitionEClass.getESuperTypes().add(this.getModelElement());
-    countOperatorEClass.getESuperTypes().add(this.getOperator());
-    standardDeviationOperatorEClass.getESuperTypes().add(this.getOperator());
-    averageOperatorEClass.getESuperTypes().add(this.getOperator());
-    elementJoinOperatorEClass.getESuperTypes().add(this.getOperator());
-    tagOperatorEClass.getESuperTypes().add(this.getOperator());
+    streamStatementEClass.getESuperTypes().add(this.getProcessingExpression());
+    statementEClass.getESuperTypes().add(this.getProcessingExpression());
+    statementEClass.getESuperTypes().add(this.getBlockExpression());
+    variableStatementEClass.getESuperTypes().add(this.getStatement());
+    streamAccessEClass.getESuperTypes().add(this.getProcessingExpression());
+    streamAccessEClass.getESuperTypes().add(this.getExpression());
+    streamDefinitionEClass.getESuperTypes().add(this.getProcessingExpression());
+    joinOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
+    elementJoinOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
+    filterOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
+    splitOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
+    matchOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
+    symmetricDifferenceOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
+    differenceOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
+    mapOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
+    inputOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
+    noReturnTypeOperatorEClass.getESuperTypes().add(this.getProcessingExpression());
+    tagOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
+    unTagOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     tagClassElementEClass.getESuperTypes().add(this.getTagElement());
     tagObjectPropertyElementEClass.getESuperTypes().add(this.getTagElement());
     tagDataTypePropertyElementEClass.getESuperTypes().add(this.getTagElement());
-    outputOperatorEClass.getESuperTypes().add(this.getOperator());
     windowOperatorEClass.getESuperTypes().add(this.getBarrierOperator());
+    markerOperatorEClass.getESuperTypes().add(this.getBarrierOperator());
+    swrlOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
+    oclOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
+    countOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
+    standardDeviationOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
+    averageOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
+    outputOperatorEClass.getESuperTypes().add(this.getNoReturnTypeOperator());
+    processingExpressionEClass.getESuperTypes().add(this.getModelElement());
+    returnStatementEClass.getESuperTypes().add(this.getBlockExpression());
+    conditionalExpressionsEClass.getESuperTypes().add(this.getBlockExpression());
+    ifElseConditionEClass.getESuperTypes().add(this.getConditionalExpressions());
+    switchCaseConditionEClass.getESuperTypes().add(this.getConditionalExpressions());
+    functionDefinitionEClass.getESuperTypes().add(this.getModelElement());
+    variableDeclarationEClass.getESuperTypes().add(this.getReturnable());
+    variableDeclarationEClass.getESuperTypes().add(this.getVariable());
+    variableDeclarationEClass.getESuperTypes().add(this.getStreamElement());
+    whileLoopDefinitionEClass.getESuperTypes().add(this.getBlockExpression());
+    variableEClass.getESuperTypes().add(this.getProcessingExpression());
+    variableEClass.getESuperTypes().add(this.getBlockExpression());
+    variableEClass.getESuperTypes().add(this.getReturnable());
+    variableDefinitionEClass.getESuperTypes().add(this.getVariable());
+    numberVariableDefinitionEClass.getESuperTypes().add(this.getVariableDefinition());
+    stringVariableDefinitionEClass.getESuperTypes().add(this.getVariableDefinition());
+    booleanVariableDefinitionEClass.getESuperTypes().add(this.getVariableDefinition());
+    structureDeclarationEClass.getESuperTypes().add(this.getModelElement());
+    streamDeclarationEClass.getESuperTypes().add(this.getModelElement());
+    structureElementsEClass.getESuperTypes().add(this.getStreamElement());
+    simpleDataTypeEClass.getESuperTypes().add(this.getDataType());
+    complexDataTypeEClass.getESuperTypes().add(this.getDataType());
+    integerDataTypeEClass.getESuperTypes().add(this.getSimpleDataType());
+    booleanDataTypeEClass.getESuperTypes().add(this.getSimpleDataType());
+    floatDataTypeEClass.getESuperTypes().add(this.getSimpleDataType());
+    stringDataTypeEClass.getESuperTypes().add(this.getComplexDataType());
+    booleanOperationEClass.getESuperTypes().add(this.getExpression());
+    plusEClass.getESuperTypes().add(this.getExpression());
+    minusEClass.getESuperTypes().add(this.getExpression());
+    multiEClass.getESuperTypes().add(this.getExpression());
+    divEClass.getESuperTypes().add(this.getExpression());
+    numberLiteralEClass.getESuperTypes().add(this.getExpression());
+    variableCallEClass.getESuperTypes().add(this.getExpression());
+    functionCallEClass.getESuperTypes().add(this.getExpression());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Model(), this.getPackageDeclaration(), null, "model", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Models(), this.getPackageDeclaration(), null, "models", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(packageDeclarationEClass, PackageDeclaration.class, "PackageDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPackageDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, PackageDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1212,67 +3119,91 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     initEClass(modelElementEClass, ModelElement.class, "ModelElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(streamDeclarationEClass, StreamDeclaration.class, "StreamDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStreamDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, StreamDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStreamDeclaration_Elements(), this.getStreamElement(), null, "elements", null, 0, -1, StreamDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(streamElementEClass, StreamElement.class, "StreamElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStreamElement_Type(), theTypesPackage.getJvmType(), null, "type", null, 0, 1, StreamElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getStreamElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, StreamElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getImport_ImportURI(), ecorePackage.getEString(), "importURI", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(testElementEClass, TestElement.class, "TestElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTestElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, TestElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(streamStatementEClass, StreamStatement.class, "StreamStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStreamStatement_ReturnStream(), this.getStreamDefinition(), null, "returnStream", null, 0, -1, StreamStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStreamStatement_Expression(), this.getReturnTypeOperator(), null, "expression", null, 0, 1, StreamStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(testAssignEClass, TestAssign.class, "TestAssign", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTestAssign_Left(), this.getTestElement(), null, "left", null, 0, 1, TestAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTestAssign_Right(), this.getTestElement(), null, "right", null, 0, 1, TestAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(owlTestElementEClass, OWLTestElement.class, "OWLTestElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getOWLTestElement_Element(), theOwlPackage.getOWLClass(), null, "element", null, 0, 1, OWLTestElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(variableStatementEClass, VariableStatement.class, "VariableStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getVariableStatement_Reference(), this.getVariable(), null, "reference", null, 0, 1, VariableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariableStatement_Expression(), this.getExpression(), null, "expression", null, 0, 1, VariableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(operatorEClass, Operator.class, "Operator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(streamAccessEClass, StreamAccess.class, "StreamAccess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStreamAccess_Reference(), this.getStreamDefinition(), null, "reference", null, 0, 1, StreamAccess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStreamAccess_Element(), this.getVariableDeclaration(), null, "element", null, 0, 1, StreamAccess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStreamAccess_StreamVariable(), this.getStreamAccess(), null, "streamVariable", null, 0, 1, StreamAccess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(variableDeclarationEClass, VariableDeclaration.class, "VariableDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getVariableDeclaration_Type(), theTypesPackage.getJvmType(), null, "type", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVariableDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(streamDeclarationAccessEClass, StreamDeclarationAccess.class, "StreamDeclarationAccess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStreamDeclarationAccess_Reference(), this.getStreamDeclaration(), null, "reference", null, 0, 1, StreamDeclarationAccess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStreamDeclarationAccess_Element(), this.getVariableDeclaration(), null, "element", null, 0, 1, StreamDeclarationAccess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(streamDefinitionEClass, StreamDefinition.class, "StreamDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStreamDefinition_Reference(), this.getStreamDeclaration(), null, "reference", null, 0, 1, StreamDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getStreamDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, StreamDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(streamAccessEClass, StreamAccess.class, "StreamAccess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStreamAccess_Reference(), this.getStreamDefinition(), null, "reference", null, 0, 1, StreamAccess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStreamAccess_Element(), this.getVariableDeclaration(), null, "element", null, 0, 1, StreamAccess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(joinOperatorEClass, JoinOperator.class, "JoinOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getJoinOperator_Parameters(), this.getStreamOperatorParameter(), null, "parameters", null, 0, -1, JoinOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(streamOperatorParameterEClass, StreamOperatorParameter.class, "StreamOperatorParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStreamOperatorParameter_Stream(), this.getStreamDefinition(), null, "stream", null, 0, 1, StreamOperatorParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStreamOperatorParameter_Barrier(), this.getBarrierOperator(), null, "barrier", null, 0, 1, StreamOperatorParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(countOperatorEClass, CountOperator.class, "CountOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCountOperator_Parameter(), this.getStreamAccess(), null, "parameter", null, 0, 1, CountOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCountOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, CountOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(standardDeviationOperatorEClass, StandardDeviationOperator.class, "StandardDeviationOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStandardDeviationOperator_Parameter(), this.getStreamAccess(), null, "parameter", null, 0, 1, StandardDeviationOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStandardDeviationOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, StandardDeviationOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(averageOperatorEClass, AverageOperator.class, "AverageOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAverageOperator_Parameter(), this.getStreamAccess(), null, "parameter", null, 0, 1, AverageOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAverageOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, AverageOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementJoinOperatorEClass, ElementJoinOperator.class, "ElementJoinOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getElementJoinOperator_ElementParameters(), this.getStreamAccess(), null, "elementParameters", null, 0, -1, ElementJoinOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getElementJoinOperator_VariableElementParameters(), this.getVariable(), null, "variableElementParameters", null, 0, -1, ElementJoinOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getElementJoinOperator_Parameter(), this.getStreamOperatorParameter(), null, "parameter", null, 0, 1, ElementJoinOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(filterOperatorEClass, FilterOperator.class, "FilterOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFilterOperator_Expression(), this.getExpression(), null, "expression", null, 0, -1, FilterOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFilterOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, FilterOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(splitOperatorEClass, SplitOperator.class, "SplitOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSplitOperator_Parameter(), this.getStreamOperatorParameter(), null, "parameter", null, 0, 1, SplitOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(matchOperatorEClass, MatchOperator.class, "MatchOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMatchOperator_Expression(), this.getExpression(), null, "expression", null, 0, 1, MatchOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMatchOperator_Calculation(), this.getExpression(), null, "calculation", null, 0, 1, MatchOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMatchOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, -1, MatchOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(symmetricDifferenceOperatorEClass, SymmetricDifferenceOperator.class, "SymmetricDifferenceOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSymmetricDifferenceOperator_Parameters(), this.getStreamOperatorParameter(), null, "parameters", null, 0, -1, SymmetricDifferenceOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(differenceOperatorEClass, DifferenceOperator.class, "DifferenceOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDifferenceOperator_Parameters(), this.getStreamOperatorParameter(), null, "parameters", null, 0, -1, DifferenceOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(mapOperatorEClass, MapOperator.class, "MapOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMapOperator_FunctionList(), this.getFunctionStatement(), null, "functionList", null, 0, -1, MapOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMapOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, MapOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(functionStatementEClass, FunctionStatement.class, "FunctionStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFunctionStatement_Element(), this.getStreamAccess(), null, "element", null, 0, 1, FunctionStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionStatement_Function(), this.getFunctionDefinition(), null, "function", null, 0, 1, FunctionStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionStatement_Arguments(), this.getExpression(), null, "arguments", null, 0, -1, FunctionStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(inputOperatorEClass, InputOperator.class, "InputOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInputOperator_Location(), ecorePackage.getEString(), "location", null, 0, 1, InputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInputOperator_Regexp(), ecorePackage.getEString(), "regexp", null, 0, 1, InputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInputOperator_Model(), this.getStreamDeclaration(), null, "model", null, 0, 1, InputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(returnTypeOperatorEClass, ReturnTypeOperator.class, "ReturnTypeOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(noReturnTypeOperatorEClass, NoReturnTypeOperator.class, "NoReturnTypeOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(tagOperatorEClass, TagOperator.class, "TagOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTagOperator_Parameters(), this.getTagElement(), null, "parameters", null, 0, -1, TagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTagOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, TagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(unTagOperatorEClass, UnTagOperator.class, "UnTagOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getUnTagOperator_Parameters(), this.getUnTagElement(), null, "parameters", null, 0, -1, UnTagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUnTagOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, UnTagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(unTagElementEClass, UnTagElement.class, "UnTagElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getUnTagElement_Element(), theOwlPackage.getOWLClass(), null, "element", null, 0, 1, UnTagElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUnTagElement_Reference(), this.getStreamAccess(), null, "reference", null, 0, 1, UnTagElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(tagElementEClass, TagElement.class, "TagElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTagElement_Reference(), this.getStreamAccess(), null, "reference", null, 0, 1, TagElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1286,20 +3217,175 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEClass(tagDataTypePropertyElementEClass, TagDataTypePropertyElement.class, "TagDataTypePropertyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTagDataTypePropertyElement_Element(), theOwlPackage.getOWLDatatypeProperty(), null, "element", null, 0, 1, TagDataTypePropertyElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(outputOperatorEClass, OutputOperator.class, "OutputOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getOutputOperator_Parameter(), this.getOutputOperatorParameter(), null, "parameter", null, 0, 1, OutputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getOutputOperator_Location(), ecorePackage.getEString(), "location", null, 0, 1, OutputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getOutputOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, OutputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(outputOperatorParameterEClass, OutputOperatorParameter.class, "OutputOperatorParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getOutputOperatorParameter_Element(), this.getStreamAccess(), null, "element", null, 0, -1, OutputOperatorParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(barrierOperatorEClass, BarrierOperator.class, "BarrierOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(windowOperatorEClass, WindowOperator.class, "WindowOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWindowOperator_Setting(), ecorePackage.getEString(), "setting", null, 0, 1, WindowOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWindowOperator_Value(), ecorePackage.getEBigDecimal(), "value", null, 0, 1, WindowOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWindowOperator_Unit(), ecorePackage.getEString(), "unit", null, 0, 1, WindowOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(markerOperatorEClass, MarkerOperator.class, "MarkerOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMarkerOperator_Expression(), this.getExpression(), null, "expression", null, 0, 1, MarkerOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(swrlOperatorEClass, SWRLOperator.class, "SWRLOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSWRLOperator_Rule(), this.getSWRLRule(), null, "rule", null, 0, 1, SWRLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSWRLOperator_Barrier(), this.getStreamOperatorParameter(), null, "barrier", null, 0, -1, SWRLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(swrlRuleEClass, SWRLRule.class, "SWRLRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSWRLRule_Antecedent(), this.getAntecedentRule(), null, "antecedent", null, 0, 1, SWRLRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSWRLRule_Consequent(), this.getConsequentRule(), null, "consequent", null, 0, 1, SWRLRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(antecedentRuleEClass, AntecedentRule.class, "AntecedentRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAntecedentRule_Atoms(), this.getRule(), null, "atoms", null, 0, -1, AntecedentRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(consequentRuleEClass, ConsequentRule.class, "ConsequentRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getConsequentRule_Atoms(), this.getRule(), null, "atoms", null, 0, -1, ConsequentRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRule_Name(), theOwlPackage.getOWLObjectProperty(), null, "name", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRule_Variable(), this.getStreamAccess(), null, "variable", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(oclOperatorEClass, OCLOperator.class, "OCLOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getOCLOperator_Constraint(), ecorePackage.getEString(), "constraint", null, 0, 1, OCLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOCLOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, OCLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(countOperatorEClass, CountOperator.class, "CountOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCountOperator_Parameter(), this.getStreamAccess(), null, "parameter", null, 0, 1, CountOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCountOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, CountOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(standardDeviationOperatorEClass, StandardDeviationOperator.class, "StandardDeviationOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStandardDeviationOperator_Parameter(), this.getStreamAccess(), null, "parameter", null, 0, 1, StandardDeviationOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStandardDeviationOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, StandardDeviationOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(averageOperatorEClass, AverageOperator.class, "AverageOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAverageOperator_Parameter(), this.getStreamAccess(), null, "parameter", null, 0, 1, AverageOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAverageOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, AverageOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(outputOperatorEClass, OutputOperator.class, "OutputOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOutputOperator_Parameter(), this.getOutputOperatorParameter(), null, "parameter", null, 0, 1, OutputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOutputOperator_Location(), ecorePackage.getEString(), "location", null, 0, 1, OutputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOutputOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, -1, OutputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(outputOperatorParameterEClass, OutputOperatorParameter.class, "OutputOperatorParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOutputOperatorParameter_Element(), this.getStreamAccess(), null, "element", null, 0, -1, OutputOperatorParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(processingExpressionEClass, ProcessingExpression.class, "ProcessingExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(blockExpressionEClass, BlockExpression.class, "BlockExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(returnStatementEClass, ReturnStatement.class, "ReturnStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getReturnStatement_ReturnVariable(), this.getReturnVariable(), null, "returnVariable", null, 0, 1, ReturnStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(conditionalExpressionsEClass, ConditionalExpressions.class, "ConditionalExpressions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getConditionalExpressions_Condition(), this.getExpression(), null, "condition", null, 0, 1, ConditionalExpressions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ifElseConditionEClass, IfElseCondition.class, "IfElseCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIfElseCondition_IfAction(), this.getBlockExpression(), null, "ifAction", null, 0, -1, IfElseCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIfElseCondition_ElseAction(), this.getBlockExpression(), null, "elseAction", null, 0, -1, IfElseCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(switchCaseConditionEClass, SwitchCaseCondition.class, "SwitchCaseCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSwitchCaseCondition_CaseExpression(), this.getCaseStatement(), null, "caseExpression", null, 0, -1, SwitchCaseCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSwitchCaseCondition_DefaultExpression(), this.getExpression(), null, "defaultExpression", null, 0, 1, SwitchCaseCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(caseStatementEClass, CaseStatement.class, "CaseStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCaseStatement_Condition(), this.getExpression(), null, "condition", null, 0, 1, CaseStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCaseStatement_Action(), this.getExpression(), null, "action", null, 0, 1, CaseStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(functionDefinitionEClass, FunctionDefinition.class, "FunctionDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFunctionDefinition_Type(), this.getDataType(), null, "type", null, 0, 1, FunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFunctionDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionDefinition_Arguments(), this.getVariableDeclaration(), null, "arguments", null, 0, -1, FunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionDefinition_Statements(), this.getBlockExpression(), null, "statements", null, 0, -1, FunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionDefinition_ReturnValue(), this.getReturnStatement(), null, "returnValue", null, 0, 1, FunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(returnVariableEClass, ReturnVariable.class, "ReturnVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getReturnVariable_Returnable(), this.getReturnable(), null, "returnable", null, 0, 1, ReturnVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(returnableEClass, Returnable.class, "Returnable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(variableDeclarationEClass, VariableDeclaration.class, "VariableDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getVariableDeclaration_Type(), this.getDataType(), null, "type", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(whileLoopDefinitionEClass, WhileLoopDefinition.class, "WhileLoopDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWhileLoopDefinition_Condition(), this.getExpression(), null, "condition", null, 0, 1, WhileLoopDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWhileLoopDefinition_Statements(), this.getBlockExpression(), null, "statements", null, 0, -1, WhileLoopDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(variableDefinitionEClass, VariableDefinition.class, "VariableDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(numberVariableDefinitionEClass, NumberVariableDefinition.class, "NumberVariableDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNumberVariableDefinition_Type(), this.getSimpleDataType(), null, "type", null, 0, 1, NumberVariableDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNumberVariableDefinition_Value(), ecorePackage.getEBigDecimal(), "value", null, 0, 1, NumberVariableDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stringVariableDefinitionEClass, StringVariableDefinition.class, "StringVariableDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStringVariableDefinition_Type(), this.getStringDataType(), null, "type", null, 0, 1, StringVariableDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStringVariableDefinition_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringVariableDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(booleanVariableDefinitionEClass, BooleanVariableDefinition.class, "BooleanVariableDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBooleanVariableDefinition_Type(), this.getBooleanDataType(), null, "type", null, 0, 1, BooleanVariableDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBooleanVariableDefinition_Value(), ecorePackage.getEBoolean(), "value", null, 0, 1, BooleanVariableDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(structureDeclarationEClass, StructureDeclaration.class, "StructureDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStructureDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, StructureDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStructureDeclaration_Elements(), this.getVariableDeclaration(), null, "elements", null, 0, -1, StructureDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(streamDeclarationEClass, StreamDeclaration.class, "StreamDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStreamDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, StreamDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStreamDeclaration_Elements(), this.getStreamElement(), null, "elements", null, 0, -1, StreamDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(streamElementEClass, StreamElement.class, "StreamElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(structureElementsEClass, StructureElements.class, "StructureElements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStructureElements_Element(), this.getStructureDeclaration(), null, "element", null, 0, 1, StructureElements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(simpleDataTypeEClass, SimpleDataType.class, "SimpleDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(complexDataTypeEClass, ComplexDataType.class, "ComplexDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(integerDataTypeEClass, IntegerDataType.class, "IntegerDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(booleanDataTypeEClass, BooleanDataType.class, "BooleanDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(floatDataTypeEClass, FloatDataType.class, "FloatDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(stringDataTypeEClass, StringDataType.class, "StringDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(booleanOperationEClass, BooleanOperation.class, "BooleanOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBooleanOperation_Left(), this.getExpression(), null, "left", null, 0, 1, BooleanOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBooleanOperation_Operator(), ecorePackage.getEString(), "operator", null, 0, 1, BooleanOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBooleanOperation_Right(), this.getExpression(), null, "right", null, 0, 1, BooleanOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(plusEClass, Plus.class, "Plus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPlus_Left(), this.getExpression(), null, "left", null, 0, 1, Plus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPlus_Right(), this.getExpression(), null, "right", null, 0, 1, Plus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(minusEClass, Minus.class, "Minus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMinus_Left(), this.getExpression(), null, "left", null, 0, 1, Minus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMinus_Right(), this.getExpression(), null, "right", null, 0, 1, Minus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(multiEClass, Multi.class, "Multi", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMulti_Left(), this.getExpression(), null, "left", null, 0, 1, Multi.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMulti_Right(), this.getExpression(), null, "right", null, 0, 1, Multi.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(divEClass, Div.class, "Div", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDiv_Left(), this.getExpression(), null, "left", null, 0, 1, Div.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDiv_Right(), this.getExpression(), null, "right", null, 0, 1, Div.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(numberLiteralEClass, NumberLiteral.class, "NumberLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNumberLiteral_Value(), ecorePackage.getEBigDecimal(), "value", null, 0, 1, NumberLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(variableCallEClass, VariableCall.class, "VariableCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getVariableCall_Variable(), this.getVariable(), null, "variable", null, 0, 1, VariableCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(functionCallEClass, FunctionCall.class, "FunctionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFunctionCall_Func(), this.getFunctionDefinition(), null, "func", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionCall_Arguments(), this.getExpression(), null, "arguments", null, 0, -1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);
