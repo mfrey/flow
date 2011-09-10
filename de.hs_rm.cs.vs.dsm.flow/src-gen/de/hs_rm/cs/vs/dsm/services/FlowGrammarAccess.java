@@ -356,7 +356,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		/// **
-		// * A stream definition creates a stream with a referenced to a declared stream.
+		// * A stream definition creates a stream with a reference to a declared stream.
 		// * This could be list of multiple streams seperated by a comma.
 		// * / StreamDefinition:
 		//	reference=[StreamDeclaration] name=ID ";";
@@ -3857,7 +3857,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// **
-	// * A stream definition creates a stream with a referenced to a declared stream.
+	// * A stream definition creates a stream with a reference to a declared stream.
 	// * This could be list of multiple streams seperated by a comma.
 	// * / StreamDefinition:
 	//	reference=[StreamDeclaration] name=ID ";";

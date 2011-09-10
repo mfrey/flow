@@ -487,7 +487,13 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				}
 				else break;
 			case FlowPackage.STREAM_ACCESS:
-				if(context == grammarAccess.getExpressionRule() ||
+				if(context == grammarAccess.getModelElementRule() ||
+				   context == grammarAccess.getStreamAccessRule() ||
+				   context == grammarAccess.getProcessingExpressionRule()) {
+					sequence_StreamAccess_StreamAccess(context, (StreamAccess) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getBooleanOperationLeftAction_1_0() ||
 				   context == grammarAccess.getAndRule() ||
@@ -502,12 +508,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getPrimaryExpressionRule()) {
 					sequence_PrimaryExpression_StreamAccess(context, (StreamAccess) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getModelElementRule() ||
-				   context == grammarAccess.getStreamAccessRule() ||
-				   context == grammarAccess.getProcessingExpressionRule()) {
-					sequence_StreamAccess_StreamAccess(context, (StreamAccess) semanticObject); 
 					return; 
 				}
 				else break;
@@ -660,6 +660,10 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 					sequence_ParameterDeclaration_VariableDeclaration(context, (VariableDeclaration) semanticObject); 
 					return; 
 				}
+				else if(context == grammarAccess.getReturnableRule()) {
+					sequence_Returnable_VariableDeclaration(context, (VariableDeclaration) semanticObject); 
+					return; 
+				}
 				else if(context == grammarAccess.getModelElementRule() ||
 				   context == grammarAccess.getProcessingExpressionRule() ||
 				   context == grammarAccess.getBlockExpressionRule() ||
@@ -667,10 +671,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				   context == grammarAccess.getVariableDeclarationRule() ||
 				   context == grammarAccess.getStreamElementRule()) {
 					sequence_VariableDeclaration_VariableDeclaration(context, (VariableDeclaration) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getReturnableRule()) {
-					sequence_Returnable_VariableDeclaration(context, (VariableDeclaration) semanticObject); 
 					return; 
 				}
 				else break;

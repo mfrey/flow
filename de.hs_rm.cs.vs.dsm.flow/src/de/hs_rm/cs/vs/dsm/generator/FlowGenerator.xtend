@@ -11,12 +11,14 @@ import de.hs_rm.cs.vs.dsm.flow.ModelElement
 import de.hs_rm.cs.vs.dsm.flow.StreamDeclaration
 
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator
-
+import de.hs_rm.cs.vs.dsm.flow.StreamStatement
+import de.hs_rm.cs.vs.dsm.flow.JoinOperator
 
 import org.eclipse.xtext.naming.IQualifiedNameProvider
 
 import com.google.inject.Inject
 import de.hs_rm.cs.vs.dsm.flow.impl.OutputOperatorImpl
+import de.hs_rm.cs.vs.dsm.flow.StreamAccess
 
 class FlowGenerator implements IGenerator {
 	
@@ -49,12 +51,24 @@ class FlowGenerator implements IGenerator {
     	«IF m.eClass.name.equals("OutputOperator")»
     	«(m as OutputOperator).compile»
     	«ENDIF»
+    	
+    	«IF m.eClass.name.equals("StreamStatement")»
+    	«(m as StreamStatement).compile»
+    	«ENDIF»
 	'''
 		
-    def compile(OutputOperator o)'''
-    	output«o.hashCode» = fm:create_operator_of_type(cacheout,output«o.hashCode»)
-    	«FOR s : o.parameter.element»
-    	fm:connect_operators(«s.reference.name», "out", output«o.hashCode», "in");
-    	«ENDFOR»      
-    '''
+	def compile(StreamStatement statement)'''
+		«IF statement.eClass.name.equals("JoinOperator")»
+		«(statement as JoinOperator).compile()»
+		«ENDIF»
+	'''
+	
+	
+    def compile(OutputOperator output)'''
+		«new OutputOperatorGenerator(output).toString()»
+    '''    
+    
+    def compile(JoinOperator join)'''
+		«new JoinOperatorGenerator(join).toString()»
+    '''    
 }

@@ -1,12 +1,13 @@
 package de.hs_rm.cs.vs.dsm.generator;
 
 import com.google.inject.Inject;
+import de.hs_rm.cs.vs.dsm.flow.JoinOperator;
 import de.hs_rm.cs.vs.dsm.flow.ModelElement;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
-import de.hs_rm.cs.vs.dsm.flow.OutputOperatorParameter;
 import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration;
-import de.hs_rm.cs.vs.dsm.flow.StreamAccess;
-import de.hs_rm.cs.vs.dsm.flow.StreamDefinition;
+import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
+import de.hs_rm.cs.vs.dsm.generator.JoinOperatorGenerator;
+import de.hs_rm.cs.vs.dsm.generator.OutputOperatorGenerator;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -67,34 +68,50 @@ public class FlowGenerator implements IGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
-    return _builder;
-  }
-  
-  public StringConcatenation compile(final OutputOperator o) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("output");
-    int _hashCode = o.hashCode();
-    _builder.append(_hashCode, "");
-    _builder.append(" = fm:create_operator_of_type(cacheout,output");
-    int _hashCode_1 = o.hashCode();
-    _builder.append(_hashCode_1, "");
-    _builder.append(")");
-    _builder.newLineIfNotEmpty();
+    _builder.newLine();
     {
-      OutputOperatorParameter _parameter = o.getParameter();
-      EList<StreamAccess> _element = _parameter.getElement();
-      for(StreamAccess s : _element) {
-        _builder.append("fm:connect_operators(");
-        StreamDefinition _reference = s.getReference();
-        String _name = _reference.getName();
-        _builder.append(_name, "");
-        _builder.append(", \"out\", output");
-        int _hashCode_2 = o.hashCode();
-        _builder.append(_hashCode_2, "");
-        _builder.append(", \"in\");");
+      EClass _eClass_1 = m.eClass();
+      String _name_1 = _eClass_1.getName();
+      boolean _equals_1 = _name_1.equals("StreamStatement");
+      if (_equals_1) {
+        StringConcatenation _compile_1 = this.compile(((StreamStatement) m));
+        _builder.append(_compile_1, "");
         _builder.newLineIfNotEmpty();
       }
     }
+    return _builder;
+  }
+  
+  public StringConcatenation compile(final StreamStatement statement) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      EClass _eClass = statement.eClass();
+      String _name = _eClass.getName();
+      boolean _equals = _name.equals("JoinOperator");
+      if (_equals) {
+        StringConcatenation _compile = this.compile(((JoinOperator) statement));
+        _builder.append(_compile, "");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    return _builder;
+  }
+  
+  public StringConcatenation compile(final OutputOperator output) {
+    StringConcatenation _builder = new StringConcatenation();
+    OutputOperatorGenerator _outputOperatorGenerator = new OutputOperatorGenerator(output);
+    String _string = _outputOperatorGenerator.toString();
+    _builder.append(_string, "");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  public StringConcatenation compile(final JoinOperator join) {
+    StringConcatenation _builder = new StringConcatenation();
+    JoinOperatorGenerator _joinOperatorGenerator = new JoinOperatorGenerator(join);
+    String _string = _joinOperatorGenerator.toString();
+    _builder.append(_string, "");
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
 }

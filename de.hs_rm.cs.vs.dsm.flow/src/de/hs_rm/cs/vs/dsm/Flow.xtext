@@ -76,7 +76,7 @@ StreamDeclarationAccess:
 	reference=[StreamDeclaration]':'element=[VariableDeclaration];
 
 /**
- * A stream definition creates a stream with a referenced to a declared stream.
+ * A stream definition creates a stream with a reference to a declared stream.
  * This could be list of multiple streams seperated by a comma.
  */
 StreamDefinition:
