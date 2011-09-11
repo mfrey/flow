@@ -5,9 +5,15 @@ import de.hs_rm.cs.vs.dsm.flow.JoinOperator;
 import de.hs_rm.cs.vs.dsm.flow.ModelElement;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
 import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration;
+import de.hs_rm.cs.vs.dsm.flow.ReturnTypeOperator;
+import de.hs_rm.cs.vs.dsm.flow.SplitOperator;
+import de.hs_rm.cs.vs.dsm.flow.StreamDefinition;
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
 import de.hs_rm.cs.vs.dsm.generator.JoinOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.OutputOperatorGenerator;
+import de.hs_rm.cs.vs.dsm.generator.SplitOperatorGenerator;
+import de.hs_rm.cs.vs.dsm.generator.Util;
+import java.util.ArrayList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -85,33 +91,71 @@ public class FlowGenerator implements IGenerator {
   public StringConcatenation compile(final StreamStatement statement) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      EClass _eClass = statement.eClass();
+      ReturnTypeOperator _expression = statement.getExpression();
+      EClass _eClass = _expression.eClass();
       String _name = _eClass.getName();
       boolean _equals = _name.equals("JoinOperator");
       if (_equals) {
-        StringConcatenation _compile = this.compile(((JoinOperator) statement));
-        _builder.append(_compile, "");
-        _builder.newLineIfNotEmpty();
+        _builder.newLine();} else {
+        ReturnTypeOperator _expression_1 = statement.getExpression();
+        EClass _eClass_1 = _expression_1.eClass();
+        String _name_1 = _eClass_1.getName();
+        boolean _equals_1 = _name_1.equals("SplitOperator");
+        if (_equals_1) {
+          ReturnTypeOperator _expression_2 = statement.getExpression();
+          String _write = this.write(((SplitOperator) _expression_2), statement);
+          _builder.append(_write, "");
+          _builder.newLineIfNotEmpty();
+        }
       }
     }
     return _builder;
   }
   
+  protected String _write(final JoinOperator pOperator, final StreamStatement pStatement) {
+    Util _instance = Util.getInstance();
+    EList<StreamDefinition> _returnStream = pStatement.getReturnStream();
+    ArrayList<String> _streamFrom = _instance.getStreamFrom(_returnStream);
+    JoinOperatorGenerator _joinOperatorGenerator = new JoinOperatorGenerator(_streamFrom, pOperator);
+    String _string = _joinOperatorGenerator.toString();
+    return _string;
+  }
+  
+  protected String _write(final SplitOperator pOperator, final StreamStatement pStatement) {
+    String _xblockexpression = null;
+    {
+      SplitOperatorGenerator _splitOperatorGenerator = new SplitOperatorGenerator(pStatement);
+      SplitOperatorGenerator split = _splitOperatorGenerator;
+      String _string = split.toString();
+      _xblockexpression = (_string);
+    }
+    return _xblockexpression;
+  }
+  
   public StringConcatenation compile(final OutputOperator output) {
     StringConcatenation _builder = new StringConcatenation();
-    OutputOperatorGenerator _outputOperatorGenerator = new OutputOperatorGenerator(output);
-    String _string = _outputOperatorGenerator.toString();
-    _builder.append(_string, "");
+    String _xblockexpression = null;
+    {
+      OutputOperatorGenerator _outputOperatorGenerator = new OutputOperatorGenerator(output);
+      final OutputOperatorGenerator o = _outputOperatorGenerator;
+      String _string = o.toString();
+      _xblockexpression = (_string);
+    }
+    _builder.append(_xblockexpression, "");
     _builder.newLineIfNotEmpty();
     return _builder;
   }
   
-  public StringConcatenation compile(final JoinOperator join) {
-    StringConcatenation _builder = new StringConcatenation();
-    JoinOperatorGenerator _joinOperatorGenerator = new JoinOperatorGenerator(join);
-    String _string = _joinOperatorGenerator.toString();
-    _builder.append(_string, "");
-    _builder.newLineIfNotEmpty();
-    return _builder;
+  public String write(final ReturnTypeOperator pOperator, final StreamStatement pStatement) {
+    if ((pOperator instanceof JoinOperator)
+         && (pStatement instanceof StreamStatement)) {
+      return _write((JoinOperator)pOperator, (StreamStatement)pStatement);
+    } else if ((pOperator instanceof SplitOperator)
+         && (pStatement instanceof StreamStatement)) {
+      return _write((SplitOperator)pOperator, (StreamStatement)pStatement);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        java.util.Arrays.<Object>asList(pOperator, pStatement).toString());
+    }
   }
 }

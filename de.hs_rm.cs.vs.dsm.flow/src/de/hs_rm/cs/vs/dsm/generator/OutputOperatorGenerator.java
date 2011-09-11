@@ -23,10 +23,10 @@ public class OutputOperatorGenerator implements IOperator {
 			}
 		}
 	}
-	
+
 	@Override
 	public String initializeOperator(){
-		return mOperatorStream + " = fm:create_operator_of_type(\"cacheout\",\"" + mOperatorStream  + "\");\n";
+		return Util.getInstance().createOperator("cachout", mOperatorStream);
 	}
 	
 	@Override
@@ -34,7 +34,8 @@ public class OutputOperatorGenerator implements IOperator {
 		String result = "";
 		
 		for(int i = 0; i < this.mInputStreamList.size(); i++){
-			result += "fm:connect_operators(" + this.mInputStreamList.get(i) + ", \"out\", " + mOperatorStream + ", \"in\");\n";
+			// TODO: Fix the syntax, especially the in, out variables are wrong
+			result += Util.getInstance().connectOperator(mOperatorStream , "in", "out", this.mInputStreamList.get(i)); 
 		}
 		
 		return result;

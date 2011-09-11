@@ -13,6 +13,7 @@ import de.hs_rm.cs.vs.dsm.flow.StreamDeclaration
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement
 import de.hs_rm.cs.vs.dsm.flow.JoinOperator
+import de.hs_rm.cs.vs.dsm.flow.SplitOperator
 
 import org.eclipse.xtext.naming.IQualifiedNameProvider
 
@@ -21,7 +22,6 @@ import de.hs_rm.cs.vs.dsm.flow.impl.OutputOperatorImpl
 import de.hs_rm.cs.vs.dsm.flow.StreamAccess
 
 class FlowGenerator implements IGenerator {
-	
 	
 	@Inject extension IQualifiedNameProvider nameProvider
 	
@@ -58,17 +58,32 @@ class FlowGenerator implements IGenerator {
 	'''
 		
 	def compile(StreamStatement statement)'''
-		«IF statement.eClass.name.equals("JoinOperator")»
-		«(statement as JoinOperator).compile()»
+		«IF statement.expression.eClass.name.equals("JoinOperator")»
+		
+		«ELSEIF statement.expression.eClass.name.equals("SplitOperator")»
+		«write((statement.expression as SplitOperator),statement)»
 		«ENDIF»
 	'''
 	
+	def dispatch String write(JoinOperator pOperator, StreamStatement pStatement){
+		new JoinOperatorGenerator(
+			de::hs_rm::cs::vs::dsm::generator::Util::getInstance.getStreamFrom(pStatement.returnStream),
+			pOperator
+			).toString()
+	}
+	
+	def dispatch String write(SplitOperator pOperator, StreamStatement pStatement){
+		var SplitOperatorGenerator split = new SplitOperatorGenerator(
+			pStatement
+		)
+		
+		split.toString()
+	}
 	
     def compile(OutputOperator output)'''
-		«new OutputOperatorGenerator(output).toString()»
-    '''    
-    
-    def compile(JoinOperator join)'''
-		«new JoinOperatorGenerator(join).toString()»
-    '''    
+    	«{
+    		val OutputOperatorGenerator o = new OutputOperatorGenerator(output);
+    		o.toString();
+    	}»
+    '''     
 }
