@@ -3,6 +3,7 @@ package de.hs_rm.cs.vs.dsm.generator;
 import com.google.inject.Inject;
 import de.hs_rm.cs.vs.dsm.flow.AverageOperator;
 import de.hs_rm.cs.vs.dsm.flow.CountOperator;
+import de.hs_rm.cs.vs.dsm.flow.ElementJoinOperator;
 import de.hs_rm.cs.vs.dsm.flow.JoinOperator;
 import de.hs_rm.cs.vs.dsm.flow.ModelElement;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
@@ -10,16 +11,14 @@ import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.ReturnTypeOperator;
 import de.hs_rm.cs.vs.dsm.flow.SplitOperator;
 import de.hs_rm.cs.vs.dsm.flow.StandardDeviationOperator;
-import de.hs_rm.cs.vs.dsm.flow.StreamDefinition;
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
 import de.hs_rm.cs.vs.dsm.generator.AverageOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.CountOperatorGenerator;
+import de.hs_rm.cs.vs.dsm.generator.ElementJoinOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.JoinOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.OutputOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.SplitOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.StandardDeviationOperatorGenerator;
-import de.hs_rm.cs.vs.dsm.generator.Util;
-import java.util.ArrayList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -138,7 +137,17 @@ public class FlowGenerator implements IGenerator {
                 ReturnTypeOperator _expression_8 = statement.getExpression();
                 String _write_3 = this.write(((StandardDeviationOperator) _expression_8), statement);
                 _builder.append(_write_3, "");
-                _builder.newLineIfNotEmpty();
+                _builder.newLineIfNotEmpty();} else {
+                ReturnTypeOperator _expression_9 = statement.getExpression();
+                EClass _eClass_5 = _expression_9.eClass();
+                String _name_5 = _eClass_5.getName();
+                boolean _equals_5 = _name_5.equals("ElementJoinOperator");
+                if (_equals_5) {
+                  ReturnTypeOperator _expression_10 = statement.getExpression();
+                  String _write_4 = this.write(((ElementJoinOperator) _expression_10), statement);
+                  _builder.append(_write_4, "");
+                  _builder.newLineIfNotEmpty();
+                }
               }
             }
           }
@@ -149,12 +158,14 @@ public class FlowGenerator implements IGenerator {
   }
   
   protected String _write(final JoinOperator pOperator, final StreamStatement pStatement) {
-    Util _instance = Util.getInstance();
-    EList<StreamDefinition> _returnStream = pStatement.getReturnStream();
-    ArrayList<String> _streamFrom = _instance.getStreamFrom(_returnStream);
-    JoinOperatorGenerator _joinOperatorGenerator = new JoinOperatorGenerator(_streamFrom, pOperator);
-    String _string = _joinOperatorGenerator.toString();
-    return _string;
+    String _xblockexpression = null;
+    {
+      JoinOperatorGenerator _joinOperatorGenerator = new JoinOperatorGenerator(pStatement);
+      JoinOperatorGenerator join = _joinOperatorGenerator;
+      String _string = join.toString();
+      _xblockexpression = (_string);
+    }
+    return _xblockexpression;
   }
   
   protected String _write(final SplitOperator pOperator, final StreamStatement pStatement) {
@@ -162,6 +173,17 @@ public class FlowGenerator implements IGenerator {
     {
       SplitOperatorGenerator _splitOperatorGenerator = new SplitOperatorGenerator(pStatement);
       SplitOperatorGenerator split = _splitOperatorGenerator;
+      String _string = split.toString();
+      _xblockexpression = (_string);
+    }
+    return _xblockexpression;
+  }
+  
+  protected String _write(final ElementJoinOperator pOperator, final StreamStatement pStatement) {
+    String _xblockexpression = null;
+    {
+      ElementJoinOperatorGenerator _elementJoinOperatorGenerator = new ElementJoinOperatorGenerator(pStatement);
+      ElementJoinOperatorGenerator split = _elementJoinOperatorGenerator;
       String _string = split.toString();
       _xblockexpression = (_string);
     }
@@ -222,6 +244,9 @@ public class FlowGenerator implements IGenerator {
     } else if ((pOperator instanceof CountOperator)
          && (pStatement instanceof StreamStatement)) {
       return _write((CountOperator)pOperator, (StreamStatement)pStatement);
+    } else if ((pOperator instanceof ElementJoinOperator)
+         && (pStatement instanceof StreamStatement)) {
+      return _write((ElementJoinOperator)pOperator, (StreamStatement)pStatement);
     } else if ((pOperator instanceof JoinOperator)
          && (pStatement instanceof StreamStatement)) {
       return _write((JoinOperator)pOperator, (StreamStatement)pStatement);

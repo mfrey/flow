@@ -12,13 +12,16 @@ import de.hs_rm.cs.vs.dsm.flow.StreamDeclaration
 
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement
-import de.hs_rm.cs.vs.dsm.flow.JoinOperator
 
 import de.hs_rm.cs.vs.dsm.flow.CountOperator
 import de.hs_rm.cs.vs.dsm.flow.AverageOperator
 import de.hs_rm.cs.vs.dsm.flow.StandardDeviationOperator
 
+import de.hs_rm.cs.vs.dsm.flow.JoinOperator
 import de.hs_rm.cs.vs.dsm.flow.SplitOperator
+import de.hs_rm.cs.vs.dsm.flow.ElementJoinOperator
+
+
 
 import org.eclipse.xtext.naming.IQualifiedNameProvider
 
@@ -73,18 +76,27 @@ class FlowGenerator implements IGenerator {
 		«write((statement.expression as AverageOperator),statement)»
 		«ELSEIF statement.expression.eClass.name.equals("StandardDeviationOperator")»
 		«write((statement.expression as StandardDeviationOperator),statement)»
+		«ELSEIF statement.expression.eClass.name.equals("ElementJoinOperator")»
+		«write((statement.expression as ElementJoinOperator),statement)»
 		«ENDIF»
 	'''
 	
 	def dispatch String write(JoinOperator pOperator, StreamStatement pStatement){
-		new JoinOperatorGenerator(
-			de::hs_rm::cs::vs::dsm::generator::Util::getInstance.getStreamFrom(pStatement.returnStream),
-			pOperator
-			).toString()
+		var JoinOperatorGenerator join = new JoinOperatorGenerator(
+			pStatement
+		)	
+		join.toString()
 	}
 	
 	def dispatch String write(SplitOperator pOperator, StreamStatement pStatement){
 		var SplitOperatorGenerator split = new SplitOperatorGenerator(
+			pStatement
+		)	
+		split.toString()
+	}
+	
+	def dispatch String write(ElementJoinOperator pOperator, StreamStatement pStatement){
+		var ElementJoinOperatorGenerator split = new ElementJoinOperatorGenerator(
 			pStatement
 		)	
 		split.toString()

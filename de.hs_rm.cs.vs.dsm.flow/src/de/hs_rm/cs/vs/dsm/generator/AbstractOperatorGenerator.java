@@ -25,6 +25,10 @@ public abstract class AbstractOperatorGenerator {
 	private String mOperatorStream;
 
 	
+	public AbstractOperatorGenerator(){
+		
+	}
+	
 	public AbstractOperatorGenerator(StreamStatement pStatement){
 		// Create an iterator in order to iterate over the return type statements
 		Iterator<StreamDefinition> streamDefinition = pStatement.getReturnStream().iterator();
