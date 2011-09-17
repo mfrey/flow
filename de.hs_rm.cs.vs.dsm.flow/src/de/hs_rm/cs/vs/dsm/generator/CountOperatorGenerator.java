@@ -13,7 +13,7 @@ import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
  * followed by one element of a stream a comma and a barrier mechanism for 
  * the operator and a right parenthesis.
  * 
- * @author 
+ * @author Michael Frey
  */
 public class CountOperatorGenerator extends AbstractOperatorGenerator {
 	/** The type of the operator */
