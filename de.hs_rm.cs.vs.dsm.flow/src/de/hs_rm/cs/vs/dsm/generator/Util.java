@@ -30,6 +30,10 @@ public class Util {
 				pIn + ", \"" + pIndirection + "\");\n";
 	}
 	
+	public String connectOperator(final ArrayList<String> pIn, final String pIndirection, final ArrayList<String> pOut, final String pOutDirection){
+		return "";
+	}
+	
 	public String connectOperator(final String pIn, final String pIndirection, final ArrayList<String> pOut, final String pOutDirection){
 		String result = "";
 		
