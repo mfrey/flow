@@ -129,15 +129,18 @@
 			type="flw">
 		</parser>
 	</extension>
+
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
         <resourceServiceProvider
             class="de.hs_rm.cs.vs.dsm.ui.FlowExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
             uriExtension="flw">
         </resourceServiceProvider>
+        <!--
         <resourceServiceProvider
             class="de.hs_rm.cs.vs.dsm.ui.FlowExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
             uriExtension="owl">
         </resourceServiceProvider>
+        -->
     </extension>
 
 

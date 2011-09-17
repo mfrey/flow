@@ -8,9 +8,10 @@
        class = "de.hs_rm.cs.vs.dsm.flow.FlowPackage"
        genModel = "de/hs_rm/cs/vs/dsm/Flow.genmodel" /> 
   </extension>
-  
+  <!--
   <extension point="org.eclipse.xtext.extension_resourceServiceProvider" >
     <resourceServiceProvider class="de.hs_rm.cs.vs.dsm.FlowResourceProvider" uriExtension="owl"/>
     <resourceServiceProvider class="de.hs_rm.cs.vs.dsm.FlowResourceProvider" uriExtension="ocl"/>
   </extension>
+  -->
 </plugin>

@@ -1,0 +1,9 @@
+<plugin>
+	<extension
+	      point="org.eclipse.xtext.extension_resourceServiceProvider">
+	    <resourceServiceProvider
+	          class="de.hs_rm.cs.vs.dsm.owl.ui.ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.generic.EmfResourceUIServiceProvider"
+	          uriExtension="owl">
+	    </resourceServiceProvider>
+	</extension>
+</plugin>

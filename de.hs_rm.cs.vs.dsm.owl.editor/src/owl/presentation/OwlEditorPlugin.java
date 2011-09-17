@@ -7,16 +7,8 @@
 package owl.presentation;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import owl.OwlRuntimeModule;
-
-import com.google.inject.Guice;
-import com.google.inject.Injector;
-import com.google.inject.util.Modules;
 
 
 /**
@@ -26,9 +18,6 @@ import com.google.inject.util.Modules;
  * @generated
  */
 public final class OwlEditorPlugin extends EMFPlugin {
-	
-	private Injector injector;
-	
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
@@ -36,20 +25,7 @@ public final class OwlEditorPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public static final OwlEditorPlugin INSTANCE = new OwlEditorPlugin();
-	
-	
-	public Injector getInjector() {
-		return injector;
-	}
-	/*
-	private void initializeEcoreInjector() {
-		injector = Guice.createInjector(
-				Modules.override(Modules.override(new OwlRuntimeModule())
-				.with(new UmlUiModule(plugin)))
-				.with(new SharedStateModule()));
-	}*/
-
-	
+		
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->

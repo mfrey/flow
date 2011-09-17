@@ -29,6 +29,7 @@
 		<module>de.hs_rm.cs.vs.dsm.owl</module>
 		<module>de.hs_rm.cs.vs.dsm.owl.edit</module>
 		<module>de.hs_rm.cs.vs.dsm.owl.editor</module>
+		<module>de.hs_rm.cs.vs.dsm.owl.ui</module>
 		<!-- This should be fixed <module>de.hs_rm.cs.vs.dsm.owl.tests</module> -->
 	</modules>
 	
