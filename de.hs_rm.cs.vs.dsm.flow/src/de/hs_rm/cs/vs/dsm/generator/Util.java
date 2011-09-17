@@ -28,9 +28,26 @@ public class Util {
 		// Return the connection operator string
 		return "fm:connect_operators(" + pOut + ", \"" + pOutDirection + "\"," + 
 				pIn + ", \"" + pIndirection + "\");\n";
-		
-
 	}
+	
+	public String connectOperator(final String pIn, final String pIndirection, final ArrayList<String> pOut, final String pOutDirection){
+		String result = "";
+		
+		if(pOut.size() > 1){
+			for(int i = 0; i < pOut.size(); i++){
+				// The operator has only one input stream and thus we only use the first element in the list
+				result += Util.getInstance().connectOperator(pIn, "in",  pOut.get(i), "out" + i);
+			}
+		}else{
+			// This should be not necessary, but just in case
+			if(pOut.size() == 1){
+				result += Util.getInstance().connectOperator(pIn, "in",  pOut.get(0), "out");
+			}
+		}
+		
+		return result;
+	}
+	
 	
 	public ArrayList<String> getStreamFrom(EList<StreamDefinition> pStreams){
 		ArrayList<String> result = new ArrayList<String>();

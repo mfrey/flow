@@ -1,18 +1,18 @@
 package de.hs_rm.cs.vs.dsm.generator;
 
-import de.hs_rm.cs.vs.dsm.flow.AverageOperator;
+import de.hs_rm.cs.vs.dsm.flow.StandardDeviationOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
 
-public class AverageOperatorGenerator extends AbstractOperatorGenerator {
+public class StandardDeviationOperatorGenerator extends AbstractOperatorGenerator {
 	/** The type of the operator */
-	private final String OPERATOR_TYPE = "avg";
-	/** The internal representation of the avg operator */
-	private AverageOperator mOperator = null;
+	private final String OPERATOR_TYPE = "std";
+	/** The internal representation of the std operator */
+	private StandardDeviationOperator mOperator = null;
 	
-	public AverageOperatorGenerator(StreamStatement pStatement) {
+	public StandardDeviationOperatorGenerator(StreamStatement pStatement) {
 		super(pStatement);
 		// Store the operator in the attribute
-		this.mOperator = (AverageOperator) pStatement.getExpression();
+		this.mOperator = (StandardDeviationOperator) pStatement.getExpression();
 		// Add the input stream to the corresponding array list (in the abstract operator class)
 		this.getInputStreams().add(this.mOperator.getParameter().getReference().getName());
 		// Set name of the internal stream representation
@@ -21,13 +21,12 @@ public class AverageOperatorGenerator extends AbstractOperatorGenerator {
 
 	@Override
 	public String initializeOperator() {
-		return Util.getInstance().createOperator("avg", this.getOperatorStream());
+		return Util.getInstance().createOperator("std", this.getOperatorStream());
 	}
 
 	@Override
 	public String setOperatorProperties() {
-		// TODO Auto-generated method stub
-		return "TODO AVG\n";
+		return "TODO STD\n";
 	}
 
 	@Override

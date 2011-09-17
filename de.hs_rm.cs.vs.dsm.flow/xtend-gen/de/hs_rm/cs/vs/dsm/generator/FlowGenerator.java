@@ -1,17 +1,23 @@
 package de.hs_rm.cs.vs.dsm.generator;
 
 import com.google.inject.Inject;
+import de.hs_rm.cs.vs.dsm.flow.AverageOperator;
+import de.hs_rm.cs.vs.dsm.flow.CountOperator;
 import de.hs_rm.cs.vs.dsm.flow.JoinOperator;
 import de.hs_rm.cs.vs.dsm.flow.ModelElement;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
 import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.ReturnTypeOperator;
 import de.hs_rm.cs.vs.dsm.flow.SplitOperator;
+import de.hs_rm.cs.vs.dsm.flow.StandardDeviationOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamDefinition;
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
+import de.hs_rm.cs.vs.dsm.generator.AverageOperatorGenerator;
+import de.hs_rm.cs.vs.dsm.generator.CountOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.JoinOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.OutputOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.SplitOperatorGenerator;
+import de.hs_rm.cs.vs.dsm.generator.StandardDeviationOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.Util;
 import java.util.ArrayList;
 import org.eclipse.emf.common.util.EList;
@@ -105,7 +111,37 @@ public class FlowGenerator implements IGenerator {
           ReturnTypeOperator _expression_2 = statement.getExpression();
           String _write = this.write(((SplitOperator) _expression_2), statement);
           _builder.append(_write, "");
-          _builder.newLineIfNotEmpty();
+          _builder.newLineIfNotEmpty();} else {
+          ReturnTypeOperator _expression_3 = statement.getExpression();
+          EClass _eClass_2 = _expression_3.eClass();
+          String _name_2 = _eClass_2.getName();
+          boolean _equals_2 = _name_2.equals("CountOperator");
+          if (_equals_2) {
+            ReturnTypeOperator _expression_4 = statement.getExpression();
+            String _write_1 = this.write(((CountOperator) _expression_4), statement);
+            _builder.append(_write_1, "");
+            _builder.newLineIfNotEmpty();} else {
+            ReturnTypeOperator _expression_5 = statement.getExpression();
+            EClass _eClass_3 = _expression_5.eClass();
+            String _name_3 = _eClass_3.getName();
+            boolean _equals_3 = _name_3.equals("AverageOperator");
+            if (_equals_3) {
+              ReturnTypeOperator _expression_6 = statement.getExpression();
+              String _write_2 = this.write(((AverageOperator) _expression_6), statement);
+              _builder.append(_write_2, "");
+              _builder.newLineIfNotEmpty();} else {
+              ReturnTypeOperator _expression_7 = statement.getExpression();
+              EClass _eClass_4 = _expression_7.eClass();
+              String _name_4 = _eClass_4.getName();
+              boolean _equals_4 = _name_4.equals("StandardDeviationOperator");
+              if (_equals_4) {
+                ReturnTypeOperator _expression_8 = statement.getExpression();
+                String _write_3 = this.write(((StandardDeviationOperator) _expression_8), statement);
+                _builder.append(_write_3, "");
+                _builder.newLineIfNotEmpty();
+              }
+            }
+          }
         }
       }
     }
@@ -132,6 +168,39 @@ public class FlowGenerator implements IGenerator {
     return _xblockexpression;
   }
   
+  protected String _write(final CountOperator pOperator, final StreamStatement pStatement) {
+    String _xblockexpression = null;
+    {
+      CountOperatorGenerator _countOperatorGenerator = new CountOperatorGenerator(pStatement);
+      CountOperatorGenerator count = _countOperatorGenerator;
+      String _string = count.toString();
+      _xblockexpression = (_string);
+    }
+    return _xblockexpression;
+  }
+  
+  protected String _write(final AverageOperator pOperator, final StreamStatement pStatement) {
+    String _xblockexpression = null;
+    {
+      AverageOperatorGenerator _averageOperatorGenerator = new AverageOperatorGenerator(pStatement);
+      AverageOperatorGenerator average = _averageOperatorGenerator;
+      String _string = average.toString();
+      _xblockexpression = (_string);
+    }
+    return _xblockexpression;
+  }
+  
+  protected String _write(final StandardDeviationOperator pOperator, final StreamStatement pStatement) {
+    String _xblockexpression = null;
+    {
+      StandardDeviationOperatorGenerator _standardDeviationOperatorGenerator = new StandardDeviationOperatorGenerator(pStatement);
+      StandardDeviationOperatorGenerator std = _standardDeviationOperatorGenerator;
+      String _string = std.toString();
+      _xblockexpression = (_string);
+    }
+    return _xblockexpression;
+  }
+  
   public StringConcatenation compile(final OutputOperator output) {
     StringConcatenation _builder = new StringConcatenation();
     String _xblockexpression = null;
@@ -147,12 +216,21 @@ public class FlowGenerator implements IGenerator {
   }
   
   public String write(final ReturnTypeOperator pOperator, final StreamStatement pStatement) {
-    if ((pOperator instanceof JoinOperator)
+    if ((pOperator instanceof AverageOperator)
+         && (pStatement instanceof StreamStatement)) {
+      return _write((AverageOperator)pOperator, (StreamStatement)pStatement);
+    } else if ((pOperator instanceof CountOperator)
+         && (pStatement instanceof StreamStatement)) {
+      return _write((CountOperator)pOperator, (StreamStatement)pStatement);
+    } else if ((pOperator instanceof JoinOperator)
          && (pStatement instanceof StreamStatement)) {
       return _write((JoinOperator)pOperator, (StreamStatement)pStatement);
     } else if ((pOperator instanceof SplitOperator)
          && (pStatement instanceof StreamStatement)) {
       return _write((SplitOperator)pOperator, (StreamStatement)pStatement);
+    } else if ((pOperator instanceof StandardDeviationOperator)
+         && (pStatement instanceof StreamStatement)) {
+      return _write((StandardDeviationOperator)pOperator, (StreamStatement)pStatement);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         java.util.Arrays.<Object>asList(pOperator, pStatement).toString());

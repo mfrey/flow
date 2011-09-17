@@ -13,6 +13,11 @@ import de.hs_rm.cs.vs.dsm.flow.StreamDeclaration
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement
 import de.hs_rm.cs.vs.dsm.flow.JoinOperator
+
+import de.hs_rm.cs.vs.dsm.flow.CountOperator
+import de.hs_rm.cs.vs.dsm.flow.AverageOperator
+import de.hs_rm.cs.vs.dsm.flow.StandardDeviationOperator
+
 import de.hs_rm.cs.vs.dsm.flow.SplitOperator
 
 import org.eclipse.xtext.naming.IQualifiedNameProvider
@@ -62,6 +67,12 @@ class FlowGenerator implements IGenerator {
 		
 		«ELSEIF statement.expression.eClass.name.equals("SplitOperator")»
 		«write((statement.expression as SplitOperator),statement)»
+		«ELSEIF statement.expression.eClass.name.equals("CountOperator")»
+		«write((statement.expression as CountOperator),statement)»
+		«ELSEIF statement.expression.eClass.name.equals("AverageOperator")»
+		«write((statement.expression as AverageOperator),statement)»
+		«ELSEIF statement.expression.eClass.name.equals("StandardDeviationOperator")»
+		«write((statement.expression as StandardDeviationOperator),statement)»
 		«ENDIF»
 	'''
 	
@@ -75,9 +86,29 @@ class FlowGenerator implements IGenerator {
 	def dispatch String write(SplitOperator pOperator, StreamStatement pStatement){
 		var SplitOperatorGenerator split = new SplitOperatorGenerator(
 			pStatement
-		)
-		
+		)	
 		split.toString()
+	}
+	
+	def dispatch String write(CountOperator pOperator, StreamStatement pStatement){
+		var CountOperatorGenerator count = new CountOperatorGenerator(
+			pStatement
+		)
+		count.toString()
+	}
+	
+	def dispatch String write(AverageOperator pOperator, StreamStatement pStatement){
+		var AverageOperatorGenerator average = new AverageOperatorGenerator(
+			pStatement
+		)
+		average.toString()
+	}
+	
+	def dispatch String write(StandardDeviationOperator pOperator, StreamStatement pStatement){
+		var StandardDeviationOperatorGenerator std = new StandardDeviationOperatorGenerator(
+			pStatement
+		)
+		std.toString()
 	}
 	
     def compile(OutputOperator output)'''
