@@ -241,10 +241,11 @@ public class RDFSResourceImpl extends EObjectImpl implements RDFSResource {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	// TODO: Fixme
 	public String getURI() {
 		// TODO: implement this method to return the 'URI' attribute
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return namespace + localName;
 	}
 
 	/**
