@@ -19,7 +19,7 @@ public class Util {
 		// TODO: Is it necessary to add operator at this point to the network?
 		
 		//
-		return pName + " = fm:create_operator_of_type(\"" + pOperator + "\", \"" + pName + "\");\n";
+		return pName + " = fm:create_operator_of_type(\"" + pName + "\", \"" + pOperator + "\");\n";
 	}
 	
 	public String connectOperator(final String pIn, final String pIndirection, final String pOut, final String pOutDirection){

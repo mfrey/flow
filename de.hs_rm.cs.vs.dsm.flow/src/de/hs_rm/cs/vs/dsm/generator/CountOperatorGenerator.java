@@ -28,21 +28,28 @@ public class CountOperatorGenerator extends AbstractOperatorGenerator {
 		this.mOperator = (CountOperator) pStatement.getExpression();
 		// Add the input stream to the corresponding array list (in the abstract operator class)
 		this.getInputStreams().add(this.mOperator.getParameter().getReference().getName());
-		// Set name of the internal stream representation
-		this.setOperatorStream(OPERATOR_TYPE + this.mOperator.hashCode());
 	}
 	
+	/**
+	 * {@inheritDoc} 
+	 */
 	@Override
 	public String initializeOperator() {
-		return Util.getInstance().createOperator("counter", this.getOperatorStream());
+		return Util.getInstance().createOperator(OPERATOR_TYPE, this.getInputStreams().get(0));
 	}
 
+	/**
+	 * {@inheritDoc} 
+	 */
 	@Override
 	public String setOperatorProperties() {
 		// TODO Auto-generated method stub
 		return "TODO COUNT\n";
 	}
 
+	/**
+	 * {@inheritDoc} 
+	 */
 	@Override
 	public String setOperatorConnection() {
 		return Util.getInstance().connectOperator(this.getInputStreams().get(0), "in", this.getOutputStreams(), "out");
