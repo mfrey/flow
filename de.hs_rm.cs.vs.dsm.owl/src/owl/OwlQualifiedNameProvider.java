@@ -20,17 +20,14 @@ public class OwlQualifiedNameProvider extends DefaultDeclarativeQualifiedNamePro
 	@Override
 	public QualifiedName getFullyQualifiedName(EObject pObject){
 		if(pObject instanceof OWLClass) {
-			System.err.println("OWL Class");
 			return qualifiedNameConverter.toQualifiedName(((OWLClass)pObject).getLocalName());
 		}
 		
 		if(pObject instanceof OWLObjectProperty) {
-			System.err.println("OWL Object Property");
 			return qualifiedNameConverter.toQualifiedName(((OWLObjectProperty)pObject).getLocalName());
 		}
 		
 		if(pObject instanceof OWLDatatypeProperty) {
-			System.err.println("OWL Datatype Property");
 			return qualifiedNameConverter.toQualifiedName(((OWLDatatypeProperty)pObject).getLocalName());
 		}
 		
