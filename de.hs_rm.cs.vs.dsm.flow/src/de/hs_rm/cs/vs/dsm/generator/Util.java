@@ -11,10 +11,22 @@ import de.hs_rm.cs.vs.dsm.flow.StreamDefinition;
  * 
  */
 public class Util {
+	/** Initialize the only instance of the class */ 
 	private static final Util mInstance = new Util();
+	/***/
+	private Network mNetwork = new Network();
 	
+	/**
+	 * The constructor is private in order to guarantee that the class is
+	 * only initialized once. 
+	 */
 	private Util(){}
 	
+	/**
+	 * The method returns an instance of the class
+	 *
+	 * @return The only instance of the class unit
+	 */
 	public static Util getInstance(){
 		return mInstance;
 	}
@@ -100,6 +112,57 @@ public class Util {
 		}
 		*/
 		
+		return result;
+	}
+	
+	/**
+	 * The method returns a string which contains the operators
+	 * which should be started.
+	 * 
+	 * @return A list with operators which should be started
+	 */
+	public String getStartOperators(){
+		return Util.getInstance().createOperators("fm:start(");
+	}
+	
+	/**
+	 * The method returns a string which contains the operators
+	 * which should be stopped.
+	 * 
+	 * @return A list with operators which should be stopped
+	 */
+	public String getStopOperators(){
+		return Util.getInstance().createOperators("fm:stop(");
+	}
+	
+	/**
+	 * The method builds a string which starts or stops the operators 
+	 * in LUA. Actually the method is 'capable' of using every 
+	 * preamble, but there are only two types of operation which have 
+	 * one parameter with a operator. One operation is the 
+	 * 
+	 * 	fm:start();
+	 * 
+	 * method and the other one is the
+	 * 
+	 * 	fm:stop();
+	 * 
+	 * method.
+	 *
+	 * @param pSetting The preamble which will be added before the operator
+	 * 
+	 * @return A string which consists of starting or stopping operators in 
+	 *  the network
+	 */
+	private String createOperators(final String pSetting){
+		// Initialize result string
+		String result = "";
+		// Iterate over the stream list in the network
+		for(int i = 0; i < this.mNetwork.getStreams().size(); i++){
+			// Add the streams to the result string
+			result += pSetting + this.mNetwork.getStreams().get(i) + ");\n";
+		}
+		// Return the result
 		return result;
 	}
 }
