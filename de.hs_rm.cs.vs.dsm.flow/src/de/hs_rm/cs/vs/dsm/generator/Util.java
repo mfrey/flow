@@ -32,6 +32,8 @@ public class Util {
 	}
 
 	public String createOperator(String pOperator, String pName){
+		// Add operator to the list 
+		this.mNetwork.getStreams().add(pName);
 		// TODO: Is it necessary to add operator at this point to the network?
 		
 		//

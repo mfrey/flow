@@ -19,6 +19,7 @@ import de.hs_rm.cs.vs.dsm.generator.JoinOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.OutputOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.SplitOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.StandardDeviationOperatorGenerator;
+import de.hs_rm.cs.vs.dsm.generator.Util;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -64,6 +65,15 @@ public class FlowGenerator implements IGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
+    Util _instance = Util.getInstance();
+    String _startOperators = _instance.getStartOperators();
+    _builder.append(_startOperators, "");
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    Util _instance_1 = Util.getInstance();
+    String _stopOperators = _instance_1.getStopOperators();
+    _builder.append(_stopOperators, "");
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   

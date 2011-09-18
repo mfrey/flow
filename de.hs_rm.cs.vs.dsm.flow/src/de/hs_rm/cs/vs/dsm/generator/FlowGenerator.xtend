@@ -53,6 +53,13 @@ class FlowGenerator implements IGenerator {
       «FOR elements : e.elements»
       	«elements.compile»
       «ENDFOR»
+      «{
+      	Util::instance.startOperators
+      }»
+      
+      «{
+      	Util::instance.stopOperators
+      }»
     '''
     
     def compile(ModelElement m)'''
