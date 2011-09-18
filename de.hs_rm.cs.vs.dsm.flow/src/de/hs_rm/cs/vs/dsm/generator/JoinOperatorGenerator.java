@@ -47,4 +47,12 @@ public class JoinOperatorGenerator extends AbstractOperatorGenerator {
 	public String setOperatorConnection() {
 		return Util.getInstance().connectOperator(this.getInputStreams(), "in", this.getOutputStreams(), "out");
 	}
+	
+	/**
+	 * {@inheritDoc} 
+	 */
+	@Override
+	public String setBarrier() {
+		return "";
+	}
 }

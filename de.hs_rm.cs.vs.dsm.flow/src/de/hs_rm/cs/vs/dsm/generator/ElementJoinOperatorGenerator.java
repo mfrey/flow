@@ -36,4 +36,11 @@ public class ElementJoinOperatorGenerator extends AbstractOperatorGenerator {
 		return null;
 	}
 
+	/**
+	 * {@inheritDoc} 
+	 */
+	@Override
+	public String setBarrier() {
+		return "";
+	}
 }

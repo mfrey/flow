@@ -52,4 +52,12 @@ public class StandardDeviationOperatorGenerator extends AbstractOperatorGenerato
 	public String setOperatorConnection() {
 		return Util.getInstance().connectOperator(this.getInputStreams().get(0), "in", this.getOutputStreams(), "out");
 	}
+	
+	/**
+	 * {@inheritDoc} 
+	 */
+	@Override
+	public String setBarrier() {
+		return "";
+	}
 }

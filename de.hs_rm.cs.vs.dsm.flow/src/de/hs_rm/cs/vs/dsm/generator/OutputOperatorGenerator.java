@@ -51,4 +51,12 @@ public class OutputOperatorGenerator extends AbstractOperatorGenerator {
 		//return Util.getInstance().connectOperator(this.getInputStreams(), "in", this.getOperatorStream(), "out");
 		return result;
 	}
+	
+	/**
+	 * {@inheritDoc} 
+	 */
+	@Override
+	public String setBarrier() {
+		return "";
+	}
 }

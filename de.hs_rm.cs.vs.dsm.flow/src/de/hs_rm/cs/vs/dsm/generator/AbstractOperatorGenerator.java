@@ -64,6 +64,8 @@ public abstract class AbstractOperatorGenerator {
 		this.mOperatorStream = pOperatorStream;
 	}
 	
+	public abstract String setBarrier();
+	
 	/**
 	 * The method initializes the operator. The initialization of the operator 
 	 * corresponds to the 'fm::create_operator_of_type' operation in LUA.
@@ -91,6 +93,6 @@ public abstract class AbstractOperatorGenerator {
 	
 	@Override
 	public String toString(){
-		return initializeOperator() + setOperatorProperties() + setOperatorConnection();
+		return initializeOperator() + setBarrier() + setOperatorProperties() + setOperatorConnection();
 	}
 }
