@@ -1,10 +1,7 @@
 package de.hs_rm.cs.vs.dsm.generator;
 
-import de.hs_rm.cs.vs.dsm.flow.BarrierOperator;
 import de.hs_rm.cs.vs.dsm.flow.CountOperator;
-import de.hs_rm.cs.vs.dsm.flow.MarkerOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
-import de.hs_rm.cs.vs.dsm.flow.WindowOperator;
 
 /**
  * The class provides a generator for the count operator of the query 
@@ -46,8 +43,7 @@ public class CountOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String setOperatorProperties() {
-		// TODO Auto-generated method stub
-		return "TODO COUNT\n";
+		return "";
 	}
 
 	/**
@@ -63,19 +59,6 @@ public class CountOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String setBarrier() {
-		// Get the barrier
-		BarrierOperator barrier = this.mOperator.getStream().getBarrier();
-		
-		// Determine if it is a window based barrier or a marker baser barrier
-		if(barrier instanceof WindowOperator){
-			WindowOperator window = (WindowOperator) barrier;
-			return "";
-			//return Util.getInstance().createBarrier(this.getInputStreams().get(0), window.g, value);
-		}else if(barrier instanceof MarkerOperator){
-			return "TODO MarkerOperator in CountOperator\n";
-		}else{
-			return "setBarrier: something went wrong\n";
-		}
-		
+		return Util.getInstance().createBarrier(this.getInputStreams().get(0), this.mOperator.getStream().getBarrier());
 	}
 }

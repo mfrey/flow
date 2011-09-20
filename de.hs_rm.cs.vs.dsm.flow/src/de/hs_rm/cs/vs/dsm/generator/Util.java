@@ -4,7 +4,10 @@ import java.util.ArrayList;
 
 import org.eclipse.emf.common.util.EList;
 
+import de.hs_rm.cs.vs.dsm.flow.BarrierOperator;
+import de.hs_rm.cs.vs.dsm.flow.MarkerOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamDefinition;
+import de.hs_rm.cs.vs.dsm.flow.WindowOperator;
 
 /**
  *  
@@ -48,23 +51,53 @@ public class Util {
 				pIn + ", \"" + pIndirection + "\");\n";
 	}
 	
-	public String createBarrier(final String pStream, final String pWindowType, final String pValue){
-		// The result string
+	public String createBarrier(final String pStream, final BarrierOperator pBarrier){
 		String result = "";
-		// If the window type is of type time
-		if(pWindowType.equals("time")){
-			result += Util.getInstance().createParameter(pStream, "step_size_num", pValue);
-			result += Util.getInstance().createParameter(pStream, "window_type", "time");
-		// If the window type is of type elements
-		}else if(pWindowType.equals("elements")){
-			// TODO
-		// If the window type is of type now
-		}else if(pWindowType.equals("now")){
-			// TODO
-		// If the window type is a marker, which probably requires a seperate method
+		
+		if(pBarrier instanceof WindowOperator){
+			// Cast to window operator
+			WindowOperator operator = (WindowOperator) pBarrier;
+			// Set factor for value to one
+			int factor = 1;
+			// Set type of operator to 'none'
+			String type = "";
+			int value = 1;
+			
+			if(operator.getSetting().equals("last")){
+				if(operator.getUnit().equals("elements")){
+					// Set type to elements
+					type = "elements";
+				}else{
+					// Set type to time
+					type = "time";
+					// Type of unit is seconds
+					if(operator.getUnit().equals("sec")){
+						factor = 1000;
+					// Type of unit is minutes
+					}else if(operator.getUnit().equals("min")){
+						factor = 1000 * 60;
+					// Type of unit is hours
+					}else{
+						factor = 1000 * 60 * 60;
+					}
+				}
+				
+				value = operator.getValue().intValue() * factor;
+			}else{
+				type = "elements";
+			}
+			
+			// Set the value
+			result += Util.getInstance().createParameter(pStream, "step_size_num", new Integer(value).toString());
+			// Set the window type
+			result += Util.getInstance().createParameter(pStream, "window_type", type);
+			
+		}else if(pBarrier instanceof MarkerOperator){
+			result = "createBarrier: todo";
 		}else{
-			//TODO
+			result = "createBarrier: this should not happen!";
 		}
+		// Return the result
 		return result;
 	}
 	

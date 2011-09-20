@@ -42,8 +42,7 @@ public class AverageOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String setOperatorProperties() {
-		// TODO Auto-generated method stub
-		return "TODO AVG\n";
+		return "";
 	}
 
 	/**
@@ -59,6 +58,6 @@ public class AverageOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String setBarrier() {
-		return "";
+		return Util.getInstance().createBarrier(this.getInputStreams().get(0), this.mOperator.getStream().getBarrier());
 	}
 }

@@ -42,7 +42,7 @@ public class StandardDeviationOperatorGenerator extends AbstractOperatorGenerato
 	 */
 	@Override
 	public String setOperatorProperties() {
-		return "TODO STD\n";
+		return "";
 	}
 
 	/**
@@ -58,6 +58,6 @@ public class StandardDeviationOperatorGenerator extends AbstractOperatorGenerato
 	 */
 	@Override
 	public String setBarrier() {
-		return "";
+		return Util.getInstance().createBarrier(this.getInputStreams().get(0), this.mOperator.getStream().getBarrier());
 	}
 }
