@@ -37,16 +37,25 @@ public class SplitOperatorGenerator extends AbstractOperatorGenerator {
 		this.setOperatorStream(OPERATOR_TYPE + this.mOperator.hashCode());
 	}
 	
+	/**
+	 * {@inheritDoc} 
+	 */
 	@Override
 	public String initializeOperator() {
 		return Util.getInstance().createOperator("split", this.getOperatorStream());
 	}
 	
+	/**
+	 * {@inheritDoc} 
+	 */
 	@Override
 	public String setOperatorProperties() {
-		return "TODO SPLIT\n";
+		return "";
 	}
 
+	/**
+	 * {@inheritDoc} 
+	 */
 	@Override
 	public String setOperatorConnection() {
 		return Util.getInstance().connectOperator(this.getInputStreams().get(0), "in", this.getOutputStreams(), "out");

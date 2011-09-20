@@ -33,16 +33,25 @@ public class JoinOperatorGenerator extends AbstractOperatorGenerator {
 		this.setOperatorStream(OPERATOR_TYPE + this.mOperator.hashCode());
 	}
 	
+	/**
+	 * {@inheritDoc} 
+	 */
 	@Override
 	public String initializeOperator(){
 		return Util.getInstance().createOperator("merge", this.getOperatorStream());
 	}
 	
+	/**
+	 * {@inheritDoc} 
+	 */
 	@Override
 	public String setOperatorProperties(){
-		return "TODO JOIN\n";
+		return "";
 	}
 
+	/**
+	 * {@inheritDoc} 
+	 */
 	@Override
 	public String setOperatorConnection() {
 		return Util.getInstance().connectOperator(this.getInputStreams(), "in", this.getOutputStreams(), "out");

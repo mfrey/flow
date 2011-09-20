@@ -10,13 +10,15 @@ import de.hs_rm.cs.vs.dsm.flow.StreamDefinition;
 import de.hs_rm.cs.vs.dsm.flow.WindowOperator;
 
 /**
- *  
+ * The class provides various useful functions for creating LUA expressions which
+ * are used by several operators.
  * 
+ * @author Michael Frey
  */
 public class Util {
 	/** Initialize the only instance of the class */ 
 	private static final Util mInstance = new Util();
-	/***/
+	/** A in-memory representation of the complex event processing network */
 	private Network mNetwork = new Network();
 	
 	/**
@@ -51,6 +53,16 @@ public class Util {
 				pIn + ", \"" + pIndirection + "\");\n";
 	}
 	
+	/**
+	 * The function creates a string which contains a string representation of a barrier
+	 * of a stream. If the barrier refers to a time setting, the corresponding times are
+	 * calculated in miliseconds. 
+	 * 
+	 * @param pStream  The stream which string representation of a barrier should be created 
+	 * @param pBarrier The barrier of the operator
+	 * 
+	 * @return A string representation of the barrier of a stream
+	 */
 	public String createBarrier(final String pStream, final BarrierOperator pBarrier){
 		String result = "";
 		
