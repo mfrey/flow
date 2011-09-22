@@ -27,7 +27,8 @@
 
    <features>
       <feature id="de.hs_rm.cs.vs.dsm.flow.feature" version="1.0.0.qualifier"/>
-      <feature id="org.eclipse.xtext.ui" version="2.0.0.v201106070531"/>
+      <feature id="org.eclipse.rcp" version="3.7.0.v20110216-9DB5Fm1FpBGy_AaVz-mFamgY"/>
+      <feature id="org.eclipse.pde" version="3.7.0.v20110504-0800-7b7qFVpFEx2XnmYtj_9RfO7"/>
    </features>
 
 
