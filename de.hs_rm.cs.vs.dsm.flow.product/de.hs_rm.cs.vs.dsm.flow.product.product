@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Flow Product" uid="de.hs_rm.cs.vs.dsm.flow.product" id="de.hs_rm.cs.vs.dsm.flow.product.product" application="org.eclipse.ui.ide.workbench" version="1.0.0" useFeatures="true" includeLaunchers="true">
+<product name="Flow Product" uid="Flow" id="de.hs_rm.cs.vs.dsm.flow.product.product" application="org.eclipse.ui.ide.workbench" version="1.0.0" useFeatures="true" includeLaunchers="true">
 
    <configIni use="default">
    </configIni>
@@ -27,7 +27,7 @@
 
    <features>
       <feature id="de.hs_rm.cs.vs.dsm.flow.feature" version="1.0.0.qualifier"/>
-      <feature id="org.eclipse.rcp" version="3.7.0.v20110216-9DB5Fm1FpBGy_AaVz-mFamgY"/>
+      <feature id="org.eclipse.xtext.ui" version="2.0.0.v201106070531"/>
    </features>
 
 
