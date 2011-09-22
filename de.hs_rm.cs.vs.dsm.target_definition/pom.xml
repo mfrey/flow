@@ -11,7 +11,7 @@
   </parent>
 
   <groupId>de.hs_rm.cs.vs.dsm</groupId>
-  <artifactId>target-platform</artifactId>
+  <artifactId>de.hs_rm.cs.vs.dsm.target_definition</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 

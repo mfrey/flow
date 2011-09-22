@@ -16,6 +16,7 @@
 	<properties>
 		<tycho-version>0.12.0</tycho-version>
 		<build.qualifier>'v'yyyyMMddHHmm</build.qualifier>
+		<tycho-group>org.eclipse.tycho</tycho-group>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -67,7 +68,7 @@
 		<module>de.hs_rm.cs.vs.dsm.owl.edit</module>
 		<module>de.hs_rm.cs.vs.dsm.owl.editor</module>
 		<module>de.hs_rm.cs.vs.dsm.owl.ui</module>
-		<module>target-definition</module>
+		<module>de.hs_rm.cs.vs.dsm.target_definition</module>
 		<!-- This should be fixed <module>de.hs_rm.cs.vs.dsm.owl.tests</module> -->
 	</modules>
 
@@ -82,7 +83,7 @@
 					<target>
 						<artifact>
 							<groupId>de.hs_rm.cs.vs.dsm</groupId>
-							<artifactId>target-definition</artifactId>
+							<artifactId>de.hs_rm.cs.vs.dsm.target_definition</artifactId>
 							<version>1.0.0-SNAPSHOT</version>
 							<classifier>indigo</classifier>
 						</artifact>
@@ -90,14 +91,9 @@
 					<ignoreTychoRepositories>true</ignoreTychoRepositories>
 					<environments>
 						<environment>
-							<os>win32</os>
-							<ws>win32</ws>
-							<arch>x86</arch>
-						</environment>
-						<environment>
 							<os>linux</os>
 							<ws>gtk</ws>
-							<arch>x86</arch>
+							<arch>x86_64</arch>
 						</environment>
 					</environments>
 				</configuration>
