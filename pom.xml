@@ -18,8 +18,48 @@
 		<build.qualifier>'v'yyyyMMddHHmm</build.qualifier>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<platform-version-name>indigo</platform-version-name>
+		<eclipse-site>http://download.eclipse.org/releases/${platform-version-name}</eclipse-site>
 	</properties>
-	
+
+	<profiles>
+		<profile>
+			<id>platform-helios</id>
+			<activation>
+				<property>
+					<name>platform-version-name</name>
+					<value>helios</value>
+				</property>
+			</activation>
+			<properties>
+				<eclipse-site>http://download.eclipse.org/releases/helios</eclipse-site>
+				<platform-version>[3.6,3.7)</platform-version>
+			</properties>
+		</profile>
+		<profile>
+			<id>platform-indigo</id>
+			<activation>
+				<property>
+					<name>platform-version-name</name>
+					<value>indigo</value>
+				</property>
+			</activation>
+			<properties>
+				<eclipse-site>http://download.eclipse.org/releases/indigo</eclipse-site>
+				<platform-version>[3.7,3.8)</platform-version>
+			</properties>
+		</profile>
+	</profiles>
+
+	<repositories>
+		<repository>
+			<id>indigo</id>
+			<layout>p2</layout>
+			<url>${eclipse-site}</url>
+		</repository>
+	</repositories>
+
 	<modules>
 		<module>de.hs_rm.cs.vs.dsm.flow</module>
 		<module>de.hs_rm.cs.vs.dsm.flow.tests</module>
@@ -32,7 +72,7 @@
 		<module>de.hs_rm.cs.vs.dsm.owl.ui</module>
 		<!-- This should be fixed <module>de.hs_rm.cs.vs.dsm.owl.tests</module> -->
 	</modules>
-	
+
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<extensions>
@@ -49,25 +89,12 @@
 				<version>${tycho-version}</version>
 				<extensions>true</extensions>
 			</plugin>
-<!--
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>target-platform-configuration</artifactId>
-				<version>${tycho-version}</version>
-				<configuration>
-					<resolver>p2</resolver>
-					<target>
-						<artifact>
-							<groupId>de.hs_rm.cs.vs.dsm</groupId>
-							<artifactId>de.hs_rm.cs.vs.dsm.flow.product</artifactId>
-							<version>1.0.0-SNAPSHOT</version>
-							<classifier>datastreamminer</classifier>
-						</artifact>
-					</target>
-					<ignoreTychoRepositories>false</ignoreTychoRepositories>
-				</configuration>
-			</plugin>
--->
+			<!-- <plugin> <groupId>org.eclipse.tycho</groupId> <artifactId>target-platform-configuration</artifactId> 
+				<version>${tycho-version}</version> <configuration> <resolver>p2</resolver> 
+				<target> <artifact> <groupId>de.hs_rm.cs.vs.dsm</groupId> <artifactId>de.hs_rm.cs.vs.dsm.flow.product</artifactId> 
+				<version>1.0.0-SNAPSHOT</version> <classifier>datastreamminer</classifier> 
+				</artifact> </target> <ignoreTychoRepositories>false</ignoreTychoRepositories> 
+				</configuration> </plugin> -->
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-packaging-plugin</artifactId>
@@ -75,13 +102,13 @@
 				<configuration>
 					<format>${build.qualifier}</format>
 					<target>site</target>
-    					<environments>
-      					  <environment>
-        				    <os>linux</os>
-        				    <ws>gtk</ws>
-        				    <arch>x86_64</arch>
-                                          </environment>
-    					</environments>
+					<environments>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
 				</configuration>
 			</plugin>
 			<plugin>

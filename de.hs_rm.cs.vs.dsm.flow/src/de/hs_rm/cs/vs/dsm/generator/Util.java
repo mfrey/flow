@@ -5,13 +5,14 @@ import java.util.ArrayList;
 import org.eclipse.emf.common.util.EList;
 
 import de.hs_rm.cs.vs.dsm.flow.BarrierOperator;
+import de.hs_rm.cs.vs.dsm.flow.Expression;
 import de.hs_rm.cs.vs.dsm.flow.MarkerOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamDefinition;
 import de.hs_rm.cs.vs.dsm.flow.WindowOperator;
 
 /**
  * The class provides various useful functions for creating LUA expressions which
- * are used by several operators.
+ * are required by operator generator classes. 
  * 
  * @author Michael Frey
  */
@@ -30,7 +31,7 @@ public class Util {
 	/**
 	 * The method returns an instance of the class
 	 *
-	 * @return The only instance of the class unit
+	 * @return The only instance of the class Unit
 	 */
 	public static Util getInstance(){
 		return mInstance;
@@ -211,5 +212,12 @@ public class Util {
 		}
 		// Return the result
 		return result;
+	}
+	
+	/**
+	 * 
+	 */
+	public String createExpressionParameter(final Expression pExpression){
+		return null;
 	}
 }

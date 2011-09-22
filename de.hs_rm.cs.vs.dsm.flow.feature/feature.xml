@@ -21,6 +21,10 @@
       [Enter License Description here.]
    </license>
 
+   <url>
+      <discovery label="DataStreamMiner Project Website" url="http://wwwvs.cs.hs-rm.de/projekte/dsminer.html"/>
+   </url>
+
    <requires>
       <import plugin="org.eclipse.xtext" version="2.0.0" match="greaterOrEqual"/>
       <import plugin="org.apache.log4j" version="1.2.15" match="greaterOrEqual"/>
@@ -32,12 +36,12 @@
       <import plugin="org.apache.commons.logging"/>
       <import plugin="org.eclipse.xtext.xbase.lib"/>
       <import plugin="org.eclipse.xtext.xtend2.lib"/>
-      <import plugin="de.hs_rm.cs.vs.dsm.flow"/>
-      <import plugin="de.hs_rm.cs.vs.dsm.flow.ui"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.xtext.junit4"/>
       <import plugin="org.eclipse.xtext.ui.junit"/>
       <import plugin="org.junit4"/>
+      <import plugin="org.eclipse.xtext.xbase.lib" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.xtend2.lib" version="2.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.xtext.ui"/>
       <import plugin="org.eclipse.ui.editors" version="3.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.ide" version="3.5.0" match="greaterOrEqual"/>
@@ -50,11 +54,15 @@
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.xtend"/>
       <import plugin="org.eclipse.xpand"/>
-      <import plugin="de.hs_rm.cs.vs.dsm.owl" version="0.0.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edit"/>
-      <import plugin="de.hs_rm.cs.vs.dsm.owl.edit"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.emf.edit.ui"/>
+      <import plugin="org.eclipse.xtext.ui" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.ui.shared" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="de.hs_rm.cs.vs.dsm.flow"/>
+      <import plugin="de.hs_rm.cs.vs.dsm.flow.ui"/>
+      <import plugin="de.hs_rm.cs.vs.dsm.owl"/>
+      <import plugin="de.hs_rm.cs.vs.dsm.owl.edit"/>
    </requires>
 
    <plugin
@@ -94,6 +102,13 @@
 
    <plugin
          id="de.hs_rm.cs.vs.dsm.owl.editor"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="de.hs_rm.cs.vs.dsm.owl.ui"
          download-size="0"
          install-size="0"
          version="1.0.0.qualifier"

@@ -19,7 +19,7 @@ import de.hs_rm.cs.vs.dsm.flow.TagOperator;
  */
 public class TagOperatorGenerator extends AbstractOperatorGenerator {
 	/** The type of the operator */
-	private final String OPERATOR_TYPE = "tag";
+	private final String OPERATOR_TYPE = "OperatorTag";
 	/** The internal representation of the count operator */
 	private TagOperator mOperator = null;
 	
@@ -37,7 +37,7 @@ public class TagOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String setBarrier() {
-		return "TODO tag\n";
+		return "";
 	}
 
 	/**

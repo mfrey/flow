@@ -3,7 +3,6 @@
 
 <product name="Flow Product" uid="de.hs_rm.cs.vs.dsm.flow.product" id="de.hs_rm.cs.vs.dsm.flow.product.de_hs_rm_cs_vs_dsm_flow_product" application="de.hs_rm.cs.vs.dsm.flow.ui.Application" version="1.0.0" useFeatures="true" includeLaunchers="true">
 
-
    <configIni use="default">
    </configIni>
 
@@ -13,7 +12,6 @@
 
    <windowImages/>
 
-
    <launcher>
       <solaris/>
       <win useIco="false">
@@ -21,10 +19,8 @@
       </win>
    </launcher>
 
-
    <vm>
    </vm>
-
 
    <plugins>
    </plugins>
