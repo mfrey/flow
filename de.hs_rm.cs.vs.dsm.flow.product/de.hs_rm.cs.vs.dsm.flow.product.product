@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Flow Product" uid="de.hs_rm.cs.vs.dsm.flow.product" id="de.hs_rm.cs.vs.dsm.flow.product.de_hs_rm_cs_vs_dsm_flow_product" application="de.hs_rm.cs.vs.dsm.flow.ui.Application" version="1.0.0" useFeatures="true" includeLaunchers="true">
+<product name="Flow Product" uid="de.hs_rm.cs.vs.dsm.flow.product" id="de.hs_rm.cs.vs.dsm.flow.product.product" application="org.eclipse.ui.ide.workbench" version="1.0.0" useFeatures="true" includeLaunchers="true">
 
    <configIni use="default">
    </configIni>
