@@ -443,21 +443,22 @@
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="in"/>
       <elements xsi:type="xtext:Keyword" value="("/>
-      <elements xsi:type="xtext:Assignment" feature="location" operator="=">
+      <elements xsi:type="xtext:Assignment" feature="iri" operator="+=">
         <terminal xsi:type="xtext:RuleCall" rule="//@rules.84"/>
       </elements>
-      <elements xsi:type="xtext:Keyword" value=","/>
-      <elements xsi:type="xtext:Assignment" feature="regexp" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.84"/>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:Keyword" value=","/>
+        <elements xsi:type="xtext:Assignment" feature="iri" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.84"/>
+        </elements>
       </elements>
       <elements xsi:type="xtext:Keyword" value=","/>
-      <elements xsi:type="xtext:Assignment" feature="model" operator="=">
-        <terminal xsi:type="xtext:CrossReference">
-          <type metamodel="//@metamodelDeclarations.2">
-            <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StreamDeclaration"/>
-          </type>
-          <terminal xsi:type="xtext:RuleCall" rule="//@rules.83"/>
-        </terminal>
+      <elements xsi:type="xtext:Assignment" feature="port" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.73"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=","/>
+      <elements xsi:type="xtext:Assignment" feature="socket" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.84"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value=")"/>
     </alternatives>

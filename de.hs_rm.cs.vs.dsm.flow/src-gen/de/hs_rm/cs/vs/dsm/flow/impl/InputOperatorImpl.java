@@ -7,14 +7,20 @@ package de.hs_rm.cs.vs.dsm.flow.impl;
 
 import de.hs_rm.cs.vs.dsm.flow.FlowPackage;
 import de.hs_rm.cs.vs.dsm.flow.InputOperator;
-import de.hs_rm.cs.vs.dsm.flow.StreamDeclaration;
+
+import java.math.BigDecimal;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,9 +29,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.InputOperatorImpl#getLocation <em>Location</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.InputOperatorImpl#getRegexp <em>Regexp</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.InputOperatorImpl#getModel <em>Model</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.InputOperatorImpl#getIri <em>Iri</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.InputOperatorImpl#getPort <em>Port</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.InputOperatorImpl#getSocket <em>Socket</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,54 +40,54 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class InputOperatorImpl extends ReturnTypeOperatorImpl implements InputOperator
 {
   /**
-   * The default value of the '{@link #getLocation() <em>Location</em>}' attribute.
+   * The cached value of the '{@link #getIri() <em>Iri</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLocation()
+   * @see #getIri()
    * @generated
    * @ordered
    */
-  protected static final String LOCATION_EDEFAULT = null;
+  protected EList<String> iri;
 
   /**
-   * The cached value of the '{@link #getLocation() <em>Location</em>}' attribute.
+   * The default value of the '{@link #getPort() <em>Port</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLocation()
+   * @see #getPort()
    * @generated
    * @ordered
    */
-  protected String location = LOCATION_EDEFAULT;
+  protected static final BigDecimal PORT_EDEFAULT = null;
 
   /**
-   * The default value of the '{@link #getRegexp() <em>Regexp</em>}' attribute.
+   * The cached value of the '{@link #getPort() <em>Port</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRegexp()
+   * @see #getPort()
    * @generated
    * @ordered
    */
-  protected static final String REGEXP_EDEFAULT = null;
+  protected BigDecimal port = PORT_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getRegexp() <em>Regexp</em>}' attribute.
+   * The default value of the '{@link #getSocket() <em>Socket</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRegexp()
+   * @see #getSocket()
    * @generated
    * @ordered
    */
-  protected String regexp = REGEXP_EDEFAULT;
+  protected static final String SOCKET_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getModel() <em>Model</em>}' reference.
+   * The cached value of the '{@link #getSocket() <em>Socket</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getModel()
+   * @see #getSocket()
    * @generated
    * @ordered
    */
-  protected StreamDeclaration model;
+  protected String socket = SOCKET_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -109,65 +115,13 @@ public class InputOperatorImpl extends ReturnTypeOperatorImpl implements InputOp
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getLocation()
+  public EList<String> getIri()
   {
-    return location;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setLocation(String newLocation)
-  {
-    String oldLocation = location;
-    location = newLocation;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.INPUT_OPERATOR__LOCATION, oldLocation, location));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getRegexp()
-  {
-    return regexp;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setRegexp(String newRegexp)
-  {
-    String oldRegexp = regexp;
-    regexp = newRegexp;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.INPUT_OPERATOR__REGEXP, oldRegexp, regexp));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public StreamDeclaration getModel()
-  {
-    if (model != null && model.eIsProxy())
+    if (iri == null)
     {
-      InternalEObject oldModel = (InternalEObject)model;
-      model = (StreamDeclaration)eResolveProxy(oldModel);
-      if (model != oldModel)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, FlowPackage.INPUT_OPERATOR__MODEL, oldModel, model));
-      }
+      iri = new EDataTypeEList<String>(String.class, this, FlowPackage.INPUT_OPERATOR__IRI);
     }
-    return model;
+    return iri;
   }
 
   /**
@@ -175,9 +129,9 @@ public class InputOperatorImpl extends ReturnTypeOperatorImpl implements InputOp
    * <!-- end-user-doc -->
    * @generated
    */
-  public StreamDeclaration basicGetModel()
+  public BigDecimal getPort()
   {
-    return model;
+    return port;
   }
 
   /**
@@ -185,12 +139,35 @@ public class InputOperatorImpl extends ReturnTypeOperatorImpl implements InputOp
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setModel(StreamDeclaration newModel)
+  public void setPort(BigDecimal newPort)
   {
-    StreamDeclaration oldModel = model;
-    model = newModel;
+    BigDecimal oldPort = port;
+    port = newPort;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.INPUT_OPERATOR__MODEL, oldModel, model));
+      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.INPUT_OPERATOR__PORT, oldPort, port));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getSocket()
+  {
+    return socket;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setSocket(String newSocket)
+  {
+    String oldSocket = socket;
+    socket = newSocket;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.INPUT_OPERATOR__SOCKET, oldSocket, socket));
   }
 
   /**
@@ -203,13 +180,12 @@ public class InputOperatorImpl extends ReturnTypeOperatorImpl implements InputOp
   {
     switch (featureID)
     {
-      case FlowPackage.INPUT_OPERATOR__LOCATION:
-        return getLocation();
-      case FlowPackage.INPUT_OPERATOR__REGEXP:
-        return getRegexp();
-      case FlowPackage.INPUT_OPERATOR__MODEL:
-        if (resolve) return getModel();
-        return basicGetModel();
+      case FlowPackage.INPUT_OPERATOR__IRI:
+        return getIri();
+      case FlowPackage.INPUT_OPERATOR__PORT:
+        return getPort();
+      case FlowPackage.INPUT_OPERATOR__SOCKET:
+        return getSocket();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -219,19 +195,21 @@ public class InputOperatorImpl extends ReturnTypeOperatorImpl implements InputOp
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case FlowPackage.INPUT_OPERATOR__LOCATION:
-        setLocation((String)newValue);
+      case FlowPackage.INPUT_OPERATOR__IRI:
+        getIri().clear();
+        getIri().addAll((Collection<? extends String>)newValue);
         return;
-      case FlowPackage.INPUT_OPERATOR__REGEXP:
-        setRegexp((String)newValue);
+      case FlowPackage.INPUT_OPERATOR__PORT:
+        setPort((BigDecimal)newValue);
         return;
-      case FlowPackage.INPUT_OPERATOR__MODEL:
-        setModel((StreamDeclaration)newValue);
+      case FlowPackage.INPUT_OPERATOR__SOCKET:
+        setSocket((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -247,14 +225,14 @@ public class InputOperatorImpl extends ReturnTypeOperatorImpl implements InputOp
   {
     switch (featureID)
     {
-      case FlowPackage.INPUT_OPERATOR__LOCATION:
-        setLocation(LOCATION_EDEFAULT);
+      case FlowPackage.INPUT_OPERATOR__IRI:
+        getIri().clear();
         return;
-      case FlowPackage.INPUT_OPERATOR__REGEXP:
-        setRegexp(REGEXP_EDEFAULT);
+      case FlowPackage.INPUT_OPERATOR__PORT:
+        setPort(PORT_EDEFAULT);
         return;
-      case FlowPackage.INPUT_OPERATOR__MODEL:
-        setModel((StreamDeclaration)null);
+      case FlowPackage.INPUT_OPERATOR__SOCKET:
+        setSocket(SOCKET_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -270,12 +248,12 @@ public class InputOperatorImpl extends ReturnTypeOperatorImpl implements InputOp
   {
     switch (featureID)
     {
-      case FlowPackage.INPUT_OPERATOR__LOCATION:
-        return LOCATION_EDEFAULT == null ? location != null : !LOCATION_EDEFAULT.equals(location);
-      case FlowPackage.INPUT_OPERATOR__REGEXP:
-        return REGEXP_EDEFAULT == null ? regexp != null : !REGEXP_EDEFAULT.equals(regexp);
-      case FlowPackage.INPUT_OPERATOR__MODEL:
-        return model != null;
+      case FlowPackage.INPUT_OPERATOR__IRI:
+        return iri != null && !iri.isEmpty();
+      case FlowPackage.INPUT_OPERATOR__PORT:
+        return PORT_EDEFAULT == null ? port != null : !PORT_EDEFAULT.equals(port);
+      case FlowPackage.INPUT_OPERATOR__SOCKET:
+        return SOCKET_EDEFAULT == null ? socket != null : !SOCKET_EDEFAULT.equals(socket);
     }
     return super.eIsSet(featureID);
   }
@@ -291,10 +269,12 @@ public class InputOperatorImpl extends ReturnTypeOperatorImpl implements InputOp
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (location: ");
-    result.append(location);
-    result.append(", regexp: ");
-    result.append(regexp);
+    result.append(" (iri: ");
+    result.append(iri);
+    result.append(", port: ");
+    result.append(port);
+    result.append(", socket: ");
+    result.append(socket);
     result.append(')');
     return result.toString();
   }

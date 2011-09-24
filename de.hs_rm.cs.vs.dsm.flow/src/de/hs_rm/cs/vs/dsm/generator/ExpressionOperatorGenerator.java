@@ -16,8 +16,7 @@ public class ExpressionOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String setBarrier() {
-		// TODO Auto-generated method stub
-		return null;
+		return "";
 	}
 
 	/**

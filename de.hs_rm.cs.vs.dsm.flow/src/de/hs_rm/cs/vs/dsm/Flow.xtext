@@ -145,7 +145,7 @@ FunctionStatement:
 	element=StreamAccess '=' function=[FunctionDefinition]('('(arguments+=Expression(',' arguments+=Expression)*)?')');
 
 InputOperator:
-	'in' '('location=STRING ',' regexp=STRING ',' model=[StreamDeclaration]')';
+	'in' '('iri+=STRING (',' iri+=STRING)* ',' port=NUMBER ',' socket=STRING')';
 
 /**
  * The rule summarizes the operators which have a return type

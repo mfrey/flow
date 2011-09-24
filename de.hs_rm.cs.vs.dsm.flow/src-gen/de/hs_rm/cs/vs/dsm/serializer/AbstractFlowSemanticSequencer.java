@@ -656,11 +656,7 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				}
 				else break;
 			case FlowPackage.VARIABLE_DECLARATION:
-				if(context == grammarAccess.getParameterDeclarationRule()) {
-					sequence_ParameterDeclaration_VariableDeclaration(context, (VariableDeclaration) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getModelElementRule() ||
+				if(context == grammarAccess.getModelElementRule() ||
 				   context == grammarAccess.getProcessingExpressionRule() ||
 				   context == grammarAccess.getBlockExpressionRule() ||
 				   context == grammarAccess.getVariableRule() ||
@@ -671,6 +667,10 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				}
 				else if(context == grammarAccess.getReturnableRule()) {
 					sequence_Returnable_VariableDeclaration(context, (VariableDeclaration) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getParameterDeclarationRule()) {
+					sequence_ParameterDeclaration_VariableDeclaration(context, (VariableDeclaration) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1056,28 +1056,15 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (location=STRING regexp=STRING model=[StreamDeclaration|ID])
+	 *     (iri+=STRING iri+=STRING* port=NUMBER socket=STRING)
 	 *
 	 * Features:
-	 *    location[1, 1]
-	 *    regexp[1, 1]
-	 *    model[1, 1]
+	 *    iri[1, *]
+	 *    port[1, 1]
+	 *    socket[1, 1]
 	 */
 	protected void sequence_InputOperator_InputOperator(EObject context, InputOperator semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.INPUT_OPERATOR__LOCATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.INPUT_OPERATOR__LOCATION));
-			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.INPUT_OPERATOR__REGEXP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.INPUT_OPERATOR__REGEXP));
-			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.INPUT_OPERATOR__MODEL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.INPUT_OPERATOR__MODEL));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getInputOperatorAccess().getLocationSTRINGTerminalRuleCall_2_0(), semanticObject.getLocation());
-		feeder.accept(grammarAccess.getInputOperatorAccess().getRegexpSTRINGTerminalRuleCall_4_0(), semanticObject.getRegexp());
-		feeder.accept(grammarAccess.getInputOperatorAccess().getModelStreamDeclarationIDTerminalRuleCall_6_0_1(), semanticObject.getModel());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

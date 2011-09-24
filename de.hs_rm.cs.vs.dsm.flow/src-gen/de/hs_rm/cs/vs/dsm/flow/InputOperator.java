@@ -5,6 +5,9 @@
  */
 package de.hs_rm.cs.vs.dsm.flow;
 
+import java.math.BigDecimal;
+
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,9 +17,9 @@ package de.hs_rm.cs.vs.dsm.flow;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getLocation <em>Location</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getRegexp <em>Regexp</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getModel <em>Model</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getIri <em>Iri</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getPort <em>Port</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getSocket <em>Socket</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,81 +30,71 @@ package de.hs_rm.cs.vs.dsm.flow;
 public interface InputOperator extends ReturnTypeOperator
 {
   /**
-   * Returns the value of the '<em><b>Location</b></em>' attribute.
+   * Returns the value of the '<em><b>Iri</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Location</em>' attribute isn't clear,
+   * If the meaning of the '<em>Iri</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Location</em>' attribute.
-   * @see #setLocation(String)
-   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getInputOperator_Location()
-   * @model
+   * @return the value of the '<em>Iri</em>' attribute list.
+   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getInputOperator_Iri()
+   * @model unique="false"
    * @generated
    */
-  String getLocation();
+  EList<String> getIri();
 
   /**
-   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getLocation <em>Location</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Location</em>' attribute.
-   * @see #getLocation()
-   * @generated
-   */
-  void setLocation(String value);
-
-  /**
-   * Returns the value of the '<em><b>Regexp</b></em>' attribute.
+   * Returns the value of the '<em><b>Port</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Regexp</em>' attribute isn't clear,
+   * If the meaning of the '<em>Port</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Regexp</em>' attribute.
-   * @see #setRegexp(String)
-   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getInputOperator_Regexp()
+   * @return the value of the '<em>Port</em>' attribute.
+   * @see #setPort(BigDecimal)
+   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getInputOperator_Port()
    * @model
    * @generated
    */
-  String getRegexp();
+  BigDecimal getPort();
 
   /**
-   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getRegexp <em>Regexp</em>}' attribute.
+   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getPort <em>Port</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Regexp</em>' attribute.
-   * @see #getRegexp()
+   * @param value the new value of the '<em>Port</em>' attribute.
+   * @see #getPort()
    * @generated
    */
-  void setRegexp(String value);
+  void setPort(BigDecimal value);
 
   /**
-   * Returns the value of the '<em><b>Model</b></em>' reference.
+   * Returns the value of the '<em><b>Socket</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Model</em>' reference isn't clear,
+   * If the meaning of the '<em>Socket</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Model</em>' reference.
-   * @see #setModel(StreamDeclaration)
-   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getInputOperator_Model()
+   * @return the value of the '<em>Socket</em>' attribute.
+   * @see #setSocket(String)
+   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getInputOperator_Socket()
    * @model
    * @generated
    */
-  StreamDeclaration getModel();
+  String getSocket();
 
   /**
-   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getModel <em>Model</em>}' reference.
+   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getSocket <em>Socket</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Model</em>' reference.
-   * @see #getModel()
+   * @param value the new value of the '<em>Socket</em>' attribute.
+   * @see #getSocket()
    * @generated
    */
-  void setModel(StreamDeclaration value);
+  void setSocket(String value);
 
 } // InputOperator

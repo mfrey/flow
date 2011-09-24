@@ -1527,9 +1527,53 @@ ruleInputOperator returns [EObject current=null]
     }
 (
 (
-		lv_location_2_0=RULE_STRING
+		lv_iri_2_0=RULE_STRING
 		{
-			newLeafNode(lv_location_2_0, grammarAccess.getInputOperatorAccess().getLocationSTRINGTerminalRuleCall_2_0()); 
+			newLeafNode(lv_iri_2_0, grammarAccess.getInputOperatorAccess().getIriSTRINGTerminalRuleCall_2_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getInputOperatorRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"iri",
+        		lv_iri_2_0, 
+        		"STRING");
+	    }
+
+)
+)(	otherlv_3=',' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getInputOperatorAccess().getCommaKeyword_3_0());
+    }
+(
+(
+		lv_iri_4_0=RULE_STRING
+		{
+			newLeafNode(lv_iri_4_0, grammarAccess.getInputOperatorAccess().getIriSTRINGTerminalRuleCall_3_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getInputOperatorRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"iri",
+        		lv_iri_4_0, 
+        		"STRING");
+	    }
+
+)
+))*	otherlv_5=',' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getInputOperatorAccess().getCommaKeyword_4());
+    }
+(
+(
+		lv_port_6_0=RULE_NUMBER
+		{
+			newLeafNode(lv_port_6_0, grammarAccess.getInputOperatorAccess().getPortNUMBERTerminalRuleCall_5_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1537,21 +1581,21 @@ ruleInputOperator returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"location",
-        		lv_location_2_0, 
-        		"STRING");
+       			"port",
+        		lv_port_6_0, 
+        		"NUMBER");
 	    }
 
 )
-)	otherlv_3=',' 
+)	otherlv_7=',' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getInputOperatorAccess().getCommaKeyword_3());
+    	newLeafNode(otherlv_7, grammarAccess.getInputOperatorAccess().getCommaKeyword_6());
     }
 (
 (
-		lv_regexp_4_0=RULE_STRING
+		lv_socket_8_0=RULE_STRING
 		{
-			newLeafNode(lv_regexp_4_0, grammarAccess.getInputOperatorAccess().getRegexpSTRINGTerminalRuleCall_4_0()); 
+			newLeafNode(lv_socket_8_0, grammarAccess.getInputOperatorAccess().getSocketSTRINGTerminalRuleCall_7_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1559,32 +1603,15 @@ ruleInputOperator returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"regexp",
-        		lv_regexp_4_0, 
+       			"socket",
+        		lv_socket_8_0, 
         		"STRING");
 	    }
 
 )
-)	otherlv_5=',' 
+)	otherlv_9=')' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getInputOperatorAccess().getCommaKeyword_5());
-    }
-(
-(
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getInputOperatorRule());
-	        }
-        }
-	otherlv_6=RULE_ID
-	{
-		newLeafNode(otherlv_6, grammarAccess.getInputOperatorAccess().getModelStreamDeclarationCrossReference_6_0()); 
-	}
-
-)
-)	otherlv_7=')' 
-    {
-    	newLeafNode(otherlv_7, grammarAccess.getInputOperatorAccess().getRightParenthesisKeyword_7());
+    	newLeafNode(otherlv_9, grammarAccess.getInputOperatorAccess().getRightParenthesisKeyword_8());
     }
 )
 ;

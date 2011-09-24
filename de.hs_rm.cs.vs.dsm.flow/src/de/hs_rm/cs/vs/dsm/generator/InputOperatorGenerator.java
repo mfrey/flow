@@ -31,7 +31,7 @@ public class InputOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String setBarrier() {
-		return "TODO input\n";
+		return "";
 	}
 
 	/**
@@ -47,7 +47,17 @@ public class InputOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String setOperatorProperties() {
-		return "TODO input\n";
+		String result = "";
+		for(int i = 0; i < this.mOperator.getIri().size(); i++){
+			// Add IRIs as parameters of the stream operator
+			result += Util.getInstance().createParameter(this.getOutputStreams().get(0), "listen_iris", this.mOperator.getIri().get(i));
+		}
+		// Set the socket address
+		result += Util.getInstance().createParameter(this.getOutputStreams().get(0), "connector_socket_address", this.mOperator.getSocket());
+		// Set the port
+		result += Util.getInstance().createParameter(this.getOutputStreams().get(0), "connector_socket_port", this.mOperator.getPort().toString());
+		// Return the result
+		return result;
 	}
 	
 	/**
