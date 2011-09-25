@@ -3,19 +3,21 @@ package de.hs_rm.cs.vs.dsm.generator;
 import de.hs_rm.cs.vs.dsm.flow.InputOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
 
-// 	'in' '('location=STRING ',' regexp=STRING ',' model=[StreamDeclaration]')';
 
 /**
  * The class provides a generator for the input operator of the query 
  * language. The operator is defined as follows
  * 
- * 		TODO
+ * 	'in' '('iri+=STRING (',' iri+=STRING)* ',' port=NUMBER ',' socket=STRING')';
+ * 
+ * The operator takes a list of iri's as input, seperated by a comma and followed
+ * by a port and a address (socket) each seperated by comma. 
  * 
  * @author Michael Frey
  */
 public class InputOperatorGenerator extends AbstractOperatorGenerator {
 	/** The type of the operator */
-	private final String OPERATOR_TYPE = "CacheIn";
+	private final String OPERATOR_TYPE = "OperatorCacheIn";
 	/** The internal representation of the count operator */
 	private InputOperator mOperator = null;
 	

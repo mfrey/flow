@@ -3,15 +3,24 @@ package de.hs_rm.cs.vs.dsm.generator;
 
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
 
+/**
+ * The class provides a generator for the output operator of the query 
+ * language. The operator is defined as follows
+ * 
+ * 	'in' '('iri+=STRING (',' iri+=STRING)* ',' port=NUMBER ',' socket=STRING')';
+ * 
+ * The operator takes a list of iri's as input, seperated by a comma and followed
+ * by a port and a address (socket) each seperated by comma. 
+ * 
+ * @author Michael Frey
+ */
 public class OutputOperatorGenerator extends AbstractOperatorGenerator {
 	/** The type of the operator */
-	private final String OPERATOR_TYPE = "output";
+	private final String OPERATOR_TYPE = "OperatorCacheOut";
 	/** The internal representation of the count operator */
 	private OutputOperator mOperator = null;
 	
 	public OutputOperatorGenerator(final OutputOperator pOutput){
-		// Call the constructor of the abstract operator class
-		super();
 		// Store the operator in the attribute
 		this.mOperator = pOutput;
 		// Set the name of the stream
@@ -30,12 +39,12 @@ public class OutputOperatorGenerator extends AbstractOperatorGenerator {
 
 	@Override
 	public String initializeOperator(){
-		return Util.getInstance().createOperator("cachout", this.getOperatorStream());
+		return Util.getInstance().createOperator(OPERATOR_TYPE, this.getOperatorStream());
 	}
 	
 	@Override
 	public String setOperatorProperties(){
-		return "TODO OUTPUT\n";
+		return "";
 	}
 
 	// TODO: FIX ME
