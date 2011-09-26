@@ -1297,7 +1297,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getInputOperator_Location()
+  public EAttribute getInputOperator_Iri()
   {
     return (EAttribute)inputOperatorEClass.getEStructuralFeatures().get(0);
   }
@@ -1307,7 +1307,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getInputOperator_Regexp()
+  public EAttribute getInputOperator_Port()
   {
     return (EAttribute)inputOperatorEClass.getEStructuralFeatures().get(1);
   }
@@ -1317,9 +1317,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getInputOperator_Model()
+  public EAttribute getInputOperator_Socket()
   {
-    return (EReference)inputOperatorEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)inputOperatorEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2807,9 +2807,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     createEReference(functionStatementEClass, FUNCTION_STATEMENT__ARGUMENTS);
 
     inputOperatorEClass = createEClass(INPUT_OPERATOR);
-    createEAttribute(inputOperatorEClass, INPUT_OPERATOR__LOCATION);
-    createEAttribute(inputOperatorEClass, INPUT_OPERATOR__REGEXP);
-    createEReference(inputOperatorEClass, INPUT_OPERATOR__MODEL);
+    createEAttribute(inputOperatorEClass, INPUT_OPERATOR__IRI);
+    createEAttribute(inputOperatorEClass, INPUT_OPERATOR__PORT);
+    createEAttribute(inputOperatorEClass, INPUT_OPERATOR__SOCKET);
 
     returnTypeOperatorEClass = createEClass(RETURN_TYPE_OPERATOR);
 
@@ -3185,9 +3185,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEReference(getFunctionStatement_Arguments(), this.getExpression(), null, "arguments", null, 0, -1, FunctionStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(inputOperatorEClass, InputOperator.class, "InputOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInputOperator_Location(), ecorePackage.getEString(), "location", null, 0, 1, InputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getInputOperator_Regexp(), ecorePackage.getEString(), "regexp", null, 0, 1, InputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getInputOperator_Model(), this.getStreamDeclaration(), null, "model", null, 0, 1, InputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInputOperator_Iri(), ecorePackage.getEString(), "iri", null, 0, -1, InputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInputOperator_Port(), ecorePackage.getEBigDecimal(), "port", null, 0, 1, InputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInputOperator_Socket(), ecorePackage.getEString(), "socket", null, 0, 1, InputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(returnTypeOperatorEClass, ReturnTypeOperator.class, "ReturnTypeOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

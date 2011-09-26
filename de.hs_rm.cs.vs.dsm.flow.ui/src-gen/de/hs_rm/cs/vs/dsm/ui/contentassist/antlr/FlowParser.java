@@ -88,6 +88,7 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionStatementAccess().getGroup_3_1(), "rule__FunctionStatement__Group_3_1__0");
 					put(grammarAccess.getFunctionStatementAccess().getGroup_3_1_1(), "rule__FunctionStatement__Group_3_1_1__0");
 					put(grammarAccess.getInputOperatorAccess().getGroup(), "rule__InputOperator__Group__0");
+					put(grammarAccess.getInputOperatorAccess().getGroup_3(), "rule__InputOperator__Group_3__0");
 					put(grammarAccess.getTagOperatorAccess().getGroup(), "rule__TagOperator__Group__0");
 					put(grammarAccess.getTagOperatorAccess().getGroup_3(), "rule__TagOperator__Group_3__0");
 					put(grammarAccess.getUnTagOperatorAccess().getGroup(), "rule__UnTagOperator__Group__0");
@@ -204,9 +205,10 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionStatementAccess().getFunctionAssignment_2(), "rule__FunctionStatement__FunctionAssignment_2");
 					put(grammarAccess.getFunctionStatementAccess().getArgumentsAssignment_3_1_0(), "rule__FunctionStatement__ArgumentsAssignment_3_1_0");
 					put(grammarAccess.getFunctionStatementAccess().getArgumentsAssignment_3_1_1_1(), "rule__FunctionStatement__ArgumentsAssignment_3_1_1_1");
-					put(grammarAccess.getInputOperatorAccess().getLocationAssignment_2(), "rule__InputOperator__LocationAssignment_2");
-					put(grammarAccess.getInputOperatorAccess().getRegexpAssignment_4(), "rule__InputOperator__RegexpAssignment_4");
-					put(grammarAccess.getInputOperatorAccess().getModelAssignment_6(), "rule__InputOperator__ModelAssignment_6");
+					put(grammarAccess.getInputOperatorAccess().getIriAssignment_2(), "rule__InputOperator__IriAssignment_2");
+					put(grammarAccess.getInputOperatorAccess().getIriAssignment_3_1(), "rule__InputOperator__IriAssignment_3_1");
+					put(grammarAccess.getInputOperatorAccess().getPortAssignment_5(), "rule__InputOperator__PortAssignment_5");
+					put(grammarAccess.getInputOperatorAccess().getSocketAssignment_7(), "rule__InputOperator__SocketAssignment_7");
 					put(grammarAccess.getTagOperatorAccess().getParametersAssignment_2(), "rule__TagOperator__ParametersAssignment_2");
 					put(grammarAccess.getTagOperatorAccess().getParametersAssignment_3_1(), "rule__TagOperator__ParametersAssignment_3_1");
 					put(grammarAccess.getTagOperatorAccess().getStreamAssignment_5(), "rule__TagOperator__StreamAssignment_5");

@@ -251,16 +251,15 @@
   </extension>
   
      <extension
-         id="Application"
-         point="org.eclipse.core.runtime.applications">
-      <application
-            cardinality="singleton-global"
-            thread="main"
-            visible="true">
-         <run
-               class="de.hs_rm.cs.vs.dsm.ui.ApplicationImpl">
-         </run>
-      </application>
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.ui.ide.workbench"
+            name="Flow">
+         <property
+         	name="appName" value="Flow">
+         </property>
+      </product>
    </extension>
   
 

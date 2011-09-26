@@ -10,7 +10,7 @@
   <artifactId>de.hs_rm.cs.vs.dsm.flow.tests</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>eclipse-test-plugin</packaging>
-
+<!--
 	<build>
 		<plugins>
 			<plugin>
@@ -35,6 +35,7 @@
 				<groupId>org.sonatype.tycho</groupId>
 				<artifactId>maven-osgi-test-plugin</artifactId>
 				<version>${tycho-version}</version>
+-->
 				<!-- 
 				<configuration>
 					<excludes>
@@ -45,6 +46,7 @@
 					</includes>
 				</configuration>
 				 -->
+<!--
 			</plugin>
 		</plugins>
 	</build>
@@ -59,5 +61,5 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
+-->
 </project>

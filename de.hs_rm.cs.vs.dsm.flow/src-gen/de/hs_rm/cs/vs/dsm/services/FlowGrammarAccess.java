@@ -1042,22 +1042,25 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cInKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cLocationAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cLocationSTRINGTerminalRuleCall_2_0 = (RuleCall)cLocationAssignment_2.eContents().get(0);
-		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cRegexpAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cRegexpSTRINGTerminalRuleCall_4_0 = (RuleCall)cRegexpAssignment_4.eContents().get(0);
-		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cModelAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cModelStreamDeclarationCrossReference_6_0 = (CrossReference)cModelAssignment_6.eContents().get(0);
-		private final RuleCall cModelStreamDeclarationIDTerminalRuleCall_6_0_1 = (RuleCall)cModelStreamDeclarationCrossReference_6_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cIriAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cIriSTRINGTerminalRuleCall_2_0 = (RuleCall)cIriAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cIriAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cIriSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cIriAssignment_3_1.eContents().get(0);
+		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cPortAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cPortNUMBERTerminalRuleCall_5_0 = (RuleCall)cPortAssignment_5.eContents().get(0);
+		private final Keyword cCommaKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cSocketAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cSocketSTRINGTerminalRuleCall_7_0 = (RuleCall)cSocketAssignment_7.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//InputOperator:
-		//	"in" "(" location=STRING "," regexp=STRING "," model=[StreamDeclaration] ")";
+		//	"in" "(" iri+=STRING ("," iri+=STRING)* "," port=NUMBER "," socket=STRING ")";
 		public ParserRule getRule() { return rule; }
 
-		//"in" "(" location=STRING "," regexp=STRING "," model=[StreamDeclaration] ")"
+		//"in" "(" iri+=STRING ("," iri+=STRING)* "," port=NUMBER "," socket=STRING ")"
 		public Group getGroup() { return cGroup; }
 
 		//"in"
@@ -1066,35 +1069,44 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//location=STRING
-		public Assignment getLocationAssignment_2() { return cLocationAssignment_2; }
+		//iri+=STRING
+		public Assignment getIriAssignment_2() { return cIriAssignment_2; }
 
 		//STRING
-		public RuleCall getLocationSTRINGTerminalRuleCall_2_0() { return cLocationSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getIriSTRINGTerminalRuleCall_2_0() { return cIriSTRINGTerminalRuleCall_2_0; }
+
+		//("," iri+=STRING)*
+		public Group getGroup_3() { return cGroup_3; }
 
 		//","
-		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
 
-		//regexp=STRING
-		public Assignment getRegexpAssignment_4() { return cRegexpAssignment_4; }
+		//iri+=STRING
+		public Assignment getIriAssignment_3_1() { return cIriAssignment_3_1; }
 
 		//STRING
-		public RuleCall getRegexpSTRINGTerminalRuleCall_4_0() { return cRegexpSTRINGTerminalRuleCall_4_0; }
+		public RuleCall getIriSTRINGTerminalRuleCall_3_1_0() { return cIriSTRINGTerminalRuleCall_3_1_0; }
 
 		//","
-		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
+		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
 
-		//model=[StreamDeclaration]
-		public Assignment getModelAssignment_6() { return cModelAssignment_6; }
+		//port=NUMBER
+		public Assignment getPortAssignment_5() { return cPortAssignment_5; }
 
-		//[StreamDeclaration]
-		public CrossReference getModelStreamDeclarationCrossReference_6_0() { return cModelStreamDeclarationCrossReference_6_0; }
+		//NUMBER
+		public RuleCall getPortNUMBERTerminalRuleCall_5_0() { return cPortNUMBERTerminalRuleCall_5_0; }
 
-		//ID
-		public RuleCall getModelStreamDeclarationIDTerminalRuleCall_6_0_1() { return cModelStreamDeclarationIDTerminalRuleCall_6_0_1; }
+		//","
+		public Keyword getCommaKeyword_6() { return cCommaKeyword_6; }
+
+		//socket=STRING
+		public Assignment getSocketAssignment_7() { return cSocketAssignment_7; }
+
+		//STRING
+		public RuleCall getSocketSTRINGTerminalRuleCall_7_0() { return cSocketSTRINGTerminalRuleCall_7_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
+		public Keyword getRightParenthesisKeyword_8() { return cRightParenthesisKeyword_8; }
 	}
 
 	public class ReturnTypeOperatorElements extends AbstractParserRuleElementFinder {
@@ -3997,7 +4009,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//InputOperator:
-	//	"in" "(" location=STRING "," regexp=STRING "," model=[StreamDeclaration] ")";
+	//	"in" "(" iri+=STRING ("," iri+=STRING)* "," port=NUMBER "," socket=STRING ")";
 	public InputOperatorElements getInputOperatorAccess() {
 		return (pInputOperator != null) ? pInputOperator : (pInputOperator = new InputOperatorElements());
 	}

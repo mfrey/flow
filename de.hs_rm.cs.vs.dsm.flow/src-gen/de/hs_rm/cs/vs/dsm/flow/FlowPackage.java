@@ -794,31 +794,31 @@ public interface FlowPackage extends EPackage
   int INPUT_OPERATOR = 20;
 
   /**
-   * The feature id for the '<em><b>Location</b></em>' attribute.
+   * The feature id for the '<em><b>Iri</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INPUT_OPERATOR__LOCATION = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
+  int INPUT_OPERATOR__IRI = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Regexp</b></em>' attribute.
+   * The feature id for the '<em><b>Port</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INPUT_OPERATOR__REGEXP = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
+  int INPUT_OPERATOR__PORT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Model</b></em>' reference.
+   * The feature id for the '<em><b>Socket</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INPUT_OPERATOR__MODEL = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
+  int INPUT_OPERATOR__SOCKET = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Input Operator</em>' class.
@@ -3309,37 +3309,37 @@ public interface FlowPackage extends EPackage
   EClass getInputOperator();
 
   /**
-   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getLocation <em>Location</em>}'.
+   * Returns the meta object for the attribute list '{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getIri <em>Iri</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Location</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.InputOperator#getLocation()
+   * @return the meta object for the attribute list '<em>Iri</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.InputOperator#getIri()
    * @see #getInputOperator()
    * @generated
    */
-  EAttribute getInputOperator_Location();
+  EAttribute getInputOperator_Iri();
 
   /**
-   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getRegexp <em>Regexp</em>}'.
+   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getPort <em>Port</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Regexp</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.InputOperator#getRegexp()
+   * @return the meta object for the attribute '<em>Port</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.InputOperator#getPort()
    * @see #getInputOperator()
    * @generated
    */
-  EAttribute getInputOperator_Regexp();
+  EAttribute getInputOperator_Port();
 
   /**
-   * Returns the meta object for the reference '{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getModel <em>Model</em>}'.
+   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getSocket <em>Socket</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Model</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.InputOperator#getModel()
+   * @return the meta object for the attribute '<em>Socket</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.InputOperator#getSocket()
    * @see #getInputOperator()
    * @generated
    */
-  EReference getInputOperator_Model();
+  EAttribute getInputOperator_Socket();
 
   /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.ReturnTypeOperator <em>Return Type Operator</em>}'.
@@ -5305,28 +5305,28 @@ public interface FlowPackage extends EPackage
     EClass INPUT_OPERATOR = eINSTANCE.getInputOperator();
 
     /**
-     * The meta object literal for the '<em><b>Location</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Iri</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INPUT_OPERATOR__LOCATION = eINSTANCE.getInputOperator_Location();
+    EAttribute INPUT_OPERATOR__IRI = eINSTANCE.getInputOperator_Iri();
 
     /**
-     * The meta object literal for the '<em><b>Regexp</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Port</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INPUT_OPERATOR__REGEXP = eINSTANCE.getInputOperator_Regexp();
+    EAttribute INPUT_OPERATOR__PORT = eINSTANCE.getInputOperator_Port();
 
     /**
-     * The meta object literal for the '<em><b>Model</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Socket</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INPUT_OPERATOR__MODEL = eINSTANCE.getInputOperator_Model();
+    EAttribute INPUT_OPERATOR__SOCKET = eINSTANCE.getInputOperator_Socket();
 
     /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.ReturnTypeOperatorImpl <em>Return Type Operator</em>}' class.

@@ -3,19 +3,21 @@ package de.hs_rm.cs.vs.dsm.generator;
 import de.hs_rm.cs.vs.dsm.flow.InputOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
 
-// 	'in' '('location=STRING ',' regexp=STRING ',' model=[StreamDeclaration]')';
 
 /**
  * The class provides a generator for the input operator of the query 
  * language. The operator is defined as follows
  * 
- * 		TODO
+ * 	'in' '('iri+=STRING (',' iri+=STRING)* ',' port=NUMBER ',' socket=STRING')';
+ * 
+ * The operator takes a list of iri's as input, seperated by a comma and followed
+ * by a port and a address (socket) each seperated by comma. 
  * 
  * @author Michael Frey
  */
 public class InputOperatorGenerator extends AbstractOperatorGenerator {
 	/** The type of the operator */
-	private final String OPERATOR_TYPE = "CacheIn";
+	private final String OPERATOR_TYPE = "OperatorCacheIn";
 	/** The internal representation of the count operator */
 	private InputOperator mOperator = null;
 	
@@ -31,7 +33,7 @@ public class InputOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String setBarrier() {
-		return "TODO input\n";
+		return "";
 	}
 
 	/**
@@ -47,7 +49,17 @@ public class InputOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String setOperatorProperties() {
-		return "TODO input\n";
+		String result = "";
+		for(int i = 0; i < this.mOperator.getIri().size(); i++){
+			// Add IRIs as parameters of the stream operator
+			result += Util.getInstance().createParameter(this.getOutputStreams().get(0), "listen_iris", this.mOperator.getIri().get(i));
+		}
+		// Set the socket address
+		result += Util.getInstance().createParameter(this.getOutputStreams().get(0), "connector_socket_address", this.mOperator.getSocket());
+		// Set the port
+		result += Util.getInstance().createParameter(this.getOutputStreams().get(0), "connector_socket_port", this.mOperator.getPort().toString());
+		// Return the result
+		return result;
 	}
 	
 	/**
