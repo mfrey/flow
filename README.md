@@ -1,4 +1,4 @@
-FLOW
+Flow
 ====
 Flow is a query/analysis language for the DataStreamMiner complex event processing system developed at
 the Distributed Systems Lab (Dopsy) at Hochschule RheinMain.
@@ -13,6 +13,7 @@ Installation from git
 
 	* maven (>= 3.0)
 	* tycho (>= 0.11.0)
+	* eclipse (>= 3.7)
 	* eclipse delta pack (>= 3.7)
 
 3. Then run the standard maven command to build the eclipse product:
@@ -24,7 +25,6 @@ Bug tracker
 Have a bug or feature request? Please create an issue here on GitHub!
 
 https://github.com/mfrey/flow/issues
-
 
 License
 -------
