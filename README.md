@@ -16,7 +16,10 @@ Installation from git
 	* eclipse (>= 3.7)
 	* eclipse delta pack (>= 3.7)
 
-3. Then run the standard maven command to build the eclipse product:
+3. Configure the software (especially maven/tycho and eclipse). Please, be refered to the documentation of the
+corresponding software.
+
+4. Then run the standard maven command to build the eclipse product:
 
 		mvn package
 
