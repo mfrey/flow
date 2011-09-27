@@ -50,7 +50,7 @@ public class Util {
 		// TODO: Add the operators to the network
 		
 		// Return the connection operator string
-		return "fm:connect_operators(" + pOut + ", \"" + pOutDirection + "\"," + 
+		return "fm:connect_operators(" + pOut + ", \"" + pOutDirection + "\", " + 
 				pIn + ", \"" + pIndirection + "\");\n";
 	}
 	
