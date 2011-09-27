@@ -35,7 +35,7 @@ public class CountOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String initializeOperator() {
-		return Util.getInstance().createOperator(OPERATOR_TYPE, this.getInputStreams().get(0));
+		return Util.getInstance().createOperator(OPERATOR_TYPE, this.getOutputStreams().get(0));
 	}
 
 	/**
@@ -59,6 +59,6 @@ public class CountOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String setBarrier() {
-		return Util.getInstance().createBarrier(this.getInputStreams().get(0), this.mOperator.getStream().getBarrier());
+		return Util.getInstance().createBarrier(this.getOutputStreams().get(0), this.mOperator.getStream().getBarrier());
 	}
 }

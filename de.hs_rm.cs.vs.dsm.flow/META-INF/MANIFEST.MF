@@ -25,11 +25,12 @@ Import-Package: org.apache.log4j,
  org.eclipse.xtext.xtend2.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: de.hs_rm.cs.vs.dsm,
- de.hs_rm.cs.vs.dsm.services,
  de.hs_rm.cs.vs.dsm.flow,
  de.hs_rm.cs.vs.dsm.flow.impl,
  de.hs_rm.cs.vs.dsm.flow.util,
- de.hs_rm.cs.vs.dsm.serializer,
+ de.hs_rm.cs.vs.dsm.generator,
  de.hs_rm.cs.vs.dsm.parser.antlr,
  de.hs_rm.cs.vs.dsm.parser.antlr.internal,
+ de.hs_rm.cs.vs.dsm.serializer,
+ de.hs_rm.cs.vs.dsm.services,
  de.hs_rm.cs.vs.dsm.validation
