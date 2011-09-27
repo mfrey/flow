@@ -1,0 +1,7 @@
+package test {
+
+	stream testStream {
+		int a;
+		float b;
+	};
+}
