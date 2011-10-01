@@ -28,8 +28,8 @@ public class TagOperatorGenerator extends AbstractOperatorGenerator {
 		super(pStatement);
 		// Store the operator in the attribute
 		this.mOperator = (TagOperator) pStatement.getExpression();
-		// Add the input stream to the list
-		this.getInputStreams().add(this.mOperator.getStream().getStream().getName());
+		// TODO: Add the input stream to the list
+		// this.getInputStreams().add(this.mOperator.getStream().getStream().getName());
 	}
 	
 	/**

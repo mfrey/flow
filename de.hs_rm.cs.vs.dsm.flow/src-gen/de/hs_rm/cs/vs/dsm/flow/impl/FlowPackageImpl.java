@@ -12,9 +12,7 @@ import de.hs_rm.cs.vs.dsm.flow.BlockExpression;
 import de.hs_rm.cs.vs.dsm.flow.BooleanDataType;
 import de.hs_rm.cs.vs.dsm.flow.BooleanOperation;
 import de.hs_rm.cs.vs.dsm.flow.BooleanVariableDefinition;
-import de.hs_rm.cs.vs.dsm.flow.CaseStatement;
 import de.hs_rm.cs.vs.dsm.flow.ComplexDataType;
-import de.hs_rm.cs.vs.dsm.flow.ConditionalExpressions;
 import de.hs_rm.cs.vs.dsm.flow.ConsequentRule;
 import de.hs_rm.cs.vs.dsm.flow.CountOperator;
 import de.hs_rm.cs.vs.dsm.flow.DataType;
@@ -26,15 +24,10 @@ import de.hs_rm.cs.vs.dsm.flow.FilterOperator;
 import de.hs_rm.cs.vs.dsm.flow.FloatDataType;
 import de.hs_rm.cs.vs.dsm.flow.FlowFactory;
 import de.hs_rm.cs.vs.dsm.flow.FlowPackage;
-import de.hs_rm.cs.vs.dsm.flow.FunctionCall;
-import de.hs_rm.cs.vs.dsm.flow.FunctionDefinition;
-import de.hs_rm.cs.vs.dsm.flow.FunctionStatement;
-import de.hs_rm.cs.vs.dsm.flow.IfElseCondition;
 import de.hs_rm.cs.vs.dsm.flow.Import;
 import de.hs_rm.cs.vs.dsm.flow.InputOperator;
 import de.hs_rm.cs.vs.dsm.flow.IntegerDataType;
 import de.hs_rm.cs.vs.dsm.flow.JoinOperator;
-import de.hs_rm.cs.vs.dsm.flow.MapOperator;
 import de.hs_rm.cs.vs.dsm.flow.MarkerOperator;
 import de.hs_rm.cs.vs.dsm.flow.MatchOperator;
 import de.hs_rm.cs.vs.dsm.flow.Minus;
@@ -49,8 +42,6 @@ import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperatorParameter;
 import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.Plus;
-import de.hs_rm.cs.vs.dsm.flow.ProcessingExpression;
-import de.hs_rm.cs.vs.dsm.flow.ReturnStatement;
 import de.hs_rm.cs.vs.dsm.flow.ReturnTypeOperator;
 import de.hs_rm.cs.vs.dsm.flow.ReturnVariable;
 import de.hs_rm.cs.vs.dsm.flow.Returnable;
@@ -60,7 +51,6 @@ import de.hs_rm.cs.vs.dsm.flow.SWRLRule;
 import de.hs_rm.cs.vs.dsm.flow.SimpleDataType;
 import de.hs_rm.cs.vs.dsm.flow.SplitOperator;
 import de.hs_rm.cs.vs.dsm.flow.StandardDeviationOperator;
-import de.hs_rm.cs.vs.dsm.flow.Statement;
 import de.hs_rm.cs.vs.dsm.flow.StreamAccess;
 import de.hs_rm.cs.vs.dsm.flow.StreamDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.StreamDeclarationAccess;
@@ -68,11 +58,11 @@ import de.hs_rm.cs.vs.dsm.flow.StreamDefinition;
 import de.hs_rm.cs.vs.dsm.flow.StreamElement;
 import de.hs_rm.cs.vs.dsm.flow.StreamOperatorParameter;
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
+import de.hs_rm.cs.vs.dsm.flow.StreamVariableStatement;
 import de.hs_rm.cs.vs.dsm.flow.StringDataType;
 import de.hs_rm.cs.vs.dsm.flow.StringVariableDefinition;
 import de.hs_rm.cs.vs.dsm.flow.StructureDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.StructureElements;
-import de.hs_rm.cs.vs.dsm.flow.SwitchCaseCondition;
 import de.hs_rm.cs.vs.dsm.flow.SymmetricDifferenceOperator;
 import de.hs_rm.cs.vs.dsm.flow.TagClassElement;
 import de.hs_rm.cs.vs.dsm.flow.TagDataTypePropertyElement;
@@ -85,7 +75,6 @@ import de.hs_rm.cs.vs.dsm.flow.Variable;
 import de.hs_rm.cs.vs.dsm.flow.VariableCall;
 import de.hs_rm.cs.vs.dsm.flow.VariableDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.VariableDefinition;
-import de.hs_rm.cs.vs.dsm.flow.VariableStatement;
 import de.hs_rm.cs.vs.dsm.flow.WhileLoopDefinition;
 import de.hs_rm.cs.vs.dsm.flow.WindowOperator;
 
@@ -148,14 +137,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass statementEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass variableStatementEClass = null;
+  private EClass streamVariableStatementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -233,20 +215,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * @generated
    */
   private EClass differenceOperatorEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass mapOperatorEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass functionStatementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -421,56 +389,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass processingExpressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass blockExpressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass returnStatementEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass conditionalExpressionsEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass ifElseConditionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass switchCaseConditionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass caseStatementEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass functionDefinitionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -669,13 +588,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
   private EClass variableCallEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass functionCallEClass = null;
-
-  /**
    * Creates an instance of the model <b>Package</b>, registered with
    * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
    * package URI value.
@@ -857,9 +769,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getStatement()
+  public EReference getStreamStatement_Statement()
   {
-    return statementEClass;
+    return (EReference)streamStatementEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -867,9 +779,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getVariableStatement()
+  public EClass getStreamVariableStatement()
   {
-    return variableStatementEClass;
+    return streamVariableStatementEClass;
   }
 
   /**
@@ -877,9 +789,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVariableStatement_Reference()
+  public EReference getStreamVariableStatement_Reference()
   {
-    return (EReference)variableStatementEClass.getEStructuralFeatures().get(0);
+    return (EReference)streamVariableStatementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -887,9 +799,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVariableStatement_Expression()
+  public EReference getStreamVariableStatement_Expression()
   {
-    return (EReference)variableStatementEClass.getEStructuralFeatures().get(1);
+    return (EReference)streamVariableStatementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1217,76 +1129,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMapOperator()
-  {
-    return mapOperatorEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getMapOperator_FunctionList()
-  {
-    return (EReference)mapOperatorEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getMapOperator_Stream()
-  {
-    return (EReference)mapOperatorEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getFunctionStatement()
-  {
-    return functionStatementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunctionStatement_Element()
-  {
-    return (EReference)functionStatementEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunctionStatement_Function()
-  {
-    return (EReference)functionStatementEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunctionStatement_Arguments()
-  {
-    return (EReference)functionStatementEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getInputOperator()
   {
     return inputOperatorEClass;
@@ -1360,16 +1202,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
   public EReference getTagOperator_Parameters()
   {
     return (EReference)tagOperatorEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getTagOperator_Stream()
-  {
-    return (EReference)tagOperatorEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1897,209 +1729,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getProcessingExpression()
-  {
-    return processingExpressionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getBlockExpression()
   {
     return blockExpressionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getReturnStatement()
-  {
-    return returnStatementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getReturnStatement_ReturnVariable()
-  {
-    return (EReference)returnStatementEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getConditionalExpressions()
-  {
-    return conditionalExpressionsEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getConditionalExpressions_Condition()
-  {
-    return (EReference)conditionalExpressionsEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getIfElseCondition()
-  {
-    return ifElseConditionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getIfElseCondition_IfAction()
-  {
-    return (EReference)ifElseConditionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getIfElseCondition_ElseAction()
-  {
-    return (EReference)ifElseConditionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getSwitchCaseCondition()
-  {
-    return switchCaseConditionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getSwitchCaseCondition_CaseExpression()
-  {
-    return (EReference)switchCaseConditionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getSwitchCaseCondition_DefaultExpression()
-  {
-    return (EReference)switchCaseConditionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getCaseStatement()
-  {
-    return caseStatementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getCaseStatement_Condition()
-  {
-    return (EReference)caseStatementEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getCaseStatement_Action()
-  {
-    return (EReference)caseStatementEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getFunctionDefinition()
-  {
-    return functionDefinitionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunctionDefinition_Type()
-  {
-    return (EReference)functionDefinitionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFunctionDefinition_Name()
-  {
-    return (EAttribute)functionDefinitionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunctionDefinition_Arguments()
-  {
-    return (EReference)functionDefinitionEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunctionDefinition_Statements()
-  {
-    return (EReference)functionDefinitionEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunctionDefinition_ReturnValue()
-  {
-    return (EReference)functionDefinitionEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -2677,36 +2309,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getFunctionCall()
-  {
-    return functionCallEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunctionCall_Func()
-  {
-    return (EReference)functionCallEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunctionCall_Arguments()
-  {
-    return (EReference)functionCallEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public FlowFactory getFlowFactory()
   {
     return (FlowFactory)getEFactoryInstance();
@@ -2747,12 +2349,11 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     streamStatementEClass = createEClass(STREAM_STATEMENT);
     createEReference(streamStatementEClass, STREAM_STATEMENT__RETURN_STREAM);
     createEReference(streamStatementEClass, STREAM_STATEMENT__EXPRESSION);
+    createEReference(streamStatementEClass, STREAM_STATEMENT__STATEMENT);
 
-    statementEClass = createEClass(STATEMENT);
-
-    variableStatementEClass = createEClass(VARIABLE_STATEMENT);
-    createEReference(variableStatementEClass, VARIABLE_STATEMENT__REFERENCE);
-    createEReference(variableStatementEClass, VARIABLE_STATEMENT__EXPRESSION);
+    streamVariableStatementEClass = createEClass(STREAM_VARIABLE_STATEMENT);
+    createEReference(streamVariableStatementEClass, STREAM_VARIABLE_STATEMENT__REFERENCE);
+    createEReference(streamVariableStatementEClass, STREAM_VARIABLE_STATEMENT__EXPRESSION);
 
     streamAccessEClass = createEClass(STREAM_ACCESS);
     createEReference(streamAccessEClass, STREAM_ACCESS__REFERENCE);
@@ -2797,15 +2398,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     differenceOperatorEClass = createEClass(DIFFERENCE_OPERATOR);
     createEReference(differenceOperatorEClass, DIFFERENCE_OPERATOR__PARAMETERS);
 
-    mapOperatorEClass = createEClass(MAP_OPERATOR);
-    createEReference(mapOperatorEClass, MAP_OPERATOR__FUNCTION_LIST);
-    createEReference(mapOperatorEClass, MAP_OPERATOR__STREAM);
-
-    functionStatementEClass = createEClass(FUNCTION_STATEMENT);
-    createEReference(functionStatementEClass, FUNCTION_STATEMENT__ELEMENT);
-    createEReference(functionStatementEClass, FUNCTION_STATEMENT__FUNCTION);
-    createEReference(functionStatementEClass, FUNCTION_STATEMENT__ARGUMENTS);
-
     inputOperatorEClass = createEClass(INPUT_OPERATOR);
     createEAttribute(inputOperatorEClass, INPUT_OPERATOR__IRI);
     createEAttribute(inputOperatorEClass, INPUT_OPERATOR__PORT);
@@ -2817,7 +2409,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     tagOperatorEClass = createEClass(TAG_OPERATOR);
     createEReference(tagOperatorEClass, TAG_OPERATOR__PARAMETERS);
-    createEReference(tagOperatorEClass, TAG_OPERATOR__STREAM);
 
     unTagOperatorEClass = createEClass(UN_TAG_OPERATOR);
     createEReference(unTagOperatorEClass, UN_TAG_OPERATOR__PARAMETERS);
@@ -2891,34 +2482,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     outputOperatorParameterEClass = createEClass(OUTPUT_OPERATOR_PARAMETER);
     createEReference(outputOperatorParameterEClass, OUTPUT_OPERATOR_PARAMETER__ELEMENT);
 
-    processingExpressionEClass = createEClass(PROCESSING_EXPRESSION);
-
     blockExpressionEClass = createEClass(BLOCK_EXPRESSION);
-
-    returnStatementEClass = createEClass(RETURN_STATEMENT);
-    createEReference(returnStatementEClass, RETURN_STATEMENT__RETURN_VARIABLE);
-
-    conditionalExpressionsEClass = createEClass(CONDITIONAL_EXPRESSIONS);
-    createEReference(conditionalExpressionsEClass, CONDITIONAL_EXPRESSIONS__CONDITION);
-
-    ifElseConditionEClass = createEClass(IF_ELSE_CONDITION);
-    createEReference(ifElseConditionEClass, IF_ELSE_CONDITION__IF_ACTION);
-    createEReference(ifElseConditionEClass, IF_ELSE_CONDITION__ELSE_ACTION);
-
-    switchCaseConditionEClass = createEClass(SWITCH_CASE_CONDITION);
-    createEReference(switchCaseConditionEClass, SWITCH_CASE_CONDITION__CASE_EXPRESSION);
-    createEReference(switchCaseConditionEClass, SWITCH_CASE_CONDITION__DEFAULT_EXPRESSION);
-
-    caseStatementEClass = createEClass(CASE_STATEMENT);
-    createEReference(caseStatementEClass, CASE_STATEMENT__CONDITION);
-    createEReference(caseStatementEClass, CASE_STATEMENT__ACTION);
-
-    functionDefinitionEClass = createEClass(FUNCTION_DEFINITION);
-    createEReference(functionDefinitionEClass, FUNCTION_DEFINITION__TYPE);
-    createEAttribute(functionDefinitionEClass, FUNCTION_DEFINITION__NAME);
-    createEReference(functionDefinitionEClass, FUNCTION_DEFINITION__ARGUMENTS);
-    createEReference(functionDefinitionEClass, FUNCTION_DEFINITION__STATEMENTS);
-    createEReference(functionDefinitionEClass, FUNCTION_DEFINITION__RETURN_VALUE);
 
     returnVariableEClass = createEClass(RETURN_VARIABLE);
     createEReference(returnVariableEClass, RETURN_VARIABLE__RETURNABLE);
@@ -3004,10 +2568,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     variableCallEClass = createEClass(VARIABLE_CALL);
     createEReference(variableCallEClass, VARIABLE_CALL__VARIABLE);
-
-    functionCallEClass = createEClass(FUNCTION_CALL);
-    createEReference(functionCallEClass, FUNCTION_CALL__FUNC);
-    createEReference(functionCallEClass, FUNCTION_CALL__ARGUMENTS);
   }
 
   /**
@@ -3044,13 +2604,10 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     // Add supertypes to classes
     packageDeclarationEClass.getESuperTypes().add(this.getModelElement());
     importEClass.getESuperTypes().add(this.getModelElement());
-    streamStatementEClass.getESuperTypes().add(this.getProcessingExpression());
-    statementEClass.getESuperTypes().add(this.getProcessingExpression());
-    statementEClass.getESuperTypes().add(this.getBlockExpression());
-    variableStatementEClass.getESuperTypes().add(this.getStatement());
-    streamAccessEClass.getESuperTypes().add(this.getProcessingExpression());
+    streamStatementEClass.getESuperTypes().add(this.getModelElement());
+    streamAccessEClass.getESuperTypes().add(this.getModelElement());
     streamAccessEClass.getESuperTypes().add(this.getExpression());
-    streamDefinitionEClass.getESuperTypes().add(this.getProcessingExpression());
+    streamDefinitionEClass.getESuperTypes().add(this.getModelElement());
     joinOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     elementJoinOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     filterOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
@@ -3058,9 +2615,8 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     matchOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     symmetricDifferenceOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     differenceOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
-    mapOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     inputOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
-    noReturnTypeOperatorEClass.getESuperTypes().add(this.getProcessingExpression());
+    noReturnTypeOperatorEClass.getESuperTypes().add(this.getModelElement());
     tagOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     unTagOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     tagClassElementEClass.getESuperTypes().add(this.getTagElement());
@@ -3074,17 +2630,11 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     standardDeviationOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     averageOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     outputOperatorEClass.getESuperTypes().add(this.getNoReturnTypeOperator());
-    processingExpressionEClass.getESuperTypes().add(this.getModelElement());
-    returnStatementEClass.getESuperTypes().add(this.getBlockExpression());
-    conditionalExpressionsEClass.getESuperTypes().add(this.getBlockExpression());
-    ifElseConditionEClass.getESuperTypes().add(this.getConditionalExpressions());
-    switchCaseConditionEClass.getESuperTypes().add(this.getConditionalExpressions());
-    functionDefinitionEClass.getESuperTypes().add(this.getModelElement());
     variableDeclarationEClass.getESuperTypes().add(this.getReturnable());
     variableDeclarationEClass.getESuperTypes().add(this.getVariable());
     variableDeclarationEClass.getESuperTypes().add(this.getStreamElement());
     whileLoopDefinitionEClass.getESuperTypes().add(this.getBlockExpression());
-    variableEClass.getESuperTypes().add(this.getProcessingExpression());
+    variableEClass.getESuperTypes().add(this.getModelElement());
     variableEClass.getESuperTypes().add(this.getBlockExpression());
     variableEClass.getESuperTypes().add(this.getReturnable());
     variableDefinitionEClass.getESuperTypes().add(this.getVariable());
@@ -3107,7 +2657,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     divEClass.getESuperTypes().add(this.getExpression());
     numberLiteralEClass.getESuperTypes().add(this.getExpression());
     variableCallEClass.getESuperTypes().add(this.getExpression());
-    functionCallEClass.getESuperTypes().add(this.getExpression());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3125,12 +2674,11 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEClass(streamStatementEClass, StreamStatement.class, "StreamStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStreamStatement_ReturnStream(), this.getStreamDefinition(), null, "returnStream", null, 0, -1, StreamStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStreamStatement_Expression(), this.getReturnTypeOperator(), null, "expression", null, 0, 1, StreamStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStreamStatement_Statement(), this.getExpression(), null, "statement", null, 0, 1, StreamStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(variableStatementEClass, VariableStatement.class, "VariableStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getVariableStatement_Reference(), this.getVariable(), null, "reference", null, 0, 1, VariableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVariableStatement_Expression(), this.getExpression(), null, "expression", null, 0, 1, VariableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(streamVariableStatementEClass, StreamVariableStatement.class, "StreamVariableStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStreamVariableStatement_Reference(), this.getStreamDefinition(), null, "reference", null, 0, 1, StreamVariableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStreamVariableStatement_Expression(), this.getExpression(), null, "expression", null, 0, 1, StreamVariableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(streamAccessEClass, StreamAccess.class, "StreamAccess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStreamAccess_Reference(), this.getStreamDefinition(), null, "reference", null, 0, 1, StreamAccess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3175,15 +2723,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEClass(differenceOperatorEClass, DifferenceOperator.class, "DifferenceOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDifferenceOperator_Parameters(), this.getStreamOperatorParameter(), null, "parameters", null, 0, -1, DifferenceOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(mapOperatorEClass, MapOperator.class, "MapOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMapOperator_FunctionList(), this.getFunctionStatement(), null, "functionList", null, 0, -1, MapOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMapOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, MapOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(functionStatementEClass, FunctionStatement.class, "FunctionStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFunctionStatement_Element(), this.getStreamAccess(), null, "element", null, 0, 1, FunctionStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunctionStatement_Function(), this.getFunctionDefinition(), null, "function", null, 0, 1, FunctionStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunctionStatement_Arguments(), this.getExpression(), null, "arguments", null, 0, -1, FunctionStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(inputOperatorEClass, InputOperator.class, "InputOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getInputOperator_Iri(), ecorePackage.getEString(), "iri", null, 0, -1, InputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInputOperator_Port(), ecorePackage.getEBigDecimal(), "port", null, 0, 1, InputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3195,7 +2734,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     initEClass(tagOperatorEClass, TagOperator.class, "TagOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTagOperator_Parameters(), this.getTagElement(), null, "parameters", null, 0, -1, TagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTagOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, TagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(unTagOperatorEClass, UnTagOperator.class, "UnTagOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getUnTagOperator_Parameters(), this.getUnTagElement(), null, "parameters", null, 0, -1, UnTagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3269,34 +2807,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEClass(outputOperatorParameterEClass, OutputOperatorParameter.class, "OutputOperatorParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOutputOperatorParameter_Element(), this.getStreamAccess(), null, "element", null, 0, -1, OutputOperatorParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(processingExpressionEClass, ProcessingExpression.class, "ProcessingExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
     initEClass(blockExpressionEClass, BlockExpression.class, "BlockExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(returnStatementEClass, ReturnStatement.class, "ReturnStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getReturnStatement_ReturnVariable(), this.getReturnVariable(), null, "returnVariable", null, 0, 1, ReturnStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(conditionalExpressionsEClass, ConditionalExpressions.class, "ConditionalExpressions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getConditionalExpressions_Condition(), this.getExpression(), null, "condition", null, 0, 1, ConditionalExpressions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(ifElseConditionEClass, IfElseCondition.class, "IfElseCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getIfElseCondition_IfAction(), this.getBlockExpression(), null, "ifAction", null, 0, -1, IfElseCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIfElseCondition_ElseAction(), this.getBlockExpression(), null, "elseAction", null, 0, -1, IfElseCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(switchCaseConditionEClass, SwitchCaseCondition.class, "SwitchCaseCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSwitchCaseCondition_CaseExpression(), this.getCaseStatement(), null, "caseExpression", null, 0, -1, SwitchCaseCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSwitchCaseCondition_DefaultExpression(), this.getExpression(), null, "defaultExpression", null, 0, 1, SwitchCaseCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(caseStatementEClass, CaseStatement.class, "CaseStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCaseStatement_Condition(), this.getExpression(), null, "condition", null, 0, 1, CaseStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCaseStatement_Action(), this.getExpression(), null, "action", null, 0, 1, CaseStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(functionDefinitionEClass, FunctionDefinition.class, "FunctionDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFunctionDefinition_Type(), this.getDataType(), null, "type", null, 0, 1, FunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFunctionDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, FunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunctionDefinition_Arguments(), this.getVariableDeclaration(), null, "arguments", null, 0, -1, FunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunctionDefinition_Statements(), this.getBlockExpression(), null, "statements", null, 0, -1, FunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunctionDefinition_ReturnValue(), this.getReturnStatement(), null, "returnValue", null, 0, 1, FunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(returnVariableEClass, ReturnVariable.class, "ReturnVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getReturnVariable_Returnable(), this.getReturnable(), null, "returnable", null, 0, 1, ReturnVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3382,10 +2893,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     initEClass(variableCallEClass, VariableCall.class, "VariableCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVariableCall_Variable(), this.getVariable(), null, "variable", null, 0, 1, VariableCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(functionCallEClass, FunctionCall.class, "FunctionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFunctionCall_Func(), this.getFunctionDefinition(), null, "func", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunctionCall_Arguments(), this.getExpression(), null, "arguments", null, 0, -1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

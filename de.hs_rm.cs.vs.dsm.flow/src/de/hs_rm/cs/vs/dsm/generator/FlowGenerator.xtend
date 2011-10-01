@@ -21,6 +21,8 @@ import de.hs_rm.cs.vs.dsm.flow.JoinOperator
 import de.hs_rm.cs.vs.dsm.flow.SplitOperator
 import de.hs_rm.cs.vs.dsm.flow.ElementJoinOperator
 
+import de.hs_rm.cs.vs.dsm.flow.StreamVariableStatement
+
 
 
 import org.eclipse.xtext.naming.IQualifiedNameProvider
@@ -70,6 +72,10 @@ class FlowGenerator implements IGenerator {
     	«IF m.eClass.name.equals("StreamStatement")»
     	«(m as StreamStatement).compile»
     	«ENDIF»
+    	
+    	«IF m.eClass.name.equals("StreamVariableStatement")»
+    	«(m as StreamVariableStatement).compile»
+    	«ENDIF»
 	'''
 		
 	def compile(StreamStatement statement)'''
@@ -85,7 +91,12 @@ class FlowGenerator implements IGenerator {
 		«write((statement.expression as StandardDeviationOperator),statement)»
 		«ELSEIF statement.expression.eClass.name.equals("ElementJoinOperator")»
 		«write((statement.expression as ElementJoinOperator),statement)»
+		
 		«ENDIF»
+	'''
+	
+	def compile(StreamVariableStatement statement)'''
+	
 	'''
 	
 	def dispatch String write(JoinOperator pOperator, StreamStatement pStatement){

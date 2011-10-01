@@ -23,7 +23,7 @@ package de.hs_rm.cs.vs.dsm.flow;
  * @model
  * @generated
  */
-public interface StreamDefinition extends ProcessingExpression
+public interface StreamDefinition extends ModelElement
 {
   /**
    * Returns the value of the '<em><b>Reference</b></em>' reference.

@@ -72,8 +72,7 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.MODEL_ELEMENT: return createModelElement();
       case FlowPackage.IMPORT: return createImport();
       case FlowPackage.STREAM_STATEMENT: return createStreamStatement();
-      case FlowPackage.STATEMENT: return createStatement();
-      case FlowPackage.VARIABLE_STATEMENT: return createVariableStatement();
+      case FlowPackage.STREAM_VARIABLE_STATEMENT: return createStreamVariableStatement();
       case FlowPackage.STREAM_ACCESS: return createStreamAccess();
       case FlowPackage.STREAM_DECLARATION_ACCESS: return createStreamDeclarationAccess();
       case FlowPackage.STREAM_DEFINITION: return createStreamDefinition();
@@ -85,8 +84,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.MATCH_OPERATOR: return createMatchOperator();
       case FlowPackage.SYMMETRIC_DIFFERENCE_OPERATOR: return createSymmetricDifferenceOperator();
       case FlowPackage.DIFFERENCE_OPERATOR: return createDifferenceOperator();
-      case FlowPackage.MAP_OPERATOR: return createMapOperator();
-      case FlowPackage.FUNCTION_STATEMENT: return createFunctionStatement();
       case FlowPackage.INPUT_OPERATOR: return createInputOperator();
       case FlowPackage.RETURN_TYPE_OPERATOR: return createReturnTypeOperator();
       case FlowPackage.NO_RETURN_TYPE_OPERATOR: return createNoReturnTypeOperator();
@@ -111,14 +108,7 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.AVERAGE_OPERATOR: return createAverageOperator();
       case FlowPackage.OUTPUT_OPERATOR: return createOutputOperator();
       case FlowPackage.OUTPUT_OPERATOR_PARAMETER: return createOutputOperatorParameter();
-      case FlowPackage.PROCESSING_EXPRESSION: return createProcessingExpression();
       case FlowPackage.BLOCK_EXPRESSION: return createBlockExpression();
-      case FlowPackage.RETURN_STATEMENT: return createReturnStatement();
-      case FlowPackage.CONDITIONAL_EXPRESSIONS: return createConditionalExpressions();
-      case FlowPackage.IF_ELSE_CONDITION: return createIfElseCondition();
-      case FlowPackage.SWITCH_CASE_CONDITION: return createSwitchCaseCondition();
-      case FlowPackage.CASE_STATEMENT: return createCaseStatement();
-      case FlowPackage.FUNCTION_DEFINITION: return createFunctionDefinition();
       case FlowPackage.RETURN_VARIABLE: return createReturnVariable();
       case FlowPackage.RETURNABLE: return createReturnable();
       case FlowPackage.VARIABLE_DECLARATION: return createVariableDeclaration();
@@ -147,7 +137,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.DIV: return createDiv();
       case FlowPackage.NUMBER_LITERAL: return createNumberLiteral();
       case FlowPackage.VARIABLE_CALL: return createVariableCall();
-      case FlowPackage.FUNCTION_CALL: return createFunctionCall();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -213,21 +202,10 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Statement createStatement()
+  public StreamVariableStatement createStreamVariableStatement()
   {
-    StatementImpl statement = new StatementImpl();
-    return statement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VariableStatement createVariableStatement()
-  {
-    VariableStatementImpl variableStatement = new VariableStatementImpl();
-    return variableStatement;
+    StreamVariableStatementImpl streamVariableStatement = new StreamVariableStatementImpl();
+    return streamVariableStatement;
   }
 
   /**
@@ -349,28 +327,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
   {
     DifferenceOperatorImpl differenceOperator = new DifferenceOperatorImpl();
     return differenceOperator;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public MapOperator createMapOperator()
-  {
-    MapOperatorImpl mapOperator = new MapOperatorImpl();
-    return mapOperator;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public FunctionStatement createFunctionStatement()
-  {
-    FunctionStatementImpl functionStatement = new FunctionStatementImpl();
-    return functionStatement;
   }
 
   /**
@@ -642,87 +598,10 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ProcessingExpression createProcessingExpression()
-  {
-    ProcessingExpressionImpl processingExpression = new ProcessingExpressionImpl();
-    return processingExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public BlockExpression createBlockExpression()
   {
     BlockExpressionImpl blockExpression = new BlockExpressionImpl();
     return blockExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ReturnStatement createReturnStatement()
-  {
-    ReturnStatementImpl returnStatement = new ReturnStatementImpl();
-    return returnStatement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ConditionalExpressions createConditionalExpressions()
-  {
-    ConditionalExpressionsImpl conditionalExpressions = new ConditionalExpressionsImpl();
-    return conditionalExpressions;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public IfElseCondition createIfElseCondition()
-  {
-    IfElseConditionImpl ifElseCondition = new IfElseConditionImpl();
-    return ifElseCondition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SwitchCaseCondition createSwitchCaseCondition()
-  {
-    SwitchCaseConditionImpl switchCaseCondition = new SwitchCaseConditionImpl();
-    return switchCaseCondition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public CaseStatement createCaseStatement()
-  {
-    CaseStatementImpl caseStatement = new CaseStatementImpl();
-    return caseStatement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public FunctionDefinition createFunctionDefinition()
-  {
-    FunctionDefinitionImpl functionDefinition = new FunctionDefinitionImpl();
-    return functionDefinition;
   }
 
   /**
@@ -1031,17 +910,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
   {
     VariableCallImpl variableCall = new VariableCallImpl();
     return variableCall;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public FunctionCall createFunctionCall()
-  {
-    FunctionCallImpl functionCall = new FunctionCallImpl();
-    return functionCall;
   }
 
   /**

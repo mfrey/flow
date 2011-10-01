@@ -103,14 +103,9 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
         return createStreamStatementAdapter();
       }
       @Override
-      public Adapter caseStatement(Statement object)
+      public Adapter caseStreamVariableStatement(StreamVariableStatement object)
       {
-        return createStatementAdapter();
-      }
-      @Override
-      public Adapter caseVariableStatement(VariableStatement object)
-      {
-        return createVariableStatementAdapter();
+        return createStreamVariableStatementAdapter();
       }
       @Override
       public Adapter caseStreamAccess(StreamAccess object)
@@ -166,16 +161,6 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
       public Adapter caseDifferenceOperator(DifferenceOperator object)
       {
         return createDifferenceOperatorAdapter();
-      }
-      @Override
-      public Adapter caseMapOperator(MapOperator object)
-      {
-        return createMapOperatorAdapter();
-      }
-      @Override
-      public Adapter caseFunctionStatement(FunctionStatement object)
-      {
-        return createFunctionStatementAdapter();
       }
       @Override
       public Adapter caseInputOperator(InputOperator object)
@@ -298,44 +283,9 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
         return createOutputOperatorParameterAdapter();
       }
       @Override
-      public Adapter caseProcessingExpression(ProcessingExpression object)
-      {
-        return createProcessingExpressionAdapter();
-      }
-      @Override
       public Adapter caseBlockExpression(BlockExpression object)
       {
         return createBlockExpressionAdapter();
-      }
-      @Override
-      public Adapter caseReturnStatement(ReturnStatement object)
-      {
-        return createReturnStatementAdapter();
-      }
-      @Override
-      public Adapter caseConditionalExpressions(ConditionalExpressions object)
-      {
-        return createConditionalExpressionsAdapter();
-      }
-      @Override
-      public Adapter caseIfElseCondition(IfElseCondition object)
-      {
-        return createIfElseConditionAdapter();
-      }
-      @Override
-      public Adapter caseSwitchCaseCondition(SwitchCaseCondition object)
-      {
-        return createSwitchCaseConditionAdapter();
-      }
-      @Override
-      public Adapter caseCaseStatement(CaseStatement object)
-      {
-        return createCaseStatementAdapter();
-      }
-      @Override
-      public Adapter caseFunctionDefinition(FunctionDefinition object)
-      {
-        return createFunctionDefinitionAdapter();
       }
       @Override
       public Adapter caseReturnVariable(ReturnVariable object)
@@ -478,11 +428,6 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
         return createVariableCallAdapter();
       }
       @Override
-      public Adapter caseFunctionCall(FunctionCall object)
-      {
-        return createFunctionCallAdapter();
-      }
-      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -580,31 +525,16 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.Statement <em>Statement</em>}'.
+   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.StreamVariableStatement <em>Stream Variable Statement</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.Statement
+   * @see de.hs_rm.cs.vs.dsm.flow.StreamVariableStatement
    * @generated
    */
-  public Adapter createStatementAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.VariableStatement <em>Variable Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.VariableStatement
-   * @generated
-   */
-  public Adapter createVariableStatementAdapter()
+  public Adapter createStreamVariableStatementAdapter()
   {
     return null;
   }
@@ -770,36 +700,6 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDifferenceOperatorAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.MapOperator <em>Map Operator</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.MapOperator
-   * @generated
-   */
-  public Adapter createMapOperatorAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.FunctionStatement <em>Function Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.FunctionStatement
-   * @generated
-   */
-  public Adapter createFunctionStatementAdapter()
   {
     return null;
   }
@@ -1165,21 +1065,6 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.ProcessingExpression <em>Processing Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.ProcessingExpression
-   * @generated
-   */
-  public Adapter createProcessingExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.BlockExpression <em>Block Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1190,96 +1075,6 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createBlockExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.ReturnStatement <em>Return Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.ReturnStatement
-   * @generated
-   */
-  public Adapter createReturnStatementAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.ConditionalExpressions <em>Conditional Expressions</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.ConditionalExpressions
-   * @generated
-   */
-  public Adapter createConditionalExpressionsAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.IfElseCondition <em>If Else Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.IfElseCondition
-   * @generated
-   */
-  public Adapter createIfElseConditionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.SwitchCaseCondition <em>Switch Case Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.SwitchCaseCondition
-   * @generated
-   */
-  public Adapter createSwitchCaseConditionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.CaseStatement <em>Case Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.CaseStatement
-   * @generated
-   */
-  public Adapter createCaseStatementAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.FunctionDefinition <em>Function Definition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.FunctionDefinition
-   * @generated
-   */
-  public Adapter createFunctionDefinitionAdapter()
   {
     return null;
   }
@@ -1700,21 +1495,6 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createVariableCallAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.FunctionCall <em>Function Call</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.FunctionCall
-   * @generated
-   */
-  public Adapter createFunctionCallAdapter()
   {
     return null;
   }

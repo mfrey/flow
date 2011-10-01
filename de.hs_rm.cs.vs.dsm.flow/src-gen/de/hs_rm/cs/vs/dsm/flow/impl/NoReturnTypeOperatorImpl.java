@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class NoReturnTypeOperatorImpl extends ProcessingExpressionImpl implements NoReturnTypeOperator
+public class NoReturnTypeOperatorImpl extends ModelElementImpl implements NoReturnTypeOperator
 {
   /**
    * <!-- begin-user-doc -->

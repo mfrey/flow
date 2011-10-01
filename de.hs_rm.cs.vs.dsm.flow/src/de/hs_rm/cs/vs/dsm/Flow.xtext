@@ -30,13 +30,9 @@ PackageDeclaration:
 
 ModelElement:
 	PackageDeclaration | Import | StructureDeclaration | 
-	StreamDeclaration | FunctionDefinition | ProcessingExpression;
-
-/* 
-TestRule:
-	'testrule1234' var=[base::DetailCS];
-*/
-
+	StreamDeclaration | Variable | StreamStatement | StreamDefinition | StreamAccess  | 
+	NoReturnTypeOperator;
+	
 /**
  * The Import rule defines a import statement for referring to other *.flow files as well as 
  * files of knowledge representations such as *.owl and *.ocl
@@ -50,17 +46,15 @@ Import:
  */
 StreamStatement:
 	returnStream+=[StreamDefinition] (',' returnStream+=[StreamDefinition])*  
-	'=' expression=ReturnTypeOperator ';'; 
+	'=' (expression=ReturnTypeOperator | statement=Expression)';'; 
 
-Statement:
-	VariableStatement;
 
 /**
  * A variable statement refers to an existing variable and 'assigns' the variable an 
  * expression.
  */
-VariableStatement:
-	reference=[Variable] '=' expression=Expression ';';
+StreamVariableStatement:
+	reference=[StreamDefinition] '=' expression=Expression ';';
 
 /**
  * Elements of a stream are accessed by a a stream definition followed by a dot 
@@ -138,11 +132,6 @@ DifferenceOperator:
 	'diff''('parameters+=StreamOperatorParameter ',' 
 		parameters+=StreamOperatorParameter (',' parameters+=StreamOperatorParameter)*')';
 
-MapOperator:
-	'map''('functionList+=FunctionStatement (',' functionList+=FunctionStatement)*	',' stream=StreamOperatorParameter ')';
-
-FunctionStatement:
-	element=StreamAccess '=' function=[FunctionDefinition]('('(arguments+=Expression(',' arguments+=Expression)*)?')');
 
 InputOperator:
 	'in' '('iri+=STRING (',' iri+=STRING)* ',' port=NUMBER ',' socket=STRING')';
@@ -154,7 +143,7 @@ ReturnTypeOperator:
 	InputOperator | JoinOperator | SymmetricDifferenceOperator | DifferenceOperator | 
 	TagOperator | UnTagOperator | FilterOperator | SplitOperator | CountOperator | 
 	StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | 
-	MapOperator | OCLOperator | SWRLOperator;
+	OCLOperator | SWRLOperator;
 
 /**
  * The rule summarizes the operators which have no return type
@@ -166,8 +155,7 @@ NoReturnTypeOperator:
  * The TagOperator rule tags elements of a stream with elements of an ontology
  */
 TagOperator:
-	'tag''('parameters+=TagElement (',' parameters+=TagElement)* 
-	',' stream=StreamOperatorParameter')';
+	'tag''('parameters+=TagElement (',' parameters+=TagElement)*')';
 
 /**
  * The rule summarizes the operators which have no return type
@@ -317,70 +305,13 @@ OutputOperator:
 OutputOperatorParameter:
 	element+=StreamAccess (',' element+=StreamAccess)*;
 
-	
-/**
- * Processing expressions could consist of variables (declaration and definition),
- * statemens (expressions with assignments), stream definitions and stream 
- * expressions.
- */
-ProcessingExpression:
-	Variable | Statement | StreamStatement | StreamDefinition | StreamAccess  | 
-	NoReturnTypeOperator;
-
 /**
  * Block expression could consists of variable (declaration and definition), statements 
  * (expression with assignments), loops (for and while) and conditional expressions (if
    and switch/case).
  */
 BlockExpression:
-	Variable | Statement | WhileLoopDefinition | ConditionalExpressions | ReturnStatement;
-
-/**
- * A return statements consists of a return variable and is usually used in conditions and 
- * functions.
- */
-ReturnStatement:
-	'return' returnVariable=ReturnVariable;
-
-/**
- * Definition of if/else and switch/case conditions. A conditional expression
- * could be a if/else or switch/case condition.
- */
-ConditionalExpressions:
-	IfElseCondition | SwitchCaseCondition;
-
-/**
- * The IfElseCondition rule defines a if/else statement. The 'else' part of the
- * statement is optional. 
- */
-IfElseCondition:
-	'if' '(' condition=Expression ')' '{' 
-		ifAction+=(BlockExpression)* 		
-	'}'( 'else' '{'
-		elseAction+=(BlockExpression)*
-	'}')?;
-
-/**
- * The SwitchCaseCondition rule defines a switch/case statement. The default 
- * statement defines a default case.  
- */
-SwitchCaseCondition:
-	'switch' '(' condition=Expression ')' '{' 
-		caseExpression+=(CaseStatement)* 'default' ':' defaultExpression=Expression ';'
-	'}';
-
-/**
- * A SwitchCaseCondition consists of numerous CaseStatements which itself
- * define a condition and a action.
- */
-CaseStatement:
-	'case' condition=Expression ':' action=Expression ';';
-
-// Funktionsdefinition muss aufgebohrt werden, fuer Stream Argumente
-FunctionDefinition:	
-	type=DataType name=ID '('(arguments+=ParameterDeclaration 
-	(',' arguments+=ParameterDeclaration)*)?')' '{' (statements+=BlockExpression)* 
-	(returnValue=ReturnStatement)'}';
+	Variable | WhileLoopDefinition ;
 
 /** A return variable is of type returnable */
 ReturnVariable:
@@ -462,9 +393,7 @@ Multiplication returns Expression:
 PrimaryExpression returns Expression:
 	'(' Expression ')' |
 	{NumberLiteral} value=NUMBER | {VariableCall} variable=[Variable] | 
-	{StreamAccess} streamVariable=StreamAccess | 
-	{FunctionCall} func=[FunctionDefinition]
-	('(' (arguments+=Expression (',' arguments+=Expression)*)? ')');	
+	{StreamAccess} streamVariable=StreamAccess;	
 
 /** Definition of numbers (float as well as integer) */
 terminal NUMBER returns ecore::EBigDecimal:

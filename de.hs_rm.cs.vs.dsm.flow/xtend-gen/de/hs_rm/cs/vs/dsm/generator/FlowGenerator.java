@@ -12,6 +12,7 @@ import de.hs_rm.cs.vs.dsm.flow.ReturnTypeOperator;
 import de.hs_rm.cs.vs.dsm.flow.SplitOperator;
 import de.hs_rm.cs.vs.dsm.flow.StandardDeviationOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
+import de.hs_rm.cs.vs.dsm.flow.StreamVariableStatement;
 import de.hs_rm.cs.vs.dsm.generator.AverageOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.CountOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.ElementJoinOperatorGenerator;
@@ -100,6 +101,17 @@ public class FlowGenerator implements IGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
+    _builder.newLine();
+    {
+      EClass _eClass_2 = m.eClass();
+      String _name_2 = _eClass_2.getName();
+      boolean _equals_2 = _name_2.equals("StreamVariableStatement");
+      if (_equals_2) {
+        StringConcatenation _compile_2 = this.compile(((StreamVariableStatement) m));
+        _builder.append(_compile_2, "");
+        _builder.newLineIfNotEmpty();
+      }
+    }
     return _builder;
   }
   
@@ -157,6 +169,7 @@ public class FlowGenerator implements IGenerator {
                   String _write_4 = this.write(((ElementJoinOperator) _expression_10), statement);
                   _builder.append(_write_4, "");
                   _builder.newLineIfNotEmpty();
+                  _builder.newLine();
                 }
               }
             }
@@ -164,6 +177,13 @@ public class FlowGenerator implements IGenerator {
         }
       }
     }
+    return _builder;
+  }
+  
+  public StringConcatenation compile(final StreamVariableStatement statement) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\t");
+    _builder.newLine();
     return _builder;
   }
   

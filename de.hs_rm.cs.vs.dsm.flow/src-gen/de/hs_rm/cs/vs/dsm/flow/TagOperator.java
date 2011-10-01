@@ -16,7 +16,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.TagOperator#getParameters <em>Parameters</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.TagOperator#getStream <em>Stream</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,31 +40,5 @@ public interface TagOperator extends ReturnTypeOperator
    * @generated
    */
   EList<TagElement> getParameters();
-
-  /**
-   * Returns the value of the '<em><b>Stream</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Stream</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Stream</em>' containment reference.
-   * @see #setStream(StreamOperatorParameter)
-   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getTagOperator_Stream()
-   * @model containment="true"
-   * @generated
-   */
-  StreamOperatorParameter getStream();
-
-  /**
-   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.TagOperator#getStream <em>Stream</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Stream</em>' containment reference.
-   * @see #getStream()
-   * @generated
-   */
-  void setStream(StreamOperatorParameter value);
 
 } // TagOperator

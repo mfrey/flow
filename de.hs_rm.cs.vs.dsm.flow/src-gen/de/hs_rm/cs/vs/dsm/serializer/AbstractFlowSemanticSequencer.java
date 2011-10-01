@@ -7,7 +7,6 @@ import de.hs_rm.cs.vs.dsm.flow.AverageOperator;
 import de.hs_rm.cs.vs.dsm.flow.BooleanDataType;
 import de.hs_rm.cs.vs.dsm.flow.BooleanOperation;
 import de.hs_rm.cs.vs.dsm.flow.BooleanVariableDefinition;
-import de.hs_rm.cs.vs.dsm.flow.CaseStatement;
 import de.hs_rm.cs.vs.dsm.flow.ConsequentRule;
 import de.hs_rm.cs.vs.dsm.flow.CountOperator;
 import de.hs_rm.cs.vs.dsm.flow.DifferenceOperator;
@@ -16,15 +15,10 @@ import de.hs_rm.cs.vs.dsm.flow.ElementJoinOperator;
 import de.hs_rm.cs.vs.dsm.flow.FilterOperator;
 import de.hs_rm.cs.vs.dsm.flow.FloatDataType;
 import de.hs_rm.cs.vs.dsm.flow.FlowPackage;
-import de.hs_rm.cs.vs.dsm.flow.FunctionCall;
-import de.hs_rm.cs.vs.dsm.flow.FunctionDefinition;
-import de.hs_rm.cs.vs.dsm.flow.FunctionStatement;
-import de.hs_rm.cs.vs.dsm.flow.IfElseCondition;
 import de.hs_rm.cs.vs.dsm.flow.Import;
 import de.hs_rm.cs.vs.dsm.flow.InputOperator;
 import de.hs_rm.cs.vs.dsm.flow.IntegerDataType;
 import de.hs_rm.cs.vs.dsm.flow.JoinOperator;
-import de.hs_rm.cs.vs.dsm.flow.MapOperator;
 import de.hs_rm.cs.vs.dsm.flow.MarkerOperator;
 import de.hs_rm.cs.vs.dsm.flow.MatchOperator;
 import de.hs_rm.cs.vs.dsm.flow.Minus;
@@ -37,7 +31,6 @@ import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperatorParameter;
 import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.Plus;
-import de.hs_rm.cs.vs.dsm.flow.ReturnStatement;
 import de.hs_rm.cs.vs.dsm.flow.ReturnVariable;
 import de.hs_rm.cs.vs.dsm.flow.Rule;
 import de.hs_rm.cs.vs.dsm.flow.SWRLOperator;
@@ -50,11 +43,11 @@ import de.hs_rm.cs.vs.dsm.flow.StreamDeclarationAccess;
 import de.hs_rm.cs.vs.dsm.flow.StreamDefinition;
 import de.hs_rm.cs.vs.dsm.flow.StreamOperatorParameter;
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
+import de.hs_rm.cs.vs.dsm.flow.StreamVariableStatement;
 import de.hs_rm.cs.vs.dsm.flow.StringDataType;
 import de.hs_rm.cs.vs.dsm.flow.StringVariableDefinition;
 import de.hs_rm.cs.vs.dsm.flow.StructureDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.StructureElements;
-import de.hs_rm.cs.vs.dsm.flow.SwitchCaseCondition;
 import de.hs_rm.cs.vs.dsm.flow.SymmetricDifferenceOperator;
 import de.hs_rm.cs.vs.dsm.flow.TagClassElement;
 import de.hs_rm.cs.vs.dsm.flow.TagDataTypePropertyElement;
@@ -64,7 +57,6 @@ import de.hs_rm.cs.vs.dsm.flow.UnTagElement;
 import de.hs_rm.cs.vs.dsm.flow.UnTagOperator;
 import de.hs_rm.cs.vs.dsm.flow.VariableCall;
 import de.hs_rm.cs.vs.dsm.flow.VariableDeclaration;
-import de.hs_rm.cs.vs.dsm.flow.VariableStatement;
 import de.hs_rm.cs.vs.dsm.flow.WhileLoopDefinition;
 import de.hs_rm.cs.vs.dsm.flow.WindowOperator;
 import de.hs_rm.cs.vs.dsm.services.FlowGrammarAccess;
@@ -150,19 +142,12 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				else break;
 			case FlowPackage.BOOLEAN_VARIABLE_DEFINITION:
 				if(context == grammarAccess.getModelElementRule() ||
-				   context == grammarAccess.getProcessingExpressionRule() ||
 				   context == grammarAccess.getBlockExpressionRule() ||
 				   context == grammarAccess.getReturnableRule() ||
 				   context == grammarAccess.getVariableRule() ||
 				   context == grammarAccess.getVariableDefinitionRule() ||
 				   context == grammarAccess.getBooleanVariableDefinitionRule()) {
 					sequence_BooleanVariableDefinition_BooleanVariableDefinition(context, (BooleanVariableDefinition) semanticObject); 
-					return; 
-				}
-				else break;
-			case FlowPackage.CASE_STATEMENT:
-				if(context == grammarAccess.getCaseStatementRule()) {
-					sequence_CaseStatement_CaseStatement(context, (CaseStatement) semanticObject); 
 					return; 
 				}
 				else break;
@@ -227,46 +212,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
-			case FlowPackage.FUNCTION_CALL:
-				if(context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getOrRule() ||
-				   context == grammarAccess.getOrAccess().getBooleanOperationLeftAction_1_0() ||
-				   context == grammarAccess.getAndRule() ||
-				   context == grammarAccess.getAndAccess().getBooleanOperationLeftAction_1_0() ||
-				   context == grammarAccess.getRelationalExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionAccess().getBooleanOperationLeftAction_1_0() ||
-				   context == grammarAccess.getAdditionRule() ||
-				   context == grammarAccess.getAdditionAccess().getPlusLeftAction_1_0_0_0() ||
-				   context == grammarAccess.getAdditionAccess().getMinusLeftAction_1_0_1_0() ||
-				   context == grammarAccess.getMultiplicationRule() ||
-				   context == grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0() ||
-				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
-				   context == grammarAccess.getPrimaryExpressionRule()) {
-					sequence_PrimaryExpression_FunctionCall(context, (FunctionCall) semanticObject); 
-					return; 
-				}
-				else break;
-			case FlowPackage.FUNCTION_DEFINITION:
-				if(context == grammarAccess.getModelElementRule() ||
-				   context == grammarAccess.getFunctionDefinitionRule()) {
-					sequence_FunctionDefinition_FunctionDefinition(context, (FunctionDefinition) semanticObject); 
-					return; 
-				}
-				else break;
-			case FlowPackage.FUNCTION_STATEMENT:
-				if(context == grammarAccess.getFunctionStatementRule()) {
-					sequence_FunctionStatement_FunctionStatement(context, (FunctionStatement) semanticObject); 
-					return; 
-				}
-				else break;
-			case FlowPackage.IF_ELSE_CONDITION:
-				if(context == grammarAccess.getBlockExpressionRule() ||
-				   context == grammarAccess.getConditionalExpressionsRule() ||
-				   context == grammarAccess.getIfElseConditionRule()) {
-					sequence_IfElseCondition_IfElseCondition(context, (IfElseCondition) semanticObject); 
-					return; 
-				}
-				else break;
 			case FlowPackage.IMPORT:
 				if(context == grammarAccess.getModelElementRule() ||
 				   context == grammarAccess.getImportRule()) {
@@ -293,13 +238,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				if(context == grammarAccess.getJoinOperatorRule() ||
 				   context == grammarAccess.getReturnTypeOperatorRule()) {
 					sequence_JoinOperator_JoinOperator(context, (JoinOperator) semanticObject); 
-					return; 
-				}
-				else break;
-			case FlowPackage.MAP_OPERATOR:
-				if(context == grammarAccess.getMapOperatorRule() ||
-				   context == grammarAccess.getReturnTypeOperatorRule()) {
-					sequence_MapOperator_MapOperator(context, (MapOperator) semanticObject); 
 					return; 
 				}
 				else break;
@@ -382,7 +320,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				else break;
 			case FlowPackage.NUMBER_VARIABLE_DEFINITION:
 				if(context == grammarAccess.getModelElementRule() ||
-				   context == grammarAccess.getProcessingExpressionRule() ||
 				   context == grammarAccess.getBlockExpressionRule() ||
 				   context == grammarAccess.getReturnableRule() ||
 				   context == grammarAccess.getVariableRule() ||
@@ -402,8 +339,7 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 			case FlowPackage.OUTPUT_OPERATOR:
 				if(context == grammarAccess.getModelElementRule() ||
 				   context == grammarAccess.getNoReturnTypeOperatorRule() ||
-				   context == grammarAccess.getOutputOperatorRule() ||
-				   context == grammarAccess.getProcessingExpressionRule()) {
+				   context == grammarAccess.getOutputOperatorRule()) {
 					sequence_OutputOperator_OutputOperator(context, (OutputOperator) semanticObject); 
 					return; 
 				}
@@ -437,13 +373,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getPrimaryExpressionRule()) {
 					sequence_Addition_Plus(context, (Plus) semanticObject); 
-					return; 
-				}
-				else break;
-			case FlowPackage.RETURN_STATEMENT:
-				if(context == grammarAccess.getBlockExpressionRule() ||
-				   context == grammarAccess.getReturnStatementRule()) {
-					sequence_ReturnStatement_ReturnStatement(context, (ReturnStatement) semanticObject); 
 					return; 
 				}
 				else break;
@@ -505,8 +434,7 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else if(context == grammarAccess.getModelElementRule() ||
-				   context == grammarAccess.getStreamAccessRule() ||
-				   context == grammarAccess.getProcessingExpressionRule()) {
+				   context == grammarAccess.getStreamAccessRule()) {
 					sequence_StreamAccess_StreamAccess(context, (StreamAccess) semanticObject); 
 					return; 
 				}
@@ -526,8 +454,7 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				else break;
 			case FlowPackage.STREAM_DEFINITION:
 				if(context == grammarAccess.getModelElementRule() ||
-				   context == grammarAccess.getStreamDefinitionRule() ||
-				   context == grammarAccess.getProcessingExpressionRule()) {
+				   context == grammarAccess.getStreamDefinitionRule()) {
 					sequence_StreamDefinition_StreamDefinition(context, (StreamDefinition) semanticObject); 
 					return; 
 				}
@@ -540,9 +467,14 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				else break;
 			case FlowPackage.STREAM_STATEMENT:
 				if(context == grammarAccess.getModelElementRule() ||
-				   context == grammarAccess.getStreamStatementRule() ||
-				   context == grammarAccess.getProcessingExpressionRule()) {
+				   context == grammarAccess.getStreamStatementRule()) {
 					sequence_StreamStatement_StreamStatement(context, (StreamStatement) semanticObject); 
+					return; 
+				}
+				else break;
+			case FlowPackage.STREAM_VARIABLE_STATEMENT:
+				if(context == grammarAccess.getStreamVariableStatementRule()) {
+					sequence_StreamVariableStatement_StreamVariableStatement(context, (StreamVariableStatement) semanticObject); 
 					return; 
 				}
 				else break;
@@ -556,7 +488,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				else break;
 			case FlowPackage.STRING_VARIABLE_DEFINITION:
 				if(context == grammarAccess.getModelElementRule() ||
-				   context == grammarAccess.getProcessingExpressionRule() ||
 				   context == grammarAccess.getBlockExpressionRule() ||
 				   context == grammarAccess.getReturnableRule() ||
 				   context == grammarAccess.getVariableRule() ||
@@ -577,14 +508,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				if(context == grammarAccess.getStreamElementRule() ||
 				   context == grammarAccess.getStructureElementsRule()) {
 					sequence_StructureElements_StructureElements(context, (StructureElements) semanticObject); 
-					return; 
-				}
-				else break;
-			case FlowPackage.SWITCH_CASE_CONDITION:
-				if(context == grammarAccess.getBlockExpressionRule() ||
-				   context == grammarAccess.getConditionalExpressionsRule() ||
-				   context == grammarAccess.getSwitchCaseConditionRule()) {
-					sequence_SwitchCaseCondition_SwitchCaseCondition(context, (SwitchCaseCondition) semanticObject); 
 					return; 
 				}
 				else break;
@@ -657,7 +580,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				else break;
 			case FlowPackage.VARIABLE_DECLARATION:
 				if(context == grammarAccess.getModelElementRule() ||
-				   context == grammarAccess.getProcessingExpressionRule() ||
 				   context == grammarAccess.getBlockExpressionRule() ||
 				   context == grammarAccess.getVariableRule() ||
 				   context == grammarAccess.getVariableDeclarationRule() ||
@@ -671,16 +593,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				}
 				else if(context == grammarAccess.getParameterDeclarationRule()) {
 					sequence_ParameterDeclaration_VariableDeclaration(context, (VariableDeclaration) semanticObject); 
-					return; 
-				}
-				else break;
-			case FlowPackage.VARIABLE_STATEMENT:
-				if(context == grammarAccess.getModelElementRule() ||
-				   context == grammarAccess.getStatementRule() ||
-				   context == grammarAccess.getVariableStatementRule() ||
-				   context == grammarAccess.getProcessingExpressionRule() ||
-				   context == grammarAccess.getBlockExpressionRule()) {
-					sequence_VariableStatement_VariableStatement(context, (VariableStatement) semanticObject); 
 					return; 
 				}
 				else break;
@@ -841,29 +753,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (condition=Expression action=Expression)
-	 *
-	 * Features:
-	 *    condition[1, 1]
-	 *    action[1, 1]
-	 */
-	protected void sequence_CaseStatement_CaseStatement(EObject context, CaseStatement semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.CASE_STATEMENT__CONDITION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.CASE_STATEMENT__CONDITION));
-			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.CASE_STATEMENT__ACTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.CASE_STATEMENT__ACTION));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getCaseStatementAccess().getConditionExpressionParserRuleCall_1_0(), semanticObject.getCondition());
-		feeder.accept(grammarAccess.getCaseStatementAccess().getActionExpressionParserRuleCall_3_0(), semanticObject.getAction());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (atoms+=Rule atoms+=Rule*)
 	 *
 	 * Features:
@@ -987,56 +876,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         type=DataType 
-	 *         name=ID 
-	 *         (arguments+=ParameterDeclaration arguments+=ParameterDeclaration*)? 
-	 *         statements+=BlockExpression* 
-	 *         returnValue=ReturnStatement
-	 *     )
-	 *
-	 * Features:
-	 *    type[1, 1]
-	 *    name[1, 1]
-	 *    arguments[0, *]
-	 *    statements[0, *]
-	 *    returnValue[1, 1]
-	 */
-	protected void sequence_FunctionDefinition_FunctionDefinition(EObject context, FunctionDefinition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (element=StreamAccess function=[FunctionDefinition|ID] (arguments+=Expression arguments+=Expression*)?)
-	 *
-	 * Features:
-	 *    element[1, 1]
-	 *    function[1, 1]
-	 *    arguments[0, *]
-	 */
-	protected void sequence_FunctionStatement_FunctionStatement(EObject context, FunctionStatement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (condition=Expression ifAction+=BlockExpression* elseAction+=BlockExpression*)
-	 *
-	 * Features:
-	 *    condition[1, 1]
-	 *    ifAction[0, *]
-	 *    elseAction[0, *]
-	 */
-	protected void sequence_IfElseCondition_IfElseCondition(EObject context, IfElseCondition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     importURI=STRING
 	 *
 	 * Features:
@@ -1076,19 +915,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 *    parameters[2, *]
 	 */
 	protected void sequence_JoinOperator_JoinOperator(EObject context, JoinOperator semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (functionList+=FunctionStatement functionList+=FunctionStatement* stream=StreamOperatorParameter)
-	 *
-	 * Features:
-	 *    functionList[1, *]
-	 *    stream[1, 1]
-	 */
-	protected void sequence_MapOperator_MapOperator(EObject context, MapOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1298,19 +1124,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (func=[FunctionDefinition|ID] (arguments+=Expression arguments+=Expression*)?)
-	 *
-	 * Features:
-	 *    func[1, 1]
-	 *    arguments[0, *]
-	 */
-	protected void sequence_PrimaryExpression_FunctionCall(EObject context, FunctionCall semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     value=NUMBER
 	 *
 	 * Features:
@@ -1355,25 +1168,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getPrimaryExpressionAccess().getVariableVariableIDTerminalRuleCall_2_1_0_1(), semanticObject.getVariable());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     returnVariable=ReturnVariable
-	 *
-	 * Features:
-	 *    returnVariable[1, 1]
-	 */
-	protected void sequence_ReturnStatement_ReturnStatement(EObject context, ReturnStatement semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.RETURN_STATEMENT__RETURN_VARIABLE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.RETURN_STATEMENT__RETURN_VARIABLE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getReturnStatementAccess().getReturnVariableReturnVariableParserRuleCall_1_0(), semanticObject.getReturnVariable());
 		feeder.finish();
 	}
 	
@@ -1588,14 +1382,40 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (returnStream+=[StreamDefinition|ID] returnStream+=[StreamDefinition|ID]* expression=ReturnTypeOperator)
+	 *     (returnStream+=[StreamDefinition|ID] returnStream+=[StreamDefinition|ID]* (expression=ReturnTypeOperator | statement=Expression))
 	 *
 	 * Features:
 	 *    returnStream[1, *]
-	 *    expression[1, 1]
+	 *    expression[0, 1]
+	 *         EXCLUDE_IF_SET statement
+	 *    statement[0, 1]
+	 *         EXCLUDE_IF_SET expression
 	 */
 	protected void sequence_StreamStatement_StreamStatement(EObject context, StreamStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (reference=[StreamDefinition|ID] expression=Expression)
+	 *
+	 * Features:
+	 *    reference[1, 1]
+	 *    expression[1, 1]
+	 */
+	protected void sequence_StreamVariableStatement_StreamVariableStatement(EObject context, StreamVariableStatement semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.STREAM_VARIABLE_STATEMENT__REFERENCE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.STREAM_VARIABLE_STATEMENT__REFERENCE));
+			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.STREAM_VARIABLE_STATEMENT__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.STREAM_VARIABLE_STATEMENT__EXPRESSION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getStreamVariableStatementAccess().getReferenceStreamDefinitionIDTerminalRuleCall_0_0_1(), semanticObject.getReference());
+		feeder.accept(grammarAccess.getStreamVariableStatementAccess().getExpressionExpressionParserRuleCall_2_0(), semanticObject.getExpression());
+		feeder.finish();
 	}
 	
 	
@@ -1655,20 +1475,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getStructureElementsAccess().getElementStructureDeclarationIDTerminalRuleCall_1_0_1(), semanticObject.getElement());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (condition=Expression caseExpression+=CaseStatement* defaultExpression=Expression)
-	 *
-	 * Features:
-	 *    condition[1, 1]
-	 *    caseExpression[0, *]
-	 *    defaultExpression[1, 1]
-	 */
-	protected void sequence_SwitchCaseCondition_SwitchCaseCondition(EObject context, SwitchCaseCondition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1755,11 +1561,10 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (parameters+=TagElement parameters+=TagElement* stream=StreamOperatorParameter)
+	 *     (parameters+=TagElement parameters+=TagElement*)
 	 *
 	 * Features:
 	 *    parameters[1, *]
-	 *    stream[1, 1]
 	 */
 	protected void sequence_TagOperator_TagOperator(EObject context, TagOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1821,29 +1626,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getVariableDeclarationAccess().getTypeDataTypeParserRuleCall_0_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getVariableDeclarationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (reference=[Variable|ID] expression=Expression)
-	 *
-	 * Features:
-	 *    reference[1, 1]
-	 *    expression[1, 1]
-	 */
-	protected void sequence_VariableStatement_VariableStatement(EObject context, VariableStatement semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.VARIABLE_STATEMENT__REFERENCE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.VARIABLE_STATEMENT__REFERENCE));
-			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.VARIABLE_STATEMENT__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.VARIABLE_STATEMENT__EXPRESSION));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getVariableStatementAccess().getReferenceVariableIDTerminalRuleCall_0_0_1(), semanticObject.getReference());
-		feeder.accept(grammarAccess.getVariableStatementAccess().getExpressionExpressionParserRuleCall_2_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	

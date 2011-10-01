@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class StreamDefinitionImpl extends ProcessingExpressionImpl implements StreamDefinition
+public class StreamDefinitionImpl extends ModelElementImpl implements StreamDefinition
 {
   /**
    * The cached value of the '{@link #getReference() <em>Reference</em>}' reference.

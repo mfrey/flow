@@ -16,6 +16,6 @@ package de.hs_rm.cs.vs.dsm.flow;
  * @model
  * @generated
  */
-public interface NoReturnTypeOperator extends ProcessingExpression
+public interface NoReturnTypeOperator extends ModelElement
 {
 } // NoReturnTypeOperator

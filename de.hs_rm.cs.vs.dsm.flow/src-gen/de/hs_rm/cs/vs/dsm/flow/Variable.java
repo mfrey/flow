@@ -22,7 +22,7 @@ package de.hs_rm.cs.vs.dsm.flow;
  * @model
  * @generated
  */
-public interface Variable extends ProcessingExpression, BlockExpression, Returnable
+public interface Variable extends ModelElement, BlockExpression, Returnable
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

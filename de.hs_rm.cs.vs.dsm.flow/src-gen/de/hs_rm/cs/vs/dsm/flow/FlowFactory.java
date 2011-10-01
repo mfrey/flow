@@ -71,22 +71,13 @@ public interface FlowFactory extends EFactory
   StreamStatement createStreamStatement();
 
   /**
-   * Returns a new object of class '<em>Statement</em>'.
+   * Returns a new object of class '<em>Stream Variable Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Statement</em>'.
+   * @return a new object of class '<em>Stream Variable Statement</em>'.
    * @generated
    */
-  Statement createStatement();
-
-  /**
-   * Returns a new object of class '<em>Variable Statement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Statement</em>'.
-   * @generated
-   */
-  VariableStatement createVariableStatement();
+  StreamVariableStatement createStreamVariableStatement();
 
   /**
    * Returns a new object of class '<em>Stream Access</em>'.
@@ -186,24 +177,6 @@ public interface FlowFactory extends EFactory
    * @generated
    */
   DifferenceOperator createDifferenceOperator();
-
-  /**
-   * Returns a new object of class '<em>Map Operator</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Map Operator</em>'.
-   * @generated
-   */
-  MapOperator createMapOperator();
-
-  /**
-   * Returns a new object of class '<em>Function Statement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Statement</em>'.
-   * @generated
-   */
-  FunctionStatement createFunctionStatement();
 
   /**
    * Returns a new object of class '<em>Input Operator</em>'.
@@ -422,15 +395,6 @@ public interface FlowFactory extends EFactory
   OutputOperatorParameter createOutputOperatorParameter();
 
   /**
-   * Returns a new object of class '<em>Processing Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Processing Expression</em>'.
-   * @generated
-   */
-  ProcessingExpression createProcessingExpression();
-
-  /**
    * Returns a new object of class '<em>Block Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -438,60 +402,6 @@ public interface FlowFactory extends EFactory
    * @generated
    */
   BlockExpression createBlockExpression();
-
-  /**
-   * Returns a new object of class '<em>Return Statement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Return Statement</em>'.
-   * @generated
-   */
-  ReturnStatement createReturnStatement();
-
-  /**
-   * Returns a new object of class '<em>Conditional Expressions</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Conditional Expressions</em>'.
-   * @generated
-   */
-  ConditionalExpressions createConditionalExpressions();
-
-  /**
-   * Returns a new object of class '<em>If Else Condition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>If Else Condition</em>'.
-   * @generated
-   */
-  IfElseCondition createIfElseCondition();
-
-  /**
-   * Returns a new object of class '<em>Switch Case Condition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Switch Case Condition</em>'.
-   * @generated
-   */
-  SwitchCaseCondition createSwitchCaseCondition();
-
-  /**
-   * Returns a new object of class '<em>Case Statement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Case Statement</em>'.
-   * @generated
-   */
-  CaseStatement createCaseStatement();
-
-  /**
-   * Returns a new object of class '<em>Function Definition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Definition</em>'.
-   * @generated
-   */
-  FunctionDefinition createFunctionDefinition();
 
   /**
    * Returns a new object of class '<em>Return Variable</em>'.
@@ -744,15 +654,6 @@ public interface FlowFactory extends EFactory
    * @generated
    */
   VariableCall createVariableCall();
-
-  /**
-   * Returns a new object of class '<em>Function Call</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Call</em>'.
-   * @generated
-   */
-  FunctionCall createFunctionCall();
 
   /**
    * Returns the package supported by this factory.

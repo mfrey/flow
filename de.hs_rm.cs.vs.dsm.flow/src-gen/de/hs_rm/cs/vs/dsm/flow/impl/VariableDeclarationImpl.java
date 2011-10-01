@@ -9,7 +9,6 @@ import de.hs_rm.cs.vs.dsm.flow.BlockExpression;
 import de.hs_rm.cs.vs.dsm.flow.DataType;
 import de.hs_rm.cs.vs.dsm.flow.FlowPackage;
 import de.hs_rm.cs.vs.dsm.flow.ModelElement;
-import de.hs_rm.cs.vs.dsm.flow.ProcessingExpression;
 import de.hs_rm.cs.vs.dsm.flow.StreamElement;
 import de.hs_rm.cs.vs.dsm.flow.Variable;
 import de.hs_rm.cs.vs.dsm.flow.VariableDeclaration;
@@ -267,13 +266,6 @@ public class VariableDeclarationImpl extends ReturnableImpl implements VariableD
         default: return -1;
       }
     }
-    if (baseClass == ProcessingExpression.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
     if (baseClass == BlockExpression.class)
     {
       switch (derivedFeatureID)
@@ -308,13 +300,6 @@ public class VariableDeclarationImpl extends ReturnableImpl implements VariableD
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
     if (baseClass == ModelElement.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == ProcessingExpression.class)
     {
       switch (baseFeatureID)
       {

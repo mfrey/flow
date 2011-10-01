@@ -172,25 +172,6 @@ public interface FlowPackage extends EPackage
   int IMPORT_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.ProcessingExpressionImpl <em>Processing Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.ProcessingExpressionImpl
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getProcessingExpression()
-   * @generated
-   */
-  int PROCESSING_EXPRESSION = 44;
-
-  /**
-   * The number of structural features of the '<em>Processing Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROCESSING_EXPRESSION_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 0;
-
-  /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.StreamStatementImpl <em>Stream Statement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -207,7 +188,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STREAM_STATEMENT__RETURN_STREAM = PROCESSING_EXPRESSION_FEATURE_COUNT + 0;
+  int STREAM_STATEMENT__RETURN_STREAM = MODEL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -216,7 +197,16 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STREAM_STATEMENT__EXPRESSION = PROCESSING_EXPRESSION_FEATURE_COUNT + 1;
+  int STREAM_STATEMENT__EXPRESSION = MODEL_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Statement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STREAM_STATEMENT__STATEMENT = MODEL_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Stream Statement</em>' class.
@@ -225,36 +215,17 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STREAM_STATEMENT_FEATURE_COUNT = PROCESSING_EXPRESSION_FEATURE_COUNT + 2;
+  int STREAM_STATEMENT_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.StatementImpl <em>Statement</em>}' class.
+   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.StreamVariableStatementImpl <em>Stream Variable Statement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.StatementImpl
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStatement()
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.StreamVariableStatementImpl
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStreamVariableStatement()
    * @generated
    */
-  int STATEMENT = 5;
-
-  /**
-   * The number of structural features of the '<em>Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT_FEATURE_COUNT = PROCESSING_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.VariableStatementImpl <em>Variable Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.VariableStatementImpl
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getVariableStatement()
-   * @generated
-   */
-  int VARIABLE_STATEMENT = 6;
+  int STREAM_VARIABLE_STATEMENT = 5;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -263,7 +234,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_STATEMENT__REFERENCE = STATEMENT_FEATURE_COUNT + 0;
+  int STREAM_VARIABLE_STATEMENT__REFERENCE = 0;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -272,16 +243,16 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_STATEMENT__EXPRESSION = STATEMENT_FEATURE_COUNT + 1;
+  int STREAM_VARIABLE_STATEMENT__EXPRESSION = 1;
 
   /**
-   * The number of structural features of the '<em>Variable Statement</em>' class.
+   * The number of structural features of the '<em>Stream Variable Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+  int STREAM_VARIABLE_STATEMENT_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.StreamAccessImpl <em>Stream Access</em>}' class.
@@ -291,7 +262,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStreamAccess()
    * @generated
    */
-  int STREAM_ACCESS = 7;
+  int STREAM_ACCESS = 6;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -300,7 +271,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STREAM_ACCESS__REFERENCE = PROCESSING_EXPRESSION_FEATURE_COUNT + 0;
+  int STREAM_ACCESS__REFERENCE = MODEL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' reference.
@@ -309,7 +280,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STREAM_ACCESS__ELEMENT = PROCESSING_EXPRESSION_FEATURE_COUNT + 1;
+  int STREAM_ACCESS__ELEMENT = MODEL_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Stream Variable</b></em>' containment reference.
@@ -318,7 +289,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STREAM_ACCESS__STREAM_VARIABLE = PROCESSING_EXPRESSION_FEATURE_COUNT + 2;
+  int STREAM_ACCESS__STREAM_VARIABLE = MODEL_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Stream Access</em>' class.
@@ -327,7 +298,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STREAM_ACCESS_FEATURE_COUNT = PROCESSING_EXPRESSION_FEATURE_COUNT + 3;
+  int STREAM_ACCESS_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.StreamDeclarationAccessImpl <em>Stream Declaration Access</em>}' class.
@@ -337,7 +308,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStreamDeclarationAccess()
    * @generated
    */
-  int STREAM_DECLARATION_ACCESS = 8;
+  int STREAM_DECLARATION_ACCESS = 7;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -374,7 +345,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStreamDefinition()
    * @generated
    */
-  int STREAM_DEFINITION = 9;
+  int STREAM_DEFINITION = 8;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -383,7 +354,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STREAM_DEFINITION__REFERENCE = PROCESSING_EXPRESSION_FEATURE_COUNT + 0;
+  int STREAM_DEFINITION__REFERENCE = MODEL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -392,7 +363,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STREAM_DEFINITION__NAME = PROCESSING_EXPRESSION_FEATURE_COUNT + 1;
+  int STREAM_DEFINITION__NAME = MODEL_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Stream Definition</em>' class.
@@ -401,7 +372,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STREAM_DEFINITION_FEATURE_COUNT = PROCESSING_EXPRESSION_FEATURE_COUNT + 2;
+  int STREAM_DEFINITION_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.ReturnTypeOperatorImpl <em>Return Type Operator</em>}' class.
@@ -411,7 +382,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getReturnTypeOperator()
    * @generated
    */
-  int RETURN_TYPE_OPERATOR = 21;
+  int RETURN_TYPE_OPERATOR = 18;
 
   /**
    * The number of structural features of the '<em>Return Type Operator</em>' class.
@@ -430,7 +401,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getJoinOperator()
    * @generated
    */
-  int JOIN_OPERATOR = 10;
+  int JOIN_OPERATOR = 9;
 
   /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -458,7 +429,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStreamOperatorParameter()
    * @generated
    */
-  int STREAM_OPERATOR_PARAMETER = 11;
+  int STREAM_OPERATOR_PARAMETER = 10;
 
   /**
    * The feature id for the '<em><b>Stream</b></em>' reference.
@@ -495,7 +466,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getElementJoinOperator()
    * @generated
    */
-  int ELEMENT_JOIN_OPERATOR = 12;
+  int ELEMENT_JOIN_OPERATOR = 11;
 
   /**
    * The feature id for the '<em><b>Element Parameters</b></em>' containment reference list.
@@ -541,7 +512,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getFilterOperator()
    * @generated
    */
-  int FILTER_OPERATOR = 13;
+  int FILTER_OPERATOR = 12;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference list.
@@ -578,7 +549,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSplitOperator()
    * @generated
    */
-  int SPLIT_OPERATOR = 14;
+  int SPLIT_OPERATOR = 13;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -606,7 +577,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMatchOperator()
    * @generated
    */
-  int MATCH_OPERATOR = 15;
+  int MATCH_OPERATOR = 14;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -652,7 +623,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSymmetricDifferenceOperator()
    * @generated
    */
-  int SYMMETRIC_DIFFERENCE_OPERATOR = 16;
+  int SYMMETRIC_DIFFERENCE_OPERATOR = 15;
 
   /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -680,7 +651,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getDifferenceOperator()
    * @generated
    */
-  int DIFFERENCE_OPERATOR = 17;
+  int DIFFERENCE_OPERATOR = 16;
 
   /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -701,89 +672,6 @@ public interface FlowPackage extends EPackage
   int DIFFERENCE_OPERATOR_FEATURE_COUNT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.MapOperatorImpl <em>Map Operator</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.MapOperatorImpl
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMapOperator()
-   * @generated
-   */
-  int MAP_OPERATOR = 18;
-
-  /**
-   * The feature id for the '<em><b>Function List</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_OPERATOR__FUNCTION_LIST = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Stream</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_OPERATOR__STREAM = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Map Operator</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_OPERATOR_FEATURE_COUNT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.FunctionStatementImpl <em>Function Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FunctionStatementImpl
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getFunctionStatement()
-   * @generated
-   */
-  int FUNCTION_STATEMENT = 19;
-
-  /**
-   * The feature id for the '<em><b>Element</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_STATEMENT__ELEMENT = 0;
-
-  /**
-   * The feature id for the '<em><b>Function</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_STATEMENT__FUNCTION = 1;
-
-  /**
-   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_STATEMENT__ARGUMENTS = 2;
-
-  /**
-   * The number of structural features of the '<em>Function Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_STATEMENT_FEATURE_COUNT = 3;
-
-  /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.InputOperatorImpl <em>Input Operator</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -791,7 +679,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getInputOperator()
    * @generated
    */
-  int INPUT_OPERATOR = 20;
+  int INPUT_OPERATOR = 17;
 
   /**
    * The feature id for the '<em><b>Iri</b></em>' attribute list.
@@ -837,7 +725,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getNoReturnTypeOperator()
    * @generated
    */
-  int NO_RETURN_TYPE_OPERATOR = 22;
+  int NO_RETURN_TYPE_OPERATOR = 19;
 
   /**
    * The number of structural features of the '<em>No Return Type Operator</em>' class.
@@ -846,7 +734,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NO_RETURN_TYPE_OPERATOR_FEATURE_COUNT = PROCESSING_EXPRESSION_FEATURE_COUNT + 0;
+  int NO_RETURN_TYPE_OPERATOR_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.TagOperatorImpl <em>Tag Operator</em>}' class.
@@ -856,7 +744,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getTagOperator()
    * @generated
    */
-  int TAG_OPERATOR = 23;
+  int TAG_OPERATOR = 20;
 
   /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -868,22 +756,13 @@ public interface FlowPackage extends EPackage
   int TAG_OPERATOR__PARAMETERS = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Stream</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TAG_OPERATOR__STREAM = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
-
-  /**
    * The number of structural features of the '<em>Tag Operator</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TAG_OPERATOR_FEATURE_COUNT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
+  int TAG_OPERATOR_FEATURE_COUNT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.UnTagOperatorImpl <em>Un Tag Operator</em>}' class.
@@ -893,7 +772,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getUnTagOperator()
    * @generated
    */
-  int UN_TAG_OPERATOR = 24;
+  int UN_TAG_OPERATOR = 21;
 
   /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -930,7 +809,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getUnTagElement()
    * @generated
    */
-  int UN_TAG_ELEMENT = 25;
+  int UN_TAG_ELEMENT = 22;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' reference.
@@ -967,7 +846,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getTagElement()
    * @generated
    */
-  int TAG_ELEMENT = 26;
+  int TAG_ELEMENT = 23;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' containment reference.
@@ -995,7 +874,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getTagClassElement()
    * @generated
    */
-  int TAG_CLASS_ELEMENT = 27;
+  int TAG_CLASS_ELEMENT = 24;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' containment reference.
@@ -1032,7 +911,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getTagObjectPropertyElement()
    * @generated
    */
-  int TAG_OBJECT_PROPERTY_ELEMENT = 28;
+  int TAG_OBJECT_PROPERTY_ELEMENT = 25;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' containment reference.
@@ -1069,7 +948,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getTagDataTypePropertyElement()
    * @generated
    */
-  int TAG_DATA_TYPE_PROPERTY_ELEMENT = 29;
+  int TAG_DATA_TYPE_PROPERTY_ELEMENT = 26;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' containment reference.
@@ -1106,7 +985,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBarrierOperator()
    * @generated
    */
-  int BARRIER_OPERATOR = 30;
+  int BARRIER_OPERATOR = 27;
 
   /**
    * The number of structural features of the '<em>Barrier Operator</em>' class.
@@ -1125,7 +1004,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getWindowOperator()
    * @generated
    */
-  int WINDOW_OPERATOR = 31;
+  int WINDOW_OPERATOR = 28;
 
   /**
    * The feature id for the '<em><b>Setting</b></em>' attribute.
@@ -1171,7 +1050,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMarkerOperator()
    * @generated
    */
-  int MARKER_OPERATOR = 32;
+  int MARKER_OPERATOR = 29;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1199,7 +1078,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSWRLOperator()
    * @generated
    */
-  int SWRL_OPERATOR = 33;
+  int SWRL_OPERATOR = 30;
 
   /**
    * The feature id for the '<em><b>Rule</b></em>' containment reference.
@@ -1236,7 +1115,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSWRLRule()
    * @generated
    */
-  int SWRL_RULE = 34;
+  int SWRL_RULE = 31;
 
   /**
    * The feature id for the '<em><b>Antecedent</b></em>' containment reference.
@@ -1273,7 +1152,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getAntecedentRule()
    * @generated
    */
-  int ANTECEDENT_RULE = 35;
+  int ANTECEDENT_RULE = 32;
 
   /**
    * The feature id for the '<em><b>Atoms</b></em>' containment reference list.
@@ -1301,7 +1180,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getConsequentRule()
    * @generated
    */
-  int CONSEQUENT_RULE = 36;
+  int CONSEQUENT_RULE = 33;
 
   /**
    * The feature id for the '<em><b>Atoms</b></em>' containment reference list.
@@ -1329,7 +1208,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getRule()
    * @generated
    */
-  int RULE = 37;
+  int RULE = 34;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' reference.
@@ -1366,7 +1245,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getOCLOperator()
    * @generated
    */
-  int OCL_OPERATOR = 38;
+  int OCL_OPERATOR = 35;
 
   /**
    * The feature id for the '<em><b>Constraint</b></em>' attribute.
@@ -1403,7 +1282,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getCountOperator()
    * @generated
    */
-  int COUNT_OPERATOR = 39;
+  int COUNT_OPERATOR = 36;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1440,7 +1319,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStandardDeviationOperator()
    * @generated
    */
-  int STANDARD_DEVIATION_OPERATOR = 40;
+  int STANDARD_DEVIATION_OPERATOR = 37;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1477,7 +1356,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getAverageOperator()
    * @generated
    */
-  int AVERAGE_OPERATOR = 41;
+  int AVERAGE_OPERATOR = 38;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1514,7 +1393,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getOutputOperator()
    * @generated
    */
-  int OUTPUT_OPERATOR = 42;
+  int OUTPUT_OPERATOR = 39;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1560,7 +1439,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getOutputOperatorParameter()
    * @generated
    */
-  int OUTPUT_OPERATOR_PARAMETER = 43;
+  int OUTPUT_OPERATOR_PARAMETER = 40;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' containment reference list.
@@ -1588,7 +1467,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBlockExpression()
    * @generated
    */
-  int BLOCK_EXPRESSION = 45;
+  int BLOCK_EXPRESSION = 41;
 
   /**
    * The number of structural features of the '<em>Block Expression</em>' class.
@@ -1600,255 +1479,6 @@ public interface FlowPackage extends EPackage
   int BLOCK_EXPRESSION_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.ReturnStatementImpl <em>Return Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.ReturnStatementImpl
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getReturnStatement()
-   * @generated
-   */
-  int RETURN_STATEMENT = 46;
-
-  /**
-   * The feature id for the '<em><b>Return Variable</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETURN_STATEMENT__RETURN_VARIABLE = BLOCK_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Return Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETURN_STATEMENT_FEATURE_COUNT = BLOCK_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.ConditionalExpressionsImpl <em>Conditional Expressions</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.ConditionalExpressionsImpl
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getConditionalExpressions()
-   * @generated
-   */
-  int CONDITIONAL_EXPRESSIONS = 47;
-
-  /**
-   * The feature id for the '<em><b>Condition</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITIONAL_EXPRESSIONS__CONDITION = BLOCK_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Conditional Expressions</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITIONAL_EXPRESSIONS_FEATURE_COUNT = BLOCK_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.IfElseConditionImpl <em>If Else Condition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.IfElseConditionImpl
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getIfElseCondition()
-   * @generated
-   */
-  int IF_ELSE_CONDITION = 48;
-
-  /**
-   * The feature id for the '<em><b>Condition</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_ELSE_CONDITION__CONDITION = CONDITIONAL_EXPRESSIONS__CONDITION;
-
-  /**
-   * The feature id for the '<em><b>If Action</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_ELSE_CONDITION__IF_ACTION = CONDITIONAL_EXPRESSIONS_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Else Action</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_ELSE_CONDITION__ELSE_ACTION = CONDITIONAL_EXPRESSIONS_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>If Else Condition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_ELSE_CONDITION_FEATURE_COUNT = CONDITIONAL_EXPRESSIONS_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.SwitchCaseConditionImpl <em>Switch Case Condition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.SwitchCaseConditionImpl
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSwitchCaseCondition()
-   * @generated
-   */
-  int SWITCH_CASE_CONDITION = 49;
-
-  /**
-   * The feature id for the '<em><b>Condition</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SWITCH_CASE_CONDITION__CONDITION = CONDITIONAL_EXPRESSIONS__CONDITION;
-
-  /**
-   * The feature id for the '<em><b>Case Expression</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SWITCH_CASE_CONDITION__CASE_EXPRESSION = CONDITIONAL_EXPRESSIONS_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Default Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SWITCH_CASE_CONDITION__DEFAULT_EXPRESSION = CONDITIONAL_EXPRESSIONS_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Switch Case Condition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SWITCH_CASE_CONDITION_FEATURE_COUNT = CONDITIONAL_EXPRESSIONS_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.CaseStatementImpl <em>Case Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.CaseStatementImpl
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getCaseStatement()
-   * @generated
-   */
-  int CASE_STATEMENT = 50;
-
-  /**
-   * The feature id for the '<em><b>Condition</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_STATEMENT__CONDITION = 0;
-
-  /**
-   * The feature id for the '<em><b>Action</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_STATEMENT__ACTION = 1;
-
-  /**
-   * The number of structural features of the '<em>Case Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_STATEMENT_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.FunctionDefinitionImpl <em>Function Definition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FunctionDefinitionImpl
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getFunctionDefinition()
-   * @generated
-   */
-  int FUNCTION_DEFINITION = 51;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION__TYPE = MODEL_ELEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION__NAME = MODEL_ELEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION__ARGUMENTS = MODEL_ELEMENT_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION__STATEMENTS = MODEL_ELEMENT_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Return Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION__RETURN_VALUE = MODEL_ELEMENT_FEATURE_COUNT + 4;
-
-  /**
-   * The number of structural features of the '<em>Function Definition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 5;
-
-  /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.ReturnVariableImpl <em>Return Variable</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1856,7 +1486,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getReturnVariable()
    * @generated
    */
-  int RETURN_VARIABLE = 52;
+  int RETURN_VARIABLE = 42;
 
   /**
    * The feature id for the '<em><b>Returnable</b></em>' reference.
@@ -1884,7 +1514,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getReturnable()
    * @generated
    */
-  int RETURNABLE = 53;
+  int RETURNABLE = 43;
 
   /**
    * The number of structural features of the '<em>Returnable</em>' class.
@@ -1903,7 +1533,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getVariableDeclaration()
    * @generated
    */
-  int VARIABLE_DECLARATION = 54;
+  int VARIABLE_DECLARATION = 44;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1940,7 +1570,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getWhileLoopDefinition()
    * @generated
    */
-  int WHILE_LOOP_DEFINITION = 55;
+  int WHILE_LOOP_DEFINITION = 45;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -1977,7 +1607,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 56;
+  int VARIABLE = 46;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1986,7 +1616,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE__NAME = PROCESSING_EXPRESSION_FEATURE_COUNT + 0;
+  int VARIABLE__NAME = MODEL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Variable</em>' class.
@@ -1995,7 +1625,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_FEATURE_COUNT = PROCESSING_EXPRESSION_FEATURE_COUNT + 1;
+  int VARIABLE_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.VariableDefinitionImpl <em>Variable Definition</em>}' class.
@@ -2005,7 +1635,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getVariableDefinition()
    * @generated
    */
-  int VARIABLE_DEFINITION = 57;
+  int VARIABLE_DEFINITION = 47;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2033,7 +1663,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getNumberVariableDefinition()
    * @generated
    */
-  int NUMBER_VARIABLE_DEFINITION = 58;
+  int NUMBER_VARIABLE_DEFINITION = 48;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2079,7 +1709,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStringVariableDefinition()
    * @generated
    */
-  int STRING_VARIABLE_DEFINITION = 59;
+  int STRING_VARIABLE_DEFINITION = 49;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2125,7 +1755,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBooleanVariableDefinition()
    * @generated
    */
-  int BOOLEAN_VARIABLE_DEFINITION = 60;
+  int BOOLEAN_VARIABLE_DEFINITION = 50;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2171,7 +1801,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStructureDeclaration()
    * @generated
    */
-  int STRUCTURE_DECLARATION = 61;
+  int STRUCTURE_DECLARATION = 51;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2208,7 +1838,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStreamDeclaration()
    * @generated
    */
-  int STREAM_DECLARATION = 62;
+  int STREAM_DECLARATION = 52;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2245,7 +1875,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStreamElement()
    * @generated
    */
-  int STREAM_ELEMENT = 63;
+  int STREAM_ELEMENT = 53;
 
   /**
    * The number of structural features of the '<em>Stream Element</em>' class.
@@ -2264,7 +1894,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStructureElements()
    * @generated
    */
-  int STRUCTURE_ELEMENTS = 64;
+  int STRUCTURE_ELEMENTS = 54;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' reference.
@@ -2292,7 +1922,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 65;
+  int EXPRESSION = 55;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -2311,7 +1941,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getDataType()
    * @generated
    */
-  int DATA_TYPE = 66;
+  int DATA_TYPE = 56;
 
   /**
    * The number of structural features of the '<em>Data Type</em>' class.
@@ -2330,7 +1960,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSimpleDataType()
    * @generated
    */
-  int SIMPLE_DATA_TYPE = 67;
+  int SIMPLE_DATA_TYPE = 57;
 
   /**
    * The number of structural features of the '<em>Simple Data Type</em>' class.
@@ -2349,7 +1979,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getComplexDataType()
    * @generated
    */
-  int COMPLEX_DATA_TYPE = 68;
+  int COMPLEX_DATA_TYPE = 58;
 
   /**
    * The number of structural features of the '<em>Complex Data Type</em>' class.
@@ -2368,7 +1998,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getIntegerDataType()
    * @generated
    */
-  int INTEGER_DATA_TYPE = 69;
+  int INTEGER_DATA_TYPE = 59;
 
   /**
    * The number of structural features of the '<em>Integer Data Type</em>' class.
@@ -2387,7 +2017,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBooleanDataType()
    * @generated
    */
-  int BOOLEAN_DATA_TYPE = 70;
+  int BOOLEAN_DATA_TYPE = 60;
 
   /**
    * The number of structural features of the '<em>Boolean Data Type</em>' class.
@@ -2406,7 +2036,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getFloatDataType()
    * @generated
    */
-  int FLOAT_DATA_TYPE = 71;
+  int FLOAT_DATA_TYPE = 61;
 
   /**
    * The number of structural features of the '<em>Float Data Type</em>' class.
@@ -2425,7 +2055,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStringDataType()
    * @generated
    */
-  int STRING_DATA_TYPE = 72;
+  int STRING_DATA_TYPE = 62;
 
   /**
    * The number of structural features of the '<em>String Data Type</em>' class.
@@ -2444,7 +2074,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBooleanOperation()
    * @generated
    */
-  int BOOLEAN_OPERATION = 73;
+  int BOOLEAN_OPERATION = 63;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2490,7 +2120,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getPlus()
    * @generated
    */
-  int PLUS = 74;
+  int PLUS = 64;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2527,7 +2157,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMinus()
    * @generated
    */
-  int MINUS = 75;
+  int MINUS = 65;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2564,7 +2194,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMulti()
    * @generated
    */
-  int MULTI = 76;
+  int MULTI = 66;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2601,7 +2231,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getDiv()
    * @generated
    */
-  int DIV = 77;
+  int DIV = 67;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2638,7 +2268,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 78;
+  int NUMBER_LITERAL = 68;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2666,7 +2296,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getVariableCall()
    * @generated
    */
-  int VARIABLE_CALL = 79;
+  int VARIABLE_CALL = 69;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' reference.
@@ -2685,43 +2315,6 @@ public interface FlowPackage extends EPackage
    * @ordered
    */
   int VARIABLE_CALL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.FunctionCallImpl <em>Function Call</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FunctionCallImpl
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getFunctionCall()
-   * @generated
-   */
-  int FUNCTION_CALL = 80;
-
-  /**
-   * The feature id for the '<em><b>Func</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__FUNC = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__ARGUMENTS = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Function Call</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
 
   /**
@@ -2841,46 +2434,47 @@ public interface FlowPackage extends EPackage
   EReference getStreamStatement_Expression();
 
   /**
-   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.Statement <em>Statement</em>}'.
+   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.StreamStatement#getStatement <em>Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Statement</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.Statement
+   * @return the meta object for the containment reference '<em>Statement</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.StreamStatement#getStatement()
+   * @see #getStreamStatement()
    * @generated
    */
-  EClass getStatement();
+  EReference getStreamStatement_Statement();
 
   /**
-   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.VariableStatement <em>Variable Statement</em>}'.
+   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.StreamVariableStatement <em>Stream Variable Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Variable Statement</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.VariableStatement
+   * @return the meta object for class '<em>Stream Variable Statement</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.StreamVariableStatement
    * @generated
    */
-  EClass getVariableStatement();
+  EClass getStreamVariableStatement();
 
   /**
-   * Returns the meta object for the reference '{@link de.hs_rm.cs.vs.dsm.flow.VariableStatement#getReference <em>Reference</em>}'.
+   * Returns the meta object for the reference '{@link de.hs_rm.cs.vs.dsm.flow.StreamVariableStatement#getReference <em>Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Reference</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.VariableStatement#getReference()
-   * @see #getVariableStatement()
+   * @see de.hs_rm.cs.vs.dsm.flow.StreamVariableStatement#getReference()
+   * @see #getStreamVariableStatement()
    * @generated
    */
-  EReference getVariableStatement_Reference();
+  EReference getStreamVariableStatement_Reference();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.VariableStatement#getExpression <em>Expression</em>}'.
+   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.StreamVariableStatement#getExpression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Expression</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.VariableStatement#getExpression()
-   * @see #getVariableStatement()
+   * @see de.hs_rm.cs.vs.dsm.flow.StreamVariableStatement#getExpression()
+   * @see #getStreamVariableStatement()
    * @generated
    */
-  EReference getVariableStatement_Expression();
+  EReference getStreamVariableStatement_Expression();
 
   /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.StreamAccess <em>Stream Access</em>}'.
@@ -3224,81 +2818,6 @@ public interface FlowPackage extends EPackage
   EReference getDifferenceOperator_Parameters();
 
   /**
-   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.MapOperator <em>Map Operator</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Map Operator</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.MapOperator
-   * @generated
-   */
-  EClass getMapOperator();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.MapOperator#getFunctionList <em>Function List</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Function List</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.MapOperator#getFunctionList()
-   * @see #getMapOperator()
-   * @generated
-   */
-  EReference getMapOperator_FunctionList();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.MapOperator#getStream <em>Stream</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Stream</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.MapOperator#getStream()
-   * @see #getMapOperator()
-   * @generated
-   */
-  EReference getMapOperator_Stream();
-
-  /**
-   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.FunctionStatement <em>Function Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Function Statement</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.FunctionStatement
-   * @generated
-   */
-  EClass getFunctionStatement();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.FunctionStatement#getElement <em>Element</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Element</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.FunctionStatement#getElement()
-   * @see #getFunctionStatement()
-   * @generated
-   */
-  EReference getFunctionStatement_Element();
-
-  /**
-   * Returns the meta object for the reference '{@link de.hs_rm.cs.vs.dsm.flow.FunctionStatement#getFunction <em>Function</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Function</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.FunctionStatement#getFunction()
-   * @see #getFunctionStatement()
-   * @generated
-   */
-  EReference getFunctionStatement_Function();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.FunctionStatement#getArguments <em>Arguments</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Arguments</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.FunctionStatement#getArguments()
-   * @see #getFunctionStatement()
-   * @generated
-   */
-  EReference getFunctionStatement_Arguments();
-
-  /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.InputOperator <em>Input Operator</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3381,17 +2900,6 @@ public interface FlowPackage extends EPackage
    * @generated
    */
   EReference getTagOperator_Parameters();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.TagOperator#getStream <em>Stream</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Stream</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.TagOperator#getStream()
-   * @see #getTagOperator()
-   * @generated
-   */
-  EReference getTagOperator_Stream();
 
   /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.UnTagOperator <em>Un Tag Operator</em>}'.
@@ -3946,16 +3454,6 @@ public interface FlowPackage extends EPackage
   EReference getOutputOperatorParameter_Element();
 
   /**
-   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.ProcessingExpression <em>Processing Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Processing Expression</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.ProcessingExpression
-   * @generated
-   */
-  EClass getProcessingExpression();
-
-  /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.BlockExpression <em>Block Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3964,209 +3462,6 @@ public interface FlowPackage extends EPackage
    * @generated
    */
   EClass getBlockExpression();
-
-  /**
-   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.ReturnStatement <em>Return Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Return Statement</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.ReturnStatement
-   * @generated
-   */
-  EClass getReturnStatement();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.ReturnStatement#getReturnVariable <em>Return Variable</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Return Variable</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.ReturnStatement#getReturnVariable()
-   * @see #getReturnStatement()
-   * @generated
-   */
-  EReference getReturnStatement_ReturnVariable();
-
-  /**
-   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.ConditionalExpressions <em>Conditional Expressions</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Conditional Expressions</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.ConditionalExpressions
-   * @generated
-   */
-  EClass getConditionalExpressions();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.ConditionalExpressions#getCondition <em>Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Condition</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.ConditionalExpressions#getCondition()
-   * @see #getConditionalExpressions()
-   * @generated
-   */
-  EReference getConditionalExpressions_Condition();
-
-  /**
-   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.IfElseCondition <em>If Else Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>If Else Condition</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.IfElseCondition
-   * @generated
-   */
-  EClass getIfElseCondition();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.IfElseCondition#getIfAction <em>If Action</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>If Action</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.IfElseCondition#getIfAction()
-   * @see #getIfElseCondition()
-   * @generated
-   */
-  EReference getIfElseCondition_IfAction();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.IfElseCondition#getElseAction <em>Else Action</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Else Action</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.IfElseCondition#getElseAction()
-   * @see #getIfElseCondition()
-   * @generated
-   */
-  EReference getIfElseCondition_ElseAction();
-
-  /**
-   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.SwitchCaseCondition <em>Switch Case Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Switch Case Condition</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.SwitchCaseCondition
-   * @generated
-   */
-  EClass getSwitchCaseCondition();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.SwitchCaseCondition#getCaseExpression <em>Case Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Case Expression</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.SwitchCaseCondition#getCaseExpression()
-   * @see #getSwitchCaseCondition()
-   * @generated
-   */
-  EReference getSwitchCaseCondition_CaseExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.SwitchCaseCondition#getDefaultExpression <em>Default Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Default Expression</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.SwitchCaseCondition#getDefaultExpression()
-   * @see #getSwitchCaseCondition()
-   * @generated
-   */
-  EReference getSwitchCaseCondition_DefaultExpression();
-
-  /**
-   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.CaseStatement <em>Case Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Case Statement</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.CaseStatement
-   * @generated
-   */
-  EClass getCaseStatement();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.CaseStatement#getCondition <em>Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Condition</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.CaseStatement#getCondition()
-   * @see #getCaseStatement()
-   * @generated
-   */
-  EReference getCaseStatement_Condition();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.CaseStatement#getAction <em>Action</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Action</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.CaseStatement#getAction()
-   * @see #getCaseStatement()
-   * @generated
-   */
-  EReference getCaseStatement_Action();
-
-  /**
-   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.FunctionDefinition <em>Function Definition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Function Definition</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.FunctionDefinition
-   * @generated
-   */
-  EClass getFunctionDefinition();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.FunctionDefinition#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.FunctionDefinition#getType()
-   * @see #getFunctionDefinition()
-   * @generated
-   */
-  EReference getFunctionDefinition_Type();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.FunctionDefinition#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.FunctionDefinition#getName()
-   * @see #getFunctionDefinition()
-   * @generated
-   */
-  EAttribute getFunctionDefinition_Name();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.FunctionDefinition#getArguments <em>Arguments</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Arguments</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.FunctionDefinition#getArguments()
-   * @see #getFunctionDefinition()
-   * @generated
-   */
-  EReference getFunctionDefinition_Arguments();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.FunctionDefinition#getStatements <em>Statements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Statements</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.FunctionDefinition#getStatements()
-   * @see #getFunctionDefinition()
-   * @generated
-   */
-  EReference getFunctionDefinition_Statements();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.FunctionDefinition#getReturnValue <em>Return Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Return Value</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.FunctionDefinition#getReturnValue()
-   * @see #getFunctionDefinition()
-   * @generated
-   */
-  EReference getFunctionDefinition_ReturnValue();
 
   /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.ReturnVariable <em>Return Variable</em>}'.
@@ -4768,38 +4063,6 @@ public interface FlowPackage extends EPackage
   EReference getVariableCall_Variable();
 
   /**
-   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.FunctionCall <em>Function Call</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Function Call</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.FunctionCall
-   * @generated
-   */
-  EClass getFunctionCall();
-
-  /**
-   * Returns the meta object for the reference '{@link de.hs_rm.cs.vs.dsm.flow.FunctionCall#getFunc <em>Func</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Func</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.FunctionCall#getFunc()
-   * @see #getFunctionCall()
-   * @generated
-   */
-  EReference getFunctionCall_Func();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.FunctionCall#getArguments <em>Arguments</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Arguments</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.FunctionCall#getArguments()
-   * @see #getFunctionCall()
-   * @generated
-   */
-  EReference getFunctionCall_Arguments();
-
-  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4921,24 +4184,22 @@ public interface FlowPackage extends EPackage
     EReference STREAM_STATEMENT__EXPRESSION = eINSTANCE.getStreamStatement_Expression();
 
     /**
-     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.StatementImpl <em>Statement</em>}' class.
+     * The meta object literal for the '<em><b>Statement</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.StatementImpl
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStatement()
      * @generated
      */
-    EClass STATEMENT = eINSTANCE.getStatement();
+    EReference STREAM_STATEMENT__STATEMENT = eINSTANCE.getStreamStatement_Statement();
 
     /**
-     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.VariableStatementImpl <em>Variable Statement</em>}' class.
+     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.StreamVariableStatementImpl <em>Stream Variable Statement</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.VariableStatementImpl
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getVariableStatement()
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.StreamVariableStatementImpl
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStreamVariableStatement()
      * @generated
      */
-    EClass VARIABLE_STATEMENT = eINSTANCE.getVariableStatement();
+    EClass STREAM_VARIABLE_STATEMENT = eINSTANCE.getStreamVariableStatement();
 
     /**
      * The meta object literal for the '<em><b>Reference</b></em>' reference feature.
@@ -4946,7 +4207,7 @@ public interface FlowPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VARIABLE_STATEMENT__REFERENCE = eINSTANCE.getVariableStatement_Reference();
+    EReference STREAM_VARIABLE_STATEMENT__REFERENCE = eINSTANCE.getStreamVariableStatement_Reference();
 
     /**
      * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
@@ -4954,7 +4215,7 @@ public interface FlowPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VARIABLE_STATEMENT__EXPRESSION = eINSTANCE.getVariableStatement_Expression();
+    EReference STREAM_VARIABLE_STATEMENT__EXPRESSION = eINSTANCE.getStreamVariableStatement_Expression();
 
     /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.StreamAccessImpl <em>Stream Access</em>}' class.
@@ -5235,66 +4496,6 @@ public interface FlowPackage extends EPackage
     EReference DIFFERENCE_OPERATOR__PARAMETERS = eINSTANCE.getDifferenceOperator_Parameters();
 
     /**
-     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.MapOperatorImpl <em>Map Operator</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.MapOperatorImpl
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMapOperator()
-     * @generated
-     */
-    EClass MAP_OPERATOR = eINSTANCE.getMapOperator();
-
-    /**
-     * The meta object literal for the '<em><b>Function List</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MAP_OPERATOR__FUNCTION_LIST = eINSTANCE.getMapOperator_FunctionList();
-
-    /**
-     * The meta object literal for the '<em><b>Stream</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MAP_OPERATOR__STREAM = eINSTANCE.getMapOperator_Stream();
-
-    /**
-     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.FunctionStatementImpl <em>Function Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.FunctionStatementImpl
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getFunctionStatement()
-     * @generated
-     */
-    EClass FUNCTION_STATEMENT = eINSTANCE.getFunctionStatement();
-
-    /**
-     * The meta object literal for the '<em><b>Element</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_STATEMENT__ELEMENT = eINSTANCE.getFunctionStatement_Element();
-
-    /**
-     * The meta object literal for the '<em><b>Function</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_STATEMENT__FUNCTION = eINSTANCE.getFunctionStatement_Function();
-
-    /**
-     * The meta object literal for the '<em><b>Arguments</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_STATEMENT__ARGUMENTS = eINSTANCE.getFunctionStatement_Arguments();
-
-    /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.InputOperatorImpl <em>Input Operator</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5365,14 +4566,6 @@ public interface FlowPackage extends EPackage
      * @generated
      */
     EReference TAG_OPERATOR__PARAMETERS = eINSTANCE.getTagOperator_Parameters();
-
-    /**
-     * The meta object literal for the '<em><b>Stream</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TAG_OPERATOR__STREAM = eINSTANCE.getTagOperator_Stream();
 
     /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.UnTagOperatorImpl <em>Un Tag Operator</em>}' class.
@@ -5831,16 +5024,6 @@ public interface FlowPackage extends EPackage
     EReference OUTPUT_OPERATOR_PARAMETER__ELEMENT = eINSTANCE.getOutputOperatorParameter_Element();
 
     /**
-     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.ProcessingExpressionImpl <em>Processing Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.ProcessingExpressionImpl
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getProcessingExpression()
-     * @generated
-     */
-    EClass PROCESSING_EXPRESSION = eINSTANCE.getProcessingExpression();
-
-    /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.BlockExpressionImpl <em>Block Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5849,170 +5032,6 @@ public interface FlowPackage extends EPackage
      * @generated
      */
     EClass BLOCK_EXPRESSION = eINSTANCE.getBlockExpression();
-
-    /**
-     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.ReturnStatementImpl <em>Return Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.ReturnStatementImpl
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getReturnStatement()
-     * @generated
-     */
-    EClass RETURN_STATEMENT = eINSTANCE.getReturnStatement();
-
-    /**
-     * The meta object literal for the '<em><b>Return Variable</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference RETURN_STATEMENT__RETURN_VARIABLE = eINSTANCE.getReturnStatement_ReturnVariable();
-
-    /**
-     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.ConditionalExpressionsImpl <em>Conditional Expressions</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.ConditionalExpressionsImpl
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getConditionalExpressions()
-     * @generated
-     */
-    EClass CONDITIONAL_EXPRESSIONS = eINSTANCE.getConditionalExpressions();
-
-    /**
-     * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CONDITIONAL_EXPRESSIONS__CONDITION = eINSTANCE.getConditionalExpressions_Condition();
-
-    /**
-     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.IfElseConditionImpl <em>If Else Condition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.IfElseConditionImpl
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getIfElseCondition()
-     * @generated
-     */
-    EClass IF_ELSE_CONDITION = eINSTANCE.getIfElseCondition();
-
-    /**
-     * The meta object literal for the '<em><b>If Action</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IF_ELSE_CONDITION__IF_ACTION = eINSTANCE.getIfElseCondition_IfAction();
-
-    /**
-     * The meta object literal for the '<em><b>Else Action</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IF_ELSE_CONDITION__ELSE_ACTION = eINSTANCE.getIfElseCondition_ElseAction();
-
-    /**
-     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.SwitchCaseConditionImpl <em>Switch Case Condition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.SwitchCaseConditionImpl
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSwitchCaseCondition()
-     * @generated
-     */
-    EClass SWITCH_CASE_CONDITION = eINSTANCE.getSwitchCaseCondition();
-
-    /**
-     * The meta object literal for the '<em><b>Case Expression</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SWITCH_CASE_CONDITION__CASE_EXPRESSION = eINSTANCE.getSwitchCaseCondition_CaseExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Default Expression</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SWITCH_CASE_CONDITION__DEFAULT_EXPRESSION = eINSTANCE.getSwitchCaseCondition_DefaultExpression();
-
-    /**
-     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.CaseStatementImpl <em>Case Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.CaseStatementImpl
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getCaseStatement()
-     * @generated
-     */
-    EClass CASE_STATEMENT = eINSTANCE.getCaseStatement();
-
-    /**
-     * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CASE_STATEMENT__CONDITION = eINSTANCE.getCaseStatement_Condition();
-
-    /**
-     * The meta object literal for the '<em><b>Action</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CASE_STATEMENT__ACTION = eINSTANCE.getCaseStatement_Action();
-
-    /**
-     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.FunctionDefinitionImpl <em>Function Definition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.FunctionDefinitionImpl
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getFunctionDefinition()
-     * @generated
-     */
-    EClass FUNCTION_DEFINITION = eINSTANCE.getFunctionDefinition();
-
-    /**
-     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_DEFINITION__TYPE = eINSTANCE.getFunctionDefinition_Type();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_DEFINITION__NAME = eINSTANCE.getFunctionDefinition_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Arguments</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_DEFINITION__ARGUMENTS = eINSTANCE.getFunctionDefinition_Arguments();
-
-    /**
-     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_DEFINITION__STATEMENTS = eINSTANCE.getFunctionDefinition_Statements();
-
-    /**
-     * The meta object literal for the '<em><b>Return Value</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_DEFINITION__RETURN_VALUE = eINSTANCE.getFunctionDefinition_ReturnValue();
 
     /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.ReturnVariableImpl <em>Return Variable</em>}' class.
@@ -6525,32 +5544,6 @@ public interface FlowPackage extends EPackage
      * @generated
      */
     EReference VARIABLE_CALL__VARIABLE = eINSTANCE.getVariableCall_Variable();
-
-    /**
-     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.FunctionCallImpl <em>Function Call</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.FunctionCallImpl
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getFunctionCall()
-     * @generated
-     */
-    EClass FUNCTION_CALL = eINSTANCE.getFunctionCall();
-
-    /**
-     * The meta object literal for the '<em><b>Func</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_CALL__FUNC = eINSTANCE.getFunctionCall_Func();
-
-    /**
-     * The meta object literal for the '<em><b>Arguments</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_CALL__ARGUMENTS = eINSTANCE.getFunctionCall_Arguments();
 
   }
 
