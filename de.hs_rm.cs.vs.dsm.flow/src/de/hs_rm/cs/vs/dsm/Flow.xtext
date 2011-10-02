@@ -30,7 +30,7 @@ PackageDeclaration:
 
 ModelElement:
 	PackageDeclaration | Import | StructureDeclaration | 
-	StreamDeclaration | Variable | StreamStatement | StreamDefinition | StreamAccess  | 
+	StreamDeclaration | VariableDefinition | StreamStatement | StreamDefinition | StreamAccess  | 
 	NoReturnTypeOperator;
 	
 /**
@@ -92,8 +92,8 @@ StreamOperatorParameter:
  * and/or variable.
  */
 ElementJoinOperator:
-	'ejoin''('(elementParameters+=StreamAccess | variableElementParameters+=[Variable]) 
-	  (',' elementParameters+=StreamAccess)* (',' variableElementParameters+=[Variable])*
+	'ejoin''('(elementParameters+=StreamAccess | variableElementParameters+=[VariableDefinition]) 
+	  (',' elementParameters+=StreamAccess)* (',' variableElementParameters+=[VariableDefinition])*
 	  ',' parameter=StreamOperatorParameter ')';
 
 /**
@@ -305,33 +305,8 @@ OutputOperator:
 OutputOperatorParameter:
 	element+=StreamAccess (',' element+=StreamAccess)*;
 
-/**
- * Block expression could consists of variable (declaration and definition), statements 
- * (expression with assignments), loops (for and while) and conditional expressions (if
-   and switch/case).
- */
-BlockExpression:
-	Variable | WhileLoopDefinition ;
 
-/** A return variable is of type returnable */
-ReturnVariable:
-	returnable=[Returnable] ';';
 
-/** A return variable could be a variable or the parameter of a function. */
-Returnable : 
-	Variable | ParameterDeclaration;
-
-/** A parameter declaration */
-ParameterDeclaration returns VariableDeclaration:
-	type=DataType name=ID;
-
-WhileLoopDefinition:
-	'while' '(' condition=Expression ')' '{' 
-		statements+=(BlockExpression)*
-	'}';
-
-Variable:
-	VariableDeclaration | VariableDefinition;
 
 VariableDefinition:
 	NumberVariableDefinition | StringVariableDefinition | BooleanVariableDefinition;
@@ -392,7 +367,7 @@ Multiplication returns Expression:
 
 PrimaryExpression returns Expression:
 	'(' Expression ')' |
-	{NumberLiteral} value=NUMBER | {VariableCall} variable=[Variable] | 
+	{NumberLiteral} value=NUMBER | {VariableCall} variable=[VariableDefinition] | 
 	{StreamAccess} streamVariable=StreamAccess;	
 
 /** Definition of numbers (float as well as integer) */

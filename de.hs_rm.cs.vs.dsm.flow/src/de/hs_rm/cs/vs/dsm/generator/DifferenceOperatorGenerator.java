@@ -1,6 +1,5 @@
 package de.hs_rm.cs.vs.dsm.generator;
 
-import de.hs_rm.cs.vs.dsm.flow.CountOperator;
 import de.hs_rm.cs.vs.dsm.flow.DifferenceOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
 

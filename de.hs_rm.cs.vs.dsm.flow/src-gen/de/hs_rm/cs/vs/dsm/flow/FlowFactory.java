@@ -395,31 +395,13 @@ public interface FlowFactory extends EFactory
   OutputOperatorParameter createOutputOperatorParameter();
 
   /**
-   * Returns a new object of class '<em>Block Expression</em>'.
+   * Returns a new object of class '<em>Variable Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Block Expression</em>'.
+   * @return a new object of class '<em>Variable Definition</em>'.
    * @generated
    */
-  BlockExpression createBlockExpression();
-
-  /**
-   * Returns a new object of class '<em>Return Variable</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Return Variable</em>'.
-   * @generated
-   */
-  ReturnVariable createReturnVariable();
-
-  /**
-   * Returns a new object of class '<em>Returnable</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Returnable</em>'.
-   * @generated
-   */
-  Returnable createReturnable();
+  VariableDefinition createVariableDefinition();
 
   /**
    * Returns a new object of class '<em>Variable Declaration</em>'.
@@ -429,33 +411,6 @@ public interface FlowFactory extends EFactory
    * @generated
    */
   VariableDeclaration createVariableDeclaration();
-
-  /**
-   * Returns a new object of class '<em>While Loop Definition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>While Loop Definition</em>'.
-   * @generated
-   */
-  WhileLoopDefinition createWhileLoopDefinition();
-
-  /**
-   * Returns a new object of class '<em>Variable</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable</em>'.
-   * @generated
-   */
-  Variable createVariable();
-
-  /**
-   * Returns a new object of class '<em>Variable Definition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Definition</em>'.
-   * @generated
-   */
-  VariableDefinition createVariableDefinition();
 
   /**
    * Returns a new object of class '<em>Number Variable Definition</em>'.

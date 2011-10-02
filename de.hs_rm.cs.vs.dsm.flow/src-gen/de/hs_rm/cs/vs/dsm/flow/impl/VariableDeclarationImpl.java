@@ -5,12 +5,8 @@
  */
 package de.hs_rm.cs.vs.dsm.flow.impl;
 
-import de.hs_rm.cs.vs.dsm.flow.BlockExpression;
 import de.hs_rm.cs.vs.dsm.flow.DataType;
 import de.hs_rm.cs.vs.dsm.flow.FlowPackage;
-import de.hs_rm.cs.vs.dsm.flow.ModelElement;
-import de.hs_rm.cs.vs.dsm.flow.StreamElement;
-import de.hs_rm.cs.vs.dsm.flow.Variable;
 import de.hs_rm.cs.vs.dsm.flow.VariableDeclaration;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -28,15 +24,25 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.VariableDeclarationImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.VariableDeclarationImpl#getType <em>Type</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.VariableDeclarationImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class VariableDeclarationImpl extends ReturnableImpl implements VariableDeclaration
+public class VariableDeclarationImpl extends StreamElementImpl implements VariableDeclaration
 {
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected DataType type;
+
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -58,16 +64,6 @@ public class VariableDeclarationImpl extends ReturnableImpl implements VariableD
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected DataType type;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -86,29 +82,6 @@ public class VariableDeclarationImpl extends ReturnableImpl implements VariableD
   protected EClass eStaticClass()
   {
     return FlowPackage.Literals.VARIABLE_DECLARATION;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.VARIABLE_DECLARATION__NAME, oldName, name));
   }
 
   /**
@@ -164,6 +137,29 @@ public class VariableDeclarationImpl extends ReturnableImpl implements VariableD
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.VARIABLE_DECLARATION__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -185,10 +181,10 @@ public class VariableDeclarationImpl extends ReturnableImpl implements VariableD
   {
     switch (featureID)
     {
-      case FlowPackage.VARIABLE_DECLARATION__NAME:
-        return getName();
       case FlowPackage.VARIABLE_DECLARATION__TYPE:
         return getType();
+      case FlowPackage.VARIABLE_DECLARATION__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -203,11 +199,11 @@ public class VariableDeclarationImpl extends ReturnableImpl implements VariableD
   {
     switch (featureID)
     {
-      case FlowPackage.VARIABLE_DECLARATION__NAME:
-        setName((String)newValue);
-        return;
       case FlowPackage.VARIABLE_DECLARATION__TYPE:
         setType((DataType)newValue);
+        return;
+      case FlowPackage.VARIABLE_DECLARATION__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -223,11 +219,11 @@ public class VariableDeclarationImpl extends ReturnableImpl implements VariableD
   {
     switch (featureID)
     {
-      case FlowPackage.VARIABLE_DECLARATION__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case FlowPackage.VARIABLE_DECLARATION__TYPE:
         setType((DataType)null);
+        return;
+      case FlowPackage.VARIABLE_DECLARATION__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -243,92 +239,12 @@ public class VariableDeclarationImpl extends ReturnableImpl implements VariableD
   {
     switch (featureID)
     {
-      case FlowPackage.VARIABLE_DECLARATION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case FlowPackage.VARIABLE_DECLARATION__TYPE:
         return type != null;
+      case FlowPackage.VARIABLE_DECLARATION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
-  {
-    if (baseClass == ModelElement.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == BlockExpression.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == Variable.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case FlowPackage.VARIABLE_DECLARATION__NAME: return FlowPackage.VARIABLE__NAME;
-        default: return -1;
-      }
-    }
-    if (baseClass == StreamElement.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
-  {
-    if (baseClass == ModelElement.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == BlockExpression.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == Variable.class)
-    {
-      switch (baseFeatureID)
-      {
-        case FlowPackage.VARIABLE__NAME: return FlowPackage.VARIABLE_DECLARATION__NAME;
-        default: return -1;
-      }
-    }
-    if (baseClass == StreamElement.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
   /**

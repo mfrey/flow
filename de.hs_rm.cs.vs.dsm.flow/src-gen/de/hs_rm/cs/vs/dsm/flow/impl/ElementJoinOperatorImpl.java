@@ -9,7 +9,7 @@ import de.hs_rm.cs.vs.dsm.flow.ElementJoinOperator;
 import de.hs_rm.cs.vs.dsm.flow.FlowPackage;
 import de.hs_rm.cs.vs.dsm.flow.StreamAccess;
 import de.hs_rm.cs.vs.dsm.flow.StreamOperatorParameter;
-import de.hs_rm.cs.vs.dsm.flow.Variable;
+import de.hs_rm.cs.vs.dsm.flow.VariableDefinition;
 
 import java.util.Collection;
 
@@ -62,7 +62,7 @@ public class ElementJoinOperatorImpl extends ReturnTypeOperatorImpl implements E
    * @generated
    * @ordered
    */
-  protected EList<Variable> variableElementParameters;
+  protected EList<VariableDefinition> variableElementParameters;
 
   /**
    * The cached value of the '{@link #getParameter() <em>Parameter</em>}' containment reference.
@@ -114,11 +114,11 @@ public class ElementJoinOperatorImpl extends ReturnTypeOperatorImpl implements E
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Variable> getVariableElementParameters()
+  public EList<VariableDefinition> getVariableElementParameters()
   {
     if (variableElementParameters == null)
     {
-      variableElementParameters = new EObjectResolvingEList<Variable>(Variable.class, this, FlowPackage.ELEMENT_JOIN_OPERATOR__VARIABLE_ELEMENT_PARAMETERS);
+      variableElementParameters = new EObjectResolvingEList<VariableDefinition>(VariableDefinition.class, this, FlowPackage.ELEMENT_JOIN_OPERATOR__VARIABLE_ELEMENT_PARAMETERS);
     }
     return variableElementParameters;
   }
@@ -226,7 +226,7 @@ public class ElementJoinOperatorImpl extends ReturnTypeOperatorImpl implements E
         return;
       case FlowPackage.ELEMENT_JOIN_OPERATOR__VARIABLE_ELEMENT_PARAMETERS:
         getVariableElementParameters().clear();
-        getVariableElementParameters().addAll((Collection<? extends Variable>)newValue);
+        getVariableElementParameters().addAll((Collection<? extends VariableDefinition>)newValue);
         return;
       case FlowPackage.ELEMENT_JOIN_OPERATOR__PARAMETER:
         setParameter((StreamOperatorParameter)newValue);

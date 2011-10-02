@@ -83,19 +83,19 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cImportParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cStructureDeclarationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cStreamDeclarationParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cVariableParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cVariableDefinitionParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cStreamStatementParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		private final RuleCall cStreamDefinitionParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		private final RuleCall cStreamAccessParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		private final RuleCall cNoReturnTypeOperatorParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
 		
 		//ModelElement:
-		//	PackageDeclaration | Import | StructureDeclaration | StreamDeclaration | Variable | StreamStatement | StreamDefinition
-		//	| StreamAccess | NoReturnTypeOperator;
+		//	PackageDeclaration | Import | StructureDeclaration | StreamDeclaration | VariableDefinition | StreamStatement |
+		//	StreamDefinition | StreamAccess | NoReturnTypeOperator;
 		public ParserRule getRule() { return rule; }
 
-		//PackageDeclaration | Import | StructureDeclaration | StreamDeclaration | Variable | StreamStatement | StreamDefinition |
-		//StreamAccess | NoReturnTypeOperator
+		//PackageDeclaration | Import | StructureDeclaration | StreamDeclaration | VariableDefinition | StreamStatement |
+		//StreamDefinition | StreamAccess | NoReturnTypeOperator
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//PackageDeclaration
@@ -110,8 +110,8 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//StreamDeclaration
 		public RuleCall getStreamDeclarationParserRuleCall_3() { return cStreamDeclarationParserRuleCall_3; }
 
-		//Variable
-		public RuleCall getVariableParserRuleCall_4() { return cVariableParserRuleCall_4; }
+		//VariableDefinition
+		public RuleCall getVariableDefinitionParserRuleCall_4() { return cVariableDefinitionParserRuleCall_4; }
 
 		//StreamStatement
 		public RuleCall getStreamStatementParserRuleCall_5() { return cStreamStatementParserRuleCall_5; }
@@ -514,8 +514,8 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cElementParametersAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
 		private final RuleCall cElementParametersStreamAccessParserRuleCall_2_0_0 = (RuleCall)cElementParametersAssignment_2_0.eContents().get(0);
 		private final Assignment cVariableElementParametersAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
-		private final CrossReference cVariableElementParametersVariableCrossReference_2_1_0 = (CrossReference)cVariableElementParametersAssignment_2_1.eContents().get(0);
-		private final RuleCall cVariableElementParametersVariableIDTerminalRuleCall_2_1_0_1 = (RuleCall)cVariableElementParametersVariableCrossReference_2_1_0.eContents().get(1);
+		private final CrossReference cVariableElementParametersVariableDefinitionCrossReference_2_1_0 = (CrossReference)cVariableElementParametersAssignment_2_1.eContents().get(0);
+		private final RuleCall cVariableElementParametersVariableDefinitionIDTerminalRuleCall_2_1_0_1 = (RuleCall)cVariableElementParametersVariableDefinitionCrossReference_2_1_0.eContents().get(1);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cElementParametersAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
@@ -523,8 +523,8 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cVariableElementParametersAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final CrossReference cVariableElementParametersVariableCrossReference_4_1_0 = (CrossReference)cVariableElementParametersAssignment_4_1.eContents().get(0);
-		private final RuleCall cVariableElementParametersVariableIDTerminalRuleCall_4_1_0_1 = (RuleCall)cVariableElementParametersVariableCrossReference_4_1_0.eContents().get(1);
+		private final CrossReference cVariableElementParametersVariableDefinitionCrossReference_4_1_0 = (CrossReference)cVariableElementParametersAssignment_4_1.eContents().get(0);
+		private final RuleCall cVariableElementParametersVariableDefinitionIDTerminalRuleCall_4_1_0_1 = (RuleCall)cVariableElementParametersVariableDefinitionCrossReference_4_1_0.eContents().get(1);
 		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cParameterAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cParameterStreamOperatorParameterParserRuleCall_6_0 = (RuleCall)cParameterAssignment_6.eContents().get(0);
@@ -534,14 +534,14 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		// * The ElementJoinOperator rule defines a join operation on a stream and another stream element
 		// * and/or variable.
 		// * / ElementJoinOperator:
-		//	"ejoin" "(" (elementParameters+=StreamAccess | variableElementParameters+=[Variable]) (","
-		//	elementParameters+=StreamAccess)* ("," variableElementParameters+=[Variable])* "," parameter=StreamOperatorParameter
-		//	")";
+		//	"ejoin" "(" (elementParameters+=StreamAccess | variableElementParameters+=[VariableDefinition]) (","
+		//	elementParameters+=StreamAccess)* ("," variableElementParameters+=[VariableDefinition])* ","
+		//	parameter=StreamOperatorParameter ")";
 		public ParserRule getRule() { return rule; }
 
-		//"ejoin" "(" (elementParameters+=StreamAccess | variableElementParameters+=[Variable]) (","
-		//elementParameters+=StreamAccess)* ("," variableElementParameters+=[Variable])* "," parameter=StreamOperatorParameter
-		//")"
+		//"ejoin" "(" (elementParameters+=StreamAccess | variableElementParameters+=[VariableDefinition]) (","
+		//elementParameters+=StreamAccess)* ("," variableElementParameters+=[VariableDefinition])* ","
+		//parameter=StreamOperatorParameter ")"
 		public Group getGroup() { return cGroup; }
 
 		//"ejoin"
@@ -550,7 +550,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//elementParameters+=StreamAccess | variableElementParameters+=[Variable]
+		//elementParameters+=StreamAccess | variableElementParameters+=[VariableDefinition]
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 
 		//elementParameters+=StreamAccess
@@ -559,14 +559,14 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//StreamAccess
 		public RuleCall getElementParametersStreamAccessParserRuleCall_2_0_0() { return cElementParametersStreamAccessParserRuleCall_2_0_0; }
 
-		//variableElementParameters+=[Variable]
+		//variableElementParameters+=[VariableDefinition]
 		public Assignment getVariableElementParametersAssignment_2_1() { return cVariableElementParametersAssignment_2_1; }
 
-		//[Variable]
-		public CrossReference getVariableElementParametersVariableCrossReference_2_1_0() { return cVariableElementParametersVariableCrossReference_2_1_0; }
+		//[VariableDefinition]
+		public CrossReference getVariableElementParametersVariableDefinitionCrossReference_2_1_0() { return cVariableElementParametersVariableDefinitionCrossReference_2_1_0; }
 
 		//ID
-		public RuleCall getVariableElementParametersVariableIDTerminalRuleCall_2_1_0_1() { return cVariableElementParametersVariableIDTerminalRuleCall_2_1_0_1; }
+		public RuleCall getVariableElementParametersVariableDefinitionIDTerminalRuleCall_2_1_0_1() { return cVariableElementParametersVariableDefinitionIDTerminalRuleCall_2_1_0_1; }
 
 		//("," elementParameters+=StreamAccess)*
 		public Group getGroup_3() { return cGroup_3; }
@@ -580,20 +580,20 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//StreamAccess
 		public RuleCall getElementParametersStreamAccessParserRuleCall_3_1_0() { return cElementParametersStreamAccessParserRuleCall_3_1_0; }
 
-		//("," variableElementParameters+=[Variable])*
+		//("," variableElementParameters+=[VariableDefinition])*
 		public Group getGroup_4() { return cGroup_4; }
 
 		//","
 		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
 
-		//variableElementParameters+=[Variable]
+		//variableElementParameters+=[VariableDefinition]
 		public Assignment getVariableElementParametersAssignment_4_1() { return cVariableElementParametersAssignment_4_1; }
 
-		//[Variable]
-		public CrossReference getVariableElementParametersVariableCrossReference_4_1_0() { return cVariableElementParametersVariableCrossReference_4_1_0; }
+		//[VariableDefinition]
+		public CrossReference getVariableElementParametersVariableDefinitionCrossReference_4_1_0() { return cVariableElementParametersVariableDefinitionCrossReference_4_1_0; }
 
 		//ID
-		public RuleCall getVariableElementParametersVariableIDTerminalRuleCall_4_1_0_1() { return cVariableElementParametersVariableIDTerminalRuleCall_4_1_0_1; }
+		public RuleCall getVariableElementParametersVariableDefinitionIDTerminalRuleCall_4_1_0_1() { return cVariableElementParametersVariableDefinitionIDTerminalRuleCall_4_1_0_1; }
 
 		//","
 		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
@@ -2081,174 +2081,6 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getElementStreamAccessParserRuleCall_1_1_0() { return cElementStreamAccessParserRuleCall_1_1_0; }
 	}
 
-	public class BlockExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BlockExpression");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cVariableParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cWhileLoopDefinitionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		/// **
-		// * Block expression could consists of variable (declaration and definition), statements 
-		// * (expression with assignments), loops (for and while) and conditional expressions (if
-		//   and switch/case).
-		// * / BlockExpression:
-		//	Variable | WhileLoopDefinition;
-		public ParserRule getRule() { return rule; }
-
-		//Variable | WhileLoopDefinition
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//Variable
-		public RuleCall getVariableParserRuleCall_0() { return cVariableParserRuleCall_0; }
-
-		//WhileLoopDefinition
-		public RuleCall getWhileLoopDefinitionParserRuleCall_1() { return cWhileLoopDefinitionParserRuleCall_1; }
-	}
-
-	public class ReturnVariableElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ReturnVariable");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cReturnableAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cReturnableReturnableCrossReference_0_0 = (CrossReference)cReturnableAssignment_0.eContents().get(0);
-		private final RuleCall cReturnableReturnableIDTerminalRuleCall_0_0_1 = (RuleCall)cReturnableReturnableCrossReference_0_0.eContents().get(1);
-		private final Keyword cSemicolonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		
-		/// ** A return variable is of type returnable * / ReturnVariable:
-		//	returnable=[Returnable] ";";
-		public ParserRule getRule() { return rule; }
-
-		//returnable=[Returnable] ";"
-		public Group getGroup() { return cGroup; }
-
-		//returnable=[Returnable]
-		public Assignment getReturnableAssignment_0() { return cReturnableAssignment_0; }
-
-		//[Returnable]
-		public CrossReference getReturnableReturnableCrossReference_0_0() { return cReturnableReturnableCrossReference_0_0; }
-
-		//ID
-		public RuleCall getReturnableReturnableIDTerminalRuleCall_0_0_1() { return cReturnableReturnableIDTerminalRuleCall_0_0_1; }
-
-		//";"
-		public Keyword getSemicolonKeyword_1() { return cSemicolonKeyword_1; }
-	}
-
-	public class ReturnableElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Returnable");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cVariableParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cParameterDeclarationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		/// ** A return variable could be a variable or the parameter of a function. * / Returnable:
-		//	Variable | ParameterDeclaration;
-		public ParserRule getRule() { return rule; }
-
-		//Variable | ParameterDeclaration
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//Variable
-		public RuleCall getVariableParserRuleCall_0() { return cVariableParserRuleCall_0; }
-
-		//ParameterDeclaration
-		public RuleCall getParameterDeclarationParserRuleCall_1() { return cParameterDeclarationParserRuleCall_1; }
-	}
-
-	public class ParameterDeclarationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ParameterDeclaration");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cTypeDataTypeParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		
-		/// ** A parameter declaration * / ParameterDeclaration returns VariableDeclaration:
-		//	type=DataType name=ID;
-		public ParserRule getRule() { return rule; }
-
-		//type=DataType name=ID
-		public Group getGroup() { return cGroup; }
-
-		//type=DataType
-		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
-
-		//DataType
-		public RuleCall getTypeDataTypeParserRuleCall_0_0() { return cTypeDataTypeParserRuleCall_0_0; }
-
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-	}
-
-	public class WhileLoopDefinitionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WhileLoopDefinition");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cWhileKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cConditionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cConditionExpressionParserRuleCall_2_0 = (RuleCall)cConditionAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cStatementsAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cStatementsBlockExpressionParserRuleCall_5_0 = (RuleCall)cStatementsAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		
-		//WhileLoopDefinition:
-		//	"while" "(" condition=Expression ")" "{" statements+=BlockExpression* "}";
-		public ParserRule getRule() { return rule; }
-
-		//"while" "(" condition=Expression ")" "{" statements+=BlockExpression* "}"
-		public Group getGroup() { return cGroup; }
-
-		//"while"
-		public Keyword getWhileKeyword_0() { return cWhileKeyword_0; }
-
-		//"("
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-
-		//condition=Expression
-		public Assignment getConditionAssignment_2() { return cConditionAssignment_2; }
-
-		//Expression
-		public RuleCall getConditionExpressionParserRuleCall_2_0() { return cConditionExpressionParserRuleCall_2_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
-
-		//statements+=BlockExpression*
-		public Assignment getStatementsAssignment_5() { return cStatementsAssignment_5; }
-
-		//BlockExpression
-		public RuleCall getStatementsBlockExpressionParserRuleCall_5_0() { return cStatementsBlockExpressionParserRuleCall_5_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
-	}
-
-	public class VariableElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Variable");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cVariableDeclarationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cVariableDefinitionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//Variable:
-		//	VariableDeclaration | VariableDefinition;
-		public ParserRule getRule() { return rule; }
-
-		//VariableDeclaration | VariableDefinition
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//VariableDeclaration
-		public RuleCall getVariableDeclarationParserRuleCall_0() { return cVariableDeclarationParserRuleCall_0; }
-
-		//VariableDefinition
-		public RuleCall getVariableDefinitionParserRuleCall_1() { return cVariableDefinitionParserRuleCall_1; }
-	}
-
 	public class VariableDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VariableDefinition");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -2863,19 +2695,19 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final Action cVariableCallAction_2_0 = (Action)cGroup_2.eContents().get(0);
 		private final Assignment cVariableAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final CrossReference cVariableVariableCrossReference_2_1_0 = (CrossReference)cVariableAssignment_2_1.eContents().get(0);
-		private final RuleCall cVariableVariableIDTerminalRuleCall_2_1_0_1 = (RuleCall)cVariableVariableCrossReference_2_1_0.eContents().get(1);
+		private final CrossReference cVariableVariableDefinitionCrossReference_2_1_0 = (CrossReference)cVariableAssignment_2_1.eContents().get(0);
+		private final RuleCall cVariableVariableDefinitionIDTerminalRuleCall_2_1_0_1 = (RuleCall)cVariableVariableDefinitionCrossReference_2_1_0.eContents().get(1);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
 		private final Action cStreamAccessAction_3_0 = (Action)cGroup_3.eContents().get(0);
 		private final Assignment cStreamVariableAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cStreamVariableStreamAccessParserRuleCall_3_1_0 = (RuleCall)cStreamVariableAssignment_3_1.eContents().get(0);
 		
 		//PrimaryExpression returns Expression:
-		//	"(" Expression ")" | {NumberLiteral} value=NUMBER | {VariableCall} variable=[Variable] | {StreamAccess}
+		//	"(" Expression ")" | {NumberLiteral} value=NUMBER | {VariableCall} variable=[VariableDefinition] | {StreamAccess}
 		//	streamVariable=StreamAccess;
 		public ParserRule getRule() { return rule; }
 
-		//"(" Expression ")" | {NumberLiteral} value=NUMBER | {VariableCall} variable=[Variable] | {StreamAccess}
+		//"(" Expression ")" | {NumberLiteral} value=NUMBER | {VariableCall} variable=[VariableDefinition] | {StreamAccess}
 		//streamVariable=StreamAccess
 		public Alternatives getAlternatives() { return cAlternatives; }
 
@@ -2903,20 +2735,20 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//NUMBER
 		public RuleCall getValueNUMBERTerminalRuleCall_1_1_0() { return cValueNUMBERTerminalRuleCall_1_1_0; }
 
-		//{VariableCall} variable=[Variable]
+		//{VariableCall} variable=[VariableDefinition]
 		public Group getGroup_2() { return cGroup_2; }
 
 		//{VariableCall}
 		public Action getVariableCallAction_2_0() { return cVariableCallAction_2_0; }
 
-		//variable=[Variable]
+		//variable=[VariableDefinition]
 		public Assignment getVariableAssignment_2_1() { return cVariableAssignment_2_1; }
 
-		//[Variable]
-		public CrossReference getVariableVariableCrossReference_2_1_0() { return cVariableVariableCrossReference_2_1_0; }
+		//[VariableDefinition]
+		public CrossReference getVariableVariableDefinitionCrossReference_2_1_0() { return cVariableVariableDefinitionCrossReference_2_1_0; }
 
 		//ID
-		public RuleCall getVariableVariableIDTerminalRuleCall_2_1_0_1() { return cVariableVariableIDTerminalRuleCall_2_1_0_1; }
+		public RuleCall getVariableVariableDefinitionIDTerminalRuleCall_2_1_0_1() { return cVariableVariableDefinitionIDTerminalRuleCall_2_1_0_1; }
 
 		//{StreamAccess} streamVariable=StreamAccess
 		public Group getGroup_3() { return cGroup_3; }
@@ -3109,12 +2941,6 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	private AverageOperatorElements pAverageOperator;
 	private OutputOperatorElements pOutputOperator;
 	private OutputOperatorParameterElements pOutputOperatorParameter;
-	private BlockExpressionElements pBlockExpression;
-	private ReturnVariableElements pReturnVariable;
-	private ReturnableElements pReturnable;
-	private ParameterDeclarationElements pParameterDeclaration;
-	private WhileLoopDefinitionElements pWhileLoopDefinition;
-	private VariableElements pVariable;
 	private VariableDefinitionElements pVariableDefinition;
 	private VariableDeclarationElements pVariableDeclaration;
 	private NumberVariableDefinitionElements pNumberVariableDefinition;
@@ -3185,8 +3011,8 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ModelElement:
-	//	PackageDeclaration | Import | StructureDeclaration | StreamDeclaration | Variable | StreamStatement | StreamDefinition
-	//	| StreamAccess | NoReturnTypeOperator;
+	//	PackageDeclaration | Import | StructureDeclaration | StreamDeclaration | VariableDefinition | StreamStatement |
+	//	StreamDefinition | StreamAccess | NoReturnTypeOperator;
 	public ModelElementElements getModelElementAccess() {
 		return (pModelElement != null) ? pModelElement : (pModelElement = new ModelElementElements());
 	}
@@ -3300,9 +3126,9 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	// * The ElementJoinOperator rule defines a join operation on a stream and another stream element
 	// * and/or variable.
 	// * / ElementJoinOperator:
-	//	"ejoin" "(" (elementParameters+=StreamAccess | variableElementParameters+=[Variable]) (","
-	//	elementParameters+=StreamAccess)* ("," variableElementParameters+=[Variable])* "," parameter=StreamOperatorParameter
-	//	")";
+	//	"ejoin" "(" (elementParameters+=StreamAccess | variableElementParameters+=[VariableDefinition]) (","
+	//	elementParameters+=StreamAccess)* ("," variableElementParameters+=[VariableDefinition])* ","
+	//	parameter=StreamOperatorParameter ")";
 	public ElementJoinOperatorElements getElementJoinOperatorAccess() {
 		return (pElementJoinOperator != null) ? pElementJoinOperator : (pElementJoinOperator = new ElementJoinOperatorElements());
 	}
@@ -3697,70 +3523,6 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		return getOutputOperatorParameterAccess().getRule();
 	}
 
-	/// **
-	// * Block expression could consists of variable (declaration and definition), statements 
-	// * (expression with assignments), loops (for and while) and conditional expressions (if
-	//   and switch/case).
-	// * / BlockExpression:
-	//	Variable | WhileLoopDefinition;
-	public BlockExpressionElements getBlockExpressionAccess() {
-		return (pBlockExpression != null) ? pBlockExpression : (pBlockExpression = new BlockExpressionElements());
-	}
-	
-	public ParserRule getBlockExpressionRule() {
-		return getBlockExpressionAccess().getRule();
-	}
-
-	/// ** A return variable is of type returnable * / ReturnVariable:
-	//	returnable=[Returnable] ";";
-	public ReturnVariableElements getReturnVariableAccess() {
-		return (pReturnVariable != null) ? pReturnVariable : (pReturnVariable = new ReturnVariableElements());
-	}
-	
-	public ParserRule getReturnVariableRule() {
-		return getReturnVariableAccess().getRule();
-	}
-
-	/// ** A return variable could be a variable or the parameter of a function. * / Returnable:
-	//	Variable | ParameterDeclaration;
-	public ReturnableElements getReturnableAccess() {
-		return (pReturnable != null) ? pReturnable : (pReturnable = new ReturnableElements());
-	}
-	
-	public ParserRule getReturnableRule() {
-		return getReturnableAccess().getRule();
-	}
-
-	/// ** A parameter declaration * / ParameterDeclaration returns VariableDeclaration:
-	//	type=DataType name=ID;
-	public ParameterDeclarationElements getParameterDeclarationAccess() {
-		return (pParameterDeclaration != null) ? pParameterDeclaration : (pParameterDeclaration = new ParameterDeclarationElements());
-	}
-	
-	public ParserRule getParameterDeclarationRule() {
-		return getParameterDeclarationAccess().getRule();
-	}
-
-	//WhileLoopDefinition:
-	//	"while" "(" condition=Expression ")" "{" statements+=BlockExpression* "}";
-	public WhileLoopDefinitionElements getWhileLoopDefinitionAccess() {
-		return (pWhileLoopDefinition != null) ? pWhileLoopDefinition : (pWhileLoopDefinition = new WhileLoopDefinitionElements());
-	}
-	
-	public ParserRule getWhileLoopDefinitionRule() {
-		return getWhileLoopDefinitionAccess().getRule();
-	}
-
-	//Variable:
-	//	VariableDeclaration | VariableDefinition;
-	public VariableElements getVariableAccess() {
-		return (pVariable != null) ? pVariable : (pVariable = new VariableElements());
-	}
-	
-	public ParserRule getVariableRule() {
-		return getVariableAccess().getRule();
-	}
-
 	//VariableDefinition:
 	//	NumberVariableDefinition | StringVariableDefinition | BooleanVariableDefinition;
 	public VariableDefinitionElements getVariableDefinitionAccess() {
@@ -3914,7 +3676,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PrimaryExpression returns Expression:
-	//	"(" Expression ")" | {NumberLiteral} value=NUMBER | {VariableCall} variable=[Variable] | {StreamAccess}
+	//	"(" Expression ")" | {NumberLiteral} value=NUMBER | {VariableCall} variable=[VariableDefinition] | {StreamAccess}
 	//	streamVariable=StreamAccess;
 	public PrimaryExpressionElements getPrimaryExpressionAccess() {
 		return (pPrimaryExpression != null) ? pPrimaryExpression : (pPrimaryExpression = new PrimaryExpressionElements());

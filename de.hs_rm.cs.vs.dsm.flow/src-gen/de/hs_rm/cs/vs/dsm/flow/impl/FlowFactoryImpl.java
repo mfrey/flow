@@ -108,13 +108,8 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.AVERAGE_OPERATOR: return createAverageOperator();
       case FlowPackage.OUTPUT_OPERATOR: return createOutputOperator();
       case FlowPackage.OUTPUT_OPERATOR_PARAMETER: return createOutputOperatorParameter();
-      case FlowPackage.BLOCK_EXPRESSION: return createBlockExpression();
-      case FlowPackage.RETURN_VARIABLE: return createReturnVariable();
-      case FlowPackage.RETURNABLE: return createReturnable();
-      case FlowPackage.VARIABLE_DECLARATION: return createVariableDeclaration();
-      case FlowPackage.WHILE_LOOP_DEFINITION: return createWhileLoopDefinition();
-      case FlowPackage.VARIABLE: return createVariable();
       case FlowPackage.VARIABLE_DEFINITION: return createVariableDefinition();
+      case FlowPackage.VARIABLE_DECLARATION: return createVariableDeclaration();
       case FlowPackage.NUMBER_VARIABLE_DEFINITION: return createNumberVariableDefinition();
       case FlowPackage.STRING_VARIABLE_DEFINITION: return createStringVariableDefinition();
       case FlowPackage.BOOLEAN_VARIABLE_DEFINITION: return createBooleanVariableDefinition();
@@ -598,32 +593,10 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BlockExpression createBlockExpression()
+  public VariableDefinition createVariableDefinition()
   {
-    BlockExpressionImpl blockExpression = new BlockExpressionImpl();
-    return blockExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ReturnVariable createReturnVariable()
-  {
-    ReturnVariableImpl returnVariable = new ReturnVariableImpl();
-    return returnVariable;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Returnable createReturnable()
-  {
-    ReturnableImpl returnable = new ReturnableImpl();
-    return returnable;
+    VariableDefinitionImpl variableDefinition = new VariableDefinitionImpl();
+    return variableDefinition;
   }
 
   /**
@@ -635,39 +608,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
   {
     VariableDeclarationImpl variableDeclaration = new VariableDeclarationImpl();
     return variableDeclaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public WhileLoopDefinition createWhileLoopDefinition()
-  {
-    WhileLoopDefinitionImpl whileLoopDefinition = new WhileLoopDefinitionImpl();
-    return whileLoopDefinition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Variable createVariable()
-  {
-    VariableImpl variable = new VariableImpl();
-    return variable;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VariableDefinition createVariableDefinition()
-  {
-    VariableDefinitionImpl variableDefinition = new VariableDefinitionImpl();
-    return variableDefinition;
   }
 
   /**

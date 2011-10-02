@@ -6,8 +6,8 @@
 package de.hs_rm.cs.vs.dsm.flow.impl;
 
 import de.hs_rm.cs.vs.dsm.flow.FlowPackage;
-import de.hs_rm.cs.vs.dsm.flow.Variable;
 import de.hs_rm.cs.vs.dsm.flow.VariableCall;
+import de.hs_rm.cs.vs.dsm.flow.VariableDefinition;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -39,7 +39,7 @@ public class VariableCallImpl extends ExpressionImpl implements VariableCall
    * @generated
    * @ordered
    */
-  protected Variable variable;
+  protected VariableDefinition variable;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,12 +67,12 @@ public class VariableCallImpl extends ExpressionImpl implements VariableCall
    * <!-- end-user-doc -->
    * @generated
    */
-  public Variable getVariable()
+  public VariableDefinition getVariable()
   {
     if (variable != null && variable.eIsProxy())
     {
       InternalEObject oldVariable = (InternalEObject)variable;
-      variable = (Variable)eResolveProxy(oldVariable);
+      variable = (VariableDefinition)eResolveProxy(oldVariable);
       if (variable != oldVariable)
       {
         if (eNotificationRequired())
@@ -87,7 +87,7 @@ public class VariableCallImpl extends ExpressionImpl implements VariableCall
    * <!-- end-user-doc -->
    * @generated
    */
-  public Variable basicGetVariable()
+  public VariableDefinition basicGetVariable()
   {
     return variable;
   }
@@ -97,9 +97,9 @@ public class VariableCallImpl extends ExpressionImpl implements VariableCall
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariable(Variable newVariable)
+  public void setVariable(VariableDefinition newVariable)
   {
-    Variable oldVariable = variable;
+    VariableDefinition oldVariable = variable;
     variable = newVariable;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.VARIABLE_CALL__VARIABLE, oldVariable, variable));
@@ -133,7 +133,7 @@ public class VariableCallImpl extends ExpressionImpl implements VariableCall
     switch (featureID)
     {
       case FlowPackage.VARIABLE_CALL__VARIABLE:
-        setVariable((Variable)newValue);
+        setVariable((VariableDefinition)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -150,7 +150,7 @@ public class VariableCallImpl extends ExpressionImpl implements VariableCall
     switch (featureID)
     {
       case FlowPackage.VARIABLE_CALL__VARIABLE:
-        setVariable((Variable)null);
+        setVariable((VariableDefinition)null);
         return;
     }
     super.eUnset(featureID);

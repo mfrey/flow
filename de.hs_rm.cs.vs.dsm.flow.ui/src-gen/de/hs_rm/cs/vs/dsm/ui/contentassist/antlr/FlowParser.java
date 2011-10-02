@@ -45,9 +45,6 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBarrierOperatorAccess().getAlternatives(), "rule__BarrierOperator__Alternatives");
 					put(grammarAccess.getWindowOperatorAccess().getAlternatives(), "rule__WindowOperator__Alternatives");
 					put(grammarAccess.getWindowOperatorAccess().getUnitAlternatives_0_2_0(), "rule__WindowOperator__UnitAlternatives_0_2_0");
-					put(grammarAccess.getBlockExpressionAccess().getAlternatives(), "rule__BlockExpression__Alternatives");
-					put(grammarAccess.getReturnableAccess().getAlternatives(), "rule__Returnable__Alternatives");
-					put(grammarAccess.getVariableAccess().getAlternatives(), "rule__Variable__Alternatives");
 					put(grammarAccess.getVariableDefinitionAccess().getAlternatives(), "rule__VariableDefinition__Alternatives");
 					put(grammarAccess.getStreamElementAccess().getAlternatives(), "rule__StreamElement__Alternatives");
 					put(grammarAccess.getRelationalExpressionAccess().getOperatorAlternatives_1_1_0(), "rule__RelationalExpression__OperatorAlternatives_1_1_0");
@@ -108,9 +105,6 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getOutputOperatorAccess().getGroup(), "rule__OutputOperator__Group__0");
 					put(grammarAccess.getOutputOperatorParameterAccess().getGroup(), "rule__OutputOperatorParameter__Group__0");
 					put(grammarAccess.getOutputOperatorParameterAccess().getGroup_1(), "rule__OutputOperatorParameter__Group_1__0");
-					put(grammarAccess.getReturnVariableAccess().getGroup(), "rule__ReturnVariable__Group__0");
-					put(grammarAccess.getParameterDeclarationAccess().getGroup(), "rule__ParameterDeclaration__Group__0");
-					put(grammarAccess.getWhileLoopDefinitionAccess().getGroup(), "rule__WhileLoopDefinition__Group__0");
 					put(grammarAccess.getVariableDeclarationAccess().getGroup(), "rule__VariableDeclaration__Group__0");
 					put(grammarAccess.getNumberVariableDefinitionAccess().getGroup(), "rule__NumberVariableDefinition__Group__0");
 					put(grammarAccess.getStringVariableDefinitionAccess().getGroup(), "rule__StringVariableDefinition__Group__0");
@@ -227,11 +221,6 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getOutputOperatorAccess().getStreamAssignment_6(), "rule__OutputOperator__StreamAssignment_6");
 					put(grammarAccess.getOutputOperatorParameterAccess().getElementAssignment_0(), "rule__OutputOperatorParameter__ElementAssignment_0");
 					put(grammarAccess.getOutputOperatorParameterAccess().getElementAssignment_1_1(), "rule__OutputOperatorParameter__ElementAssignment_1_1");
-					put(grammarAccess.getReturnVariableAccess().getReturnableAssignment_0(), "rule__ReturnVariable__ReturnableAssignment_0");
-					put(grammarAccess.getParameterDeclarationAccess().getTypeAssignment_0(), "rule__ParameterDeclaration__TypeAssignment_0");
-					put(grammarAccess.getParameterDeclarationAccess().getNameAssignment_1(), "rule__ParameterDeclaration__NameAssignment_1");
-					put(grammarAccess.getWhileLoopDefinitionAccess().getConditionAssignment_2(), "rule__WhileLoopDefinition__ConditionAssignment_2");
-					put(grammarAccess.getWhileLoopDefinitionAccess().getStatementsAssignment_5(), "rule__WhileLoopDefinition__StatementsAssignment_5");
 					put(grammarAccess.getVariableDeclarationAccess().getTypeAssignment_0(), "rule__VariableDeclaration__TypeAssignment_0");
 					put(grammarAccess.getVariableDeclarationAccess().getNameAssignment_1(), "rule__VariableDeclaration__NameAssignment_1");
 					put(grammarAccess.getNumberVariableDefinitionAccess().getTypeAssignment_0(), "rule__NumberVariableDefinition__TypeAssignment_0");

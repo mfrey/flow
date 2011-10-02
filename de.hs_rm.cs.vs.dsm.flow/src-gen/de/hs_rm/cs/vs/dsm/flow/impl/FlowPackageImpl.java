@@ -8,7 +8,6 @@ package de.hs_rm.cs.vs.dsm.flow.impl;
 import de.hs_rm.cs.vs.dsm.flow.AntecedentRule;
 import de.hs_rm.cs.vs.dsm.flow.AverageOperator;
 import de.hs_rm.cs.vs.dsm.flow.BarrierOperator;
-import de.hs_rm.cs.vs.dsm.flow.BlockExpression;
 import de.hs_rm.cs.vs.dsm.flow.BooleanDataType;
 import de.hs_rm.cs.vs.dsm.flow.BooleanOperation;
 import de.hs_rm.cs.vs.dsm.flow.BooleanVariableDefinition;
@@ -43,8 +42,6 @@ import de.hs_rm.cs.vs.dsm.flow.OutputOperatorParameter;
 import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.Plus;
 import de.hs_rm.cs.vs.dsm.flow.ReturnTypeOperator;
-import de.hs_rm.cs.vs.dsm.flow.ReturnVariable;
-import de.hs_rm.cs.vs.dsm.flow.Returnable;
 import de.hs_rm.cs.vs.dsm.flow.Rule;
 import de.hs_rm.cs.vs.dsm.flow.SWRLOperator;
 import de.hs_rm.cs.vs.dsm.flow.SWRLRule;
@@ -71,11 +68,9 @@ import de.hs_rm.cs.vs.dsm.flow.TagObjectPropertyElement;
 import de.hs_rm.cs.vs.dsm.flow.TagOperator;
 import de.hs_rm.cs.vs.dsm.flow.UnTagElement;
 import de.hs_rm.cs.vs.dsm.flow.UnTagOperator;
-import de.hs_rm.cs.vs.dsm.flow.Variable;
 import de.hs_rm.cs.vs.dsm.flow.VariableCall;
 import de.hs_rm.cs.vs.dsm.flow.VariableDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.VariableDefinition;
-import de.hs_rm.cs.vs.dsm.flow.WhileLoopDefinition;
 import de.hs_rm.cs.vs.dsm.flow.WindowOperator;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -389,21 +384,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass blockExpressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass returnVariableEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass returnableEClass = null;
+  private EClass variableDefinitionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -411,27 +392,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * @generated
    */
   private EClass variableDeclarationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass whileLoopDefinitionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass variableEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass variableDefinitionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1729,9 +1689,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBlockExpression()
+  public EClass getVariableDefinition()
   {
-    return blockExpressionEClass;
+    return variableDefinitionEClass;
   }
 
   /**
@@ -1739,29 +1699,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getReturnVariable()
+  public EAttribute getVariableDefinition_Name()
   {
-    return returnVariableEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getReturnVariable_Returnable()
-  {
-    return (EReference)returnVariableEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getReturnable()
-  {
-    return returnableEClass;
+    return (EAttribute)variableDefinitionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1789,59 +1729,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getWhileLoopDefinition()
+  public EAttribute getVariableDeclaration_Name()
   {
-    return whileLoopDefinitionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getWhileLoopDefinition_Condition()
-  {
-    return (EReference)whileLoopDefinitionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getWhileLoopDefinition_Statements()
-  {
-    return (EReference)whileLoopDefinitionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getVariable()
-  {
-    return variableEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getVariable_Name()
-  {
-    return (EAttribute)variableEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getVariableDefinition()
-  {
-    return variableDefinitionEClass;
+    return (EAttribute)variableDeclarationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2482,24 +2372,12 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     outputOperatorParameterEClass = createEClass(OUTPUT_OPERATOR_PARAMETER);
     createEReference(outputOperatorParameterEClass, OUTPUT_OPERATOR_PARAMETER__ELEMENT);
 
-    blockExpressionEClass = createEClass(BLOCK_EXPRESSION);
-
-    returnVariableEClass = createEClass(RETURN_VARIABLE);
-    createEReference(returnVariableEClass, RETURN_VARIABLE__RETURNABLE);
-
-    returnableEClass = createEClass(RETURNABLE);
+    variableDefinitionEClass = createEClass(VARIABLE_DEFINITION);
+    createEAttribute(variableDefinitionEClass, VARIABLE_DEFINITION__NAME);
 
     variableDeclarationEClass = createEClass(VARIABLE_DECLARATION);
     createEReference(variableDeclarationEClass, VARIABLE_DECLARATION__TYPE);
-
-    whileLoopDefinitionEClass = createEClass(WHILE_LOOP_DEFINITION);
-    createEReference(whileLoopDefinitionEClass, WHILE_LOOP_DEFINITION__CONDITION);
-    createEReference(whileLoopDefinitionEClass, WHILE_LOOP_DEFINITION__STATEMENTS);
-
-    variableEClass = createEClass(VARIABLE);
-    createEAttribute(variableEClass, VARIABLE__NAME);
-
-    variableDefinitionEClass = createEClass(VARIABLE_DEFINITION);
+    createEAttribute(variableDeclarationEClass, VARIABLE_DECLARATION__NAME);
 
     numberVariableDefinitionEClass = createEClass(NUMBER_VARIABLE_DEFINITION);
     createEReference(numberVariableDefinitionEClass, NUMBER_VARIABLE_DEFINITION__TYPE);
@@ -2630,14 +2508,8 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     standardDeviationOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     averageOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     outputOperatorEClass.getESuperTypes().add(this.getNoReturnTypeOperator());
-    variableDeclarationEClass.getESuperTypes().add(this.getReturnable());
-    variableDeclarationEClass.getESuperTypes().add(this.getVariable());
+    variableDefinitionEClass.getESuperTypes().add(this.getModelElement());
     variableDeclarationEClass.getESuperTypes().add(this.getStreamElement());
-    whileLoopDefinitionEClass.getESuperTypes().add(this.getBlockExpression());
-    variableEClass.getESuperTypes().add(this.getModelElement());
-    variableEClass.getESuperTypes().add(this.getBlockExpression());
-    variableEClass.getESuperTypes().add(this.getReturnable());
-    variableDefinitionEClass.getESuperTypes().add(this.getVariable());
     numberVariableDefinitionEClass.getESuperTypes().add(this.getVariableDefinition());
     stringVariableDefinitionEClass.getESuperTypes().add(this.getVariableDefinition());
     booleanVariableDefinitionEClass.getESuperTypes().add(this.getVariableDefinition());
@@ -2702,7 +2574,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     initEClass(elementJoinOperatorEClass, ElementJoinOperator.class, "ElementJoinOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getElementJoinOperator_ElementParameters(), this.getStreamAccess(), null, "elementParameters", null, 0, -1, ElementJoinOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getElementJoinOperator_VariableElementParameters(), this.getVariable(), null, "variableElementParameters", null, 0, -1, ElementJoinOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getElementJoinOperator_VariableElementParameters(), this.getVariableDefinition(), null, "variableElementParameters", null, 0, -1, ElementJoinOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getElementJoinOperator_Parameter(), this.getStreamOperatorParameter(), null, "parameter", null, 0, 1, ElementJoinOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(filterOperatorEClass, FilterOperator.class, "FilterOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2807,24 +2679,12 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEClass(outputOperatorParameterEClass, OutputOperatorParameter.class, "OutputOperatorParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOutputOperatorParameter_Element(), this.getStreamAccess(), null, "element", null, 0, -1, OutputOperatorParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(blockExpressionEClass, BlockExpression.class, "BlockExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(returnVariableEClass, ReturnVariable.class, "ReturnVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getReturnVariable_Returnable(), this.getReturnable(), null, "returnable", null, 0, 1, ReturnVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(returnableEClass, Returnable.class, "Returnable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(variableDefinitionEClass, VariableDefinition.class, "VariableDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVariableDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, VariableDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableDeclarationEClass, VariableDeclaration.class, "VariableDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVariableDeclaration_Type(), this.getDataType(), null, "type", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(whileLoopDefinitionEClass, WhileLoopDefinition.class, "WhileLoopDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getWhileLoopDefinition_Condition(), this.getExpression(), null, "condition", null, 0, 1, WhileLoopDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getWhileLoopDefinition_Statements(), this.getBlockExpression(), null, "statements", null, 0, -1, WhileLoopDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(variableDefinitionEClass, VariableDefinition.class, "VariableDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVariableDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(numberVariableDefinitionEClass, NumberVariableDefinition.class, "NumberVariableDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getNumberVariableDefinition_Type(), this.getSimpleDataType(), null, "type", null, 0, 1, NumberVariableDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2892,7 +2752,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEAttribute(getNumberLiteral_Value(), ecorePackage.getEBigDecimal(), "value", null, 0, 1, NumberLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableCallEClass, VariableCall.class, "VariableCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getVariableCall_Variable(), this.getVariable(), null, "variable", null, 0, 1, VariableCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariableCall_Variable(), this.getVariableDefinition(), null, "variable", null, 0, 1, VariableCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

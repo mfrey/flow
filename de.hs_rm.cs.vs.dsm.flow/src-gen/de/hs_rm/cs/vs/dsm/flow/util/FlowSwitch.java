@@ -391,24 +391,11 @@ public class FlowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FlowPackage.BLOCK_EXPRESSION:
+      case FlowPackage.VARIABLE_DEFINITION:
       {
-        BlockExpression blockExpression = (BlockExpression)theEObject;
-        T result = caseBlockExpression(blockExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FlowPackage.RETURN_VARIABLE:
-      {
-        ReturnVariable returnVariable = (ReturnVariable)theEObject;
-        T result = caseReturnVariable(returnVariable);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FlowPackage.RETURNABLE:
-      {
-        Returnable returnable = (Returnable)theEObject;
-        T result = caseReturnable(returnable);
+        VariableDefinition variableDefinition = (VariableDefinition)theEObject;
+        T result = caseVariableDefinition(variableDefinition);
+        if (result == null) result = caseModelElement(variableDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -416,40 +403,7 @@ public class FlowSwitch<T> extends Switch<T>
       {
         VariableDeclaration variableDeclaration = (VariableDeclaration)theEObject;
         T result = caseVariableDeclaration(variableDeclaration);
-        if (result == null) result = caseVariable(variableDeclaration);
         if (result == null) result = caseStreamElement(variableDeclaration);
-        if (result == null) result = caseReturnable(variableDeclaration);
-        if (result == null) result = caseModelElement(variableDeclaration);
-        if (result == null) result = caseBlockExpression(variableDeclaration);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FlowPackage.WHILE_LOOP_DEFINITION:
-      {
-        WhileLoopDefinition whileLoopDefinition = (WhileLoopDefinition)theEObject;
-        T result = caseWhileLoopDefinition(whileLoopDefinition);
-        if (result == null) result = caseBlockExpression(whileLoopDefinition);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FlowPackage.VARIABLE:
-      {
-        Variable variable = (Variable)theEObject;
-        T result = caseVariable(variable);
-        if (result == null) result = caseModelElement(variable);
-        if (result == null) result = caseBlockExpression(variable);
-        if (result == null) result = caseReturnable(variable);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FlowPackage.VARIABLE_DEFINITION:
-      {
-        VariableDefinition variableDefinition = (VariableDefinition)theEObject;
-        T result = caseVariableDefinition(variableDefinition);
-        if (result == null) result = caseVariable(variableDefinition);
-        if (result == null) result = caseModelElement(variableDefinition);
-        if (result == null) result = caseBlockExpression(variableDefinition);
-        if (result == null) result = caseReturnable(variableDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -458,10 +412,7 @@ public class FlowSwitch<T> extends Switch<T>
         NumberVariableDefinition numberVariableDefinition = (NumberVariableDefinition)theEObject;
         T result = caseNumberVariableDefinition(numberVariableDefinition);
         if (result == null) result = caseVariableDefinition(numberVariableDefinition);
-        if (result == null) result = caseVariable(numberVariableDefinition);
         if (result == null) result = caseModelElement(numberVariableDefinition);
-        if (result == null) result = caseBlockExpression(numberVariableDefinition);
-        if (result == null) result = caseReturnable(numberVariableDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -470,10 +421,7 @@ public class FlowSwitch<T> extends Switch<T>
         StringVariableDefinition stringVariableDefinition = (StringVariableDefinition)theEObject;
         T result = caseStringVariableDefinition(stringVariableDefinition);
         if (result == null) result = caseVariableDefinition(stringVariableDefinition);
-        if (result == null) result = caseVariable(stringVariableDefinition);
         if (result == null) result = caseModelElement(stringVariableDefinition);
-        if (result == null) result = caseBlockExpression(stringVariableDefinition);
-        if (result == null) result = caseReturnable(stringVariableDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -482,10 +430,7 @@ public class FlowSwitch<T> extends Switch<T>
         BooleanVariableDefinition booleanVariableDefinition = (BooleanVariableDefinition)theEObject;
         T result = caseBooleanVariableDefinition(booleanVariableDefinition);
         if (result == null) result = caseVariableDefinition(booleanVariableDefinition);
-        if (result == null) result = caseVariable(booleanVariableDefinition);
         if (result == null) result = caseModelElement(booleanVariableDefinition);
-        if (result == null) result = caseBlockExpression(booleanVariableDefinition);
-        if (result == null) result = caseReturnable(booleanVariableDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1303,49 +1248,17 @@ public class FlowSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Block Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Variable Definition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Block Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Variable Definition</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBlockExpression(BlockExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Return Variable</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Return Variable</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseReturnVariable(ReturnVariable object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Returnable</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Returnable</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseReturnable(Returnable object)
+  public T caseVariableDefinition(VariableDefinition object)
   {
     return null;
   }
@@ -1362,54 +1275,6 @@ public class FlowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseVariableDeclaration(VariableDeclaration object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>While Loop Definition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>While Loop Definition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseWhileLoopDefinition(WhileLoopDefinition object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseVariable(Variable object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable Definition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable Definition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseVariableDefinition(VariableDefinition object)
   {
     return null;
   }

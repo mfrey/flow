@@ -33,12 +33,12 @@ public interface VariableCall extends Expression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Variable</em>' reference.
-   * @see #setVariable(Variable)
+   * @see #setVariable(VariableDefinition)
    * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getVariableCall_Variable()
    * @model
    * @generated
    */
-  Variable getVariable();
+  VariableDefinition getVariable();
 
   /**
    * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.VariableCall#getVariable <em>Variable</em>}' reference.
@@ -48,6 +48,6 @@ public interface VariableCall extends Expression
    * @see #getVariable()
    * @generated
    */
-  void setVariable(Variable value);
+  void setVariable(VariableDefinition value);
 
 } // VariableCall

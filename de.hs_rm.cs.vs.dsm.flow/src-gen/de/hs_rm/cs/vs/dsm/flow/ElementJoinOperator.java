@@ -45,7 +45,7 @@ public interface ElementJoinOperator extends ReturnTypeOperator
 
   /**
    * Returns the value of the '<em><b>Variable Element Parameters</b></em>' reference list.
-   * The list contents are of type {@link de.hs_rm.cs.vs.dsm.flow.Variable}.
+   * The list contents are of type {@link de.hs_rm.cs.vs.dsm.flow.VariableDefinition}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Variable Element Parameters</em>' reference list isn't clear,
@@ -57,7 +57,7 @@ public interface ElementJoinOperator extends ReturnTypeOperator
    * @model
    * @generated
    */
-  EList<Variable> getVariableElementParameters();
+  EList<VariableDefinition> getVariableElementParameters();
 
   /**
    * Returns the value of the '<em><b>Parameter</b></em>' containment reference.
