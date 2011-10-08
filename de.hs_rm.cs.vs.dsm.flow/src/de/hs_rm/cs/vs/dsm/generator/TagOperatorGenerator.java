@@ -27,7 +27,7 @@ public class TagOperatorGenerator extends AbstractOperatorGenerator {
 		// Call the constructor of the abstract operator class
 		super(pStatement);
 		// Store the operator in the attribute
-		this.mOperator = (TagOperator) pStatement.getExpression();
+		this.mOperator = (TagOperator) pStatement.getOperator();
 		// TODO: Add the input stream to the list
 		// this.getInputStreams().add(this.mOperator.getStream().getStream().getName());
 	}

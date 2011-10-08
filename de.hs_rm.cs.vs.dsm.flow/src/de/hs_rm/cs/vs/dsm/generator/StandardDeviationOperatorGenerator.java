@@ -24,7 +24,7 @@ public class StandardDeviationOperatorGenerator extends AbstractOperatorGenerato
 	public StandardDeviationOperatorGenerator(StreamStatement pStatement) {
 		super(pStatement);
 		// Store the operator in the attribute
-		this.mOperator = (StandardDeviationOperator) pStatement.getExpression();
+		this.mOperator = (StandardDeviationOperator) pStatement.getOperator();
 		// Add the input stream to the corresponding array list (in the abstract operator class)
 		this.getInputStreams().add(this.mOperator.getParameter().getReference().getName());
 	}

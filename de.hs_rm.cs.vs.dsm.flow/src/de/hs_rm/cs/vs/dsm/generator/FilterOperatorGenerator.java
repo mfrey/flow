@@ -13,7 +13,7 @@ public class FilterOperatorGenerator extends AbstractOperatorGenerator {
 		// Call the constructor of the abstract operator class
 		super(pStatement);
 		// Store the operator in the attribute
-		this.mOperator = (FilterOperator) pStatement.getExpression();
+		this.mOperator = (FilterOperator) pStatement.getOperator();
 		// Set name of the internal stream representation
 		this.setOperatorStream(OPERATOR_TYPE + this.mOperator.hashCode());
 	}

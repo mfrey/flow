@@ -26,6 +26,7 @@ import de.hs_rm.cs.vs.dsm.flow.FlowPackage;
 import de.hs_rm.cs.vs.dsm.flow.Import;
 import de.hs_rm.cs.vs.dsm.flow.InputOperator;
 import de.hs_rm.cs.vs.dsm.flow.IntegerDataType;
+import de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier;
 import de.hs_rm.cs.vs.dsm.flow.JoinOperator;
 import de.hs_rm.cs.vs.dsm.flow.MarkerOperator;
 import de.hs_rm.cs.vs.dsm.flow.MatchOperator;
@@ -33,6 +34,7 @@ import de.hs_rm.cs.vs.dsm.flow.Minus;
 import de.hs_rm.cs.vs.dsm.flow.Model;
 import de.hs_rm.cs.vs.dsm.flow.ModelElement;
 import de.hs_rm.cs.vs.dsm.flow.Multi;
+import de.hs_rm.cs.vs.dsm.flow.NewTagOperator;
 import de.hs_rm.cs.vs.dsm.flow.NoReturnTypeOperator;
 import de.hs_rm.cs.vs.dsm.flow.NumberLiteral;
 import de.hs_rm.cs.vs.dsm.flow.NumberVariableDefinition;
@@ -41,11 +43,16 @@ import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperatorParameter;
 import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.Plus;
+import de.hs_rm.cs.vs.dsm.flow.QueryTagOperator;
 import de.hs_rm.cs.vs.dsm.flow.ReturnTypeOperator;
 import de.hs_rm.cs.vs.dsm.flow.Rule;
 import de.hs_rm.cs.vs.dsm.flow.SWRLOperator;
 import de.hs_rm.cs.vs.dsm.flow.SWRLRule;
+import de.hs_rm.cs.vs.dsm.flow.Scheme;
 import de.hs_rm.cs.vs.dsm.flow.SimpleDataType;
+import de.hs_rm.cs.vs.dsm.flow.SparqlQuery;
+import de.hs_rm.cs.vs.dsm.flow.SparqlQueryType;
+import de.hs_rm.cs.vs.dsm.flow.SparqlQueryVariable;
 import de.hs_rm.cs.vs.dsm.flow.SplitOperator;
 import de.hs_rm.cs.vs.dsm.flow.StandardDeviationOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamAccess;
@@ -75,6 +82,7 @@ import de.hs_rm.cs.vs.dsm.flow.WindowOperator;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -238,6 +246,34 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * @generated
    */
   private EClass tagOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass newTagOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass queryTagOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass sparqlQueryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass sparqlQueryVariableEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -503,6 +539,13 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass internationalizedResourceIdentifierEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass booleanOperationEClass = null;
 
   /**
@@ -546,6 +589,20 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * @generated
    */
   private EClass variableCallEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum sparqlQueryTypeEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum schemeEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -719,7 +776,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStreamStatement_Expression()
+  public EReference getStreamStatement_Operator()
   {
     return (EReference)streamStatementEClass.getEStructuralFeatures().get(1);
   }
@@ -729,7 +786,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStreamStatement_Statement()
+  public EReference getStreamStatement_Expression()
   {
     return (EReference)streamStatementEClass.getEStructuralFeatures().get(2);
   }
@@ -1099,9 +1156,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getInputOperator_Iri()
+  public EReference getInputOperator_Iri()
   {
-    return (EAttribute)inputOperatorEClass.getEStructuralFeatures().get(0);
+    return (EReference)inputOperatorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1162,6 +1219,106 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
   public EReference getTagOperator_Parameters()
   {
     return (EReference)tagOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNewTagOperator()
+  {
+    return newTagOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNewTagOperator_Query()
+  {
+    return (EReference)newTagOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNewTagOperator_Target()
+  {
+    return (EAttribute)newTagOperatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getQueryTagOperator()
+  {
+    return queryTagOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQueryTagOperator_QueryType()
+  {
+    return (EAttribute)queryTagOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getQueryTagOperator_Query()
+  {
+    return (EReference)queryTagOperatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSparqlQuery()
+  {
+    return sparqlQueryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSparqlQuery_Variable()
+  {
+    return (EReference)sparqlQueryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSparqlQueryVariable()
+  {
+    return sparqlQueryVariableEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSparqlQueryVariable_Variable()
+  {
+    return (EAttribute)sparqlQueryVariableEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1999,6 +2156,66 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getInternationalizedResourceIdentifier()
+  {
+    return internationalizedResourceIdentifierEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInternationalizedResourceIdentifier_Scheme()
+  {
+    return (EAttribute)internationalizedResourceIdentifierEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInternationalizedResourceIdentifier_Authority()
+  {
+    return (EAttribute)internationalizedResourceIdentifierEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInternationalizedResourceIdentifier_Path()
+  {
+    return (EAttribute)internationalizedResourceIdentifierEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInternationalizedResourceIdentifier_Query()
+  {
+    return (EAttribute)internationalizedResourceIdentifierEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInternationalizedResourceIdentifier_FragmentIRI()
+  {
+    return (EAttribute)internationalizedResourceIdentifierEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getBooleanOperation()
   {
     return booleanOperationEClass;
@@ -2199,6 +2416,26 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EEnum getSparqlQueryType()
+  {
+    return sparqlQueryTypeEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getScheme()
+  {
+    return schemeEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public FlowFactory getFlowFactory()
   {
     return (FlowFactory)getEFactoryInstance();
@@ -2238,8 +2475,8 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     streamStatementEClass = createEClass(STREAM_STATEMENT);
     createEReference(streamStatementEClass, STREAM_STATEMENT__RETURN_STREAM);
+    createEReference(streamStatementEClass, STREAM_STATEMENT__OPERATOR);
     createEReference(streamStatementEClass, STREAM_STATEMENT__EXPRESSION);
-    createEReference(streamStatementEClass, STREAM_STATEMENT__STATEMENT);
 
     streamVariableStatementEClass = createEClass(STREAM_VARIABLE_STATEMENT);
     createEReference(streamVariableStatementEClass, STREAM_VARIABLE_STATEMENT__REFERENCE);
@@ -2289,7 +2526,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     createEReference(differenceOperatorEClass, DIFFERENCE_OPERATOR__PARAMETERS);
 
     inputOperatorEClass = createEClass(INPUT_OPERATOR);
-    createEAttribute(inputOperatorEClass, INPUT_OPERATOR__IRI);
+    createEReference(inputOperatorEClass, INPUT_OPERATOR__IRI);
     createEAttribute(inputOperatorEClass, INPUT_OPERATOR__PORT);
     createEAttribute(inputOperatorEClass, INPUT_OPERATOR__SOCKET);
 
@@ -2299,6 +2536,20 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     tagOperatorEClass = createEClass(TAG_OPERATOR);
     createEReference(tagOperatorEClass, TAG_OPERATOR__PARAMETERS);
+
+    newTagOperatorEClass = createEClass(NEW_TAG_OPERATOR);
+    createEReference(newTagOperatorEClass, NEW_TAG_OPERATOR__QUERY);
+    createEAttribute(newTagOperatorEClass, NEW_TAG_OPERATOR__TARGET);
+
+    queryTagOperatorEClass = createEClass(QUERY_TAG_OPERATOR);
+    createEAttribute(queryTagOperatorEClass, QUERY_TAG_OPERATOR__QUERY_TYPE);
+    createEReference(queryTagOperatorEClass, QUERY_TAG_OPERATOR__QUERY);
+
+    sparqlQueryEClass = createEClass(SPARQL_QUERY);
+    createEReference(sparqlQueryEClass, SPARQL_QUERY__VARIABLE);
+
+    sparqlQueryVariableEClass = createEClass(SPARQL_QUERY_VARIABLE);
+    createEAttribute(sparqlQueryVariableEClass, SPARQL_QUERY_VARIABLE__VARIABLE);
 
     unTagOperatorEClass = createEClass(UN_TAG_OPERATOR);
     createEReference(unTagOperatorEClass, UN_TAG_OPERATOR__PARAMETERS);
@@ -2420,6 +2671,13 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     stringDataTypeEClass = createEClass(STRING_DATA_TYPE);
 
+    internationalizedResourceIdentifierEClass = createEClass(INTERNATIONALIZED_RESOURCE_IDENTIFIER);
+    createEAttribute(internationalizedResourceIdentifierEClass, INTERNATIONALIZED_RESOURCE_IDENTIFIER__SCHEME);
+    createEAttribute(internationalizedResourceIdentifierEClass, INTERNATIONALIZED_RESOURCE_IDENTIFIER__AUTHORITY);
+    createEAttribute(internationalizedResourceIdentifierEClass, INTERNATIONALIZED_RESOURCE_IDENTIFIER__PATH);
+    createEAttribute(internationalizedResourceIdentifierEClass, INTERNATIONALIZED_RESOURCE_IDENTIFIER__QUERY);
+    createEAttribute(internationalizedResourceIdentifierEClass, INTERNATIONALIZED_RESOURCE_IDENTIFIER__FRAGMENT_IRI);
+
     booleanOperationEClass = createEClass(BOOLEAN_OPERATION);
     createEReference(booleanOperationEClass, BOOLEAN_OPERATION__LEFT);
     createEAttribute(booleanOperationEClass, BOOLEAN_OPERATION__OPERATOR);
@@ -2446,6 +2704,10 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     variableCallEClass = createEClass(VARIABLE_CALL);
     createEReference(variableCallEClass, VARIABLE_CALL__VARIABLE);
+
+    // Create enums
+    sparqlQueryTypeEEnum = createEEnum(SPARQL_QUERY_TYPE);
+    schemeEEnum = createEEnum(SCHEME);
   }
 
   /**
@@ -2545,8 +2807,8 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     initEClass(streamStatementEClass, StreamStatement.class, "StreamStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStreamStatement_ReturnStream(), this.getStreamDefinition(), null, "returnStream", null, 0, -1, StreamStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStreamStatement_Expression(), this.getReturnTypeOperator(), null, "expression", null, 0, 1, StreamStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStreamStatement_Statement(), this.getExpression(), null, "statement", null, 0, 1, StreamStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStreamStatement_Operator(), this.getReturnTypeOperator(), null, "operator", null, 0, 1, StreamStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStreamStatement_Expression(), this.getExpression(), null, "expression", null, 0, 1, StreamStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(streamVariableStatementEClass, StreamVariableStatement.class, "StreamVariableStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStreamVariableStatement_Reference(), this.getStreamDefinition(), null, "reference", null, 0, 1, StreamVariableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2596,7 +2858,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEReference(getDifferenceOperator_Parameters(), this.getStreamOperatorParameter(), null, "parameters", null, 0, -1, DifferenceOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(inputOperatorEClass, InputOperator.class, "InputOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInputOperator_Iri(), ecorePackage.getEString(), "iri", null, 0, -1, InputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInputOperator_Iri(), this.getInternationalizedResourceIdentifier(), null, "iri", null, 0, -1, InputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInputOperator_Port(), ecorePackage.getEBigDecimal(), "port", null, 0, 1, InputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInputOperator_Socket(), ecorePackage.getEString(), "socket", null, 0, 1, InputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2606,6 +2868,20 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     initEClass(tagOperatorEClass, TagOperator.class, "TagOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTagOperator_Parameters(), this.getTagElement(), null, "parameters", null, 0, -1, TagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(newTagOperatorEClass, NewTagOperator.class, "NewTagOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNewTagOperator_Query(), this.getQueryTagOperator(), null, "query", null, 0, 1, NewTagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNewTagOperator_Target(), ecorePackage.getEString(), "target", null, 0, 1, NewTagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(queryTagOperatorEClass, QueryTagOperator.class, "QueryTagOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getQueryTagOperator_QueryType(), this.getSparqlQueryType(), "queryType", null, 0, 1, QueryTagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getQueryTagOperator_Query(), this.getSparqlQuery(), null, "query", null, 0, 1, QueryTagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(sparqlQueryEClass, SparqlQuery.class, "SparqlQuery", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSparqlQuery_Variable(), this.getSparqlQueryVariable(), null, "variable", null, 0, 1, SparqlQuery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(sparqlQueryVariableEClass, SparqlQueryVariable.class, "SparqlQueryVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSparqlQueryVariable_Variable(), ecorePackage.getEString(), "variable", null, 0, -1, SparqlQueryVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(unTagOperatorEClass, UnTagOperator.class, "UnTagOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getUnTagOperator_Parameters(), this.getUnTagElement(), null, "parameters", null, 0, -1, UnTagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2727,6 +3003,13 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     initEClass(stringDataTypeEClass, StringDataType.class, "StringDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(internationalizedResourceIdentifierEClass, InternationalizedResourceIdentifier.class, "InternationalizedResourceIdentifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInternationalizedResourceIdentifier_Scheme(), this.getScheme(), "scheme", null, 0, 1, InternationalizedResourceIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInternationalizedResourceIdentifier_Authority(), ecorePackage.getEString(), "authority", null, 0, 1, InternationalizedResourceIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInternationalizedResourceIdentifier_Path(), ecorePackage.getEString(), "path", null, 0, -1, InternationalizedResourceIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInternationalizedResourceIdentifier_Query(), ecorePackage.getEString(), "query", null, 0, 1, InternationalizedResourceIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInternationalizedResourceIdentifier_FragmentIRI(), ecorePackage.getEString(), "fragmentIRI", null, 0, 1, InternationalizedResourceIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(booleanOperationEClass, BooleanOperation.class, "BooleanOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBooleanOperation_Left(), this.getExpression(), null, "left", null, 0, 1, BooleanOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getBooleanOperation_Operator(), ecorePackage.getEString(), "operator", null, 0, 1, BooleanOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2753,6 +3036,18 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     initEClass(variableCallEClass, VariableCall.class, "VariableCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVariableCall_Variable(), this.getVariableDefinition(), null, "variable", null, 0, 1, VariableCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    // Initialize enums and add enum literals
+    initEEnum(sparqlQueryTypeEEnum, SparqlQueryType.class, "SparqlQueryType");
+    addEEnumLiteral(sparqlQueryTypeEEnum, SparqlQueryType.SELECT);
+    addEEnumLiteral(sparqlQueryTypeEEnum, SparqlQueryType.CONSTRUCT);
+    addEEnumLiteral(sparqlQueryTypeEEnum, SparqlQueryType.ASK);
+    addEEnumLiteral(sparqlQueryTypeEEnum, SparqlQueryType.DESCRIBE);
+
+    initEEnum(schemeEEnum, Scheme.class, "Scheme");
+    addEEnumLiteral(schemeEEnum, Scheme.HTTP);
+    addEEnumLiteral(schemeEEnum, Scheme.FTP);
+    addEEnumLiteral(schemeEEnum, Scheme.FILE);
 
     // Create resource
     createResource(eNS_URI);

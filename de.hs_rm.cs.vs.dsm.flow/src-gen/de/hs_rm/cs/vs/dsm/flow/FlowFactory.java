@@ -215,6 +215,42 @@ public interface FlowFactory extends EFactory
   TagOperator createTagOperator();
 
   /**
+   * Returns a new object of class '<em>New Tag Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>New Tag Operator</em>'.
+   * @generated
+   */
+  NewTagOperator createNewTagOperator();
+
+  /**
+   * Returns a new object of class '<em>Query Tag Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Query Tag Operator</em>'.
+   * @generated
+   */
+  QueryTagOperator createQueryTagOperator();
+
+  /**
+   * Returns a new object of class '<em>Sparql Query</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sparql Query</em>'.
+   * @generated
+   */
+  SparqlQuery createSparqlQuery();
+
+  /**
+   * Returns a new object of class '<em>Sparql Query Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sparql Query Variable</em>'.
+   * @generated
+   */
+  SparqlQueryVariable createSparqlQueryVariable();
+
+  /**
    * Returns a new object of class '<em>Un Tag Operator</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -546,6 +582,15 @@ public interface FlowFactory extends EFactory
    * @generated
    */
   StringDataType createStringDataType();
+
+  /**
+   * Returns a new object of class '<em>Internationalized Resource Identifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Internationalized Resource Identifier</em>'.
+   * @generated
+   */
+  InternationalizedResourceIdentifier createInternationalizedResourceIdentifier();
 
   /**
    * Returns a new object of class '<em>Boolean Operation</em>'.

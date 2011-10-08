@@ -24,7 +24,7 @@ public class AverageOperatorGenerator extends AbstractOperatorGenerator {
 	public AverageOperatorGenerator(final StreamStatement pStatement) {
 		super(pStatement);
 		// Store the operator in the attribute
-		this.mOperator = (AverageOperator) pStatement.getExpression();
+		this.mOperator = (AverageOperator) pStatement.getOperator();
 		// Add the input stream to the corresponding array list (in the abstract operator class)
 		this.getInputStreams().add(this.mOperator.getParameter().getReference().getName());
 	}

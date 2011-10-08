@@ -183,6 +183,26 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
         return createTagOperatorAdapter();
       }
       @Override
+      public Adapter caseNewTagOperator(NewTagOperator object)
+      {
+        return createNewTagOperatorAdapter();
+      }
+      @Override
+      public Adapter caseQueryTagOperator(QueryTagOperator object)
+      {
+        return createQueryTagOperatorAdapter();
+      }
+      @Override
+      public Adapter caseSparqlQuery(SparqlQuery object)
+      {
+        return createSparqlQueryAdapter();
+      }
+      @Override
+      public Adapter caseSparqlQueryVariable(SparqlQueryVariable object)
+      {
+        return createSparqlQueryVariableAdapter();
+      }
+      @Override
       public Adapter caseUnTagOperator(UnTagOperator object)
       {
         return createUnTagOperatorAdapter();
@@ -366,6 +386,11 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
       public Adapter caseStringDataType(StringDataType object)
       {
         return createStringDataTypeAdapter();
+      }
+      @Override
+      public Adapter caseInternationalizedResourceIdentifier(InternationalizedResourceIdentifier object)
+      {
+        return createInternationalizedResourceIdentifierAdapter();
       }
       @Override
       public Adapter caseBooleanOperation(BooleanOperation object)
@@ -735,6 +760,66 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTagOperatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.NewTagOperator <em>New Tag Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.hs_rm.cs.vs.dsm.flow.NewTagOperator
+   * @generated
+   */
+  public Adapter createNewTagOperatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.QueryTagOperator <em>Query Tag Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.hs_rm.cs.vs.dsm.flow.QueryTagOperator
+   * @generated
+   */
+  public Adapter createQueryTagOperatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.SparqlQuery <em>Sparql Query</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.hs_rm.cs.vs.dsm.flow.SparqlQuery
+   * @generated
+   */
+  public Adapter createSparqlQueryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.SparqlQueryVariable <em>Sparql Query Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.hs_rm.cs.vs.dsm.flow.SparqlQueryVariable
+   * @generated
+   */
+  public Adapter createSparqlQueryVariableAdapter()
   {
     return null;
   }
@@ -1290,6 +1375,21 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStringDataTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier <em>Internationalized Resource Identifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier
+   * @generated
+   */
+  public Adapter createInternationalizedResourceIdentifierAdapter()
   {
     return null;
   }

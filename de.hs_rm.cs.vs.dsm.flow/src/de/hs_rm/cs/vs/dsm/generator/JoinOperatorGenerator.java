@@ -24,7 +24,7 @@ public class JoinOperatorGenerator extends AbstractOperatorGenerator {
 		// Call the constructor of the abstract operator class
 		super(pStatement);
 		// Store the operator in the attribute
-		this.mOperator = (JoinOperator) pStatement.getExpression();
+		this.mOperator = (JoinOperator) pStatement.getOperator();
 		// Add the input streams to the list
 		for(int i = 0; i < this.mOperator.getParameters().size(); i++){
 			this.getInputStreams().add( this.mOperator.getParameters().get(i).getStream().getName());

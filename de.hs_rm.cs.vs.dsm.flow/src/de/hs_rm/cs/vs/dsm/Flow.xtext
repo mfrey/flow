@@ -5,6 +5,7 @@ hidden(WS, ML_COMMENT, SL_COMMENT)
 
 /** Import of the ecore model */
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
 /** Import of the base ocl ecore model */
 //import "platform:/resource/de.hs_rm.cs.vs.dsm.flow/model/BaseCST.ecore" as base
 /** Import of the ocl ecore model */
@@ -46,7 +47,7 @@ Import:
  */
 StreamStatement:
 	returnStream+=[StreamDefinition] (',' returnStream+=[StreamDefinition])*  
-	'=' (expression=ReturnTypeOperator | statement=Expression)';'; 
+	'=' (operator=ReturnTypeOperator | expression=Expression)';'; 
 
 
 /**
@@ -134,7 +135,7 @@ DifferenceOperator:
 
 
 InputOperator:
-	'in' '('iri+=STRING (',' iri+=STRING)* ',' port=NUMBER ',' socket=STRING')';
+	'in' '('iri+=InternationalizedResourceIdentifier (',' iri+=InternationalizedResourceIdentifier)* ',' port=NUMBER ',' socket=STRING')';
 
 /**
  * The rule summarizes the operators which have a return type
@@ -156,6 +157,45 @@ NoReturnTypeOperator:
  */
 TagOperator:
 	'tag''('parameters+=TagElement (',' parameters+=TagElement)*')';
+
+NewTagOperator:
+	'tag''(' 
+		query=QueryTagOperator ', '
+		target=STRING
+	')'
+;
+
+/**
+ * Basically a query (QueryTagOperator) within the tag Operator (TagOperator) is a 
+ * SPARQL query. SPARQL supports four different types of queries which are repres-
+ * ented by the attribute 'queryType' of enumeration type SparqlQueryType. 
+ */
+QueryTagOperator:
+	'{'
+		queryType = SparqlQueryType
+		query = SparqlQuery
+	'}'
+;
+
+/**
+ * 
+ */
+SparqlQuery:
+	variable=SparqlQueryVariable 'WHERE' '{' 
+		
+	'}'
+;
+
+/**
+ * 
+ */
+SparqlQueryVariable:
+	'?' variable+=STRING ('?' variable+=STRING)*
+;
+
+enum SparqlQueryType:
+	SELECT = 'SELECT' | CONSTRUCT = 'CONSTRUCT' | ASK = 'ASK' | DESCRIBE = 'DESCRIBE' 
+;
 
 /**
  * The rule summarizes the operators which have no return type
@@ -409,6 +449,23 @@ IntegerDataType:
 /** Definition of the string datatype */
 StringDataType:
 	'string' {StringDataType};	
+
+/** 
+ * A internationalized resource identifier (IRI) is basically a unified resource identifier (URI)
+ * which is capable of handling URIs in universal character set encoding. IRIs are defined in RFC
+ * 398.
+ */
+InternationalizedResourceIdentifier:
+	scheme=Scheme '://' authority=STRING ('/' path+=STRING)*  ('?' query=STRING)  ('#' fragmentIRI=STRING)
+;
+
+/** 
+ * The enumeration defines the available scheme values for the InternationalizedResourceIdentifier 
+ * rule.
+ */
+enum Scheme:
+	HTTP = 'http' | FTP  = 'ftp' | FILE = 'file' ;
+
 
 /**
  * The following rules reuse rule statements of the standard xtext grammar since it is

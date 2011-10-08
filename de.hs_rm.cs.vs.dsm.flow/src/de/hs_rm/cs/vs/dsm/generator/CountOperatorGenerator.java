@@ -25,7 +25,7 @@ public class CountOperatorGenerator extends AbstractOperatorGenerator {
 		// Call the constructor of the abstract operator class
 		super(pStatement);
 		// Store the operator in the attribute
-		this.mOperator = (CountOperator) pStatement.getExpression();
+		this.mOperator = (CountOperator) pStatement.getOperator();
 		// Add the input stream to the corresponding array list (in the abstract operator class)
 		this.getInputStreams().add(this.mOperator.getParameter().getReference().getName());
 	}

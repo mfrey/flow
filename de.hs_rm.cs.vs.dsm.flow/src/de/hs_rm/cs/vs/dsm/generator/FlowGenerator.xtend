@@ -72,32 +72,33 @@ class FlowGenerator implements IGenerator {
     	«IF m.eClass.name.equals("StreamStatement")»
     	«(m as StreamStatement).compile»
     	«ENDIF»
-    	
-    	«IF m.eClass.name.equals("StreamVariableStatement")»
-    	«(m as StreamVariableStatement).compile»
-    	«ENDIF»
 	'''
 		
 	def compile(StreamStatement statement)'''
-		«IF statement.expression.eClass.name.equals("JoinOperator")»
+		«IF statement.expression.equals(null)»
+	
+			«IF statement.operator.eClass.name.equals("JoinOperator")»
+			
+			«ELSEIF statement.operator.eClass.name.equals("SplitOperator")»
+			«write((statement.operator as SplitOperator),statement)»
+			«ELSEIF statement.operator.eClass.name.equals("CountOperator")»
+			«write((statement.operator as CountOperator),statement)»
+			«ELSEIF statement.operator.eClass.name.equals("AverageOperator")»
+			«write((statement.operator as AverageOperator),statement)»
+			«ELSEIF statement.operator.eClass.name.equals("StandardDeviationOperator")»
+			«write((statement.operator as StandardDeviationOperator),statement)»
+			«ELSEIF statement.operator.eClass.name.equals("ElementJoinOperator")»
+			«write((statement.operator as ElementJoinOperator),statement)»
+			
+			«ENDIF»
 		
-		«ELSEIF statement.expression.eClass.name.equals("SplitOperator")»
-		«write((statement.expression as SplitOperator),statement)»
-		«ELSEIF statement.expression.eClass.name.equals("CountOperator")»
-		«write((statement.expression as CountOperator),statement)»
-		«ELSEIF statement.expression.eClass.name.equals("AverageOperator")»
-		«write((statement.expression as AverageOperator),statement)»
-		«ELSEIF statement.expression.eClass.name.equals("StandardDeviationOperator")»
-		«write((statement.expression as StandardDeviationOperator),statement)»
-		«ELSEIF statement.expression.eClass.name.equals("ElementJoinOperator")»
-		«write((statement.expression as ElementJoinOperator),statement)»
-		
+		«ELSE»
+			«
+				new StreamStatementGenerator(statement).toString()
+			»
 		«ENDIF»
 	'''
-	
-	def compile(StreamVariableStatement statement)'''
-	
-	'''
+
 	
 	def dispatch String write(JoinOperator pOperator, StreamStatement pStatement){
 		var JoinOperatorGenerator join = new JoinOperatorGenerator(

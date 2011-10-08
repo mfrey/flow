@@ -26,7 +26,7 @@ public class DifferenceOperatorGenerator extends AbstractOperatorGenerator {
 		// Call the constructor of the abstract operator class
 		super(pStatement);
 		// Store the operator in the attribute
-		this.mOperator = (DifferenceOperator) pStatement.getExpression();
+		this.mOperator = (DifferenceOperator) pStatement.getOperator();
 		// Get the input streams of the operator
 		for(int i = 0; i < this.mOperator.getParameters().size(); i++){
 			this.getInputStreams().add(this.mOperator.getParameters().get(i).getStream().getName());

@@ -25,7 +25,7 @@ public class InputOperatorGenerator extends AbstractOperatorGenerator {
 		// Call the constructor of the abstract operator class
 		super(pStatement);
 		// Store the operator in the attribute
-		this.mOperator = (InputOperator) pStatement.getExpression();
+		this.mOperator = (InputOperator) pStatement.getOperator();
 	}
 	
 	/**
@@ -50,10 +50,11 @@ public class InputOperatorGenerator extends AbstractOperatorGenerator {
 	@Override
 	public String setOperatorProperties() {
 		String result = "";
+		/*
 		for(int i = 0; i < this.mOperator.getIri().size(); i++){
 			// Add IRIs as parameters of the stream operator
 			result += Util.getInstance().createParameter(this.getOutputStreams().get(0), "listen_iris", this.mOperator.getIri().get(i));
-		}
+		}*/
 		// Set the socket address
 		result += Util.getInstance().createParameter(this.getOutputStreams().get(0), "connector_socket_address", this.mOperator.getSocket());
 		// Set the port

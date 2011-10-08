@@ -166,22 +166,22 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cReturnStreamStreamDefinitionIDTerminalRuleCall_1_1_0_1 = (RuleCall)cReturnStreamStreamDefinitionCrossReference_1_1_0.eContents().get(1);
 		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Assignment cExpressionAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
-		private final RuleCall cExpressionReturnTypeOperatorParserRuleCall_3_0_0 = (RuleCall)cExpressionAssignment_3_0.eContents().get(0);
-		private final Assignment cStatementAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
-		private final RuleCall cStatementExpressionParserRuleCall_3_1_0 = (RuleCall)cStatementAssignment_3_1.eContents().get(0);
+		private final Assignment cOperatorAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
+		private final RuleCall cOperatorReturnTypeOperatorParserRuleCall_3_0_0 = (RuleCall)cOperatorAssignment_3_0.eContents().get(0);
+		private final Assignment cExpressionAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
+		private final RuleCall cExpressionExpressionParserRuleCall_3_1_0 = (RuleCall)cExpressionAssignment_3_1.eContents().get(0);
 		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		/// **
 		// * Every stream expression has at least one return type and one operation. Multiple
 		// * return types are seperated by a comma. 
 		// * / StreamStatement:
-		//	returnStream+=[StreamDefinition] ("," returnStream+=[StreamDefinition])* "=" (expression=ReturnTypeOperator |
-		//	statement=Expression) ";";
+		//	returnStream+=[StreamDefinition] ("," returnStream+=[StreamDefinition])* "=" (operator=ReturnTypeOperator |
+		//	expression=Expression) ";";
 		public ParserRule getRule() { return rule; }
 
-		//returnStream+=[StreamDefinition] ("," returnStream+=[StreamDefinition])* "=" (expression=ReturnTypeOperator |
-		//statement=Expression) ";"
+		//returnStream+=[StreamDefinition] ("," returnStream+=[StreamDefinition])* "=" (operator=ReturnTypeOperator |
+		//expression=Expression) ";"
 		public Group getGroup() { return cGroup; }
 
 		//returnStream+=[StreamDefinition]
@@ -211,20 +211,20 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//"="
 		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
 
-		//expression=ReturnTypeOperator | statement=Expression
+		//operator=ReturnTypeOperator | expression=Expression
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 
-		//expression=ReturnTypeOperator
-		public Assignment getExpressionAssignment_3_0() { return cExpressionAssignment_3_0; }
+		//operator=ReturnTypeOperator
+		public Assignment getOperatorAssignment_3_0() { return cOperatorAssignment_3_0; }
 
 		//ReturnTypeOperator
-		public RuleCall getExpressionReturnTypeOperatorParserRuleCall_3_0_0() { return cExpressionReturnTypeOperatorParserRuleCall_3_0_0; }
+		public RuleCall getOperatorReturnTypeOperatorParserRuleCall_3_0_0() { return cOperatorReturnTypeOperatorParserRuleCall_3_0_0; }
 
-		//statement=Expression
-		public Assignment getStatementAssignment_3_1() { return cStatementAssignment_3_1; }
+		//expression=Expression
+		public Assignment getExpressionAssignment_3_1() { return cExpressionAssignment_3_1; }
 
 		//Expression
-		public RuleCall getStatementExpressionParserRuleCall_3_1_0() { return cStatementExpressionParserRuleCall_3_1_0; }
+		public RuleCall getExpressionExpressionParserRuleCall_3_1_0() { return cExpressionExpressionParserRuleCall_3_1_0; }
 
 		//";"
 		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
@@ -918,11 +918,11 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cInKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cIriAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cIriSTRINGTerminalRuleCall_2_0 = (RuleCall)cIriAssignment_2.eContents().get(0);
+		private final RuleCall cIriInternationalizedResourceIdentifierParserRuleCall_2_0 = (RuleCall)cIriAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cIriAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cIriSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cIriAssignment_3_1.eContents().get(0);
+		private final RuleCall cIriInternationalizedResourceIdentifierParserRuleCall_3_1_0 = (RuleCall)cIriAssignment_3_1.eContents().get(0);
 		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cPortAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cPortNUMBERTerminalRuleCall_5_0 = (RuleCall)cPortAssignment_5.eContents().get(0);
@@ -932,10 +932,12 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//InputOperator:
-		//	"in" "(" iri+=STRING ("," iri+=STRING)* "," port=NUMBER "," socket=STRING ")";
+		//	"in" "(" iri+=InternationalizedResourceIdentifier ("," iri+=InternationalizedResourceIdentifier)* "," port=NUMBER ","
+		//	socket=STRING ")";
 		public ParserRule getRule() { return rule; }
 
-		//"in" "(" iri+=STRING ("," iri+=STRING)* "," port=NUMBER "," socket=STRING ")"
+		//"in" "(" iri+=InternationalizedResourceIdentifier ("," iri+=InternationalizedResourceIdentifier)* "," port=NUMBER ","
+		//socket=STRING ")"
 		public Group getGroup() { return cGroup; }
 
 		//"in"
@@ -944,23 +946,23 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//iri+=STRING
+		//iri+=InternationalizedResourceIdentifier
 		public Assignment getIriAssignment_2() { return cIriAssignment_2; }
 
-		//STRING
-		public RuleCall getIriSTRINGTerminalRuleCall_2_0() { return cIriSTRINGTerminalRuleCall_2_0; }
+		//InternationalizedResourceIdentifier
+		public RuleCall getIriInternationalizedResourceIdentifierParserRuleCall_2_0() { return cIriInternationalizedResourceIdentifierParserRuleCall_2_0; }
 
-		//("," iri+=STRING)*
+		//("," iri+=InternationalizedResourceIdentifier)*
 		public Group getGroup_3() { return cGroup_3; }
 
 		//","
 		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
 
-		//iri+=STRING
+		//iri+=InternationalizedResourceIdentifier
 		public Assignment getIriAssignment_3_1() { return cIriAssignment_3_1; }
 
-		//STRING
-		public RuleCall getIriSTRINGTerminalRuleCall_3_1_0() { return cIriSTRINGTerminalRuleCall_3_1_0; }
+		//InternationalizedResourceIdentifier
+		public RuleCall getIriInternationalizedResourceIdentifierParserRuleCall_3_1_0() { return cIriInternationalizedResourceIdentifierParserRuleCall_3_1_0; }
 
 		//","
 		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
@@ -1124,6 +1126,166 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 
 		//")"
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+	}
+
+	public class NewTagOperatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NewTagOperator");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTagKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cQueryAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cQueryQueryTagOperatorParserRuleCall_2_0 = (RuleCall)cQueryAssignment_2.eContents().get(0);
+		private final Keyword cCommaSpaceKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cTargetAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cTargetSTRINGTerminalRuleCall_4_0 = (RuleCall)cTargetAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//NewTagOperator:
+		//	"tag" "(" query=QueryTagOperator ", " target=STRING ")";
+		public ParserRule getRule() { return rule; }
+
+		//"tag" "(" query=QueryTagOperator ", " target=STRING ")"
+		public Group getGroup() { return cGroup; }
+
+		//"tag"
+		public Keyword getTagKeyword_0() { return cTagKeyword_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//query=QueryTagOperator
+		public Assignment getQueryAssignment_2() { return cQueryAssignment_2; }
+
+		//QueryTagOperator
+		public RuleCall getQueryQueryTagOperatorParserRuleCall_2_0() { return cQueryQueryTagOperatorParserRuleCall_2_0; }
+
+		//", "
+		public Keyword getCommaSpaceKeyword_3() { return cCommaSpaceKeyword_3; }
+
+		//target=STRING
+		public Assignment getTargetAssignment_4() { return cTargetAssignment_4; }
+
+		//STRING
+		public RuleCall getTargetSTRINGTerminalRuleCall_4_0() { return cTargetSTRINGTerminalRuleCall_4_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+	}
+
+	public class QueryTagOperatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QueryTagOperator");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cQueryTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cQueryTypeSparqlQueryTypeEnumRuleCall_1_0 = (RuleCall)cQueryTypeAssignment_1.eContents().get(0);
+		private final Assignment cQueryAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cQuerySparqlQueryParserRuleCall_2_0 = (RuleCall)cQueryAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		/// **
+		// * Basically a query (QueryTagOperator) within the tag Operator (TagOperator) is a 
+		// * SPARQL query. SPARQL supports four different types of queries which are repres-
+		// * ented by the attribute 'queryType' of enumeration type SparqlQueryType. 
+		// * / QueryTagOperator:
+		//	"{" queryType=SparqlQueryType query=SparqlQuery "}";
+		public ParserRule getRule() { return rule; }
+
+		//"{" queryType=SparqlQueryType query=SparqlQuery "}"
+		public Group getGroup() { return cGroup; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
+
+		//queryType=SparqlQueryType
+		public Assignment getQueryTypeAssignment_1() { return cQueryTypeAssignment_1; }
+
+		//SparqlQueryType
+		public RuleCall getQueryTypeSparqlQueryTypeEnumRuleCall_1_0() { return cQueryTypeSparqlQueryTypeEnumRuleCall_1_0; }
+
+		//query=SparqlQuery
+		public Assignment getQueryAssignment_2() { return cQueryAssignment_2; }
+
+		//SparqlQuery
+		public RuleCall getQuerySparqlQueryParserRuleCall_2_0() { return cQuerySparqlQueryParserRuleCall_2_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+
+	public class SparqlQueryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SparqlQuery");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cVariableAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cVariableSparqlQueryVariableParserRuleCall_0_0 = (RuleCall)cVariableAssignment_0.eContents().get(0);
+		private final Keyword cWHEREKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		/// **
+		// * 
+		// * / SparqlQuery:
+		//	variable=SparqlQueryVariable "WHERE" "{" "}";
+		public ParserRule getRule() { return rule; }
+
+		//variable=SparqlQueryVariable "WHERE" "{" "}"
+		public Group getGroup() { return cGroup; }
+
+		//variable=SparqlQueryVariable
+		public Assignment getVariableAssignment_0() { return cVariableAssignment_0; }
+
+		//SparqlQueryVariable
+		public RuleCall getVariableSparqlQueryVariableParserRuleCall_0_0() { return cVariableSparqlQueryVariableParserRuleCall_0_0; }
+
+		//"WHERE"
+		public Keyword getWHEREKeyword_1() { return cWHEREKeyword_1; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+
+	public class SparqlQueryVariableElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SparqlQueryVariable");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cQuestionMarkKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cVariableAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cVariableSTRINGTerminalRuleCall_1_0 = (RuleCall)cVariableAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cQuestionMarkKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cVariableAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cVariableSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cVariableAssignment_2_1.eContents().get(0);
+		
+		/// **
+		// * 
+		// * / SparqlQueryVariable:
+		//	"?" variable+=STRING ("?" variable+=STRING)*;
+		public ParserRule getRule() { return rule; }
+
+		//"?" variable+=STRING ("?" variable+=STRING)*
+		public Group getGroup() { return cGroup; }
+
+		//"?"
+		public Keyword getQuestionMarkKeyword_0() { return cQuestionMarkKeyword_0; }
+
+		//variable+=STRING
+		public Assignment getVariableAssignment_1() { return cVariableAssignment_1; }
+
+		//STRING
+		public RuleCall getVariableSTRINGTerminalRuleCall_1_0() { return cVariableSTRINGTerminalRuleCall_1_0; }
+
+		//("?" variable+=STRING)*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//"?"
+		public Keyword getQuestionMarkKeyword_2_0() { return cQuestionMarkKeyword_2_0; }
+
+		//variable+=STRING
+		public Assignment getVariableAssignment_2_1() { return cVariableAssignment_2_1; }
+
+		//STRING
+		public RuleCall getVariableSTRINGTerminalRuleCall_2_1_0() { return cVariableSTRINGTerminalRuleCall_2_1_0; }
 	}
 
 	public class UnTagOperatorElements extends AbstractParserRuleElementFinder {
@@ -2898,7 +3060,174 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//{StringDataType}
 		public Action getStringDataTypeAction_1() { return cStringDataTypeAction_1; }
 	}
+
+	public class InternationalizedResourceIdentifierElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "InternationalizedResourceIdentifier");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cSchemeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cSchemeSchemeEnumRuleCall_0_0 = (RuleCall)cSchemeAssignment_0.eContents().get(0);
+		private final Keyword cColonSolidusSolidusKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cAuthorityAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cAuthoritySTRINGTerminalRuleCall_2_0 = (RuleCall)cAuthorityAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cSolidusKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cPathAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cPathSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cPathAssignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cQuestionMarkKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cQueryAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cQuerySTRINGTerminalRuleCall_4_1_0 = (RuleCall)cQueryAssignment_4_1.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cNumberSignKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cFragmentIRIAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cFragmentIRISTRINGTerminalRuleCall_5_1_0 = (RuleCall)cFragmentIRIAssignment_5_1.eContents().get(0);
+		
+		/// ** 
+		// * A internationalized resource identifier (IRI) is basically a unified resource identifier (URI)
+		// * which is capable of handling URIs in universal character set encoding. IRIs are defined in RFC
+		// * 398.
+		// * / InternationalizedResourceIdentifier:
+		//	scheme=Scheme "://" authority=STRING ("/" path+=STRING)* ("?" query=STRING) ("#" fragmentIRI=STRING);
+		public ParserRule getRule() { return rule; }
+
+		//scheme=Scheme "://" authority=STRING ("/" path+=STRING)* ("?" query=STRING) ("#" fragmentIRI=STRING)
+		public Group getGroup() { return cGroup; }
+
+		//scheme=Scheme
+		public Assignment getSchemeAssignment_0() { return cSchemeAssignment_0; }
+
+		//Scheme
+		public RuleCall getSchemeSchemeEnumRuleCall_0_0() { return cSchemeSchemeEnumRuleCall_0_0; }
+
+		//"://"
+		public Keyword getColonSolidusSolidusKeyword_1() { return cColonSolidusSolidusKeyword_1; }
+
+		//authority=STRING
+		public Assignment getAuthorityAssignment_2() { return cAuthorityAssignment_2; }
+
+		//STRING
+		public RuleCall getAuthoritySTRINGTerminalRuleCall_2_0() { return cAuthoritySTRINGTerminalRuleCall_2_0; }
+
+		//("/" path+=STRING)*
+		public Group getGroup_3() { return cGroup_3; }
+
+		//"/"
+		public Keyword getSolidusKeyword_3_0() { return cSolidusKeyword_3_0; }
+
+		//path+=STRING
+		public Assignment getPathAssignment_3_1() { return cPathAssignment_3_1; }
+
+		//STRING
+		public RuleCall getPathSTRINGTerminalRuleCall_3_1_0() { return cPathSTRINGTerminalRuleCall_3_1_0; }
+
+		//"?" query=STRING
+		public Group getGroup_4() { return cGroup_4; }
+
+		//"?"
+		public Keyword getQuestionMarkKeyword_4_0() { return cQuestionMarkKeyword_4_0; }
+
+		//query=STRING
+		public Assignment getQueryAssignment_4_1() { return cQueryAssignment_4_1; }
+
+		//STRING
+		public RuleCall getQuerySTRINGTerminalRuleCall_4_1_0() { return cQuerySTRINGTerminalRuleCall_4_1_0; }
+
+		//"#" fragmentIRI=STRING
+		public Group getGroup_5() { return cGroup_5; }
+
+		//"#"
+		public Keyword getNumberSignKeyword_5_0() { return cNumberSignKeyword_5_0; }
+
+		//fragmentIRI=STRING
+		public Assignment getFragmentIRIAssignment_5_1() { return cFragmentIRIAssignment_5_1; }
+
+		//STRING
+		public RuleCall getFragmentIRISTRINGTerminalRuleCall_5_1_0() { return cFragmentIRISTRINGTerminalRuleCall_5_1_0; }
+	}
 	
+	
+	public class SparqlQueryTypeElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "SparqlQueryType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cSELECTEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cSELECTSELECTKeyword_0_0 = (Keyword)cSELECTEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cCONSTRUCTEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cCONSTRUCTCONSTRUCTKeyword_1_0 = (Keyword)cCONSTRUCTEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cASKEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cASKASKKeyword_2_0 = (Keyword)cASKEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cDESCRIBEEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cDESCRIBEDESCRIBEKeyword_3_0 = (Keyword)cDESCRIBEEnumLiteralDeclaration_3.eContents().get(0);
+		
+		//enum SparqlQueryType:
+		//	SELECT | CONSTRUCT | ASK | DESCRIBE;
+		public EnumRule getRule() { return rule; }
+
+		//SELECT | CONSTRUCT | ASK | DESCRIBE
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//SELECT
+		public EnumLiteralDeclaration getSELECTEnumLiteralDeclaration_0() { return cSELECTEnumLiteralDeclaration_0; }
+
+		//"SELECT"
+		public Keyword getSELECTSELECTKeyword_0_0() { return cSELECTSELECTKeyword_0_0; }
+
+		//CONSTRUCT
+		public EnumLiteralDeclaration getCONSTRUCTEnumLiteralDeclaration_1() { return cCONSTRUCTEnumLiteralDeclaration_1; }
+
+		//"CONSTRUCT"
+		public Keyword getCONSTRUCTCONSTRUCTKeyword_1_0() { return cCONSTRUCTCONSTRUCTKeyword_1_0; }
+
+		//ASK
+		public EnumLiteralDeclaration getASKEnumLiteralDeclaration_2() { return cASKEnumLiteralDeclaration_2; }
+
+		//"ASK"
+		public Keyword getASKASKKeyword_2_0() { return cASKASKKeyword_2_0; }
+
+		//DESCRIBE
+		public EnumLiteralDeclaration getDESCRIBEEnumLiteralDeclaration_3() { return cDESCRIBEEnumLiteralDeclaration_3; }
+
+		//"DESCRIBE"
+		public Keyword getDESCRIBEDESCRIBEKeyword_3_0() { return cDESCRIBEDESCRIBEKeyword_3_0; }
+	}
+
+	public class SchemeElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "Scheme");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cHTTPEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cHTTPHttpKeyword_0_0 = (Keyword)cHTTPEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cFTPEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cFTPFtpKeyword_1_0 = (Keyword)cFTPEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cFILEEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cFILEFileKeyword_2_0 = (Keyword)cFILEEnumLiteralDeclaration_2.eContents().get(0);
+		
+		/// ** 
+		// * The enumeration defines the available scheme values for the InternationalizedResourceIdentifier 
+		// * rule.
+		// * / enum Scheme:
+		//	HTTP="http" | FTP="ftp" | FILE="file";
+		public EnumRule getRule() { return rule; }
+
+		//HTTP="http" | FTP="ftp" | FILE="file"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//HTTP="http"
+		public EnumLiteralDeclaration getHTTPEnumLiteralDeclaration_0() { return cHTTPEnumLiteralDeclaration_0; }
+
+		//"http"
+		public Keyword getHTTPHttpKeyword_0_0() { return cHTTPHttpKeyword_0_0; }
+
+		//FTP="ftp"
+		public EnumLiteralDeclaration getFTPEnumLiteralDeclaration_1() { return cFTPEnumLiteralDeclaration_1; }
+
+		//"ftp"
+		public Keyword getFTPFtpKeyword_1_0() { return cFTPFtpKeyword_1_0; }
+
+		//FILE="file"
+		public EnumLiteralDeclaration getFILEEnumLiteralDeclaration_2() { return cFILEEnumLiteralDeclaration_2; }
+
+		//"file"
+		public Keyword getFILEFileKeyword_2_0() { return cFILEFileKeyword_2_0; }
+	}
 	
 	private ModelElements pModel;
 	private PackageDeclarationElements pPackageDeclaration;
@@ -2921,6 +3250,11 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	private ReturnTypeOperatorElements pReturnTypeOperator;
 	private NoReturnTypeOperatorElements pNoReturnTypeOperator;
 	private TagOperatorElements pTagOperator;
+	private NewTagOperatorElements pNewTagOperator;
+	private QueryTagOperatorElements pQueryTagOperator;
+	private SparqlQueryElements pSparqlQuery;
+	private SparqlQueryVariableElements pSparqlQueryVariable;
+	private SparqlQueryTypeElements unknownRuleSparqlQueryType;
 	private UnTagOperatorElements pUnTagOperator;
 	private UnTagElementElements pUnTagElement;
 	private TagElementElements pTagElement;
@@ -2967,6 +3301,8 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	private BooleanDataTypeElements pBooleanDataType;
 	private FloatDataTypeElements pFloatDataType;
 	private StringDataTypeElements pStringDataType;
+	private InternationalizedResourceIdentifierElements pInternationalizedResourceIdentifier;
+	private SchemeElements unknownRuleScheme;
 	private TerminalRule tID;
 	private TerminalRule tSTRING;
 	private TerminalRule tML_COMMENT;
@@ -3038,8 +3374,8 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	// * Every stream expression has at least one return type and one operation. Multiple
 	// * return types are seperated by a comma. 
 	// * / StreamStatement:
-	//	returnStream+=[StreamDefinition] ("," returnStream+=[StreamDefinition])* "=" (expression=ReturnTypeOperator |
-	//	statement=Expression) ";";
+	//	returnStream+=[StreamDefinition] ("," returnStream+=[StreamDefinition])* "=" (operator=ReturnTypeOperator |
+	//	expression=Expression) ";";
 	public StreamStatementElements getStreamStatementAccess() {
 		return (pStreamStatement != null) ? pStreamStatement : (pStreamStatement = new StreamStatementElements());
 	}
@@ -3205,7 +3541,8 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//InputOperator:
-	//	"in" "(" iri+=STRING ("," iri+=STRING)* "," port=NUMBER "," socket=STRING ")";
+	//	"in" "(" iri+=InternationalizedResourceIdentifier ("," iri+=InternationalizedResourceIdentifier)* "," port=NUMBER ","
+	//	socket=STRING ")";
 	public InputOperatorElements getInputOperatorAccess() {
 		return (pInputOperator != null) ? pInputOperator : (pInputOperator = new InputOperatorElements());
 	}
@@ -3250,6 +3587,64 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getTagOperatorRule() {
 		return getTagOperatorAccess().getRule();
+	}
+
+	//NewTagOperator:
+	//	"tag" "(" query=QueryTagOperator ", " target=STRING ")";
+	public NewTagOperatorElements getNewTagOperatorAccess() {
+		return (pNewTagOperator != null) ? pNewTagOperator : (pNewTagOperator = new NewTagOperatorElements());
+	}
+	
+	public ParserRule getNewTagOperatorRule() {
+		return getNewTagOperatorAccess().getRule();
+	}
+
+	/// **
+	// * Basically a query (QueryTagOperator) within the tag Operator (TagOperator) is a 
+	// * SPARQL query. SPARQL supports four different types of queries which are repres-
+	// * ented by the attribute 'queryType' of enumeration type SparqlQueryType. 
+	// * / QueryTagOperator:
+	//	"{" queryType=SparqlQueryType query=SparqlQuery "}";
+	public QueryTagOperatorElements getQueryTagOperatorAccess() {
+		return (pQueryTagOperator != null) ? pQueryTagOperator : (pQueryTagOperator = new QueryTagOperatorElements());
+	}
+	
+	public ParserRule getQueryTagOperatorRule() {
+		return getQueryTagOperatorAccess().getRule();
+	}
+
+	/// **
+	// * 
+	// * / SparqlQuery:
+	//	variable=SparqlQueryVariable "WHERE" "{" "}";
+	public SparqlQueryElements getSparqlQueryAccess() {
+		return (pSparqlQuery != null) ? pSparqlQuery : (pSparqlQuery = new SparqlQueryElements());
+	}
+	
+	public ParserRule getSparqlQueryRule() {
+		return getSparqlQueryAccess().getRule();
+	}
+
+	/// **
+	// * 
+	// * / SparqlQueryVariable:
+	//	"?" variable+=STRING ("?" variable+=STRING)*;
+	public SparqlQueryVariableElements getSparqlQueryVariableAccess() {
+		return (pSparqlQueryVariable != null) ? pSparqlQueryVariable : (pSparqlQueryVariable = new SparqlQueryVariableElements());
+	}
+	
+	public ParserRule getSparqlQueryVariableRule() {
+		return getSparqlQueryVariableAccess().getRule();
+	}
+
+	//enum SparqlQueryType:
+	//	SELECT | CONSTRUCT | ASK | DESCRIBE;
+	public SparqlQueryTypeElements getSparqlQueryTypeAccess() {
+		return (unknownRuleSparqlQueryType != null) ? unknownRuleSparqlQueryType : (unknownRuleSparqlQueryType = new SparqlQueryTypeElements());
+	}
+	
+	public EnumRule getSparqlQueryTypeRule() {
+		return getSparqlQueryTypeAccess().getRule();
 	}
 
 	/// **
@@ -3772,6 +4167,33 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getStringDataTypeRule() {
 		return getStringDataTypeAccess().getRule();
+	}
+
+	/// ** 
+	// * A internationalized resource identifier (IRI) is basically a unified resource identifier (URI)
+	// * which is capable of handling URIs in universal character set encoding. IRIs are defined in RFC
+	// * 398.
+	// * / InternationalizedResourceIdentifier:
+	//	scheme=Scheme "://" authority=STRING ("/" path+=STRING)* ("?" query=STRING) ("#" fragmentIRI=STRING);
+	public InternationalizedResourceIdentifierElements getInternationalizedResourceIdentifierAccess() {
+		return (pInternationalizedResourceIdentifier != null) ? pInternationalizedResourceIdentifier : (pInternationalizedResourceIdentifier = new InternationalizedResourceIdentifierElements());
+	}
+	
+	public ParserRule getInternationalizedResourceIdentifierRule() {
+		return getInternationalizedResourceIdentifierAccess().getRule();
+	}
+
+	/// ** 
+	// * The enumeration defines the available scheme values for the InternationalizedResourceIdentifier 
+	// * rule.
+	// * / enum Scheme:
+	//	HTTP="http" | FTP="ftp" | FILE="file";
+	public SchemeElements getSchemeAccess() {
+		return (unknownRuleScheme != null) ? unknownRuleScheme : (unknownRuleScheme = new SchemeElements());
+	}
+	
+	public EnumRule getSchemeRule() {
+		return getSchemeAccess().getRule();
 	}
 
 	/// **

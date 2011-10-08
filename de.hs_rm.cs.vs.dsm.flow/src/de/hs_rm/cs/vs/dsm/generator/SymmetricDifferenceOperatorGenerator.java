@@ -26,7 +26,7 @@ public class SymmetricDifferenceOperatorGenerator extends AbstractOperatorGenera
 		// Call the constructor of the abstract operator class
 		super(pStatement);
 		// Store the operator in the attribute
-		mOperator = (SymmetricDifferenceOperator) pStatement.getExpression();
+		mOperator = (SymmetricDifferenceOperator) pStatement.getOperator();
 		// Get the input streams of the operator
 		for(int i = 0; i < this.mOperator.getParameters().size(); i++){
 			this.getInputStreams().add(this.mOperator.getParameters().get(i).getStream().getName());

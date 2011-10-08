@@ -16,8 +16,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.StreamStatement#getReturnStream <em>Return Stream</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.StreamStatement#getOperator <em>Operator</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.StreamStatement#getExpression <em>Expression</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.StreamStatement#getStatement <em>Statement</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,6 +44,32 @@ public interface StreamStatement extends ModelElement
   EList<StreamDefinition> getReturnStream();
 
   /**
+   * Returns the value of the '<em><b>Operator</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Operator</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Operator</em>' containment reference.
+   * @see #setOperator(ReturnTypeOperator)
+   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getStreamStatement_Operator()
+   * @model containment="true"
+   * @generated
+   */
+  ReturnTypeOperator getOperator();
+
+  /**
+   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.StreamStatement#getOperator <em>Operator</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Operator</em>' containment reference.
+   * @see #getOperator()
+   * @generated
+   */
+  void setOperator(ReturnTypeOperator value);
+
+  /**
    * Returns the value of the '<em><b>Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
@@ -52,12 +78,12 @@ public interface StreamStatement extends ModelElement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Expression</em>' containment reference.
-   * @see #setExpression(ReturnTypeOperator)
+   * @see #setExpression(Expression)
    * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getStreamStatement_Expression()
    * @model containment="true"
    * @generated
    */
-  ReturnTypeOperator getExpression();
+  Expression getExpression();
 
   /**
    * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.StreamStatement#getExpression <em>Expression</em>}' containment reference.
@@ -67,32 +93,6 @@ public interface StreamStatement extends ModelElement
    * @see #getExpression()
    * @generated
    */
-  void setExpression(ReturnTypeOperator value);
-
-  /**
-   * Returns the value of the '<em><b>Statement</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Statement</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Statement</em>' containment reference.
-   * @see #setStatement(Expression)
-   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getStreamStatement_Statement()
-   * @model containment="true"
-   * @generated
-   */
-  Expression getStatement();
-
-  /**
-   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.StreamStatement#getStatement <em>Statement</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Statement</em>' containment reference.
-   * @see #getStatement()
-   * @generated
-   */
-  void setStatement(Expression value);
+  void setExpression(Expression value);
 
 } // StreamStatement

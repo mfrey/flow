@@ -33,8 +33,8 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.StreamStatementImpl#getReturnStream <em>Return Stream</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.StreamStatementImpl#getOperator <em>Operator</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.StreamStatementImpl#getExpression <em>Expression</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.StreamStatementImpl#getStatement <em>Statement</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,6 +53,16 @@ public class StreamStatementImpl extends ModelElementImpl implements StreamState
   protected EList<StreamDefinition> returnStream;
 
   /**
+   * The cached value of the '{@link #getOperator() <em>Operator</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOperator()
+   * @generated
+   * @ordered
+   */
+  protected ReturnTypeOperator operator;
+
+  /**
    * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -60,17 +70,7 @@ public class StreamStatementImpl extends ModelElementImpl implements StreamState
    * @generated
    * @ordered
    */
-  protected ReturnTypeOperator expression;
-
-  /**
-   * The cached value of the '{@link #getStatement() <em>Statement</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getStatement()
-   * @generated
-   * @ordered
-   */
-  protected Expression statement;
+  protected Expression expression;
 
   /**
    * <!-- begin-user-doc -->
@@ -112,7 +112,55 @@ public class StreamStatementImpl extends ModelElementImpl implements StreamState
    * <!-- end-user-doc -->
    * @generated
    */
-  public ReturnTypeOperator getExpression()
+  public ReturnTypeOperator getOperator()
+  {
+    return operator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetOperator(ReturnTypeOperator newOperator, NotificationChain msgs)
+  {
+    ReturnTypeOperator oldOperator = operator;
+    operator = newOperator;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FlowPackage.STREAM_STATEMENT__OPERATOR, oldOperator, newOperator);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOperator(ReturnTypeOperator newOperator)
+  {
+    if (newOperator != operator)
+    {
+      NotificationChain msgs = null;
+      if (operator != null)
+        msgs = ((InternalEObject)operator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FlowPackage.STREAM_STATEMENT__OPERATOR, null, msgs);
+      if (newOperator != null)
+        msgs = ((InternalEObject)newOperator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FlowPackage.STREAM_STATEMENT__OPERATOR, null, msgs);
+      msgs = basicSetOperator(newOperator, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.STREAM_STATEMENT__OPERATOR, newOperator, newOperator));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression getExpression()
   {
     return expression;
   }
@@ -122,9 +170,9 @@ public class StreamStatementImpl extends ModelElementImpl implements StreamState
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpression(ReturnTypeOperator newExpression, NotificationChain msgs)
+  public NotificationChain basicSetExpression(Expression newExpression, NotificationChain msgs)
   {
-    ReturnTypeOperator oldExpression = expression;
+    Expression oldExpression = expression;
     expression = newExpression;
     if (eNotificationRequired())
     {
@@ -139,7 +187,7 @@ public class StreamStatementImpl extends ModelElementImpl implements StreamState
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(ReturnTypeOperator newExpression)
+  public void setExpression(Expression newExpression)
   {
     if (newExpression != expression)
     {
@@ -160,63 +208,15 @@ public class StreamStatementImpl extends ModelElementImpl implements StreamState
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getStatement()
-  {
-    return statement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetStatement(Expression newStatement, NotificationChain msgs)
-  {
-    Expression oldStatement = statement;
-    statement = newStatement;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FlowPackage.STREAM_STATEMENT__STATEMENT, oldStatement, newStatement);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setStatement(Expression newStatement)
-  {
-    if (newStatement != statement)
-    {
-      NotificationChain msgs = null;
-      if (statement != null)
-        msgs = ((InternalEObject)statement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FlowPackage.STREAM_STATEMENT__STATEMENT, null, msgs);
-      if (newStatement != null)
-        msgs = ((InternalEObject)newStatement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FlowPackage.STREAM_STATEMENT__STATEMENT, null, msgs);
-      msgs = basicSetStatement(newStatement, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.STREAM_STATEMENT__STATEMENT, newStatement, newStatement));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
+      case FlowPackage.STREAM_STATEMENT__OPERATOR:
+        return basicSetOperator(null, msgs);
       case FlowPackage.STREAM_STATEMENT__EXPRESSION:
         return basicSetExpression(null, msgs);
-      case FlowPackage.STREAM_STATEMENT__STATEMENT:
-        return basicSetStatement(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -233,10 +233,10 @@ public class StreamStatementImpl extends ModelElementImpl implements StreamState
     {
       case FlowPackage.STREAM_STATEMENT__RETURN_STREAM:
         return getReturnStream();
+      case FlowPackage.STREAM_STATEMENT__OPERATOR:
+        return getOperator();
       case FlowPackage.STREAM_STATEMENT__EXPRESSION:
         return getExpression();
-      case FlowPackage.STREAM_STATEMENT__STATEMENT:
-        return getStatement();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -256,11 +256,11 @@ public class StreamStatementImpl extends ModelElementImpl implements StreamState
         getReturnStream().clear();
         getReturnStream().addAll((Collection<? extends StreamDefinition>)newValue);
         return;
-      case FlowPackage.STREAM_STATEMENT__EXPRESSION:
-        setExpression((ReturnTypeOperator)newValue);
+      case FlowPackage.STREAM_STATEMENT__OPERATOR:
+        setOperator((ReturnTypeOperator)newValue);
         return;
-      case FlowPackage.STREAM_STATEMENT__STATEMENT:
-        setStatement((Expression)newValue);
+      case FlowPackage.STREAM_STATEMENT__EXPRESSION:
+        setExpression((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -279,11 +279,11 @@ public class StreamStatementImpl extends ModelElementImpl implements StreamState
       case FlowPackage.STREAM_STATEMENT__RETURN_STREAM:
         getReturnStream().clear();
         return;
-      case FlowPackage.STREAM_STATEMENT__EXPRESSION:
-        setExpression((ReturnTypeOperator)null);
+      case FlowPackage.STREAM_STATEMENT__OPERATOR:
+        setOperator((ReturnTypeOperator)null);
         return;
-      case FlowPackage.STREAM_STATEMENT__STATEMENT:
-        setStatement((Expression)null);
+      case FlowPackage.STREAM_STATEMENT__EXPRESSION:
+        setExpression((Expression)null);
         return;
     }
     super.eUnset(featureID);
@@ -301,10 +301,10 @@ public class StreamStatementImpl extends ModelElementImpl implements StreamState
     {
       case FlowPackage.STREAM_STATEMENT__RETURN_STREAM:
         return returnStream != null && !returnStream.isEmpty();
+      case FlowPackage.STREAM_STATEMENT__OPERATOR:
+        return operator != null;
       case FlowPackage.STREAM_STATEMENT__EXPRESSION:
         return expression != null;
-      case FlowPackage.STREAM_STATEMENT__STATEMENT:
-        return statement != null;
     }
     return super.eIsSet(featureID);
   }

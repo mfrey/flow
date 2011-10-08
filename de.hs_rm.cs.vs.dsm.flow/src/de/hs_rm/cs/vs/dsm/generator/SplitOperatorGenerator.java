@@ -30,7 +30,7 @@ public class SplitOperatorGenerator extends AbstractOperatorGenerator {
 		// Call the constructor of the abstract operator class
 		super(pStatement);
 		// Store the operator in the attribute
-		this.mOperator = (SplitOperator) pStatement.getExpression();
+		this.mOperator = (SplitOperator) pStatement.getOperator();
 		// Add the input stream to the corresponding array list (in the abstract operator class)
 		this.getInputStreams().add(this.mOperator.getParameter().getStream().getName());
 		// Set name of the internal stream representation

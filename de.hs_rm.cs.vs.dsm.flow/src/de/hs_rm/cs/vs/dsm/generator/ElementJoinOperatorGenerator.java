@@ -13,7 +13,7 @@ public class ElementJoinOperatorGenerator extends AbstractOperatorGenerator {
 		// Call the constructor of the abstract operator class
 		super(pStatement);
 		// Store the operator in the attribute
-		this.mOperator = (ElementJoinOperator) pStatement.getExpression();	
+		this.mOperator = (ElementJoinOperator) pStatement.getOperator();	
 		// Set name of the internal stream representation
 		this.setOperatorStream(OPERATOR_TYPE + this.mOperator.hashCode());
 		// Add the input parameters of the operator

@@ -13,7 +13,7 @@ public class UnTagOperatorGenerator extends AbstractOperatorGenerator {
 		// Call the constructor of the abstract operator class
 		super(pStatement);
 		// Store the operator in the attribute
-		this.mOperator = (UnTagOperator) pStatement.getExpression();
+		this.mOperator = (UnTagOperator) pStatement.getOperator();
 		// Add the input stream to the list
 		this.getInputStreams().add(this.mOperator.getStream().getStream().getName());
 	}

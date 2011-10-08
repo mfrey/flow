@@ -7,6 +7,7 @@ package de.hs_rm.cs.vs.dsm.flow;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -191,22 +192,22 @@ public interface FlowPackage extends EPackage
   int STREAM_STATEMENT__RETURN_STREAM = MODEL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Operator</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STREAM_STATEMENT__OPERATOR = MODEL_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STREAM_STATEMENT__EXPRESSION = MODEL_ELEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Statement</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STREAM_STATEMENT__STATEMENT = MODEL_ELEMENT_FEATURE_COUNT + 2;
+  int STREAM_STATEMENT__EXPRESSION = MODEL_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Stream Statement</em>' class.
@@ -682,7 +683,7 @@ public interface FlowPackage extends EPackage
   int INPUT_OPERATOR = 17;
 
   /**
-   * The feature id for the '<em><b>Iri</b></em>' attribute list.
+   * The feature id for the '<em><b>Iri</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -765,6 +766,136 @@ public interface FlowPackage extends EPackage
   int TAG_OPERATOR_FEATURE_COUNT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.NewTagOperatorImpl <em>New Tag Operator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.NewTagOperatorImpl
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getNewTagOperator()
+   * @generated
+   */
+  int NEW_TAG_OPERATOR = 21;
+
+  /**
+   * The feature id for the '<em><b>Query</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NEW_TAG_OPERATOR__QUERY = 0;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NEW_TAG_OPERATOR__TARGET = 1;
+
+  /**
+   * The number of structural features of the '<em>New Tag Operator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NEW_TAG_OPERATOR_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.QueryTagOperatorImpl <em>Query Tag Operator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.QueryTagOperatorImpl
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getQueryTagOperator()
+   * @generated
+   */
+  int QUERY_TAG_OPERATOR = 22;
+
+  /**
+   * The feature id for the '<em><b>Query Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUERY_TAG_OPERATOR__QUERY_TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Query</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUERY_TAG_OPERATOR__QUERY = 1;
+
+  /**
+   * The number of structural features of the '<em>Query Tag Operator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUERY_TAG_OPERATOR_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.SparqlQueryImpl <em>Sparql Query</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.SparqlQueryImpl
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSparqlQuery()
+   * @generated
+   */
+  int SPARQL_QUERY = 23;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPARQL_QUERY__VARIABLE = 0;
+
+  /**
+   * The number of structural features of the '<em>Sparql Query</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPARQL_QUERY_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.SparqlQueryVariableImpl <em>Sparql Query Variable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.SparqlQueryVariableImpl
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSparqlQueryVariable()
+   * @generated
+   */
+  int SPARQL_QUERY_VARIABLE = 24;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPARQL_QUERY_VARIABLE__VARIABLE = 0;
+
+  /**
+   * The number of structural features of the '<em>Sparql Query Variable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPARQL_QUERY_VARIABLE_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.UnTagOperatorImpl <em>Un Tag Operator</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -772,7 +903,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getUnTagOperator()
    * @generated
    */
-  int UN_TAG_OPERATOR = 21;
+  int UN_TAG_OPERATOR = 25;
 
   /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -809,7 +940,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getUnTagElement()
    * @generated
    */
-  int UN_TAG_ELEMENT = 22;
+  int UN_TAG_ELEMENT = 26;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' reference.
@@ -846,7 +977,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getTagElement()
    * @generated
    */
-  int TAG_ELEMENT = 23;
+  int TAG_ELEMENT = 27;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' containment reference.
@@ -874,7 +1005,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getTagClassElement()
    * @generated
    */
-  int TAG_CLASS_ELEMENT = 24;
+  int TAG_CLASS_ELEMENT = 28;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' containment reference.
@@ -911,7 +1042,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getTagObjectPropertyElement()
    * @generated
    */
-  int TAG_OBJECT_PROPERTY_ELEMENT = 25;
+  int TAG_OBJECT_PROPERTY_ELEMENT = 29;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' containment reference.
@@ -948,7 +1079,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getTagDataTypePropertyElement()
    * @generated
    */
-  int TAG_DATA_TYPE_PROPERTY_ELEMENT = 26;
+  int TAG_DATA_TYPE_PROPERTY_ELEMENT = 30;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' containment reference.
@@ -985,7 +1116,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBarrierOperator()
    * @generated
    */
-  int BARRIER_OPERATOR = 27;
+  int BARRIER_OPERATOR = 31;
 
   /**
    * The number of structural features of the '<em>Barrier Operator</em>' class.
@@ -1004,7 +1135,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getWindowOperator()
    * @generated
    */
-  int WINDOW_OPERATOR = 28;
+  int WINDOW_OPERATOR = 32;
 
   /**
    * The feature id for the '<em><b>Setting</b></em>' attribute.
@@ -1050,7 +1181,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMarkerOperator()
    * @generated
    */
-  int MARKER_OPERATOR = 29;
+  int MARKER_OPERATOR = 33;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1078,7 +1209,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSWRLOperator()
    * @generated
    */
-  int SWRL_OPERATOR = 30;
+  int SWRL_OPERATOR = 34;
 
   /**
    * The feature id for the '<em><b>Rule</b></em>' containment reference.
@@ -1115,7 +1246,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSWRLRule()
    * @generated
    */
-  int SWRL_RULE = 31;
+  int SWRL_RULE = 35;
 
   /**
    * The feature id for the '<em><b>Antecedent</b></em>' containment reference.
@@ -1152,7 +1283,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getAntecedentRule()
    * @generated
    */
-  int ANTECEDENT_RULE = 32;
+  int ANTECEDENT_RULE = 36;
 
   /**
    * The feature id for the '<em><b>Atoms</b></em>' containment reference list.
@@ -1180,7 +1311,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getConsequentRule()
    * @generated
    */
-  int CONSEQUENT_RULE = 33;
+  int CONSEQUENT_RULE = 37;
 
   /**
    * The feature id for the '<em><b>Atoms</b></em>' containment reference list.
@@ -1208,7 +1339,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getRule()
    * @generated
    */
-  int RULE = 34;
+  int RULE = 38;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' reference.
@@ -1245,7 +1376,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getOCLOperator()
    * @generated
    */
-  int OCL_OPERATOR = 35;
+  int OCL_OPERATOR = 39;
 
   /**
    * The feature id for the '<em><b>Constraint</b></em>' attribute.
@@ -1282,7 +1413,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getCountOperator()
    * @generated
    */
-  int COUNT_OPERATOR = 36;
+  int COUNT_OPERATOR = 40;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1319,7 +1450,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStandardDeviationOperator()
    * @generated
    */
-  int STANDARD_DEVIATION_OPERATOR = 37;
+  int STANDARD_DEVIATION_OPERATOR = 41;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1356,7 +1487,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getAverageOperator()
    * @generated
    */
-  int AVERAGE_OPERATOR = 38;
+  int AVERAGE_OPERATOR = 42;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1393,7 +1524,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getOutputOperator()
    * @generated
    */
-  int OUTPUT_OPERATOR = 39;
+  int OUTPUT_OPERATOR = 43;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1439,7 +1570,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getOutputOperatorParameter()
    * @generated
    */
-  int OUTPUT_OPERATOR_PARAMETER = 40;
+  int OUTPUT_OPERATOR_PARAMETER = 44;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' containment reference list.
@@ -1467,7 +1598,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getVariableDefinition()
    * @generated
    */
-  int VARIABLE_DEFINITION = 41;
+  int VARIABLE_DEFINITION = 45;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1495,7 +1626,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStreamElement()
    * @generated
    */
-  int STREAM_ELEMENT = 48;
+  int STREAM_ELEMENT = 52;
 
   /**
    * The number of structural features of the '<em>Stream Element</em>' class.
@@ -1514,7 +1645,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getVariableDeclaration()
    * @generated
    */
-  int VARIABLE_DECLARATION = 42;
+  int VARIABLE_DECLARATION = 46;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1551,7 +1682,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getNumberVariableDefinition()
    * @generated
    */
-  int NUMBER_VARIABLE_DEFINITION = 43;
+  int NUMBER_VARIABLE_DEFINITION = 47;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1597,7 +1728,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStringVariableDefinition()
    * @generated
    */
-  int STRING_VARIABLE_DEFINITION = 44;
+  int STRING_VARIABLE_DEFINITION = 48;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1643,7 +1774,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBooleanVariableDefinition()
    * @generated
    */
-  int BOOLEAN_VARIABLE_DEFINITION = 45;
+  int BOOLEAN_VARIABLE_DEFINITION = 49;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1689,7 +1820,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStructureDeclaration()
    * @generated
    */
-  int STRUCTURE_DECLARATION = 46;
+  int STRUCTURE_DECLARATION = 50;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1726,7 +1857,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStreamDeclaration()
    * @generated
    */
-  int STREAM_DECLARATION = 47;
+  int STREAM_DECLARATION = 51;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1763,7 +1894,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStructureElements()
    * @generated
    */
-  int STRUCTURE_ELEMENTS = 49;
+  int STRUCTURE_ELEMENTS = 53;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' reference.
@@ -1791,7 +1922,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 50;
+  int EXPRESSION = 54;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -1810,7 +1941,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getDataType()
    * @generated
    */
-  int DATA_TYPE = 51;
+  int DATA_TYPE = 55;
 
   /**
    * The number of structural features of the '<em>Data Type</em>' class.
@@ -1829,7 +1960,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSimpleDataType()
    * @generated
    */
-  int SIMPLE_DATA_TYPE = 52;
+  int SIMPLE_DATA_TYPE = 56;
 
   /**
    * The number of structural features of the '<em>Simple Data Type</em>' class.
@@ -1848,7 +1979,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getComplexDataType()
    * @generated
    */
-  int COMPLEX_DATA_TYPE = 53;
+  int COMPLEX_DATA_TYPE = 57;
 
   /**
    * The number of structural features of the '<em>Complex Data Type</em>' class.
@@ -1867,7 +1998,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getIntegerDataType()
    * @generated
    */
-  int INTEGER_DATA_TYPE = 54;
+  int INTEGER_DATA_TYPE = 58;
 
   /**
    * The number of structural features of the '<em>Integer Data Type</em>' class.
@@ -1886,7 +2017,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBooleanDataType()
    * @generated
    */
-  int BOOLEAN_DATA_TYPE = 55;
+  int BOOLEAN_DATA_TYPE = 59;
 
   /**
    * The number of structural features of the '<em>Boolean Data Type</em>' class.
@@ -1905,7 +2036,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getFloatDataType()
    * @generated
    */
-  int FLOAT_DATA_TYPE = 56;
+  int FLOAT_DATA_TYPE = 60;
 
   /**
    * The number of structural features of the '<em>Float Data Type</em>' class.
@@ -1924,7 +2055,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStringDataType()
    * @generated
    */
-  int STRING_DATA_TYPE = 57;
+  int STRING_DATA_TYPE = 61;
 
   /**
    * The number of structural features of the '<em>String Data Type</em>' class.
@@ -1936,6 +2067,70 @@ public interface FlowPackage extends EPackage
   int STRING_DATA_TYPE_FEATURE_COUNT = COMPLEX_DATA_TYPE_FEATURE_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.InternationalizedResourceIdentifierImpl <em>Internationalized Resource Identifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.InternationalizedResourceIdentifierImpl
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getInternationalizedResourceIdentifier()
+   * @generated
+   */
+  int INTERNATIONALIZED_RESOURCE_IDENTIFIER = 62;
+
+  /**
+   * The feature id for the '<em><b>Scheme</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERNATIONALIZED_RESOURCE_IDENTIFIER__SCHEME = 0;
+
+  /**
+   * The feature id for the '<em><b>Authority</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERNATIONALIZED_RESOURCE_IDENTIFIER__AUTHORITY = 1;
+
+  /**
+   * The feature id for the '<em><b>Path</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERNATIONALIZED_RESOURCE_IDENTIFIER__PATH = 2;
+
+  /**
+   * The feature id for the '<em><b>Query</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERNATIONALIZED_RESOURCE_IDENTIFIER__QUERY = 3;
+
+  /**
+   * The feature id for the '<em><b>Fragment IRI</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERNATIONALIZED_RESOURCE_IDENTIFIER__FRAGMENT_IRI = 4;
+
+  /**
+   * The number of structural features of the '<em>Internationalized Resource Identifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERNATIONALIZED_RESOURCE_IDENTIFIER_FEATURE_COUNT = 5;
+
+  /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.BooleanOperationImpl <em>Boolean Operation</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1943,7 +2138,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBooleanOperation()
    * @generated
    */
-  int BOOLEAN_OPERATION = 58;
+  int BOOLEAN_OPERATION = 63;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1989,7 +2184,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getPlus()
    * @generated
    */
-  int PLUS = 59;
+  int PLUS = 64;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2026,7 +2221,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMinus()
    * @generated
    */
-  int MINUS = 60;
+  int MINUS = 65;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2063,7 +2258,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMulti()
    * @generated
    */
-  int MULTI = 61;
+  int MULTI = 66;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2100,7 +2295,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getDiv()
    * @generated
    */
-  int DIV = 62;
+  int DIV = 67;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2137,7 +2332,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 63;
+  int NUMBER_LITERAL = 68;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2165,7 +2360,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getVariableCall()
    * @generated
    */
-  int VARIABLE_CALL = 64;
+  int VARIABLE_CALL = 69;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' reference.
@@ -2184,6 +2379,26 @@ public interface FlowPackage extends EPackage
    * @ordered
    */
   int VARIABLE_CALL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.SparqlQueryType <em>Sparql Query Type</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.hs_rm.cs.vs.dsm.flow.SparqlQueryType
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSparqlQueryType()
+   * @generated
+   */
+  int SPARQL_QUERY_TYPE = 70;
+
+  /**
+   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.Scheme <em>Scheme</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.hs_rm.cs.vs.dsm.flow.Scheme
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getScheme()
+   * @generated
+   */
+  int SCHEME = 71;
 
 
   /**
@@ -2292,6 +2507,17 @@ public interface FlowPackage extends EPackage
   EReference getStreamStatement_ReturnStream();
 
   /**
+   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.StreamStatement#getOperator <em>Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Operator</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.StreamStatement#getOperator()
+   * @see #getStreamStatement()
+   * @generated
+   */
+  EReference getStreamStatement_Operator();
+
+  /**
    * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.StreamStatement#getExpression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2301,17 +2527,6 @@ public interface FlowPackage extends EPackage
    * @generated
    */
   EReference getStreamStatement_Expression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.StreamStatement#getStatement <em>Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Statement</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.StreamStatement#getStatement()
-   * @see #getStreamStatement()
-   * @generated
-   */
-  EReference getStreamStatement_Statement();
 
   /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.StreamVariableStatement <em>Stream Variable Statement</em>}'.
@@ -2697,15 +2912,15 @@ public interface FlowPackage extends EPackage
   EClass getInputOperator();
 
   /**
-   * Returns the meta object for the attribute list '{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getIri <em>Iri</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getIri <em>Iri</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Iri</em>'.
+   * @return the meta object for the containment reference list '<em>Iri</em>'.
    * @see de.hs_rm.cs.vs.dsm.flow.InputOperator#getIri()
    * @see #getInputOperator()
    * @generated
    */
-  EAttribute getInputOperator_Iri();
+  EReference getInputOperator_Iri();
 
   /**
    * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getPort <em>Port</em>}'.
@@ -2769,6 +2984,112 @@ public interface FlowPackage extends EPackage
    * @generated
    */
   EReference getTagOperator_Parameters();
+
+  /**
+   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.NewTagOperator <em>New Tag Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>New Tag Operator</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.NewTagOperator
+   * @generated
+   */
+  EClass getNewTagOperator();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.NewTagOperator#getQuery <em>Query</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Query</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.NewTagOperator#getQuery()
+   * @see #getNewTagOperator()
+   * @generated
+   */
+  EReference getNewTagOperator_Query();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.NewTagOperator#getTarget <em>Target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Target</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.NewTagOperator#getTarget()
+   * @see #getNewTagOperator()
+   * @generated
+   */
+  EAttribute getNewTagOperator_Target();
+
+  /**
+   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.QueryTagOperator <em>Query Tag Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Query Tag Operator</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.QueryTagOperator
+   * @generated
+   */
+  EClass getQueryTagOperator();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.QueryTagOperator#getQueryType <em>Query Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Query Type</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.QueryTagOperator#getQueryType()
+   * @see #getQueryTagOperator()
+   * @generated
+   */
+  EAttribute getQueryTagOperator_QueryType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.QueryTagOperator#getQuery <em>Query</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Query</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.QueryTagOperator#getQuery()
+   * @see #getQueryTagOperator()
+   * @generated
+   */
+  EReference getQueryTagOperator_Query();
+
+  /**
+   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.SparqlQuery <em>Sparql Query</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Sparql Query</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.SparqlQuery
+   * @generated
+   */
+  EClass getSparqlQuery();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.SparqlQuery#getVariable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Variable</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.SparqlQuery#getVariable()
+   * @see #getSparqlQuery()
+   * @generated
+   */
+  EReference getSparqlQuery_Variable();
+
+  /**
+   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.SparqlQueryVariable <em>Sparql Query Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Sparql Query Variable</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.SparqlQueryVariable
+   * @generated
+   */
+  EClass getSparqlQueryVariable();
+
+  /**
+   * Returns the meta object for the attribute list '{@link de.hs_rm.cs.vs.dsm.flow.SparqlQueryVariable#getVariable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Variable</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.SparqlQueryVariable#getVariable()
+   * @see #getSparqlQueryVariable()
+   * @generated
+   */
+  EAttribute getSparqlQueryVariable_Variable();
 
   /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.UnTagOperator <em>Un Tag Operator</em>}'.
@@ -3647,6 +3968,71 @@ public interface FlowPackage extends EPackage
   EClass getStringDataType();
 
   /**
+   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier <em>Internationalized Resource Identifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Internationalized Resource Identifier</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier
+   * @generated
+   */
+  EClass getInternationalizedResourceIdentifier();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier#getScheme <em>Scheme</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Scheme</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier#getScheme()
+   * @see #getInternationalizedResourceIdentifier()
+   * @generated
+   */
+  EAttribute getInternationalizedResourceIdentifier_Scheme();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier#getAuthority <em>Authority</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Authority</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier#getAuthority()
+   * @see #getInternationalizedResourceIdentifier()
+   * @generated
+   */
+  EAttribute getInternationalizedResourceIdentifier_Authority();
+
+  /**
+   * Returns the meta object for the attribute list '{@link de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier#getPath <em>Path</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Path</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier#getPath()
+   * @see #getInternationalizedResourceIdentifier()
+   * @generated
+   */
+  EAttribute getInternationalizedResourceIdentifier_Path();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier#getQuery <em>Query</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Query</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier#getQuery()
+   * @see #getInternationalizedResourceIdentifier()
+   * @generated
+   */
+  EAttribute getInternationalizedResourceIdentifier_Query();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier#getFragmentIRI <em>Fragment IRI</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Fragment IRI</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier#getFragmentIRI()
+   * @see #getInternationalizedResourceIdentifier()
+   * @generated
+   */
+  EAttribute getInternationalizedResourceIdentifier_FragmentIRI();
+
+  /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.BooleanOperation <em>Boolean Operation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3860,6 +4246,26 @@ public interface FlowPackage extends EPackage
   EReference getVariableCall_Variable();
 
   /**
+   * Returns the meta object for enum '{@link de.hs_rm.cs.vs.dsm.flow.SparqlQueryType <em>Sparql Query Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Sparql Query Type</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.SparqlQueryType
+   * @generated
+   */
+  EEnum getSparqlQueryType();
+
+  /**
+   * Returns the meta object for enum '{@link de.hs_rm.cs.vs.dsm.flow.Scheme <em>Scheme</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Scheme</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.Scheme
+   * @generated
+   */
+  EEnum getScheme();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3973,20 +4379,20 @@ public interface FlowPackage extends EPackage
     EReference STREAM_STATEMENT__RETURN_STREAM = eINSTANCE.getStreamStatement_ReturnStream();
 
     /**
+     * The meta object literal for the '<em><b>Operator</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STREAM_STATEMENT__OPERATOR = eINSTANCE.getStreamStatement_Operator();
+
+    /**
      * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference STREAM_STATEMENT__EXPRESSION = eINSTANCE.getStreamStatement_Expression();
-
-    /**
-     * The meta object literal for the '<em><b>Statement</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STREAM_STATEMENT__STATEMENT = eINSTANCE.getStreamStatement_Statement();
 
     /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.StreamVariableStatementImpl <em>Stream Variable Statement</em>}' class.
@@ -4303,12 +4709,12 @@ public interface FlowPackage extends EPackage
     EClass INPUT_OPERATOR = eINSTANCE.getInputOperator();
 
     /**
-     * The meta object literal for the '<em><b>Iri</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Iri</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INPUT_OPERATOR__IRI = eINSTANCE.getInputOperator_Iri();
+    EReference INPUT_OPERATOR__IRI = eINSTANCE.getInputOperator_Iri();
 
     /**
      * The meta object literal for the '<em><b>Port</b></em>' attribute feature.
@@ -4363,6 +4769,94 @@ public interface FlowPackage extends EPackage
      * @generated
      */
     EReference TAG_OPERATOR__PARAMETERS = eINSTANCE.getTagOperator_Parameters();
+
+    /**
+     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.NewTagOperatorImpl <em>New Tag Operator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.NewTagOperatorImpl
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getNewTagOperator()
+     * @generated
+     */
+    EClass NEW_TAG_OPERATOR = eINSTANCE.getNewTagOperator();
+
+    /**
+     * The meta object literal for the '<em><b>Query</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NEW_TAG_OPERATOR__QUERY = eINSTANCE.getNewTagOperator_Query();
+
+    /**
+     * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NEW_TAG_OPERATOR__TARGET = eINSTANCE.getNewTagOperator_Target();
+
+    /**
+     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.QueryTagOperatorImpl <em>Query Tag Operator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.QueryTagOperatorImpl
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getQueryTagOperator()
+     * @generated
+     */
+    EClass QUERY_TAG_OPERATOR = eINSTANCE.getQueryTagOperator();
+
+    /**
+     * The meta object literal for the '<em><b>Query Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute QUERY_TAG_OPERATOR__QUERY_TYPE = eINSTANCE.getQueryTagOperator_QueryType();
+
+    /**
+     * The meta object literal for the '<em><b>Query</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference QUERY_TAG_OPERATOR__QUERY = eINSTANCE.getQueryTagOperator_Query();
+
+    /**
+     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.SparqlQueryImpl <em>Sparql Query</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.SparqlQueryImpl
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSparqlQuery()
+     * @generated
+     */
+    EClass SPARQL_QUERY = eINSTANCE.getSparqlQuery();
+
+    /**
+     * The meta object literal for the '<em><b>Variable</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SPARQL_QUERY__VARIABLE = eINSTANCE.getSparqlQuery_Variable();
+
+    /**
+     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.SparqlQueryVariableImpl <em>Sparql Query Variable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.SparqlQueryVariableImpl
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSparqlQueryVariable()
+     * @generated
+     */
+    EClass SPARQL_QUERY_VARIABLE = eINSTANCE.getSparqlQueryVariable();
+
+    /**
+     * The meta object literal for the '<em><b>Variable</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SPARQL_QUERY_VARIABLE__VARIABLE = eINSTANCE.getSparqlQueryVariable_Variable();
 
     /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.UnTagOperatorImpl <em>Un Tag Operator</em>}' class.
@@ -5103,6 +5597,56 @@ public interface FlowPackage extends EPackage
     EClass STRING_DATA_TYPE = eINSTANCE.getStringDataType();
 
     /**
+     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.InternationalizedResourceIdentifierImpl <em>Internationalized Resource Identifier</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.InternationalizedResourceIdentifierImpl
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getInternationalizedResourceIdentifier()
+     * @generated
+     */
+    EClass INTERNATIONALIZED_RESOURCE_IDENTIFIER = eINSTANCE.getInternationalizedResourceIdentifier();
+
+    /**
+     * The meta object literal for the '<em><b>Scheme</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INTERNATIONALIZED_RESOURCE_IDENTIFIER__SCHEME = eINSTANCE.getInternationalizedResourceIdentifier_Scheme();
+
+    /**
+     * The meta object literal for the '<em><b>Authority</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INTERNATIONALIZED_RESOURCE_IDENTIFIER__AUTHORITY = eINSTANCE.getInternationalizedResourceIdentifier_Authority();
+
+    /**
+     * The meta object literal for the '<em><b>Path</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INTERNATIONALIZED_RESOURCE_IDENTIFIER__PATH = eINSTANCE.getInternationalizedResourceIdentifier_Path();
+
+    /**
+     * The meta object literal for the '<em><b>Query</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INTERNATIONALIZED_RESOURCE_IDENTIFIER__QUERY = eINSTANCE.getInternationalizedResourceIdentifier_Query();
+
+    /**
+     * The meta object literal for the '<em><b>Fragment IRI</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INTERNATIONALIZED_RESOURCE_IDENTIFIER__FRAGMENT_IRI = eINSTANCE.getInternationalizedResourceIdentifier_FragmentIRI();
+
+    /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.BooleanOperationImpl <em>Boolean Operation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5275,6 +5819,26 @@ public interface FlowPackage extends EPackage
      * @generated
      */
     EReference VARIABLE_CALL__VARIABLE = eINSTANCE.getVariableCall_Variable();
+
+    /**
+     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.SparqlQueryType <em>Sparql Query Type</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.hs_rm.cs.vs.dsm.flow.SparqlQueryType
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSparqlQueryType()
+     * @generated
+     */
+    EEnum SPARQL_QUERY_TYPE = eINSTANCE.getSparqlQueryType();
+
+    /**
+     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.Scheme <em>Scheme</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.hs_rm.cs.vs.dsm.flow.Scheme
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getScheme()
+     * @generated
+     */
+    EEnum SCHEME = eINSTANCE.getScheme();
 
   }
 

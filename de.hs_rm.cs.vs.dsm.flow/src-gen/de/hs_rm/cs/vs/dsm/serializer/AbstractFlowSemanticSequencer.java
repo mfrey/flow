@@ -18,12 +18,14 @@ import de.hs_rm.cs.vs.dsm.flow.FlowPackage;
 import de.hs_rm.cs.vs.dsm.flow.Import;
 import de.hs_rm.cs.vs.dsm.flow.InputOperator;
 import de.hs_rm.cs.vs.dsm.flow.IntegerDataType;
+import de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier;
 import de.hs_rm.cs.vs.dsm.flow.JoinOperator;
 import de.hs_rm.cs.vs.dsm.flow.MarkerOperator;
 import de.hs_rm.cs.vs.dsm.flow.MatchOperator;
 import de.hs_rm.cs.vs.dsm.flow.Minus;
 import de.hs_rm.cs.vs.dsm.flow.Model;
 import de.hs_rm.cs.vs.dsm.flow.Multi;
+import de.hs_rm.cs.vs.dsm.flow.NewTagOperator;
 import de.hs_rm.cs.vs.dsm.flow.NumberLiteral;
 import de.hs_rm.cs.vs.dsm.flow.NumberVariableDefinition;
 import de.hs_rm.cs.vs.dsm.flow.OCLOperator;
@@ -31,9 +33,12 @@ import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperatorParameter;
 import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.Plus;
+import de.hs_rm.cs.vs.dsm.flow.QueryTagOperator;
 import de.hs_rm.cs.vs.dsm.flow.Rule;
 import de.hs_rm.cs.vs.dsm.flow.SWRLOperator;
 import de.hs_rm.cs.vs.dsm.flow.SWRLRule;
+import de.hs_rm.cs.vs.dsm.flow.SparqlQuery;
+import de.hs_rm.cs.vs.dsm.flow.SparqlQueryVariable;
 import de.hs_rm.cs.vs.dsm.flow.SplitOperator;
 import de.hs_rm.cs.vs.dsm.flow.StandardDeviationOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamAccess;
@@ -229,6 +234,12 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
+			case FlowPackage.INTERNATIONALIZED_RESOURCE_IDENTIFIER:
+				if(context == grammarAccess.getInternationalizedResourceIdentifierRule()) {
+					sequence_InternationalizedResourceIdentifier_InternationalizedResourceIdentifier(context, (InternationalizedResourceIdentifier) semanticObject); 
+					return; 
+				}
+				else break;
 			case FlowPackage.JOIN_OPERATOR:
 				if(context == grammarAccess.getJoinOperatorRule() ||
 				   context == grammarAccess.getReturnTypeOperatorRule()) {
@@ -291,6 +302,12 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getPrimaryExpressionRule()) {
 					sequence_Multiplication_Multi(context, (Multi) semanticObject); 
+					return; 
+				}
+				else break;
+			case FlowPackage.NEW_TAG_OPERATOR:
+				if(context == grammarAccess.getNewTagOperatorRule()) {
+					sequence_NewTagOperator_NewTagOperator(context, (NewTagOperator) semanticObject); 
 					return; 
 				}
 				else break;
@@ -368,6 +385,12 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
+			case FlowPackage.QUERY_TAG_OPERATOR:
+				if(context == grammarAccess.getQueryTagOperatorRule()) {
+					sequence_QueryTagOperator_QueryTagOperator(context, (QueryTagOperator) semanticObject); 
+					return; 
+				}
+				else break;
 			case FlowPackage.RULE:
 				if(context == grammarAccess.getRuleRule()) {
 					sequence_Rule_Rule(context, (Rule) semanticObject); 
@@ -387,6 +410,18 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
+			case FlowPackage.SPARQL_QUERY:
+				if(context == grammarAccess.getSparqlQueryRule()) {
+					sequence_SparqlQuery_SparqlQuery(context, (SparqlQuery) semanticObject); 
+					return; 
+				}
+				else break;
+			case FlowPackage.SPARQL_QUERY_VARIABLE:
+				if(context == grammarAccess.getSparqlQueryVariableRule()) {
+					sequence_SparqlQueryVariable_SparqlQueryVariable(context, (SparqlQueryVariable) semanticObject); 
+					return; 
+				}
+				else break;
 			case FlowPackage.SPLIT_OPERATOR:
 				if(context == grammarAccess.getSplitOperatorRule() ||
 				   context == grammarAccess.getReturnTypeOperatorRule()) {
@@ -402,7 +437,12 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				}
 				else break;
 			case FlowPackage.STREAM_ACCESS:
-				if(context == grammarAccess.getExpressionRule() ||
+				if(context == grammarAccess.getModelElementRule() ||
+				   context == grammarAccess.getStreamAccessRule()) {
+					sequence_StreamAccess_StreamAccess(context, (StreamAccess) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getBooleanOperationLeftAction_1_0() ||
 				   context == grammarAccess.getAndRule() ||
@@ -417,11 +457,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getPrimaryExpressionRule()) {
 					sequence_PrimaryExpression_StreamAccess(context, (StreamAccess) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getModelElementRule() ||
-				   context == grammarAccess.getStreamAccessRule()) {
-					sequence_StreamAccess_StreamAccess(context, (StreamAccess) semanticObject); 
 					return; 
 				}
 				else break;
@@ -860,7 +895,7 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (iri+=STRING iri+=STRING* port=NUMBER socket=STRING)
+	 *     (iri+=InternationalizedResourceIdentifier iri+=InternationalizedResourceIdentifier* port=NUMBER socket=STRING)
 	 *
 	 * Features:
 	 *    iri[1, *]
@@ -868,6 +903,22 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 *    socket[1, 1]
 	 */
 	protected void sequence_InputOperator_InputOperator(EObject context, InputOperator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (scheme=Scheme authority=STRING path+=STRING* query=STRING fragmentIRI=STRING)
+	 *
+	 * Features:
+	 *    scheme[1, 1]
+	 *    authority[1, 1]
+	 *    path[0, *]
+	 *    query[1, 1]
+	 *    fragmentIRI[1, 1]
+	 */
+	protected void sequence_InternationalizedResourceIdentifier_InternationalizedResourceIdentifier(EObject context, InternationalizedResourceIdentifier semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -971,6 +1022,29 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0(), semanticObject.getLeft());
 		feeder.accept(grammarAccess.getMultiplicationAccess().getRightPrimaryExpressionParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (query=QueryTagOperator target=STRING)
+	 *
+	 * Features:
+	 *    query[1, 1]
+	 *    target[1, 1]
+	 */
+	protected void sequence_NewTagOperator_NewTagOperator(EObject context, NewTagOperator semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.NEW_TAG_OPERATOR__QUERY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.NEW_TAG_OPERATOR__QUERY));
+			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.NEW_TAG_OPERATOR__TARGET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.NEW_TAG_OPERATOR__TARGET));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getNewTagOperatorAccess().getQueryQueryTagOperatorParserRuleCall_2_0(), semanticObject.getQuery());
+		feeder.accept(grammarAccess.getNewTagOperatorAccess().getTargetSTRINGTerminalRuleCall_4_0(), semanticObject.getTarget());
 		feeder.finish();
 	}
 	
@@ -1116,6 +1190,29 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (queryType=SparqlQueryType query=SparqlQuery)
+	 *
+	 * Features:
+	 *    queryType[1, 1]
+	 *    query[1, 1]
+	 */
+	protected void sequence_QueryTagOperator_QueryTagOperator(EObject context, QueryTagOperator semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.QUERY_TAG_OPERATOR__QUERY_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.QUERY_TAG_OPERATOR__QUERY_TYPE));
+			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.QUERY_TAG_OPERATOR__QUERY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.QUERY_TAG_OPERATOR__QUERY));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getQueryTagOperatorAccess().getQueryTypeSparqlQueryTypeEnumRuleCall_1_0(), semanticObject.getQueryType());
+		feeder.accept(grammarAccess.getQueryTagOperatorAccess().getQuerySparqlQueryParserRuleCall_2_0(), semanticObject.getQuery());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=[OWLObjectProperty|STRING] variable+=StreamAccess variable+=StreamAccess*)
 	 *
 	 * Features:
@@ -1159,6 +1256,37 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getSWRLRuleAccess().getAntecedentAntecedentRuleParserRuleCall_2_0(), semanticObject.getAntecedent());
 		feeder.accept(grammarAccess.getSWRLRuleAccess().getConsequentConsequentRuleParserRuleCall_4_0(), semanticObject.getConsequent());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (variable+=STRING variable+=STRING*)
+	 *
+	 * Features:
+	 *    variable[1, *]
+	 */
+	protected void sequence_SparqlQueryVariable_SparqlQueryVariable(EObject context, SparqlQueryVariable semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     variable=SparqlQueryVariable
+	 *
+	 * Features:
+	 *    variable[1, 1]
+	 */
+	protected void sequence_SparqlQuery_SparqlQuery(EObject context, SparqlQuery semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.SPARQL_QUERY__VARIABLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.SPARQL_QUERY__VARIABLE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getSparqlQueryAccess().getVariableSparqlQueryVariableParserRuleCall_0_0(), semanticObject.getVariable());
 		feeder.finish();
 	}
 	
@@ -1292,14 +1420,14 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (returnStream+=[StreamDefinition|ID] returnStream+=[StreamDefinition|ID]* (expression=ReturnTypeOperator | statement=Expression))
+	 *     (returnStream+=[StreamDefinition|ID] returnStream+=[StreamDefinition|ID]* (operator=ReturnTypeOperator | expression=Expression))
 	 *
 	 * Features:
 	 *    returnStream[1, *]
-	 *    expression[0, 1]
-	 *         EXCLUDE_IF_SET statement
-	 *    statement[0, 1]
+	 *    operator[0, 1]
 	 *         EXCLUDE_IF_SET expression
+	 *    expression[0, 1]
+	 *         EXCLUDE_IF_SET operator
 	 */
 	protected void sequence_StreamStatement_StreamStatement(EObject context, StreamStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

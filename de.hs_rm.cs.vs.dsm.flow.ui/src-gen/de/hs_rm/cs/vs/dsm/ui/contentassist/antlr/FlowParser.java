@@ -53,6 +53,8 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPrimaryExpressionAccess().getAlternatives(), "rule__PrimaryExpression__Alternatives");
 					put(grammarAccess.getDataTypeAccess().getAlternatives(), "rule__DataType__Alternatives");
 					put(grammarAccess.getSimpleDataTypeAccess().getAlternatives(), "rule__SimpleDataType__Alternatives");
+					put(grammarAccess.getSparqlQueryTypeAccess().getAlternatives(), "rule__SparqlQueryType__Alternatives");
+					put(grammarAccess.getSchemeAccess().getAlternatives(), "rule__Scheme__Alternatives");
 					put(grammarAccess.getPackageDeclarationAccess().getGroup(), "rule__PackageDeclaration__Group__0");
 					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 					put(grammarAccess.getStreamStatementAccess().getGroup(), "rule__StreamStatement__Group__0");
@@ -81,6 +83,11 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInputOperatorAccess().getGroup_3(), "rule__InputOperator__Group_3__0");
 					put(grammarAccess.getTagOperatorAccess().getGroup(), "rule__TagOperator__Group__0");
 					put(grammarAccess.getTagOperatorAccess().getGroup_3(), "rule__TagOperator__Group_3__0");
+					put(grammarAccess.getNewTagOperatorAccess().getGroup(), "rule__NewTagOperator__Group__0");
+					put(grammarAccess.getQueryTagOperatorAccess().getGroup(), "rule__QueryTagOperator__Group__0");
+					put(grammarAccess.getSparqlQueryAccess().getGroup(), "rule__SparqlQuery__Group__0");
+					put(grammarAccess.getSparqlQueryVariableAccess().getGroup(), "rule__SparqlQueryVariable__Group__0");
+					put(grammarAccess.getSparqlQueryVariableAccess().getGroup_2(), "rule__SparqlQueryVariable__Group_2__0");
 					put(grammarAccess.getUnTagOperatorAccess().getGroup(), "rule__UnTagOperator__Group__0");
 					put(grammarAccess.getUnTagOperatorAccess().getGroup_3(), "rule__UnTagOperator__Group_3__0");
 					put(grammarAccess.getUnTagElementAccess().getGroup(), "rule__UnTagElement__Group__0");
@@ -134,14 +141,18 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBooleanDataTypeAccess().getGroup(), "rule__BooleanDataType__Group__0");
 					put(grammarAccess.getFloatDataTypeAccess().getGroup(), "rule__FloatDataType__Group__0");
 					put(grammarAccess.getStringDataTypeAccess().getGroup(), "rule__StringDataType__Group__0");
+					put(grammarAccess.getInternationalizedResourceIdentifierAccess().getGroup(), "rule__InternationalizedResourceIdentifier__Group__0");
+					put(grammarAccess.getInternationalizedResourceIdentifierAccess().getGroup_3(), "rule__InternationalizedResourceIdentifier__Group_3__0");
+					put(grammarAccess.getInternationalizedResourceIdentifierAccess().getGroup_4(), "rule__InternationalizedResourceIdentifier__Group_4__0");
+					put(grammarAccess.getInternationalizedResourceIdentifierAccess().getGroup_5(), "rule__InternationalizedResourceIdentifier__Group_5__0");
 					put(grammarAccess.getModelAccess().getModelsAssignment(), "rule__Model__ModelsAssignment");
 					put(grammarAccess.getPackageDeclarationAccess().getNameAssignment_1(), "rule__PackageDeclaration__NameAssignment_1");
 					put(grammarAccess.getPackageDeclarationAccess().getElementsAssignment_3(), "rule__PackageDeclaration__ElementsAssignment_3");
 					put(grammarAccess.getImportAccess().getImportURIAssignment_1(), "rule__Import__ImportURIAssignment_1");
 					put(grammarAccess.getStreamStatementAccess().getReturnStreamAssignment_0(), "rule__StreamStatement__ReturnStreamAssignment_0");
 					put(grammarAccess.getStreamStatementAccess().getReturnStreamAssignment_1_1(), "rule__StreamStatement__ReturnStreamAssignment_1_1");
-					put(grammarAccess.getStreamStatementAccess().getExpressionAssignment_3_0(), "rule__StreamStatement__ExpressionAssignment_3_0");
-					put(grammarAccess.getStreamStatementAccess().getStatementAssignment_3_1(), "rule__StreamStatement__StatementAssignment_3_1");
+					put(grammarAccess.getStreamStatementAccess().getOperatorAssignment_3_0(), "rule__StreamStatement__OperatorAssignment_3_0");
+					put(grammarAccess.getStreamStatementAccess().getExpressionAssignment_3_1(), "rule__StreamStatement__ExpressionAssignment_3_1");
 					put(grammarAccess.getStreamVariableStatementAccess().getReferenceAssignment_0(), "rule__StreamVariableStatement__ReferenceAssignment_0");
 					put(grammarAccess.getStreamVariableStatementAccess().getExpressionAssignment_2(), "rule__StreamVariableStatement__ExpressionAssignment_2");
 					put(grammarAccess.getStreamAccessAccess().getReferenceAssignment_0(), "rule__StreamAccess__ReferenceAssignment_0");
@@ -180,6 +191,13 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInputOperatorAccess().getSocketAssignment_7(), "rule__InputOperator__SocketAssignment_7");
 					put(grammarAccess.getTagOperatorAccess().getParametersAssignment_2(), "rule__TagOperator__ParametersAssignment_2");
 					put(grammarAccess.getTagOperatorAccess().getParametersAssignment_3_1(), "rule__TagOperator__ParametersAssignment_3_1");
+					put(grammarAccess.getNewTagOperatorAccess().getQueryAssignment_2(), "rule__NewTagOperator__QueryAssignment_2");
+					put(grammarAccess.getNewTagOperatorAccess().getTargetAssignment_4(), "rule__NewTagOperator__TargetAssignment_4");
+					put(grammarAccess.getQueryTagOperatorAccess().getQueryTypeAssignment_1(), "rule__QueryTagOperator__QueryTypeAssignment_1");
+					put(grammarAccess.getQueryTagOperatorAccess().getQueryAssignment_2(), "rule__QueryTagOperator__QueryAssignment_2");
+					put(grammarAccess.getSparqlQueryAccess().getVariableAssignment_0(), "rule__SparqlQuery__VariableAssignment_0");
+					put(grammarAccess.getSparqlQueryVariableAccess().getVariableAssignment_1(), "rule__SparqlQueryVariable__VariableAssignment_1");
+					put(grammarAccess.getSparqlQueryVariableAccess().getVariableAssignment_2_1(), "rule__SparqlQueryVariable__VariableAssignment_2_1");
 					put(grammarAccess.getUnTagOperatorAccess().getParametersAssignment_2(), "rule__UnTagOperator__ParametersAssignment_2");
 					put(grammarAccess.getUnTagOperatorAccess().getParametersAssignment_3_1(), "rule__UnTagOperator__ParametersAssignment_3_1");
 					put(grammarAccess.getUnTagOperatorAccess().getStreamAssignment_5(), "rule__UnTagOperator__StreamAssignment_5");
@@ -248,6 +266,11 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPrimaryExpressionAccess().getValueAssignment_1_1(), "rule__PrimaryExpression__ValueAssignment_1_1");
 					put(grammarAccess.getPrimaryExpressionAccess().getVariableAssignment_2_1(), "rule__PrimaryExpression__VariableAssignment_2_1");
 					put(grammarAccess.getPrimaryExpressionAccess().getStreamVariableAssignment_3_1(), "rule__PrimaryExpression__StreamVariableAssignment_3_1");
+					put(grammarAccess.getInternationalizedResourceIdentifierAccess().getSchemeAssignment_0(), "rule__InternationalizedResourceIdentifier__SchemeAssignment_0");
+					put(grammarAccess.getInternationalizedResourceIdentifierAccess().getAuthorityAssignment_2(), "rule__InternationalizedResourceIdentifier__AuthorityAssignment_2");
+					put(grammarAccess.getInternationalizedResourceIdentifierAccess().getPathAssignment_3_1(), "rule__InternationalizedResourceIdentifier__PathAssignment_3_1");
+					put(grammarAccess.getInternationalizedResourceIdentifierAccess().getQueryAssignment_4_1(), "rule__InternationalizedResourceIdentifier__QueryAssignment_4_1");
+					put(grammarAccess.getInternationalizedResourceIdentifierAccess().getFragmentIRIAssignment_5_1(), "rule__InternationalizedResourceIdentifier__FragmentIRIAssignment_5_1");
 				}
 			};
 		}

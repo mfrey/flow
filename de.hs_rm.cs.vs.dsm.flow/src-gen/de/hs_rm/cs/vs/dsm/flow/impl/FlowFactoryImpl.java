@@ -8,6 +8,7 @@ package de.hs_rm.cs.vs.dsm.flow.impl;
 import de.hs_rm.cs.vs.dsm.flow.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -88,6 +89,10 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.RETURN_TYPE_OPERATOR: return createReturnTypeOperator();
       case FlowPackage.NO_RETURN_TYPE_OPERATOR: return createNoReturnTypeOperator();
       case FlowPackage.TAG_OPERATOR: return createTagOperator();
+      case FlowPackage.NEW_TAG_OPERATOR: return createNewTagOperator();
+      case FlowPackage.QUERY_TAG_OPERATOR: return createQueryTagOperator();
+      case FlowPackage.SPARQL_QUERY: return createSparqlQuery();
+      case FlowPackage.SPARQL_QUERY_VARIABLE: return createSparqlQueryVariable();
       case FlowPackage.UN_TAG_OPERATOR: return createUnTagOperator();
       case FlowPackage.UN_TAG_ELEMENT: return createUnTagElement();
       case FlowPackage.TAG_ELEMENT: return createTagElement();
@@ -125,6 +130,7 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.BOOLEAN_DATA_TYPE: return createBooleanDataType();
       case FlowPackage.FLOAT_DATA_TYPE: return createFloatDataType();
       case FlowPackage.STRING_DATA_TYPE: return createStringDataType();
+      case FlowPackage.INTERNATIONALIZED_RESOURCE_IDENTIFIER: return createInternationalizedResourceIdentifier();
       case FlowPackage.BOOLEAN_OPERATION: return createBooleanOperation();
       case FlowPackage.PLUS: return createPlus();
       case FlowPackage.MINUS: return createMinus();
@@ -134,6 +140,44 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.VARIABLE_CALL: return createVariableCall();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case FlowPackage.SPARQL_QUERY_TYPE:
+        return createSparqlQueryTypeFromString(eDataType, initialValue);
+      case FlowPackage.SCHEME:
+        return createSchemeFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case FlowPackage.SPARQL_QUERY_TYPE:
+        return convertSparqlQueryTypeToString(eDataType, instanceValue);
+      case FlowPackage.SCHEME:
+        return convertSchemeToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -366,6 +410,50 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
   {
     TagOperatorImpl tagOperator = new TagOperatorImpl();
     return tagOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NewTagOperator createNewTagOperator()
+  {
+    NewTagOperatorImpl newTagOperator = new NewTagOperatorImpl();
+    return newTagOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public QueryTagOperator createQueryTagOperator()
+  {
+    QueryTagOperatorImpl queryTagOperator = new QueryTagOperatorImpl();
+    return queryTagOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SparqlQuery createSparqlQuery()
+  {
+    SparqlQueryImpl sparqlQuery = new SparqlQueryImpl();
+    return sparqlQuery;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SparqlQueryVariable createSparqlQueryVariable()
+  {
+    SparqlQueryVariableImpl sparqlQueryVariable = new SparqlQueryVariableImpl();
+    return sparqlQueryVariable;
   }
 
   /**
@@ -780,6 +868,17 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public InternationalizedResourceIdentifier createInternationalizedResourceIdentifier()
+  {
+    InternationalizedResourceIdentifierImpl internationalizedResourceIdentifier = new InternationalizedResourceIdentifierImpl();
+    return internationalizedResourceIdentifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public BooleanOperation createBooleanOperation()
   {
     BooleanOperationImpl booleanOperation = new BooleanOperationImpl();
@@ -850,6 +949,50 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
   {
     VariableCallImpl variableCall = new VariableCallImpl();
     return variableCall;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SparqlQueryType createSparqlQueryTypeFromString(EDataType eDataType, String initialValue)
+  {
+    SparqlQueryType result = SparqlQueryType.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertSparqlQueryTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Scheme createSchemeFromString(EDataType eDataType, String initialValue)
+  {
+    Scheme result = Scheme.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertSchemeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

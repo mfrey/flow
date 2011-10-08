@@ -7,20 +7,24 @@ package de.hs_rm.cs.vs.dsm.flow.impl;
 
 import de.hs_rm.cs.vs.dsm.flow.FlowPackage;
 import de.hs_rm.cs.vs.dsm.flow.InputOperator;
+import de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier;
 
 import java.math.BigDecimal;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,14 +44,14 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class InputOperatorImpl extends ReturnTypeOperatorImpl implements InputOperator
 {
   /**
-   * The cached value of the '{@link #getIri() <em>Iri</em>}' attribute list.
+   * The cached value of the '{@link #getIri() <em>Iri</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getIri()
    * @generated
    * @ordered
    */
-  protected EList<String> iri;
+  protected EList<InternationalizedResourceIdentifier> iri;
 
   /**
    * The default value of the '{@link #getPort() <em>Port</em>}' attribute.
@@ -115,11 +119,11 @@ public class InputOperatorImpl extends ReturnTypeOperatorImpl implements InputOp
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getIri()
+  public EList<InternationalizedResourceIdentifier> getIri()
   {
     if (iri == null)
     {
-      iri = new EDataTypeEList<String>(String.class, this, FlowPackage.INPUT_OPERATOR__IRI);
+      iri = new EObjectContainmentEList<InternationalizedResourceIdentifier>(InternationalizedResourceIdentifier.class, this, FlowPackage.INPUT_OPERATOR__IRI);
     }
     return iri;
   }
@@ -176,6 +180,22 @@ public class InputOperatorImpl extends ReturnTypeOperatorImpl implements InputOp
    * @generated
    */
   @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case FlowPackage.INPUT_OPERATOR__IRI:
+        return ((InternalEList<?>)getIri()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -203,7 +223,7 @@ public class InputOperatorImpl extends ReturnTypeOperatorImpl implements InputOp
     {
       case FlowPackage.INPUT_OPERATOR__IRI:
         getIri().clear();
-        getIri().addAll((Collection<? extends String>)newValue);
+        getIri().addAll((Collection<? extends InternationalizedResourceIdentifier>)newValue);
         return;
       case FlowPackage.INPUT_OPERATOR__PORT:
         setPort((BigDecimal)newValue);
@@ -269,9 +289,7 @@ public class InputOperatorImpl extends ReturnTypeOperatorImpl implements InputOp
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (iri: ");
-    result.append(iri);
-    result.append(", port: ");
+    result.append(" (port: ");
     result.append(port);
     result.append(", socket: ");
     result.append(socket);

@@ -238,6 +238,34 @@ public class FlowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case FlowPackage.NEW_TAG_OPERATOR:
+      {
+        NewTagOperator newTagOperator = (NewTagOperator)theEObject;
+        T result = caseNewTagOperator(newTagOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.QUERY_TAG_OPERATOR:
+      {
+        QueryTagOperator queryTagOperator = (QueryTagOperator)theEObject;
+        T result = caseQueryTagOperator(queryTagOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.SPARQL_QUERY:
+      {
+        SparqlQuery sparqlQuery = (SparqlQuery)theEObject;
+        T result = caseSparqlQuery(sparqlQuery);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.SPARQL_QUERY_VARIABLE:
+      {
+        SparqlQueryVariable sparqlQueryVariable = (SparqlQueryVariable)theEObject;
+        T result = caseSparqlQueryVariable(sparqlQueryVariable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case FlowPackage.UN_TAG_OPERATOR:
       {
         UnTagOperator unTagOperator = (UnTagOperator)theEObject;
@@ -528,6 +556,13 @@ public class FlowSwitch<T> extends Switch<T>
         T result = caseStringDataType(stringDataType);
         if (result == null) result = caseComplexDataType(stringDataType);
         if (result == null) result = caseDataType(stringDataType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.INTERNATIONALIZED_RESOURCE_IDENTIFIER:
+      {
+        InternationalizedResourceIdentifier internationalizedResourceIdentifier = (InternationalizedResourceIdentifier)theEObject;
+        T result = caseInternationalizedResourceIdentifier(internationalizedResourceIdentifier);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -923,6 +958,70 @@ public class FlowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTagOperator(TagOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>New Tag Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>New Tag Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNewTagOperator(NewTagOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Query Tag Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Query Tag Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQueryTagOperator(QueryTagOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Sparql Query</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Sparql Query</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSparqlQuery(SparqlQuery object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Sparql Query Variable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Sparql Query Variable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSparqlQueryVariable(SparqlQueryVariable object)
   {
     return null;
   }
@@ -1515,6 +1614,22 @@ public class FlowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStringDataType(StringDataType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Internationalized Resource Identifier</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Internationalized Resource Identifier</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInternationalizedResourceIdentifier(InternationalizedResourceIdentifier object)
   {
     return null;
   }

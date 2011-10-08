@@ -6,6 +6,7 @@ import org.eclipse.emf.common.util.EList;
 
 import de.hs_rm.cs.vs.dsm.flow.BarrierOperator;
 import de.hs_rm.cs.vs.dsm.flow.Expression;
+import de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier;
 import de.hs_rm.cs.vs.dsm.flow.MarkerOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamDefinition;
 import de.hs_rm.cs.vs.dsm.flow.WindowOperator;
@@ -218,6 +219,13 @@ public class Util {
 	 * 
 	 */
 	public String createExpressionParameter(final Expression pExpression){
+		return null;
+	}
+	
+	/**
+	 * 
+	 */
+	public String createStringFromIRI(final InternationalizedResourceIdentifier pIdentifier){
 		return null;
 	}
 }
