@@ -39,7 +39,7 @@ public class StreamStatementGenerator extends AbstractOperatorGenerator {
 		// Save the expression
 		this.mExpression = pStatement.getExpression();
 		// Start the transformation of the expression to LUA constructs
-		this.expressionType(this.mExpression);
+		this.expressionType(this.mExpression, this.mExpression.hashCode());
 	}
 
 	/** 
@@ -59,56 +59,74 @@ public class StreamStatementGenerator extends AbstractOperatorGenerator {
 	 *
 	 * @param pExpression The expression which should be transformed into a 
 	 * LUA expression
+	 * @param pHashCode 
 	 */
-	private void expressionType(final Expression pExpression){
-		String result = "";
-		// For each operator in an expression create a operator in lua
-		result += Util.getInstance().createOperator(OPERATOR_TYPE, "" + pExpression.hashCode());
+	private void expressionType(final Expression pExpression, final int pHashCode){
 		
 		// Check if it is a division
 		if(pExpression instanceof Div){
+			// TODO: For each operator in an expression create a operator in lua
+			this.mResult += Util.getInstance().createOperator(OPERATOR_TYPE, "" + pHashCode);
+
 			Div expression = (Div) pExpression;
+			// Set operation type
+			this.mResult += Util.getInstance().createParameter(expression.hashCode() + "", "operationType", "div");
 			// Call it for the left hand expression in the div expression
-			this.expressionType(expression.getLeft());
+			this.expressionType(expression.getLeft(), expression.hashCode());
 			// Call it for the right hand expression in the div expression
-			this.expressionType(expression.getRight());
+			this.expressionType(expression.getRight(), expression.hashCode());
 		// Check if it is a multiplication
 		}else if(pExpression instanceof Multi){
+			// TODO: For each operator in an expression create a operator in lua
+			this.mResult += Util.getInstance().createOperator(OPERATOR_TYPE, "" + pHashCode);
+			
 			Multi expression = (Multi) pExpression;
+			// Set operation type
+			this.mResult += Util.getInstance().createParameter(expression.hashCode() + "", "operationType", "mult");
 			// Call it for the left hand expression in the multiplication expression
-			this.expressionType(expression.getLeft());
+			this.expressionType(expression.getLeft(), expression.hashCode());
 			// Call it for the right hand expression in the multiplication expression
-			this.expressionType(expression.getRight());
+			this.expressionType(expression.getRight(), expression.hashCode());
 		// Check if it is a addition
 		}else if(pExpression instanceof Plus){
+			// TODO: For each operator in an expression create a operator in lua
+			this.mResult += Util.getInstance().createOperator(OPERATOR_TYPE, "" + pHashCode);
+			
 			Plus expression = (Plus) pExpression;
+			// Set operation type
+			this.mResult += Util.getInstance().createParameter(expression.hashCode() + "", "operationType", "add");
 			// Call it for the left hand expression in the plus expression
-			this.expressionType(expression.getLeft());
+			this.expressionType(expression.getLeft(), expression.hashCode());
 			// Call it for the right hand expression in the plus expression
-			this.expressionType(expression.getRight());
+			this.expressionType(expression.getRight(), expression.hashCode());
 		// Check if it is a subtraction
 		}else if(pExpression instanceof Minus){
+			// TODO: For each operator in an expression create a operator in lua
+			this.mResult += Util.getInstance().createOperator(OPERATOR_TYPE, "" + pHashCode);
+			
 			Minus expression = (Minus) pExpression;
+			// Set operation type
+			this.mResult += Util.getInstance().createParameter(expression.hashCode() + "", "operationType", "sub");
 			// Call it for the left hand expression in the minus expression
-			this.expressionType(expression.getLeft());
+			this.expressionType(expression.getLeft(), expression.hashCode());
 			// Call it for the right hand expression in the minus expression
-			this.expressionType(expression.getRight());
+			this.expressionType(expression.getRight(), expression.hashCode());
 		}else if(pExpression instanceof StreamAccess){
 			StreamAccess access = (StreamAccess) pExpression;
-			// Set the input stream to the stream in stream access
-			result += Util.getInstance().connectOperator(access.getReference().getName(), "in", "TODO", "out");
+			// TODO: Set the input stream to the stream in stream access
+			// this.mResult += Util.getInstance().connectOperator("lulu", "in", "TODO", "out");
 			// TODO:
-			result += Util.getInstance().createParameter(access.getReference().getName(), "todo_streamaccess_variable", access.getElement().getName());
+			this.mResult += Util.getInstance().createParameter(pHashCode + "", "todo_streamaccess_variable", access.getElement().getName());
 		}else if(pExpression instanceof VariableCall){
 			VariableCall variable = (VariableCall) pExpression;
 			// TODO:
-			result += Util.getInstance().createParameter("todo", "todo_variable", variable.getVariable().getName());
+			this.mResult += Util.getInstance().createParameter(pHashCode + "", "todo_variable", variable.getVariable().getName());
 		}else if(pExpression instanceof NumberLiteral){	
 			NumberLiteral number = (NumberLiteral) pExpression;
 			// TODO:
-			result += Util.getInstance().createParameter("todo", "todo_number", number.getValue().toPlainString());
+			this.mResult += Util.getInstance().createParameter(pHashCode + "", "todo_number", number.getValue().toPlainString());
 		}else{
-			
+			// TODO: 
 		}
 	}
 	
@@ -125,7 +143,7 @@ public class StreamStatementGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String initializeOperator() {
-		return Util.getInstance().createOperator(OPERATOR_TYPE, this.getOutputStreams().get(0));
+		return "";
 	}
 
 	/**
