@@ -221,7 +221,7 @@ public class AnalysisOperatorGeneratorTest  {
 	}
 	
 	private void buildStreamStatement(ReturnTypeOperator mOperator, StreamDefinition outputStream){
-		mStatement.setExpression(mOperator);
+		mStatement.setOperator(mOperator);
 		mStatement.getReturnStream().add(outputStream);
 	}
 	
