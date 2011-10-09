@@ -1,5 +1,7 @@
 package de.hs_rm.cs.vs.dsm.generator;
 
+import java.util.HashMap;
+
 import de.hs_rm.cs.vs.dsm.flow.Div;
 import de.hs_rm.cs.vs.dsm.flow.Expression;
 import de.hs_rm.cs.vs.dsm.flow.Minus;
@@ -23,6 +25,8 @@ public class StreamStatementGenerator extends AbstractOperatorGenerator {
 	private Expression mExpression = null;
 	/** The string represents the overall result */
 	private String mResult = "";
+	/** */
+	private HashMap<Integer, ExpressionGenerator> mMap = new HashMap<Integer, ExpressionGenerator>();
 	
 	/** 
 	 * The constructor initializes the output stream list, sets the 
@@ -65,64 +69,75 @@ public class StreamStatementGenerator extends AbstractOperatorGenerator {
 		
 		// Check if it is a division
 		if(pExpression instanceof Div){
-			// TODO: For each operator in an expression create a operator in lua
-			this.mResult += Util.getInstance().createOperator(OPERATOR_TYPE, "" + pHashCode);
+			if(!this.mMap.containsKey(pHashCode)){
+				this.mMap.put(pHashCode, new ExpressionGenerator(pHashCode, "div"));
+			}else{
+				// TODO: Hrm
+			}
 
 			Div expression = (Div) pExpression;
-			// Set operation type
-			this.mResult += Util.getInstance().createParameter(expression.hashCode() + "", "operationType", "div");
 			// Call it for the left hand expression in the div expression
 			this.expressionType(expression.getLeft(), expression.hashCode());
 			// Call it for the right hand expression in the div expression
 			this.expressionType(expression.getRight(), expression.hashCode());
 		// Check if it is a multiplication
 		}else if(pExpression instanceof Multi){
-			// TODO: For each operator in an expression create a operator in lua
-			this.mResult += Util.getInstance().createOperator(OPERATOR_TYPE, "" + pHashCode);
+			if(!this.mMap.containsKey(pHashCode)){
+				this.mMap.put(pHashCode, new ExpressionGenerator(pHashCode, "mult"));
+			}else{
+				// TODO: Hrm
+			}
 			
 			Multi expression = (Multi) pExpression;
-			// Set operation type
-			this.mResult += Util.getInstance().createParameter(expression.hashCode() + "", "operationType", "mult");
 			// Call it for the left hand expression in the multiplication expression
 			this.expressionType(expression.getLeft(), expression.hashCode());
 			// Call it for the right hand expression in the multiplication expression
 			this.expressionType(expression.getRight(), expression.hashCode());
 		// Check if it is a addition
 		}else if(pExpression instanceof Plus){
-			// TODO: For each operator in an expression create a operator in lua
-			this.mResult += Util.getInstance().createOperator(OPERATOR_TYPE, "" + pHashCode);
+			if(!this.mMap.containsKey(pHashCode)){
+				this.mMap.put(pHashCode, new ExpressionGenerator(pHashCode, "add"));
+			}else{
+				// TODO: Hrm
+			}
 			
 			Plus expression = (Plus) pExpression;
-			// Set operation type
-			this.mResult += Util.getInstance().createParameter(expression.hashCode() + "", "operationType", "add");
 			// Call it for the left hand expression in the plus expression
 			this.expressionType(expression.getLeft(), expression.hashCode());
 			// Call it for the right hand expression in the plus expression
 			this.expressionType(expression.getRight(), expression.hashCode());
 		// Check if it is a subtraction
 		}else if(pExpression instanceof Minus){
-			// TODO: For each operator in an expression create a operator in lua
-			this.mResult += Util.getInstance().createOperator(OPERATOR_TYPE, "" + pHashCode);
+			if(!this.mMap.containsKey(pHashCode)){
+				this.mMap.put(pHashCode, new ExpressionGenerator(pHashCode, "sub"));
+			}else{
+				// TODO: Hrm
+			}
 			
 			Minus expression = (Minus) pExpression;
-			// Set operation type
-			this.mResult += Util.getInstance().createParameter(expression.hashCode() + "", "operationType", "sub");
 			// Call it for the left hand expression in the minus expression
 			this.expressionType(expression.getLeft(), expression.hashCode());
 			// Call it for the right hand expression in the minus expression
 			this.expressionType(expression.getRight(), expression.hashCode());
 		}else if(pExpression instanceof StreamAccess){
 			StreamAccess access = (StreamAccess) pExpression;
+			//
+			//this.mMap.get(pHashCode).addOperand(pOperandName, pOperandValue, pOperandType)
+			
 			// TODO: Set the input stream to the stream in stream access
-			// this.mResult += Util.getInstance().connectOperator("lulu", "in", "TODO", "out");
+			this.mResult += Util.getInstance().connectOperator(access.getReference().getName(), "in", pHashCode + "", "out");
 			// TODO:
 			this.mResult += Util.getInstance().createParameter(pHashCode + "", "todo_streamaccess_variable", access.getElement().getName());
 		}else if(pExpression instanceof VariableCall){
 			VariableCall variable = (VariableCall) pExpression;
+			//this.mMap.get(pHashCode).addOperand(pOperandName, pOperandValue, pOperandType)
+
 			// TODO:
 			this.mResult += Util.getInstance().createParameter(pHashCode + "", "todo_variable", variable.getVariable().getName());
 		}else if(pExpression instanceof NumberLiteral){	
 			NumberLiteral number = (NumberLiteral) pExpression;
+			//this.mMap.get(pHashCode).addOperand(pOperandName, pOperandValue, pOperandType)
+
 			// TODO:
 			this.mResult += Util.getInstance().createParameter(pHashCode + "", "todo_number", number.getValue().toPlainString());
 		}else{
@@ -168,5 +183,55 @@ public class StreamStatementGenerator extends AbstractOperatorGenerator {
 	@Override
 	public String toString(){
 		return this.mResult;
+	}
+	
+	private class ExpressionGenerator extends AbstractOperatorGenerator{
+		private int mName;
+		private String mType = "";
+		private String mOperands = "";
+		
+		public ExpressionGenerator(int pHashCode, String pType){
+			this.mName = pHashCode;
+			this.mType = pType;
+		}
+
+		/**
+		 * {@inheritDoc} 
+		 */
+		@Override
+		public String setBarrier() {
+			return "";
+		}
+
+		/**
+		 * {@inheritDoc} 
+		 */
+		@Override
+		public String initializeOperator() {
+			return Util.getInstance().createOperator(OPERATOR_TYPE, "" + mName);
+		}
+		
+		/**
+		 * {@inheritDoc} 
+		 */
+		@Override
+		public String setOperatorProperties() {
+			String result = Util.getInstance().createParameter(this.mName  + "", "operationType", mType);
+
+			return result;
+		}
+
+		public void addOperand(final String pOperandName, final String pOperandValue, final String pOperandType){
+			//mOperands += Util.getInstance().createParameter(pStream, pKey, pValue);
+		}
+		
+		/**
+		 * {@inheritDoc} 
+		 */
+		@Override
+		public String setOperatorConnection() {
+			// TODO Auto-generated method stub
+			return null;
+		}
 	}
 }

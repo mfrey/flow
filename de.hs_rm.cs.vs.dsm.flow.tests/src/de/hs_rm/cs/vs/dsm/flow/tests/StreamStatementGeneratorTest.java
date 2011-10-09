@@ -94,5 +94,29 @@ public class StreamStatementGeneratorTest {
 		
 		System.out.println(generator.toString());
 	}
+	
+	/**
+	 * 
+	 */
+	@Test
+	public void testStreamStatementGeneratorSimpleMultiplicationExpression(){
+		
+	}
+	
+	/**
+	 * 
+	 */
+	@Test
+	public void testStreamStatementGeneratorSimpleAdditionExpression(){
+		
+	}
+	
+	/**
+	 * 
+	 */
+	@Test
+	public void testStreamStatementGeneratorSimpleSubtractionExpression(){
+		
+	}
 
 }
