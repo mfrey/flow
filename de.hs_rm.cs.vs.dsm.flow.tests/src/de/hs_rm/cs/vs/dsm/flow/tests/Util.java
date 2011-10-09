@@ -3,6 +3,7 @@ package de.hs_rm.cs.vs.dsm.flow.tests;
 import java.math.BigDecimal;
 
 import de.hs_rm.cs.vs.dsm.flow.BarrierOperator;
+import de.hs_rm.cs.vs.dsm.flow.Expression;
 import de.hs_rm.cs.vs.dsm.flow.ReturnTypeOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamAccess;
 import de.hs_rm.cs.vs.dsm.flow.StreamDeclaration;
@@ -68,11 +69,18 @@ public class Util {
 		return streamOperatorParameter;
 	}
 	
-	public StreamStatement buildStreamStatement(StreamStatement pStatement, ReturnTypeOperator mOperator, StreamDefinition outputStream){
-		pStatement.setOperator(mOperator);
-		pStatement.getReturnStream().add(outputStream);
+	public StreamStatement buildStreamStatement(StreamStatement pStatement, ReturnTypeOperator pOperator, StreamDefinition pOutputStream){
+		pStatement.setOperator(pOperator);
+		pStatement.getReturnStream().add(pOutputStream);
 		return pStatement;
 	}
+	
+	public StreamStatement buildStreamStatement(StreamStatement pStatement, Expression pExpression, StreamDefinition pOutputStream){
+		pStatement.setExpression(pExpression);
+		pStatement.getReturnStream().add(pOutputStream);
+		return pStatement;
+	}
+	
 	
 	public WindowOperator createWindowOperator(int pValue, String pSetting, String pUnit){
 		WindowOperator result = mFactory.createWindowOperator();

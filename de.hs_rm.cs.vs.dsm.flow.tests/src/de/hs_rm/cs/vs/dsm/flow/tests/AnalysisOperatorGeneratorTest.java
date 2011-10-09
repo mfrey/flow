@@ -3,16 +3,12 @@ package de.hs_rm.cs.vs.dsm.flow.tests;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import java.math.BigDecimal;
-
 import org.junit.Before;
 import org.junit.Test;
 
 import de.hs_rm.cs.vs.dsm.flow.AverageOperator;
-import de.hs_rm.cs.vs.dsm.flow.BarrierOperator;
 import de.hs_rm.cs.vs.dsm.flow.CountOperator;
 import de.hs_rm.cs.vs.dsm.flow.IntegerDataType;
-import de.hs_rm.cs.vs.dsm.flow.ReturnTypeOperator;
 import de.hs_rm.cs.vs.dsm.flow.StandardDeviationOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamAccess;
 import de.hs_rm.cs.vs.dsm.flow.StreamDeclaration;
@@ -77,26 +73,26 @@ public class AnalysisOperatorGeneratorTest  {
 		CountOperator operator = mFactory.createCountOperator();
 		assertNotNull(operator);
 		// Create a stream definition
-		StreamDefinition inputStream = createStreamDefinition(mStream, "inputStream");
+		StreamDefinition inputStream = Util.getInstance().createStreamDefinition(mStream, "inputStream");
 		assertNotNull(inputStream);
 		// Create stream access object
-		StreamAccess access = createStreamAccess(mElement, inputStream);
+		StreamAccess access = Util.getInstance().createStreamAccess(mElement, inputStream);
 		assertNotNull(access);		
 		// Create a barrier
-		WindowOperator window = createWindowOperator(w, "last", "min");
+		WindowOperator window = Util.getInstance().createWindowOperator(w, "last", "min");
 		assertNotNull(window);
 		// Create a stream operator parameter
-		StreamOperatorParameter parameter = createStreamOperatorParameter(inputStream, window);
+		StreamOperatorParameter parameter = Util.getInstance().createStreamOperatorParameter(inputStream, window);
 		assertNotNull(parameter);
 		// Set the parameter of the operator
 		operator.setParameter(access);
 		// Set stream
 		operator.setStream(parameter);
 		// Create a return Stream
-		StreamDefinition outputStream = createStreamDefinition(mStream, "outputStream");
+		StreamDefinition outputStream = Util.getInstance().createStreamDefinition(mStream, "outputStream");
 		assertNotNull(outputStream);
 		// Build the statement
-		buildStreamStatement(operator, outputStream);
+		mStatement = Util.getInstance().buildStreamStatement(mStatement, operator, outputStream);
 		
 		mOperatorTestString =  "outputStream = fm:create_operator_of_type(\"outputStream\", \"count\");\n";
 		mOperatorTestString += "outputStream:set_parameter(\"step_size_num\", \"" +  (w * 1000 * 60) + "\");\n";
@@ -118,26 +114,26 @@ public class AnalysisOperatorGeneratorTest  {
 		StandardDeviationOperator operator = mFactory.createStandardDeviationOperator();
 		assertNotNull(operator);
 		// Create a stream definition
-		StreamDefinition inputStream = createStreamDefinition(mStream, "inputStream");
+		StreamDefinition inputStream = Util.getInstance().createStreamDefinition(mStream, "inputStream");
 		assertNotNull(inputStream);
 		// Create stream access object
-		StreamAccess access = createStreamAccess(mElement, inputStream);
+		StreamAccess access = Util.getInstance().createStreamAccess(mElement, inputStream);
 		assertNotNull(access);		
 		// Create a barrier
-		WindowOperator window = createWindowOperator(w, "last", "min");
+		WindowOperator window = Util.getInstance().createWindowOperator(w, "last", "min");
 		assertNotNull(window);
 		// Create a stream operator parameter
-		StreamOperatorParameter parameter = createStreamOperatorParameter(inputStream, window);
+		StreamOperatorParameter parameter = Util.getInstance().createStreamOperatorParameter(inputStream, window);
 		assertNotNull(parameter);
 		// Set the parameter of the operator
 		operator.setParameter(access);
 		// Set stream
 		operator.setStream(parameter);
 		// Create a return Stream
-		StreamDefinition outputStream = createStreamDefinition(mStream, "outputStream");
+		StreamDefinition outputStream = Util.getInstance().createStreamDefinition(mStream, "outputStream");
 		assertNotNull(outputStream);
 		// Build the statement
-		buildStreamStatement(operator, outputStream);
+		mStatement = Util.getInstance().buildStreamStatement(mStatement, operator, outputStream);
 		
 		mOperatorTestString =  "outputStream = fm:create_operator_of_type(\"outputStream\", \"std\");\n";
 		mOperatorTestString += "outputStream:set_parameter(\"step_size_num\", \"" +  (w * 1000 * 60) + "\");\n";
@@ -160,26 +156,26 @@ public class AnalysisOperatorGeneratorTest  {
 		AverageOperator operator = mFactory.createAverageOperator();
 		assertNotNull(operator);
 		// Create a stream definition
-		StreamDefinition inputStream = createStreamDefinition(mStream, "inputStream");
+		StreamDefinition inputStream = Util.getInstance().createStreamDefinition(mStream, "inputStream");
 		assertNotNull(inputStream);
 		// Create stream access object
-		StreamAccess access = createStreamAccess(mElement, inputStream);
+		StreamAccess access = Util.getInstance().createStreamAccess(mElement, inputStream);
 		assertNotNull(access);		
 		// Create a barrier
-		WindowOperator window = createWindowOperator(w, "last", "min");
+		WindowOperator window = Util.getInstance().createWindowOperator(w, "last", "min");
 		assertNotNull(window);
 		// Create a stream operator parameter
-		StreamOperatorParameter parameter = createStreamOperatorParameter(inputStream, window);
+		StreamOperatorParameter parameter = Util.getInstance().createStreamOperatorParameter(inputStream, window);
 		assertNotNull(parameter);
 		// Set the parameter of the operator
 		operator.setParameter(access);
 		// Set stream
 		operator.setStream(parameter);
 		// Create a return Stream
-		StreamDefinition outputStream = createStreamDefinition(mStream, "outputStream");
+		StreamDefinition outputStream = Util.getInstance().createStreamDefinition(mStream, "outputStream");
 		assertNotNull(outputStream);
 		// Build the statement
-		buildStreamStatement(operator, outputStream);
+		mStatement = Util.getInstance().buildStreamStatement(mStatement, operator, outputStream);
 		
 		mOperatorTestString =  "outputStream = fm:create_operator_of_type(\"outputStream\", \"avg\");\n";
 		mOperatorTestString += "outputStream:set_parameter(\"step_size_num\", \"" +  (w * 1000 * 60) + "\");\n";
@@ -191,49 +187,5 @@ public class AnalysisOperatorGeneratorTest  {
 		assertTrue(result);
 	}
 
-	private StreamAccess createStreamAccess(final VariableDeclaration pDeclaration, final StreamDefinition pStream){
-		// Create stream access object
-		StreamAccess access = mFactory.createStreamAccess();
-		// Set the element
-		access.setElement(pDeclaration);
-		// Set the reference to the input stream
-		access.setReference(pStream);
-		
-		return access;
-	}
 	
-	private StreamDefinition createStreamDefinition(final StreamDeclaration pStream, final String pName){
-		StreamDefinition result = mFactory.createStreamDefinition();
-		result.setReference(pStream);
-		result.setName(pName);
-		
-		return result;
-	}
-	
-	private StreamOperatorParameter createStreamOperatorParameter(final StreamDefinition pStream, final BarrierOperator pBarrier){
-		StreamOperatorParameter streamOperatorParameter = mFactory.createStreamOperatorParameter();
-		// Set stream parameter to the stream definition
-		streamOperatorParameter.setStream(pStream);
-		// Set window
-		streamOperatorParameter.setBarrier(pBarrier);
-
-		return streamOperatorParameter;
-	}
-	
-	private void buildStreamStatement(ReturnTypeOperator mOperator, StreamDefinition outputStream){
-		mStatement.setOperator(mOperator);
-		mStatement.getReturnStream().add(outputStream);
-	}
-	
-	private WindowOperator createWindowOperator(int pValue, String pSetting, String pUnit){
-		WindowOperator result = mFactory.createWindowOperator();
-		result.setSetting(pSetting);
-
-		if(pSetting.equals("last")){
-			result.setValue(new BigDecimal(pValue));
-			result.setUnit(pUnit);
-		}
-		
-		return result;
-	}
 }
