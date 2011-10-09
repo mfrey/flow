@@ -23,8 +23,6 @@ import de.hs_rm.cs.vs.dsm.flow.ElementJoinOperator
 
 import de.hs_rm.cs.vs.dsm.flow.StreamVariableStatement
 
-
-
 import org.eclipse.xtext.naming.IQualifiedNameProvider
 
 import com.google.inject.Inject
