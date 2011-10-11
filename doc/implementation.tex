@@ -1,0 +1,28 @@
+\section{Implementation}
+\subsection{Language}
+\subsubsection{Streams}
+\subsubsection{Barriers}
+\subsubsection{Operators}
+\subsection{Integration of Meta-models}
+Xtext allows to reference instances of metamodels within a DSL. One example is 
+the use of OWL classes in the query language. In order to use this mechanism 
+several steps are required. First, the metamodel must be referenced in the 
+grammar of the language
+\begin{lstlisting}[language=C, caption={\emph{bla}},label={lst:shell}]
+...
+import "platform:/resource/de.hs_rm.cs.vs.dsm.flow/model/owl.ecore"
+   as owl
+...
+\end{lstlisting}
+Second, the metamodel needs to be referecend in the MWE2 workflow of the 
+language project.
+\begin{lstlisting}[language=C, caption={\emph{bla}},label={lst:shell}]
+...
+import "platform:/resource/de.hs_rm.cs.vs.dsm.flow/model/owl.ecore"
+   as owl
+...
+\end{lstlisting}
+
+\subsubsection{Unified Modeling Language}
+\subsubsection{Web Ontology Language}
+\subsection{Generator}

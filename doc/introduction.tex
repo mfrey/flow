@@ -1,0 +1,36 @@
+\section{Introduction}
+The project is based on the language 'Flow' [1]. In contrast to the previous 
+version of the project, it is built using Xtext 2.0 as language toolkit and 
+Maven/Tycho for the build process. The target platform of the project is 
+Eclipse 3.7. The project is split in several plugins and is structured as follows:
+\begin{itemize}
+  \item \textbf{de.hs\_rm.cs.vs.dsm.flow} \\
+  The plug-in specifies the grammar of the language, provides a generator for 
+  the language as well as scoping and naming mechanisms for the language editor.
+  \item \textbf{ de.hs\_rm.cs.vs.dsm.flow.tests} \\
+  Unit tests related to the language are placed in the plug-in and executed on 
+  command line by the corresponding maven command.
+  \item \textbf{de.hs\_rm.cs.vs.dsm.flow.ui} \\
+  Within the plug-in different user-interface related classes and interfaces are
+  specified. For example, the class which is registered as application extension 
+  point for the Eclipse RCP application is defined within this plug-in.
+  \item \textbf{de.hs\_rm.cs.vs.dsm.flow.feature} \\
+  The plugin contains a feature.xml file which is required for the Eclipse RCP 
+  application build. The file lists required and provided Eclipse plugins and 
+  specifies licences, project website and other information.
+  \item \textbf{de.hs\_rm.cs.vs.dsm.flow.product} \\
+  Every Eclipse RCP application requires a product definition. The plugin 
+  contains the product definition which defines
+  \item \textbf{de.hs\_rm.cs.vs.dsm.owl} \\
+  The plug-in consists of classes and interfaces generated from a RDFS and OWL 
+  meta model.
+  \item \textbf{de.hs\_rm.cs.vs.dsm.owl.edit} \\
+  The plug-in offers different factory classes for creating OWL and RDFS 
+  elements.
+  \item \textbf{de.hs\_rm.cs.vs.dsm.owl.editor} \\
+  Within the plug-in a editor for reading OWL files in <TODO> format is 
+  provided. The plug-in only offers a simple tree-based editor since
+  \item \textbf{de.hs\_rm.cs.vs.dsm.owl.ui} \\
+  A plug-in which provides classes and extension points for loading the OWL 
+  editor within the language editor. 
+\end{itemize}

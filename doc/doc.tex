@@ -1,0 +1,104 @@
+\documentclass[paper=a4,nenglish]{scrartcl}
+%\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{a4wide}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\setlength\parskip{\medskipamount}
+\setlength\parindent{0pt}
+\usepackage{float}
+\usepackage{makeidx}
+\usepackage{listings}																
+%\usepackage{babel}
+\usepackage{setspace}
+\usepackage{epsfig}
+
+\usepackage[
+  pdftex, 
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  citecolor=blue,  		
+  linkcolor=black,
+  urlcolor=black,
+  citecolor=black,
+  plainpages=false,
+  pdfpagelabels,
+	pdftitle={Bla},
+	pdfauthor={Michael Frey}
+]{hyperref}
+
+\lstloadlanguages{Java}
+\lstset{
+  language=[AspectJ]Java,						% Java with AspectJ-Dialect
+	tabsize=2,												% Tabulatorbreite
+	linewidth=\linewidth,							% Width of a line
+	breaklines=true,									% Break long lines
+	breakatwhitespace=true,						% Only break at whitespaces
+	basicstyle=\scriptsize\ttfamily,	% Schriftart/-größe	
+	numbers=left,											% Linenumbers left
+	numberfirstline=false,						% Not: Always number 1. line
+	numberstyle=\scriptsize,					% Größe der Zeilennummern
+	stepnumber=2,											% Jede 2. Zeilennummer anzeigen
+	numbersep=5pt,										% Abstand Nr - Quellcode
+	showspaces=false,									% Spaces nicht anzeigen
+	showtabs=false,										% Tabs nicht anzeigen
+	showstringspaces=false,						% Don't show tabs in strings
+	showlines=false,									% Leerzeilen am Sourceende weglassen
+	extendedchars=true,								% ASCII-Zeichnen > 127 zulassen 
+	identifierstyle=\textbf,					% Identifier
+	keywordstyle=\bfseries,						% Keywords
+	commentstyle=\itshape,						% Style of comments
+	stringstyle=\ttfamily,						% Strings (!= Keywords)
+	flexiblecolumns=false,						% Use fixed width for fonts
+	fontadjust=true,									% "Base width" nicht jede Zeile anpassen
+	frame=trbl,												% Frame; trBL
+	captionpos=b,											% Position of the caption
+	aboveskip=25pt,										% Space between text and the top of the listing
+}
+
+\begin{document}
+\begin{titlepage}   
+
+\bibliographystyle{alphadin}
+
+\topmargin0mm   
+
+\setlength{\parindent}{0em}   
+
+\begin{minipage}{170mm} 
+  \begin{minipage}{5cm}
+    \resizebox*{5cm}{!}{\includegraphics{figures/fhw}}
+    \par\vspace*{4mm}
+  \end{minipage}
+  \begin{minipage}{6cm}
+    \hfill
+  \end{minipage}
+  \begin{minipage}{5cm} 
+    \centering
+  \end{minipage}   
+\end{minipage}  
+\smallskip  \centering
+  \begin{minipage}{\textwidth}     \centering     \vspace{5cm}
+    \renewcommand{\baselinestretch}{1.8}    \small\normalsize     {\Huge \bf
+    Documentation \\ \normalsize Subtitle \\ Another Subtitle}\\ \vspace{2cm} {\normalsize \bf Michael Frey}\\  \vspace{6cm} {\small \bf
+    Last Update: 4 September 2011 }\\    \renewcommand{\baselinestretch}{1}
+    \small\normalsize   \end{minipage}   
+\clearpage 
+\end{titlepage} 
+
+\newpage
+\tableofcontents
+\newpage
+\lstlistoflistings
+
+\include{introduction}
+\include{installation}
+\include{implementation}
+\include{summary}
+
+\addcontentsline{toc}{section}{Literature}
+\bibliographystyle{plain}
+\bibliography{doc}
+
+\end{document}
