@@ -9,6 +9,6 @@
 
   <groupId>de.hs_rm.cs.vs.dsm</groupId>
   <version>1.0.0-SNAPSHOT</version>
-  <artifactId>de.hs_rm.cs.vs.dsm.uml</artifactId>
+  <artifactId>de.hs_rm.cs.vs.dsm.uml.ui</artifactId>
   <packaging>eclipse-plugin</packaging>
 </project>

@@ -69,6 +69,8 @@
 		<module>de.hs_rm.cs.vs.dsm.owl.editor</module>
 		<module>de.hs_rm.cs.vs.dsm.owl.ui</module>
 		<module>de.hs_rm.cs.vs.dsm.target_definition</module>
+		<module>de.hs_rm.cs.vs.dsm.uml</module>
+		<module>de.hs_rm.cs.vs.dsm.uml.ui</module>
 		<!-- This should be fixed <module>de.hs_rm.cs.vs.dsm.owl.tests</module> -->
 	</modules>
 
