@@ -429,12 +429,7 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				}
 				else break;
 			case FlowPackage.STREAM_ACCESS:
-				if(context == grammarAccess.getModelElementRule() ||
-				   context == grammarAccess.getStreamAccessRule()) {
-					sequence_StreamAccess_StreamAccess(context, (StreamAccess) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getExpressionRule() ||
+				if(context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getOrRule() ||
 				   context == grammarAccess.getOrAccess().getBooleanOperationLeftAction_1_0() ||
 				   context == grammarAccess.getAndRule() ||
@@ -449,6 +444,11 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				   context == grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0() ||
 				   context == grammarAccess.getPrimaryExpressionRule()) {
 					sequence_PrimaryExpression_StreamAccess(context, (StreamAccess) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getModelElementRule() ||
+				   context == grammarAccess.getStreamAccessRule()) {
+					sequence_StreamAccess_StreamAccess(context, (StreamAccess) semanticObject); 
 					return; 
 				}
 				else break;
