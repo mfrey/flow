@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: uml ui plug-in
-Bundle-SymbolicName: de.hs_rm.cs.vs.dsm.uml.ui
+Bundle-SymbolicName: de.hs_rm.cs.vs.dsm.uml.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: de.hs_rm.cs.vs.dsm.uml.ui.Activator
 Bundle-Vendor: Hochschule RheinMain
