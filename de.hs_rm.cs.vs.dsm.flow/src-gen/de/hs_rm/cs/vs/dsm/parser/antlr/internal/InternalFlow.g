@@ -1529,21 +1529,11 @@ ruleReturnTypeOperator returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getOCLOperatorParserRuleCall_13()); 
+        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getSWRLOperatorParserRuleCall_13()); 
     }
-    this_OCLOperator_13=ruleOCLOperator
+    this_SWRLOperator_13=ruleSWRLOperator
     { 
-        $current = $this_OCLOperator_13.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getSWRLOperatorParserRuleCall_14()); 
-    }
-    this_SWRLOperator_14=ruleSWRLOperator
-    { 
-        $current = $this_SWRLOperator_14.current; 
+        $current = $this_SWRLOperator_13.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -2823,79 +2813,6 @@ ruleRule returns [EObject current=null]
 ))*	otherlv_7=')' 
     {
     	newLeafNode(otherlv_7, grammarAccess.getRuleAccess().getRightParenthesisKeyword_5());
-    }
-)
-;
-
-
-
-
-
-// Entry rule entryRuleOCLOperator
-entryRuleOCLOperator returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getOCLOperatorRule()); }
-	 iv_ruleOCLOperator=ruleOCLOperator 
-	 { $current=$iv_ruleOCLOperator.current; } 
-	 EOF 
-;
-
-// Rule OCLOperator
-ruleOCLOperator returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='ocl' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getOCLOperatorAccess().getOclKeyword_0());
-    }
-	otherlv_1='(' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getOCLOperatorAccess().getLeftParenthesisKeyword_1());
-    }
-(
-(
-		lv_constraint_2_0=RULE_STRING
-		{
-			newLeafNode(lv_constraint_2_0, grammarAccess.getOCLOperatorAccess().getConstraintSTRINGTerminalRuleCall_2_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getOCLOperatorRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"constraint",
-        		lv_constraint_2_0, 
-        		"STRING");
-	    }
-
-)
-)	otherlv_3=',' 
-    {
-    	newLeafNode(otherlv_3, grammarAccess.getOCLOperatorAccess().getCommaKeyword_3());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getOCLOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_4_0()); 
-	    }
-		lv_stream_4_0=ruleStreamOperatorParameter		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getOCLOperatorRule());
-	        }
-       		set(
-       			$current, 
-       			"stream",
-        		lv_stream_4_0, 
-        		"StreamOperatorParameter");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)	otherlv_5=')' 
-    {
-    	newLeafNode(otherlv_5, grammarAccess.getOCLOperatorAccess().getRightParenthesisKeyword_5());
     }
 )
 ;

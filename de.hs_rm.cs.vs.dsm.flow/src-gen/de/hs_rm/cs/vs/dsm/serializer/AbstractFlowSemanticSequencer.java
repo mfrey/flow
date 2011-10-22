@@ -28,7 +28,6 @@ import de.hs_rm.cs.vs.dsm.flow.Multi;
 import de.hs_rm.cs.vs.dsm.flow.NewTagOperator;
 import de.hs_rm.cs.vs.dsm.flow.NumberLiteral;
 import de.hs_rm.cs.vs.dsm.flow.NumberVariableDefinition;
-import de.hs_rm.cs.vs.dsm.flow.OCLOperator;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperatorParameter;
 import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration;
@@ -335,13 +334,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				   context == grammarAccess.getVariableDefinitionRule() ||
 				   context == grammarAccess.getNumberVariableDefinitionRule()) {
 					sequence_NumberVariableDefinition_NumberVariableDefinition(context, (NumberVariableDefinition) semanticObject); 
-					return; 
-				}
-				else break;
-			case FlowPackage.OCL_OPERATOR:
-				if(context == grammarAccess.getReturnTypeOperatorRule() ||
-				   context == grammarAccess.getOCLOperatorRule()) {
-					sequence_OCLOperator_OCLOperator(context, (OCLOperator) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1072,29 +1064,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 		feeder.accept(grammarAccess.getNumberVariableDefinitionAccess().getTypeSimpleDataTypeParserRuleCall_0_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getNumberVariableDefinitionAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getNumberVariableDefinitionAccess().getValueNUMBERTerminalRuleCall_3_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (constraint=STRING stream=StreamOperatorParameter)
-	 *
-	 * Features:
-	 *    constraint[1, 1]
-	 *    stream[1, 1]
-	 */
-	protected void sequence_OCLOperator_OCLOperator(EObject context, OCLOperator semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.OCL_OPERATOR__CONSTRAINT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.OCL_OPERATOR__CONSTRAINT));
-			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.OCL_OPERATOR__STREAM) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.OCL_OPERATOR__STREAM));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getOCLOperatorAccess().getConstraintSTRINGTerminalRuleCall_2_0(), semanticObject.getConstraint());
-		feeder.accept(grammarAccess.getOCLOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_4_0(), semanticObject.getStream());
 		feeder.finish();
 	}
 	

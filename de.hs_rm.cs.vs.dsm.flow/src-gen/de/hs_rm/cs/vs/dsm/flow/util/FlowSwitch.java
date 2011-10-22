@@ -371,14 +371,6 @@ public class FlowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FlowPackage.OCL_OPERATOR:
-      {
-        OCLOperator oclOperator = (OCLOperator)theEObject;
-        T result = caseOCLOperator(oclOperator);
-        if (result == null) result = caseReturnTypeOperator(oclOperator);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case FlowPackage.COUNT_OPERATOR:
       {
         CountOperator countOperator = (CountOperator)theEObject;
@@ -1246,22 +1238,6 @@ public class FlowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRule(Rule object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>OCL Operator</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>OCL Operator</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseOCLOperator(OCLOperator object)
   {
     return null;
   }

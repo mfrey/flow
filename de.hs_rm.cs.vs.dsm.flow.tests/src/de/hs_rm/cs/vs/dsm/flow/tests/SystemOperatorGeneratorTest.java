@@ -7,6 +7,11 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * The class tests the system operators of the query language
+ * 
+ * @author Michael Frey
+ */
 public class SystemOperatorGeneratorTest {
 	@Before
 	public void initialize(){
@@ -15,7 +20,7 @@ public class SystemOperatorGeneratorTest {
 	
 	@Test
 	public void testOutputOperatorGenerator(){
-
+		
 	}
 	
 	@Test

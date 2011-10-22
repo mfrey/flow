@@ -273,11 +273,6 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
         return createRuleAdapter();
       }
       @Override
-      public Adapter caseOCLOperator(OCLOperator object)
-      {
-        return createOCLOperatorAdapter();
-      }
-      @Override
       public Adapter caseCountOperator(CountOperator object)
       {
         return createCountOperatorAdapter();
@@ -1030,21 +1025,6 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRuleAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.OCLOperator <em>OCL Operator</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.OCLOperator
-   * @generated
-   */
-  public Adapter createOCLOperatorAdapter()
   {
     return null;
   }

@@ -105,7 +105,6 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getConsequentRuleAccess().getGroup_3(), "rule__ConsequentRule__Group_3__0");
 					put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
 					put(grammarAccess.getRuleAccess().getGroup_4(), "rule__Rule__Group_4__0");
-					put(grammarAccess.getOCLOperatorAccess().getGroup(), "rule__OCLOperator__Group__0");
 					put(grammarAccess.getCountOperatorAccess().getGroup(), "rule__CountOperator__Group__0");
 					put(grammarAccess.getStandardDeviationOperatorAccess().getGroup(), "rule__StandardDeviationOperator__Group__0");
 					put(grammarAccess.getAverageOperatorAccess().getGroup(), "rule__AverageOperator__Group__0");
@@ -226,8 +225,6 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRuleAccess().getNameAssignment_0(), "rule__Rule__NameAssignment_0");
 					put(grammarAccess.getRuleAccess().getVariableAssignment_3(), "rule__Rule__VariableAssignment_3");
 					put(grammarAccess.getRuleAccess().getVariableAssignment_4_2(), "rule__Rule__VariableAssignment_4_2");
-					put(grammarAccess.getOCLOperatorAccess().getConstraintAssignment_2(), "rule__OCLOperator__ConstraintAssignment_2");
-					put(grammarAccess.getOCLOperatorAccess().getStreamAssignment_4(), "rule__OCLOperator__StreamAssignment_4");
 					put(grammarAccess.getCountOperatorAccess().getParameterAssignment_2(), "rule__CountOperator__ParameterAssignment_2");
 					put(grammarAccess.getCountOperatorAccess().getStreamAssignment_4(), "rule__CountOperator__StreamAssignment_4");
 					put(grammarAccess.getStandardDeviationOperatorAccess().getParameterAssignment_2(), "rule__StandardDeviationOperator__ParameterAssignment_2");

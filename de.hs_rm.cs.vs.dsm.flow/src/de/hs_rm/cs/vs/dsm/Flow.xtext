@@ -5,13 +5,10 @@ hidden(WS, ML_COMMENT, SL_COMMENT)
 
 /** Import of the ecore model */
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
-
-/** Import of the base ocl ecore model */
-//import "platform:/resource/de.hs_rm.cs.vs.dsm.flow/model/BaseCST.ecore" as base
-/** Import of the ocl ecore model */
-//import "platform:/resource/org.eclipse.ocl.examples.xtext.base/model/EssentialOCLCST.ecore" as essential
+/** Import of an uml ecore model */
+import "http://www.eclipse.org/uml2/3.0.0/UML" as uml
 /** Import of an owl ecore model */
-import "platform:/resource/de.hs_rm.cs.vs.dsm.flow/model/owl.ecore" as OWL
+import "platform:/resource/de.hs_rm.cs.vs.dsm.flow/model/owl.ecore" as owl
 /** Generate the grammar for the language flow */
 generate flow "http://www.hs_rm.de/cs/vs/dsm/Flow"
 
@@ -144,7 +141,7 @@ ReturnTypeOperator:
 	InputOperator | JoinOperator | SymmetricDifferenceOperator | DifferenceOperator | 
 	TagOperator | UnTagOperator | FilterOperator | SplitOperator | CountOperator | 
 	StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | 
-	OCLOperator | SWRLOperator;
+	SWRLOperator;
 
 /**
  * The rule summarizes the operators which have no return type
@@ -205,7 +202,7 @@ UnTagOperator:
 	',' stream=StreamOperatorParameter')';
 
 UnTagElement:
-	element=[OWL::OWLClass|STRING] 'is' reference=StreamAccess; 
+	element=[owl::OWLClass|STRING] 'is' reference=StreamAccess; 
 
 /**
  * The overall tag element rule for certain elements of owl ontology. Since a owl class, object property
@@ -219,19 +216,19 @@ TagElement:
  * The tag element for a owl class
  */
 TagClassElement:
-	reference=StreamAccess 'is' 'class' element=[OWL::OWLClass|STRING]; 
+	reference=StreamAccess 'is' 'class' element=[owl::OWLClass|STRING]; 
 
 /**
  * The tag element for a owl object property
  */
 TagObjectPropertyElement:
-	reference=StreamAccess 'is' 'objectproperty' element=[OWL::OWLObjectProperty|STRING]; 
+	reference=StreamAccess 'is' 'objectproperty' element=[owl::OWLObjectProperty|STRING]; 
 
 /**
  * The tag element for a datatype property
  */
 TagDataTypePropertyElement:
-	reference=StreamAccess 'is' 'datatype' element=[OWL::OWLDatatypeProperty|STRING]; 
+	reference=StreamAccess 'is' 'datatype' element=[owl::OWLDatatypeProperty|STRING]; 
 
 /**
  * The BarrierOperator is a rule which summarizes the barrier operators of the
@@ -272,47 +269,7 @@ ConsequentRule:
 	'Consequent' '(' atoms+=Rule (',' atoms+=Rule)* ')';
 
 Rule:
-	name=[OWL::OWLObjectProperty|STRING] '(' '?' variable+=StreamAccess (','  '?' variable+=StreamAccess )* ')';
-
-/*
-OCLOperator:
-  'ocl''('constraint=OCLConstraint ',' stream+=[StreamDefinition] 
-    (',' stream+=[StreamDefinition])* ')';
-
-OCLConstraint:
-  OperationContextDeclarationConstraint;
-
-OperationContextDeclarationConstraint returns OperationContextDeclarationConstraint:
-  'context' operation=OperationReferenceCS '('(parameters+=ParameterCS 
-    (',' parameters+=ParameterCS)*)?')' ':' (type=TypeExpCS)?
-    ((preconditions+=PreconditionCS) | (postconditions+=PostconditionCS) | 
-    (bodies+=BodyCS))*
-
-OperationReferenceCS returns base::OperationRefCS:
-  SimpleOperationRefCS;
-
-SimpleOperationRefCS returns base::SimpleOperationRefCS:
-  operation=[base::OperationCS|Identifier];
-
-ParameterCS returns essential::VariableCS:
-  (name=SimpleName ':')? type=TypeExpCS;
-
-PreconditionCS returns PreCS :
-  'pre' (name=SimpleName)? ':' expression=ExpCS;
-
-PostconditionCS returns PostCS:
-  'post' (name=SimpleName)? ':' expression=ExpCS;
-
-BodyCS returns BodyCS:
-  'body' (name=SimpleName)? ':' expression=ExpCS;
- */
-
-/**
- * The CountOperator rule defines a count operator which counts an element
- * of a stream.
- */
-OCLOperator:
-	'ocl''('constraint=STRING ',' stream=StreamOperatorParameter ')';
+	name=[owl::OWLObjectProperty|STRING] '(' '?' variable+=StreamAccess (','  '?' variable+=StreamAccess )* ')';
 	
 /**
  * The CountOperator rule defines a count operator which counts an element

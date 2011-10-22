@@ -377,15 +377,6 @@ public interface FlowFactory extends EFactory
   Rule createRule();
 
   /**
-   * Returns a new object of class '<em>OCL Operator</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>OCL Operator</em>'.
-   * @generated
-   */
-  OCLOperator createOCLOperator();
-
-  /**
    * Returns a new object of class '<em>Count Operator</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

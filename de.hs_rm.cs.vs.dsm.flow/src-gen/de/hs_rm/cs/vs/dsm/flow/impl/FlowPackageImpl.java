@@ -38,7 +38,6 @@ import de.hs_rm.cs.vs.dsm.flow.NewTagOperator;
 import de.hs_rm.cs.vs.dsm.flow.NoReturnTypeOperator;
 import de.hs_rm.cs.vs.dsm.flow.NumberLiteral;
 import de.hs_rm.cs.vs.dsm.flow.NumberVariableDefinition;
-import de.hs_rm.cs.vs.dsm.flow.OCLOperator;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperatorParameter;
 import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration;
@@ -79,6 +78,10 @@ import de.hs_rm.cs.vs.dsm.flow.VariableCall;
 import de.hs_rm.cs.vs.dsm.flow.VariableDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.VariableDefinition;
 import de.hs_rm.cs.vs.dsm.flow.WindowOperator;
+
+import ecore.EcorePackage;
+
+import ecore.impl.EcorePackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -378,13 +381,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass oclOperatorEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass countOperatorEClass = null;
 
   /**
@@ -656,11 +652,16 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     OwlPackage.eINSTANCE.eClass();
     RdfsPackage.eINSTANCE.eClass();
 
+    // Obtain or create and register interdependencies
+    EcorePackageImpl theEcorePackage = (EcorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) instanceof EcorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) : EcorePackage.eINSTANCE);
+
     // Create package meta-data objects
     theFlowPackage.createPackageContents();
+    theEcorePackage.createPackageContents();
 
     // Initialize created meta-data
     theFlowPackage.initializePackageContents();
+    theEcorePackage.initializePackageContents();
 
     // Mark meta-data to indicate it can't be changed
     theFlowPackage.freeze();
@@ -1666,36 +1667,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getOCLOperator()
-  {
-    return oclOperatorEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getOCLOperator_Constraint()
-  {
-    return (EAttribute)oclOperatorEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getOCLOperator_Stream()
-  {
-    return (EReference)oclOperatorEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getCountOperator()
   {
     return countOperatorEClass;
@@ -2599,10 +2570,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     createEReference(ruleEClass, RULE__NAME);
     createEReference(ruleEClass, RULE__VARIABLE);
 
-    oclOperatorEClass = createEClass(OCL_OPERATOR);
-    createEAttribute(oclOperatorEClass, OCL_OPERATOR__CONSTRAINT);
-    createEReference(oclOperatorEClass, OCL_OPERATOR__STREAM);
-
     countOperatorEClass = createEClass(COUNT_OPERATOR);
     createEReference(countOperatorEClass, COUNT_OPERATOR__PARAMETER);
     createEReference(countOperatorEClass, COUNT_OPERATOR__STREAM);
@@ -2765,7 +2732,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     windowOperatorEClass.getESuperTypes().add(this.getBarrierOperator());
     markerOperatorEClass.getESuperTypes().add(this.getBarrierOperator());
     swrlOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
-    oclOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     countOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     standardDeviationOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     averageOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
@@ -2930,10 +2896,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRule_Name(), theOwlPackage.getOWLObjectProperty(), null, "name", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRule_Variable(), this.getStreamAccess(), null, "variable", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(oclOperatorEClass, OCLOperator.class, "OCLOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getOCLOperator_Constraint(), ecorePackage.getEString(), "constraint", null, 0, 1, OCLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getOCLOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, OCLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(countOperatorEClass, CountOperator.class, "CountOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCountOperator_Parameter(), this.getStreamAccess(), null, "parameter", null, 0, 1, CountOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
