@@ -20,7 +20,6 @@ import de.hs_rm.cs.vs.dsm.generator.JoinOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.OutputOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.SplitOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.StandardDeviationOperatorGenerator;
-import de.hs_rm.cs.vs.dsm.generator.StreamStatementGenerator;
 import de.hs_rm.cs.vs.dsm.generator.Util;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -44,7 +43,7 @@ public class FlowGenerator implements IGenerator {
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
     Iterable<EObject> _allContentsIterable = ResourceExtensions.allContentsIterable(resource);
     Iterable<PackageDeclaration> _filter = IterableExtensions.<PackageDeclaration>filter(_allContentsIterable, de.hs_rm.cs.vs.dsm.flow.PackageDeclaration.class);
-    for (PackageDeclaration model : _filter) {
+    for (final PackageDeclaration model : _filter) {
       QualifiedName _fullyQualifiedName = this.nameProvider.getFullyQualifiedName(model);
       String _string = _fullyQualifiedName.toString();
       String _replace = _string.replace(".", "/");
@@ -58,10 +57,11 @@ public class FlowGenerator implements IGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("fm = get_instance();");
     _builder.newLine();
+    _builder.append("/*");
     _builder.newLine();
     {
       EList<ModelElement> _elements = e.getElements();
-      for(ModelElement elements : _elements) {
+      for(final ModelElement elements : _elements) {
         StringConcatenation _compile = this.compile(elements);
         _builder.append(_compile, "");
         _builder.newLineIfNotEmpty();
@@ -76,6 +76,8 @@ public class FlowGenerator implements IGenerator {
     String _stopOperators = _instance_1.getStopOperators();
     _builder.append(_stopOperators, "");
     _builder.newLineIfNotEmpty();
+    _builder.append("*/");
+    _builder.newLine();
     return _builder;
   }
   
@@ -107,71 +109,86 @@ public class FlowGenerator implements IGenerator {
   
   public StringConcatenation compile(final StreamStatement statement) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.newLine();
+    _builder.append("//\t\t\t");
     {
       Expression _expression = statement.getExpression();
       boolean _equals = _expression.equals(null);
       if (_equals) {
-        _builder.newLine();
+        _builder.newLineIfNotEmpty();
+        _builder.append("//\t\t\t");
         {
           ReturnTypeOperator _operator = statement.getOperator();
           EClass _eClass = _operator.eClass();
           String _name = _eClass.getName();
           boolean _equals_1 = _name.equals("JoinOperator");
           if (_equals_1) {
-            _builder.append("\t\t");
-            _builder.newLine();} else {
+            _builder.newLineIfNotEmpty();
+            _builder.append("//\t\t\t");
+            _builder.newLine();
+            _builder.append("//\t\t\t");} else {
             ReturnTypeOperator _operator_1 = statement.getOperator();
             EClass _eClass_1 = _operator_1.eClass();
             String _name_1 = _eClass_1.getName();
             boolean _equals_2 = _name_1.equals("SplitOperator");
             if (_equals_2) {
-              _builder.append("\t\t");
+              _builder.newLineIfNotEmpty();
+              _builder.append("//\t\t\t");
               ReturnTypeOperator _operator_2 = statement.getOperator();
               String _write = this.write(((SplitOperator) _operator_2), statement);
-              _builder.append(_write, "		");
-              _builder.newLineIfNotEmpty();} else {
+              _builder.append(_write, "");
+              _builder.newLineIfNotEmpty();
+              _builder.append("//\t\t\t");} else {
               ReturnTypeOperator _operator_3 = statement.getOperator();
               EClass _eClass_2 = _operator_3.eClass();
               String _name_2 = _eClass_2.getName();
               boolean _equals_3 = _name_2.equals("CountOperator");
               if (_equals_3) {
-                _builder.append("\t\t");
+                _builder.newLineIfNotEmpty();
+                _builder.append("//\t\t\t");
                 ReturnTypeOperator _operator_4 = statement.getOperator();
                 String _write_1 = this.write(((CountOperator) _operator_4), statement);
-                _builder.append(_write_1, "		");
-                _builder.newLineIfNotEmpty();} else {
+                _builder.append(_write_1, "");
+                _builder.newLineIfNotEmpty();
+                _builder.append("//\t\t\t");} else {
                 ReturnTypeOperator _operator_5 = statement.getOperator();
                 EClass _eClass_3 = _operator_5.eClass();
                 String _name_3 = _eClass_3.getName();
                 boolean _equals_4 = _name_3.equals("AverageOperator");
                 if (_equals_4) {
-                  _builder.append("\t\t");
+                  _builder.newLineIfNotEmpty();
+                  _builder.append("//\t\t\t");
                   ReturnTypeOperator _operator_6 = statement.getOperator();
                   String _write_2 = this.write(((AverageOperator) _operator_6), statement);
-                  _builder.append(_write_2, "		");
-                  _builder.newLineIfNotEmpty();} else {
+                  _builder.append(_write_2, "");
+                  _builder.newLineIfNotEmpty();
+                  _builder.append("//\t\t\t");} else {
                   ReturnTypeOperator _operator_7 = statement.getOperator();
                   EClass _eClass_4 = _operator_7.eClass();
                   String _name_4 = _eClass_4.getName();
                   boolean _equals_5 = _name_4.equals("StandardDeviationOperator");
                   if (_equals_5) {
-                    _builder.append("\t\t");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("//\t\t\t");
                     ReturnTypeOperator _operator_8 = statement.getOperator();
                     String _write_3 = this.write(((StandardDeviationOperator) _operator_8), statement);
-                    _builder.append(_write_3, "		");
-                    _builder.newLineIfNotEmpty();} else {
+                    _builder.append(_write_3, "");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("//\t\t\t");} else {
                     ReturnTypeOperator _operator_9 = statement.getOperator();
                     EClass _eClass_5 = _operator_9.eClass();
                     String _name_5 = _eClass_5.getName();
                     boolean _equals_6 = _name_5.equals("ElementJoinOperator");
                     if (_equals_6) {
-                      _builder.append("\t\t");
+                      _builder.newLineIfNotEmpty();
+                      _builder.append("//\t\t\t");
                       ReturnTypeOperator _operator_10 = statement.getOperator();
                       String _write_4 = this.write(((ElementJoinOperator) _operator_10), statement);
-                      _builder.append(_write_4, "		");
+                      _builder.append(_write_4, "");
                       _builder.newLineIfNotEmpty();
-                      _builder.append("\t\t");
+                      _builder.append("//\t\t\t");
                       _builder.newLine();
+                      _builder.append("//\t\t\t");
                     }
                   }
                 }
@@ -179,12 +196,10 @@ public class FlowGenerator implements IGenerator {
             }
           }
         }
-        _builder.append("\t");
-        _builder.newLine();} else {
-        StreamStatementGenerator _streamStatementGenerator = new StreamStatementGenerator(statement);
-        String _string = _streamStatementGenerator.toString();
-        _builder.append(_string, "");
         _builder.newLineIfNotEmpty();
+        _builder.append("//\t\t");} else {
+        _builder.newLineIfNotEmpty();
+        _builder.newLine();
       }
     }
     return _builder;

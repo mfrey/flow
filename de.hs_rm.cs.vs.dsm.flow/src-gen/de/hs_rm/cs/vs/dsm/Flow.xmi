@@ -3,9 +3,6 @@
   <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="ecore">
     <ePackage href="http://www.eclipse.org/emf/2002/Ecore#/"/>
   </metamodelDeclarations>
-  <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="uml">
-    <ePackage href="http://www.eclipse.org/uml2/3.0.0/UML#/"/>
-  </metamodelDeclarations>
   <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="owl">
     <ePackage href="http:///org/eclipse/owl.ecore#/"/>
   </metamodelDeclarations>
@@ -13,7 +10,7 @@
     <ePackage href="http://www.hs_rm.de/cs/vs/dsm/Flow#/"/>
   </metamodelDeclarations>
   <rules xsi:type="xtext:ParserRule" name="Model">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//Model"/>
     </type>
     <alternatives xsi:type="xtext:Assignment" cardinality="+" feature="models" operator="+=">
@@ -21,7 +18,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="PackageDeclaration">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//PackageDeclaration"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -37,7 +34,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="ModelElement">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//ModelElement"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
@@ -53,7 +50,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="Import">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//Import"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -64,13 +61,13 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="StreamStatement">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StreamStatement"/>
     </type>
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Assignment" feature="returnStream" operator="+=">
         <terminal xsi:type="xtext:CrossReference">
-          <type metamodel="//@metamodelDeclarations.3">
+          <type metamodel="//@metamodelDeclarations.2">
             <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StreamDefinition"/>
           </type>
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.73"/>
@@ -80,7 +77,7 @@
         <elements xsi:type="xtext:Keyword" value=","/>
         <elements xsi:type="xtext:Assignment" feature="returnStream" operator="+=">
           <terminal xsi:type="xtext:CrossReference">
-            <type metamodel="//@metamodelDeclarations.3">
+            <type metamodel="//@metamodelDeclarations.2">
               <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StreamDefinition"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="//@rules.73"/>
@@ -100,13 +97,13 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="StreamVariableStatement">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StreamVariableStatement"/>
     </type>
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Assignment" feature="reference" operator="=">
         <terminal xsi:type="xtext:CrossReference">
-          <type metamodel="//@metamodelDeclarations.3">
+          <type metamodel="//@metamodelDeclarations.2">
             <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StreamDefinition"/>
           </type>
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.73"/>
@@ -120,13 +117,13 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="StreamAccess">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StreamAccess"/>
     </type>
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Assignment" feature="reference" operator="=">
         <terminal xsi:type="xtext:CrossReference">
-          <type metamodel="//@metamodelDeclarations.3">
+          <type metamodel="//@metamodelDeclarations.2">
             <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StreamDefinition"/>
           </type>
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.73"/>
@@ -135,7 +132,7 @@
       <elements xsi:type="xtext:Keyword" value="."/>
       <elements xsi:type="xtext:Assignment" feature="element" operator="=">
         <terminal xsi:type="xtext:CrossReference">
-          <type metamodel="//@metamodelDeclarations.3">
+          <type metamodel="//@metamodelDeclarations.2">
             <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//VariableDeclaration"/>
           </type>
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.73"/>
@@ -144,13 +141,13 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="StreamDeclarationAccess">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StreamDeclarationAccess"/>
     </type>
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Assignment" feature="reference" operator="=">
         <terminal xsi:type="xtext:CrossReference">
-          <type metamodel="//@metamodelDeclarations.3">
+          <type metamodel="//@metamodelDeclarations.2">
             <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StreamDeclaration"/>
           </type>
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.73"/>
@@ -159,7 +156,7 @@
       <elements xsi:type="xtext:Keyword" value=":"/>
       <elements xsi:type="xtext:Assignment" feature="element" operator="=">
         <terminal xsi:type="xtext:CrossReference">
-          <type metamodel="//@metamodelDeclarations.3">
+          <type metamodel="//@metamodelDeclarations.2">
             <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//VariableDeclaration"/>
           </type>
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.73"/>
@@ -168,13 +165,13 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="StreamDefinition">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StreamDefinition"/>
     </type>
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Assignment" feature="reference" operator="=">
         <terminal xsi:type="xtext:CrossReference">
-          <type metamodel="//@metamodelDeclarations.3">
+          <type metamodel="//@metamodelDeclarations.2">
             <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StreamDeclaration"/>
           </type>
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.73"/>
@@ -187,7 +184,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="JoinOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//JoinOperator"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -210,13 +207,13 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="StreamOperatorParameter">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StreamOperatorParameter"/>
     </type>
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Assignment" feature="stream" operator="=">
         <terminal xsi:type="xtext:CrossReference">
-          <type metamodel="//@metamodelDeclarations.3">
+          <type metamodel="//@metamodelDeclarations.2">
             <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StreamDefinition"/>
           </type>
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.73"/>
@@ -232,7 +229,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="ElementJoinOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//ElementJoinOperator"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -244,7 +241,7 @@
         </elements>
         <elements xsi:type="xtext:Assignment" feature="variableElementParameters" operator="+=">
           <terminal xsi:type="xtext:CrossReference">
-            <type metamodel="//@metamodelDeclarations.3">
+            <type metamodel="//@metamodelDeclarations.2">
               <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//VariableDefinition"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="//@rules.73"/>
@@ -261,7 +258,7 @@
         <elements xsi:type="xtext:Keyword" value=","/>
         <elements xsi:type="xtext:Assignment" feature="variableElementParameters" operator="+=">
           <terminal xsi:type="xtext:CrossReference">
-            <type metamodel="//@metamodelDeclarations.3">
+            <type metamodel="//@metamodelDeclarations.2">
               <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//VariableDefinition"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="//@rules.73"/>
@@ -276,7 +273,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="FilterOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//FilterOperator"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -299,7 +296,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SplitOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//SplitOperator"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -312,7 +309,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="MatchOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//MatchOperator"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -339,7 +336,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SymmetricDifferenceOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//SymmetricDifferenceOperator"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -362,7 +359,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="DifferenceOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//DifferenceOperator"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -385,7 +382,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="InputOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//InputOperator"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -412,7 +409,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="ReturnTypeOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//ReturnTypeOperator"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
@@ -433,13 +430,13 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="NoReturnTypeOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//NoReturnTypeOperator"/>
     </type>
     <alternatives xsi:type="xtext:RuleCall" rule="//@rules.43"/>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="TagOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//TagOperator"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -458,7 +455,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="NewTagOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//NewTagOperator"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -475,7 +472,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="QueryTagOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//QueryTagOperator"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -490,7 +487,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SparqlQuery">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//SparqlQuery"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -503,7 +500,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SparqlQueryVariable">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//SparqlQueryVariable"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -520,7 +517,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:EnumRule" name="SparqlQueryType">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EEnum" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//SparqlQueryType"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
@@ -543,7 +540,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="UnTagOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//UnTagOperator"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -566,13 +563,13 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="UnTagElement">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//UnTagElement"/>
     </type>
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Assignment" feature="element" operator="=">
         <terminal xsi:type="xtext:CrossReference">
-          <type metamodel="//@metamodelDeclarations.2">
+          <type metamodel="//@metamodelDeclarations.1">
             <classifier xsi:type="ecore:EClass" href="http:///org/eclipse/owl.ecore#//OWLClass"/>
           </type>
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.74"/>
@@ -585,7 +582,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="TagElement">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//TagElement"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
@@ -595,7 +592,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="TagClassElement">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//TagClassElement"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -606,7 +603,7 @@
       <elements xsi:type="xtext:Keyword" value="class"/>
       <elements xsi:type="xtext:Assignment" feature="element" operator="=">
         <terminal xsi:type="xtext:CrossReference">
-          <type metamodel="//@metamodelDeclarations.2">
+          <type metamodel="//@metamodelDeclarations.1">
             <classifier xsi:type="ecore:EClass" href="http:///org/eclipse/owl.ecore#//OWLClass"/>
           </type>
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.74"/>
@@ -615,7 +612,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="TagObjectPropertyElement">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//TagObjectPropertyElement"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -626,7 +623,7 @@
       <elements xsi:type="xtext:Keyword" value="objectproperty"/>
       <elements xsi:type="xtext:Assignment" feature="element" operator="=">
         <terminal xsi:type="xtext:CrossReference">
-          <type metamodel="//@metamodelDeclarations.2">
+          <type metamodel="//@metamodelDeclarations.1">
             <classifier xsi:type="ecore:EClass" href="http:///org/eclipse/owl.ecore#//OWLObjectProperty"/>
           </type>
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.74"/>
@@ -635,7 +632,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="TagDataTypePropertyElement">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//TagDataTypePropertyElement"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -646,7 +643,7 @@
       <elements xsi:type="xtext:Keyword" value="datatype"/>
       <elements xsi:type="xtext:Assignment" feature="element" operator="=">
         <terminal xsi:type="xtext:CrossReference">
-          <type metamodel="//@metamodelDeclarations.2">
+          <type metamodel="//@metamodelDeclarations.1">
             <classifier xsi:type="ecore:EClass" href="http:///org/eclipse/owl.ecore#//OWLDatatypeProperty"/>
           </type>
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.74"/>
@@ -655,7 +652,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="BarrierOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//BarrierOperator"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
@@ -664,7 +661,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="WindowOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//WindowOperator"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
@@ -690,7 +687,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="MarkerOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//MarkerOperator"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -701,7 +698,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SWRLOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//SWRLOperator"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -724,7 +721,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SWRLRule">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//SWRLRule"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -741,7 +738,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="AntecedentRule">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//AntecedentRule"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -760,7 +757,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="ConsequentRule">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//ConsequentRule"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -779,13 +776,13 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="Rule">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//Rule"/>
     </type>
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Assignment" feature="name" operator="=">
         <terminal xsi:type="xtext:CrossReference">
-          <type metamodel="//@metamodelDeclarations.2">
+          <type metamodel="//@metamodelDeclarations.1">
             <classifier xsi:type="ecore:EClass" href="http:///org/eclipse/owl.ecore#//OWLObjectProperty"/>
           </type>
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.74"/>
@@ -807,7 +804,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="CountOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//CountOperator"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -824,7 +821,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="StandardDeviationOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StandardDeviationOperator"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -841,7 +838,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="AverageOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//AverageOperator"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -858,7 +855,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="OutputOperator">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//OutputOperator"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -880,7 +877,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="OutputOperatorParameter">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//OutputOperatorParameter"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -896,7 +893,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="VariableDefinition">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//VariableDefinition"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
@@ -906,7 +903,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="VariableDeclaration">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//VariableDeclaration"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -920,7 +917,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="NumberVariableDefinition">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//NumberVariableDefinition"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -938,7 +935,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="StringVariableDefinition">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StringVariableDefinition"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -956,7 +953,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="BooleanVariableDefinition">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//BooleanVariableDefinition"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -974,7 +971,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="StructureDeclaration">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StructureDeclaration"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -991,7 +988,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="StreamDeclaration">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StreamDeclaration"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -1008,7 +1005,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="StreamElement">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StreamElement"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
@@ -1017,14 +1014,14 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="StructureElements">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StructureElements"/>
     </type>
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="use"/>
       <elements xsi:type="xtext:Assignment" feature="element" operator="=">
         <terminal xsi:type="xtext:CrossReference">
-          <type metamodel="//@metamodelDeclarations.3">
+          <type metamodel="//@metamodelDeclarations.2">
             <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StructureDeclaration"/>
           </type>
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.73"/>
@@ -1034,20 +1031,20 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="Expression">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//Expression"/>
     </type>
     <alternatives xsi:type="xtext:RuleCall" rule="//@rules.55"/>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="Or">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//Expression"/>
     </type>
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:RuleCall" rule="//@rules.56"/>
       <elements xsi:type="xtext:Group" cardinality="*">
         <elements xsi:type="xtext:Action" feature="left" operator="=">
-          <type metamodel="//@metamodelDeclarations.3">
+          <type metamodel="//@metamodelDeclarations.2">
             <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//BooleanOperation"/>
           </type>
         </elements>
@@ -1061,14 +1058,14 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="And">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//Expression"/>
     </type>
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:RuleCall" rule="//@rules.57"/>
       <elements xsi:type="xtext:Group" cardinality="*">
         <elements xsi:type="xtext:Action" feature="left" operator="=">
-          <type metamodel="//@metamodelDeclarations.3">
+          <type metamodel="//@metamodelDeclarations.2">
             <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//BooleanOperation"/>
           </type>
         </elements>
@@ -1082,14 +1079,14 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="RelationalExpression">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//Expression"/>
     </type>
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:RuleCall" rule="//@rules.58"/>
       <elements xsi:type="xtext:Group" cardinality="*">
         <elements xsi:type="xtext:Action" feature="left" operator="=">
-          <type metamodel="//@metamodelDeclarations.3">
+          <type metamodel="//@metamodelDeclarations.2">
             <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//BooleanOperation"/>
           </type>
         </elements>
@@ -1110,7 +1107,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="Addition">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//Expression"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -1119,7 +1116,7 @@
         <elements xsi:type="xtext:Alternatives">
           <elements xsi:type="xtext:Group">
             <elements xsi:type="xtext:Action" feature="left" operator="=">
-              <type metamodel="//@metamodelDeclarations.3">
+              <type metamodel="//@metamodelDeclarations.2">
                 <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//Plus"/>
               </type>
             </elements>
@@ -1127,7 +1124,7 @@
           </elements>
           <elements xsi:type="xtext:Group">
             <elements xsi:type="xtext:Action" feature="left" operator="=">
-              <type metamodel="//@metamodelDeclarations.3">
+              <type metamodel="//@metamodelDeclarations.2">
                 <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//Minus"/>
               </type>
             </elements>
@@ -1141,7 +1138,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="Multiplication">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//Expression"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -1150,7 +1147,7 @@
         <elements xsi:type="xtext:Alternatives">
           <elements xsi:type="xtext:Group">
             <elements xsi:type="xtext:Action" feature="left" operator="=">
-              <type metamodel="//@metamodelDeclarations.3">
+              <type metamodel="//@metamodelDeclarations.2">
                 <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//Multi"/>
               </type>
             </elements>
@@ -1158,7 +1155,7 @@
           </elements>
           <elements xsi:type="xtext:Group">
             <elements xsi:type="xtext:Action" feature="left" operator="=">
-              <type metamodel="//@metamodelDeclarations.3">
+              <type metamodel="//@metamodelDeclarations.2">
                 <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//Div"/>
               </type>
             </elements>
@@ -1172,7 +1169,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="PrimaryExpression">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//Expression"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
@@ -1183,7 +1180,7 @@
       </elements>
       <elements xsi:type="xtext:Group">
         <elements xsi:type="xtext:Action">
-          <type metamodel="//@metamodelDeclarations.3">
+          <type metamodel="//@metamodelDeclarations.2">
             <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//NumberLiteral"/>
           </type>
         </elements>
@@ -1193,13 +1190,13 @@
       </elements>
       <elements xsi:type="xtext:Group">
         <elements xsi:type="xtext:Action">
-          <type metamodel="//@metamodelDeclarations.3">
+          <type metamodel="//@metamodelDeclarations.2">
             <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//VariableCall"/>
           </type>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="variable" operator="=">
           <terminal xsi:type="xtext:CrossReference">
-            <type metamodel="//@metamodelDeclarations.3">
+            <type metamodel="//@metamodelDeclarations.2">
               <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//VariableDefinition"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="//@rules.73"/>
@@ -1208,7 +1205,7 @@
       </elements>
       <elements xsi:type="xtext:Group">
         <elements xsi:type="xtext:Action">
-          <type metamodel="//@metamodelDeclarations.3">
+          <type metamodel="//@metamodelDeclarations.2">
             <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StreamAccess"/>
           </type>
         </elements>
@@ -1252,7 +1249,7 @@
     <alternatives xsi:type="xtext:Keyword" value="this one has been deactivated"/>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="DataType">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//DataType"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
@@ -1261,7 +1258,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="SimpleDataType">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//SimpleDataType"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
@@ -1271,65 +1268,65 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="ComplexDataType">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//ComplexDataType"/>
     </type>
     <alternatives xsi:type="xtext:RuleCall" rule="//@rules.70"/>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="IntegerDataType">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//IntegerDataType"/>
     </type>
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="int"/>
       <elements xsi:type="xtext:Action">
-        <type metamodel="//@metamodelDeclarations.3">
+        <type metamodel="//@metamodelDeclarations.2">
           <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//IntegerDataType"/>
         </type>
       </elements>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="BooleanDataType">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//BooleanDataType"/>
     </type>
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="bool"/>
       <elements xsi:type="xtext:Action">
-        <type metamodel="//@metamodelDeclarations.3">
+        <type metamodel="//@metamodelDeclarations.2">
           <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//BooleanDataType"/>
         </type>
       </elements>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="FloatDataType">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//FloatDataType"/>
     </type>
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="float"/>
       <elements xsi:type="xtext:Action">
-        <type metamodel="//@metamodelDeclarations.3">
+        <type metamodel="//@metamodelDeclarations.2">
           <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//FloatDataType"/>
         </type>
       </elements>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="StringDataType">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StringDataType"/>
     </type>
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="string"/>
       <elements xsi:type="xtext:Action">
-        <type metamodel="//@metamodelDeclarations.3">
+        <type metamodel="//@metamodelDeclarations.2">
           <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//StringDataType"/>
         </type>
       </elements>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="InternationalizedResourceIdentifier">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//InternationalizedResourceIdentifier"/>
     </type>
     <alternatives xsi:type="xtext:Group">
@@ -1361,7 +1358,7 @@
     </alternatives>
   </rules>
   <rules xsi:type="xtext:EnumRule" name="Scheme">
-    <type metamodel="//@metamodelDeclarations.3">
+    <type metamodel="//@metamodelDeclarations.2">
       <classifier xsi:type="ecore:EEnum" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//Scheme"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">

@@ -79,10 +79,6 @@ import de.hs_rm.cs.vs.dsm.flow.VariableDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.VariableDefinition;
 import de.hs_rm.cs.vs.dsm.flow.WindowOperator;
 
-import ecore.EcorePackage;
-
-import ecore.impl.EcorePackageImpl;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -652,16 +648,11 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     OwlPackage.eINSTANCE.eClass();
     RdfsPackage.eINSTANCE.eClass();
 
-    // Obtain or create and register interdependencies
-    EcorePackageImpl theEcorePackage = (EcorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) instanceof EcorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) : EcorePackage.eINSTANCE);
-
     // Create package meta-data objects
     theFlowPackage.createPackageContents();
-    theEcorePackage.createPackageContents();
 
     // Initialize created meta-data
     theFlowPackage.initializePackageContents();
-    theEcorePackage.initializePackageContents();
 
     // Mark meta-data to indicate it can't be changed
     theFlowPackage.freeze();

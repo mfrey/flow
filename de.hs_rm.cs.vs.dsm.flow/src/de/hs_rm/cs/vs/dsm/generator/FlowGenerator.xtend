@@ -38,6 +38,7 @@ class FlowGenerator implements IGenerator {
 		 * Iterate through the elements
 		 */
     	for(model : resource.allContentsIterable.filter(typeof(PackageDeclaration))) {
+
     		    fsa.generateFile(
     		    	/** Generate a *.lua file for each package */
                		model.fullyQualifiedName.toString.replace(".", "/") + ".lua",
@@ -49,7 +50,7 @@ class FlowGenerator implements IGenerator {
     
     def compile(PackageDeclaration e) ''' 
       fm = get_instance();
-      
+      /*
       «FOR elements : e.elements»
       	«elements.compile»
       «ENDFOR»
@@ -60,6 +61,7 @@ class FlowGenerator implements IGenerator {
       «{
       	Util::instance.stopOperators
       }»
+      */
     '''
     
     def compile(ModelElement m)'''
@@ -73,27 +75,24 @@ class FlowGenerator implements IGenerator {
 	'''
 		
 	def compile(StreamStatement statement)'''
-		«IF statement.expression.equals(null)»
-	
-			«IF statement.operator.eClass.name.equals("JoinOperator")»
-			
-			«ELSEIF statement.operator.eClass.name.equals("SplitOperator")»
-			«write((statement.operator as SplitOperator),statement)»
-			«ELSEIF statement.operator.eClass.name.equals("CountOperator")»
-			«write((statement.operator as CountOperator),statement)»
-			«ELSEIF statement.operator.eClass.name.equals("AverageOperator")»
-			«write((statement.operator as AverageOperator),statement)»
-			«ELSEIF statement.operator.eClass.name.equals("StandardDeviationOperator")»
-			«write((statement.operator as StandardDeviationOperator),statement)»
-			«ELSEIF statement.operator.eClass.name.equals("ElementJoinOperator")»
-			«write((statement.operator as ElementJoinOperator),statement)»
-			
-			«ENDIF»
-		
-		«ELSE»
-			«
-				new StreamStatementGenerator(statement).toString()
-			»
+
+//			«IF statement.expression.equals(null)»
+//			«IF statement.operator.eClass.name.equals("JoinOperator")»
+//			
+//			«ELSEIF statement.operator.eClass.name.equals("SplitOperator")»
+//			«write((statement.operator as SplitOperator),statement)»
+//			«ELSEIF statement.operator.eClass.name.equals("CountOperator")»
+//			«write((statement.operator as CountOperator),statement)»
+//			«ELSEIF statement.operator.eClass.name.equals("AverageOperator")»
+//			«write((statement.operator as AverageOperator),statement)»
+//			«ELSEIF statement.operator.eClass.name.equals("StandardDeviationOperator")»
+//			«write((statement.operator as StandardDeviationOperator),statement)»
+//			«ELSEIF statement.operator.eClass.name.equals("ElementJoinOperator")»
+//			«write((statement.operator as ElementJoinOperator),statement)»
+//			
+//			«ENDIF»
+//		«ELSE»
+
 		«ENDIF»
 	'''
 
