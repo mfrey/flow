@@ -44,7 +44,7 @@ public class FlowGenerator implements IGenerator {
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
     Iterable<EObject> _allContentsIterable = ResourceExtensions.allContentsIterable(resource);
     Iterable<PackageDeclaration> _filter = IterableExtensions.<PackageDeclaration>filter(_allContentsIterable, de.hs_rm.cs.vs.dsm.flow.PackageDeclaration.class);
-    for (PackageDeclaration model : _filter) {
+    for (final PackageDeclaration model : _filter) {
       QualifiedName _fullyQualifiedName = this.nameProvider.getFullyQualifiedName(model);
       String _string = _fullyQualifiedName.toString();
       String _replace = _string.replace(".", "/");
@@ -61,7 +61,7 @@ public class FlowGenerator implements IGenerator {
     _builder.newLine();
     {
       EList<ModelElement> _elements = e.getElements();
-      for(ModelElement elements : _elements) {
+      for(final ModelElement elements : _elements) {
         StringConcatenation _compile = this.compile(elements);
         _builder.append(_compile, "");
         _builder.newLineIfNotEmpty();
