@@ -1,11 +1,61 @@
 \section{Installation}
 The project uses Maven/Tycho for test, build and deployment of the Eclipse 
 application. For the installation of Maven/Tycho please be referred to the 
-corresponding documentation \cite{} and \cite{}. Please note that Tycho requires
-Maven 3.
+corresponding documentation \cite{tycho} and \cite{maven}. Please note that 
+Tycho requires Maven 3.
 
+\subsection{Development}
+\subsubsection{Prerequisites}
+The following plugins are required in order to do further development on the 
+language and its workbench: 
+\begin{itemize}
+  % TODO: Herausfinden wie der plugin provider heisst
+  \item null (todo)
+  \begin{itemize}
+    \item Eclipse Modeling Tools
+  \end{itemize}
+  \item Eclipse Modeling Project
+  \begin{itemize}
+    \item EMF Compare UML2 Integration
+    \item MWE 2 language SDK
+    \item MWE 2 runtime SDK
+    \item MWE SDK
+    \item OCL Examples and Editors
+    \item UML2 Extender SDK
+    \item Xpand SDK
+    \item Xtext SDK
+  \end{itemize}
+  \item Sonatype
+  \begin{itemize}
+    \item Tycho Project Configurators
+  \end{itemize}
+  \item m2e
+  \begin{itemize}
+    \item m2e Maven Integration for Eclipse
+  \end{itemize}
+\end{itemize} 
+All plugins should be available on the standard eclipse update site, exceptions
+are tycho and the maven integration for eclipse. The availability of the 
+external plugins is subject to change. For example the tycho project 
+configurators are a eclipse incubator project and thus become some day available
+on a official eclipse update site. Bullets denote the provider of the plugins
+while dashes name the plugin.
+
+In addition, the eclipse delta pack needs to be installed on an existing eclipse
+installation in order to build the project via maven/tycho.
+ 
+\subsubsection{Import of the Project}
+The plugins of the project are imported via the import functionality of eclipse.
+Please select from the \textbf{"File"} menu the entry \textbf{"Import ..."} > 
+\textbf{"Maven"} > \textbf{"Existing Maven Projects"}. Select as root
+directory the root of the project directory which contains the parent pom.xml. 
+Select all projects for an import to your workspace. Usually the import process
+takes some time, especially in cases of a first initial import. 
+
+\subsection{Rich Client Application}
 The build process is initialised with the following command, where the target 
-platform points to the corresponding Eclipse (including the Eclipse Delta Pack) installation.
+platform points to the corresponding eclipse (including the eclipse delta pack) 
+installation.
 \begin{lstlisting}[language=C, caption={\emph{bla}},label={lst:shell}]
 frey ~/Projekte $ mvn package -Dtycho.targetPlatform=/home/michael/Software/eclipse
 \end{lstlisting}

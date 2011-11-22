@@ -23,8 +23,6 @@ import de.hs_rm.cs.vs.dsm.generator.StreamStatementGenerator;
  * @author Michael Frey
  */
 public class StreamStatementGeneratorTest {
-	/** A string which represents a test for the operator */
-	private String mOperatorTestString = "";
 	/** Instance of the factory which allows to create instances of different language objects */
 	private FlowFactoryImpl mFactory;
 	/** */

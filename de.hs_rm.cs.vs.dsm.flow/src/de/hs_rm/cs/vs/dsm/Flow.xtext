@@ -302,9 +302,6 @@ OutputOperator:
 OutputOperatorParameter:
 	element+=StreamAccess (',' element+=StreamAccess)*;
 
-
-
-
 VariableDefinition:
 	NumberVariableDefinition | StringVariableDefinition | BooleanVariableDefinition;
 
@@ -422,7 +419,6 @@ InternationalizedResourceIdentifier:
  */
 enum Scheme:
 	HTTP = 'http' | FTP  = 'ftp' | FILE = 'file' ;
-
 
 /**
  * The following rules reuse rule statements of the standard xtext grammar since it is

@@ -34,9 +34,7 @@ class FlowGenerator implements IGenerator {
 	@Inject extension IQualifiedNameProvider nameProvider
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-		/***
-		 * Iterate through the elements
-		 */
+		/** Iterate through the elements */
     	for(model : resource.allContentsIterable.filter(typeof(PackageDeclaration))) {
 
     		    fsa.generateFile(
@@ -50,10 +48,7 @@ class FlowGenerator implements IGenerator {
     
     def compile(PackageDeclaration e) ''' 
       fm = get_instance();
-      /*
-      «FOR elements : e.elements»
-      	«elements.compile»
-      «ENDFOR»
+
       «{
       	Util::instance.startOperators
       }»
@@ -61,88 +56,5 @@ class FlowGenerator implements IGenerator {
       «{
       	Util::instance.stopOperators
       }»
-      */
     '''
-    
-    def compile(ModelElement m)'''
-    	«IF m.eClass.name.equals("OutputOperator")»
-    	«(m as OutputOperator).compile»
-    	«ENDIF»
-    	
-    	«IF m.eClass.name.equals("StreamStatement")»
-    	«(m as StreamStatement).compile»
-    	«ENDIF»
-	'''
-		
-	def compile(StreamStatement statement)'''
-
-//			«IF statement.expression.equals(null)»
-//			«IF statement.operator.eClass.name.equals("JoinOperator")»
-//			
-//			«ELSEIF statement.operator.eClass.name.equals("SplitOperator")»
-//			«write((statement.operator as SplitOperator),statement)»
-//			«ELSEIF statement.operator.eClass.name.equals("CountOperator")»
-//			«write((statement.operator as CountOperator),statement)»
-//			«ELSEIF statement.operator.eClass.name.equals("AverageOperator")»
-//			«write((statement.operator as AverageOperator),statement)»
-//			«ELSEIF statement.operator.eClass.name.equals("StandardDeviationOperator")»
-//			«write((statement.operator as StandardDeviationOperator),statement)»
-//			«ELSEIF statement.operator.eClass.name.equals("ElementJoinOperator")»
-//			«write((statement.operator as ElementJoinOperator),statement)»
-//			
-//			«ENDIF»
-//		«ELSE»
-
-		«ENDIF»
-	'''
-
-	
-	def dispatch String write(JoinOperator pOperator, StreamStatement pStatement){
-		var JoinOperatorGenerator join = new JoinOperatorGenerator(
-			pStatement
-		)	
-		join.toString()
-	}
-	
-	def dispatch String write(SplitOperator pOperator, StreamStatement pStatement){
-		var SplitOperatorGenerator split = new SplitOperatorGenerator(
-			pStatement
-		)	
-		split.toString()
-	}
-	
-	def dispatch String write(ElementJoinOperator pOperator, StreamStatement pStatement){
-		var ElementJoinOperatorGenerator split = new ElementJoinOperatorGenerator(
-			pStatement
-		)	
-		split.toString()
-	}
-	
-	def dispatch String write(CountOperator pOperator, StreamStatement pStatement){
-		var CountOperatorGenerator count = new CountOperatorGenerator(
-			pStatement
-		)
-		count.toString()
-	}
-	
-	def dispatch String write(AverageOperator pOperator, StreamStatement pStatement){
-		var AverageOperatorGenerator average = new AverageOperatorGenerator(
-			pStatement
-		)
-		average.toString()
-	}
-	
-	def dispatch String write(StandardDeviationOperator pOperator, StreamStatement pStatement){
-		var StandardDeviationOperatorGenerator std = new StandardDeviationOperatorGenerator(
-			pStatement
-		)
-		std.toString()
-	}
-	
-    def compile(OutputOperator output)'''
-    	«{
-    		val OutputOperatorGenerator o = new OutputOperatorGenerator(output);
-    		o.toString();
-    	}»
-    '''     
 }
