@@ -73,28 +73,7 @@ class FlowGenerator implements IGenerator {
 	'''
 		
 	def compile(StreamStatement statement)'''
-		«IF statement.expression.equals(null)»
-	
-			«IF statement.operator.eClass.name.equals("JoinOperator")»
-			
-			«ELSEIF statement.operator.eClass.name.equals("SplitOperator")»
-			«write((statement.operator as SplitOperator),statement)»
-			«ELSEIF statement.operator.eClass.name.equals("CountOperator")»
-			«write((statement.operator as CountOperator),statement)»
-			«ELSEIF statement.operator.eClass.name.equals("AverageOperator")»
-			«write((statement.operator as AverageOperator),statement)»
-			«ELSEIF statement.operator.eClass.name.equals("StandardDeviationOperator")»
-			«write((statement.operator as StandardDeviationOperator),statement)»
-			«ELSEIF statement.operator.eClass.name.equals("ElementJoinOperator")»
-			«write((statement.operator as ElementJoinOperator),statement)»
-			
-			«ENDIF»
-		
-		«ELSE»
-			«
-				new StreamStatementGenerator(statement).toString()
-			»
-		«ENDIF»
+		bla ficken
 	'''
 
 	
