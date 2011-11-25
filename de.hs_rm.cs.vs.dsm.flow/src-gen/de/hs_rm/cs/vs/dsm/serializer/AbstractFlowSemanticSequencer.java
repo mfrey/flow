@@ -648,13 +648,13 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (parameter=StreamAccess (literal=NUMBER | streamElement+=StreamAccess) stream=StreamOperatorParameter)
+	 *     (parameter=StreamAccess (literal=NUMBER | streamElements+=StreamAccess) stream=StreamOperatorParameter)
 	 *
 	 * Features:
 	 *    parameter[1, 1]
 	 *    literal[0, 1]
-	 *         EXCLUDE_IF_SET streamElement
-	 *    streamElement[0, 1]
+	 *         EXCLUDE_IF_SET streamElements
+	 *    streamElements[0, 1]
 	 *         EXCLUDE_IF_SET literal
 	 *    stream[1, 1]
 	 */
@@ -893,13 +893,13 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (parameter=StreamAccess (literal=NUMBER | streamElement+=StreamAccess) stream=StreamOperatorParameter)
+	 *     (parameter=StreamAccess (literal=NUMBER | streamElements+=StreamAccess) stream=StreamOperatorParameter)
 	 *
 	 * Features:
 	 *    parameter[1, 1]
 	 *    literal[0, 1]
-	 *         EXCLUDE_IF_SET streamElement
-	 *    streamElement[0, 1]
+	 *         EXCLUDE_IF_SET streamElements
+	 *    streamElements[0, 1]
 	 *         EXCLUDE_IF_SET literal
 	 *    stream[1, 1]
 	 */
@@ -1048,13 +1048,13 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (parameter=StreamAccess (literal=NUMBER | streamElement+=StreamAccess) stream=StreamOperatorParameter)
+	 *     (parameter=StreamAccess (literal=NUMBER | streamElements+=StreamAccess) stream=StreamOperatorParameter)
 	 *
 	 * Features:
 	 *    parameter[1, 1]
 	 *    literal[0, 1]
-	 *         EXCLUDE_IF_SET streamElement
-	 *    streamElement[0, 1]
+	 *         EXCLUDE_IF_SET streamElements
+	 *    streamElements[0, 1]
 	 *         EXCLUDE_IF_SET literal
 	 *    stream[1, 1]
 	 */
@@ -1598,13 +1598,13 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (parameter=StreamAccess (literal=NUMBER | streamElement+=StreamAccess) stream=StreamOperatorParameter)
+	 *     (parameter=StreamAccess (literal=NUMBER | streamElements+=StreamAccess) stream=StreamOperatorParameter)
 	 *
 	 * Features:
 	 *    parameter[1, 1]
 	 *    literal[0, 1]
-	 *         EXCLUDE_IF_SET streamElement
-	 *    streamElement[0, 1]
+	 *         EXCLUDE_IF_SET streamElements
+	 *    streamElements[0, 1]
 	 *         EXCLUDE_IF_SET literal
 	 *    stream[1, 1]
 	 */

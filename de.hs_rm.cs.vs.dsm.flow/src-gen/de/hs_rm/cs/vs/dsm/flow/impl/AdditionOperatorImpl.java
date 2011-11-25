@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.AdditionOperatorImpl#getParameter <em>Parameter</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.AdditionOperatorImpl#getLiteral <em>Literal</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.AdditionOperatorImpl#getStreamElement <em>Stream Element</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.AdditionOperatorImpl#getStreamElements <em>Stream Elements</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.AdditionOperatorImpl#getStream <em>Stream</em>}</li>
  * </ul>
  * </p>
@@ -76,14 +76,14 @@ public class AdditionOperatorImpl extends ReturnTypeOperatorImpl implements Addi
   protected BigDecimal literal = LITERAL_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getStreamElement() <em>Stream Element</em>}' containment reference list.
+   * The cached value of the '{@link #getStreamElements() <em>Stream Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStreamElement()
+   * @see #getStreamElements()
    * @generated
    * @ordered
    */
-  protected EList<StreamAccess> streamElement;
+  protected EList<StreamAccess> streamElements;
 
   /**
    * The cached value of the '{@link #getStream() <em>Stream</em>}' containment reference.
@@ -192,13 +192,13 @@ public class AdditionOperatorImpl extends ReturnTypeOperatorImpl implements Addi
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<StreamAccess> getStreamElement()
+  public EList<StreamAccess> getStreamElements()
   {
-    if (streamElement == null)
+    if (streamElements == null)
     {
-      streamElement = new EObjectContainmentEList<StreamAccess>(StreamAccess.class, this, FlowPackage.ADDITION_OPERATOR__STREAM_ELEMENT);
+      streamElements = new EObjectContainmentEList<StreamAccess>(StreamAccess.class, this, FlowPackage.ADDITION_OPERATOR__STREAM_ELEMENTS);
     }
-    return streamElement;
+    return streamElements;
   }
 
   /**
@@ -261,8 +261,8 @@ public class AdditionOperatorImpl extends ReturnTypeOperatorImpl implements Addi
     {
       case FlowPackage.ADDITION_OPERATOR__PARAMETER:
         return basicSetParameter(null, msgs);
-      case FlowPackage.ADDITION_OPERATOR__STREAM_ELEMENT:
-        return ((InternalEList<?>)getStreamElement()).basicRemove(otherEnd, msgs);
+      case FlowPackage.ADDITION_OPERATOR__STREAM_ELEMENTS:
+        return ((InternalEList<?>)getStreamElements()).basicRemove(otherEnd, msgs);
       case FlowPackage.ADDITION_OPERATOR__STREAM:
         return basicSetStream(null, msgs);
     }
@@ -283,8 +283,8 @@ public class AdditionOperatorImpl extends ReturnTypeOperatorImpl implements Addi
         return getParameter();
       case FlowPackage.ADDITION_OPERATOR__LITERAL:
         return getLiteral();
-      case FlowPackage.ADDITION_OPERATOR__STREAM_ELEMENT:
-        return getStreamElement();
+      case FlowPackage.ADDITION_OPERATOR__STREAM_ELEMENTS:
+        return getStreamElements();
       case FlowPackage.ADDITION_OPERATOR__STREAM:
         return getStream();
     }
@@ -308,9 +308,9 @@ public class AdditionOperatorImpl extends ReturnTypeOperatorImpl implements Addi
       case FlowPackage.ADDITION_OPERATOR__LITERAL:
         setLiteral((BigDecimal)newValue);
         return;
-      case FlowPackage.ADDITION_OPERATOR__STREAM_ELEMENT:
-        getStreamElement().clear();
-        getStreamElement().addAll((Collection<? extends StreamAccess>)newValue);
+      case FlowPackage.ADDITION_OPERATOR__STREAM_ELEMENTS:
+        getStreamElements().clear();
+        getStreamElements().addAll((Collection<? extends StreamAccess>)newValue);
         return;
       case FlowPackage.ADDITION_OPERATOR__STREAM:
         setStream((StreamOperatorParameter)newValue);
@@ -335,8 +335,8 @@ public class AdditionOperatorImpl extends ReturnTypeOperatorImpl implements Addi
       case FlowPackage.ADDITION_OPERATOR__LITERAL:
         setLiteral(LITERAL_EDEFAULT);
         return;
-      case FlowPackage.ADDITION_OPERATOR__STREAM_ELEMENT:
-        getStreamElement().clear();
+      case FlowPackage.ADDITION_OPERATOR__STREAM_ELEMENTS:
+        getStreamElements().clear();
         return;
       case FlowPackage.ADDITION_OPERATOR__STREAM:
         setStream((StreamOperatorParameter)null);
@@ -359,8 +359,8 @@ public class AdditionOperatorImpl extends ReturnTypeOperatorImpl implements Addi
         return parameter != null;
       case FlowPackage.ADDITION_OPERATOR__LITERAL:
         return LITERAL_EDEFAULT == null ? literal != null : !LITERAL_EDEFAULT.equals(literal);
-      case FlowPackage.ADDITION_OPERATOR__STREAM_ELEMENT:
-        return streamElement != null && !streamElement.isEmpty();
+      case FlowPackage.ADDITION_OPERATOR__STREAM_ELEMENTS:
+        return streamElements != null && !streamElements.isEmpty();
       case FlowPackage.ADDITION_OPERATOR__STREAM:
         return stream != null;
     }

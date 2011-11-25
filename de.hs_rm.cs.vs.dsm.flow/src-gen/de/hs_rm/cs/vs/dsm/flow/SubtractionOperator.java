@@ -19,7 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getParameter <em>Parameter</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getLiteral <em>Literal</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getStreamElement <em>Stream Element</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getStreamElements <em>Stream Elements</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getStream <em>Stream</em>}</li>
  * </ul>
  * </p>
@@ -83,20 +83,20 @@ public interface SubtractionOperator extends ReturnTypeOperator
   void setLiteral(BigDecimal value);
 
   /**
-   * Returns the value of the '<em><b>Stream Element</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Stream Elements</b></em>' containment reference list.
    * The list contents are of type {@link de.hs_rm.cs.vs.dsm.flow.StreamAccess}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Stream Element</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Stream Elements</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Stream Element</em>' containment reference list.
-   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getSubtractionOperator_StreamElement()
+   * @return the value of the '<em>Stream Elements</em>' containment reference list.
+   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getSubtractionOperator_StreamElements()
    * @model containment="true"
    * @generated
    */
-  EList<StreamAccess> getStreamElement();
+  EList<StreamAccess> getStreamElements();
 
   /**
    * Returns the value of the '<em><b>Stream</b></em>' containment reference.

@@ -3210,16 +3210,16 @@ ruleAdditionOperator returns [EObject current=null]
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getAdditionOperatorAccess().getStreamElementStreamAccessParserRuleCall_4_1_0()); 
+	        newCompositeNode(grammarAccess.getAdditionOperatorAccess().getStreamElementsStreamAccessParserRuleCall_4_1_0()); 
 	    }
-		lv_streamElement_5_0=ruleStreamAccess		{
+		lv_streamElements_5_0=ruleStreamAccess		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAdditionOperatorRule());
 	        }
        		add(
        			$current, 
-       			"streamElement",
-        		lv_streamElement_5_0, 
+       			"streamElements",
+        		lv_streamElements_5_0, 
         		"StreamAccess");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -3324,16 +3324,16 @@ ruleSubtractionOperator returns [EObject current=null]
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSubtractionOperatorAccess().getStreamElementStreamAccessParserRuleCall_4_1_0()); 
+	        newCompositeNode(grammarAccess.getSubtractionOperatorAccess().getStreamElementsStreamAccessParserRuleCall_4_1_0()); 
 	    }
-		lv_streamElement_5_0=ruleStreamAccess		{
+		lv_streamElements_5_0=ruleStreamAccess		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSubtractionOperatorRule());
 	        }
        		add(
        			$current, 
-       			"streamElement",
-        		lv_streamElement_5_0, 
+       			"streamElements",
+        		lv_streamElements_5_0, 
         		"StreamAccess");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -3438,16 +3438,16 @@ ruleMultiplicationOperator returns [EObject current=null]
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMultiplicationOperatorAccess().getStreamElementStreamAccessParserRuleCall_4_1_0()); 
+	        newCompositeNode(grammarAccess.getMultiplicationOperatorAccess().getStreamElementsStreamAccessParserRuleCall_4_1_0()); 
 	    }
-		lv_streamElement_5_0=ruleStreamAccess		{
+		lv_streamElements_5_0=ruleStreamAccess		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getMultiplicationOperatorRule());
 	        }
        		add(
        			$current, 
-       			"streamElement",
-        		lv_streamElement_5_0, 
+       			"streamElements",
+        		lv_streamElements_5_0, 
         		"StreamAccess");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -3552,16 +3552,16 @@ ruleDivisionOperator returns [EObject current=null]
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDivisionOperatorAccess().getStreamElementStreamAccessParserRuleCall_4_1_0()); 
+	        newCompositeNode(grammarAccess.getDivisionOperatorAccess().getStreamElementsStreamAccessParserRuleCall_4_1_0()); 
 	    }
-		lv_streamElement_5_0=ruleStreamAccess		{
+		lv_streamElements_5_0=ruleStreamAccess		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDivisionOperatorRule());
 	        }
        		add(
        			$current, 
-       			"streamElement",
-        		lv_streamElement_5_0, 
+       			"streamElements",
+        		lv_streamElements_5_0, 
         		"StreamAccess");
 	        afterParserOrEnumRuleCall();
 	    }

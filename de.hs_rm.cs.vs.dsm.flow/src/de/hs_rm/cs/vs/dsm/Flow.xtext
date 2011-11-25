@@ -340,25 +340,25 @@ AverageOperator:
  * The AdditionOperator rule defines a operator for addition of elements
  */			
 AdditionOperator:
-	'add''('parameter=StreamAccess ',' (literal=NUMBER | streamElement+=StreamAccess ) ',' stream=StreamOperatorParameter ')';	
+	'add''('parameter=StreamAccess ',' (literal=NUMBER | streamElements+=StreamAccess ) ',' stream=StreamOperatorParameter ')';	
 
 /**
  * The SubtractionOperator rule defines a operator for subtraction of elements
  */			
 SubtractionOperator:
-	'sub''('parameter=StreamAccess ',' (literal=NUMBER | streamElement+=StreamAccess ) ',' stream=StreamOperatorParameter ')';	
+	'sub''('parameter=StreamAccess ',' (literal=NUMBER | streamElements+=StreamAccess ) ',' stream=StreamOperatorParameter ')';	
 
 /**
  * The MultiplicationOperator rule defines a operator for multiplication of elements
  */			
 MultiplicationOperator:
-	'mult''('parameter=StreamAccess ',' (literal=NUMBER | streamElement+=StreamAccess ) ',' stream=StreamOperatorParameter ')';	
+	'mult''('parameter=StreamAccess ',' (literal=NUMBER | streamElements+=StreamAccess ) ',' stream=StreamOperatorParameter ')';	
 
 /**
  * The DivisionOperator rule defines a operator for division of elements
  */			
 DivisionOperator:
-	'div''('parameter=StreamAccess ',' (literal=NUMBER | streamElement+=StreamAccess ) ',' stream=StreamOperatorParameter ')';	
+	'div''('parameter=StreamAccess ',' (literal=NUMBER | streamElements+=StreamAccess ) ',' stream=StreamOperatorParameter ')';	
 
 
 /**

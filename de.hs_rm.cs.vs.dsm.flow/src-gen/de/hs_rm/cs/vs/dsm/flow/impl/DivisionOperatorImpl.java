@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.DivisionOperatorImpl#getParameter <em>Parameter</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.DivisionOperatorImpl#getLiteral <em>Literal</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.DivisionOperatorImpl#getStreamElement <em>Stream Element</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.DivisionOperatorImpl#getStreamElements <em>Stream Elements</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.DivisionOperatorImpl#getStream <em>Stream</em>}</li>
  * </ul>
  * </p>
@@ -76,14 +76,14 @@ public class DivisionOperatorImpl extends ReturnTypeOperatorImpl implements Divi
   protected BigDecimal literal = LITERAL_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getStreamElement() <em>Stream Element</em>}' containment reference list.
+   * The cached value of the '{@link #getStreamElements() <em>Stream Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStreamElement()
+   * @see #getStreamElements()
    * @generated
    * @ordered
    */
-  protected EList<StreamAccess> streamElement;
+  protected EList<StreamAccess> streamElements;
 
   /**
    * The cached value of the '{@link #getStream() <em>Stream</em>}' containment reference.
@@ -192,13 +192,13 @@ public class DivisionOperatorImpl extends ReturnTypeOperatorImpl implements Divi
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<StreamAccess> getStreamElement()
+  public EList<StreamAccess> getStreamElements()
   {
-    if (streamElement == null)
+    if (streamElements == null)
     {
-      streamElement = new EObjectContainmentEList<StreamAccess>(StreamAccess.class, this, FlowPackage.DIVISION_OPERATOR__STREAM_ELEMENT);
+      streamElements = new EObjectContainmentEList<StreamAccess>(StreamAccess.class, this, FlowPackage.DIVISION_OPERATOR__STREAM_ELEMENTS);
     }
-    return streamElement;
+    return streamElements;
   }
 
   /**
@@ -261,8 +261,8 @@ public class DivisionOperatorImpl extends ReturnTypeOperatorImpl implements Divi
     {
       case FlowPackage.DIVISION_OPERATOR__PARAMETER:
         return basicSetParameter(null, msgs);
-      case FlowPackage.DIVISION_OPERATOR__STREAM_ELEMENT:
-        return ((InternalEList<?>)getStreamElement()).basicRemove(otherEnd, msgs);
+      case FlowPackage.DIVISION_OPERATOR__STREAM_ELEMENTS:
+        return ((InternalEList<?>)getStreamElements()).basicRemove(otherEnd, msgs);
       case FlowPackage.DIVISION_OPERATOR__STREAM:
         return basicSetStream(null, msgs);
     }
@@ -283,8 +283,8 @@ public class DivisionOperatorImpl extends ReturnTypeOperatorImpl implements Divi
         return getParameter();
       case FlowPackage.DIVISION_OPERATOR__LITERAL:
         return getLiteral();
-      case FlowPackage.DIVISION_OPERATOR__STREAM_ELEMENT:
-        return getStreamElement();
+      case FlowPackage.DIVISION_OPERATOR__STREAM_ELEMENTS:
+        return getStreamElements();
       case FlowPackage.DIVISION_OPERATOR__STREAM:
         return getStream();
     }
@@ -308,9 +308,9 @@ public class DivisionOperatorImpl extends ReturnTypeOperatorImpl implements Divi
       case FlowPackage.DIVISION_OPERATOR__LITERAL:
         setLiteral((BigDecimal)newValue);
         return;
-      case FlowPackage.DIVISION_OPERATOR__STREAM_ELEMENT:
-        getStreamElement().clear();
-        getStreamElement().addAll((Collection<? extends StreamAccess>)newValue);
+      case FlowPackage.DIVISION_OPERATOR__STREAM_ELEMENTS:
+        getStreamElements().clear();
+        getStreamElements().addAll((Collection<? extends StreamAccess>)newValue);
         return;
       case FlowPackage.DIVISION_OPERATOR__STREAM:
         setStream((StreamOperatorParameter)newValue);
@@ -335,8 +335,8 @@ public class DivisionOperatorImpl extends ReturnTypeOperatorImpl implements Divi
       case FlowPackage.DIVISION_OPERATOR__LITERAL:
         setLiteral(LITERAL_EDEFAULT);
         return;
-      case FlowPackage.DIVISION_OPERATOR__STREAM_ELEMENT:
-        getStreamElement().clear();
+      case FlowPackage.DIVISION_OPERATOR__STREAM_ELEMENTS:
+        getStreamElements().clear();
         return;
       case FlowPackage.DIVISION_OPERATOR__STREAM:
         setStream((StreamOperatorParameter)null);
@@ -359,8 +359,8 @@ public class DivisionOperatorImpl extends ReturnTypeOperatorImpl implements Divi
         return parameter != null;
       case FlowPackage.DIVISION_OPERATOR__LITERAL:
         return LITERAL_EDEFAULT == null ? literal != null : !LITERAL_EDEFAULT.equals(literal);
-      case FlowPackage.DIVISION_OPERATOR__STREAM_ELEMENT:
-        return streamElement != null && !streamElement.isEmpty();
+      case FlowPackage.DIVISION_OPERATOR__STREAM_ELEMENTS:
+        return streamElements != null && !streamElements.isEmpty();
       case FlowPackage.DIVISION_OPERATOR__STREAM:
         return stream != null;
     }

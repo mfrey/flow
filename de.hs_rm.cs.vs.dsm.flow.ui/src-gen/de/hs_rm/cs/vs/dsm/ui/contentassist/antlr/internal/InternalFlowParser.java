@@ -6880,13 +6880,13 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AdditionOperator__Alternatives_4"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2395:1: rule__AdditionOperator__Alternatives_4 : ( ( ( rule__AdditionOperator__LiteralAssignment_4_0 ) ) | ( ( rule__AdditionOperator__StreamElementAssignment_4_1 ) ) );
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2395:1: rule__AdditionOperator__Alternatives_4 : ( ( ( rule__AdditionOperator__LiteralAssignment_4_0 ) ) | ( ( rule__AdditionOperator__StreamElementsAssignment_4_1 ) ) );
     public final void rule__AdditionOperator__Alternatives_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2399:1: ( ( ( rule__AdditionOperator__LiteralAssignment_4_0 ) ) | ( ( rule__AdditionOperator__StreamElementAssignment_4_1 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2399:1: ( ( ( rule__AdditionOperator__LiteralAssignment_4_0 ) ) | ( ( rule__AdditionOperator__StreamElementsAssignment_4_1 ) ) )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -6929,24 +6929,24 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2406:6: ( ( rule__AdditionOperator__StreamElementAssignment_4_1 ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2406:6: ( ( rule__AdditionOperator__StreamElementsAssignment_4_1 ) )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2406:6: ( ( rule__AdditionOperator__StreamElementAssignment_4_1 ) )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2407:1: ( rule__AdditionOperator__StreamElementAssignment_4_1 )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2406:6: ( ( rule__AdditionOperator__StreamElementsAssignment_4_1 ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2407:1: ( rule__AdditionOperator__StreamElementsAssignment_4_1 )
                     {
-                     before(grammarAccess.getAdditionOperatorAccess().getStreamElementAssignment_4_1()); 
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2408:1: ( rule__AdditionOperator__StreamElementAssignment_4_1 )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2408:2: rule__AdditionOperator__StreamElementAssignment_4_1
+                     before(grammarAccess.getAdditionOperatorAccess().getStreamElementsAssignment_4_1()); 
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2408:1: ( rule__AdditionOperator__StreamElementsAssignment_4_1 )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2408:2: rule__AdditionOperator__StreamElementsAssignment_4_1
                     {
-                    pushFollow(FOLLOW_rule__AdditionOperator__StreamElementAssignment_4_1_in_rule__AdditionOperator__Alternatives_45198);
-                    rule__AdditionOperator__StreamElementAssignment_4_1();
+                    pushFollow(FOLLOW_rule__AdditionOperator__StreamElementsAssignment_4_1_in_rule__AdditionOperator__Alternatives_45198);
+                    rule__AdditionOperator__StreamElementsAssignment_4_1();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAdditionOperatorAccess().getStreamElementAssignment_4_1()); 
+                     after(grammarAccess.getAdditionOperatorAccess().getStreamElementsAssignment_4_1()); 
 
                     }
 
@@ -6971,13 +6971,13 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SubtractionOperator__Alternatives_4"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2417:1: rule__SubtractionOperator__Alternatives_4 : ( ( ( rule__SubtractionOperator__LiteralAssignment_4_0 ) ) | ( ( rule__SubtractionOperator__StreamElementAssignment_4_1 ) ) );
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2417:1: rule__SubtractionOperator__Alternatives_4 : ( ( ( rule__SubtractionOperator__LiteralAssignment_4_0 ) ) | ( ( rule__SubtractionOperator__StreamElementsAssignment_4_1 ) ) );
     public final void rule__SubtractionOperator__Alternatives_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2421:1: ( ( ( rule__SubtractionOperator__LiteralAssignment_4_0 ) ) | ( ( rule__SubtractionOperator__StreamElementAssignment_4_1 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2421:1: ( ( ( rule__SubtractionOperator__LiteralAssignment_4_0 ) ) | ( ( rule__SubtractionOperator__StreamElementsAssignment_4_1 ) ) )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -7020,24 +7020,24 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2428:6: ( ( rule__SubtractionOperator__StreamElementAssignment_4_1 ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2428:6: ( ( rule__SubtractionOperator__StreamElementsAssignment_4_1 ) )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2428:6: ( ( rule__SubtractionOperator__StreamElementAssignment_4_1 ) )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2429:1: ( rule__SubtractionOperator__StreamElementAssignment_4_1 )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2428:6: ( ( rule__SubtractionOperator__StreamElementsAssignment_4_1 ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2429:1: ( rule__SubtractionOperator__StreamElementsAssignment_4_1 )
                     {
-                     before(grammarAccess.getSubtractionOperatorAccess().getStreamElementAssignment_4_1()); 
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2430:1: ( rule__SubtractionOperator__StreamElementAssignment_4_1 )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2430:2: rule__SubtractionOperator__StreamElementAssignment_4_1
+                     before(grammarAccess.getSubtractionOperatorAccess().getStreamElementsAssignment_4_1()); 
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2430:1: ( rule__SubtractionOperator__StreamElementsAssignment_4_1 )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2430:2: rule__SubtractionOperator__StreamElementsAssignment_4_1
                     {
-                    pushFollow(FOLLOW_rule__SubtractionOperator__StreamElementAssignment_4_1_in_rule__SubtractionOperator__Alternatives_45249);
-                    rule__SubtractionOperator__StreamElementAssignment_4_1();
+                    pushFollow(FOLLOW_rule__SubtractionOperator__StreamElementsAssignment_4_1_in_rule__SubtractionOperator__Alternatives_45249);
+                    rule__SubtractionOperator__StreamElementsAssignment_4_1();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getSubtractionOperatorAccess().getStreamElementAssignment_4_1()); 
+                     after(grammarAccess.getSubtractionOperatorAccess().getStreamElementsAssignment_4_1()); 
 
                     }
 
@@ -7062,13 +7062,13 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiplicationOperator__Alternatives_4"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2439:1: rule__MultiplicationOperator__Alternatives_4 : ( ( ( rule__MultiplicationOperator__LiteralAssignment_4_0 ) ) | ( ( rule__MultiplicationOperator__StreamElementAssignment_4_1 ) ) );
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2439:1: rule__MultiplicationOperator__Alternatives_4 : ( ( ( rule__MultiplicationOperator__LiteralAssignment_4_0 ) ) | ( ( rule__MultiplicationOperator__StreamElementsAssignment_4_1 ) ) );
     public final void rule__MultiplicationOperator__Alternatives_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2443:1: ( ( ( rule__MultiplicationOperator__LiteralAssignment_4_0 ) ) | ( ( rule__MultiplicationOperator__StreamElementAssignment_4_1 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2443:1: ( ( ( rule__MultiplicationOperator__LiteralAssignment_4_0 ) ) | ( ( rule__MultiplicationOperator__StreamElementsAssignment_4_1 ) ) )
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -7111,24 +7111,24 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2450:6: ( ( rule__MultiplicationOperator__StreamElementAssignment_4_1 ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2450:6: ( ( rule__MultiplicationOperator__StreamElementsAssignment_4_1 ) )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2450:6: ( ( rule__MultiplicationOperator__StreamElementAssignment_4_1 ) )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2451:1: ( rule__MultiplicationOperator__StreamElementAssignment_4_1 )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2450:6: ( ( rule__MultiplicationOperator__StreamElementsAssignment_4_1 ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2451:1: ( rule__MultiplicationOperator__StreamElementsAssignment_4_1 )
                     {
-                     before(grammarAccess.getMultiplicationOperatorAccess().getStreamElementAssignment_4_1()); 
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2452:1: ( rule__MultiplicationOperator__StreamElementAssignment_4_1 )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2452:2: rule__MultiplicationOperator__StreamElementAssignment_4_1
+                     before(grammarAccess.getMultiplicationOperatorAccess().getStreamElementsAssignment_4_1()); 
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2452:1: ( rule__MultiplicationOperator__StreamElementsAssignment_4_1 )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2452:2: rule__MultiplicationOperator__StreamElementsAssignment_4_1
                     {
-                    pushFollow(FOLLOW_rule__MultiplicationOperator__StreamElementAssignment_4_1_in_rule__MultiplicationOperator__Alternatives_45300);
-                    rule__MultiplicationOperator__StreamElementAssignment_4_1();
+                    pushFollow(FOLLOW_rule__MultiplicationOperator__StreamElementsAssignment_4_1_in_rule__MultiplicationOperator__Alternatives_45300);
+                    rule__MultiplicationOperator__StreamElementsAssignment_4_1();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getMultiplicationOperatorAccess().getStreamElementAssignment_4_1()); 
+                     after(grammarAccess.getMultiplicationOperatorAccess().getStreamElementsAssignment_4_1()); 
 
                     }
 
@@ -7153,13 +7153,13 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DivisionOperator__Alternatives_4"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2461:1: rule__DivisionOperator__Alternatives_4 : ( ( ( rule__DivisionOperator__LiteralAssignment_4_0 ) ) | ( ( rule__DivisionOperator__StreamElementAssignment_4_1 ) ) );
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2461:1: rule__DivisionOperator__Alternatives_4 : ( ( ( rule__DivisionOperator__LiteralAssignment_4_0 ) ) | ( ( rule__DivisionOperator__StreamElementsAssignment_4_1 ) ) );
     public final void rule__DivisionOperator__Alternatives_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2465:1: ( ( ( rule__DivisionOperator__LiteralAssignment_4_0 ) ) | ( ( rule__DivisionOperator__StreamElementAssignment_4_1 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2465:1: ( ( ( rule__DivisionOperator__LiteralAssignment_4_0 ) ) | ( ( rule__DivisionOperator__StreamElementsAssignment_4_1 ) ) )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -7202,24 +7202,24 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2472:6: ( ( rule__DivisionOperator__StreamElementAssignment_4_1 ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2472:6: ( ( rule__DivisionOperator__StreamElementsAssignment_4_1 ) )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2472:6: ( ( rule__DivisionOperator__StreamElementAssignment_4_1 ) )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2473:1: ( rule__DivisionOperator__StreamElementAssignment_4_1 )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2472:6: ( ( rule__DivisionOperator__StreamElementsAssignment_4_1 ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2473:1: ( rule__DivisionOperator__StreamElementsAssignment_4_1 )
                     {
-                     before(grammarAccess.getDivisionOperatorAccess().getStreamElementAssignment_4_1()); 
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2474:1: ( rule__DivisionOperator__StreamElementAssignment_4_1 )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2474:2: rule__DivisionOperator__StreamElementAssignment_4_1
+                     before(grammarAccess.getDivisionOperatorAccess().getStreamElementsAssignment_4_1()); 
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2474:1: ( rule__DivisionOperator__StreamElementsAssignment_4_1 )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2474:2: rule__DivisionOperator__StreamElementsAssignment_4_1
                     {
-                    pushFollow(FOLLOW_rule__DivisionOperator__StreamElementAssignment_4_1_in_rule__DivisionOperator__Alternatives_45351);
-                    rule__DivisionOperator__StreamElementAssignment_4_1();
+                    pushFollow(FOLLOW_rule__DivisionOperator__StreamElementsAssignment_4_1_in_rule__DivisionOperator__Alternatives_45351);
+                    rule__DivisionOperator__StreamElementsAssignment_4_1();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getDivisionOperatorAccess().getStreamElementAssignment_4_1()); 
+                     after(grammarAccess.getDivisionOperatorAccess().getStreamElementsAssignment_4_1()); 
 
                     }
 
@@ -39547,9 +39547,9 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__AdditionOperator__LiteralAssignment_4_0"
 
 
-    // $ANTLR start "rule__AdditionOperator__StreamElementAssignment_4_1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:15146:1: rule__AdditionOperator__StreamElementAssignment_4_1 : ( ruleStreamAccess ) ;
-    public final void rule__AdditionOperator__StreamElementAssignment_4_1() throws RecognitionException {
+    // $ANTLR start "rule__AdditionOperator__StreamElementsAssignment_4_1"
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:15146:1: rule__AdditionOperator__StreamElementsAssignment_4_1 : ( ruleStreamAccess ) ;
+    public final void rule__AdditionOperator__StreamElementsAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -39560,13 +39560,13 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
             // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:15151:1: ( ruleStreamAccess )
             // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:15152:1: ruleStreamAccess
             {
-             before(grammarAccess.getAdditionOperatorAccess().getStreamElementStreamAccessParserRuleCall_4_1_0()); 
-            pushFollow(FOLLOW_ruleStreamAccess_in_rule__AdditionOperator__StreamElementAssignment_4_130450);
+             before(grammarAccess.getAdditionOperatorAccess().getStreamElementsStreamAccessParserRuleCall_4_1_0()); 
+            pushFollow(FOLLOW_ruleStreamAccess_in_rule__AdditionOperator__StreamElementsAssignment_4_130450);
             ruleStreamAccess();
 
             state._fsp--;
 
-             after(grammarAccess.getAdditionOperatorAccess().getStreamElementStreamAccessParserRuleCall_4_1_0()); 
+             after(grammarAccess.getAdditionOperatorAccess().getStreamElementsStreamAccessParserRuleCall_4_1_0()); 
 
             }
 
@@ -39585,7 +39585,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AdditionOperator__StreamElementAssignment_4_1"
+    // $ANTLR end "rule__AdditionOperator__StreamElementsAssignment_4_1"
 
 
     // $ANTLR start "rule__AdditionOperator__StreamAssignment_6"
@@ -39707,9 +39707,9 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__SubtractionOperator__LiteralAssignment_4_0"
 
 
-    // $ANTLR start "rule__SubtractionOperator__StreamElementAssignment_4_1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:15206:1: rule__SubtractionOperator__StreamElementAssignment_4_1 : ( ruleStreamAccess ) ;
-    public final void rule__SubtractionOperator__StreamElementAssignment_4_1() throws RecognitionException {
+    // $ANTLR start "rule__SubtractionOperator__StreamElementsAssignment_4_1"
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:15206:1: rule__SubtractionOperator__StreamElementsAssignment_4_1 : ( ruleStreamAccess ) ;
+    public final void rule__SubtractionOperator__StreamElementsAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -39720,13 +39720,13 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
             // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:15211:1: ( ruleStreamAccess )
             // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:15212:1: ruleStreamAccess
             {
-             before(grammarAccess.getSubtractionOperatorAccess().getStreamElementStreamAccessParserRuleCall_4_1_0()); 
-            pushFollow(FOLLOW_ruleStreamAccess_in_rule__SubtractionOperator__StreamElementAssignment_4_130574);
+             before(grammarAccess.getSubtractionOperatorAccess().getStreamElementsStreamAccessParserRuleCall_4_1_0()); 
+            pushFollow(FOLLOW_ruleStreamAccess_in_rule__SubtractionOperator__StreamElementsAssignment_4_130574);
             ruleStreamAccess();
 
             state._fsp--;
 
-             after(grammarAccess.getSubtractionOperatorAccess().getStreamElementStreamAccessParserRuleCall_4_1_0()); 
+             after(grammarAccess.getSubtractionOperatorAccess().getStreamElementsStreamAccessParserRuleCall_4_1_0()); 
 
             }
 
@@ -39745,7 +39745,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SubtractionOperator__StreamElementAssignment_4_1"
+    // $ANTLR end "rule__SubtractionOperator__StreamElementsAssignment_4_1"
 
 
     // $ANTLR start "rule__SubtractionOperator__StreamAssignment_6"
@@ -39867,9 +39867,9 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__MultiplicationOperator__LiteralAssignment_4_0"
 
 
-    // $ANTLR start "rule__MultiplicationOperator__StreamElementAssignment_4_1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:15266:1: rule__MultiplicationOperator__StreamElementAssignment_4_1 : ( ruleStreamAccess ) ;
-    public final void rule__MultiplicationOperator__StreamElementAssignment_4_1() throws RecognitionException {
+    // $ANTLR start "rule__MultiplicationOperator__StreamElementsAssignment_4_1"
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:15266:1: rule__MultiplicationOperator__StreamElementsAssignment_4_1 : ( ruleStreamAccess ) ;
+    public final void rule__MultiplicationOperator__StreamElementsAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -39880,13 +39880,13 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
             // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:15271:1: ( ruleStreamAccess )
             // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:15272:1: ruleStreamAccess
             {
-             before(grammarAccess.getMultiplicationOperatorAccess().getStreamElementStreamAccessParserRuleCall_4_1_0()); 
-            pushFollow(FOLLOW_ruleStreamAccess_in_rule__MultiplicationOperator__StreamElementAssignment_4_130698);
+             before(grammarAccess.getMultiplicationOperatorAccess().getStreamElementsStreamAccessParserRuleCall_4_1_0()); 
+            pushFollow(FOLLOW_ruleStreamAccess_in_rule__MultiplicationOperator__StreamElementsAssignment_4_130698);
             ruleStreamAccess();
 
             state._fsp--;
 
-             after(grammarAccess.getMultiplicationOperatorAccess().getStreamElementStreamAccessParserRuleCall_4_1_0()); 
+             after(grammarAccess.getMultiplicationOperatorAccess().getStreamElementsStreamAccessParserRuleCall_4_1_0()); 
 
             }
 
@@ -39905,7 +39905,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MultiplicationOperator__StreamElementAssignment_4_1"
+    // $ANTLR end "rule__MultiplicationOperator__StreamElementsAssignment_4_1"
 
 
     // $ANTLR start "rule__MultiplicationOperator__StreamAssignment_6"
@@ -40027,9 +40027,9 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__DivisionOperator__LiteralAssignment_4_0"
 
 
-    // $ANTLR start "rule__DivisionOperator__StreamElementAssignment_4_1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:15326:1: rule__DivisionOperator__StreamElementAssignment_4_1 : ( ruleStreamAccess ) ;
-    public final void rule__DivisionOperator__StreamElementAssignment_4_1() throws RecognitionException {
+    // $ANTLR start "rule__DivisionOperator__StreamElementsAssignment_4_1"
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:15326:1: rule__DivisionOperator__StreamElementsAssignment_4_1 : ( ruleStreamAccess ) ;
+    public final void rule__DivisionOperator__StreamElementsAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -40040,13 +40040,13 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
             // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:15331:1: ( ruleStreamAccess )
             // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:15332:1: ruleStreamAccess
             {
-             before(grammarAccess.getDivisionOperatorAccess().getStreamElementStreamAccessParserRuleCall_4_1_0()); 
-            pushFollow(FOLLOW_ruleStreamAccess_in_rule__DivisionOperator__StreamElementAssignment_4_130822);
+             before(grammarAccess.getDivisionOperatorAccess().getStreamElementsStreamAccessParserRuleCall_4_1_0()); 
+            pushFollow(FOLLOW_ruleStreamAccess_in_rule__DivisionOperator__StreamElementsAssignment_4_130822);
             ruleStreamAccess();
 
             state._fsp--;
 
-             after(grammarAccess.getDivisionOperatorAccess().getStreamElementStreamAccessParserRuleCall_4_1_0()); 
+             after(grammarAccess.getDivisionOperatorAccess().getStreamElementsStreamAccessParserRuleCall_4_1_0()); 
 
             }
 
@@ -40065,7 +40065,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__DivisionOperator__StreamElementAssignment_4_1"
+    // $ANTLR end "rule__DivisionOperator__StreamElementsAssignment_4_1"
 
 
     // $ANTLR start "rule__DivisionOperator__StreamAssignment_6"
@@ -41908,13 +41908,13 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_14_in_rule__WindowOperator__UnitAlternatives_0_2_05126 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_15_in_rule__WindowOperator__UnitAlternatives_0_2_05146 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__AdditionOperator__LiteralAssignment_4_0_in_rule__AdditionOperator__Alternatives_45180 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AdditionOperator__StreamElementAssignment_4_1_in_rule__AdditionOperator__Alternatives_45198 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AdditionOperator__StreamElementsAssignment_4_1_in_rule__AdditionOperator__Alternatives_45198 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SubtractionOperator__LiteralAssignment_4_0_in_rule__SubtractionOperator__Alternatives_45231 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SubtractionOperator__StreamElementAssignment_4_1_in_rule__SubtractionOperator__Alternatives_45249 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SubtractionOperator__StreamElementsAssignment_4_1_in_rule__SubtractionOperator__Alternatives_45249 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__MultiplicationOperator__LiteralAssignment_4_0_in_rule__MultiplicationOperator__Alternatives_45282 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MultiplicationOperator__StreamElementAssignment_4_1_in_rule__MultiplicationOperator__Alternatives_45300 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiplicationOperator__StreamElementsAssignment_4_1_in_rule__MultiplicationOperator__Alternatives_45300 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__DivisionOperator__LiteralAssignment_4_0_in_rule__DivisionOperator__Alternatives_45333 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__DivisionOperator__StreamElementAssignment_4_1_in_rule__DivisionOperator__Alternatives_45351 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__DivisionOperator__StreamElementsAssignment_4_1_in_rule__DivisionOperator__Alternatives_45351 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNumberVariableDefinition_in_rule__VariableDefinition__Alternatives5384 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStringVariableDefinition_in_rule__VariableDefinition__Alternatives5401 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBooleanVariableDefinition_in_rule__VariableDefinition__Alternatives5418 = new BitSet(new long[]{0x0000000000000002L});
@@ -42965,19 +42965,19 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_rule__AverageOperator__StreamAssignment_430357 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStreamAccess_in_rule__AdditionOperator__ParameterAssignment_230388 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_NUMBER_in_rule__AdditionOperator__LiteralAssignment_4_030419 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__AdditionOperator__StreamElementAssignment_4_130450 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__AdditionOperator__StreamElementsAssignment_4_130450 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_rule__AdditionOperator__StreamAssignment_630481 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStreamAccess_in_rule__SubtractionOperator__ParameterAssignment_230512 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_NUMBER_in_rule__SubtractionOperator__LiteralAssignment_4_030543 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__SubtractionOperator__StreamElementAssignment_4_130574 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__SubtractionOperator__StreamElementsAssignment_4_130574 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_rule__SubtractionOperator__StreamAssignment_630605 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStreamAccess_in_rule__MultiplicationOperator__ParameterAssignment_230636 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_NUMBER_in_rule__MultiplicationOperator__LiteralAssignment_4_030667 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__MultiplicationOperator__StreamElementAssignment_4_130698 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__MultiplicationOperator__StreamElementsAssignment_4_130698 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_rule__MultiplicationOperator__StreamAssignment_630729 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStreamAccess_in_rule__DivisionOperator__ParameterAssignment_230760 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_NUMBER_in_rule__DivisionOperator__LiteralAssignment_4_030791 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__DivisionOperator__StreamElementAssignment_4_130822 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__DivisionOperator__StreamElementsAssignment_4_130822 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_rule__DivisionOperator__StreamAssignment_630853 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOutputOperatorParameter_in_rule__OutputOperator__ParameterAssignment_230884 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__OutputOperator__LocationAssignment_430915 = new BitSet(new long[]{0x0000000000000002L});
