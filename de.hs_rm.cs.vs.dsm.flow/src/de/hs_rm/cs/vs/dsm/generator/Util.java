@@ -1,6 +1,7 @@
 package de.hs_rm.cs.vs.dsm.generator;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -206,10 +207,11 @@ public class Util {
 	private String createOperators(final String pSetting){
 		// Initialize result string
 		String result = "";
+		Iterator iterator = this.mNetwork.getStreams().iterator();
 		// Iterate over the stream list in the network
-		for(int i = 0; i < this.mNetwork.getStreams().size(); i++){
+		while(iterator.hasNext()){
 			// Add the streams to the result string
-			result += pSetting + this.mNetwork.getStreams().get(i) + ");\n";
+			result += pSetting + iterator.next() + ");\n";
 		}
 		// Return the result
 		return result;

@@ -58,8 +58,6 @@ public class FlowGenerator implements IGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("fm = get_instance();");
     _builder.newLine();
-    _builder.append("uargh");
-    _builder.newLine();
     {
       EList<ModelElement> _elements = e.getElements();
       for(final ModelElement elements : _elements) {
@@ -72,7 +70,6 @@ public class FlowGenerator implements IGenerator {
     String _startOperators = _instance.getStartOperators();
     _builder.append(_startOperators, "");
     _builder.newLineIfNotEmpty();
-    _builder.newLine();
     Util _instance_1 = Util.getInstance();
     String _stopOperators = _instance_1.getStopOperators();
     _builder.append(_stopOperators, "");
@@ -174,7 +171,6 @@ public class FlowGenerator implements IGenerator {
             }
           }
         }} else {
-        _builder.newLine();
         _builder.newLine();
       }
     }

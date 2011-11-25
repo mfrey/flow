@@ -1,19 +1,20 @@
 package de.hs_rm.cs.vs.dsm.generator;
 
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * 
  */
 public class Network {
 	//
-	private ArrayList<String> mStreams = new ArrayList<String>();
+	private Set<String> mStreams = new HashSet<String>();
 
-	public ArrayList<String> getStreams() {
+	public Set<String> getStreams() {
 		return mStreams;
 	}
-
-	public void setStreams(ArrayList<String> pStreams) {
+	
+	public void setStreams(Set<String> pStreams) {
 		this.mStreams = pStreams;
 	}
 }

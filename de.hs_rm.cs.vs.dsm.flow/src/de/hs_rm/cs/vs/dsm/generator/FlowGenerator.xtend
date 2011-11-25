@@ -51,14 +51,12 @@ class FlowGenerator implements IGenerator {
     
     def compile(PackageDeclaration e) ''' 
       fm = get_instance();
-      uargh
       «FOR elements : e.elements»
       	«elements.compile»
       «ENDFOR»
       «{
       	Util::instance.startOperators
       }»
-      
       «{
       	Util::instance.stopOperators
       }»
@@ -90,7 +88,6 @@ class FlowGenerator implements IGenerator {
 			«write((statement.operator as ElementJoinOperator),statement)»
 			«ENDIF»
 		«ELSE»
-
 
 		«ENDIF»
 	'''
