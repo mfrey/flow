@@ -818,16 +818,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStreamStatement_Expression()
-  {
-    return (EReference)streamStatementEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getStreamVariableStatement()
   {
     return streamVariableStatementEClass;
@@ -2708,7 +2698,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     streamStatementEClass = createEClass(STREAM_STATEMENT);
     createEReference(streamStatementEClass, STREAM_STATEMENT__RETURN_STREAM);
     createEReference(streamStatementEClass, STREAM_STATEMENT__OPERATOR);
-    createEReference(streamStatementEClass, STREAM_STATEMENT__EXPRESSION);
 
     streamVariableStatementEClass = createEClass(STREAM_VARIABLE_STATEMENT);
     createEReference(streamVariableStatementEClass, STREAM_VARIABLE_STATEMENT__REFERENCE);
@@ -3068,7 +3057,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEClass(streamStatementEClass, StreamStatement.class, "StreamStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStreamStatement_ReturnStream(), this.getStreamDefinition(), null, "returnStream", null, 0, -1, StreamStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStreamStatement_Operator(), this.getReturnTypeOperator(), null, "operator", null, 0, 1, StreamStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStreamStatement_Expression(), this.getExpression(), null, "expression", null, 0, 1, StreamStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(streamVariableStatementEClass, StreamVariableStatement.class, "StreamVariableStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStreamVariableStatement_Reference(), this.getStreamDefinition(), null, "reference", null, 0, 1, StreamVariableStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

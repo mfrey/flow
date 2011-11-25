@@ -165,23 +165,18 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cReturnStreamStreamDefinitionCrossReference_1_1_0 = (CrossReference)cReturnStreamAssignment_1_1.eContents().get(0);
 		private final RuleCall cReturnStreamStreamDefinitionIDTerminalRuleCall_1_1_0_1 = (RuleCall)cReturnStreamStreamDefinitionCrossReference_1_1_0.eContents().get(1);
 		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Assignment cOperatorAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
-		private final RuleCall cOperatorReturnTypeOperatorParserRuleCall_3_0_0 = (RuleCall)cOperatorAssignment_3_0.eContents().get(0);
-		private final Assignment cExpressionAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
-		private final RuleCall cExpressionExpressionParserRuleCall_3_1_0 = (RuleCall)cExpressionAssignment_3_1.eContents().get(0);
+		private final Assignment cOperatorAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cOperatorReturnTypeOperatorParserRuleCall_3_0 = (RuleCall)cOperatorAssignment_3.eContents().get(0);
 		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		/// **
 		// * Every stream expression has at least one return type and one operation. Multiple
 		// * return types are seperated by a comma. 
 		// * / StreamStatement:
-		//	returnStream+=[StreamDefinition] ("," returnStream+=[StreamDefinition])* "=" (operator=ReturnTypeOperator |
-		//	expression=Expression) ";";
+		//	returnStream+=[StreamDefinition] ("," returnStream+=[StreamDefinition])* "=" operator=ReturnTypeOperator ";";
 		public ParserRule getRule() { return rule; }
 
-		//returnStream+=[StreamDefinition] ("," returnStream+=[StreamDefinition])* "=" (operator=ReturnTypeOperator |
-		//expression=Expression) ";"
+		//returnStream+=[StreamDefinition] ("," returnStream+=[StreamDefinition])* "=" operator=ReturnTypeOperator ";"
 		public Group getGroup() { return cGroup; }
 
 		//returnStream+=[StreamDefinition]
@@ -211,20 +206,11 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//"="
 		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
 
-		//operator=ReturnTypeOperator | expression=Expression
-		public Alternatives getAlternatives_3() { return cAlternatives_3; }
-
 		//operator=ReturnTypeOperator
-		public Assignment getOperatorAssignment_3_0() { return cOperatorAssignment_3_0; }
+		public Assignment getOperatorAssignment_3() { return cOperatorAssignment_3; }
 
 		//ReturnTypeOperator
-		public RuleCall getOperatorReturnTypeOperatorParserRuleCall_3_0_0() { return cOperatorReturnTypeOperatorParserRuleCall_3_0_0; }
-
-		//expression=Expression
-		public Assignment getExpressionAssignment_3_1() { return cExpressionAssignment_3_1; }
-
-		//Expression
-		public RuleCall getExpressionExpressionParserRuleCall_3_1_0() { return cExpressionExpressionParserRuleCall_3_1_0; }
+		public RuleCall getOperatorReturnTypeOperatorParserRuleCall_3_0() { return cOperatorReturnTypeOperatorParserRuleCall_3_0; }
 
 		//";"
 		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
@@ -3724,8 +3710,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	// * Every stream expression has at least one return type and one operation. Multiple
 	// * return types are seperated by a comma. 
 	// * / StreamStatement:
-	//	returnStream+=[StreamDefinition] ("," returnStream+=[StreamDefinition])* "=" (operator=ReturnTypeOperator |
-	//	expression=Expression) ";";
+	//	returnStream+=[StreamDefinition] ("," returnStream+=[StreamDefinition])* "=" operator=ReturnTypeOperator ";";
 	public StreamStatementElements getStreamStatementAccess() {
 		return (pStreamStatement != null) ? pStreamStatement : (pStreamStatement = new StreamStatementElements());
 	}

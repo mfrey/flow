@@ -2132,28 +2132,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__StreamStatement__Alternatives_3
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getStreamStatementAccess().getOperatorAssignment_3_0()); }
-(rule__StreamStatement__OperatorAssignment_3_0)
-{ after(grammarAccess.getStreamStatementAccess().getOperatorAssignment_3_0()); }
-)
-
-    |(
-{ before(grammarAccess.getStreamStatementAccess().getExpressionAssignment_3_1()); }
-(rule__StreamStatement__ExpressionAssignment_3_1)
-{ after(grammarAccess.getStreamStatementAccess().getExpressionAssignment_3_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 rule__ElementJoinOperator__Alternatives_2
     @init {
 		int stackSize = keepStackSize();
@@ -3139,9 +3117,9 @@ rule__StreamStatement__Group__3__Impl
     }
 :
 (
-{ before(grammarAccess.getStreamStatementAccess().getAlternatives_3()); }
-(rule__StreamStatement__Alternatives_3)
-{ after(grammarAccess.getStreamStatementAccess().getAlternatives_3()); }
+{ before(grammarAccess.getStreamStatementAccess().getOperatorAssignment_3()); }
+(rule__StreamStatement__OperatorAssignment_3)
+{ after(grammarAccess.getStreamStatementAccess().getOperatorAssignment_3()); }
 )
 
 ;
@@ -14328,29 +14306,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__StreamStatement__OperatorAssignment_3_0
+rule__StreamStatement__OperatorAssignment_3
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getStreamStatementAccess().getOperatorReturnTypeOperatorParserRuleCall_3_0_0()); }
-	ruleReturnTypeOperator{ after(grammarAccess.getStreamStatementAccess().getOperatorReturnTypeOperatorParserRuleCall_3_0_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__StreamStatement__ExpressionAssignment_3_1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getStreamStatementAccess().getExpressionExpressionParserRuleCall_3_1_0()); }
-	ruleExpression{ after(grammarAccess.getStreamStatementAccess().getExpressionExpressionParserRuleCall_3_1_0()); }
+{ before(grammarAccess.getStreamStatementAccess().getOperatorReturnTypeOperatorParserRuleCall_3_0()); }
+	ruleReturnTypeOperator{ after(grammarAccess.getStreamStatementAccess().getOperatorReturnTypeOperatorParserRuleCall_3_0()); }
 )
 
 ;

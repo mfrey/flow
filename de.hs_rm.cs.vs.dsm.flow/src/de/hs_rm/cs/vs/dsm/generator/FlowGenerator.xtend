@@ -69,27 +69,18 @@ class FlowGenerator implements IGenerator {
 	'''
 		
 	def compile(StreamStatement statement)'''
-		«IF statement.expression ==  null»	
-			«IF statement.operator.eClass.name.equals("JoinOperator")»
-			«write((statement.operator as JoinOperator),statement)»
-			«ELSEIF statement.operator.eClass.name.equals("SplitOperator")»
-			«write((statement.operator as SplitOperator),statement)»
-			«ELSEIF statement.operator.eClass.name.equals("CountOperator")»
-			«write((statement.operator as CountOperator),statement)»
-			«ELSEIF statement.operator.eClass.name.equals("AverageOperator")»
-			«write((statement.operator as AverageOperator),statement)»
-			«ELSEIF statement.operator.eClass.name.equals("StandardDeviationOperator")»
-			«write((statement.operator as StandardDeviationOperator),statement)»
-			«ELSEIF statement.operator.eClass.name.equals("ElementJoinOperator")»
-			«write((statement.operator as ElementJoinOperator),statement)»
-			«ENDIF»
-		«ELSE»
-			«{ 
-				var StreamStatementGenerator streamStatement = new StreamStatementGenerator(
-					statement
-				)
-				streamStatement.toString() 
-			}»
+		«IF statement.operator.eClass.name.equals("JoinOperator")»
+		«write((statement.operator as JoinOperator),statement)»
+		«ELSEIF statement.operator.eClass.name.equals("SplitOperator")»			
+		«write((statement.operator as SplitOperator),statement)»
+		«ELSEIF statement.operator.eClass.name.equals("CountOperator")»
+		«write((statement.operator as CountOperator),statement)»
+		«ELSEIF statement.operator.eClass.name.equals("AverageOperator")»
+		«write((statement.operator as AverageOperator),statement)»
+		«ELSEIF statement.operator.eClass.name.equals("StandardDeviationOperator")»
+		«write((statement.operator as StandardDeviationOperator),statement)»
+		«ELSEIF statement.operator.eClass.name.equals("ElementJoinOperator")»
+		«write((statement.operator as ElementJoinOperator),statement)»
 		«ENDIF»
 	'''
 

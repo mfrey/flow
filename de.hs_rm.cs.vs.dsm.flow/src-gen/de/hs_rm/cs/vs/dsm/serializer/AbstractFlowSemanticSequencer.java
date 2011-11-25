@@ -1497,14 +1497,11 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (returnStream+=[StreamDefinition|ID] returnStream+=[StreamDefinition|ID]* (operator=ReturnTypeOperator | expression=Expression))
+	 *     (returnStream+=[StreamDefinition|ID] returnStream+=[StreamDefinition|ID]* operator=ReturnTypeOperator)
 	 *
 	 * Features:
 	 *    returnStream[1, *]
-	 *    operator[0, 1]
-	 *         EXCLUDE_IF_SET expression
-	 *    expression[0, 1]
-	 *         EXCLUDE_IF_SET operator
+	 *    operator[1, 1]
 	 */
 	protected void sequence_StreamStatement(EObject context, StreamStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

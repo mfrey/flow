@@ -47,7 +47,7 @@ Import:
  */
 StreamStatement:
 	returnStream+=[StreamDefinition] (',' returnStream+=[StreamDefinition])*  
-	'=' (operator=ReturnTypeOperator | expression=Expression)';'; 
+	'=' operator=ReturnTypeOperator ';'; 
 
 
 /**

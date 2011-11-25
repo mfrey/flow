@@ -201,22 +201,13 @@ public interface FlowPackage extends EPackage
   int STREAM_STATEMENT__OPERATOR = MODEL_ELEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STREAM_STATEMENT__EXPRESSION = MODEL_ELEMENT_FEATURE_COUNT + 2;
-
-  /**
    * The number of structural features of the '<em>Stream Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STREAM_STATEMENT_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 3;
+  int STREAM_STATEMENT_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.StreamVariableStatementImpl <em>Stream Variable Statement</em>}' class.
@@ -2738,17 +2729,6 @@ public interface FlowPackage extends EPackage
   EReference getStreamStatement_Operator();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.StreamStatement#getExpression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expression</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.StreamStatement#getExpression()
-   * @see #getStreamStatement()
-   * @generated
-   */
-  EReference getStreamStatement_Expression();
-
-  /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.StreamVariableStatement <em>Stream Variable Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4821,14 +4801,6 @@ public interface FlowPackage extends EPackage
      * @generated
      */
     EReference STREAM_STATEMENT__OPERATOR = eINSTANCE.getStreamStatement_Operator();
-
-    /**
-     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STREAM_STATEMENT__EXPRESSION = eINSTANCE.getStreamStatement_Expression();
 
     /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.StreamVariableStatementImpl <em>Stream Variable Statement</em>}' class.

@@ -38,7 +38,6 @@ public class FlowParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getModelElementAccess().getAlternatives(), "rule__ModelElement__Alternatives");
-					put(grammarAccess.getStreamStatementAccess().getAlternatives_3(), "rule__StreamStatement__Alternatives_3");
 					put(grammarAccess.getElementJoinOperatorAccess().getAlternatives_2(), "rule__ElementJoinOperator__Alternatives_2");
 					put(grammarAccess.getReturnTypeOperatorAccess().getAlternatives(), "rule__ReturnTypeOperator__Alternatives");
 					put(grammarAccess.getTagElementAccess().getAlternatives(), "rule__TagElement__Alternatives");
@@ -167,8 +166,7 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getImportAccess().getImportURIAssignment_1(), "rule__Import__ImportURIAssignment_1");
 					put(grammarAccess.getStreamStatementAccess().getReturnStreamAssignment_0(), "rule__StreamStatement__ReturnStreamAssignment_0");
 					put(grammarAccess.getStreamStatementAccess().getReturnStreamAssignment_1_1(), "rule__StreamStatement__ReturnStreamAssignment_1_1");
-					put(grammarAccess.getStreamStatementAccess().getOperatorAssignment_3_0(), "rule__StreamStatement__OperatorAssignment_3_0");
-					put(grammarAccess.getStreamStatementAccess().getExpressionAssignment_3_1(), "rule__StreamStatement__ExpressionAssignment_3_1");
+					put(grammarAccess.getStreamStatementAccess().getOperatorAssignment_3(), "rule__StreamStatement__OperatorAssignment_3");
 					put(grammarAccess.getStreamVariableStatementAccess().getReferenceAssignment_0(), "rule__StreamVariableStatement__ReferenceAssignment_0");
 					put(grammarAccess.getStreamVariableStatementAccess().getExpressionAssignment_2(), "rule__StreamVariableStatement__ExpressionAssignment_2");
 					put(grammarAccess.getStreamAccessAccess().getReferenceAssignment_0(), "rule__StreamAccess__ReferenceAssignment_0");
