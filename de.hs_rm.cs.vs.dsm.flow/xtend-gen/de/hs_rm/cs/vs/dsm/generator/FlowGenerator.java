@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import de.hs_rm.cs.vs.dsm.flow.AverageOperator;
 import de.hs_rm.cs.vs.dsm.flow.CountOperator;
 import de.hs_rm.cs.vs.dsm.flow.ElementJoinOperator;
+import de.hs_rm.cs.vs.dsm.flow.Expression;
 import de.hs_rm.cs.vs.dsm.flow.JoinOperator;
 import de.hs_rm.cs.vs.dsm.flow.ModelElement;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
@@ -29,6 +30,7 @@ import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.eclipse.xtext.xtend2.lib.ResourceExtensions;
 import org.eclipse.xtext.xtend2.lib.StringConcatenation;
@@ -56,6 +58,7 @@ public class FlowGenerator implements IGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("fm = get_instance();");
     _builder.newLine();
+    _builder.append("uargh");
     _builder.newLine();
     {
       EList<ModelElement> _elements = e.getElements();
@@ -105,8 +108,76 @@ public class FlowGenerator implements IGenerator {
   
   public StringConcatenation compile(final StreamStatement statement) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("bla ficken");
-    _builder.newLine();
+    {
+      Expression _expression = statement.getExpression();
+      boolean _operator_equals = ObjectExtensions.operator_equals(_expression, null);
+      if (_operator_equals) {
+        {
+          ReturnTypeOperator _operator = statement.getOperator();
+          EClass _eClass = _operator.eClass();
+          String _name = _eClass.getName();
+          boolean _equals = _name.equals("JoinOperator");
+          if (_equals) {
+            ReturnTypeOperator _operator_1 = statement.getOperator();
+            String _write = this.write(((JoinOperator) _operator_1), statement);
+            _builder.append(_write, "");
+            _builder.newLineIfNotEmpty();} else {
+            ReturnTypeOperator _operator_2 = statement.getOperator();
+            EClass _eClass_1 = _operator_2.eClass();
+            String _name_1 = _eClass_1.getName();
+            boolean _equals_1 = _name_1.equals("SplitOperator");
+            if (_equals_1) {
+              ReturnTypeOperator _operator_3 = statement.getOperator();
+              String _write_1 = this.write(((SplitOperator) _operator_3), statement);
+              _builder.append(_write_1, "");
+              _builder.newLineIfNotEmpty();} else {
+              ReturnTypeOperator _operator_4 = statement.getOperator();
+              EClass _eClass_2 = _operator_4.eClass();
+              String _name_2 = _eClass_2.getName();
+              boolean _equals_2 = _name_2.equals("CountOperator");
+              if (_equals_2) {
+                ReturnTypeOperator _operator_5 = statement.getOperator();
+                String _write_2 = this.write(((CountOperator) _operator_5), statement);
+                _builder.append(_write_2, "");
+                _builder.newLineIfNotEmpty();} else {
+                ReturnTypeOperator _operator_6 = statement.getOperator();
+                EClass _eClass_3 = _operator_6.eClass();
+                String _name_3 = _eClass_3.getName();
+                boolean _equals_3 = _name_3.equals("AverageOperator");
+                if (_equals_3) {
+                  ReturnTypeOperator _operator_7 = statement.getOperator();
+                  String _write_3 = this.write(((AverageOperator) _operator_7), statement);
+                  _builder.append(_write_3, "");
+                  _builder.newLineIfNotEmpty();} else {
+                  ReturnTypeOperator _operator_8 = statement.getOperator();
+                  EClass _eClass_4 = _operator_8.eClass();
+                  String _name_4 = _eClass_4.getName();
+                  boolean _equals_4 = _name_4.equals("StandardDeviationOperator");
+                  if (_equals_4) {
+                    ReturnTypeOperator _operator_9 = statement.getOperator();
+                    String _write_4 = this.write(((StandardDeviationOperator) _operator_9), statement);
+                    _builder.append(_write_4, "");
+                    _builder.newLineIfNotEmpty();} else {
+                    ReturnTypeOperator _operator_10 = statement.getOperator();
+                    EClass _eClass_5 = _operator_10.eClass();
+                    String _name_5 = _eClass_5.getName();
+                    boolean _equals_5 = _name_5.equals("ElementJoinOperator");
+                    if (_equals_5) {
+                      ReturnTypeOperator _operator_11 = statement.getOperator();
+                      String _write_5 = this.write(((ElementJoinOperator) _operator_11), statement);
+                      _builder.append(_write_5, "");
+                      _builder.newLineIfNotEmpty();
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }} else {
+        _builder.newLine();
+        _builder.newLine();
+      }
+    }
     return _builder;
   }
   

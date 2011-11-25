@@ -23,6 +23,8 @@ import de.hs_rm.cs.vs.dsm.flow.ElementJoinOperator
 
 import de.hs_rm.cs.vs.dsm.flow.StreamVariableStatement
 
+
+
 import org.eclipse.xtext.naming.IQualifiedNameProvider
 
 import com.google.inject.Inject
@@ -49,7 +51,7 @@ class FlowGenerator implements IGenerator {
     
     def compile(PackageDeclaration e) ''' 
       fm = get_instance();
-      
+      uargh
       «FOR elements : e.elements»
       	«elements.compile»
       «ENDFOR»
@@ -73,7 +75,24 @@ class FlowGenerator implements IGenerator {
 	'''
 		
 	def compile(StreamStatement statement)'''
-		bla ficken
+		«IF statement.expression ==  null»	
+			«IF statement.operator.eClass.name.equals("JoinOperator")»
+			«write((statement.operator as JoinOperator),statement)»
+			«ELSEIF statement.operator.eClass.name.equals("SplitOperator")»
+			«write((statement.operator as SplitOperator),statement)»
+			«ELSEIF statement.operator.eClass.name.equals("CountOperator")»
+			«write((statement.operator as CountOperator),statement)»
+			«ELSEIF statement.operator.eClass.name.equals("AverageOperator")»
+			«write((statement.operator as AverageOperator),statement)»
+			«ELSEIF statement.operator.eClass.name.equals("StandardDeviationOperator")»
+			«write((statement.operator as StandardDeviationOperator),statement)»
+			«ELSEIF statement.operator.eClass.name.equals("ElementJoinOperator")»
+			«write((statement.operator as ElementJoinOperator),statement)»
+			«ENDIF»
+		«ELSE»
+
+
+		«ENDIF»
 	'''
 
 	
