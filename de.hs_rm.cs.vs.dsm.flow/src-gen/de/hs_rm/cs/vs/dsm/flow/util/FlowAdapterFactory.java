@@ -293,6 +293,26 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
         return createAverageOperatorAdapter();
       }
       @Override
+      public Adapter caseAdditionOperator(AdditionOperator object)
+      {
+        return createAdditionOperatorAdapter();
+      }
+      @Override
+      public Adapter caseSubtractionOperator(SubtractionOperator object)
+      {
+        return createSubtractionOperatorAdapter();
+      }
+      @Override
+      public Adapter caseMultiplicationOperator(MultiplicationOperator object)
+      {
+        return createMultiplicationOperatorAdapter();
+      }
+      @Override
+      public Adapter caseDivisionOperator(DivisionOperator object)
+      {
+        return createDivisionOperatorAdapter();
+      }
+      @Override
       public Adapter caseOutputOperator(OutputOperator object)
       {
         return createOutputOperatorAdapter();
@@ -1090,6 +1110,66 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAverageOperatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.AdditionOperator <em>Addition Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.hs_rm.cs.vs.dsm.flow.AdditionOperator
+   * @generated
+   */
+  public Adapter createAdditionOperatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.SubtractionOperator <em>Subtraction Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.hs_rm.cs.vs.dsm.flow.SubtractionOperator
+   * @generated
+   */
+  public Adapter createSubtractionOperatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator <em>Multiplication Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator
+   * @generated
+   */
+  public Adapter createMultiplicationOperatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.DivisionOperator <em>Division Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.hs_rm.cs.vs.dsm.flow.DivisionOperator
+   * @generated
+   */
+  public Adapter createDivisionOperatorAdapter()
   {
     return null;
   }

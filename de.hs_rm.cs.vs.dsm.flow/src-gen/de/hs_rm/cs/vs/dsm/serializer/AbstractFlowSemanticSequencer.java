@@ -2,6 +2,7 @@ package de.hs_rm.cs.vs.dsm.serializer;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
+import de.hs_rm.cs.vs.dsm.flow.AdditionOperator;
 import de.hs_rm.cs.vs.dsm.flow.AntecedentRule;
 import de.hs_rm.cs.vs.dsm.flow.AverageOperator;
 import de.hs_rm.cs.vs.dsm.flow.BooleanDataType;
@@ -11,6 +12,7 @@ import de.hs_rm.cs.vs.dsm.flow.ConsequentRule;
 import de.hs_rm.cs.vs.dsm.flow.CountOperator;
 import de.hs_rm.cs.vs.dsm.flow.DifferenceOperator;
 import de.hs_rm.cs.vs.dsm.flow.Div;
+import de.hs_rm.cs.vs.dsm.flow.DivisionOperator;
 import de.hs_rm.cs.vs.dsm.flow.ElementJoinOperator;
 import de.hs_rm.cs.vs.dsm.flow.FilterOperator;
 import de.hs_rm.cs.vs.dsm.flow.FloatDataType;
@@ -25,6 +27,7 @@ import de.hs_rm.cs.vs.dsm.flow.MatchOperator;
 import de.hs_rm.cs.vs.dsm.flow.Minus;
 import de.hs_rm.cs.vs.dsm.flow.Model;
 import de.hs_rm.cs.vs.dsm.flow.Multi;
+import de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator;
 import de.hs_rm.cs.vs.dsm.flow.NewTagOperator;
 import de.hs_rm.cs.vs.dsm.flow.NumberLiteral;
 import de.hs_rm.cs.vs.dsm.flow.NumberVariableDefinition;
@@ -52,6 +55,7 @@ import de.hs_rm.cs.vs.dsm.flow.StringDataType;
 import de.hs_rm.cs.vs.dsm.flow.StringVariableDefinition;
 import de.hs_rm.cs.vs.dsm.flow.StructureDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.StructureElements;
+import de.hs_rm.cs.vs.dsm.flow.SubtractionOperator;
 import de.hs_rm.cs.vs.dsm.flow.SymmetricDifferenceOperator;
 import de.hs_rm.cs.vs.dsm.flow.TagClassElement;
 import de.hs_rm.cs.vs.dsm.flow.TagDataTypePropertyElement;
@@ -103,6 +107,13 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == FlowPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case FlowPackage.ADDITION_OPERATOR:
+				if(context == grammarAccess.getAdditionOperatorRule() ||
+				   context == grammarAccess.getReturnTypeOperatorRule()) {
+					sequence_AdditionOperator(context, (AdditionOperator) semanticObject); 
+					return; 
+				}
+				else break;
 			case FlowPackage.ANTECEDENT_RULE:
 				if(context == grammarAccess.getAntecedentRuleRule()) {
 					sequence_AntecedentRule(context, (AntecedentRule) semanticObject); 
@@ -187,6 +198,13 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				   context == grammarAccess.getRelationalExpressionRule() ||
 				   context == grammarAccess.getRelationalExpressionAccess().getBooleanOperationLeftAction_1_0()) {
 					sequence_Multiplication(context, (Div) semanticObject); 
+					return; 
+				}
+				else break;
+			case FlowPackage.DIVISION_OPERATOR:
+				if(context == grammarAccess.getDivisionOperatorRule() ||
+				   context == grammarAccess.getReturnTypeOperatorRule()) {
+					sequence_DivisionOperator(context, (DivisionOperator) semanticObject); 
 					return; 
 				}
 				else break;
@@ -302,6 +320,13 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				   context == grammarAccess.getRelationalExpressionRule() ||
 				   context == grammarAccess.getRelationalExpressionAccess().getBooleanOperationLeftAction_1_0()) {
 					sequence_Multiplication(context, (Multi) semanticObject); 
+					return; 
+				}
+				else break;
+			case FlowPackage.MULTIPLICATION_OPERATOR:
+				if(context == grammarAccess.getMultiplicationOperatorRule() ||
+				   context == grammarAccess.getReturnTypeOperatorRule()) {
+					sequence_MultiplicationOperator(context, (MultiplicationOperator) semanticObject); 
 					return; 
 				}
 				else break;
@@ -529,6 +554,13 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
+			case FlowPackage.SUBTRACTION_OPERATOR:
+				if(context == grammarAccess.getReturnTypeOperatorRule() ||
+				   context == grammarAccess.getSubtractionOperatorRule()) {
+					sequence_SubtractionOperator(context, (SubtractionOperator) semanticObject); 
+					return; 
+				}
+				else break;
 			case FlowPackage.SYMMETRIC_DIFFERENCE_OPERATOR:
 				if(context == grammarAccess.getReturnTypeOperatorRule() ||
 				   context == grammarAccess.getSymmetricDifferenceOperatorRule()) {
@@ -613,6 +645,21 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Constraint:
+	 *     (parameter=StreamAccess (literalList+=NUMBER | streamElementList+=StreamAccess)+ stream=StreamOperatorParameter)
+	 *
+	 * Features:
+	 *    parameter[1, 1]
+	 *    literalList[0, *]
+	 *    streamElementList[0, *]
+	 *    stream[1, 1]
+	 */
+	protected void sequence_AdditionOperator(EObject context, AdditionOperator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Constraint:
@@ -844,6 +891,21 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (parameter=StreamAccess (literalList+=NUMBER | streamElementList+=StreamAccess)+ stream=StreamOperatorParameter)
+	 *
+	 * Features:
+	 *    parameter[1, 1]
+	 *    literalList[0, *]
+	 *    streamElementList[0, *]
+	 *    stream[1, 1]
+	 */
+	protected void sequence_DivisionOperator(EObject context, DivisionOperator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (
 	 *         (elementParameters+=StreamAccess | variableElementParameters+=[VariableDefinition|ID]) 
 	 *         elementParameters+=StreamAccess* 
@@ -976,6 +1038,21 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 *    models[1, *]
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (parameter=StreamAccess (literalList+=NUMBER | streamElementList+=StreamAccess)+ stream=StreamOperatorParameter)
+	 *
+	 * Features:
+	 *    parameter[1, 1]
+	 *    literalList[0, *]
+	 *    streamElementList[0, *]
+	 *    stream[1, 1]
+	 */
+	protected void sequence_MultiplicationOperator(EObject context, MultiplicationOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1513,6 +1590,21 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getStructureElementsAccess().getElementStructureDeclarationIDTerminalRuleCall_1_0_1(), semanticObject.getElement());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (parameter=StreamAccess (literalList+=NUMBER | streamElementList+=StreamAccess)+ stream=StreamOperatorParameter)
+	 *
+	 * Features:
+	 *    parameter[1, 1]
+	 *    literalList[0, *]
+	 *    streamElementList[0, *]
+	 *    stream[1, 1]
+	 */
+	protected void sequence_SubtractionOperator(EObject context, SubtractionOperator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

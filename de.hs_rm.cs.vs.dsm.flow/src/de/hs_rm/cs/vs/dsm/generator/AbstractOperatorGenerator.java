@@ -90,7 +90,9 @@ public abstract class AbstractOperatorGenerator {
 	 */
 	public abstract String setOperatorConnection();
 	
-	
+	/**
+	 * {@inheritDoc} 
+	 */
 	@Override
 	public String toString(){
 		return initializeOperator() + setBarrier() + setOperatorProperties() + setOperatorConnection();

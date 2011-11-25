@@ -1,6 +1,6 @@
 package de.hs_rm.cs.vs.dsm.generator;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 import de.hs_rm.cs.vs.dsm.flow.Div;
 import de.hs_rm.cs.vs.dsm.flow.Expression;
@@ -21,12 +21,18 @@ import de.hs_rm.cs.vs.dsm.flow.VariableCall;
 public class StreamStatementGenerator extends AbstractOperatorGenerator {
 	/** The name of the operator */
 	private final String OPERATOR_TYPE = "OperatorMath";
+	/***/
+	private final String DIV_OPERATOR_NAME = "div";
+	/***/
+	private final String ADD_OPERATOR_NAME = "add";
+	/***/
+	private final String SUB_OPERATOR_NAME = "sub";
+	/***/
+	private final String MULT_OPERATOR_NAME = "mult";
 	/** The internal representation of the statement */
 	private Expression mExpression = null;
-	/** The string represents the overall result */
-	private String mResult = "";
 	/** */
-	private HashMap<Integer, ExpressionGenerator> mMap = new HashMap<Integer, ExpressionGenerator>();
+	private ArrayList<StreamStatementOperatorGenerator> mOperators = new ArrayList<StreamStatementOperatorGenerator>();
 	
 	/** 
 	 * The constructor initializes the output stream list, sets the 
@@ -43,106 +49,7 @@ public class StreamStatementGenerator extends AbstractOperatorGenerator {
 		// Save the expression
 		this.mExpression = pStatement.getExpression();
 		// Start the transformation of the expression to LUA constructs
-		this.expressionType(this.mExpression, this.mExpression.hashCode());
-	}
-
-	/** 
-	 * The method is called for each expression in a statement. A expression
-	 * can be of type:
-	 *
-	 * 	- division
-	 *  - multiplication
-	 *  - addition
-	 *  - subtraction
-	 * 
-	 * And in addition an expression are also
-	 * 
-	 *  - access to variables of a stream
-	 *  - variables
-	 *  - number literals
-	 *
-	 * @param pExpression The expression which should be transformed into a 
-	 * LUA expression
-	 * @param pHashCode 
-	 */
-	private void expressionType(final Expression pExpression, final int pHashCode){
-		
-		// Check if it is a division
-		if(pExpression instanceof Div){
-			if(!this.mMap.containsKey(pHashCode)){
-				this.mMap.put(pHashCode, new ExpressionGenerator(pHashCode, "div"));
-			}else{
-				// TODO: Hrm
-			}
-
-			Div expression = (Div) pExpression;
-			// Call it for the left hand expression in the div expression
-			this.expressionType(expression.getLeft(), expression.hashCode());
-			// Call it for the right hand expression in the div expression
-			this.expressionType(expression.getRight(), expression.hashCode());
-		// Check if it is a multiplication
-		}else if(pExpression instanceof Multi){
-			if(!this.mMap.containsKey(pHashCode)){
-				this.mMap.put(pHashCode, new ExpressionGenerator(pHashCode, "mult"));
-			}else{
-				// TODO: Hrm
-			}
-			
-			Multi expression = (Multi) pExpression;
-			// Call it for the left hand expression in the multiplication expression
-			this.expressionType(expression.getLeft(), expression.hashCode());
-			// Call it for the right hand expression in the multiplication expression
-			this.expressionType(expression.getRight(), expression.hashCode());
-		// Check if it is a addition
-		}else if(pExpression instanceof Plus){
-			if(!this.mMap.containsKey(pHashCode)){
-				this.mMap.put(pHashCode, new ExpressionGenerator(pHashCode, "add"));
-			}else{
-				// TODO: Hrm
-			}
-			
-			Plus expression = (Plus) pExpression;
-			// Call it for the left hand expression in the plus expression
-			this.expressionType(expression.getLeft(), expression.hashCode());
-			// Call it for the right hand expression in the plus expression
-			this.expressionType(expression.getRight(), expression.hashCode());
-		// Check if it is a subtraction
-		}else if(pExpression instanceof Minus){
-			if(!this.mMap.containsKey(pHashCode)){
-				this.mMap.put(pHashCode, new ExpressionGenerator(pHashCode, "sub"));
-			}else{
-				// TODO: Hrm
-			}
-			
-			Minus expression = (Minus) pExpression;
-			// Call it for the left hand expression in the minus expression
-			this.expressionType(expression.getLeft(), expression.hashCode());
-			// Call it for the right hand expression in the minus expression
-			this.expressionType(expression.getRight(), expression.hashCode());
-		}else if(pExpression instanceof StreamAccess){
-			StreamAccess access = (StreamAccess) pExpression;
-			//
-			//this.mMap.get(pHashCode).addOperand(pOperandName, pOperandValue, pOperandType)
-			
-			// TODO: Set the input stream to the stream in stream access
-			this.mResult += Util.getInstance().connectOperator(access.getReference().getName(), "in", pHashCode + "", "out");
-			// TODO:
-			this.mResult += Util.getInstance().createParameter(pHashCode + "", "todo_streamaccess_variable", access.getElement().getName());
-		}else if(pExpression instanceof VariableCall){
-			VariableCall variable = (VariableCall) pExpression;
-			//this.mMap.get(pHashCode).addOperand(pOperandName, pOperandValue, pOperandType)
-
-			// TODO:
-			this.mResult += Util.getInstance().createParameter(pHashCode + "", "todo_variable", variable.getVariable().getName());
-		}else if(pExpression instanceof NumberLiteral){	
-			NumberLiteral number = (NumberLiteral) pExpression;
-			//this.mMap.get(pHashCode).addOperand(pOperandName, pOperandValue, pOperandType)
-
-			// TODO:
-			this.mResult += Util.getInstance().createParameter(pHashCode + "", "todo_number", number.getValue().toPlainString());
-		}else{
-			// TODO: 
-		}
+		this.simpleCase(this.mExpression);
 	}
 	
 	/**
@@ -182,24 +89,154 @@ public class StreamStatementGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String toString(){
-		return this.mResult;
+		/** The result string */
+		String result = "";
+		/** Iterate over the array of operators */
+		for(int i = 0; i < this.mOperators.size(); i++){
+			/** Add string representation of each operator to the result string */
+			result += this.mOperators.get(i).toString();
+		}
+		/** Return the result */
+		return result;
 	}
 	
-	private class ExpressionGenerator extends AbstractOperatorGenerator{
-		private int mName;
-		private String mType = "";
-		private String mOperands = "";
+	/** 
+	 * The method is called for each expression in a statement. A expression
+	 * can be of type:
+	 *
+	 * 	- division
+	 *  - multiplication
+	 *  - addition
+	 *  - subtraction
+	 * 
+	 * And in addition an expression is also
+	 * 
+	 *  - access to variables of a stream
+	 *  - variables
+	 *  - number literals
+	 *
+	 * @param pExpression The expression which should be transformed into a 
+	 * LUA expression
+	 * 
+	 */
+	public void simpleCase(final Expression pExpression){
+		StreamStatementOperatorGenerator operator;
 		
-		public ExpressionGenerator(int pHashCode, String pType){
-			this.mName = pHashCode;
-			this.mType = pType;
+		if(pExpression instanceof Div){
+			operator = new StreamStatementOperatorGenerator("div", ((Div) pExpression).getLeft(), ((Div) pExpression).getRight(), this.getOutputStreams());
+		}else if(pExpression instanceof Multi){
+			operator = new StreamStatementOperatorGenerator("multi", ((Multi) pExpression).getLeft(), ((Multi) pExpression).getRight(), this.getOutputStreams());
+		}else if(pExpression instanceof Plus){
+			operator = new StreamStatementOperatorGenerator("plus", ((Plus) pExpression).getLeft(), ((Plus) pExpression).getRight(), this.getOutputStreams());
+		}else if(pExpression instanceof Minus){
+			operator = new StreamStatementOperatorGenerator("minus", ((Minus) pExpression).getLeft(), ((Minus) pExpression).getRight(), this.getOutputStreams());
+		}else{
+			// Aehm
+			operator = null;
 		}
+		this.mOperators.add(operator);
+	}
+	
+	public void complexCase(final Expression pExpression){
+		StreamStatementOperatorGenerator operator;
 
+		if(pExpression instanceof Div){
+			if(isExpression(((Div) pExpression).getLeft())){
+				/** Call the function if the left operand is an expression */
+				complexCase(((Div) pExpression).getLeft());
+				
+				if(isExpression(((Div) pExpression).getRight())){
+					/** Call the function if the right operand is an expression */
+					complexCase(((Div) pExpression).getRight());
+				}else{
+					operator = new StreamStatementOperatorGenerator(DIV_OPERATOR_NAME, ((Div) pExpression).getLeft(), ((Div) pExpression).getRight(), this.getOutputStreams());
+					this.mOperators.add(operator);					
+				}
+			}else{
+				
+				if(isExpression(((Div) pExpression).getRight())){
+					/** Call the function if the right operand is a expression */
+					complexCase(((Div) pExpression).getRight());
+				}else{
+					operator = new StreamStatementOperatorGenerator(DIV_OPERATOR_NAME, ((Div) pExpression).getLeft(), ((Div) pExpression).getRight(), this.getOutputStreams());
+					this.mOperators.add(operator);
+				}
+			}
+
+			
+		}else if(pExpression instanceof Multi){
+			operator = new StreamStatementOperatorGenerator("multi", ((Multi) pExpression).getLeft(), ((Multi) pExpression).getRight(), this.getOutputStreams());
+		}else if(pExpression instanceof Plus){
+			operator = new StreamStatementOperatorGenerator("plus", ((Plus) pExpression).getLeft(), ((Plus) pExpression).getRight(), this.getOutputStreams());
+		}else if(pExpression instanceof Minus){
+			operator = new StreamStatementOperatorGenerator("minus", ((Minus) pExpression).getLeft(), ((Minus) pExpression).getRight(), this.getOutputStreams());
+		}else{
+			// Aehm
+			operator = null;
+		}
+	}
+
+	private boolean isExpression(final Expression pExpression){
+		if(pExpression instanceof Div){
+			return true;
+		}else if(pExpression instanceof Multi){
+			return true;
+		}else if(pExpression instanceof Plus){
+			return true;
+		}else if(pExpression instanceof Minus){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	/**
+	 * 
+	 */
+	private class StreamStatementOperatorGenerator extends AbstractOperatorGenerator {
+		/** The name of the operator */
+		private String mName = "";
+		/** The type of the operation */
+		private String mType = "";
+		/** The left operand of an expression */
+		private Expression mLeft; 
+		/** The right operand of an expression */
+		private Expression mRight;
+		
+		public StreamStatementOperatorGenerator(final String pType, final String pLeft, final String pRight, final ArrayList<String> pOutputStreams){
+			this.setOutputStreams(pOutputStreams);
+		}
+		
+		/**
+		 * The constructor 
+		 *
+		 * @param pType The type of the expression
+		 * @param pLeft The left operand of the expression
+		 * @param pRight The right operand of the expression
+		 * @praam pResultStream The name of the stream which stores the result
+		 */
+		public StreamStatementOperatorGenerator(final String pType, final Expression pLeft, final Expression pRight, final ArrayList<String> pOutputStreams){
+			/** Set the operator name */
+			this.mName = "math";
+			/** Set the left operand */
+			this.mLeft = pLeft;
+			/** Set the right operand */
+			this.mRight = pRight;
+			/** Set the type of the operator */
+			this.mType = pType;
+			/** Set the output streams */
+			this.setOutputStreams(pOutputStreams);
+		}
+		
 		/**
 		 * {@inheritDoc} 
 		 */
 		@Override
 		public String setBarrier() {
+			/**
+			 *  There is no barrier in a simple expression, every operation 
+			 *  is executed on each (corresponding) element in a stream. 
+			 */
 			return "";
 		}
 
@@ -208,30 +245,92 @@ public class StreamStatementGenerator extends AbstractOperatorGenerator {
 		 */
 		@Override
 		public String initializeOperator() {
+			/** Create an 'instance' of the operator */
 			return Util.getInstance().createOperator(OPERATOR_TYPE, "" + mName);
 		}
-		
+
 		/**
 		 * {@inheritDoc} 
 		 */
 		@Override
 		public String setOperatorProperties() {
-			String result = Util.getInstance().createParameter(this.mName  + "", "operationType", mType);
-
+			/** The operands of the expression are the parameters of an lua expression */
+			String result = Util.getInstance().createParameter(this.mName  + "", "operationType", this.mType);
+			/** Create a parameter for the left operand */
+			result += createParameterFromExpression(mLeft);
+			/** Create a parameter for the right operand */
+			result += createParameterFromExpression(mRight);
+			/** Return the result */
 			return result;
 		}
-
-		public void addOperand(final String pOperandName, final String pOperandValue, final String pOperandType){
-			//mOperands += Util.getInstance().createParameter(pStream, pKey, pValue);
+		
+		/**
+		 * 
+		 * 
+		 * @param pExpression
+		 */
+		private String createParameterFromExpression(final Expression pExpression){
+			String result = "";
+			
+			/** Is it a literal? */
+			if(isOperandLiteral(pExpression)){
+				NumberLiteral literal = (NumberLiteral)pExpression;
+				result += Util.getInstance().createParameter(this.mName  + "", "operand", literal.getValue().toPlainString());
+			/** Is it a stream? */
+			}else if(isOperandStream(pExpression)){
+				StreamAccess stream = (StreamAccess)pExpression;
+				/** Add the stream to the input streams */
+				this.getInputStreams().add(stream.getStreamVariable().getReference().getName());
+				// TODO: Is this really correct
+				result += Util.getInstance().createParameter(this.mName  + "", "operand", stream.getStreamVariable().getElement().getName());
+			/** Is it a variable? */
+			}else if(isOperandVariable(pExpression)){
+				VariableCall variable = (VariableCall)pExpression;
+				// TODO: This will not work out
+				result += Util.getInstance().createParameter(this.mName  + "", "operand", variable.getVariable().getName());
+			}else{
+				// this should never happen
+			}
+			
+			return result;
 		}
 		
+		/**
+		 * The method checks if the parameter is a stream
+		 *
+		 * @param  The expression which should be validated
+		 * @return True if the expression is a stream
+		 */
+		private boolean isOperandStream(final Expression pExpression){
+			return pExpression instanceof StreamAccess;
+		}
+		
+		/**
+		 * The method checks if the parameter is a number literal
+		 *
+		 * @param  The expression which should be validated
+		 * @return True if the expression is a number literal
+		 */
+		private boolean isOperandLiteral(final Expression pExpression){
+			return pExpression instanceof NumberLiteral;
+		}
+		
+		/**
+		 * The method checks if the parameter is a variable
+		 *
+		 * @param  The expression which should be validated
+		 * @return True if the expression is a variable declaration
+		 */
+		private boolean isOperandVariable(final Expression pExpression){
+			return pExpression instanceof VariableCall;
+		}
+
 		/**
 		 * {@inheritDoc} 
 		 */
 		@Override
 		public String setOperatorConnection() {
-			// TODO Auto-generated method stub
-			return null;
+			return Util.getInstance().connectOperator(this.getInputStreams().get(0), "in", this.getOutputStreams(), "out");
 		}
 	}
 }

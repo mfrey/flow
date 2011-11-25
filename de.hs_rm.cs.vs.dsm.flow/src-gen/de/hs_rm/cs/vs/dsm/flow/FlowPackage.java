@@ -1517,6 +1517,226 @@ public interface FlowPackage extends EPackage
   int AVERAGE_OPERATOR_FEATURE_COUNT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.AdditionOperatorImpl <em>Addition Operator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.AdditionOperatorImpl
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getAdditionOperator()
+   * @generated
+   */
+  int ADDITION_OPERATOR = 43;
+
+  /**
+   * The feature id for the '<em><b>Parameter</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITION_OPERATOR__PARAMETER = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Literal List</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITION_OPERATOR__LITERAL_LIST = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Stream Element List</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITION_OPERATOR__STREAM_ELEMENT_LIST = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Stream</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITION_OPERATOR__STREAM = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Addition Operator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITION_OPERATOR_FEATURE_COUNT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.SubtractionOperatorImpl <em>Subtraction Operator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.SubtractionOperatorImpl
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSubtractionOperator()
+   * @generated
+   */
+  int SUBTRACTION_OPERATOR = 44;
+
+  /**
+   * The feature id for the '<em><b>Parameter</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBTRACTION_OPERATOR__PARAMETER = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Literal List</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBTRACTION_OPERATOR__LITERAL_LIST = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Stream Element List</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBTRACTION_OPERATOR__STREAM_ELEMENT_LIST = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Stream</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBTRACTION_OPERATOR__STREAM = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Subtraction Operator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBTRACTION_OPERATOR_FEATURE_COUNT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.MultiplicationOperatorImpl <em>Multiplication Operator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.MultiplicationOperatorImpl
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMultiplicationOperator()
+   * @generated
+   */
+  int MULTIPLICATION_OPERATOR = 45;
+
+  /**
+   * The feature id for the '<em><b>Parameter</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATION_OPERATOR__PARAMETER = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Literal List</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATION_OPERATOR__LITERAL_LIST = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Stream Element List</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATION_OPERATOR__STREAM_ELEMENT_LIST = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Stream</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATION_OPERATOR__STREAM = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Multiplication Operator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATION_OPERATOR_FEATURE_COUNT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.DivisionOperatorImpl <em>Division Operator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.DivisionOperatorImpl
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getDivisionOperator()
+   * @generated
+   */
+  int DIVISION_OPERATOR = 46;
+
+  /**
+   * The feature id for the '<em><b>Parameter</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_OPERATOR__PARAMETER = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Literal List</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_OPERATOR__LITERAL_LIST = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Stream Element List</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_OPERATOR__STREAM_ELEMENT_LIST = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Stream</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_OPERATOR__STREAM = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Division Operator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_OPERATOR_FEATURE_COUNT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 4;
+
+  /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.OutputOperatorImpl <em>Output Operator</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1524,7 +1744,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getOutputOperator()
    * @generated
    */
-  int OUTPUT_OPERATOR = 43;
+  int OUTPUT_OPERATOR = 47;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1570,7 +1790,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getOutputOperatorParameter()
    * @generated
    */
-  int OUTPUT_OPERATOR_PARAMETER = 44;
+  int OUTPUT_OPERATOR_PARAMETER = 48;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' containment reference list.
@@ -1598,7 +1818,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getVariableDefinition()
    * @generated
    */
-  int VARIABLE_DEFINITION = 45;
+  int VARIABLE_DEFINITION = 49;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1626,7 +1846,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStreamElement()
    * @generated
    */
-  int STREAM_ELEMENT = 52;
+  int STREAM_ELEMENT = 56;
 
   /**
    * The number of structural features of the '<em>Stream Element</em>' class.
@@ -1645,7 +1865,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getVariableDeclaration()
    * @generated
    */
-  int VARIABLE_DECLARATION = 46;
+  int VARIABLE_DECLARATION = 50;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1682,7 +1902,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getNumberVariableDefinition()
    * @generated
    */
-  int NUMBER_VARIABLE_DEFINITION = 47;
+  int NUMBER_VARIABLE_DEFINITION = 51;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1728,7 +1948,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStringVariableDefinition()
    * @generated
    */
-  int STRING_VARIABLE_DEFINITION = 48;
+  int STRING_VARIABLE_DEFINITION = 52;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1774,7 +1994,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBooleanVariableDefinition()
    * @generated
    */
-  int BOOLEAN_VARIABLE_DEFINITION = 49;
+  int BOOLEAN_VARIABLE_DEFINITION = 53;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1820,7 +2040,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStructureDeclaration()
    * @generated
    */
-  int STRUCTURE_DECLARATION = 50;
+  int STRUCTURE_DECLARATION = 54;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1857,7 +2077,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStreamDeclaration()
    * @generated
    */
-  int STREAM_DECLARATION = 51;
+  int STREAM_DECLARATION = 55;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1894,7 +2114,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStructureElements()
    * @generated
    */
-  int STRUCTURE_ELEMENTS = 53;
+  int STRUCTURE_ELEMENTS = 57;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' reference.
@@ -1922,7 +2142,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 54;
+  int EXPRESSION = 58;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -1941,7 +2161,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getDataType()
    * @generated
    */
-  int DATA_TYPE = 55;
+  int DATA_TYPE = 59;
 
   /**
    * The number of structural features of the '<em>Data Type</em>' class.
@@ -1960,7 +2180,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSimpleDataType()
    * @generated
    */
-  int SIMPLE_DATA_TYPE = 56;
+  int SIMPLE_DATA_TYPE = 60;
 
   /**
    * The number of structural features of the '<em>Simple Data Type</em>' class.
@@ -1979,7 +2199,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getComplexDataType()
    * @generated
    */
-  int COMPLEX_DATA_TYPE = 57;
+  int COMPLEX_DATA_TYPE = 61;
 
   /**
    * The number of structural features of the '<em>Complex Data Type</em>' class.
@@ -1998,7 +2218,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getIntegerDataType()
    * @generated
    */
-  int INTEGER_DATA_TYPE = 58;
+  int INTEGER_DATA_TYPE = 62;
 
   /**
    * The number of structural features of the '<em>Integer Data Type</em>' class.
@@ -2017,7 +2237,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBooleanDataType()
    * @generated
    */
-  int BOOLEAN_DATA_TYPE = 59;
+  int BOOLEAN_DATA_TYPE = 63;
 
   /**
    * The number of structural features of the '<em>Boolean Data Type</em>' class.
@@ -2036,7 +2256,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getFloatDataType()
    * @generated
    */
-  int FLOAT_DATA_TYPE = 60;
+  int FLOAT_DATA_TYPE = 64;
 
   /**
    * The number of structural features of the '<em>Float Data Type</em>' class.
@@ -2055,7 +2275,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStringDataType()
    * @generated
    */
-  int STRING_DATA_TYPE = 61;
+  int STRING_DATA_TYPE = 65;
 
   /**
    * The number of structural features of the '<em>String Data Type</em>' class.
@@ -2074,7 +2294,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getInternationalizedResourceIdentifier()
    * @generated
    */
-  int INTERNATIONALIZED_RESOURCE_IDENTIFIER = 62;
+  int INTERNATIONALIZED_RESOURCE_IDENTIFIER = 66;
 
   /**
    * The feature id for the '<em><b>Scheme</b></em>' attribute.
@@ -2138,7 +2358,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBooleanOperation()
    * @generated
    */
-  int BOOLEAN_OPERATION = 63;
+  int BOOLEAN_OPERATION = 67;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2184,7 +2404,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getPlus()
    * @generated
    */
-  int PLUS = 64;
+  int PLUS = 68;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2221,7 +2441,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMinus()
    * @generated
    */
-  int MINUS = 65;
+  int MINUS = 69;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2258,7 +2478,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMulti()
    * @generated
    */
-  int MULTI = 66;
+  int MULTI = 70;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2295,7 +2515,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getDiv()
    * @generated
    */
-  int DIV = 67;
+  int DIV = 71;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2332,7 +2552,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 68;
+  int NUMBER_LITERAL = 72;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2360,7 +2580,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getVariableCall()
    * @generated
    */
-  int VARIABLE_CALL = 69;
+  int VARIABLE_CALL = 73;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' reference.
@@ -2388,7 +2608,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSparqlQueryType()
    * @generated
    */
-  int SPARQL_QUERY_TYPE = 70;
+  int SPARQL_QUERY_TYPE = 74;
 
   /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.Scheme <em>Scheme</em>}' enum.
@@ -2398,7 +2618,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getScheme()
    * @generated
    */
-  int SCHEME = 71;
+  int SCHEME = 75;
 
 
   /**
@@ -3578,6 +3798,222 @@ public interface FlowPackage extends EPackage
    * @generated
    */
   EReference getAverageOperator_Stream();
+
+  /**
+   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.AdditionOperator <em>Addition Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Addition Operator</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.AdditionOperator
+   * @generated
+   */
+  EClass getAdditionOperator();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getParameter <em>Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Parameter</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getParameter()
+   * @see #getAdditionOperator()
+   * @generated
+   */
+  EReference getAdditionOperator_Parameter();
+
+  /**
+   * Returns the meta object for the attribute list '{@link de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getLiteralList <em>Literal List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Literal List</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getLiteralList()
+   * @see #getAdditionOperator()
+   * @generated
+   */
+  EAttribute getAdditionOperator_LiteralList();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getStreamElementList <em>Stream Element List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Stream Element List</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getStreamElementList()
+   * @see #getAdditionOperator()
+   * @generated
+   */
+  EReference getAdditionOperator_StreamElementList();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getStream <em>Stream</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Stream</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getStream()
+   * @see #getAdditionOperator()
+   * @generated
+   */
+  EReference getAdditionOperator_Stream();
+
+  /**
+   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.SubtractionOperator <em>Subtraction Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Subtraction Operator</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.SubtractionOperator
+   * @generated
+   */
+  EClass getSubtractionOperator();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getParameter <em>Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Parameter</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getParameter()
+   * @see #getSubtractionOperator()
+   * @generated
+   */
+  EReference getSubtractionOperator_Parameter();
+
+  /**
+   * Returns the meta object for the attribute list '{@link de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getLiteralList <em>Literal List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Literal List</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getLiteralList()
+   * @see #getSubtractionOperator()
+   * @generated
+   */
+  EAttribute getSubtractionOperator_LiteralList();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getStreamElementList <em>Stream Element List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Stream Element List</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getStreamElementList()
+   * @see #getSubtractionOperator()
+   * @generated
+   */
+  EReference getSubtractionOperator_StreamElementList();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getStream <em>Stream</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Stream</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getStream()
+   * @see #getSubtractionOperator()
+   * @generated
+   */
+  EReference getSubtractionOperator_Stream();
+
+  /**
+   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator <em>Multiplication Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Multiplication Operator</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator
+   * @generated
+   */
+  EClass getMultiplicationOperator();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator#getParameter <em>Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Parameter</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator#getParameter()
+   * @see #getMultiplicationOperator()
+   * @generated
+   */
+  EReference getMultiplicationOperator_Parameter();
+
+  /**
+   * Returns the meta object for the attribute list '{@link de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator#getLiteralList <em>Literal List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Literal List</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator#getLiteralList()
+   * @see #getMultiplicationOperator()
+   * @generated
+   */
+  EAttribute getMultiplicationOperator_LiteralList();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator#getStreamElementList <em>Stream Element List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Stream Element List</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator#getStreamElementList()
+   * @see #getMultiplicationOperator()
+   * @generated
+   */
+  EReference getMultiplicationOperator_StreamElementList();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator#getStream <em>Stream</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Stream</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator#getStream()
+   * @see #getMultiplicationOperator()
+   * @generated
+   */
+  EReference getMultiplicationOperator_Stream();
+
+  /**
+   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.DivisionOperator <em>Division Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Division Operator</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.DivisionOperator
+   * @generated
+   */
+  EClass getDivisionOperator();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getParameter <em>Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Parameter</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getParameter()
+   * @see #getDivisionOperator()
+   * @generated
+   */
+  EReference getDivisionOperator_Parameter();
+
+  /**
+   * Returns the meta object for the attribute list '{@link de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getLiteralList <em>Literal List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Literal List</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getLiteralList()
+   * @see #getDivisionOperator()
+   * @generated
+   */
+  EAttribute getDivisionOperator_LiteralList();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getStreamElementList <em>Stream Element List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Stream Element List</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getStreamElementList()
+   * @see #getDivisionOperator()
+   * @generated
+   */
+  EReference getDivisionOperator_StreamElementList();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getStream <em>Stream</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Stream</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getStream()
+   * @see #getDivisionOperator()
+   * @generated
+   */
+  EReference getDivisionOperator_Stream();
 
   /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.OutputOperator <em>Output Operator</em>}'.
@@ -5261,6 +5697,174 @@ public interface FlowPackage extends EPackage
      * @generated
      */
     EReference AVERAGE_OPERATOR__STREAM = eINSTANCE.getAverageOperator_Stream();
+
+    /**
+     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.AdditionOperatorImpl <em>Addition Operator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.AdditionOperatorImpl
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getAdditionOperator()
+     * @generated
+     */
+    EClass ADDITION_OPERATOR = eINSTANCE.getAdditionOperator();
+
+    /**
+     * The meta object literal for the '<em><b>Parameter</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADDITION_OPERATOR__PARAMETER = eINSTANCE.getAdditionOperator_Parameter();
+
+    /**
+     * The meta object literal for the '<em><b>Literal List</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ADDITION_OPERATOR__LITERAL_LIST = eINSTANCE.getAdditionOperator_LiteralList();
+
+    /**
+     * The meta object literal for the '<em><b>Stream Element List</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADDITION_OPERATOR__STREAM_ELEMENT_LIST = eINSTANCE.getAdditionOperator_StreamElementList();
+
+    /**
+     * The meta object literal for the '<em><b>Stream</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADDITION_OPERATOR__STREAM = eINSTANCE.getAdditionOperator_Stream();
+
+    /**
+     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.SubtractionOperatorImpl <em>Subtraction Operator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.SubtractionOperatorImpl
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSubtractionOperator()
+     * @generated
+     */
+    EClass SUBTRACTION_OPERATOR = eINSTANCE.getSubtractionOperator();
+
+    /**
+     * The meta object literal for the '<em><b>Parameter</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUBTRACTION_OPERATOR__PARAMETER = eINSTANCE.getSubtractionOperator_Parameter();
+
+    /**
+     * The meta object literal for the '<em><b>Literal List</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SUBTRACTION_OPERATOR__LITERAL_LIST = eINSTANCE.getSubtractionOperator_LiteralList();
+
+    /**
+     * The meta object literal for the '<em><b>Stream Element List</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUBTRACTION_OPERATOR__STREAM_ELEMENT_LIST = eINSTANCE.getSubtractionOperator_StreamElementList();
+
+    /**
+     * The meta object literal for the '<em><b>Stream</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUBTRACTION_OPERATOR__STREAM = eINSTANCE.getSubtractionOperator_Stream();
+
+    /**
+     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.MultiplicationOperatorImpl <em>Multiplication Operator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.MultiplicationOperatorImpl
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMultiplicationOperator()
+     * @generated
+     */
+    EClass MULTIPLICATION_OPERATOR = eINSTANCE.getMultiplicationOperator();
+
+    /**
+     * The meta object literal for the '<em><b>Parameter</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MULTIPLICATION_OPERATOR__PARAMETER = eINSTANCE.getMultiplicationOperator_Parameter();
+
+    /**
+     * The meta object literal for the '<em><b>Literal List</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MULTIPLICATION_OPERATOR__LITERAL_LIST = eINSTANCE.getMultiplicationOperator_LiteralList();
+
+    /**
+     * The meta object literal for the '<em><b>Stream Element List</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MULTIPLICATION_OPERATOR__STREAM_ELEMENT_LIST = eINSTANCE.getMultiplicationOperator_StreamElementList();
+
+    /**
+     * The meta object literal for the '<em><b>Stream</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MULTIPLICATION_OPERATOR__STREAM = eINSTANCE.getMultiplicationOperator_Stream();
+
+    /**
+     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.DivisionOperatorImpl <em>Division Operator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.DivisionOperatorImpl
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getDivisionOperator()
+     * @generated
+     */
+    EClass DIVISION_OPERATOR = eINSTANCE.getDivisionOperator();
+
+    /**
+     * The meta object literal for the '<em><b>Parameter</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIVISION_OPERATOR__PARAMETER = eINSTANCE.getDivisionOperator_Parameter();
+
+    /**
+     * The meta object literal for the '<em><b>Literal List</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DIVISION_OPERATOR__LITERAL_LIST = eINSTANCE.getDivisionOperator_LiteralList();
+
+    /**
+     * The meta object literal for the '<em><b>Stream Element List</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIVISION_OPERATOR__STREAM_ELEMENT_LIST = eINSTANCE.getDivisionOperator_StreamElementList();
+
+    /**
+     * The meta object literal for the '<em><b>Stream</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIVISION_OPERATOR__STREAM = eINSTANCE.getDivisionOperator_Stream();
 
     /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.OutputOperatorImpl <em>Output Operator</em>}' class.

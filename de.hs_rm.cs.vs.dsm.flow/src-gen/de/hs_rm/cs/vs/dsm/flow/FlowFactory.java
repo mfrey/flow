@@ -413,6 +413,42 @@ public interface FlowFactory extends EFactory
   AverageOperator createAverageOperator();
 
   /**
+   * Returns a new object of class '<em>Addition Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Addition Operator</em>'.
+   * @generated
+   */
+  AdditionOperator createAdditionOperator();
+
+  /**
+   * Returns a new object of class '<em>Subtraction Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Subtraction Operator</em>'.
+   * @generated
+   */
+  SubtractionOperator createSubtractionOperator();
+
+  /**
+   * Returns a new object of class '<em>Multiplication Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multiplication Operator</em>'.
+   * @generated
+   */
+  MultiplicationOperator createMultiplicationOperator();
+
+  /**
+   * Returns a new object of class '<em>Division Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Division Operator</em>'.
+   * @generated
+   */
+  DivisionOperator createDivisionOperator();
+
+  /**
    * Returns a new object of class '<em>Output Operator</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

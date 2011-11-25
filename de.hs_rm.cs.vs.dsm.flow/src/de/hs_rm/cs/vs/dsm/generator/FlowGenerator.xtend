@@ -54,12 +54,8 @@ class FlowGenerator implements IGenerator {
       «FOR elements : e.elements»
       	«elements.compile»
       «ENDFOR»
-      «{
-      	Util::instance.startOperators
-      }»
-      «{
-      	Util::instance.stopOperators
-      }»
+      «{ Util::instance.startOperators }»
+      «{ Util::instance.stopOperators }»
     '''
     
     def compile(ModelElement m)'''
@@ -88,7 +84,12 @@ class FlowGenerator implements IGenerator {
 			«write((statement.operator as ElementJoinOperator),statement)»
 			«ENDIF»
 		«ELSE»
-
+			«{ 
+				var StreamStatementGenerator streamStatement = new StreamStatementGenerator(
+					statement
+				)
+				streamStatement.toString() 
+			}»
 		«ENDIF»
 	'''
 

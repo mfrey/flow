@@ -403,6 +403,38 @@ public class FlowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case FlowPackage.ADDITION_OPERATOR:
+      {
+        AdditionOperator additionOperator = (AdditionOperator)theEObject;
+        T result = caseAdditionOperator(additionOperator);
+        if (result == null) result = caseReturnTypeOperator(additionOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.SUBTRACTION_OPERATOR:
+      {
+        SubtractionOperator subtractionOperator = (SubtractionOperator)theEObject;
+        T result = caseSubtractionOperator(subtractionOperator);
+        if (result == null) result = caseReturnTypeOperator(subtractionOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.MULTIPLICATION_OPERATOR:
+      {
+        MultiplicationOperator multiplicationOperator = (MultiplicationOperator)theEObject;
+        T result = caseMultiplicationOperator(multiplicationOperator);
+        if (result == null) result = caseReturnTypeOperator(multiplicationOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.DIVISION_OPERATOR:
+      {
+        DivisionOperator divisionOperator = (DivisionOperator)theEObject;
+        T result = caseDivisionOperator(divisionOperator);
+        if (result == null) result = caseReturnTypeOperator(divisionOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case FlowPackage.OUTPUT_OPERATOR:
       {
         OutputOperator outputOperator = (OutputOperator)theEObject;
@@ -1310,6 +1342,70 @@ public class FlowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAverageOperator(AverageOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Addition Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Addition Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAdditionOperator(AdditionOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Subtraction Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Subtraction Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSubtractionOperator(SubtractionOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Multiplication Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Multiplication Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMultiplicationOperator(MultiplicationOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Division Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Division Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDivisionOperator(DivisionOperator object)
   {
     return null;
   }

@@ -131,7 +131,7 @@ public class Util {
 	}
 	
 	public String connectOperator(final ArrayList<String> pIn, final String pIndirection, final ArrayList<String> pOut, final String pOutDirection){
-		return "TODO \n";
+		return "TODO Util::connectOperator \n";
 	}
 	
 	public String connectOperator(final String pIn, final String pIndirection, final ArrayList<String> pOut, final String pOutDirection){

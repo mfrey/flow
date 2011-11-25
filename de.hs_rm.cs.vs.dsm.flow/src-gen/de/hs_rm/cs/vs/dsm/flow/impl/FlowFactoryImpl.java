@@ -111,6 +111,10 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.COUNT_OPERATOR: return createCountOperator();
       case FlowPackage.STANDARD_DEVIATION_OPERATOR: return createStandardDeviationOperator();
       case FlowPackage.AVERAGE_OPERATOR: return createAverageOperator();
+      case FlowPackage.ADDITION_OPERATOR: return createAdditionOperator();
+      case FlowPackage.SUBTRACTION_OPERATOR: return createSubtractionOperator();
+      case FlowPackage.MULTIPLICATION_OPERATOR: return createMultiplicationOperator();
+      case FlowPackage.DIVISION_OPERATOR: return createDivisionOperator();
       case FlowPackage.OUTPUT_OPERATOR: return createOutputOperator();
       case FlowPackage.OUTPUT_OPERATOR_PARAMETER: return createOutputOperatorParameter();
       case FlowPackage.VARIABLE_DEFINITION: return createVariableDefinition();
@@ -652,6 +656,50 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
   {
     AverageOperatorImpl averageOperator = new AverageOperatorImpl();
     return averageOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AdditionOperator createAdditionOperator()
+  {
+    AdditionOperatorImpl additionOperator = new AdditionOperatorImpl();
+    return additionOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SubtractionOperator createSubtractionOperator()
+  {
+    SubtractionOperatorImpl subtractionOperator = new SubtractionOperatorImpl();
+    return subtractionOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MultiplicationOperator createMultiplicationOperator()
+  {
+    MultiplicationOperatorImpl multiplicationOperator = new MultiplicationOperatorImpl();
+    return multiplicationOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DivisionOperator createDivisionOperator()
+  {
+    DivisionOperatorImpl divisionOperator = new DivisionOperatorImpl();
+    return divisionOperator;
   }
 
   /**

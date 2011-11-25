@@ -144,7 +144,8 @@ ReturnTypeOperator:
 	InputOperator | JoinOperator | SymmetricDifferenceOperator | DifferenceOperator | 
 	TagOperator | UnTagOperator | FilterOperator | SplitOperator | CountOperator | 
 	StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | 
-	OCLOperator | SWRLOperator;
+	OCLOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | 
+	DivisionOperator;
 
 /**
  * The rule summarizes the operators which have no return type
@@ -336,6 +337,31 @@ AverageOperator:
 	'avg''('parameter=StreamAccess ',' stream=StreamOperatorParameter ')';	
 
 /**
+ * The AdditionOperator rule defines a operator for addition of elements
+ */			
+AdditionOperator:
+	'add''('parameter=StreamAccess ',' (literalList+=NUMBER ',' | streamElementList+=StreamAccess ',')+ stream=StreamOperatorParameter ')';	
+
+/**
+ * The SubtractionOperator rule defines a operator for subtraction of elements
+ */			
+SubtractionOperator:
+	'sub''('parameter=StreamAccess ',' (literalList+=NUMBER ',' | streamElementList+=StreamAccess ',')+ stream=StreamOperatorParameter ')';	
+
+/**
+ * The MultiplicationOperator rule defines a operator for multiplication of elements
+ */			
+MultiplicationOperator:
+	'mult''('parameter=StreamAccess ',' (literalList+=NUMBER ',' | streamElementList+=StreamAccess ',')+ stream=StreamOperatorParameter ')';	
+
+/**
+ * The DivisionOperator rule defines a operator for division of elements
+ */			
+DivisionOperator:
+	'div''('parameter=StreamAccess ',' (literalList+=NUMBER ',' | streamElementList+=StreamAccess ',')+ stream=StreamOperatorParameter ')';	
+
+
+/**
  * The OutputOperator rule defines a operator which prints the content of the
  * a stream specified in parameter to a location specified in location.
  */	
@@ -366,7 +392,7 @@ BooleanVariableDefinition:
 /** The declaration of the 'structure' element. */
 StructureDeclaration:
 	/** A structure has a name and consists of at least one element */
-	'structure' name=ID '{'(elements+=VariableDeclaration)+'}' ';';
+	'structure' name=ID '{'(elements+=VariableDeclaration)+'}';
 
 /** The declaration of the 'stream' element. */
 StreamDeclaration:
@@ -374,7 +400,7 @@ StreamDeclaration:
 	'stream' name=ID '{'
 	    /** Also, every stream consists of a number of elements, at least of one element*/
 		elements+=(StreamElement)+
-	'}'';';
+	'}';
 
 /** A stream element is a structure element or a variable */
 StreamElement:
