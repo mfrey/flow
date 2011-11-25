@@ -648,12 +648,14 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (parameter=StreamAccess (literalList+=NUMBER | streamElementList+=StreamAccess)+ stream=StreamOperatorParameter)
+	 *     (parameter=StreamAccess (literal=NUMBER | streamElement+=StreamAccess) stream=StreamOperatorParameter)
 	 *
 	 * Features:
 	 *    parameter[1, 1]
-	 *    literalList[0, *]
-	 *    streamElementList[0, *]
+	 *    literal[0, 1]
+	 *         EXCLUDE_IF_SET streamElement
+	 *    streamElement[0, 1]
+	 *         EXCLUDE_IF_SET literal
 	 *    stream[1, 1]
 	 */
 	protected void sequence_AdditionOperator(EObject context, AdditionOperator semanticObject) {
@@ -891,12 +893,14 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (parameter=StreamAccess (literalList+=NUMBER | streamElementList+=StreamAccess)+ stream=StreamOperatorParameter)
+	 *     (parameter=StreamAccess (literal=NUMBER | streamElement+=StreamAccess) stream=StreamOperatorParameter)
 	 *
 	 * Features:
 	 *    parameter[1, 1]
-	 *    literalList[0, *]
-	 *    streamElementList[0, *]
+	 *    literal[0, 1]
+	 *         EXCLUDE_IF_SET streamElement
+	 *    streamElement[0, 1]
+	 *         EXCLUDE_IF_SET literal
 	 *    stream[1, 1]
 	 */
 	protected void sequence_DivisionOperator(EObject context, DivisionOperator semanticObject) {
@@ -1044,12 +1048,14 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (parameter=StreamAccess (literalList+=NUMBER | streamElementList+=StreamAccess)+ stream=StreamOperatorParameter)
+	 *     (parameter=StreamAccess (literal=NUMBER | streamElement+=StreamAccess) stream=StreamOperatorParameter)
 	 *
 	 * Features:
 	 *    parameter[1, 1]
-	 *    literalList[0, *]
-	 *    streamElementList[0, *]
+	 *    literal[0, 1]
+	 *         EXCLUDE_IF_SET streamElement
+	 *    streamElement[0, 1]
+	 *         EXCLUDE_IF_SET literal
 	 *    stream[1, 1]
 	 */
 	protected void sequence_MultiplicationOperator(EObject context, MultiplicationOperator semanticObject) {
@@ -1592,12 +1598,14 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (parameter=StreamAccess (literalList+=NUMBER | streamElementList+=StreamAccess)+ stream=StreamOperatorParameter)
+	 *     (parameter=StreamAccess (literal=NUMBER | streamElement+=StreamAccess) stream=StreamOperatorParameter)
 	 *
 	 * Features:
 	 *    parameter[1, 1]
-	 *    literalList[0, *]
-	 *    streamElementList[0, *]
+	 *    literal[0, 1]
+	 *         EXCLUDE_IF_SET streamElement
+	 *    streamElement[0, 1]
+	 *         EXCLUDE_IF_SET literal
 	 *    stream[1, 1]
 	 */
 	protected void sequence_SubtractionOperator(EObject context, SubtractionOperator semanticObject) {

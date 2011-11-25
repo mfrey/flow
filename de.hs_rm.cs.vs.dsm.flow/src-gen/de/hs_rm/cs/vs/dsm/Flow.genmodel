@@ -171,26 +171,26 @@
     </genClasses>
     <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//AdditionOperator">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//AdditionOperator/parameter"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//AdditionOperator/literalList"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//AdditionOperator/streamElementList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//AdditionOperator/literal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//AdditionOperator/streamElement"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//AdditionOperator/stream"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SubtractionOperator">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SubtractionOperator/parameter"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SubtractionOperator/literalList"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SubtractionOperator/streamElementList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SubtractionOperator/literal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SubtractionOperator/streamElement"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SubtractionOperator/stream"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//MultiplicationOperator">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//MultiplicationOperator/parameter"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//MultiplicationOperator/literalList"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//MultiplicationOperator/streamElementList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//MultiplicationOperator/literal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//MultiplicationOperator/streamElement"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//MultiplicationOperator/stream"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//DivisionOperator">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//DivisionOperator/parameter"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//DivisionOperator/literalList"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//DivisionOperator/streamElementList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//DivisionOperator/literal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//DivisionOperator/streamElement"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//DivisionOperator/stream"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//OutputOperator">

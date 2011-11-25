@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -36,8 +35,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.MultiplicationOperatorImpl#getParameter <em>Parameter</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.MultiplicationOperatorImpl#getLiteralList <em>Literal List</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.MultiplicationOperatorImpl#getStreamElementList <em>Stream Element List</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.MultiplicationOperatorImpl#getLiteral <em>Literal</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.MultiplicationOperatorImpl#getStreamElement <em>Stream Element</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.MultiplicationOperatorImpl#getStream <em>Stream</em>}</li>
  * </ul>
  * </p>
@@ -57,24 +56,34 @@ public class MultiplicationOperatorImpl extends ReturnTypeOperatorImpl implement
   protected StreamAccess parameter;
 
   /**
-   * The cached value of the '{@link #getLiteralList() <em>Literal List</em>}' attribute list.
+   * The default value of the '{@link #getLiteral() <em>Literal</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLiteralList()
+   * @see #getLiteral()
    * @generated
    * @ordered
    */
-  protected EList<BigDecimal> literalList;
+  protected static final BigDecimal LITERAL_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getStreamElementList() <em>Stream Element List</em>}' containment reference list.
+   * The cached value of the '{@link #getLiteral() <em>Literal</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStreamElementList()
+   * @see #getLiteral()
    * @generated
    * @ordered
    */
-  protected EList<StreamAccess> streamElementList;
+  protected BigDecimal literal = LITERAL_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getStreamElement() <em>Stream Element</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStreamElement()
+   * @generated
+   * @ordered
+   */
+  protected EList<StreamAccess> streamElement;
 
   /**
    * The cached value of the '{@link #getStream() <em>Stream</em>}' containment reference.
@@ -160,13 +169,9 @@ public class MultiplicationOperatorImpl extends ReturnTypeOperatorImpl implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<BigDecimal> getLiteralList()
+  public BigDecimal getLiteral()
   {
-    if (literalList == null)
-    {
-      literalList = new EDataTypeEList<BigDecimal>(BigDecimal.class, this, FlowPackage.MULTIPLICATION_OPERATOR__LITERAL_LIST);
-    }
-    return literalList;
+    return literal;
   }
 
   /**
@@ -174,13 +179,26 @@ public class MultiplicationOperatorImpl extends ReturnTypeOperatorImpl implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<StreamAccess> getStreamElementList()
+  public void setLiteral(BigDecimal newLiteral)
   {
-    if (streamElementList == null)
+    BigDecimal oldLiteral = literal;
+    literal = newLiteral;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.MULTIPLICATION_OPERATOR__LITERAL, oldLiteral, literal));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<StreamAccess> getStreamElement()
+  {
+    if (streamElement == null)
     {
-      streamElementList = new EObjectContainmentEList<StreamAccess>(StreamAccess.class, this, FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENT_LIST);
+      streamElement = new EObjectContainmentEList<StreamAccess>(StreamAccess.class, this, FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENT);
     }
-    return streamElementList;
+    return streamElement;
   }
 
   /**
@@ -243,8 +261,8 @@ public class MultiplicationOperatorImpl extends ReturnTypeOperatorImpl implement
     {
       case FlowPackage.MULTIPLICATION_OPERATOR__PARAMETER:
         return basicSetParameter(null, msgs);
-      case FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENT_LIST:
-        return ((InternalEList<?>)getStreamElementList()).basicRemove(otherEnd, msgs);
+      case FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENT:
+        return ((InternalEList<?>)getStreamElement()).basicRemove(otherEnd, msgs);
       case FlowPackage.MULTIPLICATION_OPERATOR__STREAM:
         return basicSetStream(null, msgs);
     }
@@ -263,10 +281,10 @@ public class MultiplicationOperatorImpl extends ReturnTypeOperatorImpl implement
     {
       case FlowPackage.MULTIPLICATION_OPERATOR__PARAMETER:
         return getParameter();
-      case FlowPackage.MULTIPLICATION_OPERATOR__LITERAL_LIST:
-        return getLiteralList();
-      case FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENT_LIST:
-        return getStreamElementList();
+      case FlowPackage.MULTIPLICATION_OPERATOR__LITERAL:
+        return getLiteral();
+      case FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENT:
+        return getStreamElement();
       case FlowPackage.MULTIPLICATION_OPERATOR__STREAM:
         return getStream();
     }
@@ -287,13 +305,12 @@ public class MultiplicationOperatorImpl extends ReturnTypeOperatorImpl implement
       case FlowPackage.MULTIPLICATION_OPERATOR__PARAMETER:
         setParameter((StreamAccess)newValue);
         return;
-      case FlowPackage.MULTIPLICATION_OPERATOR__LITERAL_LIST:
-        getLiteralList().clear();
-        getLiteralList().addAll((Collection<? extends BigDecimal>)newValue);
+      case FlowPackage.MULTIPLICATION_OPERATOR__LITERAL:
+        setLiteral((BigDecimal)newValue);
         return;
-      case FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENT_LIST:
-        getStreamElementList().clear();
-        getStreamElementList().addAll((Collection<? extends StreamAccess>)newValue);
+      case FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENT:
+        getStreamElement().clear();
+        getStreamElement().addAll((Collection<? extends StreamAccess>)newValue);
         return;
       case FlowPackage.MULTIPLICATION_OPERATOR__STREAM:
         setStream((StreamOperatorParameter)newValue);
@@ -315,11 +332,11 @@ public class MultiplicationOperatorImpl extends ReturnTypeOperatorImpl implement
       case FlowPackage.MULTIPLICATION_OPERATOR__PARAMETER:
         setParameter((StreamAccess)null);
         return;
-      case FlowPackage.MULTIPLICATION_OPERATOR__LITERAL_LIST:
-        getLiteralList().clear();
+      case FlowPackage.MULTIPLICATION_OPERATOR__LITERAL:
+        setLiteral(LITERAL_EDEFAULT);
         return;
-      case FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENT_LIST:
-        getStreamElementList().clear();
+      case FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENT:
+        getStreamElement().clear();
         return;
       case FlowPackage.MULTIPLICATION_OPERATOR__STREAM:
         setStream((StreamOperatorParameter)null);
@@ -340,10 +357,10 @@ public class MultiplicationOperatorImpl extends ReturnTypeOperatorImpl implement
     {
       case FlowPackage.MULTIPLICATION_OPERATOR__PARAMETER:
         return parameter != null;
-      case FlowPackage.MULTIPLICATION_OPERATOR__LITERAL_LIST:
-        return literalList != null && !literalList.isEmpty();
-      case FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENT_LIST:
-        return streamElementList != null && !streamElementList.isEmpty();
+      case FlowPackage.MULTIPLICATION_OPERATOR__LITERAL:
+        return LITERAL_EDEFAULT == null ? literal != null : !LITERAL_EDEFAULT.equals(literal);
+      case FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENT:
+        return streamElement != null && !streamElement.isEmpty();
       case FlowPackage.MULTIPLICATION_OPERATOR__STREAM:
         return stream != null;
     }
@@ -361,8 +378,8 @@ public class MultiplicationOperatorImpl extends ReturnTypeOperatorImpl implement
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (literalList: ");
-    result.append(literalList);
+    result.append(" (literal: ");
+    result.append(literal);
     result.append(')');
     return result.toString();
   }

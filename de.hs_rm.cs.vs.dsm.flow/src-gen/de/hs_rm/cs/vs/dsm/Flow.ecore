@@ -219,9 +219,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="AdditionOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamAccess"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="literalList" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="streamElementList" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="literal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="streamElement" upperBound="-1"
         eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamAccess"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stream" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamOperatorParameter"
@@ -230,9 +229,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="SubtractionOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamAccess"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="literalList" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="streamElementList" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="literal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="streamElement" upperBound="-1"
         eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamAccess"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stream" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamOperatorParameter"
@@ -241,9 +239,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="MultiplicationOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamAccess"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="literalList" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="streamElementList" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="literal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="streamElement" upperBound="-1"
         eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamAccess"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stream" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamOperatorParameter"
@@ -252,9 +249,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="DivisionOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamAccess"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="literalList" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="streamElementList" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="literal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="streamElement" upperBound="-1"
         eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamAccess"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stream" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamOperatorParameter"

@@ -1527,22 +1527,22 @@ public interface FlowPackage extends EPackage
   int ADDITION_OPERATOR__PARAMETER = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Literal List</b></em>' attribute list.
+   * The feature id for the '<em><b>Literal</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ADDITION_OPERATOR__LITERAL_LIST = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
+  int ADDITION_OPERATOR__LITERAL = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Stream Element List</b></em>' containment reference list.
+   * The feature id for the '<em><b>Stream Element</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ADDITION_OPERATOR__STREAM_ELEMENT_LIST = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
+  int ADDITION_OPERATOR__STREAM_ELEMENT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Stream</b></em>' containment reference.
@@ -1582,22 +1582,22 @@ public interface FlowPackage extends EPackage
   int SUBTRACTION_OPERATOR__PARAMETER = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Literal List</b></em>' attribute list.
+   * The feature id for the '<em><b>Literal</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUBTRACTION_OPERATOR__LITERAL_LIST = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
+  int SUBTRACTION_OPERATOR__LITERAL = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Stream Element List</b></em>' containment reference list.
+   * The feature id for the '<em><b>Stream Element</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUBTRACTION_OPERATOR__STREAM_ELEMENT_LIST = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
+  int SUBTRACTION_OPERATOR__STREAM_ELEMENT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Stream</b></em>' containment reference.
@@ -1637,22 +1637,22 @@ public interface FlowPackage extends EPackage
   int MULTIPLICATION_OPERATOR__PARAMETER = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Literal List</b></em>' attribute list.
+   * The feature id for the '<em><b>Literal</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MULTIPLICATION_OPERATOR__LITERAL_LIST = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
+  int MULTIPLICATION_OPERATOR__LITERAL = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Stream Element List</b></em>' containment reference list.
+   * The feature id for the '<em><b>Stream Element</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MULTIPLICATION_OPERATOR__STREAM_ELEMENT_LIST = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
+  int MULTIPLICATION_OPERATOR__STREAM_ELEMENT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Stream</b></em>' containment reference.
@@ -1692,22 +1692,22 @@ public interface FlowPackage extends EPackage
   int DIVISION_OPERATOR__PARAMETER = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Literal List</b></em>' attribute list.
+   * The feature id for the '<em><b>Literal</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DIVISION_OPERATOR__LITERAL_LIST = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
+  int DIVISION_OPERATOR__LITERAL = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Stream Element List</b></em>' containment reference list.
+   * The feature id for the '<em><b>Stream Element</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DIVISION_OPERATOR__STREAM_ELEMENT_LIST = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
+  int DIVISION_OPERATOR__STREAM_ELEMENT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Stream</b></em>' containment reference.
@@ -3801,26 +3801,26 @@ public interface FlowPackage extends EPackage
   EReference getAdditionOperator_Parameter();
 
   /**
-   * Returns the meta object for the attribute list '{@link de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getLiteralList <em>Literal List</em>}'.
+   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getLiteral <em>Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Literal List</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getLiteralList()
+   * @return the meta object for the attribute '<em>Literal</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getLiteral()
    * @see #getAdditionOperator()
    * @generated
    */
-  EAttribute getAdditionOperator_LiteralList();
+  EAttribute getAdditionOperator_Literal();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getStreamElementList <em>Stream Element List</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getStreamElement <em>Stream Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Stream Element List</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getStreamElementList()
+   * @return the meta object for the containment reference list '<em>Stream Element</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getStreamElement()
    * @see #getAdditionOperator()
    * @generated
    */
-  EReference getAdditionOperator_StreamElementList();
+  EReference getAdditionOperator_StreamElement();
 
   /**
    * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getStream <em>Stream</em>}'.
@@ -3855,26 +3855,26 @@ public interface FlowPackage extends EPackage
   EReference getSubtractionOperator_Parameter();
 
   /**
-   * Returns the meta object for the attribute list '{@link de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getLiteralList <em>Literal List</em>}'.
+   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getLiteral <em>Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Literal List</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getLiteralList()
+   * @return the meta object for the attribute '<em>Literal</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getLiteral()
    * @see #getSubtractionOperator()
    * @generated
    */
-  EAttribute getSubtractionOperator_LiteralList();
+  EAttribute getSubtractionOperator_Literal();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getStreamElementList <em>Stream Element List</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getStreamElement <em>Stream Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Stream Element List</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getStreamElementList()
+   * @return the meta object for the containment reference list '<em>Stream Element</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getStreamElement()
    * @see #getSubtractionOperator()
    * @generated
    */
-  EReference getSubtractionOperator_StreamElementList();
+  EReference getSubtractionOperator_StreamElement();
 
   /**
    * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getStream <em>Stream</em>}'.
@@ -3909,26 +3909,26 @@ public interface FlowPackage extends EPackage
   EReference getMultiplicationOperator_Parameter();
 
   /**
-   * Returns the meta object for the attribute list '{@link de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator#getLiteralList <em>Literal List</em>}'.
+   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator#getLiteral <em>Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Literal List</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator#getLiteralList()
+   * @return the meta object for the attribute '<em>Literal</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator#getLiteral()
    * @see #getMultiplicationOperator()
    * @generated
    */
-  EAttribute getMultiplicationOperator_LiteralList();
+  EAttribute getMultiplicationOperator_Literal();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator#getStreamElementList <em>Stream Element List</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator#getStreamElement <em>Stream Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Stream Element List</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator#getStreamElementList()
+   * @return the meta object for the containment reference list '<em>Stream Element</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator#getStreamElement()
    * @see #getMultiplicationOperator()
    * @generated
    */
-  EReference getMultiplicationOperator_StreamElementList();
+  EReference getMultiplicationOperator_StreamElement();
 
   /**
    * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator#getStream <em>Stream</em>}'.
@@ -3963,26 +3963,26 @@ public interface FlowPackage extends EPackage
   EReference getDivisionOperator_Parameter();
 
   /**
-   * Returns the meta object for the attribute list '{@link de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getLiteralList <em>Literal List</em>}'.
+   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getLiteral <em>Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Literal List</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getLiteralList()
+   * @return the meta object for the attribute '<em>Literal</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getLiteral()
    * @see #getDivisionOperator()
    * @generated
    */
-  EAttribute getDivisionOperator_LiteralList();
+  EAttribute getDivisionOperator_Literal();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getStreamElementList <em>Stream Element List</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getStreamElement <em>Stream Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Stream Element List</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getStreamElementList()
+   * @return the meta object for the containment reference list '<em>Stream Element</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getStreamElement()
    * @see #getDivisionOperator()
    * @generated
    */
-  EReference getDivisionOperator_StreamElementList();
+  EReference getDivisionOperator_StreamElement();
 
   /**
    * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getStream <em>Stream</em>}'.
@@ -5689,20 +5689,20 @@ public interface FlowPackage extends EPackage
     EReference ADDITION_OPERATOR__PARAMETER = eINSTANCE.getAdditionOperator_Parameter();
 
     /**
-     * The meta object literal for the '<em><b>Literal List</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Literal</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ADDITION_OPERATOR__LITERAL_LIST = eINSTANCE.getAdditionOperator_LiteralList();
+    EAttribute ADDITION_OPERATOR__LITERAL = eINSTANCE.getAdditionOperator_Literal();
 
     /**
-     * The meta object literal for the '<em><b>Stream Element List</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Stream Element</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ADDITION_OPERATOR__STREAM_ELEMENT_LIST = eINSTANCE.getAdditionOperator_StreamElementList();
+    EReference ADDITION_OPERATOR__STREAM_ELEMENT = eINSTANCE.getAdditionOperator_StreamElement();
 
     /**
      * The meta object literal for the '<em><b>Stream</b></em>' containment reference feature.
@@ -5731,20 +5731,20 @@ public interface FlowPackage extends EPackage
     EReference SUBTRACTION_OPERATOR__PARAMETER = eINSTANCE.getSubtractionOperator_Parameter();
 
     /**
-     * The meta object literal for the '<em><b>Literal List</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Literal</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SUBTRACTION_OPERATOR__LITERAL_LIST = eINSTANCE.getSubtractionOperator_LiteralList();
+    EAttribute SUBTRACTION_OPERATOR__LITERAL = eINSTANCE.getSubtractionOperator_Literal();
 
     /**
-     * The meta object literal for the '<em><b>Stream Element List</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Stream Element</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SUBTRACTION_OPERATOR__STREAM_ELEMENT_LIST = eINSTANCE.getSubtractionOperator_StreamElementList();
+    EReference SUBTRACTION_OPERATOR__STREAM_ELEMENT = eINSTANCE.getSubtractionOperator_StreamElement();
 
     /**
      * The meta object literal for the '<em><b>Stream</b></em>' containment reference feature.
@@ -5773,20 +5773,20 @@ public interface FlowPackage extends EPackage
     EReference MULTIPLICATION_OPERATOR__PARAMETER = eINSTANCE.getMultiplicationOperator_Parameter();
 
     /**
-     * The meta object literal for the '<em><b>Literal List</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Literal</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute MULTIPLICATION_OPERATOR__LITERAL_LIST = eINSTANCE.getMultiplicationOperator_LiteralList();
+    EAttribute MULTIPLICATION_OPERATOR__LITERAL = eINSTANCE.getMultiplicationOperator_Literal();
 
     /**
-     * The meta object literal for the '<em><b>Stream Element List</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Stream Element</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MULTIPLICATION_OPERATOR__STREAM_ELEMENT_LIST = eINSTANCE.getMultiplicationOperator_StreamElementList();
+    EReference MULTIPLICATION_OPERATOR__STREAM_ELEMENT = eINSTANCE.getMultiplicationOperator_StreamElement();
 
     /**
      * The meta object literal for the '<em><b>Stream</b></em>' containment reference feature.
@@ -5815,20 +5815,20 @@ public interface FlowPackage extends EPackage
     EReference DIVISION_OPERATOR__PARAMETER = eINSTANCE.getDivisionOperator_Parameter();
 
     /**
-     * The meta object literal for the '<em><b>Literal List</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Literal</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DIVISION_OPERATOR__LITERAL_LIST = eINSTANCE.getDivisionOperator_LiteralList();
+    EAttribute DIVISION_OPERATOR__LITERAL = eINSTANCE.getDivisionOperator_Literal();
 
     /**
-     * The meta object literal for the '<em><b>Stream Element List</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Stream Element</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DIVISION_OPERATOR__STREAM_ELEMENT_LIST = eINSTANCE.getDivisionOperator_StreamElementList();
+    EReference DIVISION_OPERATOR__STREAM_ELEMENT = eINSTANCE.getDivisionOperator_StreamElement();
 
     /**
      * The meta object literal for the '<em><b>Stream</b></em>' containment reference feature.

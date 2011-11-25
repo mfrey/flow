@@ -18,8 +18,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getParameter <em>Parameter</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getLiteralList <em>Literal List</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getStreamElementList <em>Stream Element List</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getLiteral <em>Literal</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getStreamElement <em>Stream Element</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getStream <em>Stream</em>}</li>
  * </ul>
  * </p>
@@ -57,36 +57,46 @@ public interface DivisionOperator extends ReturnTypeOperator
   void setParameter(StreamAccess value);
 
   /**
-   * Returns the value of the '<em><b>Literal List</b></em>' attribute list.
-   * The list contents are of type {@link java.math.BigDecimal}.
+   * Returns the value of the '<em><b>Literal</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Literal List</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Literal</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Literal List</em>' attribute list.
-   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getDivisionOperator_LiteralList()
-   * @model unique="false"
+   * @return the value of the '<em>Literal</em>' attribute.
+   * @see #setLiteral(BigDecimal)
+   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getDivisionOperator_Literal()
+   * @model
    * @generated
    */
-  EList<BigDecimal> getLiteralList();
+  BigDecimal getLiteral();
 
   /**
-   * Returns the value of the '<em><b>Stream Element List</b></em>' containment reference list.
+   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getLiteral <em>Literal</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Literal</em>' attribute.
+   * @see #getLiteral()
+   * @generated
+   */
+  void setLiteral(BigDecimal value);
+
+  /**
+   * Returns the value of the '<em><b>Stream Element</b></em>' containment reference list.
    * The list contents are of type {@link de.hs_rm.cs.vs.dsm.flow.StreamAccess}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Stream Element List</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Stream Element</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Stream Element List</em>' containment reference list.
-   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getDivisionOperator_StreamElementList()
+   * @return the value of the '<em>Stream Element</em>' containment reference list.
+   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getDivisionOperator_StreamElement()
    * @model containment="true"
    * @generated
    */
-  EList<StreamAccess> getStreamElementList();
+  EList<StreamAccess> getStreamElement();
 
   /**
    * Returns the value of the '<em><b>Stream</b></em>' containment reference.
