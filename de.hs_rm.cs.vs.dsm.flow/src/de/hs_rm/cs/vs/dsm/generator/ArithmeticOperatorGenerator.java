@@ -32,8 +32,10 @@ public class ArithmeticOperatorGenerator extends AbstractOperatorGenerator {
 
 	@Override
 	public String setOperatorProperties() {
-		// TODO Auto-generated method stub
-		return null;
+		String result = Util.getInstance().createParameter("TODO" + "", "operationType", OPERATOR_TYPE);
+		// Wie soll man gleichnamige elemente unterschiedlicher datenstroeme unterscheiden ?
+		result += "";
+		return result;
 	}
 
 	@Override
