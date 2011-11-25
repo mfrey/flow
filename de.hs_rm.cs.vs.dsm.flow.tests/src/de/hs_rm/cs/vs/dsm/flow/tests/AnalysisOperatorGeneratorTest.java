@@ -188,38 +188,4 @@ public class AnalysisOperatorGeneratorTest  {
 	}
 
 	
-	private StreamDefinition createStreamDefinition(final StreamDeclaration pStream, final String pName){
-		StreamDefinition result = mFactory.createStreamDefinition();
-		result.setReference(pStream);
-		result.setName(pName);
-		
-		return result;
-	}
-	
-	private StreamOperatorParameter createStreamOperatorParameter(final StreamDefinition pStream, final BarrierOperator pBarrier){
-		StreamOperatorParameter streamOperatorParameter = mFactory.createStreamOperatorParameter();
-		// Set stream parameter to the stream definition
-		streamOperatorParameter.setStream(pStream);
-		// Set window
-		streamOperatorParameter.setBarrier(pBarrier);
-
-		return streamOperatorParameter;
-	}
-	
-	private void buildStreamStatement(ReturnTypeOperator mOperator, StreamDefinition outputStream){
-		//mStatement.setExpression(mOperator);
-		mStatement.getReturnStream().add(outputStream);
-	}
-	
-	private WindowOperator createWindowOperator(int pValue, String pSetting, String pUnit){
-		WindowOperator result = mFactory.createWindowOperator();
-		result.setSetting(pSetting);
-
-		if(pSetting.equals("last")){
-			result.setValue(new BigDecimal(pValue));
-			result.setUnit(pUnit);
-		}
-		
-		return result;
-	}
 }

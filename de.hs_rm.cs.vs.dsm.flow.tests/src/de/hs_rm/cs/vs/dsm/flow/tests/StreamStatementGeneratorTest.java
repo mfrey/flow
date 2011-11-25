@@ -19,19 +19,25 @@ import de.hs_rm.cs.vs.dsm.flow.impl.FlowFactoryImpl;
 import de.hs_rm.cs.vs.dsm.generator.StreamStatementGenerator;
 
 /**
+ * The class represents a unit test for the stream statement generator of the 
+ * language. Stream statements usually consist of 'high-level' operators such
+ * as 'avg' or 'std' or of simple arithmetic operations, e.g. 
+ * 
+ *   result = stream.element * 5;
+ *   
+ * where 'result' and 'stream' are streams and the assignment multiplies to 
+ * each element of the stream 'stream' a value (in this example 5).
  * 
  * @author Michael Frey
  */
 public class StreamStatementGeneratorTest {
-	/** A string which represents a test for the operator */
-	private String mOperatorTestString = "";
 	/** Instance of the factory which allows to create instances of different language objects */
 	private FlowFactoryImpl mFactory;
-	/** */
+	/** The attribute represents a stream statement */
 	private StreamStatement mStatement;
-	/** */
+	/** The attribute represents a variable declaration */
 	private VariableDeclaration mElement;
-	/** */
+	/** The attribut represents the declaration of a stream */
 	private StreamDeclaration mStream;
 	
 	@Before
@@ -60,7 +66,9 @@ public class StreamStatementGeneratorTest {
 	}
 	
 	/**
+	 * The test builds a simple division expression, e.g.
 	 * 
+	 *   outputStream = inputStream.mElement / 42;
 	 */
 	@Test
 	public void testStreamStatementGeneratorSimpleDivisionExpression(){
@@ -88,7 +96,6 @@ public class StreamStatementGeneratorTest {
 		assertNotNull(outputStream);
 		// Build the statement
 		mStatement = Util.getInstance().buildStreamStatement(mStatement, expression, outputStream);
-		
 		// Create stream statement generator
 		StreamStatementGenerator generator = new StreamStatementGenerator(mStatement);
 		
@@ -96,7 +103,9 @@ public class StreamStatementGeneratorTest {
 	}
 	
 	/**
+	 * The test builds a simple multiplication expression, e.g.
 	 * 
+	 *   outputStream = inputStream.mElement * 42;
 	 */
 	@Test
 	public void testStreamStatementGeneratorSimpleMultiplicationExpression(){
@@ -104,7 +113,9 @@ public class StreamStatementGeneratorTest {
 	}
 	
 	/**
+	 * The test builds a simple addition expression, e.g.
 	 * 
+	 *   outputStream = inputStream.mElement + 42;
 	 */
 	@Test
 	public void testStreamStatementGeneratorSimpleAdditionExpression(){
@@ -112,7 +123,9 @@ public class StreamStatementGeneratorTest {
 	}
 	
 	/**
+	 * The test builds a simple subtraction expression, e.g.
 	 * 
+	 *   outputStream = inputStream.mElement - 42;
 	 */
 	@Test
 	public void testStreamStatementGeneratorSimpleSubtractionExpression(){
