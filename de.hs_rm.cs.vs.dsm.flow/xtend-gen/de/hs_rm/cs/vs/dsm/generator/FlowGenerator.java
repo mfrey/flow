@@ -1,24 +1,32 @@
 package de.hs_rm.cs.vs.dsm.generator;
 
 import com.google.inject.Inject;
+import de.hs_rm.cs.vs.dsm.flow.AdditionOperator;
 import de.hs_rm.cs.vs.dsm.flow.AverageOperator;
 import de.hs_rm.cs.vs.dsm.flow.CountOperator;
+import de.hs_rm.cs.vs.dsm.flow.DivisionOperator;
 import de.hs_rm.cs.vs.dsm.flow.ElementJoinOperator;
 import de.hs_rm.cs.vs.dsm.flow.JoinOperator;
 import de.hs_rm.cs.vs.dsm.flow.ModelElement;
+import de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
 import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.ReturnTypeOperator;
 import de.hs_rm.cs.vs.dsm.flow.SplitOperator;
 import de.hs_rm.cs.vs.dsm.flow.StandardDeviationOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
+import de.hs_rm.cs.vs.dsm.flow.SubtractionOperator;
+import de.hs_rm.cs.vs.dsm.generator.AdditionOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.AverageOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.CountOperatorGenerator;
+import de.hs_rm.cs.vs.dsm.generator.DivisionOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.ElementJoinOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.JoinOperatorGenerator;
+import de.hs_rm.cs.vs.dsm.generator.MultiplicationOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.OutputOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.SplitOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.StandardDeviationOperatorGenerator;
+import de.hs_rm.cs.vs.dsm.generator.SubtractionOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.Util;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -157,7 +165,47 @@ public class FlowGenerator implements IGenerator {
                   ReturnTypeOperator _operator_11 = statement.getOperator();
                   String _write_5 = this.write(((ElementJoinOperator) _operator_11), statement);
                   _builder.append(_write_5, "");
-                  _builder.newLineIfNotEmpty();
+                  _builder.newLineIfNotEmpty();} else {
+                  ReturnTypeOperator _operator_12 = statement.getOperator();
+                  EClass _eClass_6 = _operator_12.eClass();
+                  String _name_6 = _eClass_6.getName();
+                  boolean _equals_6 = _name_6.equals("AdditionOperator");
+                  if (_equals_6) {
+                    ReturnTypeOperator _operator_13 = statement.getOperator();
+                    String _write_6 = this.write(((AdditionOperator) _operator_13), statement);
+                    _builder.append(_write_6, "");
+                    _builder.newLineIfNotEmpty();} else {
+                    ReturnTypeOperator _operator_14 = statement.getOperator();
+                    EClass _eClass_7 = _operator_14.eClass();
+                    String _name_7 = _eClass_7.getName();
+                    boolean _equals_7 = _name_7.equals("SubtractionOperator");
+                    if (_equals_7) {
+                      ReturnTypeOperator _operator_15 = statement.getOperator();
+                      String _write_7 = this.write(((SubtractionOperator) _operator_15), statement);
+                      _builder.append(_write_7, "");
+                      _builder.newLineIfNotEmpty();} else {
+                      ReturnTypeOperator _operator_16 = statement.getOperator();
+                      EClass _eClass_8 = _operator_16.eClass();
+                      String _name_8 = _eClass_8.getName();
+                      boolean _equals_8 = _name_8.equals("MultiplicationOperator");
+                      if (_equals_8) {
+                        ReturnTypeOperator _operator_17 = statement.getOperator();
+                        String _write_8 = this.write(((MultiplicationOperator) _operator_17), statement);
+                        _builder.append(_write_8, "");
+                        _builder.newLineIfNotEmpty();} else {
+                        ReturnTypeOperator _operator_18 = statement.getOperator();
+                        EClass _eClass_9 = _operator_18.eClass();
+                        String _name_9 = _eClass_9.getName();
+                        boolean _equals_9 = _name_9.equals("DivisionOperator");
+                        if (_equals_9) {
+                          ReturnTypeOperator _operator_19 = statement.getOperator();
+                          String _write_9 = this.write(((DivisionOperator) _operator_19), statement);
+                          _builder.append(_write_9, "");
+                          _builder.newLineIfNotEmpty();
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -185,6 +233,50 @@ public class FlowGenerator implements IGenerator {
       SplitOperatorGenerator _splitOperatorGenerator = new SplitOperatorGenerator(pStatement);
       SplitOperatorGenerator split = _splitOperatorGenerator;
       String _string = split.toString();
+      _xblockexpression = (_string);
+    }
+    return _xblockexpression;
+  }
+  
+  protected String _write(final AdditionOperator pOperator, final StreamStatement pStatement) {
+    String _xblockexpression = null;
+    {
+      AdditionOperatorGenerator _additionOperatorGenerator = new AdditionOperatorGenerator(pStatement);
+      AdditionOperatorGenerator addition = _additionOperatorGenerator;
+      String _string = addition.toString();
+      _xblockexpression = (_string);
+    }
+    return _xblockexpression;
+  }
+  
+  protected String _write(final MultiplicationOperator pOperator, final StreamStatement pStatement) {
+    String _xblockexpression = null;
+    {
+      MultiplicationOperatorGenerator _multiplicationOperatorGenerator = new MultiplicationOperatorGenerator(pStatement);
+      MultiplicationOperatorGenerator multiplication = _multiplicationOperatorGenerator;
+      String _string = multiplication.toString();
+      _xblockexpression = (_string);
+    }
+    return _xblockexpression;
+  }
+  
+  protected String _write(final SubtractionOperator pOperator, final StreamStatement pStatement) {
+    String _xblockexpression = null;
+    {
+      SubtractionOperatorGenerator _subtractionOperatorGenerator = new SubtractionOperatorGenerator(pStatement);
+      SubtractionOperatorGenerator subtraction = _subtractionOperatorGenerator;
+      String _string = subtraction.toString();
+      _xblockexpression = (_string);
+    }
+    return _xblockexpression;
+  }
+  
+  protected String _write(final DivisionOperator pOperator, final StreamStatement pStatement) {
+    String _xblockexpression = null;
+    {
+      DivisionOperatorGenerator _divisionOperatorGenerator = new DivisionOperatorGenerator(pStatement);
+      DivisionOperatorGenerator division = _divisionOperatorGenerator;
+      String _string = division.toString();
       _xblockexpression = (_string);
     }
     return _xblockexpression;
@@ -249,24 +341,36 @@ public class FlowGenerator implements IGenerator {
   }
   
   public String write(final ReturnTypeOperator pOperator, final StreamStatement pStatement) {
-    if ((pOperator instanceof AverageOperator)
+    if ((pOperator instanceof AdditionOperator)
+         && (pStatement instanceof StreamStatement)) {
+      return _write((AdditionOperator)pOperator, (StreamStatement)pStatement);
+    } else if ((pOperator instanceof AverageOperator)
          && (pStatement instanceof StreamStatement)) {
       return _write((AverageOperator)pOperator, (StreamStatement)pStatement);
     } else if ((pOperator instanceof CountOperator)
          && (pStatement instanceof StreamStatement)) {
       return _write((CountOperator)pOperator, (StreamStatement)pStatement);
+    } else if ((pOperator instanceof DivisionOperator)
+         && (pStatement instanceof StreamStatement)) {
+      return _write((DivisionOperator)pOperator, (StreamStatement)pStatement);
     } else if ((pOperator instanceof ElementJoinOperator)
          && (pStatement instanceof StreamStatement)) {
       return _write((ElementJoinOperator)pOperator, (StreamStatement)pStatement);
     } else if ((pOperator instanceof JoinOperator)
          && (pStatement instanceof StreamStatement)) {
       return _write((JoinOperator)pOperator, (StreamStatement)pStatement);
+    } else if ((pOperator instanceof MultiplicationOperator)
+         && (pStatement instanceof StreamStatement)) {
+      return _write((MultiplicationOperator)pOperator, (StreamStatement)pStatement);
     } else if ((pOperator instanceof SplitOperator)
          && (pStatement instanceof StreamStatement)) {
       return _write((SplitOperator)pOperator, (StreamStatement)pStatement);
     } else if ((pOperator instanceof StandardDeviationOperator)
          && (pStatement instanceof StreamStatement)) {
       return _write((StandardDeviationOperator)pOperator, (StreamStatement)pStatement);
+    } else if ((pOperator instanceof SubtractionOperator)
+         && (pStatement instanceof StreamStatement)) {
+      return _write((SubtractionOperator)pOperator, (StreamStatement)pStatement);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         java.util.Arrays.<Object>asList(pOperator, pStatement).toString());

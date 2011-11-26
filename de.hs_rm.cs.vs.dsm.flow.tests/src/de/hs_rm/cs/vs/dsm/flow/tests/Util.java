@@ -75,12 +75,13 @@ public class Util {
 		return pStatement;
 	}
 	
+	/*
 	public StreamStatement buildStreamStatement(StreamStatement pStatement, Expression pExpression, StreamDefinition pOutputStream){
 		pStatement.setExpression(pExpression);
 		pStatement.getReturnStream().add(pOutputStream);
 		return pStatement;
 	}
-	
+	*/
 	
 	public WindowOperator createWindowOperator(int pValue, String pSetting, String pUnit){
 		WindowOperator result = mFactory.createWindowOperator();

@@ -1,5 +1,6 @@
 package de.hs_rm.cs.vs.dsm.generator;
 
+import de.hs_rm.cs.vs.dsm.flow.BooleanOperation;
 import de.hs_rm.cs.vs.dsm.flow.FilterOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
 
@@ -39,8 +40,21 @@ public class FilterOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String setOperatorProperties() {
-		// TODO Auto-generated method stub
-		return "";
+		String result = "";
+		
+		for(int i = 0; i < this.mOperator.getExpression().size(); i++){
+			// Only expressions of type boolean can be set as argument for the filter operator
+			if(this.mOperator.getExpression().get(i) instanceof BooleanOperation){
+				// Add the type of the filter operation 
+				result += "";
+				// Add the right parameter of the filter operation
+				result += "";
+				// Add the left parameter of the filter operation
+				result += "";
+			}
+		}
+		
+		return result;
 	}
 
 	/**
@@ -48,8 +62,6 @@ public class FilterOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String setOperatorConnection() {
-		// TODO Auto-generated method stub
-		return "";
+		return Util.getInstance().connectOperator(this.getInputStreams(), "in", this.getOutputStreams(), "out");
 	}
-
 }

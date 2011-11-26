@@ -8,7 +8,9 @@ import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
 
 public class ArithmeticOperatorGenerator extends AbstractOperatorGenerator {
 	/** The type of the operator */
-	private String OPERATOR_TYPE = "";
+	private String OPERATOR_TYPE = "math";
+	/** The type of the operator */
+	private String OPERATION = "";
 	/** The barrier of the operator */
 	private BarrierOperator mBarrier;
 	/** A list with streams and elements which are used in an arithmetic operation */ 
@@ -32,9 +34,20 @@ public class ArithmeticOperatorGenerator extends AbstractOperatorGenerator {
 
 	@Override
 	public String setOperatorProperties() {
-		String result = Util.getInstance().createParameter("TODO" + "", "operationType", OPERATOR_TYPE);
-		// Wie soll man gleichnamige elemente unterschiedlicher datenstroeme unterscheiden ?
-		result += "";
+		String result = Util.getInstance().createParameter(this.getOutputStreams().get(0) + "", "operationType", OPERATION);
+		/**
+		 * TODO: MEETING: Wie sollen die Elemente unterschiedlicher Streams unterschieden werden, vielleicht
+		 * ein Funktionsaufruf mit drei statt zwei Parametern? 
+		 */
+		for(int i = 0; i < mStreams.size(); i++){
+			result += Util.getInstance().createParameter(this.getOutputStreams().get(0) + "", "stream", mStreams.get(i).getReference().getName());
+			result += Util.getInstance().createParameter(this.getOutputStreams().get(0) + "", "element", mStreams.get(i).getElement().getName());
+		}
+		
+		if(!mLiteral.equals("")){
+			result += Util.getInstance().createParameter(this.getOutputStreams().get(0) + "", "literal", mLiteral);
+		}
+		
 		return result;
 	}
 
@@ -43,12 +56,12 @@ public class ArithmeticOperatorGenerator extends AbstractOperatorGenerator {
 		return Util.getInstance().connectOperator(this.getInputStreams(), "in", this.getOutputStreams(), "out");
 	}
 
-	public String getOperatorType() {
-		return OPERATOR_TYPE;
+	public String getOperationType() {
+		return OPERATION;
 	}
 
-	public void setOperatorType(final String pOperatorType) {
-		OPERATOR_TYPE = pOperatorType;
+	public void setOperationType(final String pOperationType) {
+		OPERATION = pOperationType;
 	}
 
 	public BarrierOperator getBarrier() {

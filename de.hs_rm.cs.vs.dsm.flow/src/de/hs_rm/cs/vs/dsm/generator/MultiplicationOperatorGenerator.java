@@ -20,7 +20,7 @@ public class MultiplicationOperatorGenerator extends ArithmeticOperatorGenerator
 		// Set the barrier
 		this.setBarrier(mOperator.getStream().getBarrier());
 		// Set the operator type
-		this.setOperatorType(OPERATOR_TYPE);
+		this.setOperationType(OPERATOR_TYPE);
 		// Set the streams which will be used for calculation
 		if(mOperator.getStreamElements() != null){
 			ArrayList<StreamAccess> elements = new ArrayList<StreamAccess>();

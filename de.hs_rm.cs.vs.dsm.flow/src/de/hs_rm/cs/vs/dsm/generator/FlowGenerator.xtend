@@ -21,8 +21,10 @@ import de.hs_rm.cs.vs.dsm.flow.JoinOperator
 import de.hs_rm.cs.vs.dsm.flow.SplitOperator
 import de.hs_rm.cs.vs.dsm.flow.ElementJoinOperator
 
-import de.hs_rm.cs.vs.dsm.flow.StreamVariableStatement
-
+import de.hs_rm.cs.vs.dsm.flow.AdditionOperator
+import de.hs_rm.cs.vs.dsm.flow.SubtractionOperator
+import de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator
+import de.hs_rm.cs.vs.dsm.flow.DivisionOperator
 
 
 import org.eclipse.xtext.naming.IQualifiedNameProvider
@@ -81,6 +83,14 @@ class FlowGenerator implements IGenerator {
 		«write((statement.operator as StandardDeviationOperator),statement)»
 		«ELSEIF statement.operator.eClass.name.equals("ElementJoinOperator")»
 		«write((statement.operator as ElementJoinOperator),statement)»
+		«ELSEIF statement.operator.eClass.name.equals("AdditionOperator")»
+		«write((statement.operator as AdditionOperator),statement)»
+		«ELSEIF statement.operator.eClass.name.equals("SubtractionOperator")»
+		«write((statement.operator as SubtractionOperator),statement)»
+		«ELSEIF statement.operator.eClass.name.equals("MultiplicationOperator")»
+		«write((statement.operator as MultiplicationOperator),statement)»
+		«ELSEIF statement.operator.eClass.name.equals("DivisionOperator")»
+		«write((statement.operator as DivisionOperator),statement)»
 		«ENDIF»
 	'''
 
@@ -97,6 +107,34 @@ class FlowGenerator implements IGenerator {
 			pStatement
 		)	
 		split.toString()
+	}
+	
+	def dispatch String write(AdditionOperator pOperator, StreamStatement pStatement){
+		var AdditionOperatorGenerator addition = new AdditionOperatorGenerator(
+			pStatement
+		)	
+		addition.toString()
+	}
+	
+	def dispatch String write(MultiplicationOperator pOperator, StreamStatement pStatement){
+		var MultiplicationOperatorGenerator multiplication = new MultiplicationOperatorGenerator(
+			pStatement
+		)	
+		multiplication.toString()
+	}
+	
+	def dispatch String write(SubtractionOperator pOperator, StreamStatement pStatement){
+		var SubtractionOperatorGenerator subtraction = new SubtractionOperatorGenerator(
+			pStatement
+		)	
+		subtraction.toString()
+	}
+	
+	def dispatch String write(DivisionOperator pOperator, StreamStatement pStatement){
+		var DivisionOperatorGenerator division = new DivisionOperatorGenerator(
+			pStatement
+		)	
+		division.toString()
 	}
 	
 	def dispatch String write(ElementJoinOperator pOperator, StreamStatement pStatement){
