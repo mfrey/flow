@@ -1,6 +1,14 @@
 *.class
 *.*~
 *.swp
+*.toc
+*.aux
+*.xml_gen
+*.out
+*.blg
+*.log
+*.lol
+*.bbl
 target/
 build/
 bin/
