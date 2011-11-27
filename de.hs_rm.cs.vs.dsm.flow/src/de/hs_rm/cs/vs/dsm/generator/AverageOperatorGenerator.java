@@ -34,7 +34,13 @@ public class AverageOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String initializeOperator() {
-		return Util.getInstance().createOperator(OPERATOR_TYPE, this.getOutputStreams().get(0));
+		if(this.getOutputStreams().size() == 1){
+			return Util.getInstance().createOperator(OPERATOR_TYPE, this.getOutputStreams().get(0));
+		}else if(this.getOutputStreams().size() > 1){
+			return Util.getInstance().createOperator(OPERATOR_TYPE, "stream" + this.getInputStreams().hashCode() + "");
+		}else{
+			return "Error in initializeOperator() in class AverageOperatorGenerator";
+		}
 	}
 
 	/**
@@ -50,7 +56,7 @@ public class AverageOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String setOperatorConnection() {
-		return Util.getInstance().connectOperator(this.getInputStreams().get(0), "in", this.getOutputStreams(), "out");
+		return Util.getInstance().connectOperator(this.getInputStreams(), "in", this.getOutputStreams(), "out");
 	}
 
 	/**
@@ -58,6 +64,12 @@ public class AverageOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String setBarrier() {
-		return Util.getInstance().createBarrier(this.getOutputStreams().get(0), this.mOperator.getStream().getBarrier());
+		if(this.getOutputStreams().size() == 1){
+			return Util.getInstance().createBarrier(this.getOutputStreams().get(0), this.mOperator.getStream().getBarrier());
+		}else if(this.getOutputStreams().size() > 1){
+			return Util.getInstance().createBarrier("stream" + this.getInputStreams().hashCode() + "", this.mOperator.getStream().getBarrier());
+		}else{
+			return "Error in setBarrier() in class AverageOperatorGenerator";
+		}
 	}
 }

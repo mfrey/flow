@@ -33,8 +33,6 @@ public class SplitOperatorGenerator extends AbstractOperatorGenerator {
 		this.mOperator = (SplitOperator) pStatement.getOperator();
 		// Add the input stream to the corresponding array list (in the abstract operator class)
 		this.getInputStreams().add(this.mOperator.getParameter().getStream().getName());
-		// Set name of the internal stream representation
-		this.setOperatorStream(OPERATOR_TYPE + this.mOperator.hashCode());
 	}
 	
 	/**
@@ -42,7 +40,11 @@ public class SplitOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String initializeOperator() {
-		return Util.getInstance().createOperator("split", this.getOperatorStream());
+		if(this.getOutputStreams().size() > 1){
+			return Util.getInstance().createOperator(OPERATOR_TYPE, "stream" + this.getInputStreams().hashCode() + "");
+		}else{
+			return "Error in initializeOperator() in class SplitOperatorGenerator";
+		}
 	}
 	
 	/**
@@ -68,4 +70,6 @@ public class SplitOperatorGenerator extends AbstractOperatorGenerator {
 	public String setBarrier() {
 		return "";
 	}
+	
+	
 }

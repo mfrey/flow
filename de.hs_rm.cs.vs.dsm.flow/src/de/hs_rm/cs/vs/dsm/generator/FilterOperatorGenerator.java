@@ -46,11 +46,11 @@ public class FilterOperatorGenerator extends AbstractOperatorGenerator {
 			// Only expressions of type boolean can be set as argument for the filter operator
 			if(this.mOperator.getExpression().get(i) instanceof BooleanOperation){
 				// Add the type of the filter operation 
-				result += "";
+				result += "a";
 				// Add the right parameter of the filter operation
-				result += "";
+				result += "b";
 				// Add the left parameter of the filter operation
-				result += "";
+				result += "c";
 			}
 		}
 		

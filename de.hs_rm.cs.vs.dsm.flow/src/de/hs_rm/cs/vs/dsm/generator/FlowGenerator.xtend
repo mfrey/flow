@@ -21,6 +21,9 @@ import de.hs_rm.cs.vs.dsm.flow.JoinOperator
 import de.hs_rm.cs.vs.dsm.flow.SplitOperator
 import de.hs_rm.cs.vs.dsm.flow.ElementJoinOperator
 
+import de.hs_rm.cs.vs.dsm.flow.FilterOperator
+
+
 import de.hs_rm.cs.vs.dsm.flow.AdditionOperator
 import de.hs_rm.cs.vs.dsm.flow.SubtractionOperator
 import de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator
@@ -91,6 +94,8 @@ class FlowGenerator implements IGenerator {
 		«write((statement.operator as MultiplicationOperator),statement)»
 		«ELSEIF statement.operator.eClass.name.equals("DivisionOperator")»
 		«write((statement.operator as DivisionOperator),statement)»
+		«ELSEIF statement.operator.eClass.name.equals("FilterOperator")»
+		«write((statement.operator as FilterOperator),statement)»
 		«ENDIF»
 	'''
 
@@ -170,5 +175,12 @@ class FlowGenerator implements IGenerator {
     		val OutputOperatorGenerator o = new OutputOperatorGenerator(output);
     		o.toString();
     	}»
-    '''     
+    '''  
+    
+    def dispatch String write(FilterOperator pOperator, StreamStatement pStatement){
+		var FilterOperatorGenerator filter = new FilterOperatorGenerator(
+			pStatement
+		)
+		filter.toString()
+	}   
 }
