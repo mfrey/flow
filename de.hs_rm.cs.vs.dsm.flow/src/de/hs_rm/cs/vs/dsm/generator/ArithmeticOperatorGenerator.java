@@ -29,7 +29,13 @@ public class ArithmeticOperatorGenerator extends AbstractOperatorGenerator {
 
 	@Override
 	public String initializeOperator() {
-		return Util.getInstance().createOperator(OPERATOR_TYPE, this.getOutputStreams().get(0));
+		if(this.getOutputStreams().size() == 1){
+			return Util.getInstance().createOperator(OPERATOR_TYPE, this.getOutputStreams().get(0));
+		}else if(this.getOutputStreams().size() > 1){
+			return Util.getInstance().createOperator(OPERATOR_TYPE, "stream" + this.getInputStreams().hashCode() + "");
+		}else{
+			return "Error in initializeOperator() in class AverageOperatorGenerator";
+		}
 	}
 
 	@Override
