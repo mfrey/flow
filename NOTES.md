@@ -4,21 +4,21 @@ NOTES
 -----
 1. Installation:
 	- Install the following plugins
-		null (todo)
-			Eclipse Modeling Tools
-		Eclipse Modeling Project
-			EMF Compare UML2 Integration
-			MWE 2 language SDK
-			MWE 2 runtime SDK
-			MWE SDK
-			OCL Examples and Editors
-			UML2 Extender SDK
-			Xpand SDK
-			Xtext SDK
-		Sonatype
-			Tycho Project Configurators
-		m2e
-			m2e Maven Integration for Eclipse
+		- null (todo)
+			- Eclipse Modeling Tools
+		- Eclipse Modeling Project
+			- EMF Compare UML2 Integration
+			- MWE 2 language SDK
+			- MWE 2 runtime SDK
+			- MWE SDK
+			- OCL Examples and Editors
+			- UML2 Extender SDK
+			- Xpand SDK
+			- Xtext SDK
+		- Sonatype
+			- Tycho Project Configurators
+		- m2e
+			-m2e Maven Integration for Eclipse
 
 	- The plugins of the project are imported via the import functionality of eclipse. Please select from the "File" menu the entry "Import ..." > "Maven" > "Existing Maven Projects". Select as root directory the root of the project directory which contains the parent pom.xml. Select all projects for an import to your workspace. Usually the import process takes some time, especially in cases of a first initial import. 
 
