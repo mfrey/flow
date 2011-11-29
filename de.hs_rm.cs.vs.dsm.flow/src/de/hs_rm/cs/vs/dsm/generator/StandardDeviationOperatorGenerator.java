@@ -48,7 +48,7 @@ public class StandardDeviationOperatorGenerator extends AbstractOperatorGenerato
 	 */
 	@Override
 	public String setOperatorProperties() {
-		return "";
+		return Util.getInstance().createParameter(this.getOutputStreams().get(0) + "", "element", this.mOperator.getParameter().getElement().getName());
 	}
 
 	/**

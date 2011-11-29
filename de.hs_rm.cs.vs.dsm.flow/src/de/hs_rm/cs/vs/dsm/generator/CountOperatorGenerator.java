@@ -48,7 +48,7 @@ public class CountOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String setOperatorProperties() {
-		return "";
+		return Util.getInstance().createParameter(this.getOutputStreams().get(0) + "", "element", this.mOperator.getParameter().getElement().getName());
 	}
 
 	/**
