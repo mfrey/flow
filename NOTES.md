@@ -32,6 +32,7 @@ NOTES
 
 4. Known Issues:
 	- multiple return types are not working
+        - in/out operators are not working yet and thus certain streams are not generated for start/stop operation in lua
 	- sparql-, tag-, untag-, swrl- operators need to be implemented
 	- in- and out- operators need to be customized for the use of international resource identifiers
 	- scoping and generators interfere in a 'chaotic' way (see also bug report on github)
