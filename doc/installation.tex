@@ -56,17 +56,17 @@ takes some time, especially in cases of a first initial import.
 The build process is initialised with the following command, where the target 
 platform points to the corresponding eclipse (including the eclipse delta pack) 
 installation.
-\begin{lstlisting}[language=C, caption={\emph{bla}},label={lst:shell}]
+\begin{lstlisting}[language=CMD, caption={\emph{Command for building the Flow RCP Application}},label={lst:shell}]
 frey ~/Projekte $ mvn package -Dtycho.targetPlatform=/home/michael/Software/eclipse
 \end{lstlisting}
 Tests are executed as usual with maven.
-\begin{lstlisting}[language=C, caption={\emph{bla}},label={lst:shell}]
+\begin{lstlisting}[language=CMD, caption={\emph{Command for testing the Flow RCP Application}},label={lst:shell}]
 frey ~/Projekte $ mvn test
 \end{lstlisting}
 The documentation is shipped with builds for both Windows and Linux and features
 a 32 and 64 bit version. The javadoc documentation can be generated with the 
 following maven target
-\begin{lstlisting}[language=C, caption={\emph{bla}},label={lst:shell}]
+\begin{lstlisting}[language=CMD, caption={\emph{Command for generating documentation the Flow RCP Application}},label={lst:shell}]
 frey ~/Projekte $ mvn javadoc:javadocs
 \end{lstlisting}
 At present the project uses the doclava project for documentation.
