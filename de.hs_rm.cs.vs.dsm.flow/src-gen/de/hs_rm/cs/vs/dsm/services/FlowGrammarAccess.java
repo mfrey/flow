@@ -2161,20 +2161,15 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLiteralNUMBERTerminalRuleCall_4_0_0 = (RuleCall)cLiteralAssignment_4_0.eContents().get(0);
 		private final Assignment cStreamElementsAssignment_4_1 = (Assignment)cAlternatives_4.eContents().get(1);
 		private final RuleCall cStreamElementsStreamAccessParserRuleCall_4_1_0 = (RuleCall)cStreamElementsAssignment_4_1.eContents().get(0);
-		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cStreamAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cStreamStreamOperatorParameterParserRuleCall_6_0 = (RuleCall)cStreamAssignment_6.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		/// **
 		// * The AdditionOperator rule defines a operator for addition of elements
 		// * / AdditionOperator:
-		//	"add" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) ","
-		//	stream=StreamOperatorParameter ")";
+		//	"add" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) ")";
 		public ParserRule getRule() { return rule; }
 
-		//"add" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) "," stream=StreamOperatorParameter
-		//")"
+		//"add" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) ")"
 		public Group getGroup() { return cGroup; }
 
 		//"add"
@@ -2207,17 +2202,8 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//StreamAccess
 		public RuleCall getStreamElementsStreamAccessParserRuleCall_4_1_0() { return cStreamElementsStreamAccessParserRuleCall_4_1_0; }
 
-		//","
-		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
-
-		//stream=StreamOperatorParameter
-		public Assignment getStreamAssignment_6() { return cStreamAssignment_6; }
-
-		//StreamOperatorParameter
-		public RuleCall getStreamStreamOperatorParameterParserRuleCall_6_0() { return cStreamStreamOperatorParameterParserRuleCall_6_0; }
-
 		//")"
-		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 	}
 
 	public class SubtractionOperatorElements extends AbstractParserRuleElementFinder {
@@ -2233,20 +2219,15 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLiteralNUMBERTerminalRuleCall_4_0_0 = (RuleCall)cLiteralAssignment_4_0.eContents().get(0);
 		private final Assignment cStreamElementsAssignment_4_1 = (Assignment)cAlternatives_4.eContents().get(1);
 		private final RuleCall cStreamElementsStreamAccessParserRuleCall_4_1_0 = (RuleCall)cStreamElementsAssignment_4_1.eContents().get(0);
-		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cStreamAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cStreamStreamOperatorParameterParserRuleCall_6_0 = (RuleCall)cStreamAssignment_6.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		/// **
 		// * The SubtractionOperator rule defines a operator for subtraction of elements
 		// * / SubtractionOperator:
-		//	"sub" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) ","
-		//	stream=StreamOperatorParameter ")";
+		//	"sub" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) ")";
 		public ParserRule getRule() { return rule; }
 
-		//"sub" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) "," stream=StreamOperatorParameter
-		//")"
+		//"sub" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) ")"
 		public Group getGroup() { return cGroup; }
 
 		//"sub"
@@ -2279,17 +2260,8 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//StreamAccess
 		public RuleCall getStreamElementsStreamAccessParserRuleCall_4_1_0() { return cStreamElementsStreamAccessParserRuleCall_4_1_0; }
 
-		//","
-		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
-
-		//stream=StreamOperatorParameter
-		public Assignment getStreamAssignment_6() { return cStreamAssignment_6; }
-
-		//StreamOperatorParameter
-		public RuleCall getStreamStreamOperatorParameterParserRuleCall_6_0() { return cStreamStreamOperatorParameterParserRuleCall_6_0; }
-
 		//")"
-		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 	}
 
 	public class MultiplicationOperatorElements extends AbstractParserRuleElementFinder {
@@ -2305,20 +2277,15 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLiteralNUMBERTerminalRuleCall_4_0_0 = (RuleCall)cLiteralAssignment_4_0.eContents().get(0);
 		private final Assignment cStreamElementsAssignment_4_1 = (Assignment)cAlternatives_4.eContents().get(1);
 		private final RuleCall cStreamElementsStreamAccessParserRuleCall_4_1_0 = (RuleCall)cStreamElementsAssignment_4_1.eContents().get(0);
-		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cStreamAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cStreamStreamOperatorParameterParserRuleCall_6_0 = (RuleCall)cStreamAssignment_6.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		/// **
 		// * The MultiplicationOperator rule defines a operator for multiplication of elements
 		// * / MultiplicationOperator:
-		//	"mult" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) ","
-		//	stream=StreamOperatorParameter ")";
+		//	"mult" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) ")";
 		public ParserRule getRule() { return rule; }
 
-		//"mult" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) "," stream=StreamOperatorParameter
-		//")"
+		//"mult" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) ")"
 		public Group getGroup() { return cGroup; }
 
 		//"mult"
@@ -2351,17 +2318,8 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//StreamAccess
 		public RuleCall getStreamElementsStreamAccessParserRuleCall_4_1_0() { return cStreamElementsStreamAccessParserRuleCall_4_1_0; }
 
-		//","
-		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
-
-		//stream=StreamOperatorParameter
-		public Assignment getStreamAssignment_6() { return cStreamAssignment_6; }
-
-		//StreamOperatorParameter
-		public RuleCall getStreamStreamOperatorParameterParserRuleCall_6_0() { return cStreamStreamOperatorParameterParserRuleCall_6_0; }
-
 		//")"
-		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 	}
 
 	public class DivisionOperatorElements extends AbstractParserRuleElementFinder {
@@ -2377,20 +2335,15 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLiteralNUMBERTerminalRuleCall_4_0_0 = (RuleCall)cLiteralAssignment_4_0.eContents().get(0);
 		private final Assignment cStreamElementsAssignment_4_1 = (Assignment)cAlternatives_4.eContents().get(1);
 		private final RuleCall cStreamElementsStreamAccessParserRuleCall_4_1_0 = (RuleCall)cStreamElementsAssignment_4_1.eContents().get(0);
-		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cStreamAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cStreamStreamOperatorParameterParserRuleCall_6_0 = (RuleCall)cStreamAssignment_6.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		/// **
 		// * The DivisionOperator rule defines a operator for division of elements
 		// * / DivisionOperator:
-		//	"div" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) ","
-		//	stream=StreamOperatorParameter ")";
+		//	"div" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) ")";
 		public ParserRule getRule() { return rule; }
 
-		//"div" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) "," stream=StreamOperatorParameter
-		//")"
+		//"div" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) ")"
 		public Group getGroup() { return cGroup; }
 
 		//"div"
@@ -2423,17 +2376,8 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//StreamAccess
 		public RuleCall getStreamElementsStreamAccessParserRuleCall_4_1_0() { return cStreamElementsStreamAccessParserRuleCall_4_1_0; }
 
-		//","
-		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
-
-		//stream=StreamOperatorParameter
-		public Assignment getStreamAssignment_6() { return cStreamAssignment_6; }
-
-		//StreamOperatorParameter
-		public RuleCall getStreamStreamOperatorParameterParserRuleCall_6_0() { return cStreamStreamOperatorParameterParserRuleCall_6_0; }
-
 		//")"
-		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 	}
 
 	public class OutputOperatorElements extends AbstractParserRuleElementFinder {
@@ -4186,8 +4130,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	/// **
 	// * The AdditionOperator rule defines a operator for addition of elements
 	// * / AdditionOperator:
-	//	"add" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) ","
-	//	stream=StreamOperatorParameter ")";
+	//	"add" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) ")";
 	public AdditionOperatorElements getAdditionOperatorAccess() {
 		return (pAdditionOperator != null) ? pAdditionOperator : (pAdditionOperator = new AdditionOperatorElements());
 	}
@@ -4199,8 +4142,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	/// **
 	// * The SubtractionOperator rule defines a operator for subtraction of elements
 	// * / SubtractionOperator:
-	//	"sub" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) ","
-	//	stream=StreamOperatorParameter ")";
+	//	"sub" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) ")";
 	public SubtractionOperatorElements getSubtractionOperatorAccess() {
 		return (pSubtractionOperator != null) ? pSubtractionOperator : (pSubtractionOperator = new SubtractionOperatorElements());
 	}
@@ -4212,8 +4154,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	/// **
 	// * The MultiplicationOperator rule defines a operator for multiplication of elements
 	// * / MultiplicationOperator:
-	//	"mult" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) ","
-	//	stream=StreamOperatorParameter ")";
+	//	"mult" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) ")";
 	public MultiplicationOperatorElements getMultiplicationOperatorAccess() {
 		return (pMultiplicationOperator != null) ? pMultiplicationOperator : (pMultiplicationOperator = new MultiplicationOperatorElements());
 	}
@@ -4225,8 +4166,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	/// **
 	// * The DivisionOperator rule defines a operator for division of elements
 	// * / DivisionOperator:
-	//	"div" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) ","
-	//	stream=StreamOperatorParameter ")";
+	//	"div" "(" parameter=StreamAccess "," (literal=NUMBER | streamElements+=StreamAccess) ")";
 	public DivisionOperatorElements getDivisionOperatorAccess() {
 		return (pDivisionOperator != null) ? pDivisionOperator : (pDivisionOperator = new DivisionOperatorElements());
 	}

@@ -20,7 +20,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getParameter <em>Parameter</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getLiteral <em>Literal</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getStreamElements <em>Stream Elements</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getStream <em>Stream</em>}</li>
  * </ul>
  * </p>
  *
@@ -97,31 +96,5 @@ public interface SubtractionOperator extends ReturnTypeOperator
    * @generated
    */
   EList<StreamAccess> getStreamElements();
-
-  /**
-   * Returns the value of the '<em><b>Stream</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Stream</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Stream</em>' containment reference.
-   * @see #setStream(StreamOperatorParameter)
-   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getSubtractionOperator_Stream()
-   * @model containment="true"
-   * @generated
-   */
-  StreamOperatorParameter getStream();
-
-  /**
-   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.SubtractionOperator#getStream <em>Stream</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Stream</em>' containment reference.
-   * @see #getStream()
-   * @generated
-   */
-  void setStream(StreamOperatorParameter value);
 
 } // SubtractionOperator

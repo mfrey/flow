@@ -17,8 +17,6 @@ public class DivisionOperatorGenerator extends ArithmeticOperatorGenerator {
 		super(pStatement);
 		// Store the operator in the attribute
 		mOperator = (DivisionOperator) pStatement.getOperator();
-		// Set the barrier
-		this.setBarrier(mOperator.getStream().getBarrier());
 		// Set the operator type
 		this.setOperationType(OPERATOR_TYPE);
 		// Set the streams which will be used for calculation

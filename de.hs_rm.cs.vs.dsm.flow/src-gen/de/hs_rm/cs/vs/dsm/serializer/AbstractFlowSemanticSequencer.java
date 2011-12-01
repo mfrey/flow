@@ -648,7 +648,7 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (parameter=StreamAccess (literal=NUMBER | streamElements+=StreamAccess) stream=StreamOperatorParameter)
+	 *     (parameter=StreamAccess (literal=NUMBER | streamElements+=StreamAccess))
 	 *
 	 * Features:
 	 *    parameter[1, 1]
@@ -656,7 +656,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 *         EXCLUDE_IF_SET streamElements
 	 *    streamElements[0, 1]
 	 *         EXCLUDE_IF_SET literal
-	 *    stream[1, 1]
 	 */
 	protected void sequence_AdditionOperator(EObject context, AdditionOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -893,7 +892,7 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (parameter=StreamAccess (literal=NUMBER | streamElements+=StreamAccess) stream=StreamOperatorParameter)
+	 *     (parameter=StreamAccess (literal=NUMBER | streamElements+=StreamAccess))
 	 *
 	 * Features:
 	 *    parameter[1, 1]
@@ -901,7 +900,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 *         EXCLUDE_IF_SET streamElements
 	 *    streamElements[0, 1]
 	 *         EXCLUDE_IF_SET literal
-	 *    stream[1, 1]
 	 */
 	protected void sequence_DivisionOperator(EObject context, DivisionOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1048,7 +1046,7 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (parameter=StreamAccess (literal=NUMBER | streamElements+=StreamAccess) stream=StreamOperatorParameter)
+	 *     (parameter=StreamAccess (literal=NUMBER | streamElements+=StreamAccess))
 	 *
 	 * Features:
 	 *    parameter[1, 1]
@@ -1056,7 +1054,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 *         EXCLUDE_IF_SET streamElements
 	 *    streamElements[0, 1]
 	 *         EXCLUDE_IF_SET literal
-	 *    stream[1, 1]
 	 */
 	protected void sequence_MultiplicationOperator(EObject context, MultiplicationOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1598,7 +1595,7 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (parameter=StreamAccess (literal=NUMBER | streamElements+=StreamAccess) stream=StreamOperatorParameter)
+	 *     (parameter=StreamAccess (literal=NUMBER | streamElements+=StreamAccess))
 	 *
 	 * Features:
 	 *    parameter[1, 1]
@@ -1606,7 +1603,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 *         EXCLUDE_IF_SET streamElements
 	 *    streamElements[0, 1]
 	 *         EXCLUDE_IF_SET literal
-	 *    stream[1, 1]
 	 */
 	protected void sequence_SubtractionOperator(EObject context, SubtractionOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

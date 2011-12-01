@@ -7,7 +7,6 @@ package de.hs_rm.cs.vs.dsm.flow.impl;
 
 import de.hs_rm.cs.vs.dsm.flow.FlowPackage;
 import de.hs_rm.cs.vs.dsm.flow.StreamAccess;
-import de.hs_rm.cs.vs.dsm.flow.StreamOperatorParameter;
 import de.hs_rm.cs.vs.dsm.flow.SubtractionOperator;
 
 import java.math.BigDecimal;
@@ -37,7 +36,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SubtractionOperatorImpl#getParameter <em>Parameter</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SubtractionOperatorImpl#getLiteral <em>Literal</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SubtractionOperatorImpl#getStreamElements <em>Stream Elements</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SubtractionOperatorImpl#getStream <em>Stream</em>}</li>
  * </ul>
  * </p>
  *
@@ -84,16 +82,6 @@ public class SubtractionOperatorImpl extends ReturnTypeOperatorImpl implements S
    * @ordered
    */
   protected EList<StreamAccess> streamElements;
-
-  /**
-   * The cached value of the '{@link #getStream() <em>Stream</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getStream()
-   * @generated
-   * @ordered
-   */
-  protected StreamOperatorParameter stream;
 
   /**
    * <!-- begin-user-doc -->
@@ -206,54 +194,6 @@ public class SubtractionOperatorImpl extends ReturnTypeOperatorImpl implements S
    * <!-- end-user-doc -->
    * @generated
    */
-  public StreamOperatorParameter getStream()
-  {
-    return stream;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetStream(StreamOperatorParameter newStream, NotificationChain msgs)
-  {
-    StreamOperatorParameter oldStream = stream;
-    stream = newStream;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FlowPackage.SUBTRACTION_OPERATOR__STREAM, oldStream, newStream);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setStream(StreamOperatorParameter newStream)
-  {
-    if (newStream != stream)
-    {
-      NotificationChain msgs = null;
-      if (stream != null)
-        msgs = ((InternalEObject)stream).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FlowPackage.SUBTRACTION_OPERATOR__STREAM, null, msgs);
-      if (newStream != null)
-        msgs = ((InternalEObject)newStream).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FlowPackage.SUBTRACTION_OPERATOR__STREAM, null, msgs);
-      msgs = basicSetStream(newStream, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.SUBTRACTION_OPERATOR__STREAM, newStream, newStream));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -263,8 +203,6 @@ public class SubtractionOperatorImpl extends ReturnTypeOperatorImpl implements S
         return basicSetParameter(null, msgs);
       case FlowPackage.SUBTRACTION_OPERATOR__STREAM_ELEMENTS:
         return ((InternalEList<?>)getStreamElements()).basicRemove(otherEnd, msgs);
-      case FlowPackage.SUBTRACTION_OPERATOR__STREAM:
-        return basicSetStream(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -285,8 +223,6 @@ public class SubtractionOperatorImpl extends ReturnTypeOperatorImpl implements S
         return getLiteral();
       case FlowPackage.SUBTRACTION_OPERATOR__STREAM_ELEMENTS:
         return getStreamElements();
-      case FlowPackage.SUBTRACTION_OPERATOR__STREAM:
-        return getStream();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -312,9 +248,6 @@ public class SubtractionOperatorImpl extends ReturnTypeOperatorImpl implements S
         getStreamElements().clear();
         getStreamElements().addAll((Collection<? extends StreamAccess>)newValue);
         return;
-      case FlowPackage.SUBTRACTION_OPERATOR__STREAM:
-        setStream((StreamOperatorParameter)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -338,9 +271,6 @@ public class SubtractionOperatorImpl extends ReturnTypeOperatorImpl implements S
       case FlowPackage.SUBTRACTION_OPERATOR__STREAM_ELEMENTS:
         getStreamElements().clear();
         return;
-      case FlowPackage.SUBTRACTION_OPERATOR__STREAM:
-        setStream((StreamOperatorParameter)null);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -361,8 +291,6 @@ public class SubtractionOperatorImpl extends ReturnTypeOperatorImpl implements S
         return LITERAL_EDEFAULT == null ? literal != null : !LITERAL_EDEFAULT.equals(literal);
       case FlowPackage.SUBTRACTION_OPERATOR__STREAM_ELEMENTS:
         return streamElements != null && !streamElements.isEmpty();
-      case FlowPackage.SUBTRACTION_OPERATOR__STREAM:
-        return stream != null;
     }
     return super.eIsSet(featureID);
   }

@@ -890,10 +890,6 @@
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.6"/>
         </elements>
       </elements>
-      <elements xsi:type="xtext:Keyword" value=","/>
-      <elements xsi:type="xtext:Assignment" feature="stream" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.10"/>
-      </elements>
       <elements xsi:type="xtext:Keyword" value=")"/>
     </alternatives>
   </rules>
@@ -915,10 +911,6 @@
         <elements xsi:type="xtext:Assignment" feature="streamElements" operator="+=">
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.6"/>
         </elements>
-      </elements>
-      <elements xsi:type="xtext:Keyword" value=","/>
-      <elements xsi:type="xtext:Assignment" feature="stream" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.10"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value=")"/>
     </alternatives>
@@ -942,10 +934,6 @@
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.6"/>
         </elements>
       </elements>
-      <elements xsi:type="xtext:Keyword" value=","/>
-      <elements xsi:type="xtext:Assignment" feature="stream" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.10"/>
-      </elements>
       <elements xsi:type="xtext:Keyword" value=")"/>
     </alternatives>
   </rules>
@@ -967,10 +955,6 @@
         <elements xsi:type="xtext:Assignment" feature="streamElements" operator="+=">
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.6"/>
         </elements>
-      </elements>
-      <elements xsi:type="xtext:Keyword" value=","/>
-      <elements xsi:type="xtext:Assignment" feature="stream" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.10"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value=")"/>
     </alternatives>
