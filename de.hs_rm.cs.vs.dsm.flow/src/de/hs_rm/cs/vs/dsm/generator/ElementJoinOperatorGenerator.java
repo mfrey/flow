@@ -26,14 +26,19 @@ public class ElementJoinOperatorGenerator extends AbstractOperatorGenerator {
 
 	@Override
 	public String setOperatorProperties() {
+		String result = "";
+		/*
+		for(int i = 0; i < this.mOperator.getVariableElementParameters().size(); i++){
+			result += Util.getInstance().createParameter(this.getOutputStreams().get(0) + "", "value", this.mOperator.getVariableElementParameters().get(i));
+		}
+		*/
 		// TODO Auto-generated method stub
-		return null;
+		return result;
 	}
 
 	@Override
 	public String setOperatorConnection() {
-		// TODO Auto-generated method stub
-		return null;
+		return Util.getInstance().connectOperator(this.getInputStreams(), "in", this.getOutputStreams(), "out");
 	}
 
 	/**

@@ -24,7 +24,7 @@ public class ArithmeticOperatorGenerator extends AbstractOperatorGenerator {
 	
 	@Override
 	public String setBarrier() {
-		return Util.getInstance().createBarrier(this.getOutputStreams().get(0), mBarrier);
+		return "";
 	}
 
 	@Override
