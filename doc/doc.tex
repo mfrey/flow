@@ -13,6 +13,7 @@
 \usepackage{setspace}
 \usepackage{epsfig}
 \usepackage{multirow}
+\usepackage{color}
 
 \usepackage[
   pdftex, 
@@ -28,6 +29,16 @@
 	pdftitle={Bla},
 	pdfauthor={Michael Frey}
 ]{hyperref}
+
+% Definition fuer Farbschema Rot (RGB: 193, 24, 24)
+\definecolor{defred}{rgb}{0.75,0.09,0.09}
+% Definition fuer Farbschema Gruen (RGB: 193, 24, 24)
+\definecolor{defgreen}{rgb}{0.43,0.68,0.18}
+% Definition fuer Farbschema Blau (RGB: 41, 104, 208)
+\definecolor{defblue}{rgb}{0.16,0.4,0.81}
+% Definition fuer Farbschema Orange (RGB: 255, 139, 0)
+\definecolor{deforange}{rgb}{1,0.54,0}
+
 
 \lstloadlanguages{Java}
 \lstset{
@@ -56,6 +67,28 @@
 	frame=trbl,												% Frame; trBL
 	captionpos=b,											% Position of the caption
 	aboveskip=25pt,										% Space between text and the top of the listing
+}
+
+
+\lstdefinelanguage{Flow}{
+  morekeywords={structure, stream, processing, datatype, package, using, namespace, use, tag, join, ejoin, map, std, avg, in, out, untag,
+  count, int, float, string, boolean, now, last, elements, min, hrs, sec, match, split, import, if, else, return, operator, filter,
+  diff, sdif, swrl, ocl, add, sub, div, mult},
+  sensitive=false,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]",
+  keywordstyle=\bfseries\color{defblue},
+  commentstyle=\bfseries\color{defgreen},
+  stringstyle=\bfseries\color{defgreen},
+  identifierstyle=\bfseries\color{deforange},
+  basicstyle=\scriptsize\ttfamily,	
+  showstringspaces=false,
+  numberstyle=\scriptsize,					
+  captionpos=b,
+  tabsize=4,
+  stepnumber=1,										
+  breaklines=true
 }
 
 \begin{document}

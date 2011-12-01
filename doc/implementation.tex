@@ -1,14 +1,33 @@
+%\lstloadlanguages{Flow}
 \section{Implementation}
 \subsection{Language}
 \subsubsection{Streams}
 \subsubsection{Barriers}
 \subsubsection{Operators}
+
+\begin{lstlisting}[language=Flow, caption={\emph{Examples of Analysis Operators in Flow}},label={lst:exanflw}]
+// Examples of Operators average, standard deviation and count
+a = avg(r.element, r[now]);
+b = std(t.element, s[last 20 elements]);
+c = count(t.element, t[last 10 min]);
+// Examples of Operators addition, subtraction, multiplication and division
+d = add(u.element, 2);
+e = sub(v.element, 4);
+f = mult(w.element, x.element);
+g = div(y.element, 3);
+\end{lstlisting}
+
+\begin{lstlisting}[language=Flow, caption={\emph{Examples of Analysis Operators in LUA}},label={lst:exanlua}]
+todo
+\end{lstlisting}
+
+
 \subsection{Integration of Meta-models}
 Xtext allows to reference instances of metamodels within a DSL. One example is 
 the use of OWL classes in the query language. In order to use this mechanism 
 several steps are required. First, the metamodel must be referenced in the 
 grammar of the language
-\begin{lstlisting}[language=C, caption={\emph{bla}},label={lst:shell}]
+\begin{lstlisting}[language=, caption={\emph{bla}},label={lst:shell}]
 ...
 import "platform:/resource/de.hs_rm.cs.vs.dsm.flow/model/owl.ecore"
    as owl
