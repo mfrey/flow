@@ -99,7 +99,7 @@ ElementJoinOperator:
 
 /**
  * The FilterOperator rule defines a filter operation on a stream. The expression of the operator 
- * is a conditional expression which defines if a element of a stream is forwarded in a outgoing
+ * is a conditional expression which defines if a element of a stream is forwarded in a fgoing
  * stream or not.
  */
 FilterOperator:
@@ -135,7 +135,7 @@ DifferenceOperator:
 
 
 InputOperator:
-	'in' '('iri+=InternationalizedResourceIdentifier (',' iri+=InternationalizedResourceIdentifier)* ',' port=NUMBER ',' socket=STRING')';
+	'in' '('iri+=STRING (',' iri+=STRING)* ',' address=STRING ',' port=NUMBER ')';
 
 /**
  * The rule summarizes the operators which have a return type
@@ -366,13 +366,7 @@ DivisionOperator:
  * a stream specified in parameter to a location specified in location.
  */	
 OutputOperator:
-	'out''('parameter=OutputOperatorParameter ',' location=STRING ',' stream+=StreamOperatorParameter ')' ';';
-
-OutputOperatorParameter:
-	element+=StreamAccess (',' element+=StreamAccess)*;
-
-
-
+	'out''(' stream=StreamOperatorParameter ',' iri+=STRING (',' iri+=STRING)* ',' address=STRING ',' port=NUMBER ')' ';';
 
 VariableDefinition:
 	NumberVariableDefinition | StringVariableDefinition | BooleanVariableDefinition;
@@ -475,23 +469,6 @@ IntegerDataType:
 /** Definition of the string datatype */
 StringDataType:
 	'string' {StringDataType};	
-
-/** 
- * A internationalized resource identifier (IRI) is basically a unified resource identifier (URI)
- * which is capable of handling URIs in universal character set encoding. IRIs are defined in RFC
- * 398.
- */
-InternationalizedResourceIdentifier:
-	scheme=Scheme '://' authority=STRING ('/' path+=STRING)*  ('?' query=STRING)  ('#' fragmentIRI=STRING)
-;
-
-/** 
- * The enumeration defines the available scheme values for the InternationalizedResourceIdentifier 
- * rule.
- */
-enum Scheme:
-	HTTP = 'http' | FTP  = 'ftp' | FILE = 'file' ;
-
 
 /**
  * The following rules reuse rule statements of the standard xtext grammar since it is

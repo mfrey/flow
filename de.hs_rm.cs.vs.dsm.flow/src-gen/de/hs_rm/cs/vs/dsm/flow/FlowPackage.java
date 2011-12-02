@@ -674,7 +674,7 @@ public interface FlowPackage extends EPackage
   int INPUT_OPERATOR = 17;
 
   /**
-   * The feature id for the '<em><b>Iri</b></em>' containment reference list.
+   * The feature id for the '<em><b>Iri</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -683,22 +683,22 @@ public interface FlowPackage extends EPackage
   int INPUT_OPERATOR__IRI = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Address</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INPUT_OPERATOR__ADDRESS = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Port</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INPUT_OPERATOR__PORT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Socket</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INPUT_OPERATOR__SOCKET = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
+  int INPUT_OPERATOR__PORT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Input Operator</em>' class.
@@ -1702,31 +1702,40 @@ public interface FlowPackage extends EPackage
   int OUTPUT_OPERATOR = 47;
 
   /**
-   * The feature id for the '<em><b>Parameter</b></em>' containment reference.
+   * The feature id for the '<em><b>Stream</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OUTPUT_OPERATOR__PARAMETER = NO_RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
+  int OUTPUT_OPERATOR__STREAM = NO_RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Location</b></em>' attribute.
+   * The feature id for the '<em><b>Iri</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OUTPUT_OPERATOR__LOCATION = NO_RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
+  int OUTPUT_OPERATOR__IRI = NO_RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Stream</b></em>' containment reference list.
+   * The feature id for the '<em><b>Address</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OUTPUT_OPERATOR__STREAM = NO_RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
+  int OUTPUT_OPERATOR__ADDRESS = NO_RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Port</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTPUT_OPERATOR__PORT = NO_RETURN_TYPE_OPERATOR_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Output Operator</em>' class.
@@ -1735,35 +1744,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT_OPERATOR_FEATURE_COUNT = NO_RETURN_TYPE_OPERATOR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.OutputOperatorParameterImpl <em>Output Operator Parameter</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.OutputOperatorParameterImpl
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getOutputOperatorParameter()
-   * @generated
-   */
-  int OUTPUT_OPERATOR_PARAMETER = 48;
-
-  /**
-   * The feature id for the '<em><b>Element</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTPUT_OPERATOR_PARAMETER__ELEMENT = 0;
-
-  /**
-   * The number of structural features of the '<em>Output Operator Parameter</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTPUT_OPERATOR_PARAMETER_FEATURE_COUNT = 1;
+  int OUTPUT_OPERATOR_FEATURE_COUNT = NO_RETURN_TYPE_OPERATOR_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.VariableDefinitionImpl <em>Variable Definition</em>}' class.
@@ -1773,7 +1754,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getVariableDefinition()
    * @generated
    */
-  int VARIABLE_DEFINITION = 49;
+  int VARIABLE_DEFINITION = 48;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1801,7 +1782,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStreamElement()
    * @generated
    */
-  int STREAM_ELEMENT = 56;
+  int STREAM_ELEMENT = 55;
 
   /**
    * The number of structural features of the '<em>Stream Element</em>' class.
@@ -1820,7 +1801,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getVariableDeclaration()
    * @generated
    */
-  int VARIABLE_DECLARATION = 50;
+  int VARIABLE_DECLARATION = 49;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1857,7 +1838,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getNumberVariableDefinition()
    * @generated
    */
-  int NUMBER_VARIABLE_DEFINITION = 51;
+  int NUMBER_VARIABLE_DEFINITION = 50;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1903,7 +1884,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStringVariableDefinition()
    * @generated
    */
-  int STRING_VARIABLE_DEFINITION = 52;
+  int STRING_VARIABLE_DEFINITION = 51;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1949,7 +1930,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBooleanVariableDefinition()
    * @generated
    */
-  int BOOLEAN_VARIABLE_DEFINITION = 53;
+  int BOOLEAN_VARIABLE_DEFINITION = 52;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1995,7 +1976,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStructureDeclaration()
    * @generated
    */
-  int STRUCTURE_DECLARATION = 54;
+  int STRUCTURE_DECLARATION = 53;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2032,7 +2013,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStreamDeclaration()
    * @generated
    */
-  int STREAM_DECLARATION = 55;
+  int STREAM_DECLARATION = 54;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2069,7 +2050,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStructureElements()
    * @generated
    */
-  int STRUCTURE_ELEMENTS = 57;
+  int STRUCTURE_ELEMENTS = 56;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' reference.
@@ -2097,7 +2078,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 58;
+  int EXPRESSION = 57;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -2116,7 +2097,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getDataType()
    * @generated
    */
-  int DATA_TYPE = 59;
+  int DATA_TYPE = 58;
 
   /**
    * The number of structural features of the '<em>Data Type</em>' class.
@@ -2135,7 +2116,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSimpleDataType()
    * @generated
    */
-  int SIMPLE_DATA_TYPE = 60;
+  int SIMPLE_DATA_TYPE = 59;
 
   /**
    * The number of structural features of the '<em>Simple Data Type</em>' class.
@@ -2154,7 +2135,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getComplexDataType()
    * @generated
    */
-  int COMPLEX_DATA_TYPE = 61;
+  int COMPLEX_DATA_TYPE = 60;
 
   /**
    * The number of structural features of the '<em>Complex Data Type</em>' class.
@@ -2173,7 +2154,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getIntegerDataType()
    * @generated
    */
-  int INTEGER_DATA_TYPE = 62;
+  int INTEGER_DATA_TYPE = 61;
 
   /**
    * The number of structural features of the '<em>Integer Data Type</em>' class.
@@ -2192,7 +2173,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBooleanDataType()
    * @generated
    */
-  int BOOLEAN_DATA_TYPE = 63;
+  int BOOLEAN_DATA_TYPE = 62;
 
   /**
    * The number of structural features of the '<em>Boolean Data Type</em>' class.
@@ -2211,7 +2192,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getFloatDataType()
    * @generated
    */
-  int FLOAT_DATA_TYPE = 64;
+  int FLOAT_DATA_TYPE = 63;
 
   /**
    * The number of structural features of the '<em>Float Data Type</em>' class.
@@ -2230,7 +2211,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStringDataType()
    * @generated
    */
-  int STRING_DATA_TYPE = 65;
+  int STRING_DATA_TYPE = 64;
 
   /**
    * The number of structural features of the '<em>String Data Type</em>' class.
@@ -2242,70 +2223,6 @@ public interface FlowPackage extends EPackage
   int STRING_DATA_TYPE_FEATURE_COUNT = COMPLEX_DATA_TYPE_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.InternationalizedResourceIdentifierImpl <em>Internationalized Resource Identifier</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.InternationalizedResourceIdentifierImpl
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getInternationalizedResourceIdentifier()
-   * @generated
-   */
-  int INTERNATIONALIZED_RESOURCE_IDENTIFIER = 66;
-
-  /**
-   * The feature id for the '<em><b>Scheme</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERNATIONALIZED_RESOURCE_IDENTIFIER__SCHEME = 0;
-
-  /**
-   * The feature id for the '<em><b>Authority</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERNATIONALIZED_RESOURCE_IDENTIFIER__AUTHORITY = 1;
-
-  /**
-   * The feature id for the '<em><b>Path</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERNATIONALIZED_RESOURCE_IDENTIFIER__PATH = 2;
-
-  /**
-   * The feature id for the '<em><b>Query</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERNATIONALIZED_RESOURCE_IDENTIFIER__QUERY = 3;
-
-  /**
-   * The feature id for the '<em><b>Fragment IRI</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERNATIONALIZED_RESOURCE_IDENTIFIER__FRAGMENT_IRI = 4;
-
-  /**
-   * The number of structural features of the '<em>Internationalized Resource Identifier</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERNATIONALIZED_RESOURCE_IDENTIFIER_FEATURE_COUNT = 5;
-
-  /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.BooleanOperationImpl <em>Boolean Operation</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2313,7 +2230,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBooleanOperation()
    * @generated
    */
-  int BOOLEAN_OPERATION = 67;
+  int BOOLEAN_OPERATION = 65;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2359,7 +2276,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getPlus()
    * @generated
    */
-  int PLUS = 68;
+  int PLUS = 66;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2396,7 +2313,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMinus()
    * @generated
    */
-  int MINUS = 69;
+  int MINUS = 67;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2433,7 +2350,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMulti()
    * @generated
    */
-  int MULTI = 70;
+  int MULTI = 68;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2470,7 +2387,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getDiv()
    * @generated
    */
-  int DIV = 71;
+  int DIV = 69;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2507,7 +2424,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 72;
+  int NUMBER_LITERAL = 70;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2535,7 +2452,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getVariableCall()
    * @generated
    */
-  int VARIABLE_CALL = 73;
+  int VARIABLE_CALL = 71;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' reference.
@@ -2563,17 +2480,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSparqlQueryType()
    * @generated
    */
-  int SPARQL_QUERY_TYPE = 74;
-
-  /**
-   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.Scheme <em>Scheme</em>}' enum.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.hs_rm.cs.vs.dsm.flow.Scheme
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getScheme()
-   * @generated
-   */
-  int SCHEME = 75;
+  int SPARQL_QUERY_TYPE = 72;
 
 
   /**
@@ -3076,15 +2983,26 @@ public interface FlowPackage extends EPackage
   EClass getInputOperator();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getIri <em>Iri</em>}'.
+   * Returns the meta object for the attribute list '{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getIri <em>Iri</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Iri</em>'.
+   * @return the meta object for the attribute list '<em>Iri</em>'.
    * @see de.hs_rm.cs.vs.dsm.flow.InputOperator#getIri()
    * @see #getInputOperator()
    * @generated
    */
-  EReference getInputOperator_Iri();
+  EAttribute getInputOperator_Iri();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getAddress <em>Address</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Address</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.InputOperator#getAddress()
+   * @see #getInputOperator()
+   * @generated
+   */
+  EAttribute getInputOperator_Address();
 
   /**
    * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getPort <em>Port</em>}'.
@@ -3096,17 +3014,6 @@ public interface FlowPackage extends EPackage
    * @generated
    */
   EAttribute getInputOperator_Port();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.InputOperator#getSocket <em>Socket</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Socket</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.InputOperator#getSocket()
-   * @see #getInputOperator()
-   * @generated
-   */
-  EAttribute getInputOperator_Socket();
 
   /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.ReturnTypeOperator <em>Return Type Operator</em>}'.
@@ -3926,32 +3833,10 @@ public interface FlowPackage extends EPackage
   EClass getOutputOperator();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.OutputOperator#getParameter <em>Parameter</em>}'.
+   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.OutputOperator#getStream <em>Stream</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Parameter</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.OutputOperator#getParameter()
-   * @see #getOutputOperator()
-   * @generated
-   */
-  EReference getOutputOperator_Parameter();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.OutputOperator#getLocation <em>Location</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Location</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.OutputOperator#getLocation()
-   * @see #getOutputOperator()
-   * @generated
-   */
-  EAttribute getOutputOperator_Location();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.OutputOperator#getStream <em>Stream</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Stream</em>'.
+   * @return the meta object for the containment reference '<em>Stream</em>'.
    * @see de.hs_rm.cs.vs.dsm.flow.OutputOperator#getStream()
    * @see #getOutputOperator()
    * @generated
@@ -3959,25 +3844,37 @@ public interface FlowPackage extends EPackage
   EReference getOutputOperator_Stream();
 
   /**
-   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.OutputOperatorParameter <em>Output Operator Parameter</em>}'.
+   * Returns the meta object for the attribute list '{@link de.hs_rm.cs.vs.dsm.flow.OutputOperator#getIri <em>Iri</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Output Operator Parameter</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.OutputOperatorParameter
+   * @return the meta object for the attribute list '<em>Iri</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.OutputOperator#getIri()
+   * @see #getOutputOperator()
    * @generated
    */
-  EClass getOutputOperatorParameter();
+  EAttribute getOutputOperator_Iri();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.OutputOperatorParameter#getElement <em>Element</em>}'.
+   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.OutputOperator#getAddress <em>Address</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Element</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.OutputOperatorParameter#getElement()
-   * @see #getOutputOperatorParameter()
+   * @return the meta object for the attribute '<em>Address</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.OutputOperator#getAddress()
+   * @see #getOutputOperator()
    * @generated
    */
-  EReference getOutputOperatorParameter_Element();
+  EAttribute getOutputOperator_Address();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.OutputOperator#getPort <em>Port</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Port</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.OutputOperator#getPort()
+   * @see #getOutputOperator()
+   * @generated
+   */
+  EAttribute getOutputOperator_Port();
 
   /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.VariableDefinition <em>Variable Definition</em>}'.
@@ -4304,71 +4201,6 @@ public interface FlowPackage extends EPackage
   EClass getStringDataType();
 
   /**
-   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier <em>Internationalized Resource Identifier</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Internationalized Resource Identifier</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier
-   * @generated
-   */
-  EClass getInternationalizedResourceIdentifier();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier#getScheme <em>Scheme</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Scheme</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier#getScheme()
-   * @see #getInternationalizedResourceIdentifier()
-   * @generated
-   */
-  EAttribute getInternationalizedResourceIdentifier_Scheme();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier#getAuthority <em>Authority</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Authority</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier#getAuthority()
-   * @see #getInternationalizedResourceIdentifier()
-   * @generated
-   */
-  EAttribute getInternationalizedResourceIdentifier_Authority();
-
-  /**
-   * Returns the meta object for the attribute list '{@link de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier#getPath <em>Path</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Path</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier#getPath()
-   * @see #getInternationalizedResourceIdentifier()
-   * @generated
-   */
-  EAttribute getInternationalizedResourceIdentifier_Path();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier#getQuery <em>Query</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Query</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier#getQuery()
-   * @see #getInternationalizedResourceIdentifier()
-   * @generated
-   */
-  EAttribute getInternationalizedResourceIdentifier_Query();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier#getFragmentIRI <em>Fragment IRI</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Fragment IRI</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier#getFragmentIRI()
-   * @see #getInternationalizedResourceIdentifier()
-   * @generated
-   */
-  EAttribute getInternationalizedResourceIdentifier_FragmentIRI();
-
-  /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.BooleanOperation <em>Boolean Operation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4590,16 +4422,6 @@ public interface FlowPackage extends EPackage
    * @generated
    */
   EEnum getSparqlQueryType();
-
-  /**
-   * Returns the meta object for enum '{@link de.hs_rm.cs.vs.dsm.flow.Scheme <em>Scheme</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Scheme</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.Scheme
-   * @generated
-   */
-  EEnum getScheme();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -5037,12 +4859,20 @@ public interface FlowPackage extends EPackage
     EClass INPUT_OPERATOR = eINSTANCE.getInputOperator();
 
     /**
-     * The meta object literal for the '<em><b>Iri</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Iri</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INPUT_OPERATOR__IRI = eINSTANCE.getInputOperator_Iri();
+    EAttribute INPUT_OPERATOR__IRI = eINSTANCE.getInputOperator_Iri();
+
+    /**
+     * The meta object literal for the '<em><b>Address</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INPUT_OPERATOR__ADDRESS = eINSTANCE.getInputOperator_Address();
 
     /**
      * The meta object literal for the '<em><b>Port</b></em>' attribute feature.
@@ -5051,14 +4881,6 @@ public interface FlowPackage extends EPackage
      * @generated
      */
     EAttribute INPUT_OPERATOR__PORT = eINSTANCE.getInputOperator_Port();
-
-    /**
-     * The meta object literal for the '<em><b>Socket</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INPUT_OPERATOR__SOCKET = eINSTANCE.getInputOperator_Socket();
 
     /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.ReturnTypeOperatorImpl <em>Return Type Operator</em>}' class.
@@ -5737,23 +5559,7 @@ public interface FlowPackage extends EPackage
     EClass OUTPUT_OPERATOR = eINSTANCE.getOutputOperator();
 
     /**
-     * The meta object literal for the '<em><b>Parameter</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference OUTPUT_OPERATOR__PARAMETER = eINSTANCE.getOutputOperator_Parameter();
-
-    /**
-     * The meta object literal for the '<em><b>Location</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute OUTPUT_OPERATOR__LOCATION = eINSTANCE.getOutputOperator_Location();
-
-    /**
-     * The meta object literal for the '<em><b>Stream</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Stream</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -5761,22 +5567,28 @@ public interface FlowPackage extends EPackage
     EReference OUTPUT_OPERATOR__STREAM = eINSTANCE.getOutputOperator_Stream();
 
     /**
-     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.OutputOperatorParameterImpl <em>Output Operator Parameter</em>}' class.
+     * The meta object literal for the '<em><b>Iri</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.OutputOperatorParameterImpl
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getOutputOperatorParameter()
      * @generated
      */
-    EClass OUTPUT_OPERATOR_PARAMETER = eINSTANCE.getOutputOperatorParameter();
+    EAttribute OUTPUT_OPERATOR__IRI = eINSTANCE.getOutputOperator_Iri();
 
     /**
-     * The meta object literal for the '<em><b>Element</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Address</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference OUTPUT_OPERATOR_PARAMETER__ELEMENT = eINSTANCE.getOutputOperatorParameter_Element();
+    EAttribute OUTPUT_OPERATOR__ADDRESS = eINSTANCE.getOutputOperator_Address();
+
+    /**
+     * The meta object literal for the '<em><b>Port</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OUTPUT_OPERATOR__PORT = eINSTANCE.getOutputOperator_Port();
 
     /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.VariableDefinitionImpl <em>Variable Definition</em>}' class.
@@ -6061,56 +5873,6 @@ public interface FlowPackage extends EPackage
     EClass STRING_DATA_TYPE = eINSTANCE.getStringDataType();
 
     /**
-     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.InternationalizedResourceIdentifierImpl <em>Internationalized Resource Identifier</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.InternationalizedResourceIdentifierImpl
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getInternationalizedResourceIdentifier()
-     * @generated
-     */
-    EClass INTERNATIONALIZED_RESOURCE_IDENTIFIER = eINSTANCE.getInternationalizedResourceIdentifier();
-
-    /**
-     * The meta object literal for the '<em><b>Scheme</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INTERNATIONALIZED_RESOURCE_IDENTIFIER__SCHEME = eINSTANCE.getInternationalizedResourceIdentifier_Scheme();
-
-    /**
-     * The meta object literal for the '<em><b>Authority</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INTERNATIONALIZED_RESOURCE_IDENTIFIER__AUTHORITY = eINSTANCE.getInternationalizedResourceIdentifier_Authority();
-
-    /**
-     * The meta object literal for the '<em><b>Path</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INTERNATIONALIZED_RESOURCE_IDENTIFIER__PATH = eINSTANCE.getInternationalizedResourceIdentifier_Path();
-
-    /**
-     * The meta object literal for the '<em><b>Query</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INTERNATIONALIZED_RESOURCE_IDENTIFIER__QUERY = eINSTANCE.getInternationalizedResourceIdentifier_Query();
-
-    /**
-     * The meta object literal for the '<em><b>Fragment IRI</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INTERNATIONALIZED_RESOURCE_IDENTIFIER__FRAGMENT_IRI = eINSTANCE.getInternationalizedResourceIdentifier_FragmentIRI();
-
-    /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.BooleanOperationImpl <em>Boolean Operation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6293,16 +6055,6 @@ public interface FlowPackage extends EPackage
      * @generated
      */
     EEnum SPARQL_QUERY_TYPE = eINSTANCE.getSparqlQueryType();
-
-    /**
-     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.Scheme <em>Scheme</em>}' enum.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.hs_rm.cs.vs.dsm.flow.Scheme
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getScheme()
-     * @generated
-     */
-    EEnum SCHEME = eINSTANCE.getScheme();
 
   }
 

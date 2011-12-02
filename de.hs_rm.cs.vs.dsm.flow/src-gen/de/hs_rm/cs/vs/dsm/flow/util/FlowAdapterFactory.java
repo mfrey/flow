@@ -318,11 +318,6 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
         return createOutputOperatorAdapter();
       }
       @Override
-      public Adapter caseOutputOperatorParameter(OutputOperatorParameter object)
-      {
-        return createOutputOperatorParameterAdapter();
-      }
-      @Override
       public Adapter caseVariableDefinition(VariableDefinition object)
       {
         return createVariableDefinitionAdapter();
@@ -406,11 +401,6 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
       public Adapter caseStringDataType(StringDataType object)
       {
         return createStringDataTypeAdapter();
-      }
-      @Override
-      public Adapter caseInternationalizedResourceIdentifier(InternationalizedResourceIdentifier object)
-      {
-        return createInternationalizedResourceIdentifierAdapter();
       }
       @Override
       public Adapter caseBooleanOperation(BooleanOperation object)
@@ -1190,21 +1180,6 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.OutputOperatorParameter <em>Output Operator Parameter</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.OutputOperatorParameter
-   * @generated
-   */
-  public Adapter createOutputOperatorParameterAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.VariableDefinition <em>Variable Definition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1455,21 +1430,6 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStringDataTypeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier <em>Internationalized Resource Identifier</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier
-   * @generated
-   */
-  public Adapter createInternationalizedResourceIdentifierAdapter()
   {
     return null;
   }

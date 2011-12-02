@@ -15,11 +15,6 @@
       <genEnumLiterals ecoreEnumLiteral="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SparqlQueryType/ASK"/>
       <genEnumLiterals ecoreEnumLiteral="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SparqlQueryType/DESCRIBE"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Scheme">
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Scheme/HTTP"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Scheme/FTP"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Scheme/FILE"/>
-    </genEnums>
     <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Model/models"/>
     </genClasses>
@@ -83,9 +78,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//DifferenceOperator/parameters"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//InputOperator">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//InputOperator/iri"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//InputOperator/iri"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//InputOperator/address"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//InputOperator/port"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//InputOperator/socket"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator"/>
     <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//NoReturnTypeOperator"/>
@@ -190,12 +185,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//DivisionOperator/streamElements"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//OutputOperator">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//OutputOperator/parameter"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//OutputOperator/location"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//OutputOperator/stream"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//OutputOperatorParameter">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//OutputOperatorParameter/element"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//OutputOperator/iri"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//OutputOperator/address"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//OutputOperator/port"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//VariableDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//VariableDefinition/name"/>
@@ -236,13 +229,6 @@
     <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//BooleanDataType"/>
     <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//FloatDataType"/>
     <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StringDataType"/>
-    <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//InternationalizedResourceIdentifier">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//InternationalizedResourceIdentifier/scheme"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//InternationalizedResourceIdentifier/authority"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//InternationalizedResourceIdentifier/path"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//InternationalizedResourceIdentifier/query"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//InternationalizedResourceIdentifier/fragmentIRI"/>
-    </genClasses>
     <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//BooleanOperation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//BooleanOperation/left"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//BooleanOperation/operator"/>

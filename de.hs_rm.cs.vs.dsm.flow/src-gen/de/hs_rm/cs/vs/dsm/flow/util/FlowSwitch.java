@@ -444,13 +444,6 @@ public class FlowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FlowPackage.OUTPUT_OPERATOR_PARAMETER:
-      {
-        OutputOperatorParameter outputOperatorParameter = (OutputOperatorParameter)theEObject;
-        T result = caseOutputOperatorParameter(outputOperatorParameter);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case FlowPackage.VARIABLE_DEFINITION:
       {
         VariableDefinition variableDefinition = (VariableDefinition)theEObject;
@@ -588,13 +581,6 @@ public class FlowSwitch<T> extends Switch<T>
         T result = caseStringDataType(stringDataType);
         if (result == null) result = caseComplexDataType(stringDataType);
         if (result == null) result = caseDataType(stringDataType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FlowPackage.INTERNATIONALIZED_RESOURCE_IDENTIFIER:
-      {
-        InternationalizedResourceIdentifier internationalizedResourceIdentifier = (InternationalizedResourceIdentifier)theEObject;
-        T result = caseInternationalizedResourceIdentifier(internationalizedResourceIdentifier);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1427,22 +1413,6 @@ public class FlowSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Output Operator Parameter</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Output Operator Parameter</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseOutputOperatorParameter(OutputOperatorParameter object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Variable Definition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1710,22 +1680,6 @@ public class FlowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStringDataType(StringDataType object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Internationalized Resource Identifier</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Internationalized Resource Identifier</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseInternationalizedResourceIdentifier(InternationalizedResourceIdentifier object)
   {
     return null;
   }

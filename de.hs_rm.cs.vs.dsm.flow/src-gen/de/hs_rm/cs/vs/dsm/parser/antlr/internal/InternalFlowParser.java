@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalFlowParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_NUMBER", "RULE_BOOLVALUE", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'package'", "'{'", "'}'", "'import'", "','", "'='", "';'", "'.'", "'join'", "'('", "')'", "'['", "']'", "'ejoin'", "'filter'", "'split'", "'match'", "'sdif'", "'diff'", "'in'", "'tag'", "'WHERE'", "'?'", "'untag'", "'is'", "'class'", "'objectproperty'", "'datatype'", "'last'", "'min'", "'hrs'", "'sec'", "'elements'", "'now'", "'marker'", "'swrl'", "'Implies'", "'Antecedent'", "'Consequent'", "'ocl'", "'count'", "'std'", "'avg'", "'add'", "'sub'", "'mult'", "'div'", "'out'", "'structure'", "'stream'", "'use'", "'||'", "'&&'", "'=='", "'!='", "'>='", "'<='", "'>'", "'<'", "'+'", "'-'", "'*'", "'/'", "'int'", "'bool'", "'float'", "'string'", "'://'", "'#'", "'SELECT'", "'CONSTRUCT'", "'ASK'", "'DESCRIBE'", "'http'", "'ftp'", "'file'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_NUMBER", "RULE_BOOLVALUE", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'package'", "'{'", "'}'", "'import'", "','", "'='", "';'", "'.'", "'join'", "'('", "')'", "'['", "']'", "'ejoin'", "'filter'", "'split'", "'match'", "'sdif'", "'diff'", "'in'", "'tag'", "'WHERE'", "'?'", "'untag'", "'is'", "'class'", "'objectproperty'", "'datatype'", "'last'", "'min'", "'hrs'", "'sec'", "'elements'", "'now'", "'marker'", "'swrl'", "'Implies'", "'Antecedent'", "'Consequent'", "'ocl'", "'count'", "'std'", "'avg'", "'add'", "'sub'", "'mult'", "'div'", "'out'", "'structure'", "'stream'", "'use'", "'||'", "'&&'", "'=='", "'!='", "'>='", "'<='", "'>'", "'<'", "'+'", "'-'", "'*'", "'/'", "'int'", "'bool'", "'float'", "'string'", "'SELECT'", "'CONSTRUCT'", "'ASK'", "'DESCRIBE'"
     };
     public static final int T__68=68;
     public static final int T__69=69;
@@ -76,15 +76,10 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
     public static final int T__47=47;
     public static final int T__82=82;
     public static final int T__44=44;
-    public static final int T__83=83;
     public static final int T__45=45;
     public static final int T__48=48;
     public static final int T__49=49;
-    public static final int T__85=85;
     public static final int RULE_SL_COMMENT=10;
-    public static final int T__84=84;
-    public static final int T__87=87;
-    public static final int T__86=86;
     public static final int RULE_BOOLVALUE=7;
     public static final int RULE_ML_COMMENT=9;
     public static final int T__30=30;
@@ -3035,31 +3030,29 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInputOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1260:1: ruleInputOperator returns [EObject current=null] : (otherlv_0= 'in' otherlv_1= '(' ( (lv_iri_2_0= ruleInternationalizedResourceIdentifier ) ) (otherlv_3= ',' ( (lv_iri_4_0= ruleInternationalizedResourceIdentifier ) ) )* otherlv_5= ',' ( (lv_port_6_0= RULE_NUMBER ) ) otherlv_7= ',' ( (lv_socket_8_0= RULE_STRING ) ) otherlv_9= ')' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1260:1: ruleInputOperator returns [EObject current=null] : (otherlv_0= 'in' otherlv_1= '(' ( (lv_iri_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_iri_4_0= RULE_STRING ) ) )* otherlv_5= ',' ( (lv_address_6_0= RULE_STRING ) ) otherlv_7= ',' ( (lv_port_8_0= RULE_NUMBER ) ) otherlv_9= ')' ) ;
     public final EObject ruleInputOperator() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
+        Token lv_iri_2_0=null;
         Token otherlv_3=null;
+        Token lv_iri_4_0=null;
         Token otherlv_5=null;
-        Token lv_port_6_0=null;
+        Token lv_address_6_0=null;
         Token otherlv_7=null;
-        Token lv_socket_8_0=null;
+        Token lv_port_8_0=null;
         Token otherlv_9=null;
-        EObject lv_iri_2_0 = null;
-
-        EObject lv_iri_4_0 = null;
-
 
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1263:28: ( (otherlv_0= 'in' otherlv_1= '(' ( (lv_iri_2_0= ruleInternationalizedResourceIdentifier ) ) (otherlv_3= ',' ( (lv_iri_4_0= ruleInternationalizedResourceIdentifier ) ) )* otherlv_5= ',' ( (lv_port_6_0= RULE_NUMBER ) ) otherlv_7= ',' ( (lv_socket_8_0= RULE_STRING ) ) otherlv_9= ')' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1264:1: (otherlv_0= 'in' otherlv_1= '(' ( (lv_iri_2_0= ruleInternationalizedResourceIdentifier ) ) (otherlv_3= ',' ( (lv_iri_4_0= ruleInternationalizedResourceIdentifier ) ) )* otherlv_5= ',' ( (lv_port_6_0= RULE_NUMBER ) ) otherlv_7= ',' ( (lv_socket_8_0= RULE_STRING ) ) otherlv_9= ')' )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1263:28: ( (otherlv_0= 'in' otherlv_1= '(' ( (lv_iri_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_iri_4_0= RULE_STRING ) ) )* otherlv_5= ',' ( (lv_address_6_0= RULE_STRING ) ) otherlv_7= ',' ( (lv_port_8_0= RULE_NUMBER ) ) otherlv_9= ')' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1264:1: (otherlv_0= 'in' otherlv_1= '(' ( (lv_iri_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_iri_4_0= RULE_STRING ) ) )* otherlv_5= ',' ( (lv_address_6_0= RULE_STRING ) ) otherlv_7= ',' ( (lv_port_8_0= RULE_NUMBER ) ) otherlv_9= ')' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1264:1: (otherlv_0= 'in' otherlv_1= '(' ( (lv_iri_2_0= ruleInternationalizedResourceIdentifier ) ) (otherlv_3= ',' ( (lv_iri_4_0= ruleInternationalizedResourceIdentifier ) ) )* otherlv_5= ',' ( (lv_port_6_0= RULE_NUMBER ) ) otherlv_7= ',' ( (lv_socket_8_0= RULE_STRING ) ) otherlv_9= ')' )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1264:3: otherlv_0= 'in' otherlv_1= '(' ( (lv_iri_2_0= ruleInternationalizedResourceIdentifier ) ) (otherlv_3= ',' ( (lv_iri_4_0= ruleInternationalizedResourceIdentifier ) ) )* otherlv_5= ',' ( (lv_port_6_0= RULE_NUMBER ) ) otherlv_7= ',' ( (lv_socket_8_0= RULE_STRING ) ) otherlv_9= ')'
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1264:1: (otherlv_0= 'in' otherlv_1= '(' ( (lv_iri_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_iri_4_0= RULE_STRING ) ) )* otherlv_5= ',' ( (lv_address_6_0= RULE_STRING ) ) otherlv_7= ',' ( (lv_port_8_0= RULE_NUMBER ) ) otherlv_9= ')' )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1264:3: otherlv_0= 'in' otherlv_1= '(' ( (lv_iri_2_0= RULE_STRING ) ) (otherlv_3= ',' ( (lv_iri_4_0= RULE_STRING ) ) )* otherlv_5= ',' ( (lv_address_6_0= RULE_STRING ) ) otherlv_7= ',' ( (lv_port_8_0= RULE_NUMBER ) ) otherlv_9= ')'
             {
             otherlv_0=(Token)match(input,31,FOLLOW_31_in_ruleInputOperator2745); 
 
@@ -3069,30 +3062,25 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_1, grammarAccess.getInputOperatorAccess().getLeftParenthesisKeyword_1());
                 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1272:1: ( (lv_iri_2_0= ruleInternationalizedResourceIdentifier ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1273:1: (lv_iri_2_0= ruleInternationalizedResourceIdentifier )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1272:1: ( (lv_iri_2_0= RULE_STRING ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1273:1: (lv_iri_2_0= RULE_STRING )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1273:1: (lv_iri_2_0= ruleInternationalizedResourceIdentifier )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1274:3: lv_iri_2_0= ruleInternationalizedResourceIdentifier
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1273:1: (lv_iri_2_0= RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1274:3: lv_iri_2_0= RULE_STRING
             {
-             
-            	        newCompositeNode(grammarAccess.getInputOperatorAccess().getIriInternationalizedResourceIdentifierParserRuleCall_2_0()); 
-            	    
-            pushFollow(FOLLOW_ruleInternationalizedResourceIdentifier_in_ruleInputOperator2778);
-            lv_iri_2_0=ruleInternationalizedResourceIdentifier();
+            lv_iri_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleInputOperator2774); 
 
-            state._fsp--;
-
+            			newLeafNode(lv_iri_2_0, grammarAccess.getInputOperatorAccess().getIriSTRINGTerminalRuleCall_2_0()); 
+            		
 
             	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getInputOperatorRule());
+            	            current = createModelElement(grammarAccess.getInputOperatorRule());
             	        }
-                   		add(
+                   		addWithLastConsumed(
                    			current, 
                    			"iri",
                     		lv_iri_2_0, 
-                    		"InternationalizedResourceIdentifier");
-            	        afterParserOrEnumRuleCall();
+                    		"STRING");
             	    
 
             }
@@ -3100,7 +3088,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1290:2: (otherlv_3= ',' ( (lv_iri_4_0= ruleInternationalizedResourceIdentifier ) ) )*
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1290:2: (otherlv_3= ',' ( (lv_iri_4_0= RULE_STRING ) ) )*
             loop14:
             do {
                 int alt14=2;
@@ -3109,8 +3097,20 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                 if ( (LA14_0==16) ) {
                     int LA14_1 = input.LA(2);
 
-                    if ( ((LA14_1>=85 && LA14_1<=87)) ) {
-                        alt14=1;
+                    if ( (LA14_1==RULE_STRING) ) {
+                        int LA14_2 = input.LA(3);
+
+                        if ( (LA14_2==16) ) {
+                            int LA14_3 = input.LA(4);
+
+                            if ( (LA14_3==RULE_STRING) ) {
+                                alt14=1;
+                            }
+
+
+                        }
+
+
                     }
 
 
@@ -3119,36 +3119,31 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1290:4: otherlv_3= ',' ( (lv_iri_4_0= ruleInternationalizedResourceIdentifier ) )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1290:4: otherlv_3= ',' ( (lv_iri_4_0= RULE_STRING ) )
             	    {
-            	    otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleInputOperator2791); 
+            	    otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleInputOperator2792); 
 
             	        	newLeafNode(otherlv_3, grammarAccess.getInputOperatorAccess().getCommaKeyword_3_0());
             	        
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1294:1: ( (lv_iri_4_0= ruleInternationalizedResourceIdentifier ) )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1295:1: (lv_iri_4_0= ruleInternationalizedResourceIdentifier )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1294:1: ( (lv_iri_4_0= RULE_STRING ) )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1295:1: (lv_iri_4_0= RULE_STRING )
             	    {
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1295:1: (lv_iri_4_0= ruleInternationalizedResourceIdentifier )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1296:3: lv_iri_4_0= ruleInternationalizedResourceIdentifier
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1295:1: (lv_iri_4_0= RULE_STRING )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1296:3: lv_iri_4_0= RULE_STRING
             	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getInputOperatorAccess().getIriInternationalizedResourceIdentifierParserRuleCall_3_1_0()); 
-            	    	    
-            	    pushFollow(FOLLOW_ruleInternationalizedResourceIdentifier_in_ruleInputOperator2812);
-            	    lv_iri_4_0=ruleInternationalizedResourceIdentifier();
+            	    lv_iri_4_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleInputOperator2809); 
 
-            	    state._fsp--;
-
+            	    			newLeafNode(lv_iri_4_0, grammarAccess.getInputOperatorAccess().getIriSTRINGTerminalRuleCall_3_1_0()); 
+            	    		
 
             	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getInputOperatorRule());
+            	    	            current = createModelElement(grammarAccess.getInputOperatorRule());
             	    	        }
-            	           		add(
+            	           		addWithLastConsumed(
             	           			current, 
             	           			"iri",
             	            		lv_iri_4_0, 
-            	            		"InternationalizedResourceIdentifier");
-            	    	        afterParserOrEnumRuleCall();
+            	            		"STRING");
             	    	    
 
             	    }
@@ -3165,19 +3160,19 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,16,FOLLOW_16_in_ruleInputOperator2826); 
+            otherlv_5=(Token)match(input,16,FOLLOW_16_in_ruleInputOperator2828); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getInputOperatorAccess().getCommaKeyword_4());
                 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1316:1: ( (lv_port_6_0= RULE_NUMBER ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1317:1: (lv_port_6_0= RULE_NUMBER )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1316:1: ( (lv_address_6_0= RULE_STRING ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1317:1: (lv_address_6_0= RULE_STRING )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1317:1: (lv_port_6_0= RULE_NUMBER )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1318:3: lv_port_6_0= RULE_NUMBER
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1317:1: (lv_address_6_0= RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1318:3: lv_address_6_0= RULE_STRING
             {
-            lv_port_6_0=(Token)match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_ruleInputOperator2843); 
+            lv_address_6_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleInputOperator2845); 
 
-            			newLeafNode(lv_port_6_0, grammarAccess.getInputOperatorAccess().getPortNUMBERTerminalRuleCall_5_0()); 
+            			newLeafNode(lv_address_6_0, grammarAccess.getInputOperatorAccess().getAddressSTRINGTerminalRuleCall_5_0()); 
             		
 
             	        if (current==null) {
@@ -3185,38 +3180,8 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	        }
                    		setWithLastConsumed(
                    			current, 
-                   			"port",
-                    		lv_port_6_0, 
-                    		"NUMBER");
-            	    
-
-            }
-
-
-            }
-
-            otherlv_7=(Token)match(input,16,FOLLOW_16_in_ruleInputOperator2860); 
-
-                	newLeafNode(otherlv_7, grammarAccess.getInputOperatorAccess().getCommaKeyword_6());
-                
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1338:1: ( (lv_socket_8_0= RULE_STRING ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1339:1: (lv_socket_8_0= RULE_STRING )
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1339:1: (lv_socket_8_0= RULE_STRING )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1340:3: lv_socket_8_0= RULE_STRING
-            {
-            lv_socket_8_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleInputOperator2877); 
-
-            			newLeafNode(lv_socket_8_0, grammarAccess.getInputOperatorAccess().getSocketSTRINGTerminalRuleCall_7_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getInputOperatorRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"socket",
-                    		lv_socket_8_0, 
+                   			"address",
+                    		lv_address_6_0, 
                     		"STRING");
             	    
 
@@ -3225,7 +3190,37 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,22,FOLLOW_22_in_ruleInputOperator2894); 
+            otherlv_7=(Token)match(input,16,FOLLOW_16_in_ruleInputOperator2862); 
+
+                	newLeafNode(otherlv_7, grammarAccess.getInputOperatorAccess().getCommaKeyword_6());
+                
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1338:1: ( (lv_port_8_0= RULE_NUMBER ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1339:1: (lv_port_8_0= RULE_NUMBER )
+            {
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1339:1: (lv_port_8_0= RULE_NUMBER )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1340:3: lv_port_8_0= RULE_NUMBER
+            {
+            lv_port_8_0=(Token)match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_ruleInputOperator2879); 
+
+            			newLeafNode(lv_port_8_0, grammarAccess.getInputOperatorAccess().getPortNUMBERTerminalRuleCall_7_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getInputOperatorRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"port",
+                    		lv_port_8_0, 
+                    		"NUMBER");
+            	    
+
+            }
+
+
+            }
+
+            otherlv_9=(Token)match(input,22,FOLLOW_22_in_ruleInputOperator2896); 
 
                 	newLeafNode(otherlv_9, grammarAccess.getInputOperatorAccess().getRightParenthesisKeyword_8());
                 
@@ -3262,13 +3257,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1370:2: iv_ruleReturnTypeOperator= ruleReturnTypeOperator EOF
             {
              newCompositeNode(grammarAccess.getReturnTypeOperatorRule()); 
-            pushFollow(FOLLOW_ruleReturnTypeOperator_in_entryRuleReturnTypeOperator2930);
+            pushFollow(FOLLOW_ruleReturnTypeOperator_in_entryRuleReturnTypeOperator2932);
             iv_ruleReturnTypeOperator=ruleReturnTypeOperator();
 
             state._fsp--;
 
              current =iv_ruleReturnTypeOperator; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleReturnTypeOperator2940); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleReturnTypeOperator2942); 
 
             }
 
@@ -3447,7 +3442,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getInputOperatorParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleInputOperator_in_ruleReturnTypeOperator2987);
+                    pushFollow(FOLLOW_ruleInputOperator_in_ruleReturnTypeOperator2989);
                     this_InputOperator_0=ruleInputOperator();
 
                     state._fsp--;
@@ -3465,7 +3460,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getJoinOperatorParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleJoinOperator_in_ruleReturnTypeOperator3014);
+                    pushFollow(FOLLOW_ruleJoinOperator_in_ruleReturnTypeOperator3016);
                     this_JoinOperator_1=ruleJoinOperator();
 
                     state._fsp--;
@@ -3483,7 +3478,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getSymmetricDifferenceOperatorParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleSymmetricDifferenceOperator_in_ruleReturnTypeOperator3041);
+                    pushFollow(FOLLOW_ruleSymmetricDifferenceOperator_in_ruleReturnTypeOperator3043);
                     this_SymmetricDifferenceOperator_2=ruleSymmetricDifferenceOperator();
 
                     state._fsp--;
@@ -3501,7 +3496,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getDifferenceOperatorParserRuleCall_3()); 
                         
-                    pushFollow(FOLLOW_ruleDifferenceOperator_in_ruleReturnTypeOperator3068);
+                    pushFollow(FOLLOW_ruleDifferenceOperator_in_ruleReturnTypeOperator3070);
                     this_DifferenceOperator_3=ruleDifferenceOperator();
 
                     state._fsp--;
@@ -3519,7 +3514,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getTagOperatorParserRuleCall_4()); 
                         
-                    pushFollow(FOLLOW_ruleTagOperator_in_ruleReturnTypeOperator3095);
+                    pushFollow(FOLLOW_ruleTagOperator_in_ruleReturnTypeOperator3097);
                     this_TagOperator_4=ruleTagOperator();
 
                     state._fsp--;
@@ -3537,7 +3532,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getUnTagOperatorParserRuleCall_5()); 
                         
-                    pushFollow(FOLLOW_ruleUnTagOperator_in_ruleReturnTypeOperator3122);
+                    pushFollow(FOLLOW_ruleUnTagOperator_in_ruleReturnTypeOperator3124);
                     this_UnTagOperator_5=ruleUnTagOperator();
 
                     state._fsp--;
@@ -3555,7 +3550,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getFilterOperatorParserRuleCall_6()); 
                         
-                    pushFollow(FOLLOW_ruleFilterOperator_in_ruleReturnTypeOperator3149);
+                    pushFollow(FOLLOW_ruleFilterOperator_in_ruleReturnTypeOperator3151);
                     this_FilterOperator_6=ruleFilterOperator();
 
                     state._fsp--;
@@ -3573,7 +3568,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getSplitOperatorParserRuleCall_7()); 
                         
-                    pushFollow(FOLLOW_ruleSplitOperator_in_ruleReturnTypeOperator3176);
+                    pushFollow(FOLLOW_ruleSplitOperator_in_ruleReturnTypeOperator3178);
                     this_SplitOperator_7=ruleSplitOperator();
 
                     state._fsp--;
@@ -3591,7 +3586,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getCountOperatorParserRuleCall_8()); 
                         
-                    pushFollow(FOLLOW_ruleCountOperator_in_ruleReturnTypeOperator3203);
+                    pushFollow(FOLLOW_ruleCountOperator_in_ruleReturnTypeOperator3205);
                     this_CountOperator_8=ruleCountOperator();
 
                     state._fsp--;
@@ -3609,7 +3604,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getStandardDeviationOperatorParserRuleCall_9()); 
                         
-                    pushFollow(FOLLOW_ruleStandardDeviationOperator_in_ruleReturnTypeOperator3230);
+                    pushFollow(FOLLOW_ruleStandardDeviationOperator_in_ruleReturnTypeOperator3232);
                     this_StandardDeviationOperator_9=ruleStandardDeviationOperator();
 
                     state._fsp--;
@@ -3627,7 +3622,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getAverageOperatorParserRuleCall_10()); 
                         
-                    pushFollow(FOLLOW_ruleAverageOperator_in_ruleReturnTypeOperator3257);
+                    pushFollow(FOLLOW_ruleAverageOperator_in_ruleReturnTypeOperator3259);
                     this_AverageOperator_10=ruleAverageOperator();
 
                     state._fsp--;
@@ -3645,7 +3640,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getElementJoinOperatorParserRuleCall_11()); 
                         
-                    pushFollow(FOLLOW_ruleElementJoinOperator_in_ruleReturnTypeOperator3284);
+                    pushFollow(FOLLOW_ruleElementJoinOperator_in_ruleReturnTypeOperator3286);
                     this_ElementJoinOperator_11=ruleElementJoinOperator();
 
                     state._fsp--;
@@ -3663,7 +3658,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getMatchOperatorParserRuleCall_12()); 
                         
-                    pushFollow(FOLLOW_ruleMatchOperator_in_ruleReturnTypeOperator3311);
+                    pushFollow(FOLLOW_ruleMatchOperator_in_ruleReturnTypeOperator3313);
                     this_MatchOperator_12=ruleMatchOperator();
 
                     state._fsp--;
@@ -3681,7 +3676,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getOCLOperatorParserRuleCall_13()); 
                         
-                    pushFollow(FOLLOW_ruleOCLOperator_in_ruleReturnTypeOperator3338);
+                    pushFollow(FOLLOW_ruleOCLOperator_in_ruleReturnTypeOperator3340);
                     this_OCLOperator_13=ruleOCLOperator();
 
                     state._fsp--;
@@ -3699,7 +3694,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getSWRLOperatorParserRuleCall_14()); 
                         
-                    pushFollow(FOLLOW_ruleSWRLOperator_in_ruleReturnTypeOperator3365);
+                    pushFollow(FOLLOW_ruleSWRLOperator_in_ruleReturnTypeOperator3367);
                     this_SWRLOperator_14=ruleSWRLOperator();
 
                     state._fsp--;
@@ -3717,7 +3712,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getAdditionOperatorParserRuleCall_15()); 
                         
-                    pushFollow(FOLLOW_ruleAdditionOperator_in_ruleReturnTypeOperator3392);
+                    pushFollow(FOLLOW_ruleAdditionOperator_in_ruleReturnTypeOperator3394);
                     this_AdditionOperator_15=ruleAdditionOperator();
 
                     state._fsp--;
@@ -3735,7 +3730,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getSubtractionOperatorParserRuleCall_16()); 
                         
-                    pushFollow(FOLLOW_ruleSubtractionOperator_in_ruleReturnTypeOperator3419);
+                    pushFollow(FOLLOW_ruleSubtractionOperator_in_ruleReturnTypeOperator3421);
                     this_SubtractionOperator_16=ruleSubtractionOperator();
 
                     state._fsp--;
@@ -3753,7 +3748,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getMultiplicationOperatorParserRuleCall_17()); 
                         
-                    pushFollow(FOLLOW_ruleMultiplicationOperator_in_ruleReturnTypeOperator3446);
+                    pushFollow(FOLLOW_ruleMultiplicationOperator_in_ruleReturnTypeOperator3448);
                     this_MultiplicationOperator_17=ruleMultiplicationOperator();
 
                     state._fsp--;
@@ -3771,7 +3766,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getDivisionOperatorParserRuleCall_18()); 
                         
-                    pushFollow(FOLLOW_ruleDivisionOperator_in_ruleReturnTypeOperator3473);
+                    pushFollow(FOLLOW_ruleDivisionOperator_in_ruleReturnTypeOperator3475);
                     this_DivisionOperator_18=ruleDivisionOperator();
 
                     state._fsp--;
@@ -3816,13 +3811,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1580:2: iv_ruleNoReturnTypeOperator= ruleNoReturnTypeOperator EOF
             {
              newCompositeNode(grammarAccess.getNoReturnTypeOperatorRule()); 
-            pushFollow(FOLLOW_ruleNoReturnTypeOperator_in_entryRuleNoReturnTypeOperator3508);
+            pushFollow(FOLLOW_ruleNoReturnTypeOperator_in_entryRuleNoReturnTypeOperator3510);
             iv_ruleNoReturnTypeOperator=ruleNoReturnTypeOperator();
 
             state._fsp--;
 
              current =iv_ruleNoReturnTypeOperator; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNoReturnTypeOperator3518); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNoReturnTypeOperator3520); 
 
             }
 
@@ -3856,7 +3851,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getNoReturnTypeOperatorAccess().getOutputOperatorParserRuleCall()); 
                 
-            pushFollow(FOLLOW_ruleOutputOperator_in_ruleNoReturnTypeOperator3564);
+            pushFollow(FOLLOW_ruleOutputOperator_in_ruleNoReturnTypeOperator3566);
             this_OutputOperator_0=ruleOutputOperator();
 
             state._fsp--;
@@ -3895,13 +3890,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1610:2: iv_ruleTagOperator= ruleTagOperator EOF
             {
              newCompositeNode(grammarAccess.getTagOperatorRule()); 
-            pushFollow(FOLLOW_ruleTagOperator_in_entryRuleTagOperator3598);
+            pushFollow(FOLLOW_ruleTagOperator_in_entryRuleTagOperator3600);
             iv_ruleTagOperator=ruleTagOperator();
 
             state._fsp--;
 
              current =iv_ruleTagOperator; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTagOperator3608); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTagOperator3610); 
 
             }
 
@@ -3941,11 +3936,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1621:1: (otherlv_0= 'tag' otherlv_1= '(' ( (lv_parameters_2_0= ruleTagElement ) ) (otherlv_3= ',' ( (lv_parameters_4_0= ruleTagElement ) ) )* otherlv_5= ')' )
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1621:3: otherlv_0= 'tag' otherlv_1= '(' ( (lv_parameters_2_0= ruleTagElement ) ) (otherlv_3= ',' ( (lv_parameters_4_0= ruleTagElement ) ) )* otherlv_5= ')'
             {
-            otherlv_0=(Token)match(input,32,FOLLOW_32_in_ruleTagOperator3645); 
+            otherlv_0=(Token)match(input,32,FOLLOW_32_in_ruleTagOperator3647); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getTagOperatorAccess().getTagKeyword_0());
                 
-            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleTagOperator3657); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleTagOperator3659); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getTagOperatorAccess().getLeftParenthesisKeyword_1());
                 
@@ -3958,7 +3953,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getTagOperatorAccess().getParametersTagElementParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleTagElement_in_ruleTagOperator3678);
+            pushFollow(FOLLOW_ruleTagElement_in_ruleTagOperator3680);
             lv_parameters_2_0=ruleTagElement();
 
             state._fsp--;
@@ -3995,7 +3990,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1647:4: otherlv_3= ',' ( (lv_parameters_4_0= ruleTagElement ) )
             	    {
-            	    otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleTagOperator3691); 
+            	    otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleTagOperator3693); 
 
             	        	newLeafNode(otherlv_3, grammarAccess.getTagOperatorAccess().getCommaKeyword_3_0());
             	        
@@ -4008,7 +4003,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getTagOperatorAccess().getParametersTagElementParserRuleCall_3_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleTagElement_in_ruleTagOperator3712);
+            	    pushFollow(FOLLOW_ruleTagElement_in_ruleTagOperator3714);
             	    lv_parameters_4_0=ruleTagElement();
 
             	    state._fsp--;
@@ -4039,7 +4034,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleTagOperator3726); 
+            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleTagOperator3728); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getTagOperatorAccess().getRightParenthesisKeyword_4());
                 
@@ -4076,13 +4071,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1685:2: iv_ruleQueryTagOperator= ruleQueryTagOperator EOF
             {
              newCompositeNode(grammarAccess.getQueryTagOperatorRule()); 
-            pushFollow(FOLLOW_ruleQueryTagOperator_in_entryRuleQueryTagOperator3764);
+            pushFollow(FOLLOW_ruleQueryTagOperator_in_entryRuleQueryTagOperator3766);
             iv_ruleQueryTagOperator=ruleQueryTagOperator();
 
             state._fsp--;
 
              current =iv_ruleQueryTagOperator; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQueryTagOperator3774); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQueryTagOperator3776); 
 
             }
 
@@ -4120,7 +4115,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1696:1: (otherlv_0= '{' ( (lv_queryType_1_0= ruleSparqlQueryType ) ) ( (lv_query_2_0= ruleSparqlQuery ) ) otherlv_3= '}' )
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1696:3: otherlv_0= '{' ( (lv_queryType_1_0= ruleSparqlQueryType ) ) ( (lv_query_2_0= ruleSparqlQuery ) ) otherlv_3= '}'
             {
-            otherlv_0=(Token)match(input,13,FOLLOW_13_in_ruleQueryTagOperator3811); 
+            otherlv_0=(Token)match(input,13,FOLLOW_13_in_ruleQueryTagOperator3813); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getQueryTagOperatorAccess().getLeftCurlyBracketKeyword_0());
                 
@@ -4133,7 +4128,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getQueryTagOperatorAccess().getQueryTypeSparqlQueryTypeEnumRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleSparqlQueryType_in_ruleQueryTagOperator3832);
+            pushFollow(FOLLOW_ruleSparqlQueryType_in_ruleQueryTagOperator3834);
             lv_queryType_1_0=ruleSparqlQueryType();
 
             state._fsp--;
@@ -4164,7 +4159,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getQueryTagOperatorAccess().getQuerySparqlQueryParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleSparqlQuery_in_ruleQueryTagOperator3853);
+            pushFollow(FOLLOW_ruleSparqlQuery_in_ruleQueryTagOperator3855);
             lv_query_2_0=ruleSparqlQuery();
 
             state._fsp--;
@@ -4186,7 +4181,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleQueryTagOperator3865); 
+            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleQueryTagOperator3867); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getQueryTagOperatorAccess().getRightCurlyBracketKeyword_3());
                 
@@ -4223,13 +4218,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1750:2: iv_ruleSparqlQuery= ruleSparqlQuery EOF
             {
              newCompositeNode(grammarAccess.getSparqlQueryRule()); 
-            pushFollow(FOLLOW_ruleSparqlQuery_in_entryRuleSparqlQuery3901);
+            pushFollow(FOLLOW_ruleSparqlQuery_in_entryRuleSparqlQuery3903);
             iv_ruleSparqlQuery=ruleSparqlQuery();
 
             state._fsp--;
 
              current =iv_ruleSparqlQuery; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSparqlQuery3911); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSparqlQuery3913); 
 
             }
 
@@ -4275,7 +4270,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getSparqlQueryAccess().getVariableSparqlQueryVariableParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleSparqlQueryVariable_in_ruleSparqlQuery3957);
+            pushFollow(FOLLOW_ruleSparqlQueryVariable_in_ruleSparqlQuery3959);
             lv_variable_0_0=ruleSparqlQueryVariable();
 
             state._fsp--;
@@ -4297,15 +4292,15 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,33,FOLLOW_33_in_ruleSparqlQuery3969); 
+            otherlv_1=(Token)match(input,33,FOLLOW_33_in_ruleSparqlQuery3971); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getSparqlQueryAccess().getWHEREKeyword_1());
                 
-            otherlv_2=(Token)match(input,13,FOLLOW_13_in_ruleSparqlQuery3981); 
+            otherlv_2=(Token)match(input,13,FOLLOW_13_in_ruleSparqlQuery3983); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getSparqlQueryAccess().getLeftCurlyBracketKeyword_2());
                 
-            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleSparqlQuery3993); 
+            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleSparqlQuery3995); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getSparqlQueryAccess().getRightCurlyBracketKeyword_3());
                 
@@ -4342,13 +4337,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1801:2: iv_ruleSparqlQueryVariable= ruleSparqlQueryVariable EOF
             {
              newCompositeNode(grammarAccess.getSparqlQueryVariableRule()); 
-            pushFollow(FOLLOW_ruleSparqlQueryVariable_in_entryRuleSparqlQueryVariable4029);
+            pushFollow(FOLLOW_ruleSparqlQueryVariable_in_entryRuleSparqlQueryVariable4031);
             iv_ruleSparqlQueryVariable=ruleSparqlQueryVariable();
 
             state._fsp--;
 
              current =iv_ruleSparqlQueryVariable; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSparqlQueryVariable4039); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSparqlQueryVariable4041); 
 
             }
 
@@ -4384,7 +4379,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1812:1: (otherlv_0= '?' ( (lv_variable_1_0= RULE_STRING ) ) (otherlv_2= '?' ( (lv_variable_3_0= RULE_STRING ) ) )* )
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1812:3: otherlv_0= '?' ( (lv_variable_1_0= RULE_STRING ) ) (otherlv_2= '?' ( (lv_variable_3_0= RULE_STRING ) ) )*
             {
-            otherlv_0=(Token)match(input,34,FOLLOW_34_in_ruleSparqlQueryVariable4076); 
+            otherlv_0=(Token)match(input,34,FOLLOW_34_in_ruleSparqlQueryVariable4078); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSparqlQueryVariableAccess().getQuestionMarkKeyword_0());
                 
@@ -4394,7 +4389,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1817:1: (lv_variable_1_0= RULE_STRING )
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1818:3: lv_variable_1_0= RULE_STRING
             {
-            lv_variable_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleSparqlQueryVariable4093); 
+            lv_variable_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleSparqlQueryVariable4095); 
 
             			newLeafNode(lv_variable_1_0, grammarAccess.getSparqlQueryVariableAccess().getVariableSTRINGTerminalRuleCall_1_0()); 
             		
@@ -4429,7 +4424,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1834:4: otherlv_2= '?' ( (lv_variable_3_0= RULE_STRING ) )
             	    {
-            	    otherlv_2=(Token)match(input,34,FOLLOW_34_in_ruleSparqlQueryVariable4111); 
+            	    otherlv_2=(Token)match(input,34,FOLLOW_34_in_ruleSparqlQueryVariable4113); 
 
             	        	newLeafNode(otherlv_2, grammarAccess.getSparqlQueryVariableAccess().getQuestionMarkKeyword_2_0());
             	        
@@ -4439,7 +4434,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1839:1: (lv_variable_3_0= RULE_STRING )
             	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1840:3: lv_variable_3_0= RULE_STRING
             	    {
-            	    lv_variable_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleSparqlQueryVariable4128); 
+            	    lv_variable_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleSparqlQueryVariable4130); 
 
             	    			newLeafNode(lv_variable_3_0, grammarAccess.getSparqlQueryVariableAccess().getVariableSTRINGTerminalRuleCall_2_1_0()); 
             	    		
@@ -4501,13 +4496,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1866:2: iv_ruleUnTagOperator= ruleUnTagOperator EOF
             {
              newCompositeNode(grammarAccess.getUnTagOperatorRule()); 
-            pushFollow(FOLLOW_ruleUnTagOperator_in_entryRuleUnTagOperator4171);
+            pushFollow(FOLLOW_ruleUnTagOperator_in_entryRuleUnTagOperator4173);
             iv_ruleUnTagOperator=ruleUnTagOperator();
 
             state._fsp--;
 
              current =iv_ruleUnTagOperator; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUnTagOperator4181); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUnTagOperator4183); 
 
             }
 
@@ -4550,11 +4545,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1877:1: (otherlv_0= 'untag' otherlv_1= '(' ( (lv_parameters_2_0= ruleUnTagElement ) ) (otherlv_3= ',' ( (lv_parameters_4_0= ruleUnTagElement ) ) )* otherlv_5= ',' ( (lv_stream_6_0= ruleStreamOperatorParameter ) ) otherlv_7= ')' )
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1877:3: otherlv_0= 'untag' otherlv_1= '(' ( (lv_parameters_2_0= ruleUnTagElement ) ) (otherlv_3= ',' ( (lv_parameters_4_0= ruleUnTagElement ) ) )* otherlv_5= ',' ( (lv_stream_6_0= ruleStreamOperatorParameter ) ) otherlv_7= ')'
             {
-            otherlv_0=(Token)match(input,35,FOLLOW_35_in_ruleUnTagOperator4218); 
+            otherlv_0=(Token)match(input,35,FOLLOW_35_in_ruleUnTagOperator4220); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getUnTagOperatorAccess().getUntagKeyword_0());
                 
-            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleUnTagOperator4230); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleUnTagOperator4232); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getUnTagOperatorAccess().getLeftParenthesisKeyword_1());
                 
@@ -4567,7 +4562,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getUnTagOperatorAccess().getParametersUnTagElementParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleUnTagElement_in_ruleUnTagOperator4251);
+            pushFollow(FOLLOW_ruleUnTagElement_in_ruleUnTagOperator4253);
             lv_parameters_2_0=ruleUnTagElement();
 
             state._fsp--;
@@ -4610,7 +4605,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1903:4: otherlv_3= ',' ( (lv_parameters_4_0= ruleUnTagElement ) )
             	    {
-            	    otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleUnTagOperator4264); 
+            	    otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleUnTagOperator4266); 
 
             	        	newLeafNode(otherlv_3, grammarAccess.getUnTagOperatorAccess().getCommaKeyword_3_0());
             	        
@@ -4623,7 +4618,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getUnTagOperatorAccess().getParametersUnTagElementParserRuleCall_3_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleUnTagElement_in_ruleUnTagOperator4285);
+            	    pushFollow(FOLLOW_ruleUnTagElement_in_ruleUnTagOperator4287);
             	    lv_parameters_4_0=ruleUnTagElement();
 
             	    state._fsp--;
@@ -4654,7 +4649,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,16,FOLLOW_16_in_ruleUnTagOperator4299); 
+            otherlv_5=(Token)match(input,16,FOLLOW_16_in_ruleUnTagOperator4301); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getUnTagOperatorAccess().getCommaKeyword_4());
                 
@@ -4667,7 +4662,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getUnTagOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_5_0()); 
             	    
-            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_ruleUnTagOperator4320);
+            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_ruleUnTagOperator4322);
             lv_stream_6_0=ruleStreamOperatorParameter();
 
             state._fsp--;
@@ -4689,7 +4684,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,22,FOLLOW_22_in_ruleUnTagOperator4332); 
+            otherlv_7=(Token)match(input,22,FOLLOW_22_in_ruleUnTagOperator4334); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getUnTagOperatorAccess().getRightParenthesisKeyword_6());
                 
@@ -4726,13 +4721,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:1961:2: iv_ruleUnTagElement= ruleUnTagElement EOF
             {
              newCompositeNode(grammarAccess.getUnTagElementRule()); 
-            pushFollow(FOLLOW_ruleUnTagElement_in_entryRuleUnTagElement4368);
+            pushFollow(FOLLOW_ruleUnTagElement_in_entryRuleUnTagElement4370);
             iv_ruleUnTagElement=ruleUnTagElement();
 
             state._fsp--;
 
              current =iv_ruleUnTagElement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUnTagElement4378); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUnTagElement4380); 
 
             }
 
@@ -4779,7 +4774,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	            current = createModelElement(grammarAccess.getUnTagElementRule());
             	        }
                     
-            otherlv_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleUnTagElement4423); 
+            otherlv_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleUnTagElement4425); 
 
             		newLeafNode(otherlv_0, grammarAccess.getUnTagElementAccess().getElementOWLClassCrossReference_0_0()); 
             	
@@ -4789,7 +4784,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,36,FOLLOW_36_in_ruleUnTagElement4435); 
+            otherlv_1=(Token)match(input,36,FOLLOW_36_in_ruleUnTagElement4437); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getUnTagElementAccess().getIsKeyword_1());
                 
@@ -4802,7 +4797,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getUnTagElementAccess().getReferenceStreamAccessParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleStreamAccess_in_ruleUnTagElement4456);
+            pushFollow(FOLLOW_ruleStreamAccess_in_ruleUnTagElement4458);
             lv_reference_2_0=ruleStreamAccess();
 
             state._fsp--;
@@ -4857,13 +4852,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2017:2: iv_ruleTagElement= ruleTagElement EOF
             {
              newCompositeNode(grammarAccess.getTagElementRule()); 
-            pushFollow(FOLLOW_ruleTagElement_in_entryRuleTagElement4492);
+            pushFollow(FOLLOW_ruleTagElement_in_entryRuleTagElement4494);
             iv_ruleTagElement=ruleTagElement();
 
             state._fsp--;
 
              current =iv_ruleTagElement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTagElement4502); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTagElement4504); 
 
             }
 
@@ -4970,7 +4965,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getTagElementAccess().getTagClassElementParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleTagClassElement_in_ruleTagElement4549);
+                    pushFollow(FOLLOW_ruleTagClassElement_in_ruleTagElement4551);
                     this_TagClassElement_0=ruleTagClassElement();
 
                     state._fsp--;
@@ -4988,7 +4983,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getTagElementAccess().getTagObjectPropertyElementParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleTagObjectPropertyElement_in_ruleTagElement4576);
+                    pushFollow(FOLLOW_ruleTagObjectPropertyElement_in_ruleTagElement4578);
                     this_TagObjectPropertyElement_1=ruleTagObjectPropertyElement();
 
                     state._fsp--;
@@ -5006,7 +5001,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getTagElementAccess().getTagDataTypePropertyElementParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleTagDataTypePropertyElement_in_ruleTagElement4603);
+                    pushFollow(FOLLOW_ruleTagDataTypePropertyElement_in_ruleTagElement4605);
                     this_TagDataTypePropertyElement_2=ruleTagDataTypePropertyElement();
 
                     state._fsp--;
@@ -5051,13 +5046,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2067:2: iv_ruleTagClassElement= ruleTagClassElement EOF
             {
              newCompositeNode(grammarAccess.getTagClassElementRule()); 
-            pushFollow(FOLLOW_ruleTagClassElement_in_entryRuleTagClassElement4638);
+            pushFollow(FOLLOW_ruleTagClassElement_in_entryRuleTagClassElement4640);
             iv_ruleTagClassElement=ruleTagClassElement();
 
             state._fsp--;
 
              current =iv_ruleTagClassElement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTagClassElement4648); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTagClassElement4650); 
 
             }
 
@@ -5103,7 +5098,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getTagClassElementAccess().getReferenceStreamAccessParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleStreamAccess_in_ruleTagClassElement4694);
+            pushFollow(FOLLOW_ruleStreamAccess_in_ruleTagClassElement4696);
             lv_reference_0_0=ruleStreamAccess();
 
             state._fsp--;
@@ -5125,11 +5120,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,36,FOLLOW_36_in_ruleTagClassElement4706); 
+            otherlv_1=(Token)match(input,36,FOLLOW_36_in_ruleTagClassElement4708); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getTagClassElementAccess().getIsKeyword_1());
                 
-            otherlv_2=(Token)match(input,37,FOLLOW_37_in_ruleTagClassElement4718); 
+            otherlv_2=(Token)match(input,37,FOLLOW_37_in_ruleTagClassElement4720); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getTagClassElementAccess().getClassKeyword_2());
                 
@@ -5144,7 +5139,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	            current = createModelElement(grammarAccess.getTagClassElementRule());
             	        }
                     
-            otherlv_3=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTagClassElement4738); 
+            otherlv_3=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTagClassElement4740); 
 
             		newLeafNode(otherlv_3, grammarAccess.getTagClassElementAccess().getElementOWLClassCrossReference_3_0()); 
             	
@@ -5187,13 +5182,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2127:2: iv_ruleTagObjectPropertyElement= ruleTagObjectPropertyElement EOF
             {
              newCompositeNode(grammarAccess.getTagObjectPropertyElementRule()); 
-            pushFollow(FOLLOW_ruleTagObjectPropertyElement_in_entryRuleTagObjectPropertyElement4774);
+            pushFollow(FOLLOW_ruleTagObjectPropertyElement_in_entryRuleTagObjectPropertyElement4776);
             iv_ruleTagObjectPropertyElement=ruleTagObjectPropertyElement();
 
             state._fsp--;
 
              current =iv_ruleTagObjectPropertyElement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTagObjectPropertyElement4784); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTagObjectPropertyElement4786); 
 
             }
 
@@ -5239,7 +5234,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getTagObjectPropertyElementAccess().getReferenceStreamAccessParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleStreamAccess_in_ruleTagObjectPropertyElement4830);
+            pushFollow(FOLLOW_ruleStreamAccess_in_ruleTagObjectPropertyElement4832);
             lv_reference_0_0=ruleStreamAccess();
 
             state._fsp--;
@@ -5261,11 +5256,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,36,FOLLOW_36_in_ruleTagObjectPropertyElement4842); 
+            otherlv_1=(Token)match(input,36,FOLLOW_36_in_ruleTagObjectPropertyElement4844); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getTagObjectPropertyElementAccess().getIsKeyword_1());
                 
-            otherlv_2=(Token)match(input,38,FOLLOW_38_in_ruleTagObjectPropertyElement4854); 
+            otherlv_2=(Token)match(input,38,FOLLOW_38_in_ruleTagObjectPropertyElement4856); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getTagObjectPropertyElementAccess().getObjectpropertyKeyword_2());
                 
@@ -5280,7 +5275,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	            current = createModelElement(grammarAccess.getTagObjectPropertyElementRule());
             	        }
                     
-            otherlv_3=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTagObjectPropertyElement4874); 
+            otherlv_3=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTagObjectPropertyElement4876); 
 
             		newLeafNode(otherlv_3, grammarAccess.getTagObjectPropertyElementAccess().getElementOWLObjectPropertyCrossReference_3_0()); 
             	
@@ -5323,13 +5318,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2187:2: iv_ruleTagDataTypePropertyElement= ruleTagDataTypePropertyElement EOF
             {
              newCompositeNode(grammarAccess.getTagDataTypePropertyElementRule()); 
-            pushFollow(FOLLOW_ruleTagDataTypePropertyElement_in_entryRuleTagDataTypePropertyElement4910);
+            pushFollow(FOLLOW_ruleTagDataTypePropertyElement_in_entryRuleTagDataTypePropertyElement4912);
             iv_ruleTagDataTypePropertyElement=ruleTagDataTypePropertyElement();
 
             state._fsp--;
 
              current =iv_ruleTagDataTypePropertyElement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTagDataTypePropertyElement4920); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTagDataTypePropertyElement4922); 
 
             }
 
@@ -5375,7 +5370,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getTagDataTypePropertyElementAccess().getReferenceStreamAccessParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleStreamAccess_in_ruleTagDataTypePropertyElement4966);
+            pushFollow(FOLLOW_ruleStreamAccess_in_ruleTagDataTypePropertyElement4968);
             lv_reference_0_0=ruleStreamAccess();
 
             state._fsp--;
@@ -5397,11 +5392,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,36,FOLLOW_36_in_ruleTagDataTypePropertyElement4978); 
+            otherlv_1=(Token)match(input,36,FOLLOW_36_in_ruleTagDataTypePropertyElement4980); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getTagDataTypePropertyElementAccess().getIsKeyword_1());
                 
-            otherlv_2=(Token)match(input,39,FOLLOW_39_in_ruleTagDataTypePropertyElement4990); 
+            otherlv_2=(Token)match(input,39,FOLLOW_39_in_ruleTagDataTypePropertyElement4992); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getTagDataTypePropertyElementAccess().getDatatypeKeyword_2());
                 
@@ -5416,7 +5411,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	            current = createModelElement(grammarAccess.getTagDataTypePropertyElementRule());
             	        }
                     
-            otherlv_3=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTagDataTypePropertyElement5010); 
+            otherlv_3=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTagDataTypePropertyElement5012); 
 
             		newLeafNode(otherlv_3, grammarAccess.getTagDataTypePropertyElementAccess().getElementOWLDatatypePropertyCrossReference_3_0()); 
             	
@@ -5459,13 +5454,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2247:2: iv_ruleBarrierOperator= ruleBarrierOperator EOF
             {
              newCompositeNode(grammarAccess.getBarrierOperatorRule()); 
-            pushFollow(FOLLOW_ruleBarrierOperator_in_entryRuleBarrierOperator5046);
+            pushFollow(FOLLOW_ruleBarrierOperator_in_entryRuleBarrierOperator5048);
             iv_ruleBarrierOperator=ruleBarrierOperator();
 
             state._fsp--;
 
              current =iv_ruleBarrierOperator; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBarrierOperator5056); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBarrierOperator5058); 
 
             }
 
@@ -5521,7 +5516,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getBarrierOperatorAccess().getWindowOperatorParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleWindowOperator_in_ruleBarrierOperator5103);
+                    pushFollow(FOLLOW_ruleWindowOperator_in_ruleBarrierOperator5105);
                     this_WindowOperator_0=ruleWindowOperator();
 
                     state._fsp--;
@@ -5539,7 +5534,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getBarrierOperatorAccess().getMarkerOperatorParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleMarkerOperator_in_ruleBarrierOperator5130);
+                    pushFollow(FOLLOW_ruleMarkerOperator_in_ruleBarrierOperator5132);
                     this_MarkerOperator_1=ruleMarkerOperator();
 
                     state._fsp--;
@@ -5584,13 +5579,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2287:2: iv_ruleWindowOperator= ruleWindowOperator EOF
             {
              newCompositeNode(grammarAccess.getWindowOperatorRule()); 
-            pushFollow(FOLLOW_ruleWindowOperator_in_entryRuleWindowOperator5165);
+            pushFollow(FOLLOW_ruleWindowOperator_in_entryRuleWindowOperator5167);
             iv_ruleWindowOperator=ruleWindowOperator();
 
             state._fsp--;
 
              current =iv_ruleWindowOperator; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleWindowOperator5175); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleWindowOperator5177); 
 
             }
 
@@ -5655,7 +5650,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2299:1: (lv_setting_0_0= 'last' )
                     // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2300:3: lv_setting_0_0= 'last'
                     {
-                    lv_setting_0_0=(Token)match(input,40,FOLLOW_40_in_ruleWindowOperator5219); 
+                    lv_setting_0_0=(Token)match(input,40,FOLLOW_40_in_ruleWindowOperator5221); 
 
                             newLeafNode(lv_setting_0_0, grammarAccess.getWindowOperatorAccess().getSettingLastKeyword_0_0_0());
                         
@@ -5677,7 +5672,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2314:1: (lv_value_1_0= RULE_NUMBER )
                     // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2315:3: lv_value_1_0= RULE_NUMBER
                     {
-                    lv_value_1_0=(Token)match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_ruleWindowOperator5249); 
+                    lv_value_1_0=(Token)match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_ruleWindowOperator5251); 
 
                     			newLeafNode(lv_value_1_0, grammarAccess.getWindowOperatorAccess().getValueNUMBERTerminalRuleCall_0_1_0()); 
                     		
@@ -5745,7 +5740,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                                 case 1 :
                                     // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2334:3: lv_unit_2_1= 'min'
                                     {
-                                    lv_unit_2_1=(Token)match(input,41,FOLLOW_41_in_ruleWindowOperator5274); 
+                                    lv_unit_2_1=(Token)match(input,41,FOLLOW_41_in_ruleWindowOperator5276); 
 
                                             newLeafNode(lv_unit_2_1, grammarAccess.getWindowOperatorAccess().getUnitMinKeyword_0_2_0_0());
                                         
@@ -5761,7 +5756,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                                 case 2 :
                                     // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2346:8: lv_unit_2_2= 'hrs'
                                     {
-                                    lv_unit_2_2=(Token)match(input,42,FOLLOW_42_in_ruleWindowOperator5303); 
+                                    lv_unit_2_2=(Token)match(input,42,FOLLOW_42_in_ruleWindowOperator5305); 
 
                                             newLeafNode(lv_unit_2_2, grammarAccess.getWindowOperatorAccess().getUnitHrsKeyword_0_2_0_1());
                                         
@@ -5777,7 +5772,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                                 case 3 :
                                     // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2358:8: lv_unit_2_3= 'sec'
                                     {
-                                    lv_unit_2_3=(Token)match(input,43,FOLLOW_43_in_ruleWindowOperator5332); 
+                                    lv_unit_2_3=(Token)match(input,43,FOLLOW_43_in_ruleWindowOperator5334); 
 
                                             newLeafNode(lv_unit_2_3, grammarAccess.getWindowOperatorAccess().getUnitSecKeyword_0_2_0_2());
                                         
@@ -5793,7 +5788,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                                 case 4 :
                                     // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2370:8: lv_unit_2_4= 'elements'
                                     {
-                                    lv_unit_2_4=(Token)match(input,44,FOLLOW_44_in_ruleWindowOperator5361); 
+                                    lv_unit_2_4=(Token)match(input,44,FOLLOW_44_in_ruleWindowOperator5363); 
 
                                             newLeafNode(lv_unit_2_4, grammarAccess.getWindowOperatorAccess().getUnitElementsKeyword_0_2_0_3());
                                         
@@ -5833,7 +5828,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2387:1: (lv_setting_3_0= 'now' )
                     // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2388:3: lv_setting_3_0= 'now'
                     {
-                    lv_setting_3_0=(Token)match(input,45,FOLLOW_45_in_ruleWindowOperator5403); 
+                    lv_setting_3_0=(Token)match(input,45,FOLLOW_45_in_ruleWindowOperator5405); 
 
                             newLeafNode(lv_setting_3_0, grammarAccess.getWindowOperatorAccess().getSettingNowKeyword_1_0());
                         
@@ -5885,13 +5880,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2411:2: iv_ruleMarkerOperator= ruleMarkerOperator EOF
             {
              newCompositeNode(grammarAccess.getMarkerOperatorRule()); 
-            pushFollow(FOLLOW_ruleMarkerOperator_in_entryRuleMarkerOperator5452);
+            pushFollow(FOLLOW_ruleMarkerOperator_in_entryRuleMarkerOperator5454);
             iv_ruleMarkerOperator=ruleMarkerOperator();
 
             state._fsp--;
 
              current =iv_ruleMarkerOperator; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMarkerOperator5462); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMarkerOperator5464); 
 
             }
 
@@ -5926,7 +5921,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2422:1: (otherlv_0= 'marker' ( (lv_expression_1_0= ruleExpression ) ) )
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2422:3: otherlv_0= 'marker' ( (lv_expression_1_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,46,FOLLOW_46_in_ruleMarkerOperator5499); 
+            otherlv_0=(Token)match(input,46,FOLLOW_46_in_ruleMarkerOperator5501); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getMarkerOperatorAccess().getMarkerKeyword_0());
                 
@@ -5939,7 +5934,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getMarkerOperatorAccess().getExpressionExpressionParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleExpression_in_ruleMarkerOperator5520);
+            pushFollow(FOLLOW_ruleExpression_in_ruleMarkerOperator5522);
             lv_expression_1_0=ruleExpression();
 
             state._fsp--;
@@ -5994,13 +5989,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2454:2: iv_ruleSWRLOperator= ruleSWRLOperator EOF
             {
              newCompositeNode(grammarAccess.getSWRLOperatorRule()); 
-            pushFollow(FOLLOW_ruleSWRLOperator_in_entryRuleSWRLOperator5556);
+            pushFollow(FOLLOW_ruleSWRLOperator_in_entryRuleSWRLOperator5558);
             iv_ruleSWRLOperator=ruleSWRLOperator();
 
             state._fsp--;
 
              current =iv_ruleSWRLOperator; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSWRLOperator5566); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSWRLOperator5568); 
 
             }
 
@@ -6043,11 +6038,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2465:1: (otherlv_0= 'swrl' otherlv_1= '(' ( (lv_rule_2_0= ruleSWRLRule ) ) otherlv_3= ',' ( (lv_barrier_4_0= ruleStreamOperatorParameter ) ) (otherlv_5= ',' ( (lv_barrier_6_0= ruleStreamOperatorParameter ) ) )* otherlv_7= ')' )
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2465:3: otherlv_0= 'swrl' otherlv_1= '(' ( (lv_rule_2_0= ruleSWRLRule ) ) otherlv_3= ',' ( (lv_barrier_4_0= ruleStreamOperatorParameter ) ) (otherlv_5= ',' ( (lv_barrier_6_0= ruleStreamOperatorParameter ) ) )* otherlv_7= ')'
             {
-            otherlv_0=(Token)match(input,47,FOLLOW_47_in_ruleSWRLOperator5603); 
+            otherlv_0=(Token)match(input,47,FOLLOW_47_in_ruleSWRLOperator5605); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSWRLOperatorAccess().getSwrlKeyword_0());
                 
-            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleSWRLOperator5615); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleSWRLOperator5617); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getSWRLOperatorAccess().getLeftParenthesisKeyword_1());
                 
@@ -6060,7 +6055,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getSWRLOperatorAccess().getRuleSWRLRuleParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleSWRLRule_in_ruleSWRLOperator5636);
+            pushFollow(FOLLOW_ruleSWRLRule_in_ruleSWRLOperator5638);
             lv_rule_2_0=ruleSWRLRule();
 
             state._fsp--;
@@ -6082,7 +6077,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleSWRLOperator5648); 
+            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleSWRLOperator5650); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getSWRLOperatorAccess().getCommaKeyword_3());
                 
@@ -6095,7 +6090,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getSWRLOperatorAccess().getBarrierStreamOperatorParameterParserRuleCall_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_ruleSWRLOperator5669);
+            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_ruleSWRLOperator5671);
             lv_barrier_4_0=ruleStreamOperatorParameter();
 
             state._fsp--;
@@ -6132,7 +6127,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2513:4: otherlv_5= ',' ( (lv_barrier_6_0= ruleStreamOperatorParameter ) )
             	    {
-            	    otherlv_5=(Token)match(input,16,FOLLOW_16_in_ruleSWRLOperator5682); 
+            	    otherlv_5=(Token)match(input,16,FOLLOW_16_in_ruleSWRLOperator5684); 
 
             	        	newLeafNode(otherlv_5, grammarAccess.getSWRLOperatorAccess().getCommaKeyword_5_0());
             	        
@@ -6145,7 +6140,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getSWRLOperatorAccess().getBarrierStreamOperatorParameterParserRuleCall_5_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleStreamOperatorParameter_in_ruleSWRLOperator5703);
+            	    pushFollow(FOLLOW_ruleStreamOperatorParameter_in_ruleSWRLOperator5705);
             	    lv_barrier_6_0=ruleStreamOperatorParameter();
 
             	    state._fsp--;
@@ -6176,7 +6171,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_7=(Token)match(input,22,FOLLOW_22_in_ruleSWRLOperator5717); 
+            otherlv_7=(Token)match(input,22,FOLLOW_22_in_ruleSWRLOperator5719); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getSWRLOperatorAccess().getRightParenthesisKeyword_6());
                 
@@ -6213,13 +6208,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2549:2: iv_ruleSWRLRule= ruleSWRLRule EOF
             {
              newCompositeNode(grammarAccess.getSWRLRuleRule()); 
-            pushFollow(FOLLOW_ruleSWRLRule_in_entryRuleSWRLRule5753);
+            pushFollow(FOLLOW_ruleSWRLRule_in_entryRuleSWRLRule5755);
             iv_ruleSWRLRule=ruleSWRLRule();
 
             state._fsp--;
 
              current =iv_ruleSWRLRule; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSWRLRule5763); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSWRLRule5765); 
 
             }
 
@@ -6259,11 +6254,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2560:1: (otherlv_0= 'Implies' otherlv_1= '(' ( (lv_antecedent_2_0= ruleAntecedentRule ) ) otherlv_3= ',' ( (lv_consequent_4_0= ruleConsequentRule ) ) otherlv_5= ')' )
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2560:3: otherlv_0= 'Implies' otherlv_1= '(' ( (lv_antecedent_2_0= ruleAntecedentRule ) ) otherlv_3= ',' ( (lv_consequent_4_0= ruleConsequentRule ) ) otherlv_5= ')'
             {
-            otherlv_0=(Token)match(input,48,FOLLOW_48_in_ruleSWRLRule5800); 
+            otherlv_0=(Token)match(input,48,FOLLOW_48_in_ruleSWRLRule5802); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSWRLRuleAccess().getImpliesKeyword_0());
                 
-            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleSWRLRule5812); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleSWRLRule5814); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getSWRLRuleAccess().getLeftParenthesisKeyword_1());
                 
@@ -6276,7 +6271,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getSWRLRuleAccess().getAntecedentAntecedentRuleParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleAntecedentRule_in_ruleSWRLRule5833);
+            pushFollow(FOLLOW_ruleAntecedentRule_in_ruleSWRLRule5835);
             lv_antecedent_2_0=ruleAntecedentRule();
 
             state._fsp--;
@@ -6298,7 +6293,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleSWRLRule5845); 
+            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleSWRLRule5847); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getSWRLRuleAccess().getCommaKeyword_3());
                 
@@ -6311,7 +6306,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getSWRLRuleAccess().getConsequentConsequentRuleParserRuleCall_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleConsequentRule_in_ruleSWRLRule5866);
+            pushFollow(FOLLOW_ruleConsequentRule_in_ruleSWRLRule5868);
             lv_consequent_4_0=ruleConsequentRule();
 
             state._fsp--;
@@ -6333,7 +6328,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleSWRLRule5878); 
+            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleSWRLRule5880); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getSWRLRuleAccess().getRightParenthesisKeyword_5());
                 
@@ -6370,13 +6365,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2622:2: iv_ruleAntecedentRule= ruleAntecedentRule EOF
             {
              newCompositeNode(grammarAccess.getAntecedentRuleRule()); 
-            pushFollow(FOLLOW_ruleAntecedentRule_in_entryRuleAntecedentRule5914);
+            pushFollow(FOLLOW_ruleAntecedentRule_in_entryRuleAntecedentRule5916);
             iv_ruleAntecedentRule=ruleAntecedentRule();
 
             state._fsp--;
 
              current =iv_ruleAntecedentRule; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAntecedentRule5924); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAntecedentRule5926); 
 
             }
 
@@ -6416,11 +6411,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2633:1: (otherlv_0= 'Antecedent' otherlv_1= '(' ( (lv_atoms_2_0= ruleRule ) ) (otherlv_3= ',' ( (lv_atoms_4_0= ruleRule ) ) )* otherlv_5= ')' )
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2633:3: otherlv_0= 'Antecedent' otherlv_1= '(' ( (lv_atoms_2_0= ruleRule ) ) (otherlv_3= ',' ( (lv_atoms_4_0= ruleRule ) ) )* otherlv_5= ')'
             {
-            otherlv_0=(Token)match(input,49,FOLLOW_49_in_ruleAntecedentRule5961); 
+            otherlv_0=(Token)match(input,49,FOLLOW_49_in_ruleAntecedentRule5963); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getAntecedentRuleAccess().getAntecedentKeyword_0());
                 
-            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleAntecedentRule5973); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleAntecedentRule5975); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getAntecedentRuleAccess().getLeftParenthesisKeyword_1());
                 
@@ -6433,7 +6428,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getAntecedentRuleAccess().getAtomsRuleParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleRule_in_ruleAntecedentRule5994);
+            pushFollow(FOLLOW_ruleRule_in_ruleAntecedentRule5996);
             lv_atoms_2_0=ruleRule();
 
             state._fsp--;
@@ -6470,7 +6465,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2659:4: otherlv_3= ',' ( (lv_atoms_4_0= ruleRule ) )
             	    {
-            	    otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleAntecedentRule6007); 
+            	    otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleAntecedentRule6009); 
 
             	        	newLeafNode(otherlv_3, grammarAccess.getAntecedentRuleAccess().getCommaKeyword_3_0());
             	        
@@ -6483,7 +6478,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getAntecedentRuleAccess().getAtomsRuleParserRuleCall_3_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleRule_in_ruleAntecedentRule6028);
+            	    pushFollow(FOLLOW_ruleRule_in_ruleAntecedentRule6030);
             	    lv_atoms_4_0=ruleRule();
 
             	    state._fsp--;
@@ -6514,7 +6509,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleAntecedentRule6042); 
+            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleAntecedentRule6044); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getAntecedentRuleAccess().getRightParenthesisKeyword_4());
                 
@@ -6551,13 +6546,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2695:2: iv_ruleConsequentRule= ruleConsequentRule EOF
             {
              newCompositeNode(grammarAccess.getConsequentRuleRule()); 
-            pushFollow(FOLLOW_ruleConsequentRule_in_entryRuleConsequentRule6078);
+            pushFollow(FOLLOW_ruleConsequentRule_in_entryRuleConsequentRule6080);
             iv_ruleConsequentRule=ruleConsequentRule();
 
             state._fsp--;
 
              current =iv_ruleConsequentRule; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleConsequentRule6088); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConsequentRule6090); 
 
             }
 
@@ -6597,11 +6592,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2706:1: (otherlv_0= 'Consequent' otherlv_1= '(' ( (lv_atoms_2_0= ruleRule ) ) (otherlv_3= ',' ( (lv_atoms_4_0= ruleRule ) ) )* otherlv_5= ')' )
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2706:3: otherlv_0= 'Consequent' otherlv_1= '(' ( (lv_atoms_2_0= ruleRule ) ) (otherlv_3= ',' ( (lv_atoms_4_0= ruleRule ) ) )* otherlv_5= ')'
             {
-            otherlv_0=(Token)match(input,50,FOLLOW_50_in_ruleConsequentRule6125); 
+            otherlv_0=(Token)match(input,50,FOLLOW_50_in_ruleConsequentRule6127); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getConsequentRuleAccess().getConsequentKeyword_0());
                 
-            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleConsequentRule6137); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleConsequentRule6139); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getConsequentRuleAccess().getLeftParenthesisKeyword_1());
                 
@@ -6614,7 +6609,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getConsequentRuleAccess().getAtomsRuleParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleRule_in_ruleConsequentRule6158);
+            pushFollow(FOLLOW_ruleRule_in_ruleConsequentRule6160);
             lv_atoms_2_0=ruleRule();
 
             state._fsp--;
@@ -6651,7 +6646,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2732:4: otherlv_3= ',' ( (lv_atoms_4_0= ruleRule ) )
             	    {
-            	    otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleConsequentRule6171); 
+            	    otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleConsequentRule6173); 
 
             	        	newLeafNode(otherlv_3, grammarAccess.getConsequentRuleAccess().getCommaKeyword_3_0());
             	        
@@ -6664,7 +6659,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getConsequentRuleAccess().getAtomsRuleParserRuleCall_3_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleRule_in_ruleConsequentRule6192);
+            	    pushFollow(FOLLOW_ruleRule_in_ruleConsequentRule6194);
             	    lv_atoms_4_0=ruleRule();
 
             	    state._fsp--;
@@ -6695,7 +6690,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleConsequentRule6206); 
+            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleConsequentRule6208); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getConsequentRuleAccess().getRightParenthesisKeyword_4());
                 
@@ -6732,13 +6727,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2768:2: iv_ruleRule= ruleRule EOF
             {
              newCompositeNode(grammarAccess.getRuleRule()); 
-            pushFollow(FOLLOW_ruleRule_in_entryRuleRule6242);
+            pushFollow(FOLLOW_ruleRule_in_entryRuleRule6244);
             iv_ruleRule=ruleRule();
 
             state._fsp--;
 
              current =iv_ruleRule; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRule6252); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRule6254); 
 
             }
 
@@ -6791,7 +6786,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	            current = createModelElement(grammarAccess.getRuleRule());
             	        }
                     
-            otherlv_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleRule6297); 
+            otherlv_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleRule6299); 
 
             		newLeafNode(otherlv_0, grammarAccess.getRuleAccess().getNameOWLObjectPropertyCrossReference_0_0()); 
             	
@@ -6801,11 +6796,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleRule6309); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleRule6311); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getRuleAccess().getLeftParenthesisKeyword_1());
                 
-            otherlv_2=(Token)match(input,34,FOLLOW_34_in_ruleRule6321); 
+            otherlv_2=(Token)match(input,34,FOLLOW_34_in_ruleRule6323); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getRuleAccess().getQuestionMarkKeyword_2());
                 
@@ -6818,7 +6813,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getRuleAccess().getVariableStreamAccessParserRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleStreamAccess_in_ruleRule6342);
+            pushFollow(FOLLOW_ruleStreamAccess_in_ruleRule6344);
             lv_variable_3_0=ruleStreamAccess();
 
             state._fsp--;
@@ -6855,11 +6850,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2818:4: otherlv_4= ',' otherlv_5= '?' ( (lv_variable_6_0= ruleStreamAccess ) )
             	    {
-            	    otherlv_4=(Token)match(input,16,FOLLOW_16_in_ruleRule6355); 
+            	    otherlv_4=(Token)match(input,16,FOLLOW_16_in_ruleRule6357); 
 
             	        	newLeafNode(otherlv_4, grammarAccess.getRuleAccess().getCommaKeyword_4_0());
             	        
-            	    otherlv_5=(Token)match(input,34,FOLLOW_34_in_ruleRule6367); 
+            	    otherlv_5=(Token)match(input,34,FOLLOW_34_in_ruleRule6369); 
 
             	        	newLeafNode(otherlv_5, grammarAccess.getRuleAccess().getQuestionMarkKeyword_4_1());
             	        
@@ -6872,7 +6867,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getRuleAccess().getVariableStreamAccessParserRuleCall_4_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleStreamAccess_in_ruleRule6388);
+            	    pushFollow(FOLLOW_ruleStreamAccess_in_ruleRule6390);
             	    lv_variable_6_0=ruleStreamAccess();
 
             	    state._fsp--;
@@ -6903,7 +6898,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_7=(Token)match(input,22,FOLLOW_22_in_ruleRule6402); 
+            otherlv_7=(Token)match(input,22,FOLLOW_22_in_ruleRule6404); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getRuleAccess().getRightParenthesisKeyword_5());
                 
@@ -6940,13 +6935,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2858:2: iv_ruleOCLOperator= ruleOCLOperator EOF
             {
              newCompositeNode(grammarAccess.getOCLOperatorRule()); 
-            pushFollow(FOLLOW_ruleOCLOperator_in_entryRuleOCLOperator6438);
+            pushFollow(FOLLOW_ruleOCLOperator_in_entryRuleOCLOperator6440);
             iv_ruleOCLOperator=ruleOCLOperator();
 
             state._fsp--;
 
              current =iv_ruleOCLOperator; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOCLOperator6448); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOCLOperator6450); 
 
             }
 
@@ -6985,11 +6980,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2869:1: (otherlv_0= 'ocl' otherlv_1= '(' ( (lv_constraint_2_0= RULE_STRING ) ) otherlv_3= ',' ( (lv_stream_4_0= ruleStreamOperatorParameter ) ) otherlv_5= ')' )
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2869:3: otherlv_0= 'ocl' otherlv_1= '(' ( (lv_constraint_2_0= RULE_STRING ) ) otherlv_3= ',' ( (lv_stream_4_0= ruleStreamOperatorParameter ) ) otherlv_5= ')'
             {
-            otherlv_0=(Token)match(input,51,FOLLOW_51_in_ruleOCLOperator6485); 
+            otherlv_0=(Token)match(input,51,FOLLOW_51_in_ruleOCLOperator6487); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getOCLOperatorAccess().getOclKeyword_0());
                 
-            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleOCLOperator6497); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleOCLOperator6499); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getOCLOperatorAccess().getLeftParenthesisKeyword_1());
                 
@@ -6999,7 +6994,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2878:1: (lv_constraint_2_0= RULE_STRING )
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2879:3: lv_constraint_2_0= RULE_STRING
             {
-            lv_constraint_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOCLOperator6514); 
+            lv_constraint_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOCLOperator6516); 
 
             			newLeafNode(lv_constraint_2_0, grammarAccess.getOCLOperatorAccess().getConstraintSTRINGTerminalRuleCall_2_0()); 
             		
@@ -7019,7 +7014,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleOCLOperator6531); 
+            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleOCLOperator6533); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getOCLOperatorAccess().getCommaKeyword_3());
                 
@@ -7032,7 +7027,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getOCLOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_ruleOCLOperator6552);
+            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_ruleOCLOperator6554);
             lv_stream_4_0=ruleStreamOperatorParameter();
 
             state._fsp--;
@@ -7054,7 +7049,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleOCLOperator6564); 
+            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleOCLOperator6566); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getOCLOperatorAccess().getRightParenthesisKeyword_5());
                 
@@ -7091,13 +7086,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2931:2: iv_ruleCountOperator= ruleCountOperator EOF
             {
              newCompositeNode(grammarAccess.getCountOperatorRule()); 
-            pushFollow(FOLLOW_ruleCountOperator_in_entryRuleCountOperator6600);
+            pushFollow(FOLLOW_ruleCountOperator_in_entryRuleCountOperator6602);
             iv_ruleCountOperator=ruleCountOperator();
 
             state._fsp--;
 
              current =iv_ruleCountOperator; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCountOperator6610); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCountOperator6612); 
 
             }
 
@@ -7137,11 +7132,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2942:1: (otherlv_0= 'count' otherlv_1= '(' ( (lv_parameter_2_0= ruleStreamAccess ) ) otherlv_3= ',' ( (lv_stream_4_0= ruleStreamOperatorParameter ) ) otherlv_5= ')' )
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:2942:3: otherlv_0= 'count' otherlv_1= '(' ( (lv_parameter_2_0= ruleStreamAccess ) ) otherlv_3= ',' ( (lv_stream_4_0= ruleStreamOperatorParameter ) ) otherlv_5= ')'
             {
-            otherlv_0=(Token)match(input,52,FOLLOW_52_in_ruleCountOperator6647); 
+            otherlv_0=(Token)match(input,52,FOLLOW_52_in_ruleCountOperator6649); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getCountOperatorAccess().getCountKeyword_0());
                 
-            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleCountOperator6659); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleCountOperator6661); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getCountOperatorAccess().getLeftParenthesisKeyword_1());
                 
@@ -7154,7 +7149,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getCountOperatorAccess().getParameterStreamAccessParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleStreamAccess_in_ruleCountOperator6680);
+            pushFollow(FOLLOW_ruleStreamAccess_in_ruleCountOperator6682);
             lv_parameter_2_0=ruleStreamAccess();
 
             state._fsp--;
@@ -7176,7 +7171,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleCountOperator6692); 
+            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleCountOperator6694); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getCountOperatorAccess().getCommaKeyword_3());
                 
@@ -7189,7 +7184,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getCountOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_ruleCountOperator6713);
+            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_ruleCountOperator6715);
             lv_stream_4_0=ruleStreamOperatorParameter();
 
             state._fsp--;
@@ -7211,7 +7206,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleCountOperator6725); 
+            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleCountOperator6727); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getCountOperatorAccess().getRightParenthesisKeyword_5());
                 
@@ -7248,13 +7243,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3004:2: iv_ruleStandardDeviationOperator= ruleStandardDeviationOperator EOF
             {
              newCompositeNode(grammarAccess.getStandardDeviationOperatorRule()); 
-            pushFollow(FOLLOW_ruleStandardDeviationOperator_in_entryRuleStandardDeviationOperator6761);
+            pushFollow(FOLLOW_ruleStandardDeviationOperator_in_entryRuleStandardDeviationOperator6763);
             iv_ruleStandardDeviationOperator=ruleStandardDeviationOperator();
 
             state._fsp--;
 
              current =iv_ruleStandardDeviationOperator; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStandardDeviationOperator6771); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStandardDeviationOperator6773); 
 
             }
 
@@ -7294,11 +7289,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3015:1: (otherlv_0= 'std' otherlv_1= '(' ( (lv_parameter_2_0= ruleStreamAccess ) ) otherlv_3= ',' ( (lv_stream_4_0= ruleStreamOperatorParameter ) ) otherlv_5= ')' )
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3015:3: otherlv_0= 'std' otherlv_1= '(' ( (lv_parameter_2_0= ruleStreamAccess ) ) otherlv_3= ',' ( (lv_stream_4_0= ruleStreamOperatorParameter ) ) otherlv_5= ')'
             {
-            otherlv_0=(Token)match(input,53,FOLLOW_53_in_ruleStandardDeviationOperator6808); 
+            otherlv_0=(Token)match(input,53,FOLLOW_53_in_ruleStandardDeviationOperator6810); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getStandardDeviationOperatorAccess().getStdKeyword_0());
                 
-            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleStandardDeviationOperator6820); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleStandardDeviationOperator6822); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getStandardDeviationOperatorAccess().getLeftParenthesisKeyword_1());
                 
@@ -7311,7 +7306,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getStandardDeviationOperatorAccess().getParameterStreamAccessParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleStreamAccess_in_ruleStandardDeviationOperator6841);
+            pushFollow(FOLLOW_ruleStreamAccess_in_ruleStandardDeviationOperator6843);
             lv_parameter_2_0=ruleStreamAccess();
 
             state._fsp--;
@@ -7333,7 +7328,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleStandardDeviationOperator6853); 
+            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleStandardDeviationOperator6855); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getStandardDeviationOperatorAccess().getCommaKeyword_3());
                 
@@ -7346,7 +7341,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getStandardDeviationOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_ruleStandardDeviationOperator6874);
+            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_ruleStandardDeviationOperator6876);
             lv_stream_4_0=ruleStreamOperatorParameter();
 
             state._fsp--;
@@ -7368,7 +7363,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleStandardDeviationOperator6886); 
+            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleStandardDeviationOperator6888); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getStandardDeviationOperatorAccess().getRightParenthesisKeyword_5());
                 
@@ -7405,13 +7400,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3077:2: iv_ruleAverageOperator= ruleAverageOperator EOF
             {
              newCompositeNode(grammarAccess.getAverageOperatorRule()); 
-            pushFollow(FOLLOW_ruleAverageOperator_in_entryRuleAverageOperator6922);
+            pushFollow(FOLLOW_ruleAverageOperator_in_entryRuleAverageOperator6924);
             iv_ruleAverageOperator=ruleAverageOperator();
 
             state._fsp--;
 
              current =iv_ruleAverageOperator; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAverageOperator6932); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAverageOperator6934); 
 
             }
 
@@ -7451,11 +7446,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3088:1: (otherlv_0= 'avg' otherlv_1= '(' ( (lv_parameter_2_0= ruleStreamAccess ) ) otherlv_3= ',' ( (lv_stream_4_0= ruleStreamOperatorParameter ) ) otherlv_5= ')' )
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3088:3: otherlv_0= 'avg' otherlv_1= '(' ( (lv_parameter_2_0= ruleStreamAccess ) ) otherlv_3= ',' ( (lv_stream_4_0= ruleStreamOperatorParameter ) ) otherlv_5= ')'
             {
-            otherlv_0=(Token)match(input,54,FOLLOW_54_in_ruleAverageOperator6969); 
+            otherlv_0=(Token)match(input,54,FOLLOW_54_in_ruleAverageOperator6971); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getAverageOperatorAccess().getAvgKeyword_0());
                 
-            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleAverageOperator6981); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleAverageOperator6983); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getAverageOperatorAccess().getLeftParenthesisKeyword_1());
                 
@@ -7468,7 +7463,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getAverageOperatorAccess().getParameterStreamAccessParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleStreamAccess_in_ruleAverageOperator7002);
+            pushFollow(FOLLOW_ruleStreamAccess_in_ruleAverageOperator7004);
             lv_parameter_2_0=ruleStreamAccess();
 
             state._fsp--;
@@ -7490,7 +7485,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleAverageOperator7014); 
+            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleAverageOperator7016); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getAverageOperatorAccess().getCommaKeyword_3());
                 
@@ -7503,7 +7498,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getAverageOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_ruleAverageOperator7035);
+            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_ruleAverageOperator7037);
             lv_stream_4_0=ruleStreamOperatorParameter();
 
             state._fsp--;
@@ -7525,7 +7520,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleAverageOperator7047); 
+            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleAverageOperator7049); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getAverageOperatorAccess().getRightParenthesisKeyword_5());
                 
@@ -7562,13 +7557,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3150:2: iv_ruleAdditionOperator= ruleAdditionOperator EOF
             {
              newCompositeNode(grammarAccess.getAdditionOperatorRule()); 
-            pushFollow(FOLLOW_ruleAdditionOperator_in_entryRuleAdditionOperator7083);
+            pushFollow(FOLLOW_ruleAdditionOperator_in_entryRuleAdditionOperator7085);
             iv_ruleAdditionOperator=ruleAdditionOperator();
 
             state._fsp--;
 
              current =iv_ruleAdditionOperator; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAdditionOperator7093); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAdditionOperator7095); 
 
             }
 
@@ -7609,11 +7604,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3161:1: (otherlv_0= 'add' otherlv_1= '(' ( (lv_parameter_2_0= ruleStreamAccess ) ) otherlv_3= ',' ( ( (lv_literal_4_0= RULE_NUMBER ) ) | ( (lv_streamElements_5_0= ruleStreamAccess ) ) ) otherlv_6= ')' )
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3161:3: otherlv_0= 'add' otherlv_1= '(' ( (lv_parameter_2_0= ruleStreamAccess ) ) otherlv_3= ',' ( ( (lv_literal_4_0= RULE_NUMBER ) ) | ( (lv_streamElements_5_0= ruleStreamAccess ) ) ) otherlv_6= ')'
             {
-            otherlv_0=(Token)match(input,55,FOLLOW_55_in_ruleAdditionOperator7130); 
+            otherlv_0=(Token)match(input,55,FOLLOW_55_in_ruleAdditionOperator7132); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getAdditionOperatorAccess().getAddKeyword_0());
                 
-            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleAdditionOperator7142); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleAdditionOperator7144); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getAdditionOperatorAccess().getLeftParenthesisKeyword_1());
                 
@@ -7626,7 +7621,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getAdditionOperatorAccess().getParameterStreamAccessParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleStreamAccess_in_ruleAdditionOperator7163);
+            pushFollow(FOLLOW_ruleStreamAccess_in_ruleAdditionOperator7165);
             lv_parameter_2_0=ruleStreamAccess();
 
             state._fsp--;
@@ -7648,7 +7643,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleAdditionOperator7175); 
+            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleAdditionOperator7177); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getAdditionOperatorAccess().getCommaKeyword_3());
                 
@@ -7678,7 +7673,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3192:1: (lv_literal_4_0= RULE_NUMBER )
                     // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3193:3: lv_literal_4_0= RULE_NUMBER
                     {
-                    lv_literal_4_0=(Token)match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_ruleAdditionOperator7193); 
+                    lv_literal_4_0=(Token)match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_ruleAdditionOperator7195); 
 
                     			newLeafNode(lv_literal_4_0, grammarAccess.getAdditionOperatorAccess().getLiteralNUMBERTerminalRuleCall_4_0_0()); 
                     		
@@ -7713,7 +7708,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getAdditionOperatorAccess().getStreamElementsStreamAccessParserRuleCall_4_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleStreamAccess_in_ruleAdditionOperator7225);
+                    pushFollow(FOLLOW_ruleStreamAccess_in_ruleAdditionOperator7227);
                     lv_streamElements_5_0=ruleStreamAccess();
 
                     state._fsp--;
@@ -7741,7 +7736,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,22,FOLLOW_22_in_ruleAdditionOperator7238); 
+            otherlv_6=(Token)match(input,22,FOLLOW_22_in_ruleAdditionOperator7240); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getAdditionOperatorAccess().getRightParenthesisKeyword_5());
                 
@@ -7778,13 +7773,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3242:2: iv_ruleSubtractionOperator= ruleSubtractionOperator EOF
             {
              newCompositeNode(grammarAccess.getSubtractionOperatorRule()); 
-            pushFollow(FOLLOW_ruleSubtractionOperator_in_entryRuleSubtractionOperator7274);
+            pushFollow(FOLLOW_ruleSubtractionOperator_in_entryRuleSubtractionOperator7276);
             iv_ruleSubtractionOperator=ruleSubtractionOperator();
 
             state._fsp--;
 
              current =iv_ruleSubtractionOperator; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSubtractionOperator7284); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSubtractionOperator7286); 
 
             }
 
@@ -7825,11 +7820,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3253:1: (otherlv_0= 'sub' otherlv_1= '(' ( (lv_parameter_2_0= ruleStreamAccess ) ) otherlv_3= ',' ( ( (lv_literal_4_0= RULE_NUMBER ) ) | ( (lv_streamElements_5_0= ruleStreamAccess ) ) ) otherlv_6= ')' )
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3253:3: otherlv_0= 'sub' otherlv_1= '(' ( (lv_parameter_2_0= ruleStreamAccess ) ) otherlv_3= ',' ( ( (lv_literal_4_0= RULE_NUMBER ) ) | ( (lv_streamElements_5_0= ruleStreamAccess ) ) ) otherlv_6= ')'
             {
-            otherlv_0=(Token)match(input,56,FOLLOW_56_in_ruleSubtractionOperator7321); 
+            otherlv_0=(Token)match(input,56,FOLLOW_56_in_ruleSubtractionOperator7323); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSubtractionOperatorAccess().getSubKeyword_0());
                 
-            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleSubtractionOperator7333); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleSubtractionOperator7335); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getSubtractionOperatorAccess().getLeftParenthesisKeyword_1());
                 
@@ -7842,7 +7837,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getSubtractionOperatorAccess().getParameterStreamAccessParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleStreamAccess_in_ruleSubtractionOperator7354);
+            pushFollow(FOLLOW_ruleStreamAccess_in_ruleSubtractionOperator7356);
             lv_parameter_2_0=ruleStreamAccess();
 
             state._fsp--;
@@ -7864,7 +7859,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleSubtractionOperator7366); 
+            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleSubtractionOperator7368); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getSubtractionOperatorAccess().getCommaKeyword_3());
                 
@@ -7894,7 +7889,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3284:1: (lv_literal_4_0= RULE_NUMBER )
                     // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3285:3: lv_literal_4_0= RULE_NUMBER
                     {
-                    lv_literal_4_0=(Token)match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_ruleSubtractionOperator7384); 
+                    lv_literal_4_0=(Token)match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_ruleSubtractionOperator7386); 
 
                     			newLeafNode(lv_literal_4_0, grammarAccess.getSubtractionOperatorAccess().getLiteralNUMBERTerminalRuleCall_4_0_0()); 
                     		
@@ -7929,7 +7924,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getSubtractionOperatorAccess().getStreamElementsStreamAccessParserRuleCall_4_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleStreamAccess_in_ruleSubtractionOperator7416);
+                    pushFollow(FOLLOW_ruleStreamAccess_in_ruleSubtractionOperator7418);
                     lv_streamElements_5_0=ruleStreamAccess();
 
                     state._fsp--;
@@ -7957,7 +7952,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,22,FOLLOW_22_in_ruleSubtractionOperator7429); 
+            otherlv_6=(Token)match(input,22,FOLLOW_22_in_ruleSubtractionOperator7431); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getSubtractionOperatorAccess().getRightParenthesisKeyword_5());
                 
@@ -7994,13 +7989,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3334:2: iv_ruleMultiplicationOperator= ruleMultiplicationOperator EOF
             {
              newCompositeNode(grammarAccess.getMultiplicationOperatorRule()); 
-            pushFollow(FOLLOW_ruleMultiplicationOperator_in_entryRuleMultiplicationOperator7465);
+            pushFollow(FOLLOW_ruleMultiplicationOperator_in_entryRuleMultiplicationOperator7467);
             iv_ruleMultiplicationOperator=ruleMultiplicationOperator();
 
             state._fsp--;
 
              current =iv_ruleMultiplicationOperator; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMultiplicationOperator7475); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMultiplicationOperator7477); 
 
             }
 
@@ -8041,11 +8036,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3345:1: (otherlv_0= 'mult' otherlv_1= '(' ( (lv_parameter_2_0= ruleStreamAccess ) ) otherlv_3= ',' ( ( (lv_literal_4_0= RULE_NUMBER ) ) | ( (lv_streamElements_5_0= ruleStreamAccess ) ) ) otherlv_6= ')' )
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3345:3: otherlv_0= 'mult' otherlv_1= '(' ( (lv_parameter_2_0= ruleStreamAccess ) ) otherlv_3= ',' ( ( (lv_literal_4_0= RULE_NUMBER ) ) | ( (lv_streamElements_5_0= ruleStreamAccess ) ) ) otherlv_6= ')'
             {
-            otherlv_0=(Token)match(input,57,FOLLOW_57_in_ruleMultiplicationOperator7512); 
+            otherlv_0=(Token)match(input,57,FOLLOW_57_in_ruleMultiplicationOperator7514); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getMultiplicationOperatorAccess().getMultKeyword_0());
                 
-            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleMultiplicationOperator7524); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleMultiplicationOperator7526); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getMultiplicationOperatorAccess().getLeftParenthesisKeyword_1());
                 
@@ -8058,7 +8053,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getMultiplicationOperatorAccess().getParameterStreamAccessParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleStreamAccess_in_ruleMultiplicationOperator7545);
+            pushFollow(FOLLOW_ruleStreamAccess_in_ruleMultiplicationOperator7547);
             lv_parameter_2_0=ruleStreamAccess();
 
             state._fsp--;
@@ -8080,7 +8075,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleMultiplicationOperator7557); 
+            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleMultiplicationOperator7559); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getMultiplicationOperatorAccess().getCommaKeyword_3());
                 
@@ -8110,7 +8105,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3376:1: (lv_literal_4_0= RULE_NUMBER )
                     // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3377:3: lv_literal_4_0= RULE_NUMBER
                     {
-                    lv_literal_4_0=(Token)match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_ruleMultiplicationOperator7575); 
+                    lv_literal_4_0=(Token)match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_ruleMultiplicationOperator7577); 
 
                     			newLeafNode(lv_literal_4_0, grammarAccess.getMultiplicationOperatorAccess().getLiteralNUMBERTerminalRuleCall_4_0_0()); 
                     		
@@ -8145,7 +8140,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getMultiplicationOperatorAccess().getStreamElementsStreamAccessParserRuleCall_4_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleStreamAccess_in_ruleMultiplicationOperator7607);
+                    pushFollow(FOLLOW_ruleStreamAccess_in_ruleMultiplicationOperator7609);
                     lv_streamElements_5_0=ruleStreamAccess();
 
                     state._fsp--;
@@ -8173,7 +8168,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,22,FOLLOW_22_in_ruleMultiplicationOperator7620); 
+            otherlv_6=(Token)match(input,22,FOLLOW_22_in_ruleMultiplicationOperator7622); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getMultiplicationOperatorAccess().getRightParenthesisKeyword_5());
                 
@@ -8210,13 +8205,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3426:2: iv_ruleDivisionOperator= ruleDivisionOperator EOF
             {
              newCompositeNode(grammarAccess.getDivisionOperatorRule()); 
-            pushFollow(FOLLOW_ruleDivisionOperator_in_entryRuleDivisionOperator7656);
+            pushFollow(FOLLOW_ruleDivisionOperator_in_entryRuleDivisionOperator7658);
             iv_ruleDivisionOperator=ruleDivisionOperator();
 
             state._fsp--;
 
              current =iv_ruleDivisionOperator; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDivisionOperator7666); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDivisionOperator7668); 
 
             }
 
@@ -8257,11 +8252,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3437:1: (otherlv_0= 'div' otherlv_1= '(' ( (lv_parameter_2_0= ruleStreamAccess ) ) otherlv_3= ',' ( ( (lv_literal_4_0= RULE_NUMBER ) ) | ( (lv_streamElements_5_0= ruleStreamAccess ) ) ) otherlv_6= ')' )
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3437:3: otherlv_0= 'div' otherlv_1= '(' ( (lv_parameter_2_0= ruleStreamAccess ) ) otherlv_3= ',' ( ( (lv_literal_4_0= RULE_NUMBER ) ) | ( (lv_streamElements_5_0= ruleStreamAccess ) ) ) otherlv_6= ')'
             {
-            otherlv_0=(Token)match(input,58,FOLLOW_58_in_ruleDivisionOperator7703); 
+            otherlv_0=(Token)match(input,58,FOLLOW_58_in_ruleDivisionOperator7705); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getDivisionOperatorAccess().getDivKeyword_0());
                 
-            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleDivisionOperator7715); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleDivisionOperator7717); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getDivisionOperatorAccess().getLeftParenthesisKeyword_1());
                 
@@ -8274,7 +8269,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getDivisionOperatorAccess().getParameterStreamAccessParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleStreamAccess_in_ruleDivisionOperator7736);
+            pushFollow(FOLLOW_ruleStreamAccess_in_ruleDivisionOperator7738);
             lv_parameter_2_0=ruleStreamAccess();
 
             state._fsp--;
@@ -8296,7 +8291,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleDivisionOperator7748); 
+            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleDivisionOperator7750); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getDivisionOperatorAccess().getCommaKeyword_3());
                 
@@ -8326,7 +8321,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3468:1: (lv_literal_4_0= RULE_NUMBER )
                     // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3469:3: lv_literal_4_0= RULE_NUMBER
                     {
-                    lv_literal_4_0=(Token)match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_ruleDivisionOperator7766); 
+                    lv_literal_4_0=(Token)match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_ruleDivisionOperator7768); 
 
                     			newLeafNode(lv_literal_4_0, grammarAccess.getDivisionOperatorAccess().getLiteralNUMBERTerminalRuleCall_4_0_0()); 
                     		
@@ -8361,7 +8356,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getDivisionOperatorAccess().getStreamElementsStreamAccessParserRuleCall_4_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleStreamAccess_in_ruleDivisionOperator7798);
+                    pushFollow(FOLLOW_ruleStreamAccess_in_ruleDivisionOperator7800);
                     lv_streamElements_5_0=ruleStreamAccess();
 
                     state._fsp--;
@@ -8389,7 +8384,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,22,FOLLOW_22_in_ruleDivisionOperator7811); 
+            otherlv_6=(Token)match(input,22,FOLLOW_22_in_ruleDivisionOperator7813); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getDivisionOperatorAccess().getRightParenthesisKeyword_5());
                 
@@ -8426,13 +8421,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3518:2: iv_ruleOutputOperator= ruleOutputOperator EOF
             {
              newCompositeNode(grammarAccess.getOutputOperatorRule()); 
-            pushFollow(FOLLOW_ruleOutputOperator_in_entryRuleOutputOperator7847);
+            pushFollow(FOLLOW_ruleOutputOperator_in_entryRuleOutputOperator7849);
             iv_ruleOutputOperator=ruleOutputOperator();
 
             state._fsp--;
 
              current =iv_ruleOutputOperator; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOutputOperator7857); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOutputOperator7859); 
 
             }
 
@@ -8450,50 +8445,53 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOutputOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3525:1: ruleOutputOperator returns [EObject current=null] : (otherlv_0= 'out' otherlv_1= '(' ( (lv_parameter_2_0= ruleOutputOperatorParameter ) ) otherlv_3= ',' ( (lv_location_4_0= RULE_STRING ) ) otherlv_5= ',' ( (lv_stream_6_0= ruleStreamOperatorParameter ) ) otherlv_7= ')' otherlv_8= ';' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3525:1: ruleOutputOperator returns [EObject current=null] : (otherlv_0= 'out' otherlv_1= '(' ( (lv_stream_2_0= ruleStreamOperatorParameter ) ) otherlv_3= ',' ( (lv_iri_4_0= RULE_STRING ) ) (otherlv_5= ',' ( (lv_iri_6_0= RULE_STRING ) ) )* otherlv_7= ',' ( (lv_address_8_0= RULE_STRING ) ) otherlv_9= ',' ( (lv_port_10_0= RULE_NUMBER ) ) otherlv_11= ')' otherlv_12= ';' ) ;
     public final EObject ruleOutputOperator() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
         Token otherlv_3=null;
-        Token lv_location_4_0=null;
+        Token lv_iri_4_0=null;
         Token otherlv_5=null;
+        Token lv_iri_6_0=null;
         Token otherlv_7=null;
-        Token otherlv_8=null;
-        EObject lv_parameter_2_0 = null;
-
-        EObject lv_stream_6_0 = null;
+        Token lv_address_8_0=null;
+        Token otherlv_9=null;
+        Token lv_port_10_0=null;
+        Token otherlv_11=null;
+        Token otherlv_12=null;
+        EObject lv_stream_2_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3528:28: ( (otherlv_0= 'out' otherlv_1= '(' ( (lv_parameter_2_0= ruleOutputOperatorParameter ) ) otherlv_3= ',' ( (lv_location_4_0= RULE_STRING ) ) otherlv_5= ',' ( (lv_stream_6_0= ruleStreamOperatorParameter ) ) otherlv_7= ')' otherlv_8= ';' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3529:1: (otherlv_0= 'out' otherlv_1= '(' ( (lv_parameter_2_0= ruleOutputOperatorParameter ) ) otherlv_3= ',' ( (lv_location_4_0= RULE_STRING ) ) otherlv_5= ',' ( (lv_stream_6_0= ruleStreamOperatorParameter ) ) otherlv_7= ')' otherlv_8= ';' )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3528:28: ( (otherlv_0= 'out' otherlv_1= '(' ( (lv_stream_2_0= ruleStreamOperatorParameter ) ) otherlv_3= ',' ( (lv_iri_4_0= RULE_STRING ) ) (otherlv_5= ',' ( (lv_iri_6_0= RULE_STRING ) ) )* otherlv_7= ',' ( (lv_address_8_0= RULE_STRING ) ) otherlv_9= ',' ( (lv_port_10_0= RULE_NUMBER ) ) otherlv_11= ')' otherlv_12= ';' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3529:1: (otherlv_0= 'out' otherlv_1= '(' ( (lv_stream_2_0= ruleStreamOperatorParameter ) ) otherlv_3= ',' ( (lv_iri_4_0= RULE_STRING ) ) (otherlv_5= ',' ( (lv_iri_6_0= RULE_STRING ) ) )* otherlv_7= ',' ( (lv_address_8_0= RULE_STRING ) ) otherlv_9= ',' ( (lv_port_10_0= RULE_NUMBER ) ) otherlv_11= ')' otherlv_12= ';' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3529:1: (otherlv_0= 'out' otherlv_1= '(' ( (lv_parameter_2_0= ruleOutputOperatorParameter ) ) otherlv_3= ',' ( (lv_location_4_0= RULE_STRING ) ) otherlv_5= ',' ( (lv_stream_6_0= ruleStreamOperatorParameter ) ) otherlv_7= ')' otherlv_8= ';' )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3529:3: otherlv_0= 'out' otherlv_1= '(' ( (lv_parameter_2_0= ruleOutputOperatorParameter ) ) otherlv_3= ',' ( (lv_location_4_0= RULE_STRING ) ) otherlv_5= ',' ( (lv_stream_6_0= ruleStreamOperatorParameter ) ) otherlv_7= ')' otherlv_8= ';'
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3529:1: (otherlv_0= 'out' otherlv_1= '(' ( (lv_stream_2_0= ruleStreamOperatorParameter ) ) otherlv_3= ',' ( (lv_iri_4_0= RULE_STRING ) ) (otherlv_5= ',' ( (lv_iri_6_0= RULE_STRING ) ) )* otherlv_7= ',' ( (lv_address_8_0= RULE_STRING ) ) otherlv_9= ',' ( (lv_port_10_0= RULE_NUMBER ) ) otherlv_11= ')' otherlv_12= ';' )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3529:3: otherlv_0= 'out' otherlv_1= '(' ( (lv_stream_2_0= ruleStreamOperatorParameter ) ) otherlv_3= ',' ( (lv_iri_4_0= RULE_STRING ) ) (otherlv_5= ',' ( (lv_iri_6_0= RULE_STRING ) ) )* otherlv_7= ',' ( (lv_address_8_0= RULE_STRING ) ) otherlv_9= ',' ( (lv_port_10_0= RULE_NUMBER ) ) otherlv_11= ')' otherlv_12= ';'
             {
-            otherlv_0=(Token)match(input,59,FOLLOW_59_in_ruleOutputOperator7894); 
+            otherlv_0=(Token)match(input,59,FOLLOW_59_in_ruleOutputOperator7896); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getOutputOperatorAccess().getOutKeyword_0());
                 
-            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleOutputOperator7906); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleOutputOperator7908); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getOutputOperatorAccess().getLeftParenthesisKeyword_1());
                 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3537:1: ( (lv_parameter_2_0= ruleOutputOperatorParameter ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3538:1: (lv_parameter_2_0= ruleOutputOperatorParameter )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3537:1: ( (lv_stream_2_0= ruleStreamOperatorParameter ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3538:1: (lv_stream_2_0= ruleStreamOperatorParameter )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3538:1: (lv_parameter_2_0= ruleOutputOperatorParameter )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3539:3: lv_parameter_2_0= ruleOutputOperatorParameter
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3538:1: (lv_stream_2_0= ruleStreamOperatorParameter )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3539:3: lv_stream_2_0= ruleStreamOperatorParameter
             {
              
-            	        newCompositeNode(grammarAccess.getOutputOperatorAccess().getParameterOutputOperatorParameterParserRuleCall_2_0()); 
+            	        newCompositeNode(grammarAccess.getOutputOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleOutputOperatorParameter_in_ruleOutputOperator7927);
-            lv_parameter_2_0=ruleOutputOperatorParameter();
+            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_ruleOutputOperator7929);
+            lv_stream_2_0=ruleStreamOperatorParameter();
 
             state._fsp--;
 
@@ -8503,73 +8501,8 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	        }
                    		set(
                    			current, 
-                   			"parameter",
-                    		lv_parameter_2_0, 
-                    		"OutputOperatorParameter");
-            	        afterParserOrEnumRuleCall();
-            	    
-
-            }
-
-
-            }
-
-            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleOutputOperator7939); 
-
-                	newLeafNode(otherlv_3, grammarAccess.getOutputOperatorAccess().getCommaKeyword_3());
-                
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3559:1: ( (lv_location_4_0= RULE_STRING ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3560:1: (lv_location_4_0= RULE_STRING )
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3560:1: (lv_location_4_0= RULE_STRING )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3561:3: lv_location_4_0= RULE_STRING
-            {
-            lv_location_4_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOutputOperator7956); 
-
-            			newLeafNode(lv_location_4_0, grammarAccess.getOutputOperatorAccess().getLocationSTRINGTerminalRuleCall_4_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getOutputOperatorRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"location",
-                    		lv_location_4_0, 
-                    		"STRING");
-            	    
-
-            }
-
-
-            }
-
-            otherlv_5=(Token)match(input,16,FOLLOW_16_in_ruleOutputOperator7973); 
-
-                	newLeafNode(otherlv_5, grammarAccess.getOutputOperatorAccess().getCommaKeyword_5());
-                
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3581:1: ( (lv_stream_6_0= ruleStreamOperatorParameter ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3582:1: (lv_stream_6_0= ruleStreamOperatorParameter )
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3582:1: (lv_stream_6_0= ruleStreamOperatorParameter )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3583:3: lv_stream_6_0= ruleStreamOperatorParameter
-            {
-             
-            	        newCompositeNode(grammarAccess.getOutputOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_6_0()); 
-            	    
-            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_ruleOutputOperator7994);
-            lv_stream_6_0=ruleStreamOperatorParameter();
-
-            state._fsp--;
-
-
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getOutputOperatorRule());
-            	        }
-                   		add(
-                   			current, 
                    			"stream",
-                    		lv_stream_6_0, 
+                    		lv_stream_2_0, 
                     		"StreamOperatorParameter");
             	        afterParserOrEnumRuleCall();
             	    
@@ -8579,13 +8512,175 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,22,FOLLOW_22_in_ruleOutputOperator8006); 
+            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleOutputOperator7941); 
 
-                	newLeafNode(otherlv_7, grammarAccess.getOutputOperatorAccess().getRightParenthesisKeyword_7());
+                	newLeafNode(otherlv_3, grammarAccess.getOutputOperatorAccess().getCommaKeyword_3());
                 
-            otherlv_8=(Token)match(input,18,FOLLOW_18_in_ruleOutputOperator8018); 
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3559:1: ( (lv_iri_4_0= RULE_STRING ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3560:1: (lv_iri_4_0= RULE_STRING )
+            {
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3560:1: (lv_iri_4_0= RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3561:3: lv_iri_4_0= RULE_STRING
+            {
+            lv_iri_4_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOutputOperator7958); 
 
-                	newLeafNode(otherlv_8, grammarAccess.getOutputOperatorAccess().getSemicolonKeyword_8());
+            			newLeafNode(lv_iri_4_0, grammarAccess.getOutputOperatorAccess().getIriSTRINGTerminalRuleCall_4_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getOutputOperatorRule());
+            	        }
+                   		addWithLastConsumed(
+                   			current, 
+                   			"iri",
+                    		lv_iri_4_0, 
+                    		"STRING");
+            	    
+
+            }
+
+
+            }
+
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3577:2: (otherlv_5= ',' ( (lv_iri_6_0= RULE_STRING ) ) )*
+            loop32:
+            do {
+                int alt32=2;
+                int LA32_0 = input.LA(1);
+
+                if ( (LA32_0==16) ) {
+                    int LA32_1 = input.LA(2);
+
+                    if ( (LA32_1==RULE_STRING) ) {
+                        int LA32_2 = input.LA(3);
+
+                        if ( (LA32_2==16) ) {
+                            int LA32_3 = input.LA(4);
+
+                            if ( (LA32_3==RULE_STRING) ) {
+                                alt32=1;
+                            }
+
+
+                        }
+
+
+                    }
+
+
+                }
+
+
+                switch (alt32) {
+            	case 1 :
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3577:4: otherlv_5= ',' ( (lv_iri_6_0= RULE_STRING ) )
+            	    {
+            	    otherlv_5=(Token)match(input,16,FOLLOW_16_in_ruleOutputOperator7976); 
+
+            	        	newLeafNode(otherlv_5, grammarAccess.getOutputOperatorAccess().getCommaKeyword_5_0());
+            	        
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3581:1: ( (lv_iri_6_0= RULE_STRING ) )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3582:1: (lv_iri_6_0= RULE_STRING )
+            	    {
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3582:1: (lv_iri_6_0= RULE_STRING )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3583:3: lv_iri_6_0= RULE_STRING
+            	    {
+            	    lv_iri_6_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOutputOperator7993); 
+
+            	    			newLeafNode(lv_iri_6_0, grammarAccess.getOutputOperatorAccess().getIriSTRINGTerminalRuleCall_5_1_0()); 
+            	    		
+
+            	    	        if (current==null) {
+            	    	            current = createModelElement(grammarAccess.getOutputOperatorRule());
+            	    	        }
+            	           		addWithLastConsumed(
+            	           			current, 
+            	           			"iri",
+            	            		lv_iri_6_0, 
+            	            		"STRING");
+            	    	    
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop32;
+                }
+            } while (true);
+
+            otherlv_7=(Token)match(input,16,FOLLOW_16_in_ruleOutputOperator8012); 
+
+                	newLeafNode(otherlv_7, grammarAccess.getOutputOperatorAccess().getCommaKeyword_6());
+                
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3603:1: ( (lv_address_8_0= RULE_STRING ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3604:1: (lv_address_8_0= RULE_STRING )
+            {
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3604:1: (lv_address_8_0= RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3605:3: lv_address_8_0= RULE_STRING
+            {
+            lv_address_8_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOutputOperator8029); 
+
+            			newLeafNode(lv_address_8_0, grammarAccess.getOutputOperatorAccess().getAddressSTRINGTerminalRuleCall_7_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getOutputOperatorRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"address",
+                    		lv_address_8_0, 
+                    		"STRING");
+            	    
+
+            }
+
+
+            }
+
+            otherlv_9=(Token)match(input,16,FOLLOW_16_in_ruleOutputOperator8046); 
+
+                	newLeafNode(otherlv_9, grammarAccess.getOutputOperatorAccess().getCommaKeyword_8());
+                
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3625:1: ( (lv_port_10_0= RULE_NUMBER ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3626:1: (lv_port_10_0= RULE_NUMBER )
+            {
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3626:1: (lv_port_10_0= RULE_NUMBER )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3627:3: lv_port_10_0= RULE_NUMBER
+            {
+            lv_port_10_0=(Token)match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_ruleOutputOperator8063); 
+
+            			newLeafNode(lv_port_10_0, grammarAccess.getOutputOperatorAccess().getPortNUMBERTerminalRuleCall_9_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getOutputOperatorRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"port",
+                    		lv_port_10_0, 
+                    		"NUMBER");
+            	    
+
+            }
+
+
+            }
+
+            otherlv_11=(Token)match(input,22,FOLLOW_22_in_ruleOutputOperator8080); 
+
+                	newLeafNode(otherlv_11, grammarAccess.getOutputOperatorAccess().getRightParenthesisKeyword_10());
+                
+            otherlv_12=(Token)match(input,18,FOLLOW_18_in_ruleOutputOperator8092); 
+
+                	newLeafNode(otherlv_12, grammarAccess.getOutputOperatorAccess().getSemicolonKeyword_11());
                 
 
             }
@@ -8607,180 +8702,8 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleOutputOperator"
 
 
-    // $ANTLR start "entryRuleOutputOperatorParameter"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3615:1: entryRuleOutputOperatorParameter returns [EObject current=null] : iv_ruleOutputOperatorParameter= ruleOutputOperatorParameter EOF ;
-    public final EObject entryRuleOutputOperatorParameter() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleOutputOperatorParameter = null;
-
-
-        try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3616:2: (iv_ruleOutputOperatorParameter= ruleOutputOperatorParameter EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3617:2: iv_ruleOutputOperatorParameter= ruleOutputOperatorParameter EOF
-            {
-             newCompositeNode(grammarAccess.getOutputOperatorParameterRule()); 
-            pushFollow(FOLLOW_ruleOutputOperatorParameter_in_entryRuleOutputOperatorParameter8054);
-            iv_ruleOutputOperatorParameter=ruleOutputOperatorParameter();
-
-            state._fsp--;
-
-             current =iv_ruleOutputOperatorParameter; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOutputOperatorParameter8064); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleOutputOperatorParameter"
-
-
-    // $ANTLR start "ruleOutputOperatorParameter"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3624:1: ruleOutputOperatorParameter returns [EObject current=null] : ( ( (lv_element_0_0= ruleStreamAccess ) ) (otherlv_1= ',' ( (lv_element_2_0= ruleStreamAccess ) ) )* ) ;
-    public final EObject ruleOutputOperatorParameter() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_1=null;
-        EObject lv_element_0_0 = null;
-
-        EObject lv_element_2_0 = null;
-
-
-         enterRule(); 
-            
-        try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3627:28: ( ( ( (lv_element_0_0= ruleStreamAccess ) ) (otherlv_1= ',' ( (lv_element_2_0= ruleStreamAccess ) ) )* ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3628:1: ( ( (lv_element_0_0= ruleStreamAccess ) ) (otherlv_1= ',' ( (lv_element_2_0= ruleStreamAccess ) ) )* )
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3628:1: ( ( (lv_element_0_0= ruleStreamAccess ) ) (otherlv_1= ',' ( (lv_element_2_0= ruleStreamAccess ) ) )* )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3628:2: ( (lv_element_0_0= ruleStreamAccess ) ) (otherlv_1= ',' ( (lv_element_2_0= ruleStreamAccess ) ) )*
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3628:2: ( (lv_element_0_0= ruleStreamAccess ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3629:1: (lv_element_0_0= ruleStreamAccess )
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3629:1: (lv_element_0_0= ruleStreamAccess )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3630:3: lv_element_0_0= ruleStreamAccess
-            {
-             
-            	        newCompositeNode(grammarAccess.getOutputOperatorParameterAccess().getElementStreamAccessParserRuleCall_0_0()); 
-            	    
-            pushFollow(FOLLOW_ruleStreamAccess_in_ruleOutputOperatorParameter8110);
-            lv_element_0_0=ruleStreamAccess();
-
-            state._fsp--;
-
-
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getOutputOperatorParameterRule());
-            	        }
-                   		add(
-                   			current, 
-                   			"element",
-                    		lv_element_0_0, 
-                    		"StreamAccess");
-            	        afterParserOrEnumRuleCall();
-            	    
-
-            }
-
-
-            }
-
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3646:2: (otherlv_1= ',' ( (lv_element_2_0= ruleStreamAccess ) ) )*
-            loop32:
-            do {
-                int alt32=2;
-                int LA32_0 = input.LA(1);
-
-                if ( (LA32_0==16) ) {
-                    int LA32_1 = input.LA(2);
-
-                    if ( (LA32_1==RULE_ID) ) {
-                        alt32=1;
-                    }
-
-
-                }
-
-
-                switch (alt32) {
-            	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3646:4: otherlv_1= ',' ( (lv_element_2_0= ruleStreamAccess ) )
-            	    {
-            	    otherlv_1=(Token)match(input,16,FOLLOW_16_in_ruleOutputOperatorParameter8123); 
-
-            	        	newLeafNode(otherlv_1, grammarAccess.getOutputOperatorParameterAccess().getCommaKeyword_1_0());
-            	        
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3650:1: ( (lv_element_2_0= ruleStreamAccess ) )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3651:1: (lv_element_2_0= ruleStreamAccess )
-            	    {
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3651:1: (lv_element_2_0= ruleStreamAccess )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3652:3: lv_element_2_0= ruleStreamAccess
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getOutputOperatorParameterAccess().getElementStreamAccessParserRuleCall_1_1_0()); 
-            	    	    
-            	    pushFollow(FOLLOW_ruleStreamAccess_in_ruleOutputOperatorParameter8144);
-            	    lv_element_2_0=ruleStreamAccess();
-
-            	    state._fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getOutputOperatorParameterRule());
-            	    	        }
-            	           		add(
-            	           			current, 
-            	           			"element",
-            	            		lv_element_2_0, 
-            	            		"StreamAccess");
-            	    	        afterParserOrEnumRuleCall();
-            	    	    
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop32;
-                }
-            } while (true);
-
-
-            }
-
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleOutputOperatorParameter"
-
-
     // $ANTLR start "entryRuleVariableDefinition"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3676:1: entryRuleVariableDefinition returns [EObject current=null] : iv_ruleVariableDefinition= ruleVariableDefinition EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3659:1: entryRuleVariableDefinition returns [EObject current=null] : iv_ruleVariableDefinition= ruleVariableDefinition EOF ;
     public final EObject entryRuleVariableDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -8788,17 +8711,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3677:2: (iv_ruleVariableDefinition= ruleVariableDefinition EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3678:2: iv_ruleVariableDefinition= ruleVariableDefinition EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3660:2: (iv_ruleVariableDefinition= ruleVariableDefinition EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3661:2: iv_ruleVariableDefinition= ruleVariableDefinition EOF
             {
              newCompositeNode(grammarAccess.getVariableDefinitionRule()); 
-            pushFollow(FOLLOW_ruleVariableDefinition_in_entryRuleVariableDefinition8182);
+            pushFollow(FOLLOW_ruleVariableDefinition_in_entryRuleVariableDefinition8128);
             iv_ruleVariableDefinition=ruleVariableDefinition();
 
             state._fsp--;
 
              current =iv_ruleVariableDefinition; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVariableDefinition8192); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVariableDefinition8138); 
 
             }
 
@@ -8816,7 +8739,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVariableDefinition"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3685:1: ruleVariableDefinition returns [EObject current=null] : (this_NumberVariableDefinition_0= ruleNumberVariableDefinition | this_StringVariableDefinition_1= ruleStringVariableDefinition | this_BooleanVariableDefinition_2= ruleBooleanVariableDefinition ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3668:1: ruleVariableDefinition returns [EObject current=null] : (this_NumberVariableDefinition_0= ruleNumberVariableDefinition | this_StringVariableDefinition_1= ruleStringVariableDefinition | this_BooleanVariableDefinition_2= ruleBooleanVariableDefinition ) ;
     public final EObject ruleVariableDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -8830,10 +8753,10 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3688:28: ( (this_NumberVariableDefinition_0= ruleNumberVariableDefinition | this_StringVariableDefinition_1= ruleStringVariableDefinition | this_BooleanVariableDefinition_2= ruleBooleanVariableDefinition ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3689:1: (this_NumberVariableDefinition_0= ruleNumberVariableDefinition | this_StringVariableDefinition_1= ruleStringVariableDefinition | this_BooleanVariableDefinition_2= ruleBooleanVariableDefinition )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3671:28: ( (this_NumberVariableDefinition_0= ruleNumberVariableDefinition | this_StringVariableDefinition_1= ruleStringVariableDefinition | this_BooleanVariableDefinition_2= ruleBooleanVariableDefinition ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3672:1: (this_NumberVariableDefinition_0= ruleNumberVariableDefinition | this_StringVariableDefinition_1= ruleStringVariableDefinition | this_BooleanVariableDefinition_2= ruleBooleanVariableDefinition )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3689:1: (this_NumberVariableDefinition_0= ruleNumberVariableDefinition | this_StringVariableDefinition_1= ruleStringVariableDefinition | this_BooleanVariableDefinition_2= ruleBooleanVariableDefinition )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3672:1: (this_NumberVariableDefinition_0= ruleNumberVariableDefinition | this_StringVariableDefinition_1= ruleStringVariableDefinition | this_BooleanVariableDefinition_2= ruleBooleanVariableDefinition )
             int alt33=3;
             switch ( input.LA(1) ) {
             case 75:
@@ -8852,11 +8775,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     if ( (LA33_4==17) ) {
                         int LA33_5 = input.LA(4);
 
-                        if ( (LA33_5==RULE_BOOLVALUE) ) {
-                            alt33=3;
-                        }
-                        else if ( (LA33_5==RULE_NUMBER) ) {
+                        if ( (LA33_5==RULE_NUMBER) ) {
                             alt33=1;
+                        }
+                        else if ( (LA33_5==RULE_BOOLVALUE) ) {
+                            alt33=3;
                         }
                         else {
                             NoViableAltException nvae =
@@ -8894,12 +8817,12 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             switch (alt33) {
                 case 1 :
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3690:5: this_NumberVariableDefinition_0= ruleNumberVariableDefinition
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3673:5: this_NumberVariableDefinition_0= ruleNumberVariableDefinition
                     {
                      
                             newCompositeNode(grammarAccess.getVariableDefinitionAccess().getNumberVariableDefinitionParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleNumberVariableDefinition_in_ruleVariableDefinition8239);
+                    pushFollow(FOLLOW_ruleNumberVariableDefinition_in_ruleVariableDefinition8185);
                     this_NumberVariableDefinition_0=ruleNumberVariableDefinition();
 
                     state._fsp--;
@@ -8912,12 +8835,12 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3700:5: this_StringVariableDefinition_1= ruleStringVariableDefinition
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3683:5: this_StringVariableDefinition_1= ruleStringVariableDefinition
                     {
                      
                             newCompositeNode(grammarAccess.getVariableDefinitionAccess().getStringVariableDefinitionParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleStringVariableDefinition_in_ruleVariableDefinition8266);
+                    pushFollow(FOLLOW_ruleStringVariableDefinition_in_ruleVariableDefinition8212);
                     this_StringVariableDefinition_1=ruleStringVariableDefinition();
 
                     state._fsp--;
@@ -8930,12 +8853,12 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3710:5: this_BooleanVariableDefinition_2= ruleBooleanVariableDefinition
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3693:5: this_BooleanVariableDefinition_2= ruleBooleanVariableDefinition
                     {
                      
                             newCompositeNode(grammarAccess.getVariableDefinitionAccess().getBooleanVariableDefinitionParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleBooleanVariableDefinition_in_ruleVariableDefinition8293);
+                    pushFollow(FOLLOW_ruleBooleanVariableDefinition_in_ruleVariableDefinition8239);
                     this_BooleanVariableDefinition_2=ruleBooleanVariableDefinition();
 
                     state._fsp--;
@@ -8968,7 +8891,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVariableDeclaration"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3726:1: entryRuleVariableDeclaration returns [EObject current=null] : iv_ruleVariableDeclaration= ruleVariableDeclaration EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3709:1: entryRuleVariableDeclaration returns [EObject current=null] : iv_ruleVariableDeclaration= ruleVariableDeclaration EOF ;
     public final EObject entryRuleVariableDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -8976,17 +8899,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3727:2: (iv_ruleVariableDeclaration= ruleVariableDeclaration EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3728:2: iv_ruleVariableDeclaration= ruleVariableDeclaration EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3710:2: (iv_ruleVariableDeclaration= ruleVariableDeclaration EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3711:2: iv_ruleVariableDeclaration= ruleVariableDeclaration EOF
             {
              newCompositeNode(grammarAccess.getVariableDeclarationRule()); 
-            pushFollow(FOLLOW_ruleVariableDeclaration_in_entryRuleVariableDeclaration8328);
+            pushFollow(FOLLOW_ruleVariableDeclaration_in_entryRuleVariableDeclaration8274);
             iv_ruleVariableDeclaration=ruleVariableDeclaration();
 
             state._fsp--;
 
              current =iv_ruleVariableDeclaration; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVariableDeclaration8338); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVariableDeclaration8284); 
 
             }
 
@@ -9004,7 +8927,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVariableDeclaration"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3735:1: ruleVariableDeclaration returns [EObject current=null] : ( ( (lv_type_0_0= ruleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ';' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3718:1: ruleVariableDeclaration returns [EObject current=null] : ( ( (lv_type_0_0= ruleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ';' ) ;
     public final EObject ruleVariableDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -9016,22 +8939,22 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3738:28: ( ( ( (lv_type_0_0= ruleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ';' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3739:1: ( ( (lv_type_0_0= ruleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ';' )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3721:28: ( ( ( (lv_type_0_0= ruleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ';' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3722:1: ( ( (lv_type_0_0= ruleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ';' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3739:1: ( ( (lv_type_0_0= ruleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ';' )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3739:2: ( (lv_type_0_0= ruleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ';'
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3722:1: ( ( (lv_type_0_0= ruleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ';' )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3722:2: ( (lv_type_0_0= ruleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ';'
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3739:2: ( (lv_type_0_0= ruleDataType ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3740:1: (lv_type_0_0= ruleDataType )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3722:2: ( (lv_type_0_0= ruleDataType ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3723:1: (lv_type_0_0= ruleDataType )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3740:1: (lv_type_0_0= ruleDataType )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3741:3: lv_type_0_0= ruleDataType
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3723:1: (lv_type_0_0= ruleDataType )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3724:3: lv_type_0_0= ruleDataType
             {
              
             	        newCompositeNode(grammarAccess.getVariableDeclarationAccess().getTypeDataTypeParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleDataType_in_ruleVariableDeclaration8384);
+            pushFollow(FOLLOW_ruleDataType_in_ruleVariableDeclaration8330);
             lv_type_0_0=ruleDataType();
 
             state._fsp--;
@@ -9053,13 +8976,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3757:2: ( (lv_name_1_0= RULE_ID ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3758:1: (lv_name_1_0= RULE_ID )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3740:2: ( (lv_name_1_0= RULE_ID ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3741:1: (lv_name_1_0= RULE_ID )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3758:1: (lv_name_1_0= RULE_ID )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3759:3: lv_name_1_0= RULE_ID
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3741:1: (lv_name_1_0= RULE_ID )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3742:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVariableDeclaration8401); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVariableDeclaration8347); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getVariableDeclarationAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -9079,7 +9002,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,18,FOLLOW_18_in_ruleVariableDeclaration8418); 
+            otherlv_2=(Token)match(input,18,FOLLOW_18_in_ruleVariableDeclaration8364); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getVariableDeclarationAccess().getSemicolonKeyword_2());
                 
@@ -9104,7 +9027,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNumberVariableDefinition"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3787:1: entryRuleNumberVariableDefinition returns [EObject current=null] : iv_ruleNumberVariableDefinition= ruleNumberVariableDefinition EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3770:1: entryRuleNumberVariableDefinition returns [EObject current=null] : iv_ruleNumberVariableDefinition= ruleNumberVariableDefinition EOF ;
     public final EObject entryRuleNumberVariableDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -9112,17 +9035,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3788:2: (iv_ruleNumberVariableDefinition= ruleNumberVariableDefinition EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3789:2: iv_ruleNumberVariableDefinition= ruleNumberVariableDefinition EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3771:2: (iv_ruleNumberVariableDefinition= ruleNumberVariableDefinition EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3772:2: iv_ruleNumberVariableDefinition= ruleNumberVariableDefinition EOF
             {
              newCompositeNode(grammarAccess.getNumberVariableDefinitionRule()); 
-            pushFollow(FOLLOW_ruleNumberVariableDefinition_in_entryRuleNumberVariableDefinition8454);
+            pushFollow(FOLLOW_ruleNumberVariableDefinition_in_entryRuleNumberVariableDefinition8400);
             iv_ruleNumberVariableDefinition=ruleNumberVariableDefinition();
 
             state._fsp--;
 
              current =iv_ruleNumberVariableDefinition; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNumberVariableDefinition8464); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNumberVariableDefinition8410); 
 
             }
 
@@ -9140,7 +9063,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumberVariableDefinition"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3796:1: ruleNumberVariableDefinition returns [EObject current=null] : ( ( (lv_type_0_0= ruleSimpleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_NUMBER ) ) otherlv_4= ';' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3779:1: ruleNumberVariableDefinition returns [EObject current=null] : ( ( (lv_type_0_0= ruleSimpleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_NUMBER ) ) otherlv_4= ';' ) ;
     public final EObject ruleNumberVariableDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -9154,22 +9077,22 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3799:28: ( ( ( (lv_type_0_0= ruleSimpleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_NUMBER ) ) otherlv_4= ';' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3800:1: ( ( (lv_type_0_0= ruleSimpleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_NUMBER ) ) otherlv_4= ';' )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3782:28: ( ( ( (lv_type_0_0= ruleSimpleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_NUMBER ) ) otherlv_4= ';' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3783:1: ( ( (lv_type_0_0= ruleSimpleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_NUMBER ) ) otherlv_4= ';' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3800:1: ( ( (lv_type_0_0= ruleSimpleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_NUMBER ) ) otherlv_4= ';' )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3800:2: ( (lv_type_0_0= ruleSimpleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_NUMBER ) ) otherlv_4= ';'
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3783:1: ( ( (lv_type_0_0= ruleSimpleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_NUMBER ) ) otherlv_4= ';' )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3783:2: ( (lv_type_0_0= ruleSimpleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_NUMBER ) ) otherlv_4= ';'
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3800:2: ( (lv_type_0_0= ruleSimpleDataType ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3801:1: (lv_type_0_0= ruleSimpleDataType )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3783:2: ( (lv_type_0_0= ruleSimpleDataType ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3784:1: (lv_type_0_0= ruleSimpleDataType )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3801:1: (lv_type_0_0= ruleSimpleDataType )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3802:3: lv_type_0_0= ruleSimpleDataType
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3784:1: (lv_type_0_0= ruleSimpleDataType )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3785:3: lv_type_0_0= ruleSimpleDataType
             {
              
             	        newCompositeNode(grammarAccess.getNumberVariableDefinitionAccess().getTypeSimpleDataTypeParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleSimpleDataType_in_ruleNumberVariableDefinition8510);
+            pushFollow(FOLLOW_ruleSimpleDataType_in_ruleNumberVariableDefinition8456);
             lv_type_0_0=ruleSimpleDataType();
 
             state._fsp--;
@@ -9191,13 +9114,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3818:2: ( (lv_name_1_0= RULE_ID ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3819:1: (lv_name_1_0= RULE_ID )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3801:2: ( (lv_name_1_0= RULE_ID ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3802:1: (lv_name_1_0= RULE_ID )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3819:1: (lv_name_1_0= RULE_ID )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3820:3: lv_name_1_0= RULE_ID
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3802:1: (lv_name_1_0= RULE_ID )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3803:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNumberVariableDefinition8527); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleNumberVariableDefinition8473); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getNumberVariableDefinitionAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -9217,17 +9140,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleNumberVariableDefinition8544); 
+            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleNumberVariableDefinition8490); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getNumberVariableDefinitionAccess().getEqualsSignKeyword_2());
                 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3840:1: ( (lv_value_3_0= RULE_NUMBER ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3841:1: (lv_value_3_0= RULE_NUMBER )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3823:1: ( (lv_value_3_0= RULE_NUMBER ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3824:1: (lv_value_3_0= RULE_NUMBER )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3841:1: (lv_value_3_0= RULE_NUMBER )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3842:3: lv_value_3_0= RULE_NUMBER
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3824:1: (lv_value_3_0= RULE_NUMBER )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3825:3: lv_value_3_0= RULE_NUMBER
             {
-            lv_value_3_0=(Token)match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_ruleNumberVariableDefinition8561); 
+            lv_value_3_0=(Token)match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_ruleNumberVariableDefinition8507); 
 
             			newLeafNode(lv_value_3_0, grammarAccess.getNumberVariableDefinitionAccess().getValueNUMBERTerminalRuleCall_3_0()); 
             		
@@ -9247,7 +9170,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleNumberVariableDefinition8578); 
+            otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleNumberVariableDefinition8524); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getNumberVariableDefinitionAccess().getSemicolonKeyword_4());
                 
@@ -9272,7 +9195,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringVariableDefinition"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3870:1: entryRuleStringVariableDefinition returns [EObject current=null] : iv_ruleStringVariableDefinition= ruleStringVariableDefinition EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3853:1: entryRuleStringVariableDefinition returns [EObject current=null] : iv_ruleStringVariableDefinition= ruleStringVariableDefinition EOF ;
     public final EObject entryRuleStringVariableDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -9280,17 +9203,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3871:2: (iv_ruleStringVariableDefinition= ruleStringVariableDefinition EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3872:2: iv_ruleStringVariableDefinition= ruleStringVariableDefinition EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3854:2: (iv_ruleStringVariableDefinition= ruleStringVariableDefinition EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3855:2: iv_ruleStringVariableDefinition= ruleStringVariableDefinition EOF
             {
              newCompositeNode(grammarAccess.getStringVariableDefinitionRule()); 
-            pushFollow(FOLLOW_ruleStringVariableDefinition_in_entryRuleStringVariableDefinition8614);
+            pushFollow(FOLLOW_ruleStringVariableDefinition_in_entryRuleStringVariableDefinition8560);
             iv_ruleStringVariableDefinition=ruleStringVariableDefinition();
 
             state._fsp--;
 
              current =iv_ruleStringVariableDefinition; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStringVariableDefinition8624); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStringVariableDefinition8570); 
 
             }
 
@@ -9308,7 +9231,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringVariableDefinition"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3879:1: ruleStringVariableDefinition returns [EObject current=null] : ( ( (lv_type_0_0= ruleStringDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= ';' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3862:1: ruleStringVariableDefinition returns [EObject current=null] : ( ( (lv_type_0_0= ruleStringDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= ';' ) ;
     public final EObject ruleStringVariableDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -9322,22 +9245,22 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3882:28: ( ( ( (lv_type_0_0= ruleStringDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= ';' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3883:1: ( ( (lv_type_0_0= ruleStringDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= ';' )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3865:28: ( ( ( (lv_type_0_0= ruleStringDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= ';' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3866:1: ( ( (lv_type_0_0= ruleStringDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= ';' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3883:1: ( ( (lv_type_0_0= ruleStringDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= ';' )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3883:2: ( (lv_type_0_0= ruleStringDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= ';'
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3866:1: ( ( (lv_type_0_0= ruleStringDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= ';' )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3866:2: ( (lv_type_0_0= ruleStringDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_STRING ) ) otherlv_4= ';'
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3883:2: ( (lv_type_0_0= ruleStringDataType ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3884:1: (lv_type_0_0= ruleStringDataType )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3866:2: ( (lv_type_0_0= ruleStringDataType ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3867:1: (lv_type_0_0= ruleStringDataType )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3884:1: (lv_type_0_0= ruleStringDataType )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3885:3: lv_type_0_0= ruleStringDataType
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3867:1: (lv_type_0_0= ruleStringDataType )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3868:3: lv_type_0_0= ruleStringDataType
             {
              
             	        newCompositeNode(grammarAccess.getStringVariableDefinitionAccess().getTypeStringDataTypeParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleStringDataType_in_ruleStringVariableDefinition8670);
+            pushFollow(FOLLOW_ruleStringDataType_in_ruleStringVariableDefinition8616);
             lv_type_0_0=ruleStringDataType();
 
             state._fsp--;
@@ -9359,13 +9282,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3901:2: ( (lv_name_1_0= RULE_ID ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3902:1: (lv_name_1_0= RULE_ID )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3884:2: ( (lv_name_1_0= RULE_ID ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3885:1: (lv_name_1_0= RULE_ID )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3902:1: (lv_name_1_0= RULE_ID )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3903:3: lv_name_1_0= RULE_ID
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3885:1: (lv_name_1_0= RULE_ID )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3886:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleStringVariableDefinition8687); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleStringVariableDefinition8633); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getStringVariableDefinitionAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -9385,17 +9308,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleStringVariableDefinition8704); 
+            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleStringVariableDefinition8650); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getStringVariableDefinitionAccess().getEqualsSignKeyword_2());
                 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3923:1: ( (lv_value_3_0= RULE_STRING ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3924:1: (lv_value_3_0= RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3906:1: ( (lv_value_3_0= RULE_STRING ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3907:1: (lv_value_3_0= RULE_STRING )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3924:1: (lv_value_3_0= RULE_STRING )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3925:3: lv_value_3_0= RULE_STRING
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3907:1: (lv_value_3_0= RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3908:3: lv_value_3_0= RULE_STRING
             {
-            lv_value_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringVariableDefinition8721); 
+            lv_value_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringVariableDefinition8667); 
 
             			newLeafNode(lv_value_3_0, grammarAccess.getStringVariableDefinitionAccess().getValueSTRINGTerminalRuleCall_3_0()); 
             		
@@ -9415,7 +9338,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleStringVariableDefinition8738); 
+            otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleStringVariableDefinition8684); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getStringVariableDefinitionAccess().getSemicolonKeyword_4());
                 
@@ -9440,7 +9363,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBooleanVariableDefinition"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3953:1: entryRuleBooleanVariableDefinition returns [EObject current=null] : iv_ruleBooleanVariableDefinition= ruleBooleanVariableDefinition EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3936:1: entryRuleBooleanVariableDefinition returns [EObject current=null] : iv_ruleBooleanVariableDefinition= ruleBooleanVariableDefinition EOF ;
     public final EObject entryRuleBooleanVariableDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -9448,17 +9371,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3954:2: (iv_ruleBooleanVariableDefinition= ruleBooleanVariableDefinition EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3955:2: iv_ruleBooleanVariableDefinition= ruleBooleanVariableDefinition EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3937:2: (iv_ruleBooleanVariableDefinition= ruleBooleanVariableDefinition EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3938:2: iv_ruleBooleanVariableDefinition= ruleBooleanVariableDefinition EOF
             {
              newCompositeNode(grammarAccess.getBooleanVariableDefinitionRule()); 
-            pushFollow(FOLLOW_ruleBooleanVariableDefinition_in_entryRuleBooleanVariableDefinition8774);
+            pushFollow(FOLLOW_ruleBooleanVariableDefinition_in_entryRuleBooleanVariableDefinition8720);
             iv_ruleBooleanVariableDefinition=ruleBooleanVariableDefinition();
 
             state._fsp--;
 
              current =iv_ruleBooleanVariableDefinition; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBooleanVariableDefinition8784); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBooleanVariableDefinition8730); 
 
             }
 
@@ -9476,7 +9399,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBooleanVariableDefinition"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3962:1: ruleBooleanVariableDefinition returns [EObject current=null] : ( ( (lv_type_0_0= ruleBooleanDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_BOOLVALUE ) ) otherlv_4= ';' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3945:1: ruleBooleanVariableDefinition returns [EObject current=null] : ( ( (lv_type_0_0= ruleBooleanDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_BOOLVALUE ) ) otherlv_4= ';' ) ;
     public final EObject ruleBooleanVariableDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -9490,22 +9413,22 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3965:28: ( ( ( (lv_type_0_0= ruleBooleanDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_BOOLVALUE ) ) otherlv_4= ';' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3966:1: ( ( (lv_type_0_0= ruleBooleanDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_BOOLVALUE ) ) otherlv_4= ';' )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3948:28: ( ( ( (lv_type_0_0= ruleBooleanDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_BOOLVALUE ) ) otherlv_4= ';' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3949:1: ( ( (lv_type_0_0= ruleBooleanDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_BOOLVALUE ) ) otherlv_4= ';' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3966:1: ( ( (lv_type_0_0= ruleBooleanDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_BOOLVALUE ) ) otherlv_4= ';' )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3966:2: ( (lv_type_0_0= ruleBooleanDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_BOOLVALUE ) ) otherlv_4= ';'
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3949:1: ( ( (lv_type_0_0= ruleBooleanDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_BOOLVALUE ) ) otherlv_4= ';' )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3949:2: ( (lv_type_0_0= ruleBooleanDataType ) ) ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= RULE_BOOLVALUE ) ) otherlv_4= ';'
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3966:2: ( (lv_type_0_0= ruleBooleanDataType ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3967:1: (lv_type_0_0= ruleBooleanDataType )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3949:2: ( (lv_type_0_0= ruleBooleanDataType ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3950:1: (lv_type_0_0= ruleBooleanDataType )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3967:1: (lv_type_0_0= ruleBooleanDataType )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3968:3: lv_type_0_0= ruleBooleanDataType
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3950:1: (lv_type_0_0= ruleBooleanDataType )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3951:3: lv_type_0_0= ruleBooleanDataType
             {
              
             	        newCompositeNode(grammarAccess.getBooleanVariableDefinitionAccess().getTypeBooleanDataTypeParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleBooleanDataType_in_ruleBooleanVariableDefinition8830);
+            pushFollow(FOLLOW_ruleBooleanDataType_in_ruleBooleanVariableDefinition8776);
             lv_type_0_0=ruleBooleanDataType();
 
             state._fsp--;
@@ -9527,13 +9450,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3984:2: ( (lv_name_1_0= RULE_ID ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3985:1: (lv_name_1_0= RULE_ID )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3967:2: ( (lv_name_1_0= RULE_ID ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3968:1: (lv_name_1_0= RULE_ID )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3985:1: (lv_name_1_0= RULE_ID )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3986:3: lv_name_1_0= RULE_ID
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3968:1: (lv_name_1_0= RULE_ID )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3969:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleBooleanVariableDefinition8847); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleBooleanVariableDefinition8793); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getBooleanVariableDefinitionAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -9553,17 +9476,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleBooleanVariableDefinition8864); 
+            otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleBooleanVariableDefinition8810); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getBooleanVariableDefinitionAccess().getEqualsSignKeyword_2());
                 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4006:1: ( (lv_value_3_0= RULE_BOOLVALUE ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4007:1: (lv_value_3_0= RULE_BOOLVALUE )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3989:1: ( (lv_value_3_0= RULE_BOOLVALUE ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3990:1: (lv_value_3_0= RULE_BOOLVALUE )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4007:1: (lv_value_3_0= RULE_BOOLVALUE )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4008:3: lv_value_3_0= RULE_BOOLVALUE
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3990:1: (lv_value_3_0= RULE_BOOLVALUE )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:3991:3: lv_value_3_0= RULE_BOOLVALUE
             {
-            lv_value_3_0=(Token)match(input,RULE_BOOLVALUE,FOLLOW_RULE_BOOLVALUE_in_ruleBooleanVariableDefinition8881); 
+            lv_value_3_0=(Token)match(input,RULE_BOOLVALUE,FOLLOW_RULE_BOOLVALUE_in_ruleBooleanVariableDefinition8827); 
 
             			newLeafNode(lv_value_3_0, grammarAccess.getBooleanVariableDefinitionAccess().getValueBOOLVALUETerminalRuleCall_3_0()); 
             		
@@ -9583,7 +9506,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleBooleanVariableDefinition8898); 
+            otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleBooleanVariableDefinition8844); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getBooleanVariableDefinitionAccess().getSemicolonKeyword_4());
                 
@@ -9608,7 +9531,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStructureDeclaration"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4036:1: entryRuleStructureDeclaration returns [EObject current=null] : iv_ruleStructureDeclaration= ruleStructureDeclaration EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4019:1: entryRuleStructureDeclaration returns [EObject current=null] : iv_ruleStructureDeclaration= ruleStructureDeclaration EOF ;
     public final EObject entryRuleStructureDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -9616,17 +9539,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4037:2: (iv_ruleStructureDeclaration= ruleStructureDeclaration EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4038:2: iv_ruleStructureDeclaration= ruleStructureDeclaration EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4020:2: (iv_ruleStructureDeclaration= ruleStructureDeclaration EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4021:2: iv_ruleStructureDeclaration= ruleStructureDeclaration EOF
             {
              newCompositeNode(grammarAccess.getStructureDeclarationRule()); 
-            pushFollow(FOLLOW_ruleStructureDeclaration_in_entryRuleStructureDeclaration8934);
+            pushFollow(FOLLOW_ruleStructureDeclaration_in_entryRuleStructureDeclaration8880);
             iv_ruleStructureDeclaration=ruleStructureDeclaration();
 
             state._fsp--;
 
              current =iv_ruleStructureDeclaration; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStructureDeclaration8944); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStructureDeclaration8890); 
 
             }
 
@@ -9644,7 +9567,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStructureDeclaration"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4045:1: ruleStructureDeclaration returns [EObject current=null] : (otherlv_0= 'structure' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleVariableDeclaration ) )+ otherlv_4= '}' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4028:1: ruleStructureDeclaration returns [EObject current=null] : (otherlv_0= 'structure' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleVariableDeclaration ) )+ otherlv_4= '}' ) ;
     public final EObject ruleStructureDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -9658,23 +9581,23 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4048:28: ( (otherlv_0= 'structure' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleVariableDeclaration ) )+ otherlv_4= '}' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4049:1: (otherlv_0= 'structure' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleVariableDeclaration ) )+ otherlv_4= '}' )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4031:28: ( (otherlv_0= 'structure' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleVariableDeclaration ) )+ otherlv_4= '}' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4032:1: (otherlv_0= 'structure' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleVariableDeclaration ) )+ otherlv_4= '}' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4049:1: (otherlv_0= 'structure' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleVariableDeclaration ) )+ otherlv_4= '}' )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4049:3: otherlv_0= 'structure' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleVariableDeclaration ) )+ otherlv_4= '}'
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4032:1: (otherlv_0= 'structure' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleVariableDeclaration ) )+ otherlv_4= '}' )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4032:3: otherlv_0= 'structure' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleVariableDeclaration ) )+ otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,60,FOLLOW_60_in_ruleStructureDeclaration8981); 
+            otherlv_0=(Token)match(input,60,FOLLOW_60_in_ruleStructureDeclaration8927); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getStructureDeclarationAccess().getStructureKeyword_0());
                 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4053:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4054:1: (lv_name_1_0= RULE_ID )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4036:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4037:1: (lv_name_1_0= RULE_ID )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4054:1: (lv_name_1_0= RULE_ID )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4055:3: lv_name_1_0= RULE_ID
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4037:1: (lv_name_1_0= RULE_ID )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4038:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleStructureDeclaration8998); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleStructureDeclaration8944); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getStructureDeclarationAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -9694,11 +9617,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,13,FOLLOW_13_in_ruleStructureDeclaration9015); 
+            otherlv_2=(Token)match(input,13,FOLLOW_13_in_ruleStructureDeclaration8961); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getStructureDeclarationAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4075:1: ( (lv_elements_3_0= ruleVariableDeclaration ) )+
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4058:1: ( (lv_elements_3_0= ruleVariableDeclaration ) )+
             int cnt34=0;
             loop34:
             do {
@@ -9712,15 +9635,15 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
                 switch (alt34) {
             	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4076:1: (lv_elements_3_0= ruleVariableDeclaration )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4059:1: (lv_elements_3_0= ruleVariableDeclaration )
             	    {
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4076:1: (lv_elements_3_0= ruleVariableDeclaration )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4077:3: lv_elements_3_0= ruleVariableDeclaration
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4059:1: (lv_elements_3_0= ruleVariableDeclaration )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4060:3: lv_elements_3_0= ruleVariableDeclaration
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getStructureDeclarationAccess().getElementsVariableDeclarationParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleVariableDeclaration_in_ruleStructureDeclaration9036);
+            	    pushFollow(FOLLOW_ruleVariableDeclaration_in_ruleStructureDeclaration8982);
             	    lv_elements_3_0=ruleVariableDeclaration();
 
             	    state._fsp--;
@@ -9752,7 +9675,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                 cnt34++;
             } while (true);
 
-            otherlv_4=(Token)match(input,14,FOLLOW_14_in_ruleStructureDeclaration9049); 
+            otherlv_4=(Token)match(input,14,FOLLOW_14_in_ruleStructureDeclaration8995); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getStructureDeclarationAccess().getRightCurlyBracketKeyword_4());
                 
@@ -9777,7 +9700,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStreamDeclaration"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4105:1: entryRuleStreamDeclaration returns [EObject current=null] : iv_ruleStreamDeclaration= ruleStreamDeclaration EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4088:1: entryRuleStreamDeclaration returns [EObject current=null] : iv_ruleStreamDeclaration= ruleStreamDeclaration EOF ;
     public final EObject entryRuleStreamDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -9785,17 +9708,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4106:2: (iv_ruleStreamDeclaration= ruleStreamDeclaration EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4107:2: iv_ruleStreamDeclaration= ruleStreamDeclaration EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4089:2: (iv_ruleStreamDeclaration= ruleStreamDeclaration EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4090:2: iv_ruleStreamDeclaration= ruleStreamDeclaration EOF
             {
              newCompositeNode(grammarAccess.getStreamDeclarationRule()); 
-            pushFollow(FOLLOW_ruleStreamDeclaration_in_entryRuleStreamDeclaration9085);
+            pushFollow(FOLLOW_ruleStreamDeclaration_in_entryRuleStreamDeclaration9031);
             iv_ruleStreamDeclaration=ruleStreamDeclaration();
 
             state._fsp--;
 
              current =iv_ruleStreamDeclaration; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStreamDeclaration9095); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStreamDeclaration9041); 
 
             }
 
@@ -9813,7 +9736,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStreamDeclaration"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4114:1: ruleStreamDeclaration returns [EObject current=null] : (otherlv_0= 'stream' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleStreamElement ) )+ otherlv_4= '}' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4097:1: ruleStreamDeclaration returns [EObject current=null] : (otherlv_0= 'stream' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleStreamElement ) )+ otherlv_4= '}' ) ;
     public final EObject ruleStreamDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -9827,23 +9750,23 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4117:28: ( (otherlv_0= 'stream' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleStreamElement ) )+ otherlv_4= '}' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4118:1: (otherlv_0= 'stream' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleStreamElement ) )+ otherlv_4= '}' )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4100:28: ( (otherlv_0= 'stream' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleStreamElement ) )+ otherlv_4= '}' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4101:1: (otherlv_0= 'stream' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleStreamElement ) )+ otherlv_4= '}' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4118:1: (otherlv_0= 'stream' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleStreamElement ) )+ otherlv_4= '}' )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4118:3: otherlv_0= 'stream' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleStreamElement ) )+ otherlv_4= '}'
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4101:1: (otherlv_0= 'stream' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleStreamElement ) )+ otherlv_4= '}' )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4101:3: otherlv_0= 'stream' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_elements_3_0= ruleStreamElement ) )+ otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,61,FOLLOW_61_in_ruleStreamDeclaration9132); 
+            otherlv_0=(Token)match(input,61,FOLLOW_61_in_ruleStreamDeclaration9078); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getStreamDeclarationAccess().getStreamKeyword_0());
                 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4122:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4123:1: (lv_name_1_0= RULE_ID )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4105:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4106:1: (lv_name_1_0= RULE_ID )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4123:1: (lv_name_1_0= RULE_ID )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4124:3: lv_name_1_0= RULE_ID
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4106:1: (lv_name_1_0= RULE_ID )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4107:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleStreamDeclaration9149); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleStreamDeclaration9095); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getStreamDeclarationAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -9863,11 +9786,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,13,FOLLOW_13_in_ruleStreamDeclaration9166); 
+            otherlv_2=(Token)match(input,13,FOLLOW_13_in_ruleStreamDeclaration9112); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getStreamDeclarationAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4144:1: ( (lv_elements_3_0= ruleStreamElement ) )+
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4127:1: ( (lv_elements_3_0= ruleStreamElement ) )+
             int cnt35=0;
             loop35:
             do {
@@ -9881,15 +9804,15 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
                 switch (alt35) {
             	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4145:1: (lv_elements_3_0= ruleStreamElement )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4128:1: (lv_elements_3_0= ruleStreamElement )
             	    {
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4145:1: (lv_elements_3_0= ruleStreamElement )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4146:3: lv_elements_3_0= ruleStreamElement
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4128:1: (lv_elements_3_0= ruleStreamElement )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4129:3: lv_elements_3_0= ruleStreamElement
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getStreamDeclarationAccess().getElementsStreamElementParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleStreamElement_in_ruleStreamDeclaration9187);
+            	    pushFollow(FOLLOW_ruleStreamElement_in_ruleStreamDeclaration9133);
             	    lv_elements_3_0=ruleStreamElement();
 
             	    state._fsp--;
@@ -9921,7 +9844,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                 cnt35++;
             } while (true);
 
-            otherlv_4=(Token)match(input,14,FOLLOW_14_in_ruleStreamDeclaration9200); 
+            otherlv_4=(Token)match(input,14,FOLLOW_14_in_ruleStreamDeclaration9146); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getStreamDeclarationAccess().getRightCurlyBracketKeyword_4());
                 
@@ -9946,7 +9869,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStreamElement"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4174:1: entryRuleStreamElement returns [EObject current=null] : iv_ruleStreamElement= ruleStreamElement EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4157:1: entryRuleStreamElement returns [EObject current=null] : iv_ruleStreamElement= ruleStreamElement EOF ;
     public final EObject entryRuleStreamElement() throws RecognitionException {
         EObject current = null;
 
@@ -9954,17 +9877,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4175:2: (iv_ruleStreamElement= ruleStreamElement EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4176:2: iv_ruleStreamElement= ruleStreamElement EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4158:2: (iv_ruleStreamElement= ruleStreamElement EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4159:2: iv_ruleStreamElement= ruleStreamElement EOF
             {
              newCompositeNode(grammarAccess.getStreamElementRule()); 
-            pushFollow(FOLLOW_ruleStreamElement_in_entryRuleStreamElement9236);
+            pushFollow(FOLLOW_ruleStreamElement_in_entryRuleStreamElement9182);
             iv_ruleStreamElement=ruleStreamElement();
 
             state._fsp--;
 
              current =iv_ruleStreamElement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStreamElement9246); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStreamElement9192); 
 
             }
 
@@ -9982,7 +9905,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStreamElement"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4183:1: ruleStreamElement returns [EObject current=null] : (this_StructureElements_0= ruleStructureElements | this_VariableDeclaration_1= ruleVariableDeclaration ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4166:1: ruleStreamElement returns [EObject current=null] : (this_StructureElements_0= ruleStructureElements | this_VariableDeclaration_1= ruleVariableDeclaration ) ;
     public final EObject ruleStreamElement() throws RecognitionException {
         EObject current = null;
 
@@ -9994,10 +9917,10 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4186:28: ( (this_StructureElements_0= ruleStructureElements | this_VariableDeclaration_1= ruleVariableDeclaration ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4187:1: (this_StructureElements_0= ruleStructureElements | this_VariableDeclaration_1= ruleVariableDeclaration )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4169:28: ( (this_StructureElements_0= ruleStructureElements | this_VariableDeclaration_1= ruleVariableDeclaration ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4170:1: (this_StructureElements_0= ruleStructureElements | this_VariableDeclaration_1= ruleVariableDeclaration )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4187:1: (this_StructureElements_0= ruleStructureElements | this_VariableDeclaration_1= ruleVariableDeclaration )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4170:1: (this_StructureElements_0= ruleStructureElements | this_VariableDeclaration_1= ruleVariableDeclaration )
             int alt36=2;
             int LA36_0 = input.LA(1);
 
@@ -10015,12 +9938,12 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             }
             switch (alt36) {
                 case 1 :
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4188:5: this_StructureElements_0= ruleStructureElements
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4171:5: this_StructureElements_0= ruleStructureElements
                     {
                      
                             newCompositeNode(grammarAccess.getStreamElementAccess().getStructureElementsParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleStructureElements_in_ruleStreamElement9293);
+                    pushFollow(FOLLOW_ruleStructureElements_in_ruleStreamElement9239);
                     this_StructureElements_0=ruleStructureElements();
 
                     state._fsp--;
@@ -10033,12 +9956,12 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4198:5: this_VariableDeclaration_1= ruleVariableDeclaration
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4181:5: this_VariableDeclaration_1= ruleVariableDeclaration
                     {
                      
                             newCompositeNode(grammarAccess.getStreamElementAccess().getVariableDeclarationParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleVariableDeclaration_in_ruleStreamElement9320);
+                    pushFollow(FOLLOW_ruleVariableDeclaration_in_ruleStreamElement9266);
                     this_VariableDeclaration_1=ruleVariableDeclaration();
 
                     state._fsp--;
@@ -10071,7 +9994,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStructureElements"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4214:1: entryRuleStructureElements returns [EObject current=null] : iv_ruleStructureElements= ruleStructureElements EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4197:1: entryRuleStructureElements returns [EObject current=null] : iv_ruleStructureElements= ruleStructureElements EOF ;
     public final EObject entryRuleStructureElements() throws RecognitionException {
         EObject current = null;
 
@@ -10079,17 +10002,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4215:2: (iv_ruleStructureElements= ruleStructureElements EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4216:2: iv_ruleStructureElements= ruleStructureElements EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4198:2: (iv_ruleStructureElements= ruleStructureElements EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4199:2: iv_ruleStructureElements= ruleStructureElements EOF
             {
              newCompositeNode(grammarAccess.getStructureElementsRule()); 
-            pushFollow(FOLLOW_ruleStructureElements_in_entryRuleStructureElements9355);
+            pushFollow(FOLLOW_ruleStructureElements_in_entryRuleStructureElements9301);
             iv_ruleStructureElements=ruleStructureElements();
 
             state._fsp--;
 
              current =iv_ruleStructureElements; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStructureElements9365); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStructureElements9311); 
 
             }
 
@@ -10107,7 +10030,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStructureElements"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4223:1: ruleStructureElements returns [EObject current=null] : (otherlv_0= 'use' ( (otherlv_1= RULE_ID ) ) otherlv_2= ';' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4206:1: ruleStructureElements returns [EObject current=null] : (otherlv_0= 'use' ( (otherlv_1= RULE_ID ) ) otherlv_2= ';' ) ;
     public final EObject ruleStructureElements() throws RecognitionException {
         EObject current = null;
 
@@ -10118,28 +10041,28 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4226:28: ( (otherlv_0= 'use' ( (otherlv_1= RULE_ID ) ) otherlv_2= ';' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4227:1: (otherlv_0= 'use' ( (otherlv_1= RULE_ID ) ) otherlv_2= ';' )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4209:28: ( (otherlv_0= 'use' ( (otherlv_1= RULE_ID ) ) otherlv_2= ';' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4210:1: (otherlv_0= 'use' ( (otherlv_1= RULE_ID ) ) otherlv_2= ';' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4227:1: (otherlv_0= 'use' ( (otherlv_1= RULE_ID ) ) otherlv_2= ';' )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4227:3: otherlv_0= 'use' ( (otherlv_1= RULE_ID ) ) otherlv_2= ';'
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4210:1: (otherlv_0= 'use' ( (otherlv_1= RULE_ID ) ) otherlv_2= ';' )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4210:3: otherlv_0= 'use' ( (otherlv_1= RULE_ID ) ) otherlv_2= ';'
             {
-            otherlv_0=(Token)match(input,62,FOLLOW_62_in_ruleStructureElements9402); 
+            otherlv_0=(Token)match(input,62,FOLLOW_62_in_ruleStructureElements9348); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getStructureElementsAccess().getUseKeyword_0());
                 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4231:1: ( (otherlv_1= RULE_ID ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4232:1: (otherlv_1= RULE_ID )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4214:1: ( (otherlv_1= RULE_ID ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4215:1: (otherlv_1= RULE_ID )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4232:1: (otherlv_1= RULE_ID )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4233:3: otherlv_1= RULE_ID
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4215:1: (otherlv_1= RULE_ID )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4216:3: otherlv_1= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getStructureElementsRule());
             	        }
                     
-            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleStructureElements9422); 
+            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleStructureElements9368); 
 
             		newLeafNode(otherlv_1, grammarAccess.getStructureElementsAccess().getElementStructureDeclarationCrossReference_1_0()); 
             	
@@ -10149,7 +10072,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,18,FOLLOW_18_in_ruleStructureElements9434); 
+            otherlv_2=(Token)match(input,18,FOLLOW_18_in_ruleStructureElements9380); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getStructureElementsAccess().getSemicolonKeyword_2());
                 
@@ -10174,7 +10097,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExpression"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4256:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4239:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
     public final EObject entryRuleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -10182,17 +10105,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4257:2: (iv_ruleExpression= ruleExpression EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4258:2: iv_ruleExpression= ruleExpression EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4240:2: (iv_ruleExpression= ruleExpression EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4241:2: iv_ruleExpression= ruleExpression EOF
             {
              newCompositeNode(grammarAccess.getExpressionRule()); 
-            pushFollow(FOLLOW_ruleExpression_in_entryRuleExpression9470);
+            pushFollow(FOLLOW_ruleExpression_in_entryRuleExpression9416);
             iv_ruleExpression=ruleExpression();
 
             state._fsp--;
 
              current =iv_ruleExpression; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExpression9480); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExpression9426); 
 
             }
 
@@ -10210,7 +10133,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpression"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4265:1: ruleExpression returns [EObject current=null] : this_Or_0= ruleOr ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4248:1: ruleExpression returns [EObject current=null] : this_Or_0= ruleOr ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -10220,13 +10143,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4268:28: (this_Or_0= ruleOr )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4270:5: this_Or_0= ruleOr
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4251:28: (this_Or_0= ruleOr )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4253:5: this_Or_0= ruleOr
             {
              
                     newCompositeNode(grammarAccess.getExpressionAccess().getOrParserRuleCall()); 
                 
-            pushFollow(FOLLOW_ruleOr_in_ruleExpression9526);
+            pushFollow(FOLLOW_ruleOr_in_ruleExpression9472);
             this_Or_0=ruleOr();
 
             state._fsp--;
@@ -10253,7 +10176,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOr"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4286:1: entryRuleOr returns [EObject current=null] : iv_ruleOr= ruleOr EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4269:1: entryRuleOr returns [EObject current=null] : iv_ruleOr= ruleOr EOF ;
     public final EObject entryRuleOr() throws RecognitionException {
         EObject current = null;
 
@@ -10261,17 +10184,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4287:2: (iv_ruleOr= ruleOr EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4288:2: iv_ruleOr= ruleOr EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4270:2: (iv_ruleOr= ruleOr EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4271:2: iv_ruleOr= ruleOr EOF
             {
              newCompositeNode(grammarAccess.getOrRule()); 
-            pushFollow(FOLLOW_ruleOr_in_entryRuleOr9560);
+            pushFollow(FOLLOW_ruleOr_in_entryRuleOr9506);
             iv_ruleOr=ruleOr();
 
             state._fsp--;
 
              current =iv_ruleOr; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOr9570); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOr9516); 
 
             }
 
@@ -10289,7 +10212,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOr"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4295:1: ruleOr returns [EObject current=null] : (this_And_0= ruleAnd ( () ( (lv_operator_2_0= '||' ) ) ( (lv_right_3_0= ruleAnd ) ) )* ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4278:1: ruleOr returns [EObject current=null] : (this_And_0= ruleAnd ( () ( (lv_operator_2_0= '||' ) ) ( (lv_right_3_0= ruleAnd ) ) )* ) ;
     public final EObject ruleOr() throws RecognitionException {
         EObject current = null;
 
@@ -10302,16 +10225,16 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4298:28: ( (this_And_0= ruleAnd ( () ( (lv_operator_2_0= '||' ) ) ( (lv_right_3_0= ruleAnd ) ) )* ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4299:1: (this_And_0= ruleAnd ( () ( (lv_operator_2_0= '||' ) ) ( (lv_right_3_0= ruleAnd ) ) )* )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4281:28: ( (this_And_0= ruleAnd ( () ( (lv_operator_2_0= '||' ) ) ( (lv_right_3_0= ruleAnd ) ) )* ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4282:1: (this_And_0= ruleAnd ( () ( (lv_operator_2_0= '||' ) ) ( (lv_right_3_0= ruleAnd ) ) )* )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4299:1: (this_And_0= ruleAnd ( () ( (lv_operator_2_0= '||' ) ) ( (lv_right_3_0= ruleAnd ) ) )* )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4300:5: this_And_0= ruleAnd ( () ( (lv_operator_2_0= '||' ) ) ( (lv_right_3_0= ruleAnd ) ) )*
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4282:1: (this_And_0= ruleAnd ( () ( (lv_operator_2_0= '||' ) ) ( (lv_right_3_0= ruleAnd ) ) )* )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4283:5: this_And_0= ruleAnd ( () ( (lv_operator_2_0= '||' ) ) ( (lv_right_3_0= ruleAnd ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getOrAccess().getAndParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleAnd_in_ruleOr9617);
+            pushFollow(FOLLOW_ruleAnd_in_ruleOr9563);
             this_And_0=ruleAnd();
 
             state._fsp--;
@@ -10320,7 +10243,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     current = this_And_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4308:1: ( () ( (lv_operator_2_0= '||' ) ) ( (lv_right_3_0= ruleAnd ) ) )*
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4291:1: ( () ( (lv_operator_2_0= '||' ) ) ( (lv_right_3_0= ruleAnd ) ) )*
             loop37:
             do {
                 int alt37=2;
@@ -10333,10 +10256,10 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
                 switch (alt37) {
             	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4308:2: () ( (lv_operator_2_0= '||' ) ) ( (lv_right_3_0= ruleAnd ) )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4291:2: () ( (lv_operator_2_0= '||' ) ) ( (lv_right_3_0= ruleAnd ) )
             	    {
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4308:2: ()
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4309:5: 
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4291:2: ()
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4292:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -10346,13 +10269,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4314:2: ( (lv_operator_2_0= '||' ) )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4315:1: (lv_operator_2_0= '||' )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4297:2: ( (lv_operator_2_0= '||' ) )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4298:1: (lv_operator_2_0= '||' )
             	    {
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4315:1: (lv_operator_2_0= '||' )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4316:3: lv_operator_2_0= '||'
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4298:1: (lv_operator_2_0= '||' )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4299:3: lv_operator_2_0= '||'
             	    {
-            	    lv_operator_2_0=(Token)match(input,63,FOLLOW_63_in_ruleOr9644); 
+            	    lv_operator_2_0=(Token)match(input,63,FOLLOW_63_in_ruleOr9590); 
 
             	            newLeafNode(lv_operator_2_0, grammarAccess.getOrAccess().getOperatorVerticalLineVerticalLineKeyword_1_1_0());
             	        
@@ -10368,16 +10291,16 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4329:2: ( (lv_right_3_0= ruleAnd ) )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4330:1: (lv_right_3_0= ruleAnd )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4312:2: ( (lv_right_3_0= ruleAnd ) )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4313:1: (lv_right_3_0= ruleAnd )
             	    {
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4330:1: (lv_right_3_0= ruleAnd )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4331:3: lv_right_3_0= ruleAnd
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4313:1: (lv_right_3_0= ruleAnd )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4314:3: lv_right_3_0= ruleAnd
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getOrAccess().getRightAndParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleAnd_in_ruleOr9678);
+            	    pushFollow(FOLLOW_ruleAnd_in_ruleOr9624);
             	    lv_right_3_0=ruleAnd();
 
             	    state._fsp--;
@@ -10429,7 +10352,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAnd"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4355:1: entryRuleAnd returns [EObject current=null] : iv_ruleAnd= ruleAnd EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4338:1: entryRuleAnd returns [EObject current=null] : iv_ruleAnd= ruleAnd EOF ;
     public final EObject entryRuleAnd() throws RecognitionException {
         EObject current = null;
 
@@ -10437,17 +10360,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4356:2: (iv_ruleAnd= ruleAnd EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4357:2: iv_ruleAnd= ruleAnd EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4339:2: (iv_ruleAnd= ruleAnd EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4340:2: iv_ruleAnd= ruleAnd EOF
             {
              newCompositeNode(grammarAccess.getAndRule()); 
-            pushFollow(FOLLOW_ruleAnd_in_entryRuleAnd9716);
+            pushFollow(FOLLOW_ruleAnd_in_entryRuleAnd9662);
             iv_ruleAnd=ruleAnd();
 
             state._fsp--;
 
              current =iv_ruleAnd; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAnd9726); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAnd9672); 
 
             }
 
@@ -10465,7 +10388,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAnd"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4364:1: ruleAnd returns [EObject current=null] : (this_RelationalExpression_0= ruleRelationalExpression ( () ( (lv_operator_2_0= '&&' ) ) ( (lv_right_3_0= ruleRelationalExpression ) ) )* ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4347:1: ruleAnd returns [EObject current=null] : (this_RelationalExpression_0= ruleRelationalExpression ( () ( (lv_operator_2_0= '&&' ) ) ( (lv_right_3_0= ruleRelationalExpression ) ) )* ) ;
     public final EObject ruleAnd() throws RecognitionException {
         EObject current = null;
 
@@ -10478,16 +10401,16 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4367:28: ( (this_RelationalExpression_0= ruleRelationalExpression ( () ( (lv_operator_2_0= '&&' ) ) ( (lv_right_3_0= ruleRelationalExpression ) ) )* ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4368:1: (this_RelationalExpression_0= ruleRelationalExpression ( () ( (lv_operator_2_0= '&&' ) ) ( (lv_right_3_0= ruleRelationalExpression ) ) )* )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4350:28: ( (this_RelationalExpression_0= ruleRelationalExpression ( () ( (lv_operator_2_0= '&&' ) ) ( (lv_right_3_0= ruleRelationalExpression ) ) )* ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4351:1: (this_RelationalExpression_0= ruleRelationalExpression ( () ( (lv_operator_2_0= '&&' ) ) ( (lv_right_3_0= ruleRelationalExpression ) ) )* )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4368:1: (this_RelationalExpression_0= ruleRelationalExpression ( () ( (lv_operator_2_0= '&&' ) ) ( (lv_right_3_0= ruleRelationalExpression ) ) )* )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4369:5: this_RelationalExpression_0= ruleRelationalExpression ( () ( (lv_operator_2_0= '&&' ) ) ( (lv_right_3_0= ruleRelationalExpression ) ) )*
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4351:1: (this_RelationalExpression_0= ruleRelationalExpression ( () ( (lv_operator_2_0= '&&' ) ) ( (lv_right_3_0= ruleRelationalExpression ) ) )* )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4352:5: this_RelationalExpression_0= ruleRelationalExpression ( () ( (lv_operator_2_0= '&&' ) ) ( (lv_right_3_0= ruleRelationalExpression ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getAndAccess().getRelationalExpressionParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleRelationalExpression_in_ruleAnd9773);
+            pushFollow(FOLLOW_ruleRelationalExpression_in_ruleAnd9719);
             this_RelationalExpression_0=ruleRelationalExpression();
 
             state._fsp--;
@@ -10496,7 +10419,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     current = this_RelationalExpression_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4377:1: ( () ( (lv_operator_2_0= '&&' ) ) ( (lv_right_3_0= ruleRelationalExpression ) ) )*
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4360:1: ( () ( (lv_operator_2_0= '&&' ) ) ( (lv_right_3_0= ruleRelationalExpression ) ) )*
             loop38:
             do {
                 int alt38=2;
@@ -10509,10 +10432,10 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
                 switch (alt38) {
             	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4377:2: () ( (lv_operator_2_0= '&&' ) ) ( (lv_right_3_0= ruleRelationalExpression ) )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4360:2: () ( (lv_operator_2_0= '&&' ) ) ( (lv_right_3_0= ruleRelationalExpression ) )
             	    {
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4377:2: ()
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4378:5: 
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4360:2: ()
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4361:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -10522,13 +10445,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4383:2: ( (lv_operator_2_0= '&&' ) )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4384:1: (lv_operator_2_0= '&&' )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4366:2: ( (lv_operator_2_0= '&&' ) )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4367:1: (lv_operator_2_0= '&&' )
             	    {
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4384:1: (lv_operator_2_0= '&&' )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4385:3: lv_operator_2_0= '&&'
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4367:1: (lv_operator_2_0= '&&' )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4368:3: lv_operator_2_0= '&&'
             	    {
-            	    lv_operator_2_0=(Token)match(input,64,FOLLOW_64_in_ruleAnd9800); 
+            	    lv_operator_2_0=(Token)match(input,64,FOLLOW_64_in_ruleAnd9746); 
 
             	            newLeafNode(lv_operator_2_0, grammarAccess.getAndAccess().getOperatorAmpersandAmpersandKeyword_1_1_0());
             	        
@@ -10544,16 +10467,16 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4398:2: ( (lv_right_3_0= ruleRelationalExpression ) )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4399:1: (lv_right_3_0= ruleRelationalExpression )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4381:2: ( (lv_right_3_0= ruleRelationalExpression ) )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4382:1: (lv_right_3_0= ruleRelationalExpression )
             	    {
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4399:1: (lv_right_3_0= ruleRelationalExpression )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4400:3: lv_right_3_0= ruleRelationalExpression
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4382:1: (lv_right_3_0= ruleRelationalExpression )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4383:3: lv_right_3_0= ruleRelationalExpression
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAndAccess().getRightRelationalExpressionParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleRelationalExpression_in_ruleAnd9834);
+            	    pushFollow(FOLLOW_ruleRelationalExpression_in_ruleAnd9780);
             	    lv_right_3_0=ruleRelationalExpression();
 
             	    state._fsp--;
@@ -10605,7 +10528,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRelationalExpression"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4424:1: entryRuleRelationalExpression returns [EObject current=null] : iv_ruleRelationalExpression= ruleRelationalExpression EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4407:1: entryRuleRelationalExpression returns [EObject current=null] : iv_ruleRelationalExpression= ruleRelationalExpression EOF ;
     public final EObject entryRuleRelationalExpression() throws RecognitionException {
         EObject current = null;
 
@@ -10613,17 +10536,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4425:2: (iv_ruleRelationalExpression= ruleRelationalExpression EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4426:2: iv_ruleRelationalExpression= ruleRelationalExpression EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4408:2: (iv_ruleRelationalExpression= ruleRelationalExpression EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4409:2: iv_ruleRelationalExpression= ruleRelationalExpression EOF
             {
              newCompositeNode(grammarAccess.getRelationalExpressionRule()); 
-            pushFollow(FOLLOW_ruleRelationalExpression_in_entryRuleRelationalExpression9872);
+            pushFollow(FOLLOW_ruleRelationalExpression_in_entryRuleRelationalExpression9818);
             iv_ruleRelationalExpression=ruleRelationalExpression();
 
             state._fsp--;
 
              current =iv_ruleRelationalExpression; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRelationalExpression9882); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRelationalExpression9828); 
 
             }
 
@@ -10641,7 +10564,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRelationalExpression"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4433:1: ruleRelationalExpression returns [EObject current=null] : (this_Addition_0= ruleAddition ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )* ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4416:1: ruleRelationalExpression returns [EObject current=null] : (this_Addition_0= ruleAddition ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )* ) ;
     public final EObject ruleRelationalExpression() throws RecognitionException {
         EObject current = null;
 
@@ -10659,16 +10582,16 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4436:28: ( (this_Addition_0= ruleAddition ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )* ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4437:1: (this_Addition_0= ruleAddition ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )* )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4419:28: ( (this_Addition_0= ruleAddition ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )* ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4420:1: (this_Addition_0= ruleAddition ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )* )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4437:1: (this_Addition_0= ruleAddition ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )* )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4438:5: this_Addition_0= ruleAddition ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )*
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4420:1: (this_Addition_0= ruleAddition ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )* )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4421:5: this_Addition_0= ruleAddition ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getRelationalExpressionAccess().getAdditionParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleAddition_in_ruleRelationalExpression9929);
+            pushFollow(FOLLOW_ruleAddition_in_ruleRelationalExpression9875);
             this_Addition_0=ruleAddition();
 
             state._fsp--;
@@ -10677,7 +10600,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     current = this_Addition_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4446:1: ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )*
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4429:1: ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )*
             loop40:
             do {
                 int alt40=2;
@@ -10690,10 +10613,10 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
                 switch (alt40) {
             	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4446:2: () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' ) ) ) ( (lv_right_3_0= ruleAddition ) )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4429:2: () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' ) ) ) ( (lv_right_3_0= ruleAddition ) )
             	    {
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4446:2: ()
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4447:5: 
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4429:2: ()
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4430:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -10703,13 +10626,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4452:2: ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' ) ) )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4453:1: ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' ) )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4435:2: ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' ) ) )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4436:1: ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' ) )
             	    {
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4453:1: ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' ) )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4454:1: (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4436:1: ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' ) )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4437:1: (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' )
             	    {
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4454:1: (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4437:1: (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '>=' | lv_operator_2_4= '<=' | lv_operator_2_5= '>' | lv_operator_2_6= '<' )
             	    int alt39=6;
             	    switch ( input.LA(1) ) {
             	    case 65:
@@ -10751,9 +10674,9 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             	    switch (alt39) {
             	        case 1 :
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4455:3: lv_operator_2_1= '=='
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4438:3: lv_operator_2_1= '=='
             	            {
-            	            lv_operator_2_1=(Token)match(input,65,FOLLOW_65_in_ruleRelationalExpression9958); 
+            	            lv_operator_2_1=(Token)match(input,65,FOLLOW_65_in_ruleRelationalExpression9904); 
 
             	                    newLeafNode(lv_operator_2_1, grammarAccess.getRelationalExpressionAccess().getOperatorEqualsSignEqualsSignKeyword_1_1_0_0());
             	                
@@ -10767,9 +10690,9 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4467:8: lv_operator_2_2= '!='
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4450:8: lv_operator_2_2= '!='
             	            {
-            	            lv_operator_2_2=(Token)match(input,66,FOLLOW_66_in_ruleRelationalExpression9987); 
+            	            lv_operator_2_2=(Token)match(input,66,FOLLOW_66_in_ruleRelationalExpression9933); 
 
             	                    newLeafNode(lv_operator_2_2, grammarAccess.getRelationalExpressionAccess().getOperatorExclamationMarkEqualsSignKeyword_1_1_0_1());
             	                
@@ -10783,9 +10706,9 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 3 :
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4479:8: lv_operator_2_3= '>='
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4462:8: lv_operator_2_3= '>='
             	            {
-            	            lv_operator_2_3=(Token)match(input,67,FOLLOW_67_in_ruleRelationalExpression10016); 
+            	            lv_operator_2_3=(Token)match(input,67,FOLLOW_67_in_ruleRelationalExpression9962); 
 
             	                    newLeafNode(lv_operator_2_3, grammarAccess.getRelationalExpressionAccess().getOperatorGreaterThanSignEqualsSignKeyword_1_1_0_2());
             	                
@@ -10799,9 +10722,9 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 4 :
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4491:8: lv_operator_2_4= '<='
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4474:8: lv_operator_2_4= '<='
             	            {
-            	            lv_operator_2_4=(Token)match(input,68,FOLLOW_68_in_ruleRelationalExpression10045); 
+            	            lv_operator_2_4=(Token)match(input,68,FOLLOW_68_in_ruleRelationalExpression9991); 
 
             	                    newLeafNode(lv_operator_2_4, grammarAccess.getRelationalExpressionAccess().getOperatorLessThanSignEqualsSignKeyword_1_1_0_3());
             	                
@@ -10815,9 +10738,9 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 5 :
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4503:8: lv_operator_2_5= '>'
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4486:8: lv_operator_2_5= '>'
             	            {
-            	            lv_operator_2_5=(Token)match(input,69,FOLLOW_69_in_ruleRelationalExpression10074); 
+            	            lv_operator_2_5=(Token)match(input,69,FOLLOW_69_in_ruleRelationalExpression10020); 
 
             	                    newLeafNode(lv_operator_2_5, grammarAccess.getRelationalExpressionAccess().getOperatorGreaterThanSignKeyword_1_1_0_4());
             	                
@@ -10831,9 +10754,9 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 6 :
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4515:8: lv_operator_2_6= '<'
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4498:8: lv_operator_2_6= '<'
             	            {
-            	            lv_operator_2_6=(Token)match(input,70,FOLLOW_70_in_ruleRelationalExpression10103); 
+            	            lv_operator_2_6=(Token)match(input,70,FOLLOW_70_in_ruleRelationalExpression10049); 
 
             	                    newLeafNode(lv_operator_2_6, grammarAccess.getRelationalExpressionAccess().getOperatorLessThanSignKeyword_1_1_0_5());
             	                
@@ -10855,16 +10778,16 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4530:2: ( (lv_right_3_0= ruleAddition ) )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4531:1: (lv_right_3_0= ruleAddition )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4513:2: ( (lv_right_3_0= ruleAddition ) )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4514:1: (lv_right_3_0= ruleAddition )
             	    {
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4531:1: (lv_right_3_0= ruleAddition )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4532:3: lv_right_3_0= ruleAddition
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4514:1: (lv_right_3_0= ruleAddition )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4515:3: lv_right_3_0= ruleAddition
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getRelationalExpressionAccess().getRightAdditionParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleAddition_in_ruleRelationalExpression10140);
+            	    pushFollow(FOLLOW_ruleAddition_in_ruleRelationalExpression10086);
             	    lv_right_3_0=ruleAddition();
 
             	    state._fsp--;
@@ -10916,7 +10839,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAddition"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4556:1: entryRuleAddition returns [EObject current=null] : iv_ruleAddition= ruleAddition EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4539:1: entryRuleAddition returns [EObject current=null] : iv_ruleAddition= ruleAddition EOF ;
     public final EObject entryRuleAddition() throws RecognitionException {
         EObject current = null;
 
@@ -10924,17 +10847,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4557:2: (iv_ruleAddition= ruleAddition EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4558:2: iv_ruleAddition= ruleAddition EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4540:2: (iv_ruleAddition= ruleAddition EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4541:2: iv_ruleAddition= ruleAddition EOF
             {
              newCompositeNode(grammarAccess.getAdditionRule()); 
-            pushFollow(FOLLOW_ruleAddition_in_entryRuleAddition10178);
+            pushFollow(FOLLOW_ruleAddition_in_entryRuleAddition10124);
             iv_ruleAddition=ruleAddition();
 
             state._fsp--;
 
              current =iv_ruleAddition; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAddition10188); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAddition10134); 
 
             }
 
@@ -10952,7 +10875,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAddition"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4565:1: ruleAddition returns [EObject current=null] : (this_Multiplication_0= ruleMultiplication ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4548:1: ruleAddition returns [EObject current=null] : (this_Multiplication_0= ruleMultiplication ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* ) ;
     public final EObject ruleAddition() throws RecognitionException {
         EObject current = null;
 
@@ -10966,16 +10889,16 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4568:28: ( (this_Multiplication_0= ruleMultiplication ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4569:1: (this_Multiplication_0= ruleMultiplication ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4551:28: ( (this_Multiplication_0= ruleMultiplication ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4552:1: (this_Multiplication_0= ruleMultiplication ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4569:1: (this_Multiplication_0= ruleMultiplication ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4570:5: this_Multiplication_0= ruleMultiplication ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )*
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4552:1: (this_Multiplication_0= ruleMultiplication ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )* )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4553:5: this_Multiplication_0= ruleMultiplication ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getAdditionAccess().getMultiplicationParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleMultiplication_in_ruleAddition10235);
+            pushFollow(FOLLOW_ruleMultiplication_in_ruleAddition10181);
             this_Multiplication_0=ruleMultiplication();
 
             state._fsp--;
@@ -10984,7 +10907,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     current = this_Multiplication_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4578:1: ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )*
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4561:1: ( ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) ) )*
             loop42:
             do {
                 int alt42=2;
@@ -10997,9 +10920,9 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
                 switch (alt42) {
             	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4578:2: ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4561:2: ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) ) ( (lv_right_5_0= ruleMultiplication ) )
             	    {
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4578:2: ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4561:2: ( ( () otherlv_2= '+' ) | ( () otherlv_4= '-' ) )
             	    int alt41=2;
             	    int LA41_0 = input.LA(1);
 
@@ -11017,13 +10940,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	    }
             	    switch (alt41) {
             	        case 1 :
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4578:3: ( () otherlv_2= '+' )
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4561:3: ( () otherlv_2= '+' )
             	            {
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4578:3: ( () otherlv_2= '+' )
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4578:4: () otherlv_2= '+'
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4561:3: ( () otherlv_2= '+' )
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4561:4: () otherlv_2= '+'
             	            {
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4578:4: ()
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4579:5: 
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4561:4: ()
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4562:5: 
             	            {
 
             	                    current = forceCreateModelElementAndSet(
@@ -11033,7 +10956,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            otherlv_2=(Token)match(input,71,FOLLOW_71_in_ruleAddition10258); 
+            	            otherlv_2=(Token)match(input,71,FOLLOW_71_in_ruleAddition10204); 
 
             	                	newLeafNode(otherlv_2, grammarAccess.getAdditionAccess().getPlusSignKeyword_1_0_0_1());
             	                
@@ -11044,13 +10967,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4589:6: ( () otherlv_4= '-' )
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4572:6: ( () otherlv_4= '-' )
             	            {
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4589:6: ( () otherlv_4= '-' )
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4589:7: () otherlv_4= '-'
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4572:6: ( () otherlv_4= '-' )
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4572:7: () otherlv_4= '-'
             	            {
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4589:7: ()
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4590:5: 
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4572:7: ()
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4573:5: 
             	            {
 
             	                    current = forceCreateModelElementAndSet(
@@ -11060,7 +10983,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            otherlv_4=(Token)match(input,72,FOLLOW_72_in_ruleAddition10287); 
+            	            otherlv_4=(Token)match(input,72,FOLLOW_72_in_ruleAddition10233); 
 
             	                	newLeafNode(otherlv_4, grammarAccess.getAdditionAccess().getHyphenMinusKeyword_1_0_1_1());
             	                
@@ -11073,16 +10996,16 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4599:3: ( (lv_right_5_0= ruleMultiplication ) )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4600:1: (lv_right_5_0= ruleMultiplication )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4582:3: ( (lv_right_5_0= ruleMultiplication ) )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4583:1: (lv_right_5_0= ruleMultiplication )
             	    {
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4600:1: (lv_right_5_0= ruleMultiplication )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4601:3: lv_right_5_0= ruleMultiplication
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4583:1: (lv_right_5_0= ruleMultiplication )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4584:3: lv_right_5_0= ruleMultiplication
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAdditionAccess().getRightMultiplicationParserRuleCall_1_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleMultiplication_in_ruleAddition10310);
+            	    pushFollow(FOLLOW_ruleMultiplication_in_ruleAddition10256);
             	    lv_right_5_0=ruleMultiplication();
 
             	    state._fsp--;
@@ -11134,7 +11057,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMultiplication"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4625:1: entryRuleMultiplication returns [EObject current=null] : iv_ruleMultiplication= ruleMultiplication EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4608:1: entryRuleMultiplication returns [EObject current=null] : iv_ruleMultiplication= ruleMultiplication EOF ;
     public final EObject entryRuleMultiplication() throws RecognitionException {
         EObject current = null;
 
@@ -11142,17 +11065,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4626:2: (iv_ruleMultiplication= ruleMultiplication EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4627:2: iv_ruleMultiplication= ruleMultiplication EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4609:2: (iv_ruleMultiplication= ruleMultiplication EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4610:2: iv_ruleMultiplication= ruleMultiplication EOF
             {
              newCompositeNode(grammarAccess.getMultiplicationRule()); 
-            pushFollow(FOLLOW_ruleMultiplication_in_entryRuleMultiplication10348);
+            pushFollow(FOLLOW_ruleMultiplication_in_entryRuleMultiplication10294);
             iv_ruleMultiplication=ruleMultiplication();
 
             state._fsp--;
 
              current =iv_ruleMultiplication; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMultiplication10358); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMultiplication10304); 
 
             }
 
@@ -11170,7 +11093,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMultiplication"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4634:1: ruleMultiplication returns [EObject current=null] : (this_PrimaryExpression_0= rulePrimaryExpression ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )* ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4617:1: ruleMultiplication returns [EObject current=null] : (this_PrimaryExpression_0= rulePrimaryExpression ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )* ) ;
     public final EObject ruleMultiplication() throws RecognitionException {
         EObject current = null;
 
@@ -11184,16 +11107,16 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4637:28: ( (this_PrimaryExpression_0= rulePrimaryExpression ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )* ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4638:1: (this_PrimaryExpression_0= rulePrimaryExpression ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )* )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4620:28: ( (this_PrimaryExpression_0= rulePrimaryExpression ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )* ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4621:1: (this_PrimaryExpression_0= rulePrimaryExpression ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )* )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4638:1: (this_PrimaryExpression_0= rulePrimaryExpression ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )* )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4639:5: this_PrimaryExpression_0= rulePrimaryExpression ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )*
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4621:1: (this_PrimaryExpression_0= rulePrimaryExpression ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )* )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4622:5: this_PrimaryExpression_0= rulePrimaryExpression ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getMultiplicationAccess().getPrimaryExpressionParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_rulePrimaryExpression_in_ruleMultiplication10405);
+            pushFollow(FOLLOW_rulePrimaryExpression_in_ruleMultiplication10351);
             this_PrimaryExpression_0=rulePrimaryExpression();
 
             state._fsp--;
@@ -11202,7 +11125,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     current = this_PrimaryExpression_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4647:1: ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )*
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4630:1: ( ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) ) )*
             loop44:
             do {
                 int alt44=2;
@@ -11215,9 +11138,9 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
                 switch (alt44) {
             	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4647:2: ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4630:2: ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) ) ( (lv_right_5_0= rulePrimaryExpression ) )
             	    {
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4647:2: ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4630:2: ( ( () otherlv_2= '*' ) | ( () otherlv_4= '/' ) )
             	    int alt43=2;
             	    int LA43_0 = input.LA(1);
 
@@ -11235,13 +11158,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	    }
             	    switch (alt43) {
             	        case 1 :
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4647:3: ( () otherlv_2= '*' )
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4630:3: ( () otherlv_2= '*' )
             	            {
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4647:3: ( () otherlv_2= '*' )
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4647:4: () otherlv_2= '*'
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4630:3: ( () otherlv_2= '*' )
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4630:4: () otherlv_2= '*'
             	            {
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4647:4: ()
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4648:5: 
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4630:4: ()
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4631:5: 
             	            {
 
             	                    current = forceCreateModelElementAndSet(
@@ -11251,7 +11174,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            otherlv_2=(Token)match(input,73,FOLLOW_73_in_ruleMultiplication10428); 
+            	            otherlv_2=(Token)match(input,73,FOLLOW_73_in_ruleMultiplication10374); 
 
             	                	newLeafNode(otherlv_2, grammarAccess.getMultiplicationAccess().getAsteriskKeyword_1_0_0_1());
             	                
@@ -11262,13 +11185,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4658:6: ( () otherlv_4= '/' )
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4641:6: ( () otherlv_4= '/' )
             	            {
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4658:6: ( () otherlv_4= '/' )
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4658:7: () otherlv_4= '/'
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4641:6: ( () otherlv_4= '/' )
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4641:7: () otherlv_4= '/'
             	            {
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4658:7: ()
-            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4659:5: 
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4641:7: ()
+            	            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4642:5: 
             	            {
 
             	                    current = forceCreateModelElementAndSet(
@@ -11278,7 +11201,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            otherlv_4=(Token)match(input,74,FOLLOW_74_in_ruleMultiplication10457); 
+            	            otherlv_4=(Token)match(input,74,FOLLOW_74_in_ruleMultiplication10403); 
 
             	                	newLeafNode(otherlv_4, grammarAccess.getMultiplicationAccess().getSolidusKeyword_1_0_1_1());
             	                
@@ -11291,16 +11214,16 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4668:3: ( (lv_right_5_0= rulePrimaryExpression ) )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4669:1: (lv_right_5_0= rulePrimaryExpression )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4651:3: ( (lv_right_5_0= rulePrimaryExpression ) )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4652:1: (lv_right_5_0= rulePrimaryExpression )
             	    {
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4669:1: (lv_right_5_0= rulePrimaryExpression )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4670:3: lv_right_5_0= rulePrimaryExpression
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4652:1: (lv_right_5_0= rulePrimaryExpression )
+            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4653:3: lv_right_5_0= rulePrimaryExpression
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getMultiplicationAccess().getRightPrimaryExpressionParserRuleCall_1_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_rulePrimaryExpression_in_ruleMultiplication10480);
+            	    pushFollow(FOLLOW_rulePrimaryExpression_in_ruleMultiplication10426);
             	    lv_right_5_0=rulePrimaryExpression();
 
             	    state._fsp--;
@@ -11352,7 +11275,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePrimaryExpression"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4694:1: entryRulePrimaryExpression returns [EObject current=null] : iv_rulePrimaryExpression= rulePrimaryExpression EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4677:1: entryRulePrimaryExpression returns [EObject current=null] : iv_rulePrimaryExpression= rulePrimaryExpression EOF ;
     public final EObject entryRulePrimaryExpression() throws RecognitionException {
         EObject current = null;
 
@@ -11360,17 +11283,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4695:2: (iv_rulePrimaryExpression= rulePrimaryExpression EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4696:2: iv_rulePrimaryExpression= rulePrimaryExpression EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4678:2: (iv_rulePrimaryExpression= rulePrimaryExpression EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4679:2: iv_rulePrimaryExpression= rulePrimaryExpression EOF
             {
              newCompositeNode(grammarAccess.getPrimaryExpressionRule()); 
-            pushFollow(FOLLOW_rulePrimaryExpression_in_entryRulePrimaryExpression10518);
+            pushFollow(FOLLOW_rulePrimaryExpression_in_entryRulePrimaryExpression10464);
             iv_rulePrimaryExpression=rulePrimaryExpression();
 
             state._fsp--;
 
              current =iv_rulePrimaryExpression; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePrimaryExpression10528); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePrimaryExpression10474); 
 
             }
 
@@ -11388,7 +11311,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrimaryExpression"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4703:1: rulePrimaryExpression returns [EObject current=null] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_NUMBER ) ) ) | ( () ( (otherlv_6= RULE_ID ) ) ) | ( () ( (lv_streamVariable_8_0= ruleStreamAccess ) ) ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4686:1: rulePrimaryExpression returns [EObject current=null] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_NUMBER ) ) ) | ( () ( (otherlv_6= RULE_ID ) ) ) | ( () ( (lv_streamVariable_8_0= ruleStreamAccess ) ) ) ) ;
     public final EObject rulePrimaryExpression() throws RecognitionException {
         EObject current = null;
 
@@ -11404,10 +11327,10 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4706:28: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_NUMBER ) ) ) | ( () ( (otherlv_6= RULE_ID ) ) ) | ( () ( (lv_streamVariable_8_0= ruleStreamAccess ) ) ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4707:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_NUMBER ) ) ) | ( () ( (otherlv_6= RULE_ID ) ) ) | ( () ( (lv_streamVariable_8_0= ruleStreamAccess ) ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4689:28: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_NUMBER ) ) ) | ( () ( (otherlv_6= RULE_ID ) ) ) | ( () ( (lv_streamVariable_8_0= ruleStreamAccess ) ) ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4690:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_NUMBER ) ) ) | ( () ( (otherlv_6= RULE_ID ) ) ) | ( () ( (lv_streamVariable_8_0= ruleStreamAccess ) ) ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4707:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_NUMBER ) ) ) | ( () ( (otherlv_6= RULE_ID ) ) ) | ( () ( (lv_streamVariable_8_0= ruleStreamAccess ) ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4690:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_NUMBER ) ) ) | ( () ( (otherlv_6= RULE_ID ) ) ) | ( () ( (lv_streamVariable_8_0= ruleStreamAccess ) ) ) )
             int alt45=4;
             switch ( input.LA(1) ) {
             case 21:
@@ -11424,11 +11347,11 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                 {
                 int LA45_3 = input.LA(2);
 
-                if ( (LA45_3==19) ) {
-                    alt45=4;
-                }
-                else if ( (LA45_3==EOF||LA45_3==16||LA45_3==22||LA45_3==24||(LA45_3>=63 && LA45_3<=74)) ) {
+                if ( (LA45_3==EOF||LA45_3==16||LA45_3==22||LA45_3==24||(LA45_3>=63 && LA45_3<=74)) ) {
                     alt45=3;
+                }
+                else if ( (LA45_3==19) ) {
+                    alt45=4;
                 }
                 else {
                     NoViableAltException nvae =
@@ -11447,19 +11370,19 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             switch (alt45) {
                 case 1 :
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4707:2: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4690:2: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4707:2: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4707:4: otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')'
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4690:2: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4690:4: otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')'
                     {
-                    otherlv_0=(Token)match(input,21,FOLLOW_21_in_rulePrimaryExpression10566); 
+                    otherlv_0=(Token)match(input,21,FOLLOW_21_in_rulePrimaryExpression10512); 
 
                         	newLeafNode(otherlv_0, grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_0_0());
                         
                      
                             newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getExpressionParserRuleCall_0_1()); 
                         
-                    pushFollow(FOLLOW_ruleExpression_in_rulePrimaryExpression10588);
+                    pushFollow(FOLLOW_ruleExpression_in_rulePrimaryExpression10534);
                     this_Expression_1=ruleExpression();
 
                     state._fsp--;
@@ -11468,7 +11391,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                             current = this_Expression_1; 
                             afterParserOrEnumRuleCall();
                         
-                    otherlv_2=(Token)match(input,22,FOLLOW_22_in_rulePrimaryExpression10599); 
+                    otherlv_2=(Token)match(input,22,FOLLOW_22_in_rulePrimaryExpression10545); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getPrimaryExpressionAccess().getRightParenthesisKeyword_0_2());
                         
@@ -11479,13 +11402,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4725:6: ( () ( (lv_value_4_0= RULE_NUMBER ) ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4708:6: ( () ( (lv_value_4_0= RULE_NUMBER ) ) )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4725:6: ( () ( (lv_value_4_0= RULE_NUMBER ) ) )
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4725:7: () ( (lv_value_4_0= RULE_NUMBER ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4708:6: ( () ( (lv_value_4_0= RULE_NUMBER ) ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4708:7: () ( (lv_value_4_0= RULE_NUMBER ) )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4725:7: ()
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4726:5: 
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4708:7: ()
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4709:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -11495,13 +11418,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4731:2: ( (lv_value_4_0= RULE_NUMBER ) )
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4732:1: (lv_value_4_0= RULE_NUMBER )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4714:2: ( (lv_value_4_0= RULE_NUMBER ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4715:1: (lv_value_4_0= RULE_NUMBER )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4732:1: (lv_value_4_0= RULE_NUMBER )
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4733:3: lv_value_4_0= RULE_NUMBER
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4715:1: (lv_value_4_0= RULE_NUMBER )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4716:3: lv_value_4_0= RULE_NUMBER
                     {
-                    lv_value_4_0=(Token)match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_rulePrimaryExpression10633); 
+                    lv_value_4_0=(Token)match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_rulePrimaryExpression10579); 
 
                     			newLeafNode(lv_value_4_0, grammarAccess.getPrimaryExpressionAccess().getValueNUMBERTerminalRuleCall_1_1_0()); 
                     		
@@ -11528,13 +11451,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4750:6: ( () ( (otherlv_6= RULE_ID ) ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4733:6: ( () ( (otherlv_6= RULE_ID ) ) )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4750:6: ( () ( (otherlv_6= RULE_ID ) ) )
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4750:7: () ( (otherlv_6= RULE_ID ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4733:6: ( () ( (otherlv_6= RULE_ID ) ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4733:7: () ( (otherlv_6= RULE_ID ) )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4750:7: ()
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4751:5: 
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4733:7: ()
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4734:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -11544,18 +11467,18 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4756:2: ( (otherlv_6= RULE_ID ) )
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4757:1: (otherlv_6= RULE_ID )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4739:2: ( (otherlv_6= RULE_ID ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4740:1: (otherlv_6= RULE_ID )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4757:1: (otherlv_6= RULE_ID )
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4758:3: otherlv_6= RULE_ID
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4740:1: (otherlv_6= RULE_ID )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4741:3: otherlv_6= RULE_ID
                     {
 
                     			if (current==null) {
                     	            current = createModelElement(grammarAccess.getPrimaryExpressionRule());
                     	        }
                             
-                    otherlv_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_rulePrimaryExpression10675); 
+                    otherlv_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_rulePrimaryExpression10621); 
 
                     		newLeafNode(otherlv_6, grammarAccess.getPrimaryExpressionAccess().getVariableVariableDefinitionCrossReference_2_1_0()); 
                     	
@@ -11572,13 +11495,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4770:6: ( () ( (lv_streamVariable_8_0= ruleStreamAccess ) ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4753:6: ( () ( (lv_streamVariable_8_0= ruleStreamAccess ) ) )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4770:6: ( () ( (lv_streamVariable_8_0= ruleStreamAccess ) ) )
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4770:7: () ( (lv_streamVariable_8_0= ruleStreamAccess ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4753:6: ( () ( (lv_streamVariable_8_0= ruleStreamAccess ) ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4753:7: () ( (lv_streamVariable_8_0= ruleStreamAccess ) )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4770:7: ()
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4771:5: 
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4753:7: ()
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4754:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -11588,16 +11511,16 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4776:2: ( (lv_streamVariable_8_0= ruleStreamAccess ) )
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4777:1: (lv_streamVariable_8_0= ruleStreamAccess )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4759:2: ( (lv_streamVariable_8_0= ruleStreamAccess ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4760:1: (lv_streamVariable_8_0= ruleStreamAccess )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4777:1: (lv_streamVariable_8_0= ruleStreamAccess )
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4778:3: lv_streamVariable_8_0= ruleStreamAccess
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4760:1: (lv_streamVariable_8_0= ruleStreamAccess )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4761:3: lv_streamVariable_8_0= ruleStreamAccess
                     {
                      
                     	        newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getStreamVariableStreamAccessParserRuleCall_3_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleStreamAccess_in_rulePrimaryExpression10713);
+                    pushFollow(FOLLOW_ruleStreamAccess_in_rulePrimaryExpression10659);
                     lv_streamVariable_8_0=ruleStreamAccess();
 
                     state._fsp--;
@@ -11646,7 +11569,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDataType"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4802:1: entryRuleDataType returns [EObject current=null] : iv_ruleDataType= ruleDataType EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4785:1: entryRuleDataType returns [EObject current=null] : iv_ruleDataType= ruleDataType EOF ;
     public final EObject entryRuleDataType() throws RecognitionException {
         EObject current = null;
 
@@ -11654,17 +11577,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4803:2: (iv_ruleDataType= ruleDataType EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4804:2: iv_ruleDataType= ruleDataType EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4786:2: (iv_ruleDataType= ruleDataType EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4787:2: iv_ruleDataType= ruleDataType EOF
             {
              newCompositeNode(grammarAccess.getDataTypeRule()); 
-            pushFollow(FOLLOW_ruleDataType_in_entryRuleDataType10750);
+            pushFollow(FOLLOW_ruleDataType_in_entryRuleDataType10696);
             iv_ruleDataType=ruleDataType();
 
             state._fsp--;
 
              current =iv_ruleDataType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDataType10760); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDataType10706); 
 
             }
 
@@ -11682,7 +11605,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDataType"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4811:1: ruleDataType returns [EObject current=null] : (this_SimpleDataType_0= ruleSimpleDataType | this_ComplexDataType_1= ruleComplexDataType ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4794:1: ruleDataType returns [EObject current=null] : (this_SimpleDataType_0= ruleSimpleDataType | this_ComplexDataType_1= ruleComplexDataType ) ;
     public final EObject ruleDataType() throws RecognitionException {
         EObject current = null;
 
@@ -11694,10 +11617,10 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4814:28: ( (this_SimpleDataType_0= ruleSimpleDataType | this_ComplexDataType_1= ruleComplexDataType ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4815:1: (this_SimpleDataType_0= ruleSimpleDataType | this_ComplexDataType_1= ruleComplexDataType )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4797:28: ( (this_SimpleDataType_0= ruleSimpleDataType | this_ComplexDataType_1= ruleComplexDataType ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4798:1: (this_SimpleDataType_0= ruleSimpleDataType | this_ComplexDataType_1= ruleComplexDataType )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4815:1: (this_SimpleDataType_0= ruleSimpleDataType | this_ComplexDataType_1= ruleComplexDataType )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4798:1: (this_SimpleDataType_0= ruleSimpleDataType | this_ComplexDataType_1= ruleComplexDataType )
             int alt46=2;
             int LA46_0 = input.LA(1);
 
@@ -11715,12 +11638,12 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             }
             switch (alt46) {
                 case 1 :
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4816:5: this_SimpleDataType_0= ruleSimpleDataType
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4799:5: this_SimpleDataType_0= ruleSimpleDataType
                     {
                      
                             newCompositeNode(grammarAccess.getDataTypeAccess().getSimpleDataTypeParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleSimpleDataType_in_ruleDataType10807);
+                    pushFollow(FOLLOW_ruleSimpleDataType_in_ruleDataType10753);
                     this_SimpleDataType_0=ruleSimpleDataType();
 
                     state._fsp--;
@@ -11733,12 +11656,12 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4826:5: this_ComplexDataType_1= ruleComplexDataType
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4809:5: this_ComplexDataType_1= ruleComplexDataType
                     {
                      
                             newCompositeNode(grammarAccess.getDataTypeAccess().getComplexDataTypeParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleComplexDataType_in_ruleDataType10834);
+                    pushFollow(FOLLOW_ruleComplexDataType_in_ruleDataType10780);
                     this_ComplexDataType_1=ruleComplexDataType();
 
                     state._fsp--;
@@ -11771,7 +11694,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSimpleDataType"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4842:1: entryRuleSimpleDataType returns [EObject current=null] : iv_ruleSimpleDataType= ruleSimpleDataType EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4825:1: entryRuleSimpleDataType returns [EObject current=null] : iv_ruleSimpleDataType= ruleSimpleDataType EOF ;
     public final EObject entryRuleSimpleDataType() throws RecognitionException {
         EObject current = null;
 
@@ -11779,17 +11702,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4843:2: (iv_ruleSimpleDataType= ruleSimpleDataType EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4844:2: iv_ruleSimpleDataType= ruleSimpleDataType EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4826:2: (iv_ruleSimpleDataType= ruleSimpleDataType EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4827:2: iv_ruleSimpleDataType= ruleSimpleDataType EOF
             {
              newCompositeNode(grammarAccess.getSimpleDataTypeRule()); 
-            pushFollow(FOLLOW_ruleSimpleDataType_in_entryRuleSimpleDataType10869);
+            pushFollow(FOLLOW_ruleSimpleDataType_in_entryRuleSimpleDataType10815);
             iv_ruleSimpleDataType=ruleSimpleDataType();
 
             state._fsp--;
 
              current =iv_ruleSimpleDataType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSimpleDataType10879); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSimpleDataType10825); 
 
             }
 
@@ -11807,7 +11730,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSimpleDataType"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4851:1: ruleSimpleDataType returns [EObject current=null] : (this_IntegerDataType_0= ruleIntegerDataType | this_FloatDataType_1= ruleFloatDataType | this_BooleanDataType_2= ruleBooleanDataType ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4834:1: ruleSimpleDataType returns [EObject current=null] : (this_IntegerDataType_0= ruleIntegerDataType | this_FloatDataType_1= ruleFloatDataType | this_BooleanDataType_2= ruleBooleanDataType ) ;
     public final EObject ruleSimpleDataType() throws RecognitionException {
         EObject current = null;
 
@@ -11821,10 +11744,10 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4854:28: ( (this_IntegerDataType_0= ruleIntegerDataType | this_FloatDataType_1= ruleFloatDataType | this_BooleanDataType_2= ruleBooleanDataType ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4855:1: (this_IntegerDataType_0= ruleIntegerDataType | this_FloatDataType_1= ruleFloatDataType | this_BooleanDataType_2= ruleBooleanDataType )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4837:28: ( (this_IntegerDataType_0= ruleIntegerDataType | this_FloatDataType_1= ruleFloatDataType | this_BooleanDataType_2= ruleBooleanDataType ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4838:1: (this_IntegerDataType_0= ruleIntegerDataType | this_FloatDataType_1= ruleFloatDataType | this_BooleanDataType_2= ruleBooleanDataType )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4855:1: (this_IntegerDataType_0= ruleIntegerDataType | this_FloatDataType_1= ruleFloatDataType | this_BooleanDataType_2= ruleBooleanDataType )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4838:1: (this_IntegerDataType_0= ruleIntegerDataType | this_FloatDataType_1= ruleFloatDataType | this_BooleanDataType_2= ruleBooleanDataType )
             int alt47=3;
             switch ( input.LA(1) ) {
             case 75:
@@ -11851,12 +11774,12 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
             switch (alt47) {
                 case 1 :
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4856:5: this_IntegerDataType_0= ruleIntegerDataType
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4839:5: this_IntegerDataType_0= ruleIntegerDataType
                     {
                      
                             newCompositeNode(grammarAccess.getSimpleDataTypeAccess().getIntegerDataTypeParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleIntegerDataType_in_ruleSimpleDataType10926);
+                    pushFollow(FOLLOW_ruleIntegerDataType_in_ruleSimpleDataType10872);
                     this_IntegerDataType_0=ruleIntegerDataType();
 
                     state._fsp--;
@@ -11869,12 +11792,12 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4866:5: this_FloatDataType_1= ruleFloatDataType
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4849:5: this_FloatDataType_1= ruleFloatDataType
                     {
                      
                             newCompositeNode(grammarAccess.getSimpleDataTypeAccess().getFloatDataTypeParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleFloatDataType_in_ruleSimpleDataType10953);
+                    pushFollow(FOLLOW_ruleFloatDataType_in_ruleSimpleDataType10899);
                     this_FloatDataType_1=ruleFloatDataType();
 
                     state._fsp--;
@@ -11887,12 +11810,12 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4876:5: this_BooleanDataType_2= ruleBooleanDataType
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4859:5: this_BooleanDataType_2= ruleBooleanDataType
                     {
                      
                             newCompositeNode(grammarAccess.getSimpleDataTypeAccess().getBooleanDataTypeParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleBooleanDataType_in_ruleSimpleDataType10980);
+                    pushFollow(FOLLOW_ruleBooleanDataType_in_ruleSimpleDataType10926);
                     this_BooleanDataType_2=ruleBooleanDataType();
 
                     state._fsp--;
@@ -11925,7 +11848,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComplexDataType"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4892:1: entryRuleComplexDataType returns [EObject current=null] : iv_ruleComplexDataType= ruleComplexDataType EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4875:1: entryRuleComplexDataType returns [EObject current=null] : iv_ruleComplexDataType= ruleComplexDataType EOF ;
     public final EObject entryRuleComplexDataType() throws RecognitionException {
         EObject current = null;
 
@@ -11933,17 +11856,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4893:2: (iv_ruleComplexDataType= ruleComplexDataType EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4894:2: iv_ruleComplexDataType= ruleComplexDataType EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4876:2: (iv_ruleComplexDataType= ruleComplexDataType EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4877:2: iv_ruleComplexDataType= ruleComplexDataType EOF
             {
              newCompositeNode(grammarAccess.getComplexDataTypeRule()); 
-            pushFollow(FOLLOW_ruleComplexDataType_in_entryRuleComplexDataType11015);
+            pushFollow(FOLLOW_ruleComplexDataType_in_entryRuleComplexDataType10961);
             iv_ruleComplexDataType=ruleComplexDataType();
 
             state._fsp--;
 
              current =iv_ruleComplexDataType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleComplexDataType11025); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleComplexDataType10971); 
 
             }
 
@@ -11961,7 +11884,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComplexDataType"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4901:1: ruleComplexDataType returns [EObject current=null] : this_StringDataType_0= ruleStringDataType ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4884:1: ruleComplexDataType returns [EObject current=null] : this_StringDataType_0= ruleStringDataType ;
     public final EObject ruleComplexDataType() throws RecognitionException {
         EObject current = null;
 
@@ -11971,13 +11894,13 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4904:28: (this_StringDataType_0= ruleStringDataType )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4906:5: this_StringDataType_0= ruleStringDataType
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4887:28: (this_StringDataType_0= ruleStringDataType )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4889:5: this_StringDataType_0= ruleStringDataType
             {
              
                     newCompositeNode(grammarAccess.getComplexDataTypeAccess().getStringDataTypeParserRuleCall()); 
                 
-            pushFollow(FOLLOW_ruleStringDataType_in_ruleComplexDataType11071);
+            pushFollow(FOLLOW_ruleStringDataType_in_ruleComplexDataType11017);
             this_StringDataType_0=ruleStringDataType();
 
             state._fsp--;
@@ -12004,7 +11927,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIntegerDataType"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4922:1: entryRuleIntegerDataType returns [EObject current=null] : iv_ruleIntegerDataType= ruleIntegerDataType EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4905:1: entryRuleIntegerDataType returns [EObject current=null] : iv_ruleIntegerDataType= ruleIntegerDataType EOF ;
     public final EObject entryRuleIntegerDataType() throws RecognitionException {
         EObject current = null;
 
@@ -12012,17 +11935,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4923:2: (iv_ruleIntegerDataType= ruleIntegerDataType EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4924:2: iv_ruleIntegerDataType= ruleIntegerDataType EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4906:2: (iv_ruleIntegerDataType= ruleIntegerDataType EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4907:2: iv_ruleIntegerDataType= ruleIntegerDataType EOF
             {
              newCompositeNode(grammarAccess.getIntegerDataTypeRule()); 
-            pushFollow(FOLLOW_ruleIntegerDataType_in_entryRuleIntegerDataType11105);
+            pushFollow(FOLLOW_ruleIntegerDataType_in_entryRuleIntegerDataType11051);
             iv_ruleIntegerDataType=ruleIntegerDataType();
 
             state._fsp--;
 
              current =iv_ruleIntegerDataType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleIntegerDataType11115); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleIntegerDataType11061); 
 
             }
 
@@ -12040,7 +11963,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIntegerDataType"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4931:1: ruleIntegerDataType returns [EObject current=null] : (otherlv_0= 'int' () ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4914:1: ruleIntegerDataType returns [EObject current=null] : (otherlv_0= 'int' () ) ;
     public final EObject ruleIntegerDataType() throws RecognitionException {
         EObject current = null;
 
@@ -12049,18 +11972,18 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4934:28: ( (otherlv_0= 'int' () ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4935:1: (otherlv_0= 'int' () )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4917:28: ( (otherlv_0= 'int' () ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4918:1: (otherlv_0= 'int' () )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4935:1: (otherlv_0= 'int' () )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4935:3: otherlv_0= 'int' ()
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4918:1: (otherlv_0= 'int' () )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4918:3: otherlv_0= 'int' ()
             {
-            otherlv_0=(Token)match(input,75,FOLLOW_75_in_ruleIntegerDataType11152); 
+            otherlv_0=(Token)match(input,75,FOLLOW_75_in_ruleIntegerDataType11098); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getIntegerDataTypeAccess().getIntKeyword_0());
                 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4939:1: ()
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4940:5: 
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4922:1: ()
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4923:5: 
             {
 
                     current = forceCreateModelElement(
@@ -12091,7 +12014,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBooleanDataType"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4953:1: entryRuleBooleanDataType returns [EObject current=null] : iv_ruleBooleanDataType= ruleBooleanDataType EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4936:1: entryRuleBooleanDataType returns [EObject current=null] : iv_ruleBooleanDataType= ruleBooleanDataType EOF ;
     public final EObject entryRuleBooleanDataType() throws RecognitionException {
         EObject current = null;
 
@@ -12099,17 +12022,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4954:2: (iv_ruleBooleanDataType= ruleBooleanDataType EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4955:2: iv_ruleBooleanDataType= ruleBooleanDataType EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4937:2: (iv_ruleBooleanDataType= ruleBooleanDataType EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4938:2: iv_ruleBooleanDataType= ruleBooleanDataType EOF
             {
              newCompositeNode(grammarAccess.getBooleanDataTypeRule()); 
-            pushFollow(FOLLOW_ruleBooleanDataType_in_entryRuleBooleanDataType11197);
+            pushFollow(FOLLOW_ruleBooleanDataType_in_entryRuleBooleanDataType11143);
             iv_ruleBooleanDataType=ruleBooleanDataType();
 
             state._fsp--;
 
              current =iv_ruleBooleanDataType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBooleanDataType11207); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBooleanDataType11153); 
 
             }
 
@@ -12127,7 +12050,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBooleanDataType"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4962:1: ruleBooleanDataType returns [EObject current=null] : (otherlv_0= 'bool' () ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4945:1: ruleBooleanDataType returns [EObject current=null] : (otherlv_0= 'bool' () ) ;
     public final EObject ruleBooleanDataType() throws RecognitionException {
         EObject current = null;
 
@@ -12136,18 +12059,18 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4965:28: ( (otherlv_0= 'bool' () ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4966:1: (otherlv_0= 'bool' () )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4948:28: ( (otherlv_0= 'bool' () ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4949:1: (otherlv_0= 'bool' () )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4966:1: (otherlv_0= 'bool' () )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4966:3: otherlv_0= 'bool' ()
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4949:1: (otherlv_0= 'bool' () )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4949:3: otherlv_0= 'bool' ()
             {
-            otherlv_0=(Token)match(input,76,FOLLOW_76_in_ruleBooleanDataType11244); 
+            otherlv_0=(Token)match(input,76,FOLLOW_76_in_ruleBooleanDataType11190); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getBooleanDataTypeAccess().getBoolKeyword_0());
                 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4970:1: ()
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4971:5: 
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4953:1: ()
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4954:5: 
             {
 
                     current = forceCreateModelElement(
@@ -12178,7 +12101,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFloatDataType"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4984:1: entryRuleFloatDataType returns [EObject current=null] : iv_ruleFloatDataType= ruleFloatDataType EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4967:1: entryRuleFloatDataType returns [EObject current=null] : iv_ruleFloatDataType= ruleFloatDataType EOF ;
     public final EObject entryRuleFloatDataType() throws RecognitionException {
         EObject current = null;
 
@@ -12186,17 +12109,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4985:2: (iv_ruleFloatDataType= ruleFloatDataType EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4986:2: iv_ruleFloatDataType= ruleFloatDataType EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4968:2: (iv_ruleFloatDataType= ruleFloatDataType EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4969:2: iv_ruleFloatDataType= ruleFloatDataType EOF
             {
              newCompositeNode(grammarAccess.getFloatDataTypeRule()); 
-            pushFollow(FOLLOW_ruleFloatDataType_in_entryRuleFloatDataType11289);
+            pushFollow(FOLLOW_ruleFloatDataType_in_entryRuleFloatDataType11235);
             iv_ruleFloatDataType=ruleFloatDataType();
 
             state._fsp--;
 
              current =iv_ruleFloatDataType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFloatDataType11299); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFloatDataType11245); 
 
             }
 
@@ -12214,7 +12137,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFloatDataType"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4993:1: ruleFloatDataType returns [EObject current=null] : (otherlv_0= 'float' () ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4976:1: ruleFloatDataType returns [EObject current=null] : (otherlv_0= 'float' () ) ;
     public final EObject ruleFloatDataType() throws RecognitionException {
         EObject current = null;
 
@@ -12223,18 +12146,18 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4996:28: ( (otherlv_0= 'float' () ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4997:1: (otherlv_0= 'float' () )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4979:28: ( (otherlv_0= 'float' () ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4980:1: (otherlv_0= 'float' () )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4997:1: (otherlv_0= 'float' () )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4997:3: otherlv_0= 'float' ()
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4980:1: (otherlv_0= 'float' () )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4980:3: otherlv_0= 'float' ()
             {
-            otherlv_0=(Token)match(input,77,FOLLOW_77_in_ruleFloatDataType11336); 
+            otherlv_0=(Token)match(input,77,FOLLOW_77_in_ruleFloatDataType11282); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getFloatDataTypeAccess().getFloatKeyword_0());
                 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5001:1: ()
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5002:5: 
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4984:1: ()
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4985:5: 
             {
 
                     current = forceCreateModelElement(
@@ -12265,7 +12188,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringDataType"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5015:1: entryRuleStringDataType returns [EObject current=null] : iv_ruleStringDataType= ruleStringDataType EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4998:1: entryRuleStringDataType returns [EObject current=null] : iv_ruleStringDataType= ruleStringDataType EOF ;
     public final EObject entryRuleStringDataType() throws RecognitionException {
         EObject current = null;
 
@@ -12273,17 +12196,17 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5016:2: (iv_ruleStringDataType= ruleStringDataType EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5017:2: iv_ruleStringDataType= ruleStringDataType EOF
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:4999:2: (iv_ruleStringDataType= ruleStringDataType EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5000:2: iv_ruleStringDataType= ruleStringDataType EOF
             {
              newCompositeNode(grammarAccess.getStringDataTypeRule()); 
-            pushFollow(FOLLOW_ruleStringDataType_in_entryRuleStringDataType11381);
+            pushFollow(FOLLOW_ruleStringDataType_in_entryRuleStringDataType11327);
             iv_ruleStringDataType=ruleStringDataType();
 
             state._fsp--;
 
              current =iv_ruleStringDataType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStringDataType11391); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStringDataType11337); 
 
             }
 
@@ -12301,7 +12224,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringDataType"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5024:1: ruleStringDataType returns [EObject current=null] : (otherlv_0= 'string' () ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5007:1: ruleStringDataType returns [EObject current=null] : (otherlv_0= 'string' () ) ;
     public final EObject ruleStringDataType() throws RecognitionException {
         EObject current = null;
 
@@ -12310,18 +12233,18 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5027:28: ( (otherlv_0= 'string' () ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5028:1: (otherlv_0= 'string' () )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5010:28: ( (otherlv_0= 'string' () ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5011:1: (otherlv_0= 'string' () )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5028:1: (otherlv_0= 'string' () )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5028:3: otherlv_0= 'string' ()
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5011:1: (otherlv_0= 'string' () )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5011:3: otherlv_0= 'string' ()
             {
-            otherlv_0=(Token)match(input,78,FOLLOW_78_in_ruleStringDataType11428); 
+            otherlv_0=(Token)match(input,78,FOLLOW_78_in_ruleStringDataType11374); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getStringDataTypeAccess().getStringKeyword_0());
                 
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5032:1: ()
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5033:5: 
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5015:1: ()
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5016:5: 
             {
 
                     current = forceCreateModelElement(
@@ -12351,276 +12274,8 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleStringDataType"
 
 
-    // $ANTLR start "entryRuleInternationalizedResourceIdentifier"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5046:1: entryRuleInternationalizedResourceIdentifier returns [EObject current=null] : iv_ruleInternationalizedResourceIdentifier= ruleInternationalizedResourceIdentifier EOF ;
-    public final EObject entryRuleInternationalizedResourceIdentifier() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleInternationalizedResourceIdentifier = null;
-
-
-        try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5047:2: (iv_ruleInternationalizedResourceIdentifier= ruleInternationalizedResourceIdentifier EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5048:2: iv_ruleInternationalizedResourceIdentifier= ruleInternationalizedResourceIdentifier EOF
-            {
-             newCompositeNode(grammarAccess.getInternationalizedResourceIdentifierRule()); 
-            pushFollow(FOLLOW_ruleInternationalizedResourceIdentifier_in_entryRuleInternationalizedResourceIdentifier11473);
-            iv_ruleInternationalizedResourceIdentifier=ruleInternationalizedResourceIdentifier();
-
-            state._fsp--;
-
-             current =iv_ruleInternationalizedResourceIdentifier; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInternationalizedResourceIdentifier11483); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleInternationalizedResourceIdentifier"
-
-
-    // $ANTLR start "ruleInternationalizedResourceIdentifier"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5055:1: ruleInternationalizedResourceIdentifier returns [EObject current=null] : ( ( (lv_scheme_0_0= ruleScheme ) ) otherlv_1= '://' ( (lv_authority_2_0= RULE_STRING ) ) (otherlv_3= '/' ( (lv_path_4_0= RULE_STRING ) ) )* (otherlv_5= '?' ( (lv_query_6_0= RULE_STRING ) ) ) (otherlv_7= '#' ( (lv_fragmentIRI_8_0= RULE_STRING ) ) ) ) ;
-    public final EObject ruleInternationalizedResourceIdentifier() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_1=null;
-        Token lv_authority_2_0=null;
-        Token otherlv_3=null;
-        Token lv_path_4_0=null;
-        Token otherlv_5=null;
-        Token lv_query_6_0=null;
-        Token otherlv_7=null;
-        Token lv_fragmentIRI_8_0=null;
-        Enumerator lv_scheme_0_0 = null;
-
-
-         enterRule(); 
-            
-        try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5058:28: ( ( ( (lv_scheme_0_0= ruleScheme ) ) otherlv_1= '://' ( (lv_authority_2_0= RULE_STRING ) ) (otherlv_3= '/' ( (lv_path_4_0= RULE_STRING ) ) )* (otherlv_5= '?' ( (lv_query_6_0= RULE_STRING ) ) ) (otherlv_7= '#' ( (lv_fragmentIRI_8_0= RULE_STRING ) ) ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5059:1: ( ( (lv_scheme_0_0= ruleScheme ) ) otherlv_1= '://' ( (lv_authority_2_0= RULE_STRING ) ) (otherlv_3= '/' ( (lv_path_4_0= RULE_STRING ) ) )* (otherlv_5= '?' ( (lv_query_6_0= RULE_STRING ) ) ) (otherlv_7= '#' ( (lv_fragmentIRI_8_0= RULE_STRING ) ) ) )
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5059:1: ( ( (lv_scheme_0_0= ruleScheme ) ) otherlv_1= '://' ( (lv_authority_2_0= RULE_STRING ) ) (otherlv_3= '/' ( (lv_path_4_0= RULE_STRING ) ) )* (otherlv_5= '?' ( (lv_query_6_0= RULE_STRING ) ) ) (otherlv_7= '#' ( (lv_fragmentIRI_8_0= RULE_STRING ) ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5059:2: ( (lv_scheme_0_0= ruleScheme ) ) otherlv_1= '://' ( (lv_authority_2_0= RULE_STRING ) ) (otherlv_3= '/' ( (lv_path_4_0= RULE_STRING ) ) )* (otherlv_5= '?' ( (lv_query_6_0= RULE_STRING ) ) ) (otherlv_7= '#' ( (lv_fragmentIRI_8_0= RULE_STRING ) ) )
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5059:2: ( (lv_scheme_0_0= ruleScheme ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5060:1: (lv_scheme_0_0= ruleScheme )
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5060:1: (lv_scheme_0_0= ruleScheme )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5061:3: lv_scheme_0_0= ruleScheme
-            {
-             
-            	        newCompositeNode(grammarAccess.getInternationalizedResourceIdentifierAccess().getSchemeSchemeEnumRuleCall_0_0()); 
-            	    
-            pushFollow(FOLLOW_ruleScheme_in_ruleInternationalizedResourceIdentifier11529);
-            lv_scheme_0_0=ruleScheme();
-
-            state._fsp--;
-
-
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getInternationalizedResourceIdentifierRule());
-            	        }
-                   		set(
-                   			current, 
-                   			"scheme",
-                    		lv_scheme_0_0, 
-                    		"Scheme");
-            	        afterParserOrEnumRuleCall();
-            	    
-
-            }
-
-
-            }
-
-            otherlv_1=(Token)match(input,79,FOLLOW_79_in_ruleInternationalizedResourceIdentifier11541); 
-
-                	newLeafNode(otherlv_1, grammarAccess.getInternationalizedResourceIdentifierAccess().getColonSolidusSolidusKeyword_1());
-                
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5081:1: ( (lv_authority_2_0= RULE_STRING ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5082:1: (lv_authority_2_0= RULE_STRING )
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5082:1: (lv_authority_2_0= RULE_STRING )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5083:3: lv_authority_2_0= RULE_STRING
-            {
-            lv_authority_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleInternationalizedResourceIdentifier11558); 
-
-            			newLeafNode(lv_authority_2_0, grammarAccess.getInternationalizedResourceIdentifierAccess().getAuthoritySTRINGTerminalRuleCall_2_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getInternationalizedResourceIdentifierRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"authority",
-                    		lv_authority_2_0, 
-                    		"STRING");
-            	    
-
-            }
-
-
-            }
-
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5099:2: (otherlv_3= '/' ( (lv_path_4_0= RULE_STRING ) ) )*
-            loop48:
-            do {
-                int alt48=2;
-                int LA48_0 = input.LA(1);
-
-                if ( (LA48_0==74) ) {
-                    alt48=1;
-                }
-
-
-                switch (alt48) {
-            	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5099:4: otherlv_3= '/' ( (lv_path_4_0= RULE_STRING ) )
-            	    {
-            	    otherlv_3=(Token)match(input,74,FOLLOW_74_in_ruleInternationalizedResourceIdentifier11576); 
-
-            	        	newLeafNode(otherlv_3, grammarAccess.getInternationalizedResourceIdentifierAccess().getSolidusKeyword_3_0());
-            	        
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5103:1: ( (lv_path_4_0= RULE_STRING ) )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5104:1: (lv_path_4_0= RULE_STRING )
-            	    {
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5104:1: (lv_path_4_0= RULE_STRING )
-            	    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5105:3: lv_path_4_0= RULE_STRING
-            	    {
-            	    lv_path_4_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleInternationalizedResourceIdentifier11593); 
-
-            	    			newLeafNode(lv_path_4_0, grammarAccess.getInternationalizedResourceIdentifierAccess().getPathSTRINGTerminalRuleCall_3_1_0()); 
-            	    		
-
-            	    	        if (current==null) {
-            	    	            current = createModelElement(grammarAccess.getInternationalizedResourceIdentifierRule());
-            	    	        }
-            	           		addWithLastConsumed(
-            	           			current, 
-            	           			"path",
-            	            		lv_path_4_0, 
-            	            		"STRING");
-            	    	    
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop48;
-                }
-            } while (true);
-
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5121:4: (otherlv_5= '?' ( (lv_query_6_0= RULE_STRING ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5121:6: otherlv_5= '?' ( (lv_query_6_0= RULE_STRING ) )
-            {
-            otherlv_5=(Token)match(input,34,FOLLOW_34_in_ruleInternationalizedResourceIdentifier11613); 
-
-                	newLeafNode(otherlv_5, grammarAccess.getInternationalizedResourceIdentifierAccess().getQuestionMarkKeyword_4_0());
-                
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5125:1: ( (lv_query_6_0= RULE_STRING ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5126:1: (lv_query_6_0= RULE_STRING )
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5126:1: (lv_query_6_0= RULE_STRING )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5127:3: lv_query_6_0= RULE_STRING
-            {
-            lv_query_6_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleInternationalizedResourceIdentifier11630); 
-
-            			newLeafNode(lv_query_6_0, grammarAccess.getInternationalizedResourceIdentifierAccess().getQuerySTRINGTerminalRuleCall_4_1_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getInternationalizedResourceIdentifierRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"query",
-                    		lv_query_6_0, 
-                    		"STRING");
-            	    
-
-            }
-
-
-            }
-
-
-            }
-
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5143:3: (otherlv_7= '#' ( (lv_fragmentIRI_8_0= RULE_STRING ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5143:5: otherlv_7= '#' ( (lv_fragmentIRI_8_0= RULE_STRING ) )
-            {
-            otherlv_7=(Token)match(input,80,FOLLOW_80_in_ruleInternationalizedResourceIdentifier11649); 
-
-                	newLeafNode(otherlv_7, grammarAccess.getInternationalizedResourceIdentifierAccess().getNumberSignKeyword_5_0());
-                
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5147:1: ( (lv_fragmentIRI_8_0= RULE_STRING ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5148:1: (lv_fragmentIRI_8_0= RULE_STRING )
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5148:1: (lv_fragmentIRI_8_0= RULE_STRING )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5149:3: lv_fragmentIRI_8_0= RULE_STRING
-            {
-            lv_fragmentIRI_8_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleInternationalizedResourceIdentifier11666); 
-
-            			newLeafNode(lv_fragmentIRI_8_0, grammarAccess.getInternationalizedResourceIdentifierAccess().getFragmentIRISTRINGTerminalRuleCall_5_1_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getInternationalizedResourceIdentifierRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"fragmentIRI",
-                    		lv_fragmentIRI_8_0, 
-                    		"STRING");
-            	    
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleInternationalizedResourceIdentifier"
-
-
     // $ANTLR start "ruleSparqlQueryType"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5173:1: ruleSparqlQueryType returns [Enumerator current=null] : ( (enumLiteral_0= 'SELECT' ) | (enumLiteral_1= 'CONSTRUCT' ) | (enumLiteral_2= 'ASK' ) | (enumLiteral_3= 'DESCRIBE' ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5029:1: ruleSparqlQueryType returns [Enumerator current=null] : ( (enumLiteral_0= 'SELECT' ) | (enumLiteral_1= 'CONSTRUCT' ) | (enumLiteral_2= 'ASK' ) | (enumLiteral_3= 'DESCRIBE' ) ) ;
     public final Enumerator ruleSparqlQueryType() throws RecognitionException {
         Enumerator current = null;
 
@@ -12631,47 +12286,47 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5175:28: ( ( (enumLiteral_0= 'SELECT' ) | (enumLiteral_1= 'CONSTRUCT' ) | (enumLiteral_2= 'ASK' ) | (enumLiteral_3= 'DESCRIBE' ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5176:1: ( (enumLiteral_0= 'SELECT' ) | (enumLiteral_1= 'CONSTRUCT' ) | (enumLiteral_2= 'ASK' ) | (enumLiteral_3= 'DESCRIBE' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5031:28: ( ( (enumLiteral_0= 'SELECT' ) | (enumLiteral_1= 'CONSTRUCT' ) | (enumLiteral_2= 'ASK' ) | (enumLiteral_3= 'DESCRIBE' ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5032:1: ( (enumLiteral_0= 'SELECT' ) | (enumLiteral_1= 'CONSTRUCT' ) | (enumLiteral_2= 'ASK' ) | (enumLiteral_3= 'DESCRIBE' ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5176:1: ( (enumLiteral_0= 'SELECT' ) | (enumLiteral_1= 'CONSTRUCT' ) | (enumLiteral_2= 'ASK' ) | (enumLiteral_3= 'DESCRIBE' ) )
-            int alt49=4;
+            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5032:1: ( (enumLiteral_0= 'SELECT' ) | (enumLiteral_1= 'CONSTRUCT' ) | (enumLiteral_2= 'ASK' ) | (enumLiteral_3= 'DESCRIBE' ) )
+            int alt48=4;
             switch ( input.LA(1) ) {
+            case 79:
+                {
+                alt48=1;
+                }
+                break;
+            case 80:
+                {
+                alt48=2;
+                }
+                break;
             case 81:
                 {
-                alt49=1;
+                alt48=3;
                 }
                 break;
             case 82:
                 {
-                alt49=2;
-                }
-                break;
-            case 83:
-                {
-                alt49=3;
-                }
-                break;
-            case 84:
-                {
-                alt49=4;
+                alt48=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 49, 0, input);
+                    new NoViableAltException("", 48, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt49) {
+            switch (alt48) {
                 case 1 :
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5176:2: (enumLiteral_0= 'SELECT' )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5032:2: (enumLiteral_0= 'SELECT' )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5176:2: (enumLiteral_0= 'SELECT' )
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5176:4: enumLiteral_0= 'SELECT'
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5032:2: (enumLiteral_0= 'SELECT' )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5032:4: enumLiteral_0= 'SELECT'
                     {
-                    enumLiteral_0=(Token)match(input,81,FOLLOW_81_in_ruleSparqlQueryType11722); 
+                    enumLiteral_0=(Token)match(input,79,FOLLOW_79_in_ruleSparqlQueryType11433); 
 
                             current = grammarAccess.getSparqlQueryTypeAccess().getSELECTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getSparqlQueryTypeAccess().getSELECTEnumLiteralDeclaration_0()); 
@@ -12683,12 +12338,12 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5182:6: (enumLiteral_1= 'CONSTRUCT' )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5038:6: (enumLiteral_1= 'CONSTRUCT' )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5182:6: (enumLiteral_1= 'CONSTRUCT' )
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5182:8: enumLiteral_1= 'CONSTRUCT'
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5038:6: (enumLiteral_1= 'CONSTRUCT' )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5038:8: enumLiteral_1= 'CONSTRUCT'
                     {
-                    enumLiteral_1=(Token)match(input,82,FOLLOW_82_in_ruleSparqlQueryType11739); 
+                    enumLiteral_1=(Token)match(input,80,FOLLOW_80_in_ruleSparqlQueryType11450); 
 
                             current = grammarAccess.getSparqlQueryTypeAccess().getCONSTRUCTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getSparqlQueryTypeAccess().getCONSTRUCTEnumLiteralDeclaration_1()); 
@@ -12700,12 +12355,12 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5188:6: (enumLiteral_2= 'ASK' )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5044:6: (enumLiteral_2= 'ASK' )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5188:6: (enumLiteral_2= 'ASK' )
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5188:8: enumLiteral_2= 'ASK'
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5044:6: (enumLiteral_2= 'ASK' )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5044:8: enumLiteral_2= 'ASK'
                     {
-                    enumLiteral_2=(Token)match(input,83,FOLLOW_83_in_ruleSparqlQueryType11756); 
+                    enumLiteral_2=(Token)match(input,81,FOLLOW_81_in_ruleSparqlQueryType11467); 
 
                             current = grammarAccess.getSparqlQueryTypeAccess().getASKEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getSparqlQueryTypeAccess().getASKEnumLiteralDeclaration_2()); 
@@ -12717,12 +12372,12 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5194:6: (enumLiteral_3= 'DESCRIBE' )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5050:6: (enumLiteral_3= 'DESCRIBE' )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5194:6: (enumLiteral_3= 'DESCRIBE' )
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5194:8: enumLiteral_3= 'DESCRIBE'
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5050:6: (enumLiteral_3= 'DESCRIBE' )
+                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5050:8: enumLiteral_3= 'DESCRIBE'
                     {
-                    enumLiteral_3=(Token)match(input,84,FOLLOW_84_in_ruleSparqlQueryType11773); 
+                    enumLiteral_3=(Token)match(input,82,FOLLOW_82_in_ruleSparqlQueryType11484); 
 
                             current = grammarAccess.getSparqlQueryTypeAccess().getDESCRIBEEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getSparqlQueryTypeAccess().getDESCRIBEEnumLiteralDeclaration_3()); 
@@ -12752,117 +12407,6 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleSparqlQueryType"
 
-
-    // $ANTLR start "ruleScheme"
-    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5204:1: ruleScheme returns [Enumerator current=null] : ( (enumLiteral_0= 'http' ) | (enumLiteral_1= 'ftp' ) | (enumLiteral_2= 'file' ) ) ;
-    public final Enumerator ruleScheme() throws RecognitionException {
-        Enumerator current = null;
-
-        Token enumLiteral_0=null;
-        Token enumLiteral_1=null;
-        Token enumLiteral_2=null;
-
-         enterRule(); 
-        try {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5206:28: ( ( (enumLiteral_0= 'http' ) | (enumLiteral_1= 'ftp' ) | (enumLiteral_2= 'file' ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5207:1: ( (enumLiteral_0= 'http' ) | (enumLiteral_1= 'ftp' ) | (enumLiteral_2= 'file' ) )
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5207:1: ( (enumLiteral_0= 'http' ) | (enumLiteral_1= 'ftp' ) | (enumLiteral_2= 'file' ) )
-            int alt50=3;
-            switch ( input.LA(1) ) {
-            case 85:
-                {
-                alt50=1;
-                }
-                break;
-            case 86:
-                {
-                alt50=2;
-                }
-                break;
-            case 87:
-                {
-                alt50=3;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("", 50, 0, input);
-
-                throw nvae;
-            }
-
-            switch (alt50) {
-                case 1 :
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5207:2: (enumLiteral_0= 'http' )
-                    {
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5207:2: (enumLiteral_0= 'http' )
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5207:4: enumLiteral_0= 'http'
-                    {
-                    enumLiteral_0=(Token)match(input,85,FOLLOW_85_in_ruleScheme11818); 
-
-                            current = grammarAccess.getSchemeAccess().getHTTPEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                            newLeafNode(enumLiteral_0, grammarAccess.getSchemeAccess().getHTTPEnumLiteralDeclaration_0()); 
-                        
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5213:6: (enumLiteral_1= 'ftp' )
-                    {
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5213:6: (enumLiteral_1= 'ftp' )
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5213:8: enumLiteral_1= 'ftp'
-                    {
-                    enumLiteral_1=(Token)match(input,86,FOLLOW_86_in_ruleScheme11835); 
-
-                            current = grammarAccess.getSchemeAccess().getFTPEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                            newLeafNode(enumLiteral_1, grammarAccess.getSchemeAccess().getFTPEnumLiteralDeclaration_1()); 
-                        
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5219:6: (enumLiteral_2= 'file' )
-                    {
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5219:6: (enumLiteral_2= 'file' )
-                    // ../de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/parser/antlr/internal/InternalFlow.g:5219:8: enumLiteral_2= 'file'
-                    {
-                    enumLiteral_2=(Token)match(input,87,FOLLOW_87_in_ruleScheme11852); 
-
-                            current = grammarAccess.getSchemeAccess().getFILEEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-                            newLeafNode(enumLiteral_2, grammarAccess.getSchemeAccess().getFILEEnumLiteralDeclaration_2()); 
-                        
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleScheme"
-
     // Delegated rules
 
 
@@ -12876,7 +12420,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
     static final String DFA3_maxS =
         "\1\116\5\uffff\1\23\4\uffff";
     static final String DFA3_acceptS =
-        "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\uffff\1\11\1\6\1\10\1\7";
+        "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\uffff\1\11\1\7\1\6\1\10";
     static final String DFA3_specialS =
         "\13\uffff}>";
     static final String[] DFA3_transitionS = {
@@ -12887,7 +12431,7 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
             "",
             "",
             "",
-            "\1\12\13\uffff\2\10\1\uffff\1\11",
+            "\1\10\13\uffff\2\11\1\uffff\1\12",
             "",
             "",
             "",
@@ -13052,386 +12596,371 @@ public class InternalFlowParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleInputOperator_in_entryRuleInputOperator2698 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleInputOperator2708 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_31_in_ruleInputOperator2745 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleInputOperator2757 = new BitSet(new long[]{0x0000000000000000L,0x0000000000E00000L});
-    public static final BitSet FOLLOW_ruleInternationalizedResourceIdentifier_in_ruleInputOperator2778 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleInputOperator2791 = new BitSet(new long[]{0x0000000000000000L,0x0000000000E00000L});
-    public static final BitSet FOLLOW_ruleInternationalizedResourceIdentifier_in_ruleInputOperator2812 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleInputOperator2826 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_NUMBER_in_ruleInputOperator2843 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleInputOperator2860 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleInputOperator2877 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleInputOperator2894 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReturnTypeOperator_in_entryRuleReturnTypeOperator2930 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleReturnTypeOperator2940 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInputOperator_in_ruleReturnTypeOperator2987 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJoinOperator_in_ruleReturnTypeOperator3014 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSymmetricDifferenceOperator_in_ruleReturnTypeOperator3041 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDifferenceOperator_in_ruleReturnTypeOperator3068 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTagOperator_in_ruleReturnTypeOperator3095 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnTagOperator_in_ruleReturnTypeOperator3122 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFilterOperator_in_ruleReturnTypeOperator3149 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSplitOperator_in_ruleReturnTypeOperator3176 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCountOperator_in_ruleReturnTypeOperator3203 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStandardDeviationOperator_in_ruleReturnTypeOperator3230 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAverageOperator_in_ruleReturnTypeOperator3257 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElementJoinOperator_in_ruleReturnTypeOperator3284 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMatchOperator_in_ruleReturnTypeOperator3311 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOCLOperator_in_ruleReturnTypeOperator3338 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSWRLOperator_in_ruleReturnTypeOperator3365 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAdditionOperator_in_ruleReturnTypeOperator3392 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSubtractionOperator_in_ruleReturnTypeOperator3419 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMultiplicationOperator_in_ruleReturnTypeOperator3446 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDivisionOperator_in_ruleReturnTypeOperator3473 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNoReturnTypeOperator_in_entryRuleNoReturnTypeOperator3508 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNoReturnTypeOperator3518 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOutputOperator_in_ruleNoReturnTypeOperator3564 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTagOperator_in_entryRuleTagOperator3598 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTagOperator3608 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_ruleTagOperator3645 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleTagOperator3657 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleTagElement_in_ruleTagOperator3678 = new BitSet(new long[]{0x0000000000410000L});
-    public static final BitSet FOLLOW_16_in_ruleTagOperator3691 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleTagElement_in_ruleTagOperator3712 = new BitSet(new long[]{0x0000000000410000L});
-    public static final BitSet FOLLOW_22_in_ruleTagOperator3726 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQueryTagOperator_in_entryRuleQueryTagOperator3764 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQueryTagOperator3774 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_ruleQueryTagOperator3811 = new BitSet(new long[]{0x0000000000000000L,0x00000000001E0000L});
-    public static final BitSet FOLLOW_ruleSparqlQueryType_in_ruleQueryTagOperator3832 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_ruleSparqlQuery_in_ruleQueryTagOperator3853 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleQueryTagOperator3865 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSparqlQuery_in_entryRuleSparqlQuery3901 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSparqlQuery3911 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSparqlQueryVariable_in_ruleSparqlQuery3957 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_33_in_ruleSparqlQuery3969 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleSparqlQuery3981 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleSparqlQuery3993 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSparqlQueryVariable_in_entryRuleSparqlQueryVariable4029 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSparqlQueryVariable4039 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_ruleSparqlQueryVariable4076 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleSparqlQueryVariable4093 = new BitSet(new long[]{0x0000000400000002L});
-    public static final BitSet FOLLOW_34_in_ruleSparqlQueryVariable4111 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleSparqlQueryVariable4128 = new BitSet(new long[]{0x0000000400000002L});
-    public static final BitSet FOLLOW_ruleUnTagOperator_in_entryRuleUnTagOperator4171 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUnTagOperator4181 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_ruleUnTagOperator4218 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleUnTagOperator4230 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleUnTagElement_in_ruleUnTagOperator4251 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleUnTagOperator4264 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleUnTagElement_in_ruleUnTagOperator4285 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleUnTagOperator4299 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_ruleUnTagOperator4320 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleUnTagOperator4332 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnTagElement_in_entryRuleUnTagElement4368 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUnTagElement4378 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleUnTagElement4423 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_36_in_ruleUnTagElement4435 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleUnTagElement4456 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTagElement_in_entryRuleTagElement4492 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTagElement4502 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTagClassElement_in_ruleTagElement4549 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTagObjectPropertyElement_in_ruleTagElement4576 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTagDataTypePropertyElement_in_ruleTagElement4603 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTagClassElement_in_entryRuleTagClassElement4638 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTagClassElement4648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleTagClassElement4694 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_36_in_ruleTagClassElement4706 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_37_in_ruleTagClassElement4718 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleTagClassElement4738 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTagObjectPropertyElement_in_entryRuleTagObjectPropertyElement4774 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTagObjectPropertyElement4784 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleTagObjectPropertyElement4830 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_36_in_ruleTagObjectPropertyElement4842 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_38_in_ruleTagObjectPropertyElement4854 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleTagObjectPropertyElement4874 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTagDataTypePropertyElement_in_entryRuleTagDataTypePropertyElement4910 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTagDataTypePropertyElement4920 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleTagDataTypePropertyElement4966 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_36_in_ruleTagDataTypePropertyElement4978 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_39_in_ruleTagDataTypePropertyElement4990 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleTagDataTypePropertyElement5010 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBarrierOperator_in_entryRuleBarrierOperator5046 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBarrierOperator5056 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWindowOperator_in_ruleBarrierOperator5103 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMarkerOperator_in_ruleBarrierOperator5130 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWindowOperator_in_entryRuleWindowOperator5165 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleWindowOperator5175 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleWindowOperator5219 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_NUMBER_in_ruleWindowOperator5249 = new BitSet(new long[]{0x00001E0000000002L});
-    public static final BitSet FOLLOW_41_in_ruleWindowOperator5274 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_ruleWindowOperator5303 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_ruleWindowOperator5332 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_ruleWindowOperator5361 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_ruleWindowOperator5403 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMarkerOperator_in_entryRuleMarkerOperator5452 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMarkerOperator5462 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_46_in_ruleMarkerOperator5499 = new BitSet(new long[]{0x0000000000200050L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleMarkerOperator5520 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSWRLOperator_in_entryRuleSWRLOperator5556 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSWRLOperator5566 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_47_in_ruleSWRLOperator5603 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleSWRLOperator5615 = new BitSet(new long[]{0x0001000000000000L});
-    public static final BitSet FOLLOW_ruleSWRLRule_in_ruleSWRLOperator5636 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleSWRLOperator5648 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_ruleSWRLOperator5669 = new BitSet(new long[]{0x0000000000410000L});
-    public static final BitSet FOLLOW_16_in_ruleSWRLOperator5682 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_ruleSWRLOperator5703 = new BitSet(new long[]{0x0000000000410000L});
-    public static final BitSet FOLLOW_22_in_ruleSWRLOperator5717 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSWRLRule_in_entryRuleSWRLRule5753 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSWRLRule5763 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_48_in_ruleSWRLRule5800 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleSWRLRule5812 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_ruleAntecedentRule_in_ruleSWRLRule5833 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleSWRLRule5845 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_ruleConsequentRule_in_ruleSWRLRule5866 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleSWRLRule5878 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAntecedentRule_in_entryRuleAntecedentRule5914 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAntecedentRule5924 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_ruleAntecedentRule5961 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleAntecedentRule5973 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleRule_in_ruleAntecedentRule5994 = new BitSet(new long[]{0x0000000000410000L});
-    public static final BitSet FOLLOW_16_in_ruleAntecedentRule6007 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleRule_in_ruleAntecedentRule6028 = new BitSet(new long[]{0x0000000000410000L});
-    public static final BitSet FOLLOW_22_in_ruleAntecedentRule6042 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConsequentRule_in_entryRuleConsequentRule6078 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleConsequentRule6088 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_ruleConsequentRule6125 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleConsequentRule6137 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleRule_in_ruleConsequentRule6158 = new BitSet(new long[]{0x0000000000410000L});
-    public static final BitSet FOLLOW_16_in_ruleConsequentRule6171 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleRule_in_ruleConsequentRule6192 = new BitSet(new long[]{0x0000000000410000L});
-    public static final BitSet FOLLOW_22_in_ruleConsequentRule6206 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRule_in_entryRuleRule6242 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRule6252 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleRule6297 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleRule6309 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_ruleRule6321 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleRule6342 = new BitSet(new long[]{0x0000000000410000L});
-    public static final BitSet FOLLOW_16_in_ruleRule6355 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_ruleRule6367 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleRule6388 = new BitSet(new long[]{0x0000000000410000L});
-    public static final BitSet FOLLOW_22_in_ruleRule6402 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOCLOperator_in_entryRuleOCLOperator6438 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOCLOperator6448 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_51_in_ruleOCLOperator6485 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleOCLOperator6497 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleOCLOperator6514 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleOCLOperator6531 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_ruleOCLOperator6552 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleOCLOperator6564 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCountOperator_in_entryRuleCountOperator6600 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCountOperator6610 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_52_in_ruleCountOperator6647 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleCountOperator6659 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleCountOperator6680 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleCountOperator6692 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_ruleCountOperator6713 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleCountOperator6725 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStandardDeviationOperator_in_entryRuleStandardDeviationOperator6761 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStandardDeviationOperator6771 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_53_in_ruleStandardDeviationOperator6808 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleStandardDeviationOperator6820 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleStandardDeviationOperator6841 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleStandardDeviationOperator6853 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_ruleStandardDeviationOperator6874 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleStandardDeviationOperator6886 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAverageOperator_in_entryRuleAverageOperator6922 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAverageOperator6932 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_ruleAverageOperator6969 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleAverageOperator6981 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleAverageOperator7002 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleAverageOperator7014 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_ruleAverageOperator7035 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleAverageOperator7047 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAdditionOperator_in_entryRuleAdditionOperator7083 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAdditionOperator7093 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_ruleAdditionOperator7130 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleAdditionOperator7142 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleAdditionOperator7163 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleAdditionOperator7175 = new BitSet(new long[]{0x0000000000000050L});
-    public static final BitSet FOLLOW_RULE_NUMBER_in_ruleAdditionOperator7193 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleAdditionOperator7225 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleAdditionOperator7238 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSubtractionOperator_in_entryRuleSubtractionOperator7274 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSubtractionOperator7284 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_56_in_ruleSubtractionOperator7321 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleSubtractionOperator7333 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleSubtractionOperator7354 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleSubtractionOperator7366 = new BitSet(new long[]{0x0000000000000050L});
-    public static final BitSet FOLLOW_RULE_NUMBER_in_ruleSubtractionOperator7384 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleSubtractionOperator7416 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleSubtractionOperator7429 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMultiplicationOperator_in_entryRuleMultiplicationOperator7465 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMultiplicationOperator7475 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_57_in_ruleMultiplicationOperator7512 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleMultiplicationOperator7524 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleMultiplicationOperator7545 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleMultiplicationOperator7557 = new BitSet(new long[]{0x0000000000000050L});
-    public static final BitSet FOLLOW_RULE_NUMBER_in_ruleMultiplicationOperator7575 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleMultiplicationOperator7607 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleMultiplicationOperator7620 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDivisionOperator_in_entryRuleDivisionOperator7656 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDivisionOperator7666 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_58_in_ruleDivisionOperator7703 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleDivisionOperator7715 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleDivisionOperator7736 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleDivisionOperator7748 = new BitSet(new long[]{0x0000000000000050L});
-    public static final BitSet FOLLOW_RULE_NUMBER_in_ruleDivisionOperator7766 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleDivisionOperator7798 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleDivisionOperator7811 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOutputOperator_in_entryRuleOutputOperator7847 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOutputOperator7857 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_59_in_ruleOutputOperator7894 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleOutputOperator7906 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleOutputOperatorParameter_in_ruleOutputOperator7927 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleOutputOperator7939 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleOutputOperator7956 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleOutputOperator7973 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_ruleOutputOperator7994 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleOutputOperator8006 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleOutputOperator8018 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOutputOperatorParameter_in_entryRuleOutputOperatorParameter8054 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOutputOperatorParameter8064 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleOutputOperatorParameter8110 = new BitSet(new long[]{0x0000000000010002L});
-    public static final BitSet FOLLOW_16_in_ruleOutputOperatorParameter8123 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleOutputOperatorParameter8144 = new BitSet(new long[]{0x0000000000010002L});
-    public static final BitSet FOLLOW_ruleVariableDefinition_in_entryRuleVariableDefinition8182 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVariableDefinition8192 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumberVariableDefinition_in_ruleVariableDefinition8239 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringVariableDefinition_in_ruleVariableDefinition8266 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBooleanVariableDefinition_in_ruleVariableDefinition8293 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableDeclaration_in_entryRuleVariableDeclaration8328 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVariableDeclaration8338 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDataType_in_ruleVariableDeclaration8384 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleVariableDeclaration8401 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleVariableDeclaration8418 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumberVariableDefinition_in_entryRuleNumberVariableDefinition8454 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNumberVariableDefinition8464 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSimpleDataType_in_ruleNumberVariableDefinition8510 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleNumberVariableDefinition8527 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleNumberVariableDefinition8544 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_NUMBER_in_ruleNumberVariableDefinition8561 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleNumberVariableDefinition8578 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringVariableDefinition_in_entryRuleStringVariableDefinition8614 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStringVariableDefinition8624 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringDataType_in_ruleStringVariableDefinition8670 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleStringVariableDefinition8687 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleStringVariableDefinition8704 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringVariableDefinition8721 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleStringVariableDefinition8738 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBooleanVariableDefinition_in_entryRuleBooleanVariableDefinition8774 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBooleanVariableDefinition8784 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBooleanDataType_in_ruleBooleanVariableDefinition8830 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleBooleanVariableDefinition8847 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleBooleanVariableDefinition8864 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_RULE_BOOLVALUE_in_ruleBooleanVariableDefinition8881 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleBooleanVariableDefinition8898 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStructureDeclaration_in_entryRuleStructureDeclaration8934 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStructureDeclaration8944 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_60_in_ruleStructureDeclaration8981 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleStructureDeclaration8998 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleStructureDeclaration9015 = new BitSet(new long[]{0x0000000000000000L,0x0000000000007800L});
-    public static final BitSet FOLLOW_ruleVariableDeclaration_in_ruleStructureDeclaration9036 = new BitSet(new long[]{0x0000000000004000L,0x0000000000007800L});
-    public static final BitSet FOLLOW_14_in_ruleStructureDeclaration9049 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamDeclaration_in_entryRuleStreamDeclaration9085 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStreamDeclaration9095 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_61_in_ruleStreamDeclaration9132 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleStreamDeclaration9149 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleStreamDeclaration9166 = new BitSet(new long[]{0x4000000000000000L,0x0000000000007800L});
-    public static final BitSet FOLLOW_ruleStreamElement_in_ruleStreamDeclaration9187 = new BitSet(new long[]{0x4000000000004000L,0x0000000000007800L});
-    public static final BitSet FOLLOW_14_in_ruleStreamDeclaration9200 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamElement_in_entryRuleStreamElement9236 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStreamElement9246 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStructureElements_in_ruleStreamElement9293 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableDeclaration_in_ruleStreamElement9320 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStructureElements_in_entryRuleStructureElements9355 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStructureElements9365 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_62_in_ruleStructureElements9402 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleStructureElements9422 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleStructureElements9434 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression9470 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExpression9480 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOr_in_ruleExpression9526 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOr_in_entryRuleOr9560 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOr9570 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAnd_in_ruleOr9617 = new BitSet(new long[]{0x8000000000000002L});
-    public static final BitSet FOLLOW_63_in_ruleOr9644 = new BitSet(new long[]{0x0000000000200050L});
-    public static final BitSet FOLLOW_ruleAnd_in_ruleOr9678 = new BitSet(new long[]{0x8000000000000002L});
-    public static final BitSet FOLLOW_ruleAnd_in_entryRuleAnd9716 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAnd9726 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRelationalExpression_in_ruleAnd9773 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000001L});
-    public static final BitSet FOLLOW_64_in_ruleAnd9800 = new BitSet(new long[]{0x0000000000200050L});
-    public static final BitSet FOLLOW_ruleRelationalExpression_in_ruleAnd9834 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000001L});
-    public static final BitSet FOLLOW_ruleRelationalExpression_in_entryRuleRelationalExpression9872 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRelationalExpression9882 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAddition_in_ruleRelationalExpression9929 = new BitSet(new long[]{0x0000000000000002L,0x000000000000007EL});
-    public static final BitSet FOLLOW_65_in_ruleRelationalExpression9958 = new BitSet(new long[]{0x0000000000200050L});
-    public static final BitSet FOLLOW_66_in_ruleRelationalExpression9987 = new BitSet(new long[]{0x0000000000200050L});
-    public static final BitSet FOLLOW_67_in_ruleRelationalExpression10016 = new BitSet(new long[]{0x0000000000200050L});
-    public static final BitSet FOLLOW_68_in_ruleRelationalExpression10045 = new BitSet(new long[]{0x0000000000200050L});
-    public static final BitSet FOLLOW_69_in_ruleRelationalExpression10074 = new BitSet(new long[]{0x0000000000200050L});
-    public static final BitSet FOLLOW_70_in_ruleRelationalExpression10103 = new BitSet(new long[]{0x0000000000200050L});
-    public static final BitSet FOLLOW_ruleAddition_in_ruleRelationalExpression10140 = new BitSet(new long[]{0x0000000000000002L,0x000000000000007EL});
-    public static final BitSet FOLLOW_ruleAddition_in_entryRuleAddition10178 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAddition10188 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMultiplication_in_ruleAddition10235 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000180L});
-    public static final BitSet FOLLOW_71_in_ruleAddition10258 = new BitSet(new long[]{0x0000000000200050L});
-    public static final BitSet FOLLOW_72_in_ruleAddition10287 = new BitSet(new long[]{0x0000000000200050L});
-    public static final BitSet FOLLOW_ruleMultiplication_in_ruleAddition10310 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000180L});
-    public static final BitSet FOLLOW_ruleMultiplication_in_entryRuleMultiplication10348 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMultiplication10358 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrimaryExpression_in_ruleMultiplication10405 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000600L});
-    public static final BitSet FOLLOW_73_in_ruleMultiplication10428 = new BitSet(new long[]{0x0000000000200050L});
-    public static final BitSet FOLLOW_74_in_ruleMultiplication10457 = new BitSet(new long[]{0x0000000000200050L});
-    public static final BitSet FOLLOW_rulePrimaryExpression_in_ruleMultiplication10480 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000600L});
-    public static final BitSet FOLLOW_rulePrimaryExpression_in_entryRulePrimaryExpression10518 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePrimaryExpression10528 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rulePrimaryExpression10566 = new BitSet(new long[]{0x0000000000200050L});
-    public static final BitSet FOLLOW_ruleExpression_in_rulePrimaryExpression10588 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_rulePrimaryExpression10599 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_NUMBER_in_rulePrimaryExpression10633 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rulePrimaryExpression10675 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_rulePrimaryExpression10713 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDataType_in_entryRuleDataType10750 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDataType10760 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSimpleDataType_in_ruleDataType10807 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleComplexDataType_in_ruleDataType10834 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSimpleDataType_in_entryRuleSimpleDataType10869 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSimpleDataType10879 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIntegerDataType_in_ruleSimpleDataType10926 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFloatDataType_in_ruleSimpleDataType10953 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBooleanDataType_in_ruleSimpleDataType10980 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleComplexDataType_in_entryRuleComplexDataType11015 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleComplexDataType11025 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringDataType_in_ruleComplexDataType11071 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIntegerDataType_in_entryRuleIntegerDataType11105 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleIntegerDataType11115 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_75_in_ruleIntegerDataType11152 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBooleanDataType_in_entryRuleBooleanDataType11197 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBooleanDataType11207 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_76_in_ruleBooleanDataType11244 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFloatDataType_in_entryRuleFloatDataType11289 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFloatDataType11299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_77_in_ruleFloatDataType11336 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringDataType_in_entryRuleStringDataType11381 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStringDataType11391 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_78_in_ruleStringDataType11428 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInternationalizedResourceIdentifier_in_entryRuleInternationalizedResourceIdentifier11473 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInternationalizedResourceIdentifier11483 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleScheme_in_ruleInternationalizedResourceIdentifier11529 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-    public static final BitSet FOLLOW_79_in_ruleInternationalizedResourceIdentifier11541 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleInternationalizedResourceIdentifier11558 = new BitSet(new long[]{0x0000000400000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_74_in_ruleInternationalizedResourceIdentifier11576 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleInternationalizedResourceIdentifier11593 = new BitSet(new long[]{0x0000000400000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_34_in_ruleInternationalizedResourceIdentifier11613 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleInternationalizedResourceIdentifier11630 = new BitSet(new long[]{0x0000000000000000L,0x0000000000010000L});
-    public static final BitSet FOLLOW_80_in_ruleInternationalizedResourceIdentifier11649 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleInternationalizedResourceIdentifier11666 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_81_in_ruleSparqlQueryType11722 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_82_in_ruleSparqlQueryType11739 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_83_in_ruleSparqlQueryType11756 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_84_in_ruleSparqlQueryType11773 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_85_in_ruleScheme11818 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_86_in_ruleScheme11835 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_87_in_ruleScheme11852 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_ruleInputOperator2757 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleInputOperator2774 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleInputOperator2792 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleInputOperator2809 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleInputOperator2828 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleInputOperator2845 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleInputOperator2862 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_NUMBER_in_ruleInputOperator2879 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleInputOperator2896 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReturnTypeOperator_in_entryRuleReturnTypeOperator2932 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleReturnTypeOperator2942 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInputOperator_in_ruleReturnTypeOperator2989 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJoinOperator_in_ruleReturnTypeOperator3016 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSymmetricDifferenceOperator_in_ruleReturnTypeOperator3043 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDifferenceOperator_in_ruleReturnTypeOperator3070 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTagOperator_in_ruleReturnTypeOperator3097 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnTagOperator_in_ruleReturnTypeOperator3124 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFilterOperator_in_ruleReturnTypeOperator3151 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSplitOperator_in_ruleReturnTypeOperator3178 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCountOperator_in_ruleReturnTypeOperator3205 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStandardDeviationOperator_in_ruleReturnTypeOperator3232 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAverageOperator_in_ruleReturnTypeOperator3259 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementJoinOperator_in_ruleReturnTypeOperator3286 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMatchOperator_in_ruleReturnTypeOperator3313 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOCLOperator_in_ruleReturnTypeOperator3340 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSWRLOperator_in_ruleReturnTypeOperator3367 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAdditionOperator_in_ruleReturnTypeOperator3394 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSubtractionOperator_in_ruleReturnTypeOperator3421 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMultiplicationOperator_in_ruleReturnTypeOperator3448 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDivisionOperator_in_ruleReturnTypeOperator3475 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNoReturnTypeOperator_in_entryRuleNoReturnTypeOperator3510 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNoReturnTypeOperator3520 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOutputOperator_in_ruleNoReturnTypeOperator3566 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTagOperator_in_entryRuleTagOperator3600 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTagOperator3610 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_ruleTagOperator3647 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleTagOperator3659 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleTagElement_in_ruleTagOperator3680 = new BitSet(new long[]{0x0000000000410000L});
+    public static final BitSet FOLLOW_16_in_ruleTagOperator3693 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleTagElement_in_ruleTagOperator3714 = new BitSet(new long[]{0x0000000000410000L});
+    public static final BitSet FOLLOW_22_in_ruleTagOperator3728 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQueryTagOperator_in_entryRuleQueryTagOperator3766 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQueryTagOperator3776 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_ruleQueryTagOperator3813 = new BitSet(new long[]{0x0000000000000000L,0x0000000000078000L});
+    public static final BitSet FOLLOW_ruleSparqlQueryType_in_ruleQueryTagOperator3834 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_ruleSparqlQuery_in_ruleQueryTagOperator3855 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleQueryTagOperator3867 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSparqlQuery_in_entryRuleSparqlQuery3903 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSparqlQuery3913 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSparqlQueryVariable_in_ruleSparqlQuery3959 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_33_in_ruleSparqlQuery3971 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleSparqlQuery3983 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSparqlQuery3995 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSparqlQueryVariable_in_entryRuleSparqlQueryVariable4031 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSparqlQueryVariable4041 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_ruleSparqlQueryVariable4078 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleSparqlQueryVariable4095 = new BitSet(new long[]{0x0000000400000002L});
+    public static final BitSet FOLLOW_34_in_ruleSparqlQueryVariable4113 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleSparqlQueryVariable4130 = new BitSet(new long[]{0x0000000400000002L});
+    public static final BitSet FOLLOW_ruleUnTagOperator_in_entryRuleUnTagOperator4173 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUnTagOperator4183 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_ruleUnTagOperator4220 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleUnTagOperator4232 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleUnTagElement_in_ruleUnTagOperator4253 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleUnTagOperator4266 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleUnTagElement_in_ruleUnTagOperator4287 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleUnTagOperator4301 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_ruleUnTagOperator4322 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleUnTagOperator4334 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnTagElement_in_entryRuleUnTagElement4370 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUnTagElement4380 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleUnTagElement4425 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_36_in_ruleUnTagElement4437 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleUnTagElement4458 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTagElement_in_entryRuleTagElement4494 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTagElement4504 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTagClassElement_in_ruleTagElement4551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTagObjectPropertyElement_in_ruleTagElement4578 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTagDataTypePropertyElement_in_ruleTagElement4605 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTagClassElement_in_entryRuleTagClassElement4640 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTagClassElement4650 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleTagClassElement4696 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_36_in_ruleTagClassElement4708 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_37_in_ruleTagClassElement4720 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleTagClassElement4740 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTagObjectPropertyElement_in_entryRuleTagObjectPropertyElement4776 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTagObjectPropertyElement4786 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleTagObjectPropertyElement4832 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_36_in_ruleTagObjectPropertyElement4844 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_38_in_ruleTagObjectPropertyElement4856 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleTagObjectPropertyElement4876 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTagDataTypePropertyElement_in_entryRuleTagDataTypePropertyElement4912 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTagDataTypePropertyElement4922 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleTagDataTypePropertyElement4968 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_36_in_ruleTagDataTypePropertyElement4980 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_39_in_ruleTagDataTypePropertyElement4992 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleTagDataTypePropertyElement5012 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBarrierOperator_in_entryRuleBarrierOperator5048 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBarrierOperator5058 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWindowOperator_in_ruleBarrierOperator5105 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMarkerOperator_in_ruleBarrierOperator5132 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWindowOperator_in_entryRuleWindowOperator5167 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleWindowOperator5177 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleWindowOperator5221 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_NUMBER_in_ruleWindowOperator5251 = new BitSet(new long[]{0x00001E0000000002L});
+    public static final BitSet FOLLOW_41_in_ruleWindowOperator5276 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_ruleWindowOperator5305 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_ruleWindowOperator5334 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_ruleWindowOperator5363 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_ruleWindowOperator5405 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMarkerOperator_in_entryRuleMarkerOperator5454 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMarkerOperator5464 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_46_in_ruleMarkerOperator5501 = new BitSet(new long[]{0x0000000000200050L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleMarkerOperator5522 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSWRLOperator_in_entryRuleSWRLOperator5558 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSWRLOperator5568 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_47_in_ruleSWRLOperator5605 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleSWRLOperator5617 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_ruleSWRLRule_in_ruleSWRLOperator5638 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleSWRLOperator5650 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_ruleSWRLOperator5671 = new BitSet(new long[]{0x0000000000410000L});
+    public static final BitSet FOLLOW_16_in_ruleSWRLOperator5684 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_ruleSWRLOperator5705 = new BitSet(new long[]{0x0000000000410000L});
+    public static final BitSet FOLLOW_22_in_ruleSWRLOperator5719 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSWRLRule_in_entryRuleSWRLRule5755 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSWRLRule5765 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_ruleSWRLRule5802 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleSWRLRule5814 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleAntecedentRule_in_ruleSWRLRule5835 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleSWRLRule5847 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_ruleConsequentRule_in_ruleSWRLRule5868 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleSWRLRule5880 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAntecedentRule_in_entryRuleAntecedentRule5916 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAntecedentRule5926 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_49_in_ruleAntecedentRule5963 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleAntecedentRule5975 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleRule_in_ruleAntecedentRule5996 = new BitSet(new long[]{0x0000000000410000L});
+    public static final BitSet FOLLOW_16_in_ruleAntecedentRule6009 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleRule_in_ruleAntecedentRule6030 = new BitSet(new long[]{0x0000000000410000L});
+    public static final BitSet FOLLOW_22_in_ruleAntecedentRule6044 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConsequentRule_in_entryRuleConsequentRule6080 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConsequentRule6090 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_ruleConsequentRule6127 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleConsequentRule6139 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleRule_in_ruleConsequentRule6160 = new BitSet(new long[]{0x0000000000410000L});
+    public static final BitSet FOLLOW_16_in_ruleConsequentRule6173 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleRule_in_ruleConsequentRule6194 = new BitSet(new long[]{0x0000000000410000L});
+    public static final BitSet FOLLOW_22_in_ruleConsequentRule6208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRule_in_entryRuleRule6244 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRule6254 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleRule6299 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleRule6311 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_34_in_ruleRule6323 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleRule6344 = new BitSet(new long[]{0x0000000000410000L});
+    public static final BitSet FOLLOW_16_in_ruleRule6357 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_34_in_ruleRule6369 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleRule6390 = new BitSet(new long[]{0x0000000000410000L});
+    public static final BitSet FOLLOW_22_in_ruleRule6404 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOCLOperator_in_entryRuleOCLOperator6440 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOCLOperator6450 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_51_in_ruleOCLOperator6487 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleOCLOperator6499 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleOCLOperator6516 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleOCLOperator6533 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_ruleOCLOperator6554 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleOCLOperator6566 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCountOperator_in_entryRuleCountOperator6602 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCountOperator6612 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_52_in_ruleCountOperator6649 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleCountOperator6661 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleCountOperator6682 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleCountOperator6694 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_ruleCountOperator6715 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleCountOperator6727 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStandardDeviationOperator_in_entryRuleStandardDeviationOperator6763 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStandardDeviationOperator6773 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_53_in_ruleStandardDeviationOperator6810 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleStandardDeviationOperator6822 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleStandardDeviationOperator6843 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleStandardDeviationOperator6855 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_ruleStandardDeviationOperator6876 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleStandardDeviationOperator6888 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAverageOperator_in_entryRuleAverageOperator6924 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAverageOperator6934 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_54_in_ruleAverageOperator6971 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleAverageOperator6983 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleAverageOperator7004 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleAverageOperator7016 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_ruleAverageOperator7037 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleAverageOperator7049 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAdditionOperator_in_entryRuleAdditionOperator7085 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAdditionOperator7095 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_55_in_ruleAdditionOperator7132 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleAdditionOperator7144 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleAdditionOperator7165 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleAdditionOperator7177 = new BitSet(new long[]{0x0000000000000050L});
+    public static final BitSet FOLLOW_RULE_NUMBER_in_ruleAdditionOperator7195 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleAdditionOperator7227 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleAdditionOperator7240 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSubtractionOperator_in_entryRuleSubtractionOperator7276 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSubtractionOperator7286 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_56_in_ruleSubtractionOperator7323 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleSubtractionOperator7335 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleSubtractionOperator7356 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleSubtractionOperator7368 = new BitSet(new long[]{0x0000000000000050L});
+    public static final BitSet FOLLOW_RULE_NUMBER_in_ruleSubtractionOperator7386 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleSubtractionOperator7418 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleSubtractionOperator7431 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMultiplicationOperator_in_entryRuleMultiplicationOperator7467 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMultiplicationOperator7477 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_57_in_ruleMultiplicationOperator7514 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleMultiplicationOperator7526 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleMultiplicationOperator7547 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleMultiplicationOperator7559 = new BitSet(new long[]{0x0000000000000050L});
+    public static final BitSet FOLLOW_RULE_NUMBER_in_ruleMultiplicationOperator7577 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleMultiplicationOperator7609 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleMultiplicationOperator7622 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDivisionOperator_in_entryRuleDivisionOperator7658 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDivisionOperator7668 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_58_in_ruleDivisionOperator7705 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleDivisionOperator7717 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleDivisionOperator7738 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleDivisionOperator7750 = new BitSet(new long[]{0x0000000000000050L});
+    public static final BitSet FOLLOW_RULE_NUMBER_in_ruleDivisionOperator7768 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_ruleDivisionOperator7800 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleDivisionOperator7813 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOutputOperator_in_entryRuleOutputOperator7849 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOutputOperator7859 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_59_in_ruleOutputOperator7896 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleOutputOperator7908 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_ruleOutputOperator7929 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleOutputOperator7941 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleOutputOperator7958 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleOutputOperator7976 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleOutputOperator7993 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleOutputOperator8012 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleOutputOperator8029 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleOutputOperator8046 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_NUMBER_in_ruleOutputOperator8063 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleOutputOperator8080 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleOutputOperator8092 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariableDefinition_in_entryRuleVariableDefinition8128 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVariableDefinition8138 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumberVariableDefinition_in_ruleVariableDefinition8185 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringVariableDefinition_in_ruleVariableDefinition8212 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBooleanVariableDefinition_in_ruleVariableDefinition8239 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariableDeclaration_in_entryRuleVariableDeclaration8274 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVariableDeclaration8284 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDataType_in_ruleVariableDeclaration8330 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleVariableDeclaration8347 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleVariableDeclaration8364 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumberVariableDefinition_in_entryRuleNumberVariableDefinition8400 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNumberVariableDefinition8410 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSimpleDataType_in_ruleNumberVariableDefinition8456 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleNumberVariableDefinition8473 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleNumberVariableDefinition8490 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_NUMBER_in_ruleNumberVariableDefinition8507 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleNumberVariableDefinition8524 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringVariableDefinition_in_entryRuleStringVariableDefinition8560 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStringVariableDefinition8570 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringDataType_in_ruleStringVariableDefinition8616 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleStringVariableDefinition8633 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleStringVariableDefinition8650 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringVariableDefinition8667 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleStringVariableDefinition8684 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBooleanVariableDefinition_in_entryRuleBooleanVariableDefinition8720 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBooleanVariableDefinition8730 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBooleanDataType_in_ruleBooleanVariableDefinition8776 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleBooleanVariableDefinition8793 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleBooleanVariableDefinition8810 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_RULE_BOOLVALUE_in_ruleBooleanVariableDefinition8827 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleBooleanVariableDefinition8844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStructureDeclaration_in_entryRuleStructureDeclaration8880 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStructureDeclaration8890 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_60_in_ruleStructureDeclaration8927 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleStructureDeclaration8944 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleStructureDeclaration8961 = new BitSet(new long[]{0x0000000000000000L,0x0000000000007800L});
+    public static final BitSet FOLLOW_ruleVariableDeclaration_in_ruleStructureDeclaration8982 = new BitSet(new long[]{0x0000000000004000L,0x0000000000007800L});
+    public static final BitSet FOLLOW_14_in_ruleStructureDeclaration8995 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamDeclaration_in_entryRuleStreamDeclaration9031 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStreamDeclaration9041 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_61_in_ruleStreamDeclaration9078 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleStreamDeclaration9095 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleStreamDeclaration9112 = new BitSet(new long[]{0x4000000000000000L,0x0000000000007800L});
+    public static final BitSet FOLLOW_ruleStreamElement_in_ruleStreamDeclaration9133 = new BitSet(new long[]{0x4000000000004000L,0x0000000000007800L});
+    public static final BitSet FOLLOW_14_in_ruleStreamDeclaration9146 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamElement_in_entryRuleStreamElement9182 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStreamElement9192 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStructureElements_in_ruleStreamElement9239 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariableDeclaration_in_ruleStreamElement9266 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStructureElements_in_entryRuleStructureElements9301 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStructureElements9311 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_62_in_ruleStructureElements9348 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleStructureElements9368 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleStructureElements9380 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression9416 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExpression9426 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOr_in_ruleExpression9472 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOr_in_entryRuleOr9506 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOr9516 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAnd_in_ruleOr9563 = new BitSet(new long[]{0x8000000000000002L});
+    public static final BitSet FOLLOW_63_in_ruleOr9590 = new BitSet(new long[]{0x0000000000200050L});
+    public static final BitSet FOLLOW_ruleAnd_in_ruleOr9624 = new BitSet(new long[]{0x8000000000000002L});
+    public static final BitSet FOLLOW_ruleAnd_in_entryRuleAnd9662 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAnd9672 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRelationalExpression_in_ruleAnd9719 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000001L});
+    public static final BitSet FOLLOW_64_in_ruleAnd9746 = new BitSet(new long[]{0x0000000000200050L});
+    public static final BitSet FOLLOW_ruleRelationalExpression_in_ruleAnd9780 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000001L});
+    public static final BitSet FOLLOW_ruleRelationalExpression_in_entryRuleRelationalExpression9818 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRelationalExpression9828 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAddition_in_ruleRelationalExpression9875 = new BitSet(new long[]{0x0000000000000002L,0x000000000000007EL});
+    public static final BitSet FOLLOW_65_in_ruleRelationalExpression9904 = new BitSet(new long[]{0x0000000000200050L});
+    public static final BitSet FOLLOW_66_in_ruleRelationalExpression9933 = new BitSet(new long[]{0x0000000000200050L});
+    public static final BitSet FOLLOW_67_in_ruleRelationalExpression9962 = new BitSet(new long[]{0x0000000000200050L});
+    public static final BitSet FOLLOW_68_in_ruleRelationalExpression9991 = new BitSet(new long[]{0x0000000000200050L});
+    public static final BitSet FOLLOW_69_in_ruleRelationalExpression10020 = new BitSet(new long[]{0x0000000000200050L});
+    public static final BitSet FOLLOW_70_in_ruleRelationalExpression10049 = new BitSet(new long[]{0x0000000000200050L});
+    public static final BitSet FOLLOW_ruleAddition_in_ruleRelationalExpression10086 = new BitSet(new long[]{0x0000000000000002L,0x000000000000007EL});
+    public static final BitSet FOLLOW_ruleAddition_in_entryRuleAddition10124 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAddition10134 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMultiplication_in_ruleAddition10181 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000180L});
+    public static final BitSet FOLLOW_71_in_ruleAddition10204 = new BitSet(new long[]{0x0000000000200050L});
+    public static final BitSet FOLLOW_72_in_ruleAddition10233 = new BitSet(new long[]{0x0000000000200050L});
+    public static final BitSet FOLLOW_ruleMultiplication_in_ruleAddition10256 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000180L});
+    public static final BitSet FOLLOW_ruleMultiplication_in_entryRuleMultiplication10294 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMultiplication10304 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePrimaryExpression_in_ruleMultiplication10351 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000600L});
+    public static final BitSet FOLLOW_73_in_ruleMultiplication10374 = new BitSet(new long[]{0x0000000000200050L});
+    public static final BitSet FOLLOW_74_in_ruleMultiplication10403 = new BitSet(new long[]{0x0000000000200050L});
+    public static final BitSet FOLLOW_rulePrimaryExpression_in_ruleMultiplication10426 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000600L});
+    public static final BitSet FOLLOW_rulePrimaryExpression_in_entryRulePrimaryExpression10464 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePrimaryExpression10474 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rulePrimaryExpression10512 = new BitSet(new long[]{0x0000000000200050L});
+    public static final BitSet FOLLOW_ruleExpression_in_rulePrimaryExpression10534 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_rulePrimaryExpression10545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_NUMBER_in_rulePrimaryExpression10579 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rulePrimaryExpression10621 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_rulePrimaryExpression10659 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDataType_in_entryRuleDataType10696 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDataType10706 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSimpleDataType_in_ruleDataType10753 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleComplexDataType_in_ruleDataType10780 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSimpleDataType_in_entryRuleSimpleDataType10815 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSimpleDataType10825 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIntegerDataType_in_ruleSimpleDataType10872 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFloatDataType_in_ruleSimpleDataType10899 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBooleanDataType_in_ruleSimpleDataType10926 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleComplexDataType_in_entryRuleComplexDataType10961 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleComplexDataType10971 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringDataType_in_ruleComplexDataType11017 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIntegerDataType_in_entryRuleIntegerDataType11051 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleIntegerDataType11061 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_75_in_ruleIntegerDataType11098 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBooleanDataType_in_entryRuleBooleanDataType11143 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBooleanDataType11153 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_76_in_ruleBooleanDataType11190 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFloatDataType_in_entryRuleFloatDataType11235 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFloatDataType11245 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_77_in_ruleFloatDataType11282 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringDataType_in_entryRuleStringDataType11327 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStringDataType11337 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_78_in_ruleStringDataType11374 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_79_in_ruleSparqlQueryType11433 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_80_in_ruleSparqlQueryType11450 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_81_in_ruleSparqlQueryType11467 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_82_in_ruleSparqlQueryType11484 = new BitSet(new long[]{0x0000000000000002L});
 
 }

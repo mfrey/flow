@@ -1271,19 +1271,19 @@ ruleInputOperator returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getInputOperatorAccess().getIriInternationalizedResourceIdentifierParserRuleCall_2_0()); 
-	    }
-		lv_iri_2_0=ruleInternationalizedResourceIdentifier		{
+		lv_iri_2_0=RULE_STRING
+		{
+			newLeafNode(lv_iri_2_0, grammarAccess.getInputOperatorAccess().getIriSTRINGTerminalRuleCall_2_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getInputOperatorRule());
+	            $current = createModelElement(grammarAccess.getInputOperatorRule());
 	        }
-       		add(
+       		addWithLastConsumed(
        			$current, 
        			"iri",
         		lv_iri_2_0, 
-        		"InternationalizedResourceIdentifier");
-	        afterParserOrEnumRuleCall();
+        		"STRING");
 	    }
 
 )
@@ -1293,19 +1293,19 @@ ruleInputOperator returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getInputOperatorAccess().getIriInternationalizedResourceIdentifierParserRuleCall_3_1_0()); 
-	    }
-		lv_iri_4_0=ruleInternationalizedResourceIdentifier		{
+		lv_iri_4_0=RULE_STRING
+		{
+			newLeafNode(lv_iri_4_0, grammarAccess.getInputOperatorAccess().getIriSTRINGTerminalRuleCall_3_1_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getInputOperatorRule());
+	            $current = createModelElement(grammarAccess.getInputOperatorRule());
 	        }
-       		add(
+       		addWithLastConsumed(
        			$current, 
        			"iri",
         		lv_iri_4_0, 
-        		"InternationalizedResourceIdentifier");
-	        afterParserOrEnumRuleCall();
+        		"STRING");
 	    }
 
 )
@@ -1315,9 +1315,9 @@ ruleInputOperator returns [EObject current=null]
     }
 (
 (
-		lv_port_6_0=RULE_NUMBER
+		lv_address_6_0=RULE_STRING
 		{
-			newLeafNode(lv_port_6_0, grammarAccess.getInputOperatorAccess().getPortNUMBERTerminalRuleCall_5_0()); 
+			newLeafNode(lv_address_6_0, grammarAccess.getInputOperatorAccess().getAddressSTRINGTerminalRuleCall_5_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1325,9 +1325,9 @@ ruleInputOperator returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"port",
-        		lv_port_6_0, 
-        		"NUMBER");
+       			"address",
+        		lv_address_6_0, 
+        		"STRING");
 	    }
 
 )
@@ -1337,9 +1337,9 @@ ruleInputOperator returns [EObject current=null]
     }
 (
 (
-		lv_socket_8_0=RULE_STRING
+		lv_port_8_0=RULE_NUMBER
 		{
-			newLeafNode(lv_socket_8_0, grammarAccess.getInputOperatorAccess().getSocketSTRINGTerminalRuleCall_7_0()); 
+			newLeafNode(lv_port_8_0, grammarAccess.getInputOperatorAccess().getPortNUMBERTerminalRuleCall_7_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1347,9 +1347,9 @@ ruleInputOperator returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"socket",
-        		lv_socket_8_0, 
-        		"STRING");
+       			"port",
+        		lv_port_8_0, 
+        		"NUMBER");
 	    }
 
 )
@@ -3537,17 +3537,17 @@ ruleOutputOperator returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getOutputOperatorAccess().getParameterOutputOperatorParameterParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getOutputOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_2_0()); 
 	    }
-		lv_parameter_2_0=ruleOutputOperatorParameter		{
+		lv_stream_2_0=ruleStreamOperatorParameter		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getOutputOperatorRule());
 	        }
        		set(
        			$current, 
-       			"parameter",
-        		lv_parameter_2_0, 
-        		"OutputOperatorParameter");
+       			"stream",
+        		lv_stream_2_0, 
+        		"StreamOperatorParameter");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3558,9 +3558,53 @@ ruleOutputOperator returns [EObject current=null]
     }
 (
 (
-		lv_location_4_0=RULE_STRING
+		lv_iri_4_0=RULE_STRING
 		{
-			newLeafNode(lv_location_4_0, grammarAccess.getOutputOperatorAccess().getLocationSTRINGTerminalRuleCall_4_0()); 
+			newLeafNode(lv_iri_4_0, grammarAccess.getOutputOperatorAccess().getIriSTRINGTerminalRuleCall_4_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getOutputOperatorRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"iri",
+        		lv_iri_4_0, 
+        		"STRING");
+	    }
+
+)
+)(	otherlv_5=',' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getOutputOperatorAccess().getCommaKeyword_5_0());
+    }
+(
+(
+		lv_iri_6_0=RULE_STRING
+		{
+			newLeafNode(lv_iri_6_0, grammarAccess.getOutputOperatorAccess().getIriSTRINGTerminalRuleCall_5_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getOutputOperatorRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"iri",
+        		lv_iri_6_0, 
+        		"STRING");
+	    }
+
+)
+))*	otherlv_7=',' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getOutputOperatorAccess().getCommaKeyword_6());
+    }
+(
+(
+		lv_address_8_0=RULE_STRING
+		{
+			newLeafNode(lv_address_8_0, grammarAccess.getOutputOperatorAccess().getAddressSTRINGTerminalRuleCall_7_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -3568,104 +3612,43 @@ ruleOutputOperator returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"location",
-        		lv_location_4_0, 
+       			"address",
+        		lv_address_8_0, 
         		"STRING");
 	    }
 
 )
-)	otherlv_5=',' 
+)	otherlv_9=',' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getOutputOperatorAccess().getCommaKeyword_5());
+    	newLeafNode(otherlv_9, grammarAccess.getOutputOperatorAccess().getCommaKeyword_8());
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getOutputOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_6_0()); 
-	    }
-		lv_stream_6_0=ruleStreamOperatorParameter		{
+		lv_port_10_0=RULE_NUMBER
+		{
+			newLeafNode(lv_port_10_0, grammarAccess.getOutputOperatorAccess().getPortNUMBERTerminalRuleCall_9_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getOutputOperatorRule());
+	            $current = createModelElement(grammarAccess.getOutputOperatorRule());
 	        }
-       		add(
+       		setWithLastConsumed(
        			$current, 
-       			"stream",
-        		lv_stream_6_0, 
-        		"StreamOperatorParameter");
-	        afterParserOrEnumRuleCall();
+       			"port",
+        		lv_port_10_0, 
+        		"NUMBER");
 	    }
 
 )
-)	otherlv_7=')' 
+)	otherlv_11=')' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getOutputOperatorAccess().getRightParenthesisKeyword_7());
+    	newLeafNode(otherlv_11, grammarAccess.getOutputOperatorAccess().getRightParenthesisKeyword_10());
     }
-	otherlv_8=';' 
+	otherlv_12=';' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getOutputOperatorAccess().getSemicolonKeyword_8());
+    	newLeafNode(otherlv_12, grammarAccess.getOutputOperatorAccess().getSemicolonKeyword_11());
     }
 )
-;
-
-
-
-
-
-// Entry rule entryRuleOutputOperatorParameter
-entryRuleOutputOperatorParameter returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getOutputOperatorParameterRule()); }
-	 iv_ruleOutputOperatorParameter=ruleOutputOperatorParameter 
-	 { $current=$iv_ruleOutputOperatorParameter.current; } 
-	 EOF 
-;
-
-// Rule OutputOperatorParameter
-ruleOutputOperatorParameter returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getOutputOperatorParameterAccess().getElementStreamAccessParserRuleCall_0_0()); 
-	    }
-		lv_element_0_0=ruleStreamAccess		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getOutputOperatorParameterRule());
-	        }
-       		add(
-       			$current, 
-       			"element",
-        		lv_element_0_0, 
-        		"StreamAccess");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)(	otherlv_1=',' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getOutputOperatorParameterAccess().getCommaKeyword_1_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getOutputOperatorParameterAccess().getElementStreamAccessParserRuleCall_1_1_0()); 
-	    }
-		lv_element_2_0=ruleStreamAccess		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getOutputOperatorParameterRule());
-	        }
-       		add(
-       			$current, 
-       			"element",
-        		lv_element_2_0, 
-        		"StreamAccess");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))*)
 ;
 
 
@@ -5042,133 +5025,6 @@ ruleStringDataType returns [EObject current=null]
 
 
 
-// Entry rule entryRuleInternationalizedResourceIdentifier
-entryRuleInternationalizedResourceIdentifier returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getInternationalizedResourceIdentifierRule()); }
-	 iv_ruleInternationalizedResourceIdentifier=ruleInternationalizedResourceIdentifier 
-	 { $current=$iv_ruleInternationalizedResourceIdentifier.current; } 
-	 EOF 
-;
-
-// Rule InternationalizedResourceIdentifier
-ruleInternationalizedResourceIdentifier returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getInternationalizedResourceIdentifierAccess().getSchemeSchemeEnumRuleCall_0_0()); 
-	    }
-		lv_scheme_0_0=ruleScheme		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getInternationalizedResourceIdentifierRule());
-	        }
-       		set(
-       			$current, 
-       			"scheme",
-        		lv_scheme_0_0, 
-        		"Scheme");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)	otherlv_1='://' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getInternationalizedResourceIdentifierAccess().getColonSolidusSolidusKeyword_1());
-    }
-(
-(
-		lv_authority_2_0=RULE_STRING
-		{
-			newLeafNode(lv_authority_2_0, grammarAccess.getInternationalizedResourceIdentifierAccess().getAuthoritySTRINGTerminalRuleCall_2_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getInternationalizedResourceIdentifierRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"authority",
-        		lv_authority_2_0, 
-        		"STRING");
-	    }
-
-)
-)(	otherlv_3='/' 
-    {
-    	newLeafNode(otherlv_3, grammarAccess.getInternationalizedResourceIdentifierAccess().getSolidusKeyword_3_0());
-    }
-(
-(
-		lv_path_4_0=RULE_STRING
-		{
-			newLeafNode(lv_path_4_0, grammarAccess.getInternationalizedResourceIdentifierAccess().getPathSTRINGTerminalRuleCall_3_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getInternationalizedResourceIdentifierRule());
-	        }
-       		addWithLastConsumed(
-       			$current, 
-       			"path",
-        		lv_path_4_0, 
-        		"STRING");
-	    }
-
-)
-))*(	otherlv_5='?' 
-    {
-    	newLeafNode(otherlv_5, grammarAccess.getInternationalizedResourceIdentifierAccess().getQuestionMarkKeyword_4_0());
-    }
-(
-(
-		lv_query_6_0=RULE_STRING
-		{
-			newLeafNode(lv_query_6_0, grammarAccess.getInternationalizedResourceIdentifierAccess().getQuerySTRINGTerminalRuleCall_4_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getInternationalizedResourceIdentifierRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"query",
-        		lv_query_6_0, 
-        		"STRING");
-	    }
-
-)
-))(	otherlv_7='#' 
-    {
-    	newLeafNode(otherlv_7, grammarAccess.getInternationalizedResourceIdentifierAccess().getNumberSignKeyword_5_0());
-    }
-(
-(
-		lv_fragmentIRI_8_0=RULE_STRING
-		{
-			newLeafNode(lv_fragmentIRI_8_0, grammarAccess.getInternationalizedResourceIdentifierAccess().getFragmentIRISTRINGTerminalRuleCall_5_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getInternationalizedResourceIdentifierRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"fragmentIRI",
-        		lv_fragmentIRI_8_0, 
-        		"STRING");
-	    }
-
-)
-)))
-;
-
-
-
-
-
 // Rule SparqlQueryType
 ruleSparqlQueryType returns [Enumerator current=null] 
     @init { enterRule(); }
@@ -5195,31 +5051,6 @@ ruleSparqlQueryType returns [Enumerator current=null]
 	{
         $current = grammarAccess.getSparqlQueryTypeAccess().getDESCRIBEEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_3, grammarAccess.getSparqlQueryTypeAccess().getDESCRIBEEnumLiteralDeclaration_3()); 
-    }
-));
-
-
-
-// Rule Scheme
-ruleScheme returns [Enumerator current=null] 
-    @init { enterRule(); }
-    @after { leaveRule(); }:
-((	enumLiteral_0='http' 
-	{
-        $current = grammarAccess.getSchemeAccess().getHTTPEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getSchemeAccess().getHTTPEnumLiteralDeclaration_0()); 
-    }
-)
-    |(	enumLiteral_1='ftp' 
-	{
-        $current = grammarAccess.getSchemeAccess().getFTPEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_1, grammarAccess.getSchemeAccess().getFTPEnumLiteralDeclaration_1()); 
-    }
-)
-    |(	enumLiteral_2='file' 
-	{
-        $current = grammarAccess.getSchemeAccess().getFILEEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_2, grammarAccess.getSchemeAccess().getFILEEnumLiteralDeclaration_2()); 
     }
 ));
 

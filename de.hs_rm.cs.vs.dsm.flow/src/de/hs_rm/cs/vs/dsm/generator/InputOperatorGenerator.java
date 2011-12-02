@@ -1,6 +1,11 @@
 package de.hs_rm.cs.vs.dsm.generator;
 
+import java.lang.reflect.Array;
+
+import org.eclipse.emf.common.util.EList;
+
 import de.hs_rm.cs.vs.dsm.flow.InputOperator;
+import de.hs_rm.cs.vs.dsm.flow.StreamDefinition;
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
 
 
@@ -15,25 +20,21 @@ import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
  * 
  * @author Michael Frey
  */
-public class InputOperatorGenerator extends AbstractOperatorGenerator {
+public class InputOperatorGenerator extends SystemOperatorGenerator {
 	/** The type of the operator */
-	private final String OPERATOR_TYPE = "OperatorCacheIn";
-	/** The internal representation of the count operator */
-	private InputOperator mOperator = null;
+	private final String OPERATOR_TYPE = "CacheIn";
+	/** The operator */
+	private InputOperator mOperator;
+	/** The output streams of the operator */
+	private EList<StreamDefinition> mOutputStreams;
 	
 	public InputOperatorGenerator(final StreamStatement pStatement){
-		// Call the constructor of the abstract operator class
-		super(pStatement);
+		// Call the constructor of the super class
+		super(((InputOperator) pStatement.getOperator()).getIri(), ((InputOperator) pStatement.getOperator()).getAddress(), ((InputOperator) pStatement.getOperator()).getPort().toPlainString());
 		// Store the operator in the attribute
 		this.mOperator = (InputOperator) pStatement.getOperator();
-	}
-	
-	/**
-	 * {@inheritDoc} 
-	 */
-	@Override
-	public String setBarrier() {
-		return "";
+		// Store the output streams in a member
+		mOutputStreams = pStatement.getReturnStream();
 	}
 
 	/**
@@ -41,35 +42,20 @@ public class InputOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String initializeOperator() {
-		return Util.getInstance().createOperator(OPERATOR_TYPE, this.getOutputStreams().get(0));
-	}
-
-	/**
-	 * {@inheritDoc} 
-	 */
-	@Override
-	public String setOperatorProperties() {
-		String result = "";
-		/*
-		for(int i = 0; i < this.mOperator.getIri().size(); i++){
-			// Add IRIs as parameters of the stream operator
-			result += Util.getInstance().createParameter(this.getOutputStreams().get(0), "listen_iris", this.mOperator.getIri().get(i));
-		}*/
-		// Set the socket address
-		result += Util.getInstance().createParameter(this.getOutputStreams().get(0), "connector_socket_address", this.mOperator.getSocket());
-		// Set the port
-		result += Util.getInstance().createParameter(this.getOutputStreams().get(0), "connector_socket_port", this.mOperator.getPort().toString());
-		// Return the result
-		return result;
+		if(this.getOutputStreams().size() == 1){
+			return Util.getInstance().createOperator(OPERATOR_TYPE, this.getOutputStreams().get(0));
+		}else if(this.getOutputStreams().size() > 1){
+			return Util.getInstance().createOperator(OPERATOR_TYPE, "stream" + this.getOutputStreams().hashCode() + "");
+		}else{
+			return "Error in initializeOperator() in class InputOperatorGenerator";
+		}
 	}
 	
 	/**
 	 * {@inheritDoc} 
 	 */
 	@Override
-	public String setOperatorConnection() {
-		// This operator doesn't tie input to output, but only its output to another operator
-		return "";
+	public String toString(){
+		return initializeOperator() + setOperatorProperties();
 	}
-
 }

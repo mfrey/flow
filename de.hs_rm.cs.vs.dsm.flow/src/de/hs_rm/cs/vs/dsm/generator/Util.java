@@ -1,15 +1,10 @@
 package de.hs_rm.cs.vs.dsm.generator;
 
-import java.beans.Statement;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import org.eclipse.emf.common.util.EList;
-
 import de.hs_rm.cs.vs.dsm.flow.BarrierOperator;
-import de.hs_rm.cs.vs.dsm.flow.Expression;
 import de.hs_rm.cs.vs.dsm.flow.FlowFactory;
-import de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier;
 import de.hs_rm.cs.vs.dsm.flow.MarkerOperator;
 import de.hs_rm.cs.vs.dsm.flow.SplitOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamDefinition;
@@ -349,21 +344,5 @@ public class Util {
 		}
 		// Return the result
 		return result;
-	}
-	
-	/**
-	 * 
-	 */
-	public String createExpressionParameter(final Expression pExpression){
-		// TODO:
-		return null;
-	}
-	
-	/**
-	 * 
-	 */
-	public String createStringFromIRI(final InternationalizedResourceIdentifier pIdentifier){
-		// TODO: 
-		return null;
 	}
 }

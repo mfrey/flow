@@ -116,7 +116,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.MULTIPLICATION_OPERATOR: return createMultiplicationOperator();
       case FlowPackage.DIVISION_OPERATOR: return createDivisionOperator();
       case FlowPackage.OUTPUT_OPERATOR: return createOutputOperator();
-      case FlowPackage.OUTPUT_OPERATOR_PARAMETER: return createOutputOperatorParameter();
       case FlowPackage.VARIABLE_DEFINITION: return createVariableDefinition();
       case FlowPackage.VARIABLE_DECLARATION: return createVariableDeclaration();
       case FlowPackage.NUMBER_VARIABLE_DEFINITION: return createNumberVariableDefinition();
@@ -134,7 +133,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.BOOLEAN_DATA_TYPE: return createBooleanDataType();
       case FlowPackage.FLOAT_DATA_TYPE: return createFloatDataType();
       case FlowPackage.STRING_DATA_TYPE: return createStringDataType();
-      case FlowPackage.INTERNATIONALIZED_RESOURCE_IDENTIFIER: return createInternationalizedResourceIdentifier();
       case FlowPackage.BOOLEAN_OPERATION: return createBooleanOperation();
       case FlowPackage.PLUS: return createPlus();
       case FlowPackage.MINUS: return createMinus();
@@ -159,8 +157,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
     {
       case FlowPackage.SPARQL_QUERY_TYPE:
         return createSparqlQueryTypeFromString(eDataType, initialValue);
-      case FlowPackage.SCHEME:
-        return createSchemeFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -178,8 +174,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
     {
       case FlowPackage.SPARQL_QUERY_TYPE:
         return convertSparqlQueryTypeToString(eDataType, instanceValue);
-      case FlowPackage.SCHEME:
-        return convertSchemeToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -718,17 +712,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public OutputOperatorParameter createOutputOperatorParameter()
-  {
-    OutputOperatorParameterImpl outputOperatorParameter = new OutputOperatorParameterImpl();
-    return outputOperatorParameter;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public VariableDefinition createVariableDefinition()
   {
     VariableDefinitionImpl variableDefinition = new VariableDefinitionImpl();
@@ -916,17 +899,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public InternationalizedResourceIdentifier createInternationalizedResourceIdentifier()
-  {
-    InternationalizedResourceIdentifierImpl internationalizedResourceIdentifier = new InternationalizedResourceIdentifierImpl();
-    return internationalizedResourceIdentifier;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public BooleanOperation createBooleanOperation()
   {
     BooleanOperationImpl booleanOperation = new BooleanOperationImpl();
@@ -1017,28 +989,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * @generated
    */
   public String convertSparqlQueryTypeToString(EDataType eDataType, Object instanceValue)
-  {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Scheme createSchemeFromString(EDataType eDataType, String initialValue)
-  {
-    Scheme result = Scheme.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String convertSchemeToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

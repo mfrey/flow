@@ -20,7 +20,6 @@ import de.hs_rm.cs.vs.dsm.flow.FlowPackage;
 import de.hs_rm.cs.vs.dsm.flow.Import;
 import de.hs_rm.cs.vs.dsm.flow.InputOperator;
 import de.hs_rm.cs.vs.dsm.flow.IntegerDataType;
-import de.hs_rm.cs.vs.dsm.flow.InternationalizedResourceIdentifier;
 import de.hs_rm.cs.vs.dsm.flow.JoinOperator;
 import de.hs_rm.cs.vs.dsm.flow.MarkerOperator;
 import de.hs_rm.cs.vs.dsm.flow.MatchOperator;
@@ -33,7 +32,6 @@ import de.hs_rm.cs.vs.dsm.flow.NumberLiteral;
 import de.hs_rm.cs.vs.dsm.flow.NumberVariableDefinition;
 import de.hs_rm.cs.vs.dsm.flow.OCLOperator;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
-import de.hs_rm.cs.vs.dsm.flow.OutputOperatorParameter;
 import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.Plus;
 import de.hs_rm.cs.vs.dsm.flow.QueryTagOperator;
@@ -252,12 +250,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
-			case FlowPackage.INTERNATIONALIZED_RESOURCE_IDENTIFIER:
-				if(context == grammarAccess.getInternationalizedResourceIdentifierRule()) {
-					sequence_InternationalizedResourceIdentifier(context, (InternationalizedResourceIdentifier) semanticObject); 
-					return; 
-				}
-				else break;
 			case FlowPackage.JOIN_OPERATOR:
 				if(context == grammarAccess.getJoinOperatorRule() ||
 				   context == grammarAccess.getReturnTypeOperatorRule()) {
@@ -375,12 +367,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				   context == grammarAccess.getNoReturnTypeOperatorRule() ||
 				   context == grammarAccess.getOutputOperatorRule()) {
 					sequence_OutputOperator(context, (OutputOperator) semanticObject); 
-					return; 
-				}
-				else break;
-			case FlowPackage.OUTPUT_OPERATOR_PARAMETER:
-				if(context == grammarAccess.getOutputOperatorParameterRule()) {
-					sequence_OutputOperatorParameter(context, (OutputOperatorParameter) semanticObject); 
 					return; 
 				}
 				else break;
@@ -959,30 +945,14 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (iri+=InternationalizedResourceIdentifier iri+=InternationalizedResourceIdentifier* port=NUMBER socket=STRING)
+	 *     (iri+=STRING iri+=STRING* address=STRING port=NUMBER)
 	 *
 	 * Features:
 	 *    iri[1, *]
+	 *    address[1, 1]
 	 *    port[1, 1]
-	 *    socket[1, 1]
 	 */
 	protected void sequence_InputOperator(EObject context, InputOperator semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (scheme=Scheme authority=STRING path+=STRING* query=STRING fragmentIRI=STRING)
-	 *
-	 * Features:
-	 *    scheme[1, 1]
-	 *    authority[1, 1]
-	 *    path[0, *]
-	 *    query[1, 1]
-	 *    fragmentIRI[1, 1]
-	 */
-	protected void sequence_InternationalizedResourceIdentifier(EObject context, InternationalizedResourceIdentifier semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1181,24 +1151,13 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (element+=StreamAccess element+=StreamAccess*)
+	 *     (stream=StreamOperatorParameter iri+=STRING iri+=STRING* address=STRING port=NUMBER)
 	 *
 	 * Features:
-	 *    element[1, *]
-	 */
-	protected void sequence_OutputOperatorParameter(EObject context, OutputOperatorParameter semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (parameter=OutputOperatorParameter location=STRING stream+=StreamOperatorParameter)
-	 *
-	 * Features:
-	 *    parameter[1, 1]
-	 *    location[1, 1]
 	 *    stream[1, 1]
+	 *    iri[1, *]
+	 *    address[1, 1]
+	 *    port[1, 1]
 	 */
 	protected void sequence_OutputOperator(EObject context, OutputOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

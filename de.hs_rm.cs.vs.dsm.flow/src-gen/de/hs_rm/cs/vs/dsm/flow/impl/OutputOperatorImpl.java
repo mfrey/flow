@@ -7,8 +7,9 @@ package de.hs_rm.cs.vs.dsm.flow.impl;
 
 import de.hs_rm.cs.vs.dsm.flow.FlowPackage;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
-import de.hs_rm.cs.vs.dsm.flow.OutputOperatorParameter;
 import de.hs_rm.cs.vs.dsm.flow.StreamOperatorParameter;
+
+import java.math.BigDecimal;
 
 import java.util.Collection;
 
@@ -22,8 +23,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,9 +32,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.OutputOperatorImpl#getParameter <em>Parameter</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.OutputOperatorImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.OutputOperatorImpl#getStream <em>Stream</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.OutputOperatorImpl#getIri <em>Iri</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.OutputOperatorImpl#getAddress <em>Address</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.OutputOperatorImpl#getPort <em>Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,44 +44,64 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class OutputOperatorImpl extends NoReturnTypeOperatorImpl implements OutputOperator
 {
   /**
-   * The cached value of the '{@link #getParameter() <em>Parameter</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getParameter()
-   * @generated
-   * @ordered
-   */
-  protected OutputOperatorParameter parameter;
-
-  /**
-   * The default value of the '{@link #getLocation() <em>Location</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLocation()
-   * @generated
-   * @ordered
-   */
-  protected static final String LOCATION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getLocation() <em>Location</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLocation()
-   * @generated
-   * @ordered
-   */
-  protected String location = LOCATION_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getStream() <em>Stream</em>}' containment reference list.
+   * The cached value of the '{@link #getStream() <em>Stream</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getStream()
    * @generated
    * @ordered
    */
-  protected EList<StreamOperatorParameter> stream;
+  protected StreamOperatorParameter stream;
+
+  /**
+   * The cached value of the '{@link #getIri() <em>Iri</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIri()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> iri;
+
+  /**
+   * The default value of the '{@link #getAddress() <em>Address</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAddress()
+   * @generated
+   * @ordered
+   */
+  protected static final String ADDRESS_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getAddress() <em>Address</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAddress()
+   * @generated
+   * @ordered
+   */
+  protected String address = ADDRESS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getPort() <em>Port</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPort()
+   * @generated
+   * @ordered
+   */
+  protected static final BigDecimal PORT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPort() <em>Port</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPort()
+   * @generated
+   * @ordered
+   */
+  protected BigDecimal port = PORT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -108,9 +129,9 @@ public class OutputOperatorImpl extends NoReturnTypeOperatorImpl implements Outp
    * <!-- end-user-doc -->
    * @generated
    */
-  public OutputOperatorParameter getParameter()
+  public StreamOperatorParameter getStream()
   {
-    return parameter;
+    return stream;
   }
 
   /**
@@ -118,13 +139,13 @@ public class OutputOperatorImpl extends NoReturnTypeOperatorImpl implements Outp
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetParameter(OutputOperatorParameter newParameter, NotificationChain msgs)
+  public NotificationChain basicSetStream(StreamOperatorParameter newStream, NotificationChain msgs)
   {
-    OutputOperatorParameter oldParameter = parameter;
-    parameter = newParameter;
+    StreamOperatorParameter oldStream = stream;
+    stream = newStream;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FlowPackage.OUTPUT_OPERATOR__PARAMETER, oldParameter, newParameter);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FlowPackage.OUTPUT_OPERATOR__STREAM, oldStream, newStream);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -135,20 +156,20 @@ public class OutputOperatorImpl extends NoReturnTypeOperatorImpl implements Outp
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setParameter(OutputOperatorParameter newParameter)
+  public void setStream(StreamOperatorParameter newStream)
   {
-    if (newParameter != parameter)
+    if (newStream != stream)
     {
       NotificationChain msgs = null;
-      if (parameter != null)
-        msgs = ((InternalEObject)parameter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FlowPackage.OUTPUT_OPERATOR__PARAMETER, null, msgs);
-      if (newParameter != null)
-        msgs = ((InternalEObject)newParameter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FlowPackage.OUTPUT_OPERATOR__PARAMETER, null, msgs);
-      msgs = basicSetParameter(newParameter, msgs);
+      if (stream != null)
+        msgs = ((InternalEObject)stream).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FlowPackage.OUTPUT_OPERATOR__STREAM, null, msgs);
+      if (newStream != null)
+        msgs = ((InternalEObject)newStream).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FlowPackage.OUTPUT_OPERATOR__STREAM, null, msgs);
+      msgs = basicSetStream(newStream, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.OUTPUT_OPERATOR__PARAMETER, newParameter, newParameter));
+      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.OUTPUT_OPERATOR__STREAM, newStream, newStream));
   }
 
   /**
@@ -156,36 +177,59 @@ public class OutputOperatorImpl extends NoReturnTypeOperatorImpl implements Outp
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getLocation()
+  public EList<String> getIri()
   {
-    return location;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setLocation(String newLocation)
-  {
-    String oldLocation = location;
-    location = newLocation;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.OUTPUT_OPERATOR__LOCATION, oldLocation, location));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<StreamOperatorParameter> getStream()
-  {
-    if (stream == null)
+    if (iri == null)
     {
-      stream = new EObjectContainmentEList<StreamOperatorParameter>(StreamOperatorParameter.class, this, FlowPackage.OUTPUT_OPERATOR__STREAM);
+      iri = new EDataTypeEList<String>(String.class, this, FlowPackage.OUTPUT_OPERATOR__IRI);
     }
-    return stream;
+    return iri;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getAddress()
+  {
+    return address;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAddress(String newAddress)
+  {
+    String oldAddress = address;
+    address = newAddress;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.OUTPUT_OPERATOR__ADDRESS, oldAddress, address));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BigDecimal getPort()
+  {
+    return port;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPort(BigDecimal newPort)
+  {
+    BigDecimal oldPort = port;
+    port = newPort;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.OUTPUT_OPERATOR__PORT, oldPort, port));
   }
 
   /**
@@ -198,10 +242,8 @@ public class OutputOperatorImpl extends NoReturnTypeOperatorImpl implements Outp
   {
     switch (featureID)
     {
-      case FlowPackage.OUTPUT_OPERATOR__PARAMETER:
-        return basicSetParameter(null, msgs);
       case FlowPackage.OUTPUT_OPERATOR__STREAM:
-        return ((InternalEList<?>)getStream()).basicRemove(otherEnd, msgs);
+        return basicSetStream(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -216,12 +258,14 @@ public class OutputOperatorImpl extends NoReturnTypeOperatorImpl implements Outp
   {
     switch (featureID)
     {
-      case FlowPackage.OUTPUT_OPERATOR__PARAMETER:
-        return getParameter();
-      case FlowPackage.OUTPUT_OPERATOR__LOCATION:
-        return getLocation();
       case FlowPackage.OUTPUT_OPERATOR__STREAM:
         return getStream();
+      case FlowPackage.OUTPUT_OPERATOR__IRI:
+        return getIri();
+      case FlowPackage.OUTPUT_OPERATOR__ADDRESS:
+        return getAddress();
+      case FlowPackage.OUTPUT_OPERATOR__PORT:
+        return getPort();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -237,15 +281,18 @@ public class OutputOperatorImpl extends NoReturnTypeOperatorImpl implements Outp
   {
     switch (featureID)
     {
-      case FlowPackage.OUTPUT_OPERATOR__PARAMETER:
-        setParameter((OutputOperatorParameter)newValue);
-        return;
-      case FlowPackage.OUTPUT_OPERATOR__LOCATION:
-        setLocation((String)newValue);
-        return;
       case FlowPackage.OUTPUT_OPERATOR__STREAM:
-        getStream().clear();
-        getStream().addAll((Collection<? extends StreamOperatorParameter>)newValue);
+        setStream((StreamOperatorParameter)newValue);
+        return;
+      case FlowPackage.OUTPUT_OPERATOR__IRI:
+        getIri().clear();
+        getIri().addAll((Collection<? extends String>)newValue);
+        return;
+      case FlowPackage.OUTPUT_OPERATOR__ADDRESS:
+        setAddress((String)newValue);
+        return;
+      case FlowPackage.OUTPUT_OPERATOR__PORT:
+        setPort((BigDecimal)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -261,14 +308,17 @@ public class OutputOperatorImpl extends NoReturnTypeOperatorImpl implements Outp
   {
     switch (featureID)
     {
-      case FlowPackage.OUTPUT_OPERATOR__PARAMETER:
-        setParameter((OutputOperatorParameter)null);
-        return;
-      case FlowPackage.OUTPUT_OPERATOR__LOCATION:
-        setLocation(LOCATION_EDEFAULT);
-        return;
       case FlowPackage.OUTPUT_OPERATOR__STREAM:
-        getStream().clear();
+        setStream((StreamOperatorParameter)null);
+        return;
+      case FlowPackage.OUTPUT_OPERATOR__IRI:
+        getIri().clear();
+        return;
+      case FlowPackage.OUTPUT_OPERATOR__ADDRESS:
+        setAddress(ADDRESS_EDEFAULT);
+        return;
+      case FlowPackage.OUTPUT_OPERATOR__PORT:
+        setPort(PORT_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -284,12 +334,14 @@ public class OutputOperatorImpl extends NoReturnTypeOperatorImpl implements Outp
   {
     switch (featureID)
     {
-      case FlowPackage.OUTPUT_OPERATOR__PARAMETER:
-        return parameter != null;
-      case FlowPackage.OUTPUT_OPERATOR__LOCATION:
-        return LOCATION_EDEFAULT == null ? location != null : !LOCATION_EDEFAULT.equals(location);
       case FlowPackage.OUTPUT_OPERATOR__STREAM:
-        return stream != null && !stream.isEmpty();
+        return stream != null;
+      case FlowPackage.OUTPUT_OPERATOR__IRI:
+        return iri != null && !iri.isEmpty();
+      case FlowPackage.OUTPUT_OPERATOR__ADDRESS:
+        return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
+      case FlowPackage.OUTPUT_OPERATOR__PORT:
+        return PORT_EDEFAULT == null ? port != null : !PORT_EDEFAULT.equals(port);
     }
     return super.eIsSet(featureID);
   }
@@ -305,8 +357,12 @@ public class OutputOperatorImpl extends NoReturnTypeOperatorImpl implements Outp
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (location: ");
-    result.append(location);
+    result.append(" (iri: ");
+    result.append(iri);
+    result.append(", address: ");
+    result.append(address);
+    result.append(", port: ");
+    result.append(port);
     result.append(')');
     return result.toString();
   }

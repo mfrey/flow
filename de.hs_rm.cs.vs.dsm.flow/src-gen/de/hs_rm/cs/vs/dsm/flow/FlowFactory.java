@@ -458,15 +458,6 @@ public interface FlowFactory extends EFactory
   OutputOperator createOutputOperator();
 
   /**
-   * Returns a new object of class '<em>Output Operator Parameter</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Output Operator Parameter</em>'.
-   * @generated
-   */
-  OutputOperatorParameter createOutputOperatorParameter();
-
-  /**
    * Returns a new object of class '<em>Variable Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -618,15 +609,6 @@ public interface FlowFactory extends EFactory
    * @generated
    */
   StringDataType createStringDataType();
-
-  /**
-   * Returns a new object of class '<em>Internationalized Resource Identifier</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Internationalized Resource Identifier</em>'.
-   * @generated
-   */
-  InternationalizedResourceIdentifier createInternationalizedResourceIdentifier();
 
   /**
    * Returns a new object of class '<em>Boolean Operation</em>'.
