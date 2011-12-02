@@ -10,6 +10,7 @@ import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration
 import de.hs_rm.cs.vs.dsm.flow.ModelElement
 import de.hs_rm.cs.vs.dsm.flow.StreamDeclaration
 
+import de.hs_rm.cs.vs.dsm.flow.InputOperator
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement
 
@@ -96,6 +97,8 @@ class FlowGenerator implements IGenerator {
 		«write((statement.operator as DivisionOperator),statement)»
 		«ELSEIF statement.operator.eClass.name.equals("FilterOperator")»
 		«write((statement.operator as FilterOperator),statement)»
+		«ELSEIF statement.operator.eClass.name.equals("InputOperator")»
+		«write((statement.operator as InputOperator),statement)»
 		«ENDIF»
 	'''
 
@@ -169,6 +172,14 @@ class FlowGenerator implements IGenerator {
 		)
 		std.toString()
 	}
+	
+	def dispatch String write(InputOperator pOperator, StreamStatement pStatement){
+		var InputOperatorGenerator std = new InputOperatorGenerator(
+			pStatement
+		)
+		std.toString()
+	}
+	
 	
     def compile(OutputOperator output)'''
     	«{
