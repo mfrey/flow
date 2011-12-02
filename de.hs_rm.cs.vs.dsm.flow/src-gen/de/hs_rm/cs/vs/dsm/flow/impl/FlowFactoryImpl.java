@@ -83,8 +83,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.FILTER_OPERATOR: return createFilterOperator();
       case FlowPackage.SPLIT_OPERATOR: return createSplitOperator();
       case FlowPackage.MATCH_OPERATOR: return createMatchOperator();
-      case FlowPackage.SYMMETRIC_DIFFERENCE_OPERATOR: return createSymmetricDifferenceOperator();
-      case FlowPackage.DIFFERENCE_OPERATOR: return createDifferenceOperator();
       case FlowPackage.INPUT_OPERATOR: return createInputOperator();
       case FlowPackage.RETURN_TYPE_OPERATOR: return createReturnTypeOperator();
       case FlowPackage.NO_RETURN_TYPE_OPERATOR: return createNoReturnTypeOperator();
@@ -342,28 +340,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
   {
     MatchOperatorImpl matchOperator = new MatchOperatorImpl();
     return matchOperator;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SymmetricDifferenceOperator createSymmetricDifferenceOperator()
-  {
-    SymmetricDifferenceOperatorImpl symmetricDifferenceOperator = new SymmetricDifferenceOperatorImpl();
-    return symmetricDifferenceOperator;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public DifferenceOperator createDifferenceOperator()
-  {
-    DifferenceOperatorImpl differenceOperator = new DifferenceOperatorImpl();
-    return differenceOperator;
   }
 
   /**

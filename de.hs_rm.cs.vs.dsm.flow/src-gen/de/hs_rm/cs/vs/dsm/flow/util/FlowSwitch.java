@@ -191,22 +191,6 @@ public class FlowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FlowPackage.SYMMETRIC_DIFFERENCE_OPERATOR:
-      {
-        SymmetricDifferenceOperator symmetricDifferenceOperator = (SymmetricDifferenceOperator)theEObject;
-        T result = caseSymmetricDifferenceOperator(symmetricDifferenceOperator);
-        if (result == null) result = caseReturnTypeOperator(symmetricDifferenceOperator);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FlowPackage.DIFFERENCE_OPERATOR:
-      {
-        DifferenceOperator differenceOperator = (DifferenceOperator)theEObject;
-        T result = caseDifferenceOperator(differenceOperator);
-        if (result == null) result = caseReturnTypeOperator(differenceOperator);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case FlowPackage.INPUT_OPERATOR:
       {
         InputOperator inputOperator = (InputOperator)theEObject;
@@ -880,38 +864,6 @@ public class FlowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseMatchOperator(MatchOperator object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Symmetric Difference Operator</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Symmetric Difference Operator</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSymmetricDifferenceOperator(SymmetricDifferenceOperator object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Difference Operator</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Difference Operator</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDifferenceOperator(DifferenceOperator object)
   {
     return null;
   }

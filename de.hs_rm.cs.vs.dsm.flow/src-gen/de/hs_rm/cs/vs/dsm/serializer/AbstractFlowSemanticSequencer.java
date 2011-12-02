@@ -10,7 +10,6 @@ import de.hs_rm.cs.vs.dsm.flow.BooleanOperation;
 import de.hs_rm.cs.vs.dsm.flow.BooleanVariableDefinition;
 import de.hs_rm.cs.vs.dsm.flow.ConsequentRule;
 import de.hs_rm.cs.vs.dsm.flow.CountOperator;
-import de.hs_rm.cs.vs.dsm.flow.DifferenceOperator;
 import de.hs_rm.cs.vs.dsm.flow.Div;
 import de.hs_rm.cs.vs.dsm.flow.DivisionOperator;
 import de.hs_rm.cs.vs.dsm.flow.ElementJoinOperator;
@@ -54,7 +53,6 @@ import de.hs_rm.cs.vs.dsm.flow.StringVariableDefinition;
 import de.hs_rm.cs.vs.dsm.flow.StructureDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.StructureElements;
 import de.hs_rm.cs.vs.dsm.flow.SubtractionOperator;
-import de.hs_rm.cs.vs.dsm.flow.SymmetricDifferenceOperator;
 import de.hs_rm.cs.vs.dsm.flow.TagClassElement;
 import de.hs_rm.cs.vs.dsm.flow.TagDataTypePropertyElement;
 import de.hs_rm.cs.vs.dsm.flow.TagObjectPropertyElement;
@@ -170,13 +168,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				if(context == grammarAccess.getCountOperatorRule() ||
 				   context == grammarAccess.getReturnTypeOperatorRule()) {
 					sequence_CountOperator(context, (CountOperator) semanticObject); 
-					return; 
-				}
-				else break;
-			case FlowPackage.DIFFERENCE_OPERATOR:
-				if(context == grammarAccess.getDifferenceOperatorRule() ||
-				   context == grammarAccess.getReturnTypeOperatorRule()) {
-					sequence_DifferenceOperator(context, (DifferenceOperator) semanticObject); 
 					return; 
 				}
 				else break;
@@ -547,13 +538,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
-			case FlowPackage.SYMMETRIC_DIFFERENCE_OPERATOR:
-				if(context == grammarAccess.getReturnTypeOperatorRule() ||
-				   context == grammarAccess.getSymmetricDifferenceOperatorRule()) {
-					sequence_SymmetricDifferenceOperator(context, (SymmetricDifferenceOperator) semanticObject); 
-					return; 
-				}
-				else break;
 			case FlowPackage.TAG_CLASS_ELEMENT:
 				if(context == grammarAccess.getTagClassElementRule() ||
 				   context == grammarAccess.getTagElementRule()) {
@@ -860,18 +844,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 * Features:
 	 */
 	protected void sequence_DataType(EObject context, StringDataType semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (parameters+=StreamOperatorParameter parameters+=StreamOperatorParameter parameters+=StreamOperatorParameter*)
-	 *
-	 * Features:
-	 *    parameters[2, *]
-	 */
-	protected void sequence_DifferenceOperator(EObject context, DifferenceOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1564,18 +1536,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 *         EXCLUDE_IF_SET literal
 	 */
 	protected void sequence_SubtractionOperator(EObject context, SubtractionOperator semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (parameters+=StreamOperatorParameter parameters+=StreamOperatorParameter parameters+=StreamOperatorParameter*)
-	 *
-	 * Features:
-	 *    parameters[2, *]
-	 */
-	protected void sequence_SymmetricDifferenceOperator(EObject context, SymmetricDifferenceOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

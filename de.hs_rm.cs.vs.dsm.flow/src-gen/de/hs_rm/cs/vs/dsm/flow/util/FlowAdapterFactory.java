@@ -153,16 +153,6 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
         return createMatchOperatorAdapter();
       }
       @Override
-      public Adapter caseSymmetricDifferenceOperator(SymmetricDifferenceOperator object)
-      {
-        return createSymmetricDifferenceOperatorAdapter();
-      }
-      @Override
-      public Adapter caseDifferenceOperator(DifferenceOperator object)
-      {
-        return createDifferenceOperatorAdapter();
-      }
-      @Override
       public Adapter caseInputOperator(InputOperator object)
       {
         return createInputOperatorAdapter();
@@ -680,36 +670,6 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMatchOperatorAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.SymmetricDifferenceOperator <em>Symmetric Difference Operator</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.SymmetricDifferenceOperator
-   * @generated
-   */
-  public Adapter createSymmetricDifferenceOperatorAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.DifferenceOperator <em>Difference Operator</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.DifferenceOperator
-   * @generated
-   */
-  public Adapter createDifferenceOperatorAdapter()
   {
     return null;
   }

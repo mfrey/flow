@@ -117,21 +117,6 @@ SplitOperator:
  */
 MatchOperator:
 	'match''('expression=Expression ',' calculation=Expression ',' stream+=StreamOperatorParameter (','stream+=StreamOperatorParameter)* ')';
-	
-/**
- * The SymmetricDifferenceOperator rule determines the symmetric difference (of a set) of 
- * multiple streams.
- */
-SymmetricDifferenceOperator:
-	'sdif''('parameters+=StreamOperatorParameter ',' 
-		parameters+=StreamOperatorParameter (',' parameters+=StreamOperatorParameter)*')';
-		
-/**
- * The DifferenceOperator rule determines the difference (of a set) of multiple streams.
- */
-DifferenceOperator:
-	'diff''('parameters+=StreamOperatorParameter ',' 
-		parameters+=StreamOperatorParameter (',' parameters+=StreamOperatorParameter)*')';
 
 
 InputOperator:
@@ -141,7 +126,7 @@ InputOperator:
  * The rule summarizes the operators which have a return type
  */
 ReturnTypeOperator:
-	InputOperator | JoinOperator | SymmetricDifferenceOperator | DifferenceOperator | 
+	InputOperator | JoinOperator |   
 	TagOperator | UnTagOperator | FilterOperator | SplitOperator | CountOperator | 
 	StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | 
 	OCLOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | 

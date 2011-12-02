@@ -161,24 +161,6 @@ public interface FlowFactory extends EFactory
   MatchOperator createMatchOperator();
 
   /**
-   * Returns a new object of class '<em>Symmetric Difference Operator</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Symmetric Difference Operator</em>'.
-   * @generated
-   */
-  SymmetricDifferenceOperator createSymmetricDifferenceOperator();
-
-  /**
-   * Returns a new object of class '<em>Difference Operator</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Difference Operator</em>'.
-   * @generated
-   */
-  DifferenceOperator createDifferenceOperator();
-
-  /**
    * Returns a new object of class '<em>Input Operator</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

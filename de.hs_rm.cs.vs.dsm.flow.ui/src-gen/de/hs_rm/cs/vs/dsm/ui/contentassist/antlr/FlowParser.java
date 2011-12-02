@@ -77,10 +77,6 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSplitOperatorAccess().getGroup(), "rule__SplitOperator__Group__0");
 					put(grammarAccess.getMatchOperatorAccess().getGroup(), "rule__MatchOperator__Group__0");
 					put(grammarAccess.getMatchOperatorAccess().getGroup_7(), "rule__MatchOperator__Group_7__0");
-					put(grammarAccess.getSymmetricDifferenceOperatorAccess().getGroup(), "rule__SymmetricDifferenceOperator__Group__0");
-					put(grammarAccess.getSymmetricDifferenceOperatorAccess().getGroup_5(), "rule__SymmetricDifferenceOperator__Group_5__0");
-					put(grammarAccess.getDifferenceOperatorAccess().getGroup(), "rule__DifferenceOperator__Group__0");
-					put(grammarAccess.getDifferenceOperatorAccess().getGroup_5(), "rule__DifferenceOperator__Group_5__0");
 					put(grammarAccess.getInputOperatorAccess().getGroup(), "rule__InputOperator__Group__0");
 					put(grammarAccess.getInputOperatorAccess().getGroup_3(), "rule__InputOperator__Group_3__0");
 					put(grammarAccess.getTagOperatorAccess().getGroup(), "rule__TagOperator__Group__0");
@@ -179,12 +175,6 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMatchOperatorAccess().getCalculationAssignment_4(), "rule__MatchOperator__CalculationAssignment_4");
 					put(grammarAccess.getMatchOperatorAccess().getStreamAssignment_6(), "rule__MatchOperator__StreamAssignment_6");
 					put(grammarAccess.getMatchOperatorAccess().getStreamAssignment_7_1(), "rule__MatchOperator__StreamAssignment_7_1");
-					put(grammarAccess.getSymmetricDifferenceOperatorAccess().getParametersAssignment_2(), "rule__SymmetricDifferenceOperator__ParametersAssignment_2");
-					put(grammarAccess.getSymmetricDifferenceOperatorAccess().getParametersAssignment_4(), "rule__SymmetricDifferenceOperator__ParametersAssignment_4");
-					put(grammarAccess.getSymmetricDifferenceOperatorAccess().getParametersAssignment_5_1(), "rule__SymmetricDifferenceOperator__ParametersAssignment_5_1");
-					put(grammarAccess.getDifferenceOperatorAccess().getParametersAssignment_2(), "rule__DifferenceOperator__ParametersAssignment_2");
-					put(grammarAccess.getDifferenceOperatorAccess().getParametersAssignment_4(), "rule__DifferenceOperator__ParametersAssignment_4");
-					put(grammarAccess.getDifferenceOperatorAccess().getParametersAssignment_5_1(), "rule__DifferenceOperator__ParametersAssignment_5_1");
 					put(grammarAccess.getInputOperatorAccess().getIriAssignment_2(), "rule__InputOperator__IriAssignment_2");
 					put(grammarAccess.getInputOperatorAccess().getIriAssignment_3_1(), "rule__InputOperator__IriAssignment_3_1");
 					put(grammarAccess.getInputOperatorAccess().getAddressAssignment_5(), "rule__InputOperator__AddressAssignment_5");

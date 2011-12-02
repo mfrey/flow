@@ -16,7 +16,6 @@ import de.hs_rm.cs.vs.dsm.flow.ComplexDataType;
 import de.hs_rm.cs.vs.dsm.flow.ConsequentRule;
 import de.hs_rm.cs.vs.dsm.flow.CountOperator;
 import de.hs_rm.cs.vs.dsm.flow.DataType;
-import de.hs_rm.cs.vs.dsm.flow.DifferenceOperator;
 import de.hs_rm.cs.vs.dsm.flow.Div;
 import de.hs_rm.cs.vs.dsm.flow.DivisionOperator;
 import de.hs_rm.cs.vs.dsm.flow.ElementJoinOperator;
@@ -68,7 +67,6 @@ import de.hs_rm.cs.vs.dsm.flow.StringVariableDefinition;
 import de.hs_rm.cs.vs.dsm.flow.StructureDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.StructureElements;
 import de.hs_rm.cs.vs.dsm.flow.SubtractionOperator;
-import de.hs_rm.cs.vs.dsm.flow.SymmetricDifferenceOperator;
 import de.hs_rm.cs.vs.dsm.flow.TagClassElement;
 import de.hs_rm.cs.vs.dsm.flow.TagDataTypePropertyElement;
 import de.hs_rm.cs.vs.dsm.flow.TagElement;
@@ -205,20 +203,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * @generated
    */
   private EClass matchOperatorEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass symmetricDifferenceOperatorEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass differenceOperatorEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1097,46 +1081,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
   public EReference getMatchOperator_Stream()
   {
     return (EReference)matchOperatorEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getSymmetricDifferenceOperator()
-  {
-    return symmetricDifferenceOperatorEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getSymmetricDifferenceOperator_Parameters()
-  {
-    return (EReference)symmetricDifferenceOperatorEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getDifferenceOperator()
-  {
-    return differenceOperatorEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getDifferenceOperator_Parameters()
-  {
-    return (EReference)differenceOperatorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2596,12 +2540,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     createEReference(matchOperatorEClass, MATCH_OPERATOR__CALCULATION);
     createEReference(matchOperatorEClass, MATCH_OPERATOR__STREAM);
 
-    symmetricDifferenceOperatorEClass = createEClass(SYMMETRIC_DIFFERENCE_OPERATOR);
-    createEReference(symmetricDifferenceOperatorEClass, SYMMETRIC_DIFFERENCE_OPERATOR__PARAMETERS);
-
-    differenceOperatorEClass = createEClass(DIFFERENCE_OPERATOR);
-    createEReference(differenceOperatorEClass, DIFFERENCE_OPERATOR__PARAMETERS);
-
     inputOperatorEClass = createEClass(INPUT_OPERATOR);
     createEAttribute(inputOperatorEClass, INPUT_OPERATOR__IRI);
     createEAttribute(inputOperatorEClass, INPUT_OPERATOR__ADDRESS);
@@ -2840,8 +2778,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     filterOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     splitOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     matchOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
-    symmetricDifferenceOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
-    differenceOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     inputOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     noReturnTypeOperatorEClass.getESuperTypes().add(this.getModelElement());
     tagOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
@@ -2940,12 +2876,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEReference(getMatchOperator_Expression(), this.getExpression(), null, "expression", null, 0, 1, MatchOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMatchOperator_Calculation(), this.getExpression(), null, "calculation", null, 0, 1, MatchOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMatchOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, -1, MatchOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(symmetricDifferenceOperatorEClass, SymmetricDifferenceOperator.class, "SymmetricDifferenceOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSymmetricDifferenceOperator_Parameters(), this.getStreamOperatorParameter(), null, "parameters", null, 0, -1, SymmetricDifferenceOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(differenceOperatorEClass, DifferenceOperator.class, "DifferenceOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDifferenceOperator_Parameters(), this.getStreamOperatorParameter(), null, "parameters", null, 0, -1, DifferenceOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(inputOperatorEClass, InputOperator.class, "InputOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getInputOperator_Iri(), ecorePackage.getEString(), "iri", null, 0, -1, InputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
