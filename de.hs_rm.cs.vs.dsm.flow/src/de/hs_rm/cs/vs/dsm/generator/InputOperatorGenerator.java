@@ -1,7 +1,5 @@
 package de.hs_rm.cs.vs.dsm.generator;
 
-import java.lang.reflect.Array;
-
 import org.eclipse.emf.common.util.EList;
 
 import de.hs_rm.cs.vs.dsm.flow.InputOperator;
@@ -23,16 +21,14 @@ import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
 public class InputOperatorGenerator extends SystemOperatorGenerator {
 	/** The type of the operator */
 	private final String OPERATOR_TYPE = "CacheIn";
-	/** The operator */
-	private InputOperator mOperator;
 	/** The output streams of the operator */
 	private EList<StreamDefinition> mOutputStreams;
+	/***/
+	private String mStream;
 	
 	public InputOperatorGenerator(final StreamStatement pStatement){
 		// Call the constructor of the super class
 		super(((InputOperator) pStatement.getOperator()).getIri(), ((InputOperator) pStatement.getOperator()).getAddress(), ((InputOperator) pStatement.getOperator()).getPort().toPlainString());
-		// Store the operator in the attribute
-		this.mOperator = (InputOperator) pStatement.getOperator();
 		// Store the output streams in a member
 		mOutputStreams = pStatement.getReturnStream();
 	}
@@ -42,10 +38,13 @@ public class InputOperatorGenerator extends SystemOperatorGenerator {
 	 */
 	@Override
 	public String initializeOperator() {
-		if(this.getOutputStreams().size() == 1){
-			return Util.getInstance().createOperator(OPERATOR_TYPE, this.getOutputStreams().get(0));
+		if(this.mOutputStreams.size() == 1){
+			mStream = this.mOutputStreams.get(0).getName();
+			setStream(mStream);
+			return Util.getInstance().createOperator(OPERATOR_TYPE, mStream);
 		}else if(this.getOutputStreams().size() > 1){
-			return Util.getInstance().createOperator(OPERATOR_TYPE, "stream" + this.getOutputStreams().hashCode() + "");
+			mStream = "stream" + this.mOutputStreams.hashCode() + "";
+			return Util.getInstance().createOperator(OPERATOR_TYPE, mStream);
 		}else{
 			return "Error in initializeOperator() in class InputOperatorGenerator";
 		}
