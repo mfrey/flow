@@ -1246,9 +1246,49 @@ ruleDecisionTreeOperator returns [EObject current=null]
 	    }
 
 )
-)	otherlv_13=')' 
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDecisionTreeOperatorAccess().getClassAttributesDecisionTreeAttributeParserRuleCall_12_0()); 
+	    }
+		lv_classAttributes_13_0=ruleDecisionTreeAttribute		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDecisionTreeOperatorRule());
+	        }
+       		add(
+       			$current, 
+       			"classAttributes",
+        		lv_classAttributes_13_0, 
+        		"DecisionTreeAttribute");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_14=',' 
     {
-    	newLeafNode(otherlv_13, grammarAccess.getDecisionTreeOperatorAccess().getRightParenthesisKeyword_12());
+    	newLeafNode(otherlv_14, grammarAccess.getDecisionTreeOperatorAccess().getCommaKeyword_13_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDecisionTreeOperatorAccess().getClassAttributesDecisionTreeAttributeParserRuleCall_13_1_0()); 
+	    }
+		lv_classAttributes_15_0=ruleDecisionTreeAttribute		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDecisionTreeOperatorRule());
+	        }
+       		add(
+       			$current, 
+       			"classAttributes",
+        		lv_classAttributes_15_0, 
+        		"DecisionTreeAttribute");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*	otherlv_16=')' 
+    {
+    	newLeafNode(otherlv_16, grammarAccess.getDecisionTreeOperatorAccess().getRightParenthesisKeyword_14());
     }
 )
 ;

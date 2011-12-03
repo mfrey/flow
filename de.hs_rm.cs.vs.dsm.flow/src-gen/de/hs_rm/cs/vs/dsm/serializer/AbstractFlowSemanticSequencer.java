@@ -892,7 +892,9 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 *         delta=NUMBER 
 	 *         tau=NUMBER 
 	 *         barrier=NUMBER 
-	 *         frequency=NUMBER
+	 *         frequency=NUMBER 
+	 *         classAttributes+=DecisionTreeAttribute 
+	 *         classAttributes+=DecisionTreeAttribute*
 	 *     )
 	 *
 	 * Features:
@@ -901,6 +903,7 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 *    tau[1, 1]
 	 *    barrier[1, 1]
 	 *    frequency[1, 1]
+	 *    classAttributes[1, *]
 	 */
 	protected void sequence_DecisionTreeOperator(EObject context, DecisionTreeOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

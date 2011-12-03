@@ -79,6 +79,7 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRandomOperatorAccess().getGroup(), "rule__RandomOperator__Group__0");
 					put(grammarAccess.getDecisionTreeOperatorAccess().getGroup(), "rule__DecisionTreeOperator__Group__0");
 					put(grammarAccess.getDecisionTreeOperatorAccess().getGroup_4(), "rule__DecisionTreeOperator__Group_4__0");
+					put(grammarAccess.getDecisionTreeOperatorAccess().getGroup_13(), "rule__DecisionTreeOperator__Group_13__0");
 					put(grammarAccess.getDecisionTreeAttributeAccess().getGroup(), "rule__DecisionTreeAttribute__Group__0");
 					put(grammarAccess.getDecisionTreeAttributeAccess().getGroup_3(), "rule__DecisionTreeAttribute__Group_3__0");
 					put(grammarAccess.getMatchOperatorAccess().getGroup(), "rule__MatchOperator__Group__0");
@@ -186,6 +187,8 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDecisionTreeOperatorAccess().getTauAssignment_7(), "rule__DecisionTreeOperator__TauAssignment_7");
 					put(grammarAccess.getDecisionTreeOperatorAccess().getBarrierAssignment_9(), "rule__DecisionTreeOperator__BarrierAssignment_9");
 					put(grammarAccess.getDecisionTreeOperatorAccess().getFrequencyAssignment_11(), "rule__DecisionTreeOperator__FrequencyAssignment_11");
+					put(grammarAccess.getDecisionTreeOperatorAccess().getClassAttributesAssignment_12(), "rule__DecisionTreeOperator__ClassAttributesAssignment_12");
+					put(grammarAccess.getDecisionTreeOperatorAccess().getClassAttributesAssignment_13_1(), "rule__DecisionTreeOperator__ClassAttributesAssignment_13_1");
 					put(grammarAccess.getDecisionTreeAttributeAccess().getKeyAssignment_0(), "rule__DecisionTreeAttribute__KeyAssignment_0");
 					put(grammarAccess.getDecisionTreeAttributeAccess().getValueAssignment_2(), "rule__DecisionTreeAttribute__ValueAssignment_2");
 					put(grammarAccess.getDecisionTreeAttributeAccess().getValueAssignment_3_1(), "rule__DecisionTreeAttribute__ValueAssignment_3_1");

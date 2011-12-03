@@ -1192,6 +1192,16 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getDecisionTreeOperator_ClassAttributes()
+  {
+    return (EReference)decisionTreeOperatorEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getDecisionTreeAttribute()
   {
     return decisionTreeAttributeEClass;
@@ -2693,6 +2703,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     createEAttribute(decisionTreeOperatorEClass, DECISION_TREE_OPERATOR__TAU);
     createEAttribute(decisionTreeOperatorEClass, DECISION_TREE_OPERATOR__BARRIER);
     createEAttribute(decisionTreeOperatorEClass, DECISION_TREE_OPERATOR__FREQUENCY);
+    createEReference(decisionTreeOperatorEClass, DECISION_TREE_OPERATOR__CLASS_ATTRIBUTES);
 
     decisionTreeAttributeEClass = createEClass(DECISION_TREE_ATTRIBUTE);
     createEAttribute(decisionTreeAttributeEClass, DECISION_TREE_ATTRIBUTE__KEY);
@@ -3047,6 +3058,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEAttribute(getDecisionTreeOperator_Tau(), ecorePackage.getEBigDecimal(), "tau", null, 0, 1, DecisionTreeOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDecisionTreeOperator_Barrier(), ecorePackage.getEBigDecimal(), "barrier", null, 0, 1, DecisionTreeOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDecisionTreeOperator_Frequency(), ecorePackage.getEBigDecimal(), "frequency", null, 0, 1, DecisionTreeOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDecisionTreeOperator_ClassAttributes(), this.getDecisionTreeAttribute(), null, "classAttributes", null, 0, -1, DecisionTreeOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(decisionTreeAttributeEClass, DecisionTreeAttribute.class, "DecisionTreeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDecisionTreeAttribute_Key(), ecorePackage.getEString(), "key", null, 0, 1, DecisionTreeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

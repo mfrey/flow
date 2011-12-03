@@ -112,7 +112,8 @@ RandomOperator:
 	'rand' '('maximum=NUMBER ',' sleep=NUMBER ')';
 
 DecisionTreeOperator:
-	'dtree' '('attributes+=DecisionTreeAttribute ',' (attributes+=DecisionTreeAttribute ',')* delta=NUMBER ',' tau=NUMBER ',' barrier= NUMBER ',' frequency= NUMBER ')';
+	'dtree' '('attributes+=DecisionTreeAttribute ',' (attributes+=DecisionTreeAttribute ',')* delta=NUMBER ',' tau=NUMBER ',' barrier= NUMBER ',' frequency= NUMBER 
+		classAttributes+=DecisionTreeAttribute (',' classAttributes+=DecisionTreeAttribute)* ')';
 	
 DecisionTreeAttribute:
 	key = STRING '{' value+=STRING (',' value+=STRING)* '}';

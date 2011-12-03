@@ -807,15 +807,23 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCommaKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		private final Assignment cFrequencyAssignment_11 = (Assignment)cGroup.eContents().get(11);
 		private final RuleCall cFrequencyNUMBERTerminalRuleCall_11_0 = (RuleCall)cFrequencyAssignment_11.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Assignment cClassAttributesAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cClassAttributesDecisionTreeAttributeParserRuleCall_12_0 = (RuleCall)cClassAttributesAssignment_12.eContents().get(0);
+		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
+		private final Keyword cCommaKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
+		private final Assignment cClassAttributesAssignment_13_1 = (Assignment)cGroup_13.eContents().get(1);
+		private final RuleCall cClassAttributesDecisionTreeAttributeParserRuleCall_13_1_0 = (RuleCall)cClassAttributesAssignment_13_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_14 = (Keyword)cGroup.eContents().get(14);
 		
 		//DecisionTreeOperator:
 		//	"dtree" "(" attributes+=DecisionTreeAttribute "," (attributes+=DecisionTreeAttribute ",")* delta=NUMBER "," tau=NUMBER
-		//	"," barrier=NUMBER "," frequency=NUMBER ")";
+		//	"," barrier=NUMBER "," frequency=NUMBER classAttributes+=DecisionTreeAttribute (","
+		//	classAttributes+=DecisionTreeAttribute)* ")";
 		public ParserRule getRule() { return rule; }
 
 		//"dtree" "(" attributes+=DecisionTreeAttribute "," (attributes+=DecisionTreeAttribute ",")* delta=NUMBER "," tau=NUMBER
-		//"," barrier=NUMBER "," frequency=NUMBER ")"
+		//"," barrier=NUMBER "," frequency=NUMBER classAttributes+=DecisionTreeAttribute (","
+		//classAttributes+=DecisionTreeAttribute)* ")"
 		public Group getGroup() { return cGroup; }
 
 		//"dtree"
@@ -878,8 +886,26 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//NUMBER
 		public RuleCall getFrequencyNUMBERTerminalRuleCall_11_0() { return cFrequencyNUMBERTerminalRuleCall_11_0; }
 
+		//classAttributes+=DecisionTreeAttribute
+		public Assignment getClassAttributesAssignment_12() { return cClassAttributesAssignment_12; }
+
+		//DecisionTreeAttribute
+		public RuleCall getClassAttributesDecisionTreeAttributeParserRuleCall_12_0() { return cClassAttributesDecisionTreeAttributeParserRuleCall_12_0; }
+
+		//("," classAttributes+=DecisionTreeAttribute)*
+		public Group getGroup_13() { return cGroup_13; }
+
+		//","
+		public Keyword getCommaKeyword_13_0() { return cCommaKeyword_13_0; }
+
+		//classAttributes+=DecisionTreeAttribute
+		public Assignment getClassAttributesAssignment_13_1() { return cClassAttributesAssignment_13_1; }
+
+		//DecisionTreeAttribute
+		public RuleCall getClassAttributesDecisionTreeAttributeParserRuleCall_13_1_0() { return cClassAttributesDecisionTreeAttributeParserRuleCall_13_1_0; }
+
 		//")"
-		public Keyword getRightParenthesisKeyword_12() { return cRightParenthesisKeyword_12; }
+		public Keyword getRightParenthesisKeyword_14() { return cRightParenthesisKeyword_14; }
 	}
 
 	public class DecisionTreeAttributeElements extends AbstractParserRuleElementFinder {
@@ -3647,7 +3673,8 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 
 	//DecisionTreeOperator:
 	//	"dtree" "(" attributes+=DecisionTreeAttribute "," (attributes+=DecisionTreeAttribute ",")* delta=NUMBER "," tau=NUMBER
-	//	"," barrier=NUMBER "," frequency=NUMBER ")";
+	//	"," barrier=NUMBER "," frequency=NUMBER classAttributes+=DecisionTreeAttribute (","
+	//	classAttributes+=DecisionTreeAttribute)* ")";
 	public DecisionTreeOperatorElements getDecisionTreeOperatorAccess() {
 		return (pDecisionTreeOperator != null) ? pDecisionTreeOperator : (pDecisionTreeOperator = new DecisionTreeOperatorElements());
 	}

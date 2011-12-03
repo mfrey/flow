@@ -1,5 +1,8 @@
 package de.hs_rm.cs.vs.dsm.generator;
 
+import org.eclipse.emf.common.util.EList;
+
+import de.hs_rm.cs.vs.dsm.flow.DecisionTreeAttribute;
 import de.hs_rm.cs.vs.dsm.flow.DecisionTreeOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
 
@@ -49,24 +52,9 @@ public class DecisionTreeOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String setOperatorProperties() {
-		String result = "";
+		String result = Util.getInstance().createParameter(mStream, "attributes", this.buildAttributes(mOperator.getAttributes()));
 		
-		String attributes = "";
-		
-		for(int i = 0; i < this.mOperator.getAttributes().size(); i++){
-			attributes += this.mOperator.getAttributes().get(i).getKey() + " = {";
-			for(int j = 0; j < this.mOperator.getAttributes().get(i).getValue().size(); j++){
-				if(j != 0){
-					attributes += "," + this.mOperator.getAttributes().get(i).getValue().get(j);
-				}else{
-				 attributes += this.mOperator.getAttributes().get(i).getValue().get(j);
-				}
-			}
-			attributes += "}";
-		}
-		
-		result += Util.getInstance().createParameter(mStream, "attributes", attributes);
-		result += Util.getInstance().createParameter(mStream, "classAttribute", "TODO");
+		result += Util.getInstance().createParameter(mStream, "classAttribute", this.buildAttributes(mOperator.getClassAttributes()));
 		result += Util.getInstance().createParameter(mStream, "delta", mOperator.getDelta().toPlainString());
 		result += Util.getInstance().createParameter(mStream, "classHomogenityBarrier", mOperator.getBarrier().toPlainString());
 		result += Util.getInstance().createParameter(mStream, "checkFrequency", mOperator.getFrequency().toPlainString());
@@ -76,6 +64,22 @@ public class DecisionTreeOperatorGenerator extends AbstractOperatorGenerator {
 		return result;
 	}
 
+	private String buildAttributes(final EList<DecisionTreeAttribute> pAttribute){
+		String attributes = "";
+		for(int i = 0; i < pAttribute.size(); i++){
+			attributes += pAttribute.get(i).getKey() + " = {";
+			for(int j = 0; j < pAttribute.get(i).getValue().size(); j++){
+				if(j != 0){
+					attributes += "," + pAttribute.get(i).getValue().get(j);
+				}else{
+				 attributes += pAttribute.get(i).getValue().get(j);
+				}
+			}
+			attributes += "}";
+		}
+		return attributes;
+	}
+	
 	/**
 	 * {@inheritDoc} 
 	 */

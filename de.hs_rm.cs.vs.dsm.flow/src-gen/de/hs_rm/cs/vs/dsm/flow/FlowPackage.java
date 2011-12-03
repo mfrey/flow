@@ -691,13 +691,22 @@ public interface FlowPackage extends EPackage
   int DECISION_TREE_OPERATOR__FREQUENCY = MODEL_ELEMENT_FEATURE_COUNT + 4;
 
   /**
+   * The feature id for the '<em><b>Class Attributes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECISION_TREE_OPERATOR__CLASS_ATTRIBUTES = MODEL_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
    * The number of structural features of the '<em>Decision Tree Operator</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DECISION_TREE_OPERATOR_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 5;
+  int DECISION_TREE_OPERATOR_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.DecisionTreeAttributeImpl <em>Decision Tree Attribute</em>}' class.
@@ -3099,6 +3108,17 @@ public interface FlowPackage extends EPackage
   EAttribute getDecisionTreeOperator_Frequency();
 
   /**
+   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.DecisionTreeOperator#getClassAttributes <em>Class Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Class Attributes</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.DecisionTreeOperator#getClassAttributes()
+   * @see #getDecisionTreeOperator()
+   * @generated
+   */
+  EReference getDecisionTreeOperator_ClassAttributes();
+
+  /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.DecisionTreeAttribute <em>Decision Tree Attribute</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5048,6 +5068,14 @@ public interface FlowPackage extends EPackage
      * @generated
      */
     EAttribute DECISION_TREE_OPERATOR__FREQUENCY = eINSTANCE.getDecisionTreeOperator_Frequency();
+
+    /**
+     * The meta object literal for the '<em><b>Class Attributes</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECISION_TREE_OPERATOR__CLASS_ATTRIBUTES = eINSTANCE.getDecisionTreeOperator_ClassAttributes();
 
     /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.DecisionTreeAttributeImpl <em>Decision Tree Attribute</em>}' class.
