@@ -153,6 +153,11 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
         return createLogOperatorAdapter();
       }
       @Override
+      public Adapter caseRandomOperator(RandomOperator object)
+      {
+        return createRandomOperatorAdapter();
+      }
+      @Override
       public Adapter caseMatchOperator(MatchOperator object)
       {
         return createMatchOperatorAdapter();
@@ -266,11 +271,6 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
       public Adapter caseRule(Rule object)
       {
         return createRuleAdapter();
-      }
-      @Override
-      public Adapter caseOCLOperator(OCLOperator object)
-      {
-        return createOCLOperatorAdapter();
       }
       @Override
       public Adapter caseCountOperator(CountOperator object)
@@ -680,6 +680,21 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.RandomOperator <em>Random Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.hs_rm.cs.vs.dsm.flow.RandomOperator
+   * @generated
+   */
+  public Adapter createRandomOperatorAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.MatchOperator <em>Match Operator</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1020,21 +1035,6 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRuleAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.OCLOperator <em>OCL Operator</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.OCLOperator
-   * @generated
-   */
-  public Adapter createOCLOperatorAdapter()
   {
     return null;
   }

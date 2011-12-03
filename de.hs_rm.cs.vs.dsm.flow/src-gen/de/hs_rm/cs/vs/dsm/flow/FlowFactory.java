@@ -161,6 +161,15 @@ public interface FlowFactory extends EFactory
   LogOperator createLogOperator();
 
   /**
+   * Returns a new object of class '<em>Random Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Random Operator</em>'.
+   * @generated
+   */
+  RandomOperator createRandomOperator();
+
+  /**
    * Returns a new object of class '<em>Match Operator</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -366,15 +375,6 @@ public interface FlowFactory extends EFactory
    * @generated
    */
   Rule createRule();
-
-  /**
-   * Returns a new object of class '<em>OCL Operator</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>OCL Operator</em>'.
-   * @generated
-   */
-  OCLOperator createOCLOperator();
 
   /**
    * Returns a new object of class '<em>Count Operator</em>'.

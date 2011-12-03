@@ -83,6 +83,7 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.FILTER_OPERATOR: return createFilterOperator();
       case FlowPackage.SPLIT_OPERATOR: return createSplitOperator();
       case FlowPackage.LOG_OPERATOR: return createLogOperator();
+      case FlowPackage.RANDOM_OPERATOR: return createRandomOperator();
       case FlowPackage.MATCH_OPERATOR: return createMatchOperator();
       case FlowPackage.INPUT_OPERATOR: return createInputOperator();
       case FlowPackage.RETURN_TYPE_OPERATOR: return createReturnTypeOperator();
@@ -106,7 +107,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.ANTECEDENT_RULE: return createAntecedentRule();
       case FlowPackage.CONSEQUENT_RULE: return createConsequentRule();
       case FlowPackage.RULE: return createRule();
-      case FlowPackage.OCL_OPERATOR: return createOCLOperator();
       case FlowPackage.COUNT_OPERATOR: return createCountOperator();
       case FlowPackage.STANDARD_DEVIATION_OPERATOR: return createStandardDeviationOperator();
       case FlowPackage.AVERAGE_OPERATOR: return createAverageOperator();
@@ -341,6 +341,17 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
   {
     LogOperatorImpl logOperator = new LogOperatorImpl();
     return logOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RandomOperator createRandomOperator()
+  {
+    RandomOperatorImpl randomOperator = new RandomOperatorImpl();
+    return randomOperator;
   }
 
   /**
@@ -594,17 +605,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
   {
     RuleImpl rule = new RuleImpl();
     return rule;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public OCLOperator createOCLOperator()
-  {
-    OCLOperatorImpl oclOperator = new OCLOperatorImpl();
-    return oclOperator;
   }
 
   /**

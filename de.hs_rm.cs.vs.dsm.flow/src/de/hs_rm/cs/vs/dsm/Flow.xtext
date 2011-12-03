@@ -106,8 +106,10 @@ SplitOperator:
 	'split''('parameter=StreamOperatorParameter')';
 
 LogOperator:
-	'log' '('location=STRING ',' format=STRING ')'
-;
+	'log' '('location=STRING ',' format=STRING ')';
+
+RandomOperator:
+	'rand' '('maximum=NUMBER ',' sleep=NUMBER ')';
 
 /**
  * The MatchOperator rule joins two streams depending on a expression and does a calculation
@@ -127,7 +129,7 @@ ReturnTypeOperator:
 	InputOperator | JoinOperator |  LogOperator | 
 	TagOperator | UnTagOperator | FilterOperator | SplitOperator | CountOperator | 
 	StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | 
-	OCLOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | 
+	RandomOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | 
 	DivisionOperator;
 
 /**
@@ -258,46 +260,7 @@ ConsequentRule:
 Rule:
 	name=[OWL::OWLObjectProperty|STRING] '(' '?' variable+=StreamAccess (','  '?' variable+=StreamAccess )* ')';
 
-/*
-OCLOperator:
-  'ocl''('constraint=OCLConstraint ',' stream+=[StreamDefinition] 
-    (',' stream+=[StreamDefinition])* ')';
 
-OCLConstraint:
-  OperationContextDeclarationConstraint;
-
-OperationContextDeclarationConstraint returns OperationContextDeclarationConstraint:
-  'context' operation=OperationReferenceCS '('(parameters+=ParameterCS 
-    (',' parameters+=ParameterCS)*)?')' ':' (type=TypeExpCS)?
-    ((preconditions+=PreconditionCS) | (postconditions+=PostconditionCS) | 
-    (bodies+=BodyCS))*
-
-OperationReferenceCS returns base::OperationRefCS:
-  SimpleOperationRefCS;
-
-SimpleOperationRefCS returns base::SimpleOperationRefCS:
-  operation=[base::OperationCS|Identifier];
-
-ParameterCS returns essential::VariableCS:
-  (name=SimpleName ':')? type=TypeExpCS;
-
-PreconditionCS returns PreCS :
-  'pre' (name=SimpleName)? ':' expression=ExpCS;
-
-PostconditionCS returns PostCS:
-  'post' (name=SimpleName)? ':' expression=ExpCS;
-
-BodyCS returns BodyCS:
-  'body' (name=SimpleName)? ':' expression=ExpCS;
- */
-
-/**
- * The CountOperator rule defines a count operator which counts an element
- * of a stream.
- */
-OCLOperator:
-	'ocl''('constraint=STRING ',' stream=StreamOperatorParameter ')';
-	
 /**
  * The CountOperator rule defines a count operator which counts an element
  * of a stream.

@@ -736,6 +736,50 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 	}
 
+	public class RandomOperatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RandomOperator");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cRandKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cMaximumAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cMaximumNUMBERTerminalRuleCall_2_0 = (RuleCall)cMaximumAssignment_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cSleepAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cSleepNUMBERTerminalRuleCall_4_0 = (RuleCall)cSleepAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//RandomOperator:
+		//	"rand" "(" maximum=NUMBER "," sleep=NUMBER ")";
+		public ParserRule getRule() { return rule; }
+
+		//"rand" "(" maximum=NUMBER "," sleep=NUMBER ")"
+		public Group getGroup() { return cGroup; }
+
+		//"rand"
+		public Keyword getRandKeyword_0() { return cRandKeyword_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//maximum=NUMBER
+		public Assignment getMaximumAssignment_2() { return cMaximumAssignment_2; }
+
+		//NUMBER
+		public RuleCall getMaximumNUMBERTerminalRuleCall_2_0() { return cMaximumNUMBERTerminalRuleCall_2_0; }
+
+		//","
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+
+		//sleep=NUMBER
+		public Assignment getSleepAssignment_4() { return cSleepAssignment_4; }
+
+		//NUMBER
+		public RuleCall getSleepNUMBERTerminalRuleCall_4_0() { return cSleepNUMBERTerminalRuleCall_4_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+	}
+
 	public class MatchOperatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MatchOperator");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -900,7 +944,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAverageOperatorParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		private final RuleCall cElementJoinOperatorParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
 		private final RuleCall cMatchOperatorParserRuleCall_11 = (RuleCall)cAlternatives.eContents().get(11);
-		private final RuleCall cOCLOperatorParserRuleCall_12 = (RuleCall)cAlternatives.eContents().get(12);
+		private final RuleCall cRandomOperatorParserRuleCall_12 = (RuleCall)cAlternatives.eContents().get(12);
 		private final RuleCall cSWRLOperatorParserRuleCall_13 = (RuleCall)cAlternatives.eContents().get(13);
 		private final RuleCall cAdditionOperatorParserRuleCall_14 = (RuleCall)cAlternatives.eContents().get(14);
 		private final RuleCall cSubtractionOperatorParserRuleCall_15 = (RuleCall)cAlternatives.eContents().get(15);
@@ -911,12 +955,12 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		// * The rule summarizes the operators which have a return type
 		// * / ReturnTypeOperator:
 		//	InputOperator | JoinOperator | LogOperator | TagOperator | UnTagOperator | FilterOperator | SplitOperator |
-		//	CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | OCLOperator |
+		//	CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | RandomOperator |
 		//	SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | DivisionOperator;
 		public ParserRule getRule() { return rule; }
 
 		//InputOperator | JoinOperator | LogOperator | TagOperator | UnTagOperator | FilterOperator | SplitOperator |
-		//CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | OCLOperator |
+		//CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | RandomOperator |
 		//SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | DivisionOperator
 		public Alternatives getAlternatives() { return cAlternatives; }
 
@@ -956,8 +1000,8 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//MatchOperator
 		public RuleCall getMatchOperatorParserRuleCall_11() { return cMatchOperatorParserRuleCall_11; }
 
-		//OCLOperator
-		public RuleCall getOCLOperatorParserRuleCall_12() { return cOCLOperatorParserRuleCall_12; }
+		//RandomOperator
+		public RuleCall getRandomOperatorParserRuleCall_12() { return cRandomOperatorParserRuleCall_12; }
 
 		//SWRLOperator
 		public RuleCall getSWRLOperatorParserRuleCall_13() { return cSWRLOperatorParserRuleCall_13; }
@@ -1831,84 +1875,6 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 
 		//StreamAccess
 		public RuleCall getVariableStreamAccessParserRuleCall_4_2_0() { return cVariableStreamAccessParserRuleCall_4_2_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
-	}
-
-	public class OCLOperatorElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OCLOperator");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cOclKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cConstraintAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cConstraintSTRINGTerminalRuleCall_2_0 = (RuleCall)cConstraintAssignment_2.eContents().get(0);
-		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cStreamAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cStreamStreamOperatorParameterParserRuleCall_4_0 = (RuleCall)cStreamAssignment_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		
-		/// *
-		//OCLOperator:
-		//  'ocl''('constraint=OCLConstraint ',' stream+=[StreamDefinition] 
-		//    (',' stream+=[StreamDefinition])* ')';
-		//
-		//OCLConstraint:
-		//  OperationContextDeclarationConstraint;
-		//
-		//OperationContextDeclarationConstraint returns OperationContextDeclarationConstraint:
-		//  'context' operation=OperationReferenceCS '('(parameters+=ParameterCS 
-		//    (',' parameters+=ParameterCS)*)?')' ':' (type=TypeExpCS)?
-		//    ((preconditions+=PreconditionCS) | (postconditions+=PostconditionCS) | 
-		//    (bodies+=BodyCS))*
-		//
-		//OperationReferenceCS returns base::OperationRefCS:
-		//  SimpleOperationRefCS;
-		//
-		//SimpleOperationRefCS returns base::SimpleOperationRefCS:
-		//  operation=[base::OperationCS|Identifier];
-		//
-		//ParameterCS returns essential::VariableCS:
-		//  (name=SimpleName ':')? type=TypeExpCS;
-		//
-		//PreconditionCS returns PreCS :
-		//  'pre' (name=SimpleName)? ':' expression=ExpCS;
-		//
-		//PostconditionCS returns PostCS:
-		//  'post' (name=SimpleName)? ':' expression=ExpCS;
-		//
-		//BodyCS returns BodyCS:
-		//  'body' (name=SimpleName)? ':' expression=ExpCS;
-		// * / / **
-		// * The CountOperator rule defines a count operator which counts an element
-		// * of a stream.
-		// * / OCLOperator:
-		//	"ocl" "(" constraint=STRING "," stream=StreamOperatorParameter ")";
-		public ParserRule getRule() { return rule; }
-
-		//"ocl" "(" constraint=STRING "," stream=StreamOperatorParameter ")"
-		public Group getGroup() { return cGroup; }
-
-		//"ocl"
-		public Keyword getOclKeyword_0() { return cOclKeyword_0; }
-
-		//"("
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-
-		//constraint=STRING
-		public Assignment getConstraintAssignment_2() { return cConstraintAssignment_2; }
-
-		//STRING
-		public RuleCall getConstraintSTRINGTerminalRuleCall_2_0() { return cConstraintSTRINGTerminalRuleCall_2_0; }
-
-		//","
-		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
-
-		//stream=StreamOperatorParameter
-		public Assignment getStreamAssignment_4() { return cStreamAssignment_4; }
-
-		//StreamOperatorParameter
-		public RuleCall getStreamStreamOperatorParameterParserRuleCall_4_0() { return cStreamStreamOperatorParameterParserRuleCall_4_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
@@ -3249,6 +3215,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	private FilterOperatorElements pFilterOperator;
 	private SplitOperatorElements pSplitOperator;
 	private LogOperatorElements pLogOperator;
+	private RandomOperatorElements pRandomOperator;
 	private MatchOperatorElements pMatchOperator;
 	private InputOperatorElements pInputOperator;
 	private ReturnTypeOperatorElements pReturnTypeOperator;
@@ -3273,7 +3240,6 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	private AntecedentRuleElements pAntecedentRule;
 	private ConsequentRuleElements pConsequentRule;
 	private RuleElements pRule;
-	private OCLOperatorElements pOCLOperator;
 	private CountOperatorElements pCountOperator;
 	private StandardDeviationOperatorElements pStandardDeviationOperator;
 	private AverageOperatorElements pAverageOperator;
@@ -3513,6 +3479,16 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		return getLogOperatorAccess().getRule();
 	}
 
+	//RandomOperator:
+	//	"rand" "(" maximum=NUMBER "," sleep=NUMBER ")";
+	public RandomOperatorElements getRandomOperatorAccess() {
+		return (pRandomOperator != null) ? pRandomOperator : (pRandomOperator = new RandomOperatorElements());
+	}
+	
+	public ParserRule getRandomOperatorRule() {
+		return getRandomOperatorAccess().getRule();
+	}
+
 	/// **
 	// * The MatchOperator rule joins two streams depending on a expression and does a calculation
 	// * based on a second expression.
@@ -3541,7 +3517,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	// * The rule summarizes the operators which have a return type
 	// * / ReturnTypeOperator:
 	//	InputOperator | JoinOperator | LogOperator | TagOperator | UnTagOperator | FilterOperator | SplitOperator |
-	//	CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | OCLOperator |
+	//	CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | RandomOperator |
 	//	SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | DivisionOperator;
 	public ReturnTypeOperatorElements getReturnTypeOperatorAccess() {
 		return (pReturnTypeOperator != null) ? pReturnTypeOperator : (pReturnTypeOperator = new ReturnTypeOperatorElements());
@@ -3796,50 +3772,6 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getRuleRule() {
 		return getRuleAccess().getRule();
-	}
-
-	/// *
-	//OCLOperator:
-	//  'ocl''('constraint=OCLConstraint ',' stream+=[StreamDefinition] 
-	//    (',' stream+=[StreamDefinition])* ')';
-	//
-	//OCLConstraint:
-	//  OperationContextDeclarationConstraint;
-	//
-	//OperationContextDeclarationConstraint returns OperationContextDeclarationConstraint:
-	//  'context' operation=OperationReferenceCS '('(parameters+=ParameterCS 
-	//    (',' parameters+=ParameterCS)*)?')' ':' (type=TypeExpCS)?
-	//    ((preconditions+=PreconditionCS) | (postconditions+=PostconditionCS) | 
-	//    (bodies+=BodyCS))*
-	//
-	//OperationReferenceCS returns base::OperationRefCS:
-	//  SimpleOperationRefCS;
-	//
-	//SimpleOperationRefCS returns base::SimpleOperationRefCS:
-	//  operation=[base::OperationCS|Identifier];
-	//
-	//ParameterCS returns essential::VariableCS:
-	//  (name=SimpleName ':')? type=TypeExpCS;
-	//
-	//PreconditionCS returns PreCS :
-	//  'pre' (name=SimpleName)? ':' expression=ExpCS;
-	//
-	//PostconditionCS returns PostCS:
-	//  'post' (name=SimpleName)? ':' expression=ExpCS;
-	//
-	//BodyCS returns BodyCS:
-	//  'body' (name=SimpleName)? ':' expression=ExpCS;
-	// * / / **
-	// * The CountOperator rule defines a count operator which counts an element
-	// * of a stream.
-	// * / OCLOperator:
-	//	"ocl" "(" constraint=STRING "," stream=StreamOperatorParameter ")";
-	public OCLOperatorElements getOCLOperatorAccess() {
-		return (pOCLOperator != null) ? pOCLOperator : (pOCLOperator = new OCLOperatorElements());
-	}
-	
-	public ParserRule getOCLOperatorRule() {
-		return getOCLOperatorAccess().getRule();
 	}
 
 	/// **

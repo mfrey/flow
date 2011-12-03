@@ -40,11 +40,11 @@ import de.hs_rm.cs.vs.dsm.flow.NewTagOperator;
 import de.hs_rm.cs.vs.dsm.flow.NoReturnTypeOperator;
 import de.hs_rm.cs.vs.dsm.flow.NumberLiteral;
 import de.hs_rm.cs.vs.dsm.flow.NumberVariableDefinition;
-import de.hs_rm.cs.vs.dsm.flow.OCLOperator;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
 import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.Plus;
 import de.hs_rm.cs.vs.dsm.flow.QueryTagOperator;
+import de.hs_rm.cs.vs.dsm.flow.RandomOperator;
 import de.hs_rm.cs.vs.dsm.flow.ReturnTypeOperator;
 import de.hs_rm.cs.vs.dsm.flow.Rule;
 import de.hs_rm.cs.vs.dsm.flow.SWRLOperator;
@@ -210,6 +210,13 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass randomOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass matchOperatorEClass = null;
 
   /**
@@ -365,13 +372,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * @generated
    */
   private EClass ruleEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass oclOperatorEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1086,6 +1086,36 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getRandomOperator()
+  {
+    return randomOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRandomOperator_Maximum()
+  {
+    return (EAttribute)randomOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRandomOperator_Sleep()
+  {
+    return (EAttribute)randomOperatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getMatchOperator()
   {
     return matchOperatorEClass;
@@ -1639,36 +1669,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
   public EReference getRule_Variable()
   {
     return (EReference)ruleEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getOCLOperator()
-  {
-    return oclOperatorEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getOCLOperator_Constraint()
-  {
-    return (EAttribute)oclOperatorEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getOCLOperator_Stream()
-  {
-    return (EReference)oclOperatorEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2577,6 +2577,10 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     createEAttribute(logOperatorEClass, LOG_OPERATOR__LOCATION);
     createEAttribute(logOperatorEClass, LOG_OPERATOR__FORMAT);
 
+    randomOperatorEClass = createEClass(RANDOM_OPERATOR);
+    createEAttribute(randomOperatorEClass, RANDOM_OPERATOR__MAXIMUM);
+    createEAttribute(randomOperatorEClass, RANDOM_OPERATOR__SLEEP);
+
     matchOperatorEClass = createEClass(MATCH_OPERATOR);
     createEReference(matchOperatorEClass, MATCH_OPERATOR__EXPRESSION);
     createEReference(matchOperatorEClass, MATCH_OPERATOR__CALCULATION);
@@ -2655,10 +2659,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     ruleEClass = createEClass(RULE);
     createEReference(ruleEClass, RULE__NAME);
     createEReference(ruleEClass, RULE__VARIABLE);
-
-    oclOperatorEClass = createEClass(OCL_OPERATOR);
-    createEAttribute(oclOperatorEClass, OCL_OPERATOR__CONSTRAINT);
-    createEReference(oclOperatorEClass, OCL_OPERATOR__STREAM);
 
     countOperatorEClass = createEClass(COUNT_OPERATOR);
     createEReference(countOperatorEClass, COUNT_OPERATOR__PARAMETER);
@@ -2820,6 +2820,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     filterOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     splitOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     logOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
+    randomOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     matchOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     inputOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     noReturnTypeOperatorEClass.getESuperTypes().add(this.getModelElement());
@@ -2831,7 +2832,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     windowOperatorEClass.getESuperTypes().add(this.getBarrierOperator());
     markerOperatorEClass.getESuperTypes().add(this.getBarrierOperator());
     swrlOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
-    oclOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     countOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     standardDeviationOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     averageOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
@@ -2919,6 +2919,10 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEAttribute(getLogOperator_Location(), ecorePackage.getEString(), "location", null, 0, 1, LogOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getLogOperator_Format(), ecorePackage.getEString(), "format", null, 0, 1, LogOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(randomOperatorEClass, RandomOperator.class, "RandomOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRandomOperator_Maximum(), ecorePackage.getEBigDecimal(), "maximum", null, 0, 1, RandomOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRandomOperator_Sleep(), ecorePackage.getEBigDecimal(), "sleep", null, 0, 1, RandomOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(matchOperatorEClass, MatchOperator.class, "MatchOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMatchOperator_Expression(), this.getExpression(), null, "expression", null, 0, 1, MatchOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMatchOperator_Calculation(), this.getExpression(), null, "calculation", null, 0, 1, MatchOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2997,10 +3001,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRule_Name(), theOwlPackage.getOWLObjectProperty(), null, "name", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRule_Variable(), this.getStreamAccess(), null, "variable", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(oclOperatorEClass, OCLOperator.class, "OCLOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getOCLOperator_Constraint(), ecorePackage.getEString(), "constraint", null, 0, 1, OCLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getOCLOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, OCLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(countOperatorEClass, CountOperator.class, "CountOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCountOperator_Parameter(), this.getStreamAccess(), null, "parameter", null, 0, 1, CountOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

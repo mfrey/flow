@@ -30,11 +30,11 @@ import de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator;
 import de.hs_rm.cs.vs.dsm.flow.NewTagOperator;
 import de.hs_rm.cs.vs.dsm.flow.NumberLiteral;
 import de.hs_rm.cs.vs.dsm.flow.NumberVariableDefinition;
-import de.hs_rm.cs.vs.dsm.flow.OCLOperator;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
 import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.Plus;
 import de.hs_rm.cs.vs.dsm.flow.QueryTagOperator;
+import de.hs_rm.cs.vs.dsm.flow.RandomOperator;
 import de.hs_rm.cs.vs.dsm.flow.Rule;
 import de.hs_rm.cs.vs.dsm.flow.SWRLOperator;
 import de.hs_rm.cs.vs.dsm.flow.SWRLRule;
@@ -354,13 +354,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
-			case FlowPackage.OCL_OPERATOR:
-				if(context == grammarAccess.getOCLOperatorRule() ||
-				   context == grammarAccess.getReturnTypeOperatorRule()) {
-					sequence_OCLOperator(context, (OCLOperator) semanticObject); 
-					return; 
-				}
-				else break;
 			case FlowPackage.OUTPUT_OPERATOR:
 				if(context == grammarAccess.getModelElementRule() ||
 				   context == grammarAccess.getNoReturnTypeOperatorRule() ||
@@ -398,6 +391,13 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 			case FlowPackage.QUERY_TAG_OPERATOR:
 				if(context == grammarAccess.getQueryTagOperatorRule()) {
 					sequence_QueryTagOperator(context, (QueryTagOperator) semanticObject); 
+					return; 
+				}
+				else break;
+			case FlowPackage.RANDOM_OPERATOR:
+				if(context == grammarAccess.getRandomOperatorRule() ||
+				   context == grammarAccess.getReturnTypeOperatorRule()) {
+					sequence_RandomOperator(context, (RandomOperator) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1131,29 +1131,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (constraint=STRING stream=StreamOperatorParameter)
-	 *
-	 * Features:
-	 *    constraint[1, 1]
-	 *    stream[1, 1]
-	 */
-	protected void sequence_OCLOperator(EObject context, OCLOperator semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.OCL_OPERATOR__CONSTRAINT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.OCL_OPERATOR__CONSTRAINT));
-			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.OCL_OPERATOR__STREAM) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.OCL_OPERATOR__STREAM));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getOCLOperatorAccess().getConstraintSTRINGTerminalRuleCall_2_0(), semanticObject.getConstraint());
-		feeder.accept(grammarAccess.getOCLOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_4_0(), semanticObject.getStream());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (stream=StreamOperatorParameter iri+=STRING iri+=STRING* address=STRING port=NUMBER)
 	 *
 	 * Features:
@@ -1249,6 +1226,29 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getQueryTagOperatorAccess().getQueryTypeSparqlQueryTypeEnumRuleCall_1_0(), semanticObject.getQueryType());
 		feeder.accept(grammarAccess.getQueryTagOperatorAccess().getQuerySparqlQueryParserRuleCall_2_0(), semanticObject.getQuery());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (maximum=NUMBER sleep=NUMBER)
+	 *
+	 * Features:
+	 *    maximum[1, 1]
+	 *    sleep[1, 1]
+	 */
+	protected void sequence_RandomOperator(EObject context, RandomOperator semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.RANDOM_OPERATOR__MAXIMUM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.RANDOM_OPERATOR__MAXIMUM));
+			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.RANDOM_OPERATOR__SLEEP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.RANDOM_OPERATOR__SLEEP));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getRandomOperatorAccess().getMaximumNUMBERTerminalRuleCall_2_0(), semanticObject.getMaximum());
+		feeder.accept(grammarAccess.getRandomOperatorAccess().getSleepNUMBERTerminalRuleCall_4_0(), semanticObject.getSleep());
 		feeder.finish();
 	}
 	

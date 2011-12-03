@@ -13,6 +13,8 @@ import de.hs_rm.cs.vs.dsm.flow.StreamDeclaration
 import de.hs_rm.cs.vs.dsm.flow.InputOperator
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator
 import de.hs_rm.cs.vs.dsm.flow.LogOperator
+import de.hs_rm.cs.vs.dsm.flow.RandomOperator
+
 
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement
 
@@ -103,6 +105,8 @@ class FlowGenerator implements IGenerator {
 		«write((statement.operator as InputOperator),statement)»
 		«ELSEIF statement.operator.eClass.name.equals("LogOperator")»
 		«write((statement.operator as LogOperator),statement)»
+		«ELSEIF statement.operator.eClass.name.equals("RandomOperator")»
+		«write((statement.operator as RandomOperator),statement)»
 		«ENDIF»
 	'''
 
@@ -197,6 +201,13 @@ class FlowGenerator implements IGenerator {
 			pStatement
 		)
 		log.toString()
+	}
+	
+	def dispatch String write(RandomOperator pOperator, StreamStatement pStatement){
+		var RandomOperatorGenerator rand = new RandomOperatorGenerator(
+			pStatement
+		)
+		rand.toString()
 	}
     
     def dispatch String write(FilterOperator pOperator, StreamStatement pStatement){

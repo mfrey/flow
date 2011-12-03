@@ -1013,6 +1013,79 @@ ruleLogOperator returns [EObject current=null]
 
 
 
+// Entry rule entryRuleRandomOperator
+entryRuleRandomOperator returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getRandomOperatorRule()); }
+	 iv_ruleRandomOperator=ruleRandomOperator 
+	 { $current=$iv_ruleRandomOperator.current; } 
+	 EOF 
+;
+
+// Rule RandomOperator
+ruleRandomOperator returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='rand' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getRandomOperatorAccess().getRandKeyword_0());
+    }
+	otherlv_1='(' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getRandomOperatorAccess().getLeftParenthesisKeyword_1());
+    }
+(
+(
+		lv_maximum_2_0=RULE_NUMBER
+		{
+			newLeafNode(lv_maximum_2_0, grammarAccess.getRandomOperatorAccess().getMaximumNUMBERTerminalRuleCall_2_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRandomOperatorRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"maximum",
+        		lv_maximum_2_0, 
+        		"NUMBER");
+	    }
+
+)
+)	otherlv_3=',' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getRandomOperatorAccess().getCommaKeyword_3());
+    }
+(
+(
+		lv_sleep_4_0=RULE_NUMBER
+		{
+			newLeafNode(lv_sleep_4_0, grammarAccess.getRandomOperatorAccess().getSleepNUMBERTerminalRuleCall_4_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRandomOperatorRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"sleep",
+        		lv_sleep_4_0, 
+        		"NUMBER");
+	    }
+
+)
+)	otherlv_5=')' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getRandomOperatorAccess().getRightParenthesisKeyword_5());
+    }
+)
+;
+
+
+
+
+
 // Entry rule entryRuleMatchOperator
 entryRuleMatchOperator returns [EObject current=null] 
 	:
@@ -1383,11 +1456,11 @@ ruleReturnTypeOperator returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getOCLOperatorParserRuleCall_12()); 
+        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getRandomOperatorParserRuleCall_12()); 
     }
-    this_OCLOperator_12=ruleOCLOperator
+    this_RandomOperator_12=ruleRandomOperator
     { 
-        $current = $this_OCLOperator_12.current; 
+        $current = $this_RandomOperator_12.current; 
         afterParserOrEnumRuleCall();
     }
 
@@ -2717,79 +2790,6 @@ ruleRule returns [EObject current=null]
 ))*	otherlv_7=')' 
     {
     	newLeafNode(otherlv_7, grammarAccess.getRuleAccess().getRightParenthesisKeyword_5());
-    }
-)
-;
-
-
-
-
-
-// Entry rule entryRuleOCLOperator
-entryRuleOCLOperator returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getOCLOperatorRule()); }
-	 iv_ruleOCLOperator=ruleOCLOperator 
-	 { $current=$iv_ruleOCLOperator.current; } 
-	 EOF 
-;
-
-// Rule OCLOperator
-ruleOCLOperator returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='ocl' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getOCLOperatorAccess().getOclKeyword_0());
-    }
-	otherlv_1='(' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getOCLOperatorAccess().getLeftParenthesisKeyword_1());
-    }
-(
-(
-		lv_constraint_2_0=RULE_STRING
-		{
-			newLeafNode(lv_constraint_2_0, grammarAccess.getOCLOperatorAccess().getConstraintSTRINGTerminalRuleCall_2_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getOCLOperatorRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"constraint",
-        		lv_constraint_2_0, 
-        		"STRING");
-	    }
-
-)
-)	otherlv_3=',' 
-    {
-    	newLeafNode(otherlv_3, grammarAccess.getOCLOperatorAccess().getCommaKeyword_3());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getOCLOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_4_0()); 
-	    }
-		lv_stream_4_0=ruleStreamOperatorParameter		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getOCLOperatorRule());
-	        }
-       		set(
-       			$current, 
-       			"stream",
-        		lv_stream_4_0, 
-        		"StreamOperatorParameter");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)	otherlv_5=')' 
-    {
-    	newLeafNode(otherlv_5, grammarAccess.getOCLOperatorAccess().getRightParenthesisKeyword_5());
     }
 )
 ;

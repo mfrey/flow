@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_NUMBER", "RULE_BOOLVALUE", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'min'", "'hrs'", "'sec'", "'elements'", "'=='", "'!='", "'>='", "'<='", "'>'", "'<'", "'SELECT'", "'CONSTRUCT'", "'ASK'", "'DESCRIBE'", "'package'", "'{'", "'}'", "'import'", "'='", "';'", "','", "'.'", "'join'", "'('", "')'", "'['", "']'", "'ejoin'", "'filter'", "'split'", "'log'", "'match'", "'in'", "'tag'", "'WHERE'", "'?'", "'untag'", "'is'", "'class'", "'objectproperty'", "'datatype'", "'marker'", "'swrl'", "'Implies'", "'Antecedent'", "'Consequent'", "'ocl'", "'count'", "'std'", "'avg'", "'add'", "'sub'", "'mult'", "'div'", "'out'", "'structure'", "'stream'", "'use'", "'+'", "'-'", "'*'", "'/'", "'int'", "'bool'", "'float'", "'string'", "'last'", "'now'", "'||'", "'&&'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_NUMBER", "RULE_BOOLVALUE", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'min'", "'hrs'", "'sec'", "'elements'", "'=='", "'!='", "'>='", "'<='", "'>'", "'<'", "'SELECT'", "'CONSTRUCT'", "'ASK'", "'DESCRIBE'", "'package'", "'{'", "'}'", "'import'", "'='", "';'", "','", "'.'", "'join'", "'('", "')'", "'['", "']'", "'ejoin'", "'filter'", "'split'", "'log'", "'rand'", "'match'", "'in'", "'tag'", "'WHERE'", "'?'", "'untag'", "'is'", "'class'", "'objectproperty'", "'datatype'", "'marker'", "'swrl'", "'Implies'", "'Antecedent'", "'Consequent'", "'count'", "'std'", "'avg'", "'add'", "'sub'", "'mult'", "'div'", "'out'", "'structure'", "'stream'", "'use'", "'+'", "'-'", "'*'", "'/'", "'int'", "'bool'", "'float'", "'string'", "'last'", "'now'", "'||'", "'&&'"
     };
     public static final int T__68=68;
     public static final int T__69=69;
@@ -1185,21 +1185,98 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleLogOperator"
 
 
+    // $ANTLR start "entryRuleRandomOperator"
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:435:1: entryRuleRandomOperator : ruleRandomOperator EOF ;
+    public final void entryRuleRandomOperator() throws RecognitionException {
+        try {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:436:1: ( ruleRandomOperator EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:437:1: ruleRandomOperator EOF
+            {
+             before(grammarAccess.getRandomOperatorRule()); 
+            pushFollow(FOLLOW_ruleRandomOperator_in_entryRuleRandomOperator862);
+            ruleRandomOperator();
+
+            state._fsp--;
+
+             after(grammarAccess.getRandomOperatorRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRandomOperator869); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleRandomOperator"
+
+
+    // $ANTLR start "ruleRandomOperator"
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:444:1: ruleRandomOperator : ( ( rule__RandomOperator__Group__0 ) ) ;
+    public final void ruleRandomOperator() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:448:2: ( ( ( rule__RandomOperator__Group__0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:449:1: ( ( rule__RandomOperator__Group__0 ) )
+            {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:449:1: ( ( rule__RandomOperator__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:450:1: ( rule__RandomOperator__Group__0 )
+            {
+             before(grammarAccess.getRandomOperatorAccess().getGroup()); 
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:451:1: ( rule__RandomOperator__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:451:2: rule__RandomOperator__Group__0
+            {
+            pushFollow(FOLLOW_rule__RandomOperator__Group__0_in_ruleRandomOperator895);
+            rule__RandomOperator__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getRandomOperatorAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleRandomOperator"
+
+
     // $ANTLR start "entryRuleMatchOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:435:1: entryRuleMatchOperator : ruleMatchOperator EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:463:1: entryRuleMatchOperator : ruleMatchOperator EOF ;
     public final void entryRuleMatchOperator() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:436:1: ( ruleMatchOperator EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:437:1: ruleMatchOperator EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:464:1: ( ruleMatchOperator EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:465:1: ruleMatchOperator EOF
             {
              before(grammarAccess.getMatchOperatorRule()); 
-            pushFollow(FOLLOW_ruleMatchOperator_in_entryRuleMatchOperator862);
+            pushFollow(FOLLOW_ruleMatchOperator_in_entryRuleMatchOperator922);
             ruleMatchOperator();
 
             state._fsp--;
 
              after(grammarAccess.getMatchOperatorRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMatchOperator869); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMatchOperator929); 
 
             }
 
@@ -1216,23 +1293,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleMatchOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:444:1: ruleMatchOperator : ( ( rule__MatchOperator__Group__0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:472:1: ruleMatchOperator : ( ( rule__MatchOperator__Group__0 ) ) ;
     public final void ruleMatchOperator() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:448:2: ( ( ( rule__MatchOperator__Group__0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:449:1: ( ( rule__MatchOperator__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:476:2: ( ( ( rule__MatchOperator__Group__0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:477:1: ( ( rule__MatchOperator__Group__0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:449:1: ( ( rule__MatchOperator__Group__0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:450:1: ( rule__MatchOperator__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:477:1: ( ( rule__MatchOperator__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:478:1: ( rule__MatchOperator__Group__0 )
             {
              before(grammarAccess.getMatchOperatorAccess().getGroup()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:451:1: ( rule__MatchOperator__Group__0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:451:2: rule__MatchOperator__Group__0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:479:1: ( rule__MatchOperator__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:479:2: rule__MatchOperator__Group__0
             {
-            pushFollow(FOLLOW_rule__MatchOperator__Group__0_in_ruleMatchOperator895);
+            pushFollow(FOLLOW_rule__MatchOperator__Group__0_in_ruleMatchOperator955);
             rule__MatchOperator__Group__0();
 
             state._fsp--;
@@ -1263,20 +1340,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleInputOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:463:1: entryRuleInputOperator : ruleInputOperator EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:491:1: entryRuleInputOperator : ruleInputOperator EOF ;
     public final void entryRuleInputOperator() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:464:1: ( ruleInputOperator EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:465:1: ruleInputOperator EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:492:1: ( ruleInputOperator EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:493:1: ruleInputOperator EOF
             {
              before(grammarAccess.getInputOperatorRule()); 
-            pushFollow(FOLLOW_ruleInputOperator_in_entryRuleInputOperator922);
+            pushFollow(FOLLOW_ruleInputOperator_in_entryRuleInputOperator982);
             ruleInputOperator();
 
             state._fsp--;
 
              after(grammarAccess.getInputOperatorRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInputOperator929); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInputOperator989); 
 
             }
 
@@ -1293,23 +1370,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleInputOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:472:1: ruleInputOperator : ( ( rule__InputOperator__Group__0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:500:1: ruleInputOperator : ( ( rule__InputOperator__Group__0 ) ) ;
     public final void ruleInputOperator() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:476:2: ( ( ( rule__InputOperator__Group__0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:477:1: ( ( rule__InputOperator__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:504:2: ( ( ( rule__InputOperator__Group__0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:505:1: ( ( rule__InputOperator__Group__0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:477:1: ( ( rule__InputOperator__Group__0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:478:1: ( rule__InputOperator__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:505:1: ( ( rule__InputOperator__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:506:1: ( rule__InputOperator__Group__0 )
             {
              before(grammarAccess.getInputOperatorAccess().getGroup()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:479:1: ( rule__InputOperator__Group__0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:479:2: rule__InputOperator__Group__0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:507:1: ( rule__InputOperator__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:507:2: rule__InputOperator__Group__0
             {
-            pushFollow(FOLLOW_rule__InputOperator__Group__0_in_ruleInputOperator955);
+            pushFollow(FOLLOW_rule__InputOperator__Group__0_in_ruleInputOperator1015);
             rule__InputOperator__Group__0();
 
             state._fsp--;
@@ -1340,20 +1417,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleReturnTypeOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:491:1: entryRuleReturnTypeOperator : ruleReturnTypeOperator EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:519:1: entryRuleReturnTypeOperator : ruleReturnTypeOperator EOF ;
     public final void entryRuleReturnTypeOperator() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:492:1: ( ruleReturnTypeOperator EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:493:1: ruleReturnTypeOperator EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:520:1: ( ruleReturnTypeOperator EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:521:1: ruleReturnTypeOperator EOF
             {
              before(grammarAccess.getReturnTypeOperatorRule()); 
-            pushFollow(FOLLOW_ruleReturnTypeOperator_in_entryRuleReturnTypeOperator982);
+            pushFollow(FOLLOW_ruleReturnTypeOperator_in_entryRuleReturnTypeOperator1042);
             ruleReturnTypeOperator();
 
             state._fsp--;
 
              after(grammarAccess.getReturnTypeOperatorRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleReturnTypeOperator989); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleReturnTypeOperator1049); 
 
             }
 
@@ -1370,23 +1447,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleReturnTypeOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:500:1: ruleReturnTypeOperator : ( ( rule__ReturnTypeOperator__Alternatives ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:528:1: ruleReturnTypeOperator : ( ( rule__ReturnTypeOperator__Alternatives ) ) ;
     public final void ruleReturnTypeOperator() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:504:2: ( ( ( rule__ReturnTypeOperator__Alternatives ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:505:1: ( ( rule__ReturnTypeOperator__Alternatives ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:532:2: ( ( ( rule__ReturnTypeOperator__Alternatives ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:533:1: ( ( rule__ReturnTypeOperator__Alternatives ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:505:1: ( ( rule__ReturnTypeOperator__Alternatives ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:506:1: ( rule__ReturnTypeOperator__Alternatives )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:533:1: ( ( rule__ReturnTypeOperator__Alternatives ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:534:1: ( rule__ReturnTypeOperator__Alternatives )
             {
              before(grammarAccess.getReturnTypeOperatorAccess().getAlternatives()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:507:1: ( rule__ReturnTypeOperator__Alternatives )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:507:2: rule__ReturnTypeOperator__Alternatives
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:535:1: ( rule__ReturnTypeOperator__Alternatives )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:535:2: rule__ReturnTypeOperator__Alternatives
             {
-            pushFollow(FOLLOW_rule__ReturnTypeOperator__Alternatives_in_ruleReturnTypeOperator1015);
+            pushFollow(FOLLOW_rule__ReturnTypeOperator__Alternatives_in_ruleReturnTypeOperator1075);
             rule__ReturnTypeOperator__Alternatives();
 
             state._fsp--;
@@ -1417,20 +1494,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleNoReturnTypeOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:519:1: entryRuleNoReturnTypeOperator : ruleNoReturnTypeOperator EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:547:1: entryRuleNoReturnTypeOperator : ruleNoReturnTypeOperator EOF ;
     public final void entryRuleNoReturnTypeOperator() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:520:1: ( ruleNoReturnTypeOperator EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:521:1: ruleNoReturnTypeOperator EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:548:1: ( ruleNoReturnTypeOperator EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:549:1: ruleNoReturnTypeOperator EOF
             {
              before(grammarAccess.getNoReturnTypeOperatorRule()); 
-            pushFollow(FOLLOW_ruleNoReturnTypeOperator_in_entryRuleNoReturnTypeOperator1042);
+            pushFollow(FOLLOW_ruleNoReturnTypeOperator_in_entryRuleNoReturnTypeOperator1102);
             ruleNoReturnTypeOperator();
 
             state._fsp--;
 
              after(grammarAccess.getNoReturnTypeOperatorRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNoReturnTypeOperator1049); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNoReturnTypeOperator1109); 
 
             }
 
@@ -1447,20 +1524,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleNoReturnTypeOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:528:1: ruleNoReturnTypeOperator : ( ruleOutputOperator ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:556:1: ruleNoReturnTypeOperator : ( ruleOutputOperator ) ;
     public final void ruleNoReturnTypeOperator() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:532:2: ( ( ruleOutputOperator ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:533:1: ( ruleOutputOperator )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:560:2: ( ( ruleOutputOperator ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:561:1: ( ruleOutputOperator )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:533:1: ( ruleOutputOperator )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:534:1: ruleOutputOperator
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:561:1: ( ruleOutputOperator )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:562:1: ruleOutputOperator
             {
              before(grammarAccess.getNoReturnTypeOperatorAccess().getOutputOperatorParserRuleCall()); 
-            pushFollow(FOLLOW_ruleOutputOperator_in_ruleNoReturnTypeOperator1075);
+            pushFollow(FOLLOW_ruleOutputOperator_in_ruleNoReturnTypeOperator1135);
             ruleOutputOperator();
 
             state._fsp--;
@@ -1488,20 +1565,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleTagOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:547:1: entryRuleTagOperator : ruleTagOperator EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:575:1: entryRuleTagOperator : ruleTagOperator EOF ;
     public final void entryRuleTagOperator() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:548:1: ( ruleTagOperator EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:549:1: ruleTagOperator EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:576:1: ( ruleTagOperator EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:577:1: ruleTagOperator EOF
             {
              before(grammarAccess.getTagOperatorRule()); 
-            pushFollow(FOLLOW_ruleTagOperator_in_entryRuleTagOperator1101);
+            pushFollow(FOLLOW_ruleTagOperator_in_entryRuleTagOperator1161);
             ruleTagOperator();
 
             state._fsp--;
 
              after(grammarAccess.getTagOperatorRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTagOperator1108); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTagOperator1168); 
 
             }
 
@@ -1518,23 +1595,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleTagOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:556:1: ruleTagOperator : ( ( rule__TagOperator__Group__0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:584:1: ruleTagOperator : ( ( rule__TagOperator__Group__0 ) ) ;
     public final void ruleTagOperator() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:560:2: ( ( ( rule__TagOperator__Group__0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:561:1: ( ( rule__TagOperator__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:588:2: ( ( ( rule__TagOperator__Group__0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:589:1: ( ( rule__TagOperator__Group__0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:561:1: ( ( rule__TagOperator__Group__0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:562:1: ( rule__TagOperator__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:589:1: ( ( rule__TagOperator__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:590:1: ( rule__TagOperator__Group__0 )
             {
              before(grammarAccess.getTagOperatorAccess().getGroup()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:563:1: ( rule__TagOperator__Group__0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:563:2: rule__TagOperator__Group__0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:591:1: ( rule__TagOperator__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:591:2: rule__TagOperator__Group__0
             {
-            pushFollow(FOLLOW_rule__TagOperator__Group__0_in_ruleTagOperator1134);
+            pushFollow(FOLLOW_rule__TagOperator__Group__0_in_ruleTagOperator1194);
             rule__TagOperator__Group__0();
 
             state._fsp--;
@@ -1565,20 +1642,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleQueryTagOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:577:1: entryRuleQueryTagOperator : ruleQueryTagOperator EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:605:1: entryRuleQueryTagOperator : ruleQueryTagOperator EOF ;
     public final void entryRuleQueryTagOperator() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:578:1: ( ruleQueryTagOperator EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:579:1: ruleQueryTagOperator EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:606:1: ( ruleQueryTagOperator EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:607:1: ruleQueryTagOperator EOF
             {
              before(grammarAccess.getQueryTagOperatorRule()); 
-            pushFollow(FOLLOW_ruleQueryTagOperator_in_entryRuleQueryTagOperator1163);
+            pushFollow(FOLLOW_ruleQueryTagOperator_in_entryRuleQueryTagOperator1223);
             ruleQueryTagOperator();
 
             state._fsp--;
 
              after(grammarAccess.getQueryTagOperatorRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQueryTagOperator1170); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQueryTagOperator1230); 
 
             }
 
@@ -1595,23 +1672,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleQueryTagOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:586:1: ruleQueryTagOperator : ( ( rule__QueryTagOperator__Group__0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:614:1: ruleQueryTagOperator : ( ( rule__QueryTagOperator__Group__0 ) ) ;
     public final void ruleQueryTagOperator() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:590:2: ( ( ( rule__QueryTagOperator__Group__0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:591:1: ( ( rule__QueryTagOperator__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:618:2: ( ( ( rule__QueryTagOperator__Group__0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:619:1: ( ( rule__QueryTagOperator__Group__0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:591:1: ( ( rule__QueryTagOperator__Group__0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:592:1: ( rule__QueryTagOperator__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:619:1: ( ( rule__QueryTagOperator__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:620:1: ( rule__QueryTagOperator__Group__0 )
             {
              before(grammarAccess.getQueryTagOperatorAccess().getGroup()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:593:1: ( rule__QueryTagOperator__Group__0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:593:2: rule__QueryTagOperator__Group__0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:621:1: ( rule__QueryTagOperator__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:621:2: rule__QueryTagOperator__Group__0
             {
-            pushFollow(FOLLOW_rule__QueryTagOperator__Group__0_in_ruleQueryTagOperator1196);
+            pushFollow(FOLLOW_rule__QueryTagOperator__Group__0_in_ruleQueryTagOperator1256);
             rule__QueryTagOperator__Group__0();
 
             state._fsp--;
@@ -1642,20 +1719,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleSparqlQuery"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:605:1: entryRuleSparqlQuery : ruleSparqlQuery EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:633:1: entryRuleSparqlQuery : ruleSparqlQuery EOF ;
     public final void entryRuleSparqlQuery() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:606:1: ( ruleSparqlQuery EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:607:1: ruleSparqlQuery EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:634:1: ( ruleSparqlQuery EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:635:1: ruleSparqlQuery EOF
             {
              before(grammarAccess.getSparqlQueryRule()); 
-            pushFollow(FOLLOW_ruleSparqlQuery_in_entryRuleSparqlQuery1223);
+            pushFollow(FOLLOW_ruleSparqlQuery_in_entryRuleSparqlQuery1283);
             ruleSparqlQuery();
 
             state._fsp--;
 
              after(grammarAccess.getSparqlQueryRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSparqlQuery1230); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSparqlQuery1290); 
 
             }
 
@@ -1672,23 +1749,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleSparqlQuery"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:614:1: ruleSparqlQuery : ( ( rule__SparqlQuery__Group__0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:642:1: ruleSparqlQuery : ( ( rule__SparqlQuery__Group__0 ) ) ;
     public final void ruleSparqlQuery() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:618:2: ( ( ( rule__SparqlQuery__Group__0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:619:1: ( ( rule__SparqlQuery__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:646:2: ( ( ( rule__SparqlQuery__Group__0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:647:1: ( ( rule__SparqlQuery__Group__0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:619:1: ( ( rule__SparqlQuery__Group__0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:620:1: ( rule__SparqlQuery__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:647:1: ( ( rule__SparqlQuery__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:648:1: ( rule__SparqlQuery__Group__0 )
             {
              before(grammarAccess.getSparqlQueryAccess().getGroup()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:621:1: ( rule__SparqlQuery__Group__0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:621:2: rule__SparqlQuery__Group__0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:649:1: ( rule__SparqlQuery__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:649:2: rule__SparqlQuery__Group__0
             {
-            pushFollow(FOLLOW_rule__SparqlQuery__Group__0_in_ruleSparqlQuery1256);
+            pushFollow(FOLLOW_rule__SparqlQuery__Group__0_in_ruleSparqlQuery1316);
             rule__SparqlQuery__Group__0();
 
             state._fsp--;
@@ -1719,20 +1796,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleSparqlQueryVariable"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:633:1: entryRuleSparqlQueryVariable : ruleSparqlQueryVariable EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:661:1: entryRuleSparqlQueryVariable : ruleSparqlQueryVariable EOF ;
     public final void entryRuleSparqlQueryVariable() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:634:1: ( ruleSparqlQueryVariable EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:635:1: ruleSparqlQueryVariable EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:662:1: ( ruleSparqlQueryVariable EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:663:1: ruleSparqlQueryVariable EOF
             {
              before(grammarAccess.getSparqlQueryVariableRule()); 
-            pushFollow(FOLLOW_ruleSparqlQueryVariable_in_entryRuleSparqlQueryVariable1283);
+            pushFollow(FOLLOW_ruleSparqlQueryVariable_in_entryRuleSparqlQueryVariable1343);
             ruleSparqlQueryVariable();
 
             state._fsp--;
 
              after(grammarAccess.getSparqlQueryVariableRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSparqlQueryVariable1290); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSparqlQueryVariable1350); 
 
             }
 
@@ -1749,23 +1826,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleSparqlQueryVariable"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:642:1: ruleSparqlQueryVariable : ( ( rule__SparqlQueryVariable__Group__0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:670:1: ruleSparqlQueryVariable : ( ( rule__SparqlQueryVariable__Group__0 ) ) ;
     public final void ruleSparqlQueryVariable() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:646:2: ( ( ( rule__SparqlQueryVariable__Group__0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:647:1: ( ( rule__SparqlQueryVariable__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:674:2: ( ( ( rule__SparqlQueryVariable__Group__0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:675:1: ( ( rule__SparqlQueryVariable__Group__0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:647:1: ( ( rule__SparqlQueryVariable__Group__0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:648:1: ( rule__SparqlQueryVariable__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:675:1: ( ( rule__SparqlQueryVariable__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:676:1: ( rule__SparqlQueryVariable__Group__0 )
             {
              before(grammarAccess.getSparqlQueryVariableAccess().getGroup()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:649:1: ( rule__SparqlQueryVariable__Group__0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:649:2: rule__SparqlQueryVariable__Group__0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:677:1: ( rule__SparqlQueryVariable__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:677:2: rule__SparqlQueryVariable__Group__0
             {
-            pushFollow(FOLLOW_rule__SparqlQueryVariable__Group__0_in_ruleSparqlQueryVariable1316);
+            pushFollow(FOLLOW_rule__SparqlQueryVariable__Group__0_in_ruleSparqlQueryVariable1376);
             rule__SparqlQueryVariable__Group__0();
 
             state._fsp--;
@@ -1796,20 +1873,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleUnTagOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:661:1: entryRuleUnTagOperator : ruleUnTagOperator EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:689:1: entryRuleUnTagOperator : ruleUnTagOperator EOF ;
     public final void entryRuleUnTagOperator() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:662:1: ( ruleUnTagOperator EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:663:1: ruleUnTagOperator EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:690:1: ( ruleUnTagOperator EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:691:1: ruleUnTagOperator EOF
             {
              before(grammarAccess.getUnTagOperatorRule()); 
-            pushFollow(FOLLOW_ruleUnTagOperator_in_entryRuleUnTagOperator1343);
+            pushFollow(FOLLOW_ruleUnTagOperator_in_entryRuleUnTagOperator1403);
             ruleUnTagOperator();
 
             state._fsp--;
 
              after(grammarAccess.getUnTagOperatorRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUnTagOperator1350); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUnTagOperator1410); 
 
             }
 
@@ -1826,23 +1903,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleUnTagOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:670:1: ruleUnTagOperator : ( ( rule__UnTagOperator__Group__0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:698:1: ruleUnTagOperator : ( ( rule__UnTagOperator__Group__0 ) ) ;
     public final void ruleUnTagOperator() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:674:2: ( ( ( rule__UnTagOperator__Group__0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:675:1: ( ( rule__UnTagOperator__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:702:2: ( ( ( rule__UnTagOperator__Group__0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:703:1: ( ( rule__UnTagOperator__Group__0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:675:1: ( ( rule__UnTagOperator__Group__0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:676:1: ( rule__UnTagOperator__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:703:1: ( ( rule__UnTagOperator__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:704:1: ( rule__UnTagOperator__Group__0 )
             {
              before(grammarAccess.getUnTagOperatorAccess().getGroup()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:677:1: ( rule__UnTagOperator__Group__0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:677:2: rule__UnTagOperator__Group__0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:705:1: ( rule__UnTagOperator__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:705:2: rule__UnTagOperator__Group__0
             {
-            pushFollow(FOLLOW_rule__UnTagOperator__Group__0_in_ruleUnTagOperator1376);
+            pushFollow(FOLLOW_rule__UnTagOperator__Group__0_in_ruleUnTagOperator1436);
             rule__UnTagOperator__Group__0();
 
             state._fsp--;
@@ -1873,20 +1950,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleUnTagElement"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:689:1: entryRuleUnTagElement : ruleUnTagElement EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:717:1: entryRuleUnTagElement : ruleUnTagElement EOF ;
     public final void entryRuleUnTagElement() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:690:1: ( ruleUnTagElement EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:691:1: ruleUnTagElement EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:718:1: ( ruleUnTagElement EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:719:1: ruleUnTagElement EOF
             {
              before(grammarAccess.getUnTagElementRule()); 
-            pushFollow(FOLLOW_ruleUnTagElement_in_entryRuleUnTagElement1403);
+            pushFollow(FOLLOW_ruleUnTagElement_in_entryRuleUnTagElement1463);
             ruleUnTagElement();
 
             state._fsp--;
 
              after(grammarAccess.getUnTagElementRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUnTagElement1410); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUnTagElement1470); 
 
             }
 
@@ -1903,23 +1980,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleUnTagElement"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:698:1: ruleUnTagElement : ( ( rule__UnTagElement__Group__0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:726:1: ruleUnTagElement : ( ( rule__UnTagElement__Group__0 ) ) ;
     public final void ruleUnTagElement() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:702:2: ( ( ( rule__UnTagElement__Group__0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:703:1: ( ( rule__UnTagElement__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:730:2: ( ( ( rule__UnTagElement__Group__0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:731:1: ( ( rule__UnTagElement__Group__0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:703:1: ( ( rule__UnTagElement__Group__0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:704:1: ( rule__UnTagElement__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:731:1: ( ( rule__UnTagElement__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:732:1: ( rule__UnTagElement__Group__0 )
             {
              before(grammarAccess.getUnTagElementAccess().getGroup()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:705:1: ( rule__UnTagElement__Group__0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:705:2: rule__UnTagElement__Group__0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:733:1: ( rule__UnTagElement__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:733:2: rule__UnTagElement__Group__0
             {
-            pushFollow(FOLLOW_rule__UnTagElement__Group__0_in_ruleUnTagElement1436);
+            pushFollow(FOLLOW_rule__UnTagElement__Group__0_in_ruleUnTagElement1496);
             rule__UnTagElement__Group__0();
 
             state._fsp--;
@@ -1950,20 +2027,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleTagElement"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:717:1: entryRuleTagElement : ruleTagElement EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:745:1: entryRuleTagElement : ruleTagElement EOF ;
     public final void entryRuleTagElement() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:718:1: ( ruleTagElement EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:719:1: ruleTagElement EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:746:1: ( ruleTagElement EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:747:1: ruleTagElement EOF
             {
              before(grammarAccess.getTagElementRule()); 
-            pushFollow(FOLLOW_ruleTagElement_in_entryRuleTagElement1463);
+            pushFollow(FOLLOW_ruleTagElement_in_entryRuleTagElement1523);
             ruleTagElement();
 
             state._fsp--;
 
              after(grammarAccess.getTagElementRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTagElement1470); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTagElement1530); 
 
             }
 
@@ -1980,23 +2057,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleTagElement"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:726:1: ruleTagElement : ( ( rule__TagElement__Alternatives ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:754:1: ruleTagElement : ( ( rule__TagElement__Alternatives ) ) ;
     public final void ruleTagElement() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:730:2: ( ( ( rule__TagElement__Alternatives ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:731:1: ( ( rule__TagElement__Alternatives ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:758:2: ( ( ( rule__TagElement__Alternatives ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:759:1: ( ( rule__TagElement__Alternatives ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:731:1: ( ( rule__TagElement__Alternatives ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:732:1: ( rule__TagElement__Alternatives )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:759:1: ( ( rule__TagElement__Alternatives ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:760:1: ( rule__TagElement__Alternatives )
             {
              before(grammarAccess.getTagElementAccess().getAlternatives()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:733:1: ( rule__TagElement__Alternatives )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:733:2: rule__TagElement__Alternatives
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:761:1: ( rule__TagElement__Alternatives )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:761:2: rule__TagElement__Alternatives
             {
-            pushFollow(FOLLOW_rule__TagElement__Alternatives_in_ruleTagElement1496);
+            pushFollow(FOLLOW_rule__TagElement__Alternatives_in_ruleTagElement1556);
             rule__TagElement__Alternatives();
 
             state._fsp--;
@@ -2027,20 +2104,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleTagClassElement"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:745:1: entryRuleTagClassElement : ruleTagClassElement EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:773:1: entryRuleTagClassElement : ruleTagClassElement EOF ;
     public final void entryRuleTagClassElement() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:746:1: ( ruleTagClassElement EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:747:1: ruleTagClassElement EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:774:1: ( ruleTagClassElement EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:775:1: ruleTagClassElement EOF
             {
              before(grammarAccess.getTagClassElementRule()); 
-            pushFollow(FOLLOW_ruleTagClassElement_in_entryRuleTagClassElement1523);
+            pushFollow(FOLLOW_ruleTagClassElement_in_entryRuleTagClassElement1583);
             ruleTagClassElement();
 
             state._fsp--;
 
              after(grammarAccess.getTagClassElementRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTagClassElement1530); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTagClassElement1590); 
 
             }
 
@@ -2057,23 +2134,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleTagClassElement"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:754:1: ruleTagClassElement : ( ( rule__TagClassElement__Group__0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:782:1: ruleTagClassElement : ( ( rule__TagClassElement__Group__0 ) ) ;
     public final void ruleTagClassElement() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:758:2: ( ( ( rule__TagClassElement__Group__0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:759:1: ( ( rule__TagClassElement__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:786:2: ( ( ( rule__TagClassElement__Group__0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:787:1: ( ( rule__TagClassElement__Group__0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:759:1: ( ( rule__TagClassElement__Group__0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:760:1: ( rule__TagClassElement__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:787:1: ( ( rule__TagClassElement__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:788:1: ( rule__TagClassElement__Group__0 )
             {
              before(grammarAccess.getTagClassElementAccess().getGroup()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:761:1: ( rule__TagClassElement__Group__0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:761:2: rule__TagClassElement__Group__0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:789:1: ( rule__TagClassElement__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:789:2: rule__TagClassElement__Group__0
             {
-            pushFollow(FOLLOW_rule__TagClassElement__Group__0_in_ruleTagClassElement1556);
+            pushFollow(FOLLOW_rule__TagClassElement__Group__0_in_ruleTagClassElement1616);
             rule__TagClassElement__Group__0();
 
             state._fsp--;
@@ -2104,20 +2181,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleTagObjectPropertyElement"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:773:1: entryRuleTagObjectPropertyElement : ruleTagObjectPropertyElement EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:801:1: entryRuleTagObjectPropertyElement : ruleTagObjectPropertyElement EOF ;
     public final void entryRuleTagObjectPropertyElement() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:774:1: ( ruleTagObjectPropertyElement EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:775:1: ruleTagObjectPropertyElement EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:802:1: ( ruleTagObjectPropertyElement EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:803:1: ruleTagObjectPropertyElement EOF
             {
              before(grammarAccess.getTagObjectPropertyElementRule()); 
-            pushFollow(FOLLOW_ruleTagObjectPropertyElement_in_entryRuleTagObjectPropertyElement1583);
+            pushFollow(FOLLOW_ruleTagObjectPropertyElement_in_entryRuleTagObjectPropertyElement1643);
             ruleTagObjectPropertyElement();
 
             state._fsp--;
 
              after(grammarAccess.getTagObjectPropertyElementRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTagObjectPropertyElement1590); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTagObjectPropertyElement1650); 
 
             }
 
@@ -2134,23 +2211,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleTagObjectPropertyElement"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:782:1: ruleTagObjectPropertyElement : ( ( rule__TagObjectPropertyElement__Group__0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:810:1: ruleTagObjectPropertyElement : ( ( rule__TagObjectPropertyElement__Group__0 ) ) ;
     public final void ruleTagObjectPropertyElement() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:786:2: ( ( ( rule__TagObjectPropertyElement__Group__0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:787:1: ( ( rule__TagObjectPropertyElement__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:814:2: ( ( ( rule__TagObjectPropertyElement__Group__0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:815:1: ( ( rule__TagObjectPropertyElement__Group__0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:787:1: ( ( rule__TagObjectPropertyElement__Group__0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:788:1: ( rule__TagObjectPropertyElement__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:815:1: ( ( rule__TagObjectPropertyElement__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:816:1: ( rule__TagObjectPropertyElement__Group__0 )
             {
              before(grammarAccess.getTagObjectPropertyElementAccess().getGroup()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:789:1: ( rule__TagObjectPropertyElement__Group__0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:789:2: rule__TagObjectPropertyElement__Group__0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:817:1: ( rule__TagObjectPropertyElement__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:817:2: rule__TagObjectPropertyElement__Group__0
             {
-            pushFollow(FOLLOW_rule__TagObjectPropertyElement__Group__0_in_ruleTagObjectPropertyElement1616);
+            pushFollow(FOLLOW_rule__TagObjectPropertyElement__Group__0_in_ruleTagObjectPropertyElement1676);
             rule__TagObjectPropertyElement__Group__0();
 
             state._fsp--;
@@ -2181,20 +2258,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleTagDataTypePropertyElement"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:801:1: entryRuleTagDataTypePropertyElement : ruleTagDataTypePropertyElement EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:829:1: entryRuleTagDataTypePropertyElement : ruleTagDataTypePropertyElement EOF ;
     public final void entryRuleTagDataTypePropertyElement() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:802:1: ( ruleTagDataTypePropertyElement EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:803:1: ruleTagDataTypePropertyElement EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:830:1: ( ruleTagDataTypePropertyElement EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:831:1: ruleTagDataTypePropertyElement EOF
             {
              before(grammarAccess.getTagDataTypePropertyElementRule()); 
-            pushFollow(FOLLOW_ruleTagDataTypePropertyElement_in_entryRuleTagDataTypePropertyElement1643);
+            pushFollow(FOLLOW_ruleTagDataTypePropertyElement_in_entryRuleTagDataTypePropertyElement1703);
             ruleTagDataTypePropertyElement();
 
             state._fsp--;
 
              after(grammarAccess.getTagDataTypePropertyElementRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTagDataTypePropertyElement1650); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTagDataTypePropertyElement1710); 
 
             }
 
@@ -2211,23 +2288,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleTagDataTypePropertyElement"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:810:1: ruleTagDataTypePropertyElement : ( ( rule__TagDataTypePropertyElement__Group__0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:838:1: ruleTagDataTypePropertyElement : ( ( rule__TagDataTypePropertyElement__Group__0 ) ) ;
     public final void ruleTagDataTypePropertyElement() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:814:2: ( ( ( rule__TagDataTypePropertyElement__Group__0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:815:1: ( ( rule__TagDataTypePropertyElement__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:842:2: ( ( ( rule__TagDataTypePropertyElement__Group__0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:843:1: ( ( rule__TagDataTypePropertyElement__Group__0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:815:1: ( ( rule__TagDataTypePropertyElement__Group__0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:816:1: ( rule__TagDataTypePropertyElement__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:843:1: ( ( rule__TagDataTypePropertyElement__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:844:1: ( rule__TagDataTypePropertyElement__Group__0 )
             {
              before(grammarAccess.getTagDataTypePropertyElementAccess().getGroup()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:817:1: ( rule__TagDataTypePropertyElement__Group__0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:817:2: rule__TagDataTypePropertyElement__Group__0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:845:1: ( rule__TagDataTypePropertyElement__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:845:2: rule__TagDataTypePropertyElement__Group__0
             {
-            pushFollow(FOLLOW_rule__TagDataTypePropertyElement__Group__0_in_ruleTagDataTypePropertyElement1676);
+            pushFollow(FOLLOW_rule__TagDataTypePropertyElement__Group__0_in_ruleTagDataTypePropertyElement1736);
             rule__TagDataTypePropertyElement__Group__0();
 
             state._fsp--;
@@ -2258,20 +2335,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleBarrierOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:829:1: entryRuleBarrierOperator : ruleBarrierOperator EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:857:1: entryRuleBarrierOperator : ruleBarrierOperator EOF ;
     public final void entryRuleBarrierOperator() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:830:1: ( ruleBarrierOperator EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:831:1: ruleBarrierOperator EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:858:1: ( ruleBarrierOperator EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:859:1: ruleBarrierOperator EOF
             {
              before(grammarAccess.getBarrierOperatorRule()); 
-            pushFollow(FOLLOW_ruleBarrierOperator_in_entryRuleBarrierOperator1703);
+            pushFollow(FOLLOW_ruleBarrierOperator_in_entryRuleBarrierOperator1763);
             ruleBarrierOperator();
 
             state._fsp--;
 
              after(grammarAccess.getBarrierOperatorRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBarrierOperator1710); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBarrierOperator1770); 
 
             }
 
@@ -2288,23 +2365,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleBarrierOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:838:1: ruleBarrierOperator : ( ( rule__BarrierOperator__Alternatives ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:866:1: ruleBarrierOperator : ( ( rule__BarrierOperator__Alternatives ) ) ;
     public final void ruleBarrierOperator() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:842:2: ( ( ( rule__BarrierOperator__Alternatives ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:843:1: ( ( rule__BarrierOperator__Alternatives ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:870:2: ( ( ( rule__BarrierOperator__Alternatives ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:871:1: ( ( rule__BarrierOperator__Alternatives ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:843:1: ( ( rule__BarrierOperator__Alternatives ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:844:1: ( rule__BarrierOperator__Alternatives )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:871:1: ( ( rule__BarrierOperator__Alternatives ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:872:1: ( rule__BarrierOperator__Alternatives )
             {
              before(grammarAccess.getBarrierOperatorAccess().getAlternatives()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:845:1: ( rule__BarrierOperator__Alternatives )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:845:2: rule__BarrierOperator__Alternatives
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:873:1: ( rule__BarrierOperator__Alternatives )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:873:2: rule__BarrierOperator__Alternatives
             {
-            pushFollow(FOLLOW_rule__BarrierOperator__Alternatives_in_ruleBarrierOperator1736);
+            pushFollow(FOLLOW_rule__BarrierOperator__Alternatives_in_ruleBarrierOperator1796);
             rule__BarrierOperator__Alternatives();
 
             state._fsp--;
@@ -2335,20 +2412,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleWindowOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:857:1: entryRuleWindowOperator : ruleWindowOperator EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:885:1: entryRuleWindowOperator : ruleWindowOperator EOF ;
     public final void entryRuleWindowOperator() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:858:1: ( ruleWindowOperator EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:859:1: ruleWindowOperator EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:886:1: ( ruleWindowOperator EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:887:1: ruleWindowOperator EOF
             {
              before(grammarAccess.getWindowOperatorRule()); 
-            pushFollow(FOLLOW_ruleWindowOperator_in_entryRuleWindowOperator1763);
+            pushFollow(FOLLOW_ruleWindowOperator_in_entryRuleWindowOperator1823);
             ruleWindowOperator();
 
             state._fsp--;
 
              after(grammarAccess.getWindowOperatorRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleWindowOperator1770); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleWindowOperator1830); 
 
             }
 
@@ -2365,23 +2442,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleWindowOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:866:1: ruleWindowOperator : ( ( rule__WindowOperator__Alternatives ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:894:1: ruleWindowOperator : ( ( rule__WindowOperator__Alternatives ) ) ;
     public final void ruleWindowOperator() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:870:2: ( ( ( rule__WindowOperator__Alternatives ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:871:1: ( ( rule__WindowOperator__Alternatives ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:898:2: ( ( ( rule__WindowOperator__Alternatives ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:899:1: ( ( rule__WindowOperator__Alternatives ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:871:1: ( ( rule__WindowOperator__Alternatives ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:872:1: ( rule__WindowOperator__Alternatives )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:899:1: ( ( rule__WindowOperator__Alternatives ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:900:1: ( rule__WindowOperator__Alternatives )
             {
              before(grammarAccess.getWindowOperatorAccess().getAlternatives()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:873:1: ( rule__WindowOperator__Alternatives )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:873:2: rule__WindowOperator__Alternatives
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:901:1: ( rule__WindowOperator__Alternatives )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:901:2: rule__WindowOperator__Alternatives
             {
-            pushFollow(FOLLOW_rule__WindowOperator__Alternatives_in_ruleWindowOperator1796);
+            pushFollow(FOLLOW_rule__WindowOperator__Alternatives_in_ruleWindowOperator1856);
             rule__WindowOperator__Alternatives();
 
             state._fsp--;
@@ -2412,20 +2489,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleMarkerOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:885:1: entryRuleMarkerOperator : ruleMarkerOperator EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:913:1: entryRuleMarkerOperator : ruleMarkerOperator EOF ;
     public final void entryRuleMarkerOperator() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:886:1: ( ruleMarkerOperator EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:887:1: ruleMarkerOperator EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:914:1: ( ruleMarkerOperator EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:915:1: ruleMarkerOperator EOF
             {
              before(grammarAccess.getMarkerOperatorRule()); 
-            pushFollow(FOLLOW_ruleMarkerOperator_in_entryRuleMarkerOperator1823);
+            pushFollow(FOLLOW_ruleMarkerOperator_in_entryRuleMarkerOperator1883);
             ruleMarkerOperator();
 
             state._fsp--;
 
              after(grammarAccess.getMarkerOperatorRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMarkerOperator1830); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMarkerOperator1890); 
 
             }
 
@@ -2442,23 +2519,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleMarkerOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:894:1: ruleMarkerOperator : ( ( rule__MarkerOperator__Group__0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:922:1: ruleMarkerOperator : ( ( rule__MarkerOperator__Group__0 ) ) ;
     public final void ruleMarkerOperator() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:898:2: ( ( ( rule__MarkerOperator__Group__0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:899:1: ( ( rule__MarkerOperator__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:926:2: ( ( ( rule__MarkerOperator__Group__0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:927:1: ( ( rule__MarkerOperator__Group__0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:899:1: ( ( rule__MarkerOperator__Group__0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:900:1: ( rule__MarkerOperator__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:927:1: ( ( rule__MarkerOperator__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:928:1: ( rule__MarkerOperator__Group__0 )
             {
              before(grammarAccess.getMarkerOperatorAccess().getGroup()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:901:1: ( rule__MarkerOperator__Group__0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:901:2: rule__MarkerOperator__Group__0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:929:1: ( rule__MarkerOperator__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:929:2: rule__MarkerOperator__Group__0
             {
-            pushFollow(FOLLOW_rule__MarkerOperator__Group__0_in_ruleMarkerOperator1856);
+            pushFollow(FOLLOW_rule__MarkerOperator__Group__0_in_ruleMarkerOperator1916);
             rule__MarkerOperator__Group__0();
 
             state._fsp--;
@@ -2489,20 +2566,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleSWRLOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:913:1: entryRuleSWRLOperator : ruleSWRLOperator EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:941:1: entryRuleSWRLOperator : ruleSWRLOperator EOF ;
     public final void entryRuleSWRLOperator() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:914:1: ( ruleSWRLOperator EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:915:1: ruleSWRLOperator EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:942:1: ( ruleSWRLOperator EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:943:1: ruleSWRLOperator EOF
             {
              before(grammarAccess.getSWRLOperatorRule()); 
-            pushFollow(FOLLOW_ruleSWRLOperator_in_entryRuleSWRLOperator1883);
+            pushFollow(FOLLOW_ruleSWRLOperator_in_entryRuleSWRLOperator1943);
             ruleSWRLOperator();
 
             state._fsp--;
 
              after(grammarAccess.getSWRLOperatorRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSWRLOperator1890); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSWRLOperator1950); 
 
             }
 
@@ -2519,23 +2596,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleSWRLOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:922:1: ruleSWRLOperator : ( ( rule__SWRLOperator__Group__0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:950:1: ruleSWRLOperator : ( ( rule__SWRLOperator__Group__0 ) ) ;
     public final void ruleSWRLOperator() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:926:2: ( ( ( rule__SWRLOperator__Group__0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:927:1: ( ( rule__SWRLOperator__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:954:2: ( ( ( rule__SWRLOperator__Group__0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:955:1: ( ( rule__SWRLOperator__Group__0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:927:1: ( ( rule__SWRLOperator__Group__0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:928:1: ( rule__SWRLOperator__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:955:1: ( ( rule__SWRLOperator__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:956:1: ( rule__SWRLOperator__Group__0 )
             {
              before(grammarAccess.getSWRLOperatorAccess().getGroup()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:929:1: ( rule__SWRLOperator__Group__0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:929:2: rule__SWRLOperator__Group__0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:957:1: ( rule__SWRLOperator__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:957:2: rule__SWRLOperator__Group__0
             {
-            pushFollow(FOLLOW_rule__SWRLOperator__Group__0_in_ruleSWRLOperator1916);
+            pushFollow(FOLLOW_rule__SWRLOperator__Group__0_in_ruleSWRLOperator1976);
             rule__SWRLOperator__Group__0();
 
             state._fsp--;
@@ -2566,20 +2643,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleSWRLRule"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:941:1: entryRuleSWRLRule : ruleSWRLRule EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:969:1: entryRuleSWRLRule : ruleSWRLRule EOF ;
     public final void entryRuleSWRLRule() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:942:1: ( ruleSWRLRule EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:943:1: ruleSWRLRule EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:970:1: ( ruleSWRLRule EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:971:1: ruleSWRLRule EOF
             {
              before(grammarAccess.getSWRLRuleRule()); 
-            pushFollow(FOLLOW_ruleSWRLRule_in_entryRuleSWRLRule1943);
+            pushFollow(FOLLOW_ruleSWRLRule_in_entryRuleSWRLRule2003);
             ruleSWRLRule();
 
             state._fsp--;
 
              after(grammarAccess.getSWRLRuleRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSWRLRule1950); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSWRLRule2010); 
 
             }
 
@@ -2596,23 +2673,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleSWRLRule"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:950:1: ruleSWRLRule : ( ( rule__SWRLRule__Group__0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:978:1: ruleSWRLRule : ( ( rule__SWRLRule__Group__0 ) ) ;
     public final void ruleSWRLRule() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:954:2: ( ( ( rule__SWRLRule__Group__0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:955:1: ( ( rule__SWRLRule__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:982:2: ( ( ( rule__SWRLRule__Group__0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:983:1: ( ( rule__SWRLRule__Group__0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:955:1: ( ( rule__SWRLRule__Group__0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:956:1: ( rule__SWRLRule__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:983:1: ( ( rule__SWRLRule__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:984:1: ( rule__SWRLRule__Group__0 )
             {
              before(grammarAccess.getSWRLRuleAccess().getGroup()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:957:1: ( rule__SWRLRule__Group__0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:957:2: rule__SWRLRule__Group__0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:985:1: ( rule__SWRLRule__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:985:2: rule__SWRLRule__Group__0
             {
-            pushFollow(FOLLOW_rule__SWRLRule__Group__0_in_ruleSWRLRule1976);
+            pushFollow(FOLLOW_rule__SWRLRule__Group__0_in_ruleSWRLRule2036);
             rule__SWRLRule__Group__0();
 
             state._fsp--;
@@ -2643,20 +2720,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleAntecedentRule"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:969:1: entryRuleAntecedentRule : ruleAntecedentRule EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:997:1: entryRuleAntecedentRule : ruleAntecedentRule EOF ;
     public final void entryRuleAntecedentRule() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:970:1: ( ruleAntecedentRule EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:971:1: ruleAntecedentRule EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:998:1: ( ruleAntecedentRule EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:999:1: ruleAntecedentRule EOF
             {
              before(grammarAccess.getAntecedentRuleRule()); 
-            pushFollow(FOLLOW_ruleAntecedentRule_in_entryRuleAntecedentRule2003);
+            pushFollow(FOLLOW_ruleAntecedentRule_in_entryRuleAntecedentRule2063);
             ruleAntecedentRule();
 
             state._fsp--;
 
              after(grammarAccess.getAntecedentRuleRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAntecedentRule2010); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAntecedentRule2070); 
 
             }
 
@@ -2673,23 +2750,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleAntecedentRule"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:978:1: ruleAntecedentRule : ( ( rule__AntecedentRule__Group__0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1006:1: ruleAntecedentRule : ( ( rule__AntecedentRule__Group__0 ) ) ;
     public final void ruleAntecedentRule() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:982:2: ( ( ( rule__AntecedentRule__Group__0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:983:1: ( ( rule__AntecedentRule__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1010:2: ( ( ( rule__AntecedentRule__Group__0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1011:1: ( ( rule__AntecedentRule__Group__0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:983:1: ( ( rule__AntecedentRule__Group__0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:984:1: ( rule__AntecedentRule__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1011:1: ( ( rule__AntecedentRule__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1012:1: ( rule__AntecedentRule__Group__0 )
             {
              before(grammarAccess.getAntecedentRuleAccess().getGroup()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:985:1: ( rule__AntecedentRule__Group__0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:985:2: rule__AntecedentRule__Group__0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1013:1: ( rule__AntecedentRule__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1013:2: rule__AntecedentRule__Group__0
             {
-            pushFollow(FOLLOW_rule__AntecedentRule__Group__0_in_ruleAntecedentRule2036);
+            pushFollow(FOLLOW_rule__AntecedentRule__Group__0_in_ruleAntecedentRule2096);
             rule__AntecedentRule__Group__0();
 
             state._fsp--;
@@ -2720,20 +2797,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleConsequentRule"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:997:1: entryRuleConsequentRule : ruleConsequentRule EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1025:1: entryRuleConsequentRule : ruleConsequentRule EOF ;
     public final void entryRuleConsequentRule() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:998:1: ( ruleConsequentRule EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:999:1: ruleConsequentRule EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1026:1: ( ruleConsequentRule EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1027:1: ruleConsequentRule EOF
             {
              before(grammarAccess.getConsequentRuleRule()); 
-            pushFollow(FOLLOW_ruleConsequentRule_in_entryRuleConsequentRule2063);
+            pushFollow(FOLLOW_ruleConsequentRule_in_entryRuleConsequentRule2123);
             ruleConsequentRule();
 
             state._fsp--;
 
              after(grammarAccess.getConsequentRuleRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleConsequentRule2070); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConsequentRule2130); 
 
             }
 
@@ -2750,23 +2827,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleConsequentRule"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1006:1: ruleConsequentRule : ( ( rule__ConsequentRule__Group__0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1034:1: ruleConsequentRule : ( ( rule__ConsequentRule__Group__0 ) ) ;
     public final void ruleConsequentRule() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1010:2: ( ( ( rule__ConsequentRule__Group__0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1011:1: ( ( rule__ConsequentRule__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1038:2: ( ( ( rule__ConsequentRule__Group__0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1039:1: ( ( rule__ConsequentRule__Group__0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1011:1: ( ( rule__ConsequentRule__Group__0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1012:1: ( rule__ConsequentRule__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1039:1: ( ( rule__ConsequentRule__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1040:1: ( rule__ConsequentRule__Group__0 )
             {
              before(grammarAccess.getConsequentRuleAccess().getGroup()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1013:1: ( rule__ConsequentRule__Group__0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1013:2: rule__ConsequentRule__Group__0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1041:1: ( rule__ConsequentRule__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1041:2: rule__ConsequentRule__Group__0
             {
-            pushFollow(FOLLOW_rule__ConsequentRule__Group__0_in_ruleConsequentRule2096);
+            pushFollow(FOLLOW_rule__ConsequentRule__Group__0_in_ruleConsequentRule2156);
             rule__ConsequentRule__Group__0();
 
             state._fsp--;
@@ -2797,20 +2874,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleRule"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1025:1: entryRuleRule : ruleRule EOF ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1053:1: entryRuleRule : ruleRule EOF ;
     public final void entryRuleRule() throws RecognitionException {
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1026:1: ( ruleRule EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1027:1: ruleRule EOF
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1054:1: ( ruleRule EOF )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1055:1: ruleRule EOF
             {
              before(grammarAccess.getRuleRule()); 
-            pushFollow(FOLLOW_ruleRule_in_entryRuleRule2123);
+            pushFollow(FOLLOW_ruleRule_in_entryRuleRule2183);
             ruleRule();
 
             state._fsp--;
 
              after(grammarAccess.getRuleRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRule2130); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRule2190); 
 
             }
 
@@ -2827,23 +2904,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleRule"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1034:1: ruleRule : ( ( rule__Rule__Group__0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1062:1: ruleRule : ( ( rule__Rule__Group__0 ) ) ;
     public final void ruleRule() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1038:2: ( ( ( rule__Rule__Group__0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1039:1: ( ( rule__Rule__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1066:2: ( ( ( rule__Rule__Group__0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1067:1: ( ( rule__Rule__Group__0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1039:1: ( ( rule__Rule__Group__0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1040:1: ( rule__Rule__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1067:1: ( ( rule__Rule__Group__0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1068:1: ( rule__Rule__Group__0 )
             {
              before(grammarAccess.getRuleAccess().getGroup()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1041:1: ( rule__Rule__Group__0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1041:2: rule__Rule__Group__0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1069:1: ( rule__Rule__Group__0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1069:2: rule__Rule__Group__0
             {
-            pushFollow(FOLLOW_rule__Rule__Group__0_in_ruleRule2156);
+            pushFollow(FOLLOW_rule__Rule__Group__0_in_ruleRule2216);
             rule__Rule__Group__0();
 
             state._fsp--;
@@ -2871,83 +2948,6 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "ruleRule"
-
-
-    // $ANTLR start "entryRuleOCLOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1053:1: entryRuleOCLOperator : ruleOCLOperator EOF ;
-    public final void entryRuleOCLOperator() throws RecognitionException {
-        try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1054:1: ( ruleOCLOperator EOF )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1055:1: ruleOCLOperator EOF
-            {
-             before(grammarAccess.getOCLOperatorRule()); 
-            pushFollow(FOLLOW_ruleOCLOperator_in_entryRuleOCLOperator2183);
-            ruleOCLOperator();
-
-            state._fsp--;
-
-             after(grammarAccess.getOCLOperatorRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOCLOperator2190); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleOCLOperator"
-
-
-    // $ANTLR start "ruleOCLOperator"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1062:1: ruleOCLOperator : ( ( rule__OCLOperator__Group__0 ) ) ;
-    public final void ruleOCLOperator() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1066:2: ( ( ( rule__OCLOperator__Group__0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1067:1: ( ( rule__OCLOperator__Group__0 ) )
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1067:1: ( ( rule__OCLOperator__Group__0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1068:1: ( rule__OCLOperator__Group__0 )
-            {
-             before(grammarAccess.getOCLOperatorAccess().getGroup()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1069:1: ( rule__OCLOperator__Group__0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:1069:2: rule__OCLOperator__Group__0
-            {
-            pushFollow(FOLLOW_rule__OCLOperator__Group__0_in_ruleOCLOperator2216);
-            rule__OCLOperator__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getOCLOperatorAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleOCLOperator"
 
 
     // $ANTLR start "entryRuleCountOperator"
@@ -5673,16 +5673,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ReturnTypeOperator__Alternatives"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2054:1: rule__ReturnTypeOperator__Alternatives : ( ( ruleInputOperator ) | ( ruleJoinOperator ) | ( ruleLogOperator ) | ( ruleTagOperator ) | ( ruleUnTagOperator ) | ( ruleFilterOperator ) | ( ruleSplitOperator ) | ( ruleCountOperator ) | ( ruleStandardDeviationOperator ) | ( ruleAverageOperator ) | ( ruleElementJoinOperator ) | ( ruleMatchOperator ) | ( ruleOCLOperator ) | ( ruleSWRLOperator ) | ( ruleAdditionOperator ) | ( ruleSubtractionOperator ) | ( ruleMultiplicationOperator ) | ( ruleDivisionOperator ) );
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2054:1: rule__ReturnTypeOperator__Alternatives : ( ( ruleInputOperator ) | ( ruleJoinOperator ) | ( ruleLogOperator ) | ( ruleTagOperator ) | ( ruleUnTagOperator ) | ( ruleFilterOperator ) | ( ruleSplitOperator ) | ( ruleCountOperator ) | ( ruleStandardDeviationOperator ) | ( ruleAverageOperator ) | ( ruleElementJoinOperator ) | ( ruleMatchOperator ) | ( ruleRandomOperator ) | ( ruleSWRLOperator ) | ( ruleAdditionOperator ) | ( ruleSubtractionOperator ) | ( ruleMultiplicationOperator ) | ( ruleDivisionOperator ) );
     public final void rule__ReturnTypeOperator__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2058:1: ( ( ruleInputOperator ) | ( ruleJoinOperator ) | ( ruleLogOperator ) | ( ruleTagOperator ) | ( ruleUnTagOperator ) | ( ruleFilterOperator ) | ( ruleSplitOperator ) | ( ruleCountOperator ) | ( ruleStandardDeviationOperator ) | ( ruleAverageOperator ) | ( ruleElementJoinOperator ) | ( ruleMatchOperator ) | ( ruleOCLOperator ) | ( ruleSWRLOperator ) | ( ruleAdditionOperator ) | ( ruleSubtractionOperator ) | ( ruleMultiplicationOperator ) | ( ruleDivisionOperator ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2058:1: ( ( ruleInputOperator ) | ( ruleJoinOperator ) | ( ruleLogOperator ) | ( ruleTagOperator ) | ( ruleUnTagOperator ) | ( ruleFilterOperator ) | ( ruleSplitOperator ) | ( ruleCountOperator ) | ( ruleStandardDeviationOperator ) | ( ruleAverageOperator ) | ( ruleElementJoinOperator ) | ( ruleMatchOperator ) | ( ruleRandomOperator ) | ( ruleSWRLOperator ) | ( ruleAdditionOperator ) | ( ruleSubtractionOperator ) | ( ruleMultiplicationOperator ) | ( ruleDivisionOperator ) )
             int alt4=18;
             switch ( input.LA(1) ) {
-            case 44:
+            case 45:
                 {
                 alt4=1;
                 }
@@ -5697,12 +5697,12 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                 alt4=3;
                 }
                 break;
-            case 45:
+            case 46:
                 {
                 alt4=4;
                 }
                 break;
-            case 48:
+            case 49:
                 {
                 alt4=5;
                 }
@@ -5737,17 +5737,17 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                 alt4=11;
                 }
                 break;
-            case 43:
+            case 44:
                 {
                 alt4=12;
                 }
                 break;
-            case 58:
+            case 43:
                 {
                 alt4=13;
                 }
                 break;
-            case 54:
+            case 55:
                 {
                 alt4=14;
                 }
@@ -6009,18 +6009,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 13 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2131:6: ( ruleOCLOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2131:6: ( ruleRandomOperator )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2131:6: ( ruleOCLOperator )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2132:1: ruleOCLOperator
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2131:6: ( ruleRandomOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2132:1: ruleRandomOperator
                     {
-                     before(grammarAccess.getReturnTypeOperatorAccess().getOCLOperatorParserRuleCall_12()); 
-                    pushFollow(FOLLOW_ruleOCLOperator_in_rule__ReturnTypeOperator__Alternatives4569);
-                    ruleOCLOperator();
+                     before(grammarAccess.getReturnTypeOperatorAccess().getRandomOperatorParserRuleCall_12()); 
+                    pushFollow(FOLLOW_ruleRandomOperator_in_rule__ReturnTypeOperator__Alternatives4569);
+                    ruleRandomOperator();
 
                     state._fsp--;
 
-                     after(grammarAccess.getReturnTypeOperatorAccess().getOCLOperatorParserRuleCall_12()); 
+                     after(grammarAccess.getReturnTypeOperatorAccess().getRandomOperatorParserRuleCall_12()); 
 
                     }
 
@@ -6159,21 +6159,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     if ( (LA5_2==RULE_ID) ) {
                         int LA5_3 = input.LA(4);
 
-                        if ( (LA5_3==49) ) {
+                        if ( (LA5_3==50) ) {
                             switch ( input.LA(5) ) {
-                            case 52:
+                            case 51:
                                 {
-                                alt5=3;
+                                alt5=1;
                                 }
                                 break;
-                            case 51:
+                            case 52:
                                 {
                                 alt5=2;
                                 }
                                 break;
-                            case 50:
+                            case 53:
                                 {
-                                alt5=1;
+                                alt5=3;
                                 }
                                 break;
                             default:
@@ -6300,7 +6300,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
             if ( ((LA6_0>=78 && LA6_0<=79)) ) {
                 alt6=1;
             }
-            else if ( (LA6_0==53) ) {
+            else if ( (LA6_0==54) ) {
                 alt6=2;
             }
             else {
@@ -13238,22 +13238,487 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__LogOperator__Group__5__Impl"
 
 
+    // $ANTLR start "rule__RandomOperator__Group__0"
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4718:1: rule__RandomOperator__Group__0 : rule__RandomOperator__Group__0__Impl rule__RandomOperator__Group__1 ;
+    public final void rule__RandomOperator__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4722:1: ( rule__RandomOperator__Group__0__Impl rule__RandomOperator__Group__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4723:2: rule__RandomOperator__Group__0__Impl rule__RandomOperator__Group__1
+            {
+            pushFollow(FOLLOW_rule__RandomOperator__Group__0__Impl_in_rule__RandomOperator__Group__09858);
+            rule__RandomOperator__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__RandomOperator__Group__1_in_rule__RandomOperator__Group__09861);
+            rule__RandomOperator__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RandomOperator__Group__0"
+
+
+    // $ANTLR start "rule__RandomOperator__Group__0__Impl"
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4730:1: rule__RandomOperator__Group__0__Impl : ( 'rand' ) ;
+    public final void rule__RandomOperator__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4734:1: ( ( 'rand' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4735:1: ( 'rand' )
+            {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4735:1: ( 'rand' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4736:1: 'rand'
+            {
+             before(grammarAccess.getRandomOperatorAccess().getRandKeyword_0()); 
+            match(input,43,FOLLOW_43_in_rule__RandomOperator__Group__0__Impl9889); 
+             after(grammarAccess.getRandomOperatorAccess().getRandKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RandomOperator__Group__0__Impl"
+
+
+    // $ANTLR start "rule__RandomOperator__Group__1"
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4749:1: rule__RandomOperator__Group__1 : rule__RandomOperator__Group__1__Impl rule__RandomOperator__Group__2 ;
+    public final void rule__RandomOperator__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4753:1: ( rule__RandomOperator__Group__1__Impl rule__RandomOperator__Group__2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4754:2: rule__RandomOperator__Group__1__Impl rule__RandomOperator__Group__2
+            {
+            pushFollow(FOLLOW_rule__RandomOperator__Group__1__Impl_in_rule__RandomOperator__Group__19920);
+            rule__RandomOperator__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__RandomOperator__Group__2_in_rule__RandomOperator__Group__19923);
+            rule__RandomOperator__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RandomOperator__Group__1"
+
+
+    // $ANTLR start "rule__RandomOperator__Group__1__Impl"
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4761:1: rule__RandomOperator__Group__1__Impl : ( '(' ) ;
+    public final void rule__RandomOperator__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4765:1: ( ( '(' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4766:1: ( '(' )
+            {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4766:1: ( '(' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4767:1: '('
+            {
+             before(grammarAccess.getRandomOperatorAccess().getLeftParenthesisKeyword_1()); 
+            match(input,35,FOLLOW_35_in_rule__RandomOperator__Group__1__Impl9951); 
+             after(grammarAccess.getRandomOperatorAccess().getLeftParenthesisKeyword_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RandomOperator__Group__1__Impl"
+
+
+    // $ANTLR start "rule__RandomOperator__Group__2"
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4780:1: rule__RandomOperator__Group__2 : rule__RandomOperator__Group__2__Impl rule__RandomOperator__Group__3 ;
+    public final void rule__RandomOperator__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4784:1: ( rule__RandomOperator__Group__2__Impl rule__RandomOperator__Group__3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4785:2: rule__RandomOperator__Group__2__Impl rule__RandomOperator__Group__3
+            {
+            pushFollow(FOLLOW_rule__RandomOperator__Group__2__Impl_in_rule__RandomOperator__Group__29982);
+            rule__RandomOperator__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__RandomOperator__Group__3_in_rule__RandomOperator__Group__29985);
+            rule__RandomOperator__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RandomOperator__Group__2"
+
+
+    // $ANTLR start "rule__RandomOperator__Group__2__Impl"
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4792:1: rule__RandomOperator__Group__2__Impl : ( ( rule__RandomOperator__MaximumAssignment_2 ) ) ;
+    public final void rule__RandomOperator__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4796:1: ( ( ( rule__RandomOperator__MaximumAssignment_2 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4797:1: ( ( rule__RandomOperator__MaximumAssignment_2 ) )
+            {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4797:1: ( ( rule__RandomOperator__MaximumAssignment_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4798:1: ( rule__RandomOperator__MaximumAssignment_2 )
+            {
+             before(grammarAccess.getRandomOperatorAccess().getMaximumAssignment_2()); 
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4799:1: ( rule__RandomOperator__MaximumAssignment_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4799:2: rule__RandomOperator__MaximumAssignment_2
+            {
+            pushFollow(FOLLOW_rule__RandomOperator__MaximumAssignment_2_in_rule__RandomOperator__Group__2__Impl10012);
+            rule__RandomOperator__MaximumAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getRandomOperatorAccess().getMaximumAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RandomOperator__Group__2__Impl"
+
+
+    // $ANTLR start "rule__RandomOperator__Group__3"
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4809:1: rule__RandomOperator__Group__3 : rule__RandomOperator__Group__3__Impl rule__RandomOperator__Group__4 ;
+    public final void rule__RandomOperator__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4813:1: ( rule__RandomOperator__Group__3__Impl rule__RandomOperator__Group__4 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4814:2: rule__RandomOperator__Group__3__Impl rule__RandomOperator__Group__4
+            {
+            pushFollow(FOLLOW_rule__RandomOperator__Group__3__Impl_in_rule__RandomOperator__Group__310042);
+            rule__RandomOperator__Group__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__RandomOperator__Group__4_in_rule__RandomOperator__Group__310045);
+            rule__RandomOperator__Group__4();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RandomOperator__Group__3"
+
+
+    // $ANTLR start "rule__RandomOperator__Group__3__Impl"
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4821:1: rule__RandomOperator__Group__3__Impl : ( ',' ) ;
+    public final void rule__RandomOperator__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4825:1: ( ( ',' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4826:1: ( ',' )
+            {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4826:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4827:1: ','
+            {
+             before(grammarAccess.getRandomOperatorAccess().getCommaKeyword_3()); 
+            match(input,32,FOLLOW_32_in_rule__RandomOperator__Group__3__Impl10073); 
+             after(grammarAccess.getRandomOperatorAccess().getCommaKeyword_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RandomOperator__Group__3__Impl"
+
+
+    // $ANTLR start "rule__RandomOperator__Group__4"
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4840:1: rule__RandomOperator__Group__4 : rule__RandomOperator__Group__4__Impl rule__RandomOperator__Group__5 ;
+    public final void rule__RandomOperator__Group__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4844:1: ( rule__RandomOperator__Group__4__Impl rule__RandomOperator__Group__5 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4845:2: rule__RandomOperator__Group__4__Impl rule__RandomOperator__Group__5
+            {
+            pushFollow(FOLLOW_rule__RandomOperator__Group__4__Impl_in_rule__RandomOperator__Group__410104);
+            rule__RandomOperator__Group__4__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__RandomOperator__Group__5_in_rule__RandomOperator__Group__410107);
+            rule__RandomOperator__Group__5();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RandomOperator__Group__4"
+
+
+    // $ANTLR start "rule__RandomOperator__Group__4__Impl"
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4852:1: rule__RandomOperator__Group__4__Impl : ( ( rule__RandomOperator__SleepAssignment_4 ) ) ;
+    public final void rule__RandomOperator__Group__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4856:1: ( ( ( rule__RandomOperator__SleepAssignment_4 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4857:1: ( ( rule__RandomOperator__SleepAssignment_4 ) )
+            {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4857:1: ( ( rule__RandomOperator__SleepAssignment_4 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4858:1: ( rule__RandomOperator__SleepAssignment_4 )
+            {
+             before(grammarAccess.getRandomOperatorAccess().getSleepAssignment_4()); 
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4859:1: ( rule__RandomOperator__SleepAssignment_4 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4859:2: rule__RandomOperator__SleepAssignment_4
+            {
+            pushFollow(FOLLOW_rule__RandomOperator__SleepAssignment_4_in_rule__RandomOperator__Group__4__Impl10134);
+            rule__RandomOperator__SleepAssignment_4();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getRandomOperatorAccess().getSleepAssignment_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RandomOperator__Group__4__Impl"
+
+
+    // $ANTLR start "rule__RandomOperator__Group__5"
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4869:1: rule__RandomOperator__Group__5 : rule__RandomOperator__Group__5__Impl ;
+    public final void rule__RandomOperator__Group__5() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4873:1: ( rule__RandomOperator__Group__5__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4874:2: rule__RandomOperator__Group__5__Impl
+            {
+            pushFollow(FOLLOW_rule__RandomOperator__Group__5__Impl_in_rule__RandomOperator__Group__510164);
+            rule__RandomOperator__Group__5__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RandomOperator__Group__5"
+
+
+    // $ANTLR start "rule__RandomOperator__Group__5__Impl"
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4880:1: rule__RandomOperator__Group__5__Impl : ( ')' ) ;
+    public final void rule__RandomOperator__Group__5__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4884:1: ( ( ')' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4885:1: ( ')' )
+            {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4885:1: ( ')' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4886:1: ')'
+            {
+             before(grammarAccess.getRandomOperatorAccess().getRightParenthesisKeyword_5()); 
+            match(input,36,FOLLOW_36_in_rule__RandomOperator__Group__5__Impl10192); 
+             after(grammarAccess.getRandomOperatorAccess().getRightParenthesisKeyword_5()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RandomOperator__Group__5__Impl"
+
+
     // $ANTLR start "rule__MatchOperator__Group__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4718:1: rule__MatchOperator__Group__0 : rule__MatchOperator__Group__0__Impl rule__MatchOperator__Group__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4911:1: rule__MatchOperator__Group__0 : rule__MatchOperator__Group__0__Impl rule__MatchOperator__Group__1 ;
     public final void rule__MatchOperator__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4722:1: ( rule__MatchOperator__Group__0__Impl rule__MatchOperator__Group__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4723:2: rule__MatchOperator__Group__0__Impl rule__MatchOperator__Group__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4915:1: ( rule__MatchOperator__Group__0__Impl rule__MatchOperator__Group__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4916:2: rule__MatchOperator__Group__0__Impl rule__MatchOperator__Group__1
             {
-            pushFollow(FOLLOW_rule__MatchOperator__Group__0__Impl_in_rule__MatchOperator__Group__09858);
+            pushFollow(FOLLOW_rule__MatchOperator__Group__0__Impl_in_rule__MatchOperator__Group__010235);
             rule__MatchOperator__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MatchOperator__Group__1_in_rule__MatchOperator__Group__09861);
+            pushFollow(FOLLOW_rule__MatchOperator__Group__1_in_rule__MatchOperator__Group__010238);
             rule__MatchOperator__Group__1();
 
             state._fsp--;
@@ -13277,20 +13742,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__Group__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4730:1: rule__MatchOperator__Group__0__Impl : ( 'match' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4923:1: rule__MatchOperator__Group__0__Impl : ( 'match' ) ;
     public final void rule__MatchOperator__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4734:1: ( ( 'match' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4735:1: ( 'match' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4927:1: ( ( 'match' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4928:1: ( 'match' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4735:1: ( 'match' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4736:1: 'match'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4928:1: ( 'match' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4929:1: 'match'
             {
              before(grammarAccess.getMatchOperatorAccess().getMatchKeyword_0()); 
-            match(input,43,FOLLOW_43_in_rule__MatchOperator__Group__0__Impl9889); 
+            match(input,44,FOLLOW_44_in_rule__MatchOperator__Group__0__Impl10266); 
              after(grammarAccess.getMatchOperatorAccess().getMatchKeyword_0()); 
 
             }
@@ -13314,21 +13779,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__Group__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4749:1: rule__MatchOperator__Group__1 : rule__MatchOperator__Group__1__Impl rule__MatchOperator__Group__2 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4942:1: rule__MatchOperator__Group__1 : rule__MatchOperator__Group__1__Impl rule__MatchOperator__Group__2 ;
     public final void rule__MatchOperator__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4753:1: ( rule__MatchOperator__Group__1__Impl rule__MatchOperator__Group__2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4754:2: rule__MatchOperator__Group__1__Impl rule__MatchOperator__Group__2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4946:1: ( rule__MatchOperator__Group__1__Impl rule__MatchOperator__Group__2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4947:2: rule__MatchOperator__Group__1__Impl rule__MatchOperator__Group__2
             {
-            pushFollow(FOLLOW_rule__MatchOperator__Group__1__Impl_in_rule__MatchOperator__Group__19920);
+            pushFollow(FOLLOW_rule__MatchOperator__Group__1__Impl_in_rule__MatchOperator__Group__110297);
             rule__MatchOperator__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MatchOperator__Group__2_in_rule__MatchOperator__Group__19923);
+            pushFollow(FOLLOW_rule__MatchOperator__Group__2_in_rule__MatchOperator__Group__110300);
             rule__MatchOperator__Group__2();
 
             state._fsp--;
@@ -13352,20 +13817,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__Group__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4761:1: rule__MatchOperator__Group__1__Impl : ( '(' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4954:1: rule__MatchOperator__Group__1__Impl : ( '(' ) ;
     public final void rule__MatchOperator__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4765:1: ( ( '(' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4766:1: ( '(' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4958:1: ( ( '(' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4959:1: ( '(' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4766:1: ( '(' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4767:1: '('
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4959:1: ( '(' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4960:1: '('
             {
              before(grammarAccess.getMatchOperatorAccess().getLeftParenthesisKeyword_1()); 
-            match(input,35,FOLLOW_35_in_rule__MatchOperator__Group__1__Impl9951); 
+            match(input,35,FOLLOW_35_in_rule__MatchOperator__Group__1__Impl10328); 
              after(grammarAccess.getMatchOperatorAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -13389,21 +13854,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__Group__2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4780:1: rule__MatchOperator__Group__2 : rule__MatchOperator__Group__2__Impl rule__MatchOperator__Group__3 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4973:1: rule__MatchOperator__Group__2 : rule__MatchOperator__Group__2__Impl rule__MatchOperator__Group__3 ;
     public final void rule__MatchOperator__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4784:1: ( rule__MatchOperator__Group__2__Impl rule__MatchOperator__Group__3 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4785:2: rule__MatchOperator__Group__2__Impl rule__MatchOperator__Group__3
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4977:1: ( rule__MatchOperator__Group__2__Impl rule__MatchOperator__Group__3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4978:2: rule__MatchOperator__Group__2__Impl rule__MatchOperator__Group__3
             {
-            pushFollow(FOLLOW_rule__MatchOperator__Group__2__Impl_in_rule__MatchOperator__Group__29982);
+            pushFollow(FOLLOW_rule__MatchOperator__Group__2__Impl_in_rule__MatchOperator__Group__210359);
             rule__MatchOperator__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MatchOperator__Group__3_in_rule__MatchOperator__Group__29985);
+            pushFollow(FOLLOW_rule__MatchOperator__Group__3_in_rule__MatchOperator__Group__210362);
             rule__MatchOperator__Group__3();
 
             state._fsp--;
@@ -13427,23 +13892,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__Group__2__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4792:1: rule__MatchOperator__Group__2__Impl : ( ( rule__MatchOperator__ExpressionAssignment_2 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4985:1: rule__MatchOperator__Group__2__Impl : ( ( rule__MatchOperator__ExpressionAssignment_2 ) ) ;
     public final void rule__MatchOperator__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4796:1: ( ( ( rule__MatchOperator__ExpressionAssignment_2 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4797:1: ( ( rule__MatchOperator__ExpressionAssignment_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4989:1: ( ( ( rule__MatchOperator__ExpressionAssignment_2 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4990:1: ( ( rule__MatchOperator__ExpressionAssignment_2 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4797:1: ( ( rule__MatchOperator__ExpressionAssignment_2 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4798:1: ( rule__MatchOperator__ExpressionAssignment_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4990:1: ( ( rule__MatchOperator__ExpressionAssignment_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4991:1: ( rule__MatchOperator__ExpressionAssignment_2 )
             {
              before(grammarAccess.getMatchOperatorAccess().getExpressionAssignment_2()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4799:1: ( rule__MatchOperator__ExpressionAssignment_2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4799:2: rule__MatchOperator__ExpressionAssignment_2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4992:1: ( rule__MatchOperator__ExpressionAssignment_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4992:2: rule__MatchOperator__ExpressionAssignment_2
             {
-            pushFollow(FOLLOW_rule__MatchOperator__ExpressionAssignment_2_in_rule__MatchOperator__Group__2__Impl10012);
+            pushFollow(FOLLOW_rule__MatchOperator__ExpressionAssignment_2_in_rule__MatchOperator__Group__2__Impl10389);
             rule__MatchOperator__ExpressionAssignment_2();
 
             state._fsp--;
@@ -13474,21 +13939,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__Group__3"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4809:1: rule__MatchOperator__Group__3 : rule__MatchOperator__Group__3__Impl rule__MatchOperator__Group__4 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5002:1: rule__MatchOperator__Group__3 : rule__MatchOperator__Group__3__Impl rule__MatchOperator__Group__4 ;
     public final void rule__MatchOperator__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4813:1: ( rule__MatchOperator__Group__3__Impl rule__MatchOperator__Group__4 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4814:2: rule__MatchOperator__Group__3__Impl rule__MatchOperator__Group__4
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5006:1: ( rule__MatchOperator__Group__3__Impl rule__MatchOperator__Group__4 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5007:2: rule__MatchOperator__Group__3__Impl rule__MatchOperator__Group__4
             {
-            pushFollow(FOLLOW_rule__MatchOperator__Group__3__Impl_in_rule__MatchOperator__Group__310042);
+            pushFollow(FOLLOW_rule__MatchOperator__Group__3__Impl_in_rule__MatchOperator__Group__310419);
             rule__MatchOperator__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MatchOperator__Group__4_in_rule__MatchOperator__Group__310045);
+            pushFollow(FOLLOW_rule__MatchOperator__Group__4_in_rule__MatchOperator__Group__310422);
             rule__MatchOperator__Group__4();
 
             state._fsp--;
@@ -13512,20 +13977,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__Group__3__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4821:1: rule__MatchOperator__Group__3__Impl : ( ',' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5014:1: rule__MatchOperator__Group__3__Impl : ( ',' ) ;
     public final void rule__MatchOperator__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4825:1: ( ( ',' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4826:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5018:1: ( ( ',' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5019:1: ( ',' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4826:1: ( ',' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4827:1: ','
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5019:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5020:1: ','
             {
              before(grammarAccess.getMatchOperatorAccess().getCommaKeyword_3()); 
-            match(input,32,FOLLOW_32_in_rule__MatchOperator__Group__3__Impl10073); 
+            match(input,32,FOLLOW_32_in_rule__MatchOperator__Group__3__Impl10450); 
              after(grammarAccess.getMatchOperatorAccess().getCommaKeyword_3()); 
 
             }
@@ -13549,21 +14014,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__Group__4"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4840:1: rule__MatchOperator__Group__4 : rule__MatchOperator__Group__4__Impl rule__MatchOperator__Group__5 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5033:1: rule__MatchOperator__Group__4 : rule__MatchOperator__Group__4__Impl rule__MatchOperator__Group__5 ;
     public final void rule__MatchOperator__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4844:1: ( rule__MatchOperator__Group__4__Impl rule__MatchOperator__Group__5 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4845:2: rule__MatchOperator__Group__4__Impl rule__MatchOperator__Group__5
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5037:1: ( rule__MatchOperator__Group__4__Impl rule__MatchOperator__Group__5 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5038:2: rule__MatchOperator__Group__4__Impl rule__MatchOperator__Group__5
             {
-            pushFollow(FOLLOW_rule__MatchOperator__Group__4__Impl_in_rule__MatchOperator__Group__410104);
+            pushFollow(FOLLOW_rule__MatchOperator__Group__4__Impl_in_rule__MatchOperator__Group__410481);
             rule__MatchOperator__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MatchOperator__Group__5_in_rule__MatchOperator__Group__410107);
+            pushFollow(FOLLOW_rule__MatchOperator__Group__5_in_rule__MatchOperator__Group__410484);
             rule__MatchOperator__Group__5();
 
             state._fsp--;
@@ -13587,23 +14052,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__Group__4__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4852:1: rule__MatchOperator__Group__4__Impl : ( ( rule__MatchOperator__CalculationAssignment_4 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5045:1: rule__MatchOperator__Group__4__Impl : ( ( rule__MatchOperator__CalculationAssignment_4 ) ) ;
     public final void rule__MatchOperator__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4856:1: ( ( ( rule__MatchOperator__CalculationAssignment_4 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4857:1: ( ( rule__MatchOperator__CalculationAssignment_4 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5049:1: ( ( ( rule__MatchOperator__CalculationAssignment_4 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5050:1: ( ( rule__MatchOperator__CalculationAssignment_4 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4857:1: ( ( rule__MatchOperator__CalculationAssignment_4 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4858:1: ( rule__MatchOperator__CalculationAssignment_4 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5050:1: ( ( rule__MatchOperator__CalculationAssignment_4 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5051:1: ( rule__MatchOperator__CalculationAssignment_4 )
             {
              before(grammarAccess.getMatchOperatorAccess().getCalculationAssignment_4()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4859:1: ( rule__MatchOperator__CalculationAssignment_4 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4859:2: rule__MatchOperator__CalculationAssignment_4
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5052:1: ( rule__MatchOperator__CalculationAssignment_4 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5052:2: rule__MatchOperator__CalculationAssignment_4
             {
-            pushFollow(FOLLOW_rule__MatchOperator__CalculationAssignment_4_in_rule__MatchOperator__Group__4__Impl10134);
+            pushFollow(FOLLOW_rule__MatchOperator__CalculationAssignment_4_in_rule__MatchOperator__Group__4__Impl10511);
             rule__MatchOperator__CalculationAssignment_4();
 
             state._fsp--;
@@ -13634,21 +14099,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__Group__5"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4869:1: rule__MatchOperator__Group__5 : rule__MatchOperator__Group__5__Impl rule__MatchOperator__Group__6 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5062:1: rule__MatchOperator__Group__5 : rule__MatchOperator__Group__5__Impl rule__MatchOperator__Group__6 ;
     public final void rule__MatchOperator__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4873:1: ( rule__MatchOperator__Group__5__Impl rule__MatchOperator__Group__6 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4874:2: rule__MatchOperator__Group__5__Impl rule__MatchOperator__Group__6
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5066:1: ( rule__MatchOperator__Group__5__Impl rule__MatchOperator__Group__6 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5067:2: rule__MatchOperator__Group__5__Impl rule__MatchOperator__Group__6
             {
-            pushFollow(FOLLOW_rule__MatchOperator__Group__5__Impl_in_rule__MatchOperator__Group__510164);
+            pushFollow(FOLLOW_rule__MatchOperator__Group__5__Impl_in_rule__MatchOperator__Group__510541);
             rule__MatchOperator__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MatchOperator__Group__6_in_rule__MatchOperator__Group__510167);
+            pushFollow(FOLLOW_rule__MatchOperator__Group__6_in_rule__MatchOperator__Group__510544);
             rule__MatchOperator__Group__6();
 
             state._fsp--;
@@ -13672,20 +14137,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__Group__5__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4881:1: rule__MatchOperator__Group__5__Impl : ( ',' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5074:1: rule__MatchOperator__Group__5__Impl : ( ',' ) ;
     public final void rule__MatchOperator__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4885:1: ( ( ',' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4886:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5078:1: ( ( ',' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5079:1: ( ',' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4886:1: ( ',' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4887:1: ','
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5079:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5080:1: ','
             {
              before(grammarAccess.getMatchOperatorAccess().getCommaKeyword_5()); 
-            match(input,32,FOLLOW_32_in_rule__MatchOperator__Group__5__Impl10195); 
+            match(input,32,FOLLOW_32_in_rule__MatchOperator__Group__5__Impl10572); 
              after(grammarAccess.getMatchOperatorAccess().getCommaKeyword_5()); 
 
             }
@@ -13709,21 +14174,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__Group__6"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4900:1: rule__MatchOperator__Group__6 : rule__MatchOperator__Group__6__Impl rule__MatchOperator__Group__7 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5093:1: rule__MatchOperator__Group__6 : rule__MatchOperator__Group__6__Impl rule__MatchOperator__Group__7 ;
     public final void rule__MatchOperator__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4904:1: ( rule__MatchOperator__Group__6__Impl rule__MatchOperator__Group__7 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4905:2: rule__MatchOperator__Group__6__Impl rule__MatchOperator__Group__7
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5097:1: ( rule__MatchOperator__Group__6__Impl rule__MatchOperator__Group__7 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5098:2: rule__MatchOperator__Group__6__Impl rule__MatchOperator__Group__7
             {
-            pushFollow(FOLLOW_rule__MatchOperator__Group__6__Impl_in_rule__MatchOperator__Group__610226);
+            pushFollow(FOLLOW_rule__MatchOperator__Group__6__Impl_in_rule__MatchOperator__Group__610603);
             rule__MatchOperator__Group__6__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MatchOperator__Group__7_in_rule__MatchOperator__Group__610229);
+            pushFollow(FOLLOW_rule__MatchOperator__Group__7_in_rule__MatchOperator__Group__610606);
             rule__MatchOperator__Group__7();
 
             state._fsp--;
@@ -13747,23 +14212,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__Group__6__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4912:1: rule__MatchOperator__Group__6__Impl : ( ( rule__MatchOperator__StreamAssignment_6 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5105:1: rule__MatchOperator__Group__6__Impl : ( ( rule__MatchOperator__StreamAssignment_6 ) ) ;
     public final void rule__MatchOperator__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4916:1: ( ( ( rule__MatchOperator__StreamAssignment_6 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4917:1: ( ( rule__MatchOperator__StreamAssignment_6 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5109:1: ( ( ( rule__MatchOperator__StreamAssignment_6 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5110:1: ( ( rule__MatchOperator__StreamAssignment_6 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4917:1: ( ( rule__MatchOperator__StreamAssignment_6 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4918:1: ( rule__MatchOperator__StreamAssignment_6 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5110:1: ( ( rule__MatchOperator__StreamAssignment_6 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5111:1: ( rule__MatchOperator__StreamAssignment_6 )
             {
              before(grammarAccess.getMatchOperatorAccess().getStreamAssignment_6()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4919:1: ( rule__MatchOperator__StreamAssignment_6 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4919:2: rule__MatchOperator__StreamAssignment_6
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5112:1: ( rule__MatchOperator__StreamAssignment_6 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5112:2: rule__MatchOperator__StreamAssignment_6
             {
-            pushFollow(FOLLOW_rule__MatchOperator__StreamAssignment_6_in_rule__MatchOperator__Group__6__Impl10256);
+            pushFollow(FOLLOW_rule__MatchOperator__StreamAssignment_6_in_rule__MatchOperator__Group__6__Impl10633);
             rule__MatchOperator__StreamAssignment_6();
 
             state._fsp--;
@@ -13794,21 +14259,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__Group__7"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4929:1: rule__MatchOperator__Group__7 : rule__MatchOperator__Group__7__Impl rule__MatchOperator__Group__8 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5122:1: rule__MatchOperator__Group__7 : rule__MatchOperator__Group__7__Impl rule__MatchOperator__Group__8 ;
     public final void rule__MatchOperator__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4933:1: ( rule__MatchOperator__Group__7__Impl rule__MatchOperator__Group__8 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4934:2: rule__MatchOperator__Group__7__Impl rule__MatchOperator__Group__8
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5126:1: ( rule__MatchOperator__Group__7__Impl rule__MatchOperator__Group__8 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5127:2: rule__MatchOperator__Group__7__Impl rule__MatchOperator__Group__8
             {
-            pushFollow(FOLLOW_rule__MatchOperator__Group__7__Impl_in_rule__MatchOperator__Group__710286);
+            pushFollow(FOLLOW_rule__MatchOperator__Group__7__Impl_in_rule__MatchOperator__Group__710663);
             rule__MatchOperator__Group__7__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MatchOperator__Group__8_in_rule__MatchOperator__Group__710289);
+            pushFollow(FOLLOW_rule__MatchOperator__Group__8_in_rule__MatchOperator__Group__710666);
             rule__MatchOperator__Group__8();
 
             state._fsp--;
@@ -13832,20 +14297,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__Group__7__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4941:1: rule__MatchOperator__Group__7__Impl : ( ( rule__MatchOperator__Group_7__0 )* ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5134:1: rule__MatchOperator__Group__7__Impl : ( ( rule__MatchOperator__Group_7__0 )* ) ;
     public final void rule__MatchOperator__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4945:1: ( ( ( rule__MatchOperator__Group_7__0 )* ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4946:1: ( ( rule__MatchOperator__Group_7__0 )* )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5138:1: ( ( ( rule__MatchOperator__Group_7__0 )* ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5139:1: ( ( rule__MatchOperator__Group_7__0 )* )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4946:1: ( ( rule__MatchOperator__Group_7__0 )* )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4947:1: ( rule__MatchOperator__Group_7__0 )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5139:1: ( ( rule__MatchOperator__Group_7__0 )* )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5140:1: ( rule__MatchOperator__Group_7__0 )*
             {
              before(grammarAccess.getMatchOperatorAccess().getGroup_7()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4948:1: ( rule__MatchOperator__Group_7__0 )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5141:1: ( rule__MatchOperator__Group_7__0 )*
             loop29:
             do {
                 int alt29=2;
@@ -13858,9 +14323,9 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
                 switch (alt29) {
             	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4948:2: rule__MatchOperator__Group_7__0
+            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5141:2: rule__MatchOperator__Group_7__0
             	    {
-            	    pushFollow(FOLLOW_rule__MatchOperator__Group_7__0_in_rule__MatchOperator__Group__7__Impl10316);
+            	    pushFollow(FOLLOW_rule__MatchOperator__Group_7__0_in_rule__MatchOperator__Group__7__Impl10693);
             	    rule__MatchOperator__Group_7__0();
 
             	    state._fsp--;
@@ -13897,16 +14362,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__Group__8"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4958:1: rule__MatchOperator__Group__8 : rule__MatchOperator__Group__8__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5151:1: rule__MatchOperator__Group__8 : rule__MatchOperator__Group__8__Impl ;
     public final void rule__MatchOperator__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4962:1: ( rule__MatchOperator__Group__8__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4963:2: rule__MatchOperator__Group__8__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5155:1: ( rule__MatchOperator__Group__8__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5156:2: rule__MatchOperator__Group__8__Impl
             {
-            pushFollow(FOLLOW_rule__MatchOperator__Group__8__Impl_in_rule__MatchOperator__Group__810347);
+            pushFollow(FOLLOW_rule__MatchOperator__Group__8__Impl_in_rule__MatchOperator__Group__810724);
             rule__MatchOperator__Group__8__Impl();
 
             state._fsp--;
@@ -13930,20 +14395,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__Group__8__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4969:1: rule__MatchOperator__Group__8__Impl : ( ')' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5162:1: rule__MatchOperator__Group__8__Impl : ( ')' ) ;
     public final void rule__MatchOperator__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4973:1: ( ( ')' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4974:1: ( ')' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5166:1: ( ( ')' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5167:1: ( ')' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4974:1: ( ')' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:4975:1: ')'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5167:1: ( ')' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5168:1: ')'
             {
              before(grammarAccess.getMatchOperatorAccess().getRightParenthesisKeyword_8()); 
-            match(input,36,FOLLOW_36_in_rule__MatchOperator__Group__8__Impl10375); 
+            match(input,36,FOLLOW_36_in_rule__MatchOperator__Group__8__Impl10752); 
              after(grammarAccess.getMatchOperatorAccess().getRightParenthesisKeyword_8()); 
 
             }
@@ -13967,21 +14432,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__Group_7__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5006:1: rule__MatchOperator__Group_7__0 : rule__MatchOperator__Group_7__0__Impl rule__MatchOperator__Group_7__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5199:1: rule__MatchOperator__Group_7__0 : rule__MatchOperator__Group_7__0__Impl rule__MatchOperator__Group_7__1 ;
     public final void rule__MatchOperator__Group_7__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5010:1: ( rule__MatchOperator__Group_7__0__Impl rule__MatchOperator__Group_7__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5011:2: rule__MatchOperator__Group_7__0__Impl rule__MatchOperator__Group_7__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5203:1: ( rule__MatchOperator__Group_7__0__Impl rule__MatchOperator__Group_7__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5204:2: rule__MatchOperator__Group_7__0__Impl rule__MatchOperator__Group_7__1
             {
-            pushFollow(FOLLOW_rule__MatchOperator__Group_7__0__Impl_in_rule__MatchOperator__Group_7__010424);
+            pushFollow(FOLLOW_rule__MatchOperator__Group_7__0__Impl_in_rule__MatchOperator__Group_7__010801);
             rule__MatchOperator__Group_7__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MatchOperator__Group_7__1_in_rule__MatchOperator__Group_7__010427);
+            pushFollow(FOLLOW_rule__MatchOperator__Group_7__1_in_rule__MatchOperator__Group_7__010804);
             rule__MatchOperator__Group_7__1();
 
             state._fsp--;
@@ -14005,20 +14470,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__Group_7__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5018:1: rule__MatchOperator__Group_7__0__Impl : ( ',' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5211:1: rule__MatchOperator__Group_7__0__Impl : ( ',' ) ;
     public final void rule__MatchOperator__Group_7__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5022:1: ( ( ',' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5023:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5215:1: ( ( ',' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5216:1: ( ',' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5023:1: ( ',' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5024:1: ','
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5216:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5217:1: ','
             {
              before(grammarAccess.getMatchOperatorAccess().getCommaKeyword_7_0()); 
-            match(input,32,FOLLOW_32_in_rule__MatchOperator__Group_7__0__Impl10455); 
+            match(input,32,FOLLOW_32_in_rule__MatchOperator__Group_7__0__Impl10832); 
              after(grammarAccess.getMatchOperatorAccess().getCommaKeyword_7_0()); 
 
             }
@@ -14042,16 +14507,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__Group_7__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5037:1: rule__MatchOperator__Group_7__1 : rule__MatchOperator__Group_7__1__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5230:1: rule__MatchOperator__Group_7__1 : rule__MatchOperator__Group_7__1__Impl ;
     public final void rule__MatchOperator__Group_7__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5041:1: ( rule__MatchOperator__Group_7__1__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5042:2: rule__MatchOperator__Group_7__1__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5234:1: ( rule__MatchOperator__Group_7__1__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5235:2: rule__MatchOperator__Group_7__1__Impl
             {
-            pushFollow(FOLLOW_rule__MatchOperator__Group_7__1__Impl_in_rule__MatchOperator__Group_7__110486);
+            pushFollow(FOLLOW_rule__MatchOperator__Group_7__1__Impl_in_rule__MatchOperator__Group_7__110863);
             rule__MatchOperator__Group_7__1__Impl();
 
             state._fsp--;
@@ -14075,23 +14540,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__Group_7__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5048:1: rule__MatchOperator__Group_7__1__Impl : ( ( rule__MatchOperator__StreamAssignment_7_1 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5241:1: rule__MatchOperator__Group_7__1__Impl : ( ( rule__MatchOperator__StreamAssignment_7_1 ) ) ;
     public final void rule__MatchOperator__Group_7__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5052:1: ( ( ( rule__MatchOperator__StreamAssignment_7_1 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5053:1: ( ( rule__MatchOperator__StreamAssignment_7_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5245:1: ( ( ( rule__MatchOperator__StreamAssignment_7_1 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5246:1: ( ( rule__MatchOperator__StreamAssignment_7_1 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5053:1: ( ( rule__MatchOperator__StreamAssignment_7_1 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5054:1: ( rule__MatchOperator__StreamAssignment_7_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5246:1: ( ( rule__MatchOperator__StreamAssignment_7_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5247:1: ( rule__MatchOperator__StreamAssignment_7_1 )
             {
              before(grammarAccess.getMatchOperatorAccess().getStreamAssignment_7_1()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5055:1: ( rule__MatchOperator__StreamAssignment_7_1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5055:2: rule__MatchOperator__StreamAssignment_7_1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5248:1: ( rule__MatchOperator__StreamAssignment_7_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5248:2: rule__MatchOperator__StreamAssignment_7_1
             {
-            pushFollow(FOLLOW_rule__MatchOperator__StreamAssignment_7_1_in_rule__MatchOperator__Group_7__1__Impl10513);
+            pushFollow(FOLLOW_rule__MatchOperator__StreamAssignment_7_1_in_rule__MatchOperator__Group_7__1__Impl10890);
             rule__MatchOperator__StreamAssignment_7_1();
 
             state._fsp--;
@@ -14122,21 +14587,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5069:1: rule__InputOperator__Group__0 : rule__InputOperator__Group__0__Impl rule__InputOperator__Group__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5262:1: rule__InputOperator__Group__0 : rule__InputOperator__Group__0__Impl rule__InputOperator__Group__1 ;
     public final void rule__InputOperator__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5073:1: ( rule__InputOperator__Group__0__Impl rule__InputOperator__Group__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5074:2: rule__InputOperator__Group__0__Impl rule__InputOperator__Group__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5266:1: ( rule__InputOperator__Group__0__Impl rule__InputOperator__Group__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5267:2: rule__InputOperator__Group__0__Impl rule__InputOperator__Group__1
             {
-            pushFollow(FOLLOW_rule__InputOperator__Group__0__Impl_in_rule__InputOperator__Group__010547);
+            pushFollow(FOLLOW_rule__InputOperator__Group__0__Impl_in_rule__InputOperator__Group__010924);
             rule__InputOperator__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__InputOperator__Group__1_in_rule__InputOperator__Group__010550);
+            pushFollow(FOLLOW_rule__InputOperator__Group__1_in_rule__InputOperator__Group__010927);
             rule__InputOperator__Group__1();
 
             state._fsp--;
@@ -14160,20 +14625,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5081:1: rule__InputOperator__Group__0__Impl : ( 'in' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5274:1: rule__InputOperator__Group__0__Impl : ( 'in' ) ;
     public final void rule__InputOperator__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5085:1: ( ( 'in' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5086:1: ( 'in' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5278:1: ( ( 'in' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5279:1: ( 'in' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5086:1: ( 'in' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5087:1: 'in'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5279:1: ( 'in' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5280:1: 'in'
             {
              before(grammarAccess.getInputOperatorAccess().getInKeyword_0()); 
-            match(input,44,FOLLOW_44_in_rule__InputOperator__Group__0__Impl10578); 
+            match(input,45,FOLLOW_45_in_rule__InputOperator__Group__0__Impl10955); 
              after(grammarAccess.getInputOperatorAccess().getInKeyword_0()); 
 
             }
@@ -14197,21 +14662,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5100:1: rule__InputOperator__Group__1 : rule__InputOperator__Group__1__Impl rule__InputOperator__Group__2 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5293:1: rule__InputOperator__Group__1 : rule__InputOperator__Group__1__Impl rule__InputOperator__Group__2 ;
     public final void rule__InputOperator__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5104:1: ( rule__InputOperator__Group__1__Impl rule__InputOperator__Group__2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5105:2: rule__InputOperator__Group__1__Impl rule__InputOperator__Group__2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5297:1: ( rule__InputOperator__Group__1__Impl rule__InputOperator__Group__2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5298:2: rule__InputOperator__Group__1__Impl rule__InputOperator__Group__2
             {
-            pushFollow(FOLLOW_rule__InputOperator__Group__1__Impl_in_rule__InputOperator__Group__110609);
+            pushFollow(FOLLOW_rule__InputOperator__Group__1__Impl_in_rule__InputOperator__Group__110986);
             rule__InputOperator__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__InputOperator__Group__2_in_rule__InputOperator__Group__110612);
+            pushFollow(FOLLOW_rule__InputOperator__Group__2_in_rule__InputOperator__Group__110989);
             rule__InputOperator__Group__2();
 
             state._fsp--;
@@ -14235,20 +14700,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5112:1: rule__InputOperator__Group__1__Impl : ( '(' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5305:1: rule__InputOperator__Group__1__Impl : ( '(' ) ;
     public final void rule__InputOperator__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5116:1: ( ( '(' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5117:1: ( '(' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5309:1: ( ( '(' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5310:1: ( '(' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5117:1: ( '(' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5118:1: '('
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5310:1: ( '(' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5311:1: '('
             {
              before(grammarAccess.getInputOperatorAccess().getLeftParenthesisKeyword_1()); 
-            match(input,35,FOLLOW_35_in_rule__InputOperator__Group__1__Impl10640); 
+            match(input,35,FOLLOW_35_in_rule__InputOperator__Group__1__Impl11017); 
              after(grammarAccess.getInputOperatorAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -14272,21 +14737,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group__2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5131:1: rule__InputOperator__Group__2 : rule__InputOperator__Group__2__Impl rule__InputOperator__Group__3 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5324:1: rule__InputOperator__Group__2 : rule__InputOperator__Group__2__Impl rule__InputOperator__Group__3 ;
     public final void rule__InputOperator__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5135:1: ( rule__InputOperator__Group__2__Impl rule__InputOperator__Group__3 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5136:2: rule__InputOperator__Group__2__Impl rule__InputOperator__Group__3
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5328:1: ( rule__InputOperator__Group__2__Impl rule__InputOperator__Group__3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5329:2: rule__InputOperator__Group__2__Impl rule__InputOperator__Group__3
             {
-            pushFollow(FOLLOW_rule__InputOperator__Group__2__Impl_in_rule__InputOperator__Group__210671);
+            pushFollow(FOLLOW_rule__InputOperator__Group__2__Impl_in_rule__InputOperator__Group__211048);
             rule__InputOperator__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__InputOperator__Group__3_in_rule__InputOperator__Group__210674);
+            pushFollow(FOLLOW_rule__InputOperator__Group__3_in_rule__InputOperator__Group__211051);
             rule__InputOperator__Group__3();
 
             state._fsp--;
@@ -14310,23 +14775,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group__2__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5143:1: rule__InputOperator__Group__2__Impl : ( ( rule__InputOperator__IriAssignment_2 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5336:1: rule__InputOperator__Group__2__Impl : ( ( rule__InputOperator__IriAssignment_2 ) ) ;
     public final void rule__InputOperator__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5147:1: ( ( ( rule__InputOperator__IriAssignment_2 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5148:1: ( ( rule__InputOperator__IriAssignment_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5340:1: ( ( ( rule__InputOperator__IriAssignment_2 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5341:1: ( ( rule__InputOperator__IriAssignment_2 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5148:1: ( ( rule__InputOperator__IriAssignment_2 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5149:1: ( rule__InputOperator__IriAssignment_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5341:1: ( ( rule__InputOperator__IriAssignment_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5342:1: ( rule__InputOperator__IriAssignment_2 )
             {
              before(grammarAccess.getInputOperatorAccess().getIriAssignment_2()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5150:1: ( rule__InputOperator__IriAssignment_2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5150:2: rule__InputOperator__IriAssignment_2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5343:1: ( rule__InputOperator__IriAssignment_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5343:2: rule__InputOperator__IriAssignment_2
             {
-            pushFollow(FOLLOW_rule__InputOperator__IriAssignment_2_in_rule__InputOperator__Group__2__Impl10701);
+            pushFollow(FOLLOW_rule__InputOperator__IriAssignment_2_in_rule__InputOperator__Group__2__Impl11078);
             rule__InputOperator__IriAssignment_2();
 
             state._fsp--;
@@ -14357,21 +14822,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group__3"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5160:1: rule__InputOperator__Group__3 : rule__InputOperator__Group__3__Impl rule__InputOperator__Group__4 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5353:1: rule__InputOperator__Group__3 : rule__InputOperator__Group__3__Impl rule__InputOperator__Group__4 ;
     public final void rule__InputOperator__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5164:1: ( rule__InputOperator__Group__3__Impl rule__InputOperator__Group__4 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5165:2: rule__InputOperator__Group__3__Impl rule__InputOperator__Group__4
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5357:1: ( rule__InputOperator__Group__3__Impl rule__InputOperator__Group__4 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5358:2: rule__InputOperator__Group__3__Impl rule__InputOperator__Group__4
             {
-            pushFollow(FOLLOW_rule__InputOperator__Group__3__Impl_in_rule__InputOperator__Group__310731);
+            pushFollow(FOLLOW_rule__InputOperator__Group__3__Impl_in_rule__InputOperator__Group__311108);
             rule__InputOperator__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__InputOperator__Group__4_in_rule__InputOperator__Group__310734);
+            pushFollow(FOLLOW_rule__InputOperator__Group__4_in_rule__InputOperator__Group__311111);
             rule__InputOperator__Group__4();
 
             state._fsp--;
@@ -14395,20 +14860,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group__3__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5172:1: rule__InputOperator__Group__3__Impl : ( ( rule__InputOperator__Group_3__0 )* ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5365:1: rule__InputOperator__Group__3__Impl : ( ( rule__InputOperator__Group_3__0 )* ) ;
     public final void rule__InputOperator__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5176:1: ( ( ( rule__InputOperator__Group_3__0 )* ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5177:1: ( ( rule__InputOperator__Group_3__0 )* )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5369:1: ( ( ( rule__InputOperator__Group_3__0 )* ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5370:1: ( ( rule__InputOperator__Group_3__0 )* )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5177:1: ( ( rule__InputOperator__Group_3__0 )* )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5178:1: ( rule__InputOperator__Group_3__0 )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5370:1: ( ( rule__InputOperator__Group_3__0 )* )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5371:1: ( rule__InputOperator__Group_3__0 )*
             {
              before(grammarAccess.getInputOperatorAccess().getGroup_3()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5179:1: ( rule__InputOperator__Group_3__0 )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5372:1: ( rule__InputOperator__Group_3__0 )*
             loop30:
             do {
                 int alt30=2;
@@ -14439,9 +14904,9 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
                 switch (alt30) {
             	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5179:2: rule__InputOperator__Group_3__0
+            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5372:2: rule__InputOperator__Group_3__0
             	    {
-            	    pushFollow(FOLLOW_rule__InputOperator__Group_3__0_in_rule__InputOperator__Group__3__Impl10761);
+            	    pushFollow(FOLLOW_rule__InputOperator__Group_3__0_in_rule__InputOperator__Group__3__Impl11138);
             	    rule__InputOperator__Group_3__0();
 
             	    state._fsp--;
@@ -14478,21 +14943,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group__4"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5189:1: rule__InputOperator__Group__4 : rule__InputOperator__Group__4__Impl rule__InputOperator__Group__5 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5382:1: rule__InputOperator__Group__4 : rule__InputOperator__Group__4__Impl rule__InputOperator__Group__5 ;
     public final void rule__InputOperator__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5193:1: ( rule__InputOperator__Group__4__Impl rule__InputOperator__Group__5 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5194:2: rule__InputOperator__Group__4__Impl rule__InputOperator__Group__5
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5386:1: ( rule__InputOperator__Group__4__Impl rule__InputOperator__Group__5 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5387:2: rule__InputOperator__Group__4__Impl rule__InputOperator__Group__5
             {
-            pushFollow(FOLLOW_rule__InputOperator__Group__4__Impl_in_rule__InputOperator__Group__410792);
+            pushFollow(FOLLOW_rule__InputOperator__Group__4__Impl_in_rule__InputOperator__Group__411169);
             rule__InputOperator__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__InputOperator__Group__5_in_rule__InputOperator__Group__410795);
+            pushFollow(FOLLOW_rule__InputOperator__Group__5_in_rule__InputOperator__Group__411172);
             rule__InputOperator__Group__5();
 
             state._fsp--;
@@ -14516,20 +14981,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group__4__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5201:1: rule__InputOperator__Group__4__Impl : ( ',' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5394:1: rule__InputOperator__Group__4__Impl : ( ',' ) ;
     public final void rule__InputOperator__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5205:1: ( ( ',' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5206:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5398:1: ( ( ',' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5399:1: ( ',' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5206:1: ( ',' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5207:1: ','
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5399:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5400:1: ','
             {
              before(grammarAccess.getInputOperatorAccess().getCommaKeyword_4()); 
-            match(input,32,FOLLOW_32_in_rule__InputOperator__Group__4__Impl10823); 
+            match(input,32,FOLLOW_32_in_rule__InputOperator__Group__4__Impl11200); 
              after(grammarAccess.getInputOperatorAccess().getCommaKeyword_4()); 
 
             }
@@ -14553,21 +15018,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group__5"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5220:1: rule__InputOperator__Group__5 : rule__InputOperator__Group__5__Impl rule__InputOperator__Group__6 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5413:1: rule__InputOperator__Group__5 : rule__InputOperator__Group__5__Impl rule__InputOperator__Group__6 ;
     public final void rule__InputOperator__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5224:1: ( rule__InputOperator__Group__5__Impl rule__InputOperator__Group__6 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5225:2: rule__InputOperator__Group__5__Impl rule__InputOperator__Group__6
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5417:1: ( rule__InputOperator__Group__5__Impl rule__InputOperator__Group__6 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5418:2: rule__InputOperator__Group__5__Impl rule__InputOperator__Group__6
             {
-            pushFollow(FOLLOW_rule__InputOperator__Group__5__Impl_in_rule__InputOperator__Group__510854);
+            pushFollow(FOLLOW_rule__InputOperator__Group__5__Impl_in_rule__InputOperator__Group__511231);
             rule__InputOperator__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__InputOperator__Group__6_in_rule__InputOperator__Group__510857);
+            pushFollow(FOLLOW_rule__InputOperator__Group__6_in_rule__InputOperator__Group__511234);
             rule__InputOperator__Group__6();
 
             state._fsp--;
@@ -14591,23 +15056,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group__5__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5232:1: rule__InputOperator__Group__5__Impl : ( ( rule__InputOperator__AddressAssignment_5 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5425:1: rule__InputOperator__Group__5__Impl : ( ( rule__InputOperator__AddressAssignment_5 ) ) ;
     public final void rule__InputOperator__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5236:1: ( ( ( rule__InputOperator__AddressAssignment_5 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5237:1: ( ( rule__InputOperator__AddressAssignment_5 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5429:1: ( ( ( rule__InputOperator__AddressAssignment_5 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5430:1: ( ( rule__InputOperator__AddressAssignment_5 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5237:1: ( ( rule__InputOperator__AddressAssignment_5 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5238:1: ( rule__InputOperator__AddressAssignment_5 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5430:1: ( ( rule__InputOperator__AddressAssignment_5 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5431:1: ( rule__InputOperator__AddressAssignment_5 )
             {
              before(grammarAccess.getInputOperatorAccess().getAddressAssignment_5()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5239:1: ( rule__InputOperator__AddressAssignment_5 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5239:2: rule__InputOperator__AddressAssignment_5
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5432:1: ( rule__InputOperator__AddressAssignment_5 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5432:2: rule__InputOperator__AddressAssignment_5
             {
-            pushFollow(FOLLOW_rule__InputOperator__AddressAssignment_5_in_rule__InputOperator__Group__5__Impl10884);
+            pushFollow(FOLLOW_rule__InputOperator__AddressAssignment_5_in_rule__InputOperator__Group__5__Impl11261);
             rule__InputOperator__AddressAssignment_5();
 
             state._fsp--;
@@ -14638,21 +15103,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group__6"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5249:1: rule__InputOperator__Group__6 : rule__InputOperator__Group__6__Impl rule__InputOperator__Group__7 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5442:1: rule__InputOperator__Group__6 : rule__InputOperator__Group__6__Impl rule__InputOperator__Group__7 ;
     public final void rule__InputOperator__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5253:1: ( rule__InputOperator__Group__6__Impl rule__InputOperator__Group__7 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5254:2: rule__InputOperator__Group__6__Impl rule__InputOperator__Group__7
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5446:1: ( rule__InputOperator__Group__6__Impl rule__InputOperator__Group__7 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5447:2: rule__InputOperator__Group__6__Impl rule__InputOperator__Group__7
             {
-            pushFollow(FOLLOW_rule__InputOperator__Group__6__Impl_in_rule__InputOperator__Group__610914);
+            pushFollow(FOLLOW_rule__InputOperator__Group__6__Impl_in_rule__InputOperator__Group__611291);
             rule__InputOperator__Group__6__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__InputOperator__Group__7_in_rule__InputOperator__Group__610917);
+            pushFollow(FOLLOW_rule__InputOperator__Group__7_in_rule__InputOperator__Group__611294);
             rule__InputOperator__Group__7();
 
             state._fsp--;
@@ -14676,20 +15141,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group__6__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5261:1: rule__InputOperator__Group__6__Impl : ( ',' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5454:1: rule__InputOperator__Group__6__Impl : ( ',' ) ;
     public final void rule__InputOperator__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5265:1: ( ( ',' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5266:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5458:1: ( ( ',' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5459:1: ( ',' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5266:1: ( ',' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5267:1: ','
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5459:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5460:1: ','
             {
              before(grammarAccess.getInputOperatorAccess().getCommaKeyword_6()); 
-            match(input,32,FOLLOW_32_in_rule__InputOperator__Group__6__Impl10945); 
+            match(input,32,FOLLOW_32_in_rule__InputOperator__Group__6__Impl11322); 
              after(grammarAccess.getInputOperatorAccess().getCommaKeyword_6()); 
 
             }
@@ -14713,21 +15178,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group__7"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5280:1: rule__InputOperator__Group__7 : rule__InputOperator__Group__7__Impl rule__InputOperator__Group__8 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5473:1: rule__InputOperator__Group__7 : rule__InputOperator__Group__7__Impl rule__InputOperator__Group__8 ;
     public final void rule__InputOperator__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5284:1: ( rule__InputOperator__Group__7__Impl rule__InputOperator__Group__8 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5285:2: rule__InputOperator__Group__7__Impl rule__InputOperator__Group__8
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5477:1: ( rule__InputOperator__Group__7__Impl rule__InputOperator__Group__8 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5478:2: rule__InputOperator__Group__7__Impl rule__InputOperator__Group__8
             {
-            pushFollow(FOLLOW_rule__InputOperator__Group__7__Impl_in_rule__InputOperator__Group__710976);
+            pushFollow(FOLLOW_rule__InputOperator__Group__7__Impl_in_rule__InputOperator__Group__711353);
             rule__InputOperator__Group__7__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__InputOperator__Group__8_in_rule__InputOperator__Group__710979);
+            pushFollow(FOLLOW_rule__InputOperator__Group__8_in_rule__InputOperator__Group__711356);
             rule__InputOperator__Group__8();
 
             state._fsp--;
@@ -14751,23 +15216,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group__7__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5292:1: rule__InputOperator__Group__7__Impl : ( ( rule__InputOperator__PortAssignment_7 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5485:1: rule__InputOperator__Group__7__Impl : ( ( rule__InputOperator__PortAssignment_7 ) ) ;
     public final void rule__InputOperator__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5296:1: ( ( ( rule__InputOperator__PortAssignment_7 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5297:1: ( ( rule__InputOperator__PortAssignment_7 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5489:1: ( ( ( rule__InputOperator__PortAssignment_7 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5490:1: ( ( rule__InputOperator__PortAssignment_7 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5297:1: ( ( rule__InputOperator__PortAssignment_7 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5298:1: ( rule__InputOperator__PortAssignment_7 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5490:1: ( ( rule__InputOperator__PortAssignment_7 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5491:1: ( rule__InputOperator__PortAssignment_7 )
             {
              before(grammarAccess.getInputOperatorAccess().getPortAssignment_7()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5299:1: ( rule__InputOperator__PortAssignment_7 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5299:2: rule__InputOperator__PortAssignment_7
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5492:1: ( rule__InputOperator__PortAssignment_7 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5492:2: rule__InputOperator__PortAssignment_7
             {
-            pushFollow(FOLLOW_rule__InputOperator__PortAssignment_7_in_rule__InputOperator__Group__7__Impl11006);
+            pushFollow(FOLLOW_rule__InputOperator__PortAssignment_7_in_rule__InputOperator__Group__7__Impl11383);
             rule__InputOperator__PortAssignment_7();
 
             state._fsp--;
@@ -14798,16 +15263,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group__8"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5309:1: rule__InputOperator__Group__8 : rule__InputOperator__Group__8__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5502:1: rule__InputOperator__Group__8 : rule__InputOperator__Group__8__Impl ;
     public final void rule__InputOperator__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5313:1: ( rule__InputOperator__Group__8__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5314:2: rule__InputOperator__Group__8__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5506:1: ( rule__InputOperator__Group__8__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5507:2: rule__InputOperator__Group__8__Impl
             {
-            pushFollow(FOLLOW_rule__InputOperator__Group__8__Impl_in_rule__InputOperator__Group__811036);
+            pushFollow(FOLLOW_rule__InputOperator__Group__8__Impl_in_rule__InputOperator__Group__811413);
             rule__InputOperator__Group__8__Impl();
 
             state._fsp--;
@@ -14831,20 +15296,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group__8__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5320:1: rule__InputOperator__Group__8__Impl : ( ')' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5513:1: rule__InputOperator__Group__8__Impl : ( ')' ) ;
     public final void rule__InputOperator__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5324:1: ( ( ')' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5325:1: ( ')' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5517:1: ( ( ')' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5518:1: ( ')' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5325:1: ( ')' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5326:1: ')'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5518:1: ( ')' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5519:1: ')'
             {
              before(grammarAccess.getInputOperatorAccess().getRightParenthesisKeyword_8()); 
-            match(input,36,FOLLOW_36_in_rule__InputOperator__Group__8__Impl11064); 
+            match(input,36,FOLLOW_36_in_rule__InputOperator__Group__8__Impl11441); 
              after(grammarAccess.getInputOperatorAccess().getRightParenthesisKeyword_8()); 
 
             }
@@ -14868,21 +15333,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group_3__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5357:1: rule__InputOperator__Group_3__0 : rule__InputOperator__Group_3__0__Impl rule__InputOperator__Group_3__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5550:1: rule__InputOperator__Group_3__0 : rule__InputOperator__Group_3__0__Impl rule__InputOperator__Group_3__1 ;
     public final void rule__InputOperator__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5361:1: ( rule__InputOperator__Group_3__0__Impl rule__InputOperator__Group_3__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5362:2: rule__InputOperator__Group_3__0__Impl rule__InputOperator__Group_3__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5554:1: ( rule__InputOperator__Group_3__0__Impl rule__InputOperator__Group_3__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5555:2: rule__InputOperator__Group_3__0__Impl rule__InputOperator__Group_3__1
             {
-            pushFollow(FOLLOW_rule__InputOperator__Group_3__0__Impl_in_rule__InputOperator__Group_3__011113);
+            pushFollow(FOLLOW_rule__InputOperator__Group_3__0__Impl_in_rule__InputOperator__Group_3__011490);
             rule__InputOperator__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__InputOperator__Group_3__1_in_rule__InputOperator__Group_3__011116);
+            pushFollow(FOLLOW_rule__InputOperator__Group_3__1_in_rule__InputOperator__Group_3__011493);
             rule__InputOperator__Group_3__1();
 
             state._fsp--;
@@ -14906,20 +15371,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group_3__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5369:1: rule__InputOperator__Group_3__0__Impl : ( ',' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5562:1: rule__InputOperator__Group_3__0__Impl : ( ',' ) ;
     public final void rule__InputOperator__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5373:1: ( ( ',' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5374:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5566:1: ( ( ',' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5567:1: ( ',' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5374:1: ( ',' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5375:1: ','
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5567:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5568:1: ','
             {
              before(grammarAccess.getInputOperatorAccess().getCommaKeyword_3_0()); 
-            match(input,32,FOLLOW_32_in_rule__InputOperator__Group_3__0__Impl11144); 
+            match(input,32,FOLLOW_32_in_rule__InputOperator__Group_3__0__Impl11521); 
              after(grammarAccess.getInputOperatorAccess().getCommaKeyword_3_0()); 
 
             }
@@ -14943,16 +15408,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group_3__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5388:1: rule__InputOperator__Group_3__1 : rule__InputOperator__Group_3__1__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5581:1: rule__InputOperator__Group_3__1 : rule__InputOperator__Group_3__1__Impl ;
     public final void rule__InputOperator__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5392:1: ( rule__InputOperator__Group_3__1__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5393:2: rule__InputOperator__Group_3__1__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5585:1: ( rule__InputOperator__Group_3__1__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5586:2: rule__InputOperator__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__InputOperator__Group_3__1__Impl_in_rule__InputOperator__Group_3__111175);
+            pushFollow(FOLLOW_rule__InputOperator__Group_3__1__Impl_in_rule__InputOperator__Group_3__111552);
             rule__InputOperator__Group_3__1__Impl();
 
             state._fsp--;
@@ -14976,23 +15441,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__Group_3__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5399:1: rule__InputOperator__Group_3__1__Impl : ( ( rule__InputOperator__IriAssignment_3_1 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5592:1: rule__InputOperator__Group_3__1__Impl : ( ( rule__InputOperator__IriAssignment_3_1 ) ) ;
     public final void rule__InputOperator__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5403:1: ( ( ( rule__InputOperator__IriAssignment_3_1 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5404:1: ( ( rule__InputOperator__IriAssignment_3_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5596:1: ( ( ( rule__InputOperator__IriAssignment_3_1 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5597:1: ( ( rule__InputOperator__IriAssignment_3_1 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5404:1: ( ( rule__InputOperator__IriAssignment_3_1 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5405:1: ( rule__InputOperator__IriAssignment_3_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5597:1: ( ( rule__InputOperator__IriAssignment_3_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5598:1: ( rule__InputOperator__IriAssignment_3_1 )
             {
              before(grammarAccess.getInputOperatorAccess().getIriAssignment_3_1()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5406:1: ( rule__InputOperator__IriAssignment_3_1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5406:2: rule__InputOperator__IriAssignment_3_1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5599:1: ( rule__InputOperator__IriAssignment_3_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5599:2: rule__InputOperator__IriAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__InputOperator__IriAssignment_3_1_in_rule__InputOperator__Group_3__1__Impl11202);
+            pushFollow(FOLLOW_rule__InputOperator__IriAssignment_3_1_in_rule__InputOperator__Group_3__1__Impl11579);
             rule__InputOperator__IriAssignment_3_1();
 
             state._fsp--;
@@ -15023,21 +15488,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagOperator__Group__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5420:1: rule__TagOperator__Group__0 : rule__TagOperator__Group__0__Impl rule__TagOperator__Group__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5613:1: rule__TagOperator__Group__0 : rule__TagOperator__Group__0__Impl rule__TagOperator__Group__1 ;
     public final void rule__TagOperator__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5424:1: ( rule__TagOperator__Group__0__Impl rule__TagOperator__Group__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5425:2: rule__TagOperator__Group__0__Impl rule__TagOperator__Group__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5617:1: ( rule__TagOperator__Group__0__Impl rule__TagOperator__Group__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5618:2: rule__TagOperator__Group__0__Impl rule__TagOperator__Group__1
             {
-            pushFollow(FOLLOW_rule__TagOperator__Group__0__Impl_in_rule__TagOperator__Group__011236);
+            pushFollow(FOLLOW_rule__TagOperator__Group__0__Impl_in_rule__TagOperator__Group__011613);
             rule__TagOperator__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TagOperator__Group__1_in_rule__TagOperator__Group__011239);
+            pushFollow(FOLLOW_rule__TagOperator__Group__1_in_rule__TagOperator__Group__011616);
             rule__TagOperator__Group__1();
 
             state._fsp--;
@@ -15061,20 +15526,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagOperator__Group__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5432:1: rule__TagOperator__Group__0__Impl : ( 'tag' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5625:1: rule__TagOperator__Group__0__Impl : ( 'tag' ) ;
     public final void rule__TagOperator__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5436:1: ( ( 'tag' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5437:1: ( 'tag' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5629:1: ( ( 'tag' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5630:1: ( 'tag' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5437:1: ( 'tag' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5438:1: 'tag'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5630:1: ( 'tag' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5631:1: 'tag'
             {
              before(grammarAccess.getTagOperatorAccess().getTagKeyword_0()); 
-            match(input,45,FOLLOW_45_in_rule__TagOperator__Group__0__Impl11267); 
+            match(input,46,FOLLOW_46_in_rule__TagOperator__Group__0__Impl11644); 
              after(grammarAccess.getTagOperatorAccess().getTagKeyword_0()); 
 
             }
@@ -15098,21 +15563,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagOperator__Group__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5451:1: rule__TagOperator__Group__1 : rule__TagOperator__Group__1__Impl rule__TagOperator__Group__2 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5644:1: rule__TagOperator__Group__1 : rule__TagOperator__Group__1__Impl rule__TagOperator__Group__2 ;
     public final void rule__TagOperator__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5455:1: ( rule__TagOperator__Group__1__Impl rule__TagOperator__Group__2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5456:2: rule__TagOperator__Group__1__Impl rule__TagOperator__Group__2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5648:1: ( rule__TagOperator__Group__1__Impl rule__TagOperator__Group__2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5649:2: rule__TagOperator__Group__1__Impl rule__TagOperator__Group__2
             {
-            pushFollow(FOLLOW_rule__TagOperator__Group__1__Impl_in_rule__TagOperator__Group__111298);
+            pushFollow(FOLLOW_rule__TagOperator__Group__1__Impl_in_rule__TagOperator__Group__111675);
             rule__TagOperator__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TagOperator__Group__2_in_rule__TagOperator__Group__111301);
+            pushFollow(FOLLOW_rule__TagOperator__Group__2_in_rule__TagOperator__Group__111678);
             rule__TagOperator__Group__2();
 
             state._fsp--;
@@ -15136,20 +15601,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagOperator__Group__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5463:1: rule__TagOperator__Group__1__Impl : ( '(' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5656:1: rule__TagOperator__Group__1__Impl : ( '(' ) ;
     public final void rule__TagOperator__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5467:1: ( ( '(' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5468:1: ( '(' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5660:1: ( ( '(' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5661:1: ( '(' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5468:1: ( '(' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5469:1: '('
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5661:1: ( '(' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5662:1: '('
             {
              before(grammarAccess.getTagOperatorAccess().getLeftParenthesisKeyword_1()); 
-            match(input,35,FOLLOW_35_in_rule__TagOperator__Group__1__Impl11329); 
+            match(input,35,FOLLOW_35_in_rule__TagOperator__Group__1__Impl11706); 
              after(grammarAccess.getTagOperatorAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -15173,21 +15638,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagOperator__Group__2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5482:1: rule__TagOperator__Group__2 : rule__TagOperator__Group__2__Impl rule__TagOperator__Group__3 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5675:1: rule__TagOperator__Group__2 : rule__TagOperator__Group__2__Impl rule__TagOperator__Group__3 ;
     public final void rule__TagOperator__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5486:1: ( rule__TagOperator__Group__2__Impl rule__TagOperator__Group__3 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5487:2: rule__TagOperator__Group__2__Impl rule__TagOperator__Group__3
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5679:1: ( rule__TagOperator__Group__2__Impl rule__TagOperator__Group__3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5680:2: rule__TagOperator__Group__2__Impl rule__TagOperator__Group__3
             {
-            pushFollow(FOLLOW_rule__TagOperator__Group__2__Impl_in_rule__TagOperator__Group__211360);
+            pushFollow(FOLLOW_rule__TagOperator__Group__2__Impl_in_rule__TagOperator__Group__211737);
             rule__TagOperator__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TagOperator__Group__3_in_rule__TagOperator__Group__211363);
+            pushFollow(FOLLOW_rule__TagOperator__Group__3_in_rule__TagOperator__Group__211740);
             rule__TagOperator__Group__3();
 
             state._fsp--;
@@ -15211,23 +15676,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagOperator__Group__2__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5494:1: rule__TagOperator__Group__2__Impl : ( ( rule__TagOperator__ParametersAssignment_2 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5687:1: rule__TagOperator__Group__2__Impl : ( ( rule__TagOperator__ParametersAssignment_2 ) ) ;
     public final void rule__TagOperator__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5498:1: ( ( ( rule__TagOperator__ParametersAssignment_2 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5499:1: ( ( rule__TagOperator__ParametersAssignment_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5691:1: ( ( ( rule__TagOperator__ParametersAssignment_2 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5692:1: ( ( rule__TagOperator__ParametersAssignment_2 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5499:1: ( ( rule__TagOperator__ParametersAssignment_2 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5500:1: ( rule__TagOperator__ParametersAssignment_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5692:1: ( ( rule__TagOperator__ParametersAssignment_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5693:1: ( rule__TagOperator__ParametersAssignment_2 )
             {
              before(grammarAccess.getTagOperatorAccess().getParametersAssignment_2()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5501:1: ( rule__TagOperator__ParametersAssignment_2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5501:2: rule__TagOperator__ParametersAssignment_2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5694:1: ( rule__TagOperator__ParametersAssignment_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5694:2: rule__TagOperator__ParametersAssignment_2
             {
-            pushFollow(FOLLOW_rule__TagOperator__ParametersAssignment_2_in_rule__TagOperator__Group__2__Impl11390);
+            pushFollow(FOLLOW_rule__TagOperator__ParametersAssignment_2_in_rule__TagOperator__Group__2__Impl11767);
             rule__TagOperator__ParametersAssignment_2();
 
             state._fsp--;
@@ -15258,21 +15723,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagOperator__Group__3"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5511:1: rule__TagOperator__Group__3 : rule__TagOperator__Group__3__Impl rule__TagOperator__Group__4 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5704:1: rule__TagOperator__Group__3 : rule__TagOperator__Group__3__Impl rule__TagOperator__Group__4 ;
     public final void rule__TagOperator__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5515:1: ( rule__TagOperator__Group__3__Impl rule__TagOperator__Group__4 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5516:2: rule__TagOperator__Group__3__Impl rule__TagOperator__Group__4
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5708:1: ( rule__TagOperator__Group__3__Impl rule__TagOperator__Group__4 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5709:2: rule__TagOperator__Group__3__Impl rule__TagOperator__Group__4
             {
-            pushFollow(FOLLOW_rule__TagOperator__Group__3__Impl_in_rule__TagOperator__Group__311420);
+            pushFollow(FOLLOW_rule__TagOperator__Group__3__Impl_in_rule__TagOperator__Group__311797);
             rule__TagOperator__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TagOperator__Group__4_in_rule__TagOperator__Group__311423);
+            pushFollow(FOLLOW_rule__TagOperator__Group__4_in_rule__TagOperator__Group__311800);
             rule__TagOperator__Group__4();
 
             state._fsp--;
@@ -15296,20 +15761,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagOperator__Group__3__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5523:1: rule__TagOperator__Group__3__Impl : ( ( rule__TagOperator__Group_3__0 )* ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5716:1: rule__TagOperator__Group__3__Impl : ( ( rule__TagOperator__Group_3__0 )* ) ;
     public final void rule__TagOperator__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5527:1: ( ( ( rule__TagOperator__Group_3__0 )* ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5528:1: ( ( rule__TagOperator__Group_3__0 )* )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5720:1: ( ( ( rule__TagOperator__Group_3__0 )* ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5721:1: ( ( rule__TagOperator__Group_3__0 )* )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5528:1: ( ( rule__TagOperator__Group_3__0 )* )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5529:1: ( rule__TagOperator__Group_3__0 )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5721:1: ( ( rule__TagOperator__Group_3__0 )* )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5722:1: ( rule__TagOperator__Group_3__0 )*
             {
              before(grammarAccess.getTagOperatorAccess().getGroup_3()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5530:1: ( rule__TagOperator__Group_3__0 )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5723:1: ( rule__TagOperator__Group_3__0 )*
             loop31:
             do {
                 int alt31=2;
@@ -15322,9 +15787,9 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
                 switch (alt31) {
             	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5530:2: rule__TagOperator__Group_3__0
+            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5723:2: rule__TagOperator__Group_3__0
             	    {
-            	    pushFollow(FOLLOW_rule__TagOperator__Group_3__0_in_rule__TagOperator__Group__3__Impl11450);
+            	    pushFollow(FOLLOW_rule__TagOperator__Group_3__0_in_rule__TagOperator__Group__3__Impl11827);
             	    rule__TagOperator__Group_3__0();
 
             	    state._fsp--;
@@ -15361,16 +15826,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagOperator__Group__4"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5540:1: rule__TagOperator__Group__4 : rule__TagOperator__Group__4__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5733:1: rule__TagOperator__Group__4 : rule__TagOperator__Group__4__Impl ;
     public final void rule__TagOperator__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5544:1: ( rule__TagOperator__Group__4__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5545:2: rule__TagOperator__Group__4__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5737:1: ( rule__TagOperator__Group__4__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5738:2: rule__TagOperator__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__TagOperator__Group__4__Impl_in_rule__TagOperator__Group__411481);
+            pushFollow(FOLLOW_rule__TagOperator__Group__4__Impl_in_rule__TagOperator__Group__411858);
             rule__TagOperator__Group__4__Impl();
 
             state._fsp--;
@@ -15394,20 +15859,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagOperator__Group__4__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5551:1: rule__TagOperator__Group__4__Impl : ( ')' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5744:1: rule__TagOperator__Group__4__Impl : ( ')' ) ;
     public final void rule__TagOperator__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5555:1: ( ( ')' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5556:1: ( ')' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5748:1: ( ( ')' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5749:1: ( ')' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5556:1: ( ')' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5557:1: ')'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5749:1: ( ')' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5750:1: ')'
             {
              before(grammarAccess.getTagOperatorAccess().getRightParenthesisKeyword_4()); 
-            match(input,36,FOLLOW_36_in_rule__TagOperator__Group__4__Impl11509); 
+            match(input,36,FOLLOW_36_in_rule__TagOperator__Group__4__Impl11886); 
              after(grammarAccess.getTagOperatorAccess().getRightParenthesisKeyword_4()); 
 
             }
@@ -15431,21 +15896,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagOperator__Group_3__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5580:1: rule__TagOperator__Group_3__0 : rule__TagOperator__Group_3__0__Impl rule__TagOperator__Group_3__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5773:1: rule__TagOperator__Group_3__0 : rule__TagOperator__Group_3__0__Impl rule__TagOperator__Group_3__1 ;
     public final void rule__TagOperator__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5584:1: ( rule__TagOperator__Group_3__0__Impl rule__TagOperator__Group_3__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5585:2: rule__TagOperator__Group_3__0__Impl rule__TagOperator__Group_3__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5777:1: ( rule__TagOperator__Group_3__0__Impl rule__TagOperator__Group_3__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5778:2: rule__TagOperator__Group_3__0__Impl rule__TagOperator__Group_3__1
             {
-            pushFollow(FOLLOW_rule__TagOperator__Group_3__0__Impl_in_rule__TagOperator__Group_3__011550);
+            pushFollow(FOLLOW_rule__TagOperator__Group_3__0__Impl_in_rule__TagOperator__Group_3__011927);
             rule__TagOperator__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TagOperator__Group_3__1_in_rule__TagOperator__Group_3__011553);
+            pushFollow(FOLLOW_rule__TagOperator__Group_3__1_in_rule__TagOperator__Group_3__011930);
             rule__TagOperator__Group_3__1();
 
             state._fsp--;
@@ -15469,20 +15934,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagOperator__Group_3__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5592:1: rule__TagOperator__Group_3__0__Impl : ( ',' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5785:1: rule__TagOperator__Group_3__0__Impl : ( ',' ) ;
     public final void rule__TagOperator__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5596:1: ( ( ',' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5597:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5789:1: ( ( ',' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5790:1: ( ',' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5597:1: ( ',' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5598:1: ','
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5790:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5791:1: ','
             {
              before(grammarAccess.getTagOperatorAccess().getCommaKeyword_3_0()); 
-            match(input,32,FOLLOW_32_in_rule__TagOperator__Group_3__0__Impl11581); 
+            match(input,32,FOLLOW_32_in_rule__TagOperator__Group_3__0__Impl11958); 
              after(grammarAccess.getTagOperatorAccess().getCommaKeyword_3_0()); 
 
             }
@@ -15506,16 +15971,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagOperator__Group_3__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5611:1: rule__TagOperator__Group_3__1 : rule__TagOperator__Group_3__1__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5804:1: rule__TagOperator__Group_3__1 : rule__TagOperator__Group_3__1__Impl ;
     public final void rule__TagOperator__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5615:1: ( rule__TagOperator__Group_3__1__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5616:2: rule__TagOperator__Group_3__1__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5808:1: ( rule__TagOperator__Group_3__1__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5809:2: rule__TagOperator__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__TagOperator__Group_3__1__Impl_in_rule__TagOperator__Group_3__111612);
+            pushFollow(FOLLOW_rule__TagOperator__Group_3__1__Impl_in_rule__TagOperator__Group_3__111989);
             rule__TagOperator__Group_3__1__Impl();
 
             state._fsp--;
@@ -15539,23 +16004,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagOperator__Group_3__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5622:1: rule__TagOperator__Group_3__1__Impl : ( ( rule__TagOperator__ParametersAssignment_3_1 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5815:1: rule__TagOperator__Group_3__1__Impl : ( ( rule__TagOperator__ParametersAssignment_3_1 ) ) ;
     public final void rule__TagOperator__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5626:1: ( ( ( rule__TagOperator__ParametersAssignment_3_1 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5627:1: ( ( rule__TagOperator__ParametersAssignment_3_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5819:1: ( ( ( rule__TagOperator__ParametersAssignment_3_1 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5820:1: ( ( rule__TagOperator__ParametersAssignment_3_1 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5627:1: ( ( rule__TagOperator__ParametersAssignment_3_1 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5628:1: ( rule__TagOperator__ParametersAssignment_3_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5820:1: ( ( rule__TagOperator__ParametersAssignment_3_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5821:1: ( rule__TagOperator__ParametersAssignment_3_1 )
             {
              before(grammarAccess.getTagOperatorAccess().getParametersAssignment_3_1()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5629:1: ( rule__TagOperator__ParametersAssignment_3_1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5629:2: rule__TagOperator__ParametersAssignment_3_1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5822:1: ( rule__TagOperator__ParametersAssignment_3_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5822:2: rule__TagOperator__ParametersAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__TagOperator__ParametersAssignment_3_1_in_rule__TagOperator__Group_3__1__Impl11639);
+            pushFollow(FOLLOW_rule__TagOperator__ParametersAssignment_3_1_in_rule__TagOperator__Group_3__1__Impl12016);
             rule__TagOperator__ParametersAssignment_3_1();
 
             state._fsp--;
@@ -15586,21 +16051,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QueryTagOperator__Group__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5644:1: rule__QueryTagOperator__Group__0 : rule__QueryTagOperator__Group__0__Impl rule__QueryTagOperator__Group__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5837:1: rule__QueryTagOperator__Group__0 : rule__QueryTagOperator__Group__0__Impl rule__QueryTagOperator__Group__1 ;
     public final void rule__QueryTagOperator__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5648:1: ( rule__QueryTagOperator__Group__0__Impl rule__QueryTagOperator__Group__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5649:2: rule__QueryTagOperator__Group__0__Impl rule__QueryTagOperator__Group__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5841:1: ( rule__QueryTagOperator__Group__0__Impl rule__QueryTagOperator__Group__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5842:2: rule__QueryTagOperator__Group__0__Impl rule__QueryTagOperator__Group__1
             {
-            pushFollow(FOLLOW_rule__QueryTagOperator__Group__0__Impl_in_rule__QueryTagOperator__Group__011674);
+            pushFollow(FOLLOW_rule__QueryTagOperator__Group__0__Impl_in_rule__QueryTagOperator__Group__012051);
             rule__QueryTagOperator__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__QueryTagOperator__Group__1_in_rule__QueryTagOperator__Group__011677);
+            pushFollow(FOLLOW_rule__QueryTagOperator__Group__1_in_rule__QueryTagOperator__Group__012054);
             rule__QueryTagOperator__Group__1();
 
             state._fsp--;
@@ -15624,20 +16089,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QueryTagOperator__Group__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5656:1: rule__QueryTagOperator__Group__0__Impl : ( '{' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5849:1: rule__QueryTagOperator__Group__0__Impl : ( '{' ) ;
     public final void rule__QueryTagOperator__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5660:1: ( ( '{' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5661:1: ( '{' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5853:1: ( ( '{' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5854:1: ( '{' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5661:1: ( '{' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5662:1: '{'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5854:1: ( '{' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5855:1: '{'
             {
              before(grammarAccess.getQueryTagOperatorAccess().getLeftCurlyBracketKeyword_0()); 
-            match(input,27,FOLLOW_27_in_rule__QueryTagOperator__Group__0__Impl11705); 
+            match(input,27,FOLLOW_27_in_rule__QueryTagOperator__Group__0__Impl12082); 
              after(grammarAccess.getQueryTagOperatorAccess().getLeftCurlyBracketKeyword_0()); 
 
             }
@@ -15661,21 +16126,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QueryTagOperator__Group__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5675:1: rule__QueryTagOperator__Group__1 : rule__QueryTagOperator__Group__1__Impl rule__QueryTagOperator__Group__2 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5868:1: rule__QueryTagOperator__Group__1 : rule__QueryTagOperator__Group__1__Impl rule__QueryTagOperator__Group__2 ;
     public final void rule__QueryTagOperator__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5679:1: ( rule__QueryTagOperator__Group__1__Impl rule__QueryTagOperator__Group__2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5680:2: rule__QueryTagOperator__Group__1__Impl rule__QueryTagOperator__Group__2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5872:1: ( rule__QueryTagOperator__Group__1__Impl rule__QueryTagOperator__Group__2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5873:2: rule__QueryTagOperator__Group__1__Impl rule__QueryTagOperator__Group__2
             {
-            pushFollow(FOLLOW_rule__QueryTagOperator__Group__1__Impl_in_rule__QueryTagOperator__Group__111736);
+            pushFollow(FOLLOW_rule__QueryTagOperator__Group__1__Impl_in_rule__QueryTagOperator__Group__112113);
             rule__QueryTagOperator__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__QueryTagOperator__Group__2_in_rule__QueryTagOperator__Group__111739);
+            pushFollow(FOLLOW_rule__QueryTagOperator__Group__2_in_rule__QueryTagOperator__Group__112116);
             rule__QueryTagOperator__Group__2();
 
             state._fsp--;
@@ -15699,23 +16164,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QueryTagOperator__Group__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5687:1: rule__QueryTagOperator__Group__1__Impl : ( ( rule__QueryTagOperator__QueryTypeAssignment_1 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5880:1: rule__QueryTagOperator__Group__1__Impl : ( ( rule__QueryTagOperator__QueryTypeAssignment_1 ) ) ;
     public final void rule__QueryTagOperator__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5691:1: ( ( ( rule__QueryTagOperator__QueryTypeAssignment_1 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5692:1: ( ( rule__QueryTagOperator__QueryTypeAssignment_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5884:1: ( ( ( rule__QueryTagOperator__QueryTypeAssignment_1 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5885:1: ( ( rule__QueryTagOperator__QueryTypeAssignment_1 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5692:1: ( ( rule__QueryTagOperator__QueryTypeAssignment_1 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5693:1: ( rule__QueryTagOperator__QueryTypeAssignment_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5885:1: ( ( rule__QueryTagOperator__QueryTypeAssignment_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5886:1: ( rule__QueryTagOperator__QueryTypeAssignment_1 )
             {
              before(grammarAccess.getQueryTagOperatorAccess().getQueryTypeAssignment_1()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5694:1: ( rule__QueryTagOperator__QueryTypeAssignment_1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5694:2: rule__QueryTagOperator__QueryTypeAssignment_1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5887:1: ( rule__QueryTagOperator__QueryTypeAssignment_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5887:2: rule__QueryTagOperator__QueryTypeAssignment_1
             {
-            pushFollow(FOLLOW_rule__QueryTagOperator__QueryTypeAssignment_1_in_rule__QueryTagOperator__Group__1__Impl11766);
+            pushFollow(FOLLOW_rule__QueryTagOperator__QueryTypeAssignment_1_in_rule__QueryTagOperator__Group__1__Impl12143);
             rule__QueryTagOperator__QueryTypeAssignment_1();
 
             state._fsp--;
@@ -15746,21 +16211,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QueryTagOperator__Group__2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5704:1: rule__QueryTagOperator__Group__2 : rule__QueryTagOperator__Group__2__Impl rule__QueryTagOperator__Group__3 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5897:1: rule__QueryTagOperator__Group__2 : rule__QueryTagOperator__Group__2__Impl rule__QueryTagOperator__Group__3 ;
     public final void rule__QueryTagOperator__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5708:1: ( rule__QueryTagOperator__Group__2__Impl rule__QueryTagOperator__Group__3 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5709:2: rule__QueryTagOperator__Group__2__Impl rule__QueryTagOperator__Group__3
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5901:1: ( rule__QueryTagOperator__Group__2__Impl rule__QueryTagOperator__Group__3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5902:2: rule__QueryTagOperator__Group__2__Impl rule__QueryTagOperator__Group__3
             {
-            pushFollow(FOLLOW_rule__QueryTagOperator__Group__2__Impl_in_rule__QueryTagOperator__Group__211796);
+            pushFollow(FOLLOW_rule__QueryTagOperator__Group__2__Impl_in_rule__QueryTagOperator__Group__212173);
             rule__QueryTagOperator__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__QueryTagOperator__Group__3_in_rule__QueryTagOperator__Group__211799);
+            pushFollow(FOLLOW_rule__QueryTagOperator__Group__3_in_rule__QueryTagOperator__Group__212176);
             rule__QueryTagOperator__Group__3();
 
             state._fsp--;
@@ -15784,23 +16249,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QueryTagOperator__Group__2__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5716:1: rule__QueryTagOperator__Group__2__Impl : ( ( rule__QueryTagOperator__QueryAssignment_2 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5909:1: rule__QueryTagOperator__Group__2__Impl : ( ( rule__QueryTagOperator__QueryAssignment_2 ) ) ;
     public final void rule__QueryTagOperator__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5720:1: ( ( ( rule__QueryTagOperator__QueryAssignment_2 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5721:1: ( ( rule__QueryTagOperator__QueryAssignment_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5913:1: ( ( ( rule__QueryTagOperator__QueryAssignment_2 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5914:1: ( ( rule__QueryTagOperator__QueryAssignment_2 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5721:1: ( ( rule__QueryTagOperator__QueryAssignment_2 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5722:1: ( rule__QueryTagOperator__QueryAssignment_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5914:1: ( ( rule__QueryTagOperator__QueryAssignment_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5915:1: ( rule__QueryTagOperator__QueryAssignment_2 )
             {
              before(grammarAccess.getQueryTagOperatorAccess().getQueryAssignment_2()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5723:1: ( rule__QueryTagOperator__QueryAssignment_2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5723:2: rule__QueryTagOperator__QueryAssignment_2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5916:1: ( rule__QueryTagOperator__QueryAssignment_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5916:2: rule__QueryTagOperator__QueryAssignment_2
             {
-            pushFollow(FOLLOW_rule__QueryTagOperator__QueryAssignment_2_in_rule__QueryTagOperator__Group__2__Impl11826);
+            pushFollow(FOLLOW_rule__QueryTagOperator__QueryAssignment_2_in_rule__QueryTagOperator__Group__2__Impl12203);
             rule__QueryTagOperator__QueryAssignment_2();
 
             state._fsp--;
@@ -15831,16 +16296,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QueryTagOperator__Group__3"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5733:1: rule__QueryTagOperator__Group__3 : rule__QueryTagOperator__Group__3__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5926:1: rule__QueryTagOperator__Group__3 : rule__QueryTagOperator__Group__3__Impl ;
     public final void rule__QueryTagOperator__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5737:1: ( rule__QueryTagOperator__Group__3__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5738:2: rule__QueryTagOperator__Group__3__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5930:1: ( rule__QueryTagOperator__Group__3__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5931:2: rule__QueryTagOperator__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__QueryTagOperator__Group__3__Impl_in_rule__QueryTagOperator__Group__311856);
+            pushFollow(FOLLOW_rule__QueryTagOperator__Group__3__Impl_in_rule__QueryTagOperator__Group__312233);
             rule__QueryTagOperator__Group__3__Impl();
 
             state._fsp--;
@@ -15864,20 +16329,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QueryTagOperator__Group__3__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5744:1: rule__QueryTagOperator__Group__3__Impl : ( '}' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5937:1: rule__QueryTagOperator__Group__3__Impl : ( '}' ) ;
     public final void rule__QueryTagOperator__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5748:1: ( ( '}' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5749:1: ( '}' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5941:1: ( ( '}' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5942:1: ( '}' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5749:1: ( '}' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5750:1: '}'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5942:1: ( '}' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5943:1: '}'
             {
              before(grammarAccess.getQueryTagOperatorAccess().getRightCurlyBracketKeyword_3()); 
-            match(input,28,FOLLOW_28_in_rule__QueryTagOperator__Group__3__Impl11884); 
+            match(input,28,FOLLOW_28_in_rule__QueryTagOperator__Group__3__Impl12261); 
              after(grammarAccess.getQueryTagOperatorAccess().getRightCurlyBracketKeyword_3()); 
 
             }
@@ -15901,21 +16366,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SparqlQuery__Group__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5771:1: rule__SparqlQuery__Group__0 : rule__SparqlQuery__Group__0__Impl rule__SparqlQuery__Group__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5964:1: rule__SparqlQuery__Group__0 : rule__SparqlQuery__Group__0__Impl rule__SparqlQuery__Group__1 ;
     public final void rule__SparqlQuery__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5775:1: ( rule__SparqlQuery__Group__0__Impl rule__SparqlQuery__Group__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5776:2: rule__SparqlQuery__Group__0__Impl rule__SparqlQuery__Group__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5968:1: ( rule__SparqlQuery__Group__0__Impl rule__SparqlQuery__Group__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5969:2: rule__SparqlQuery__Group__0__Impl rule__SparqlQuery__Group__1
             {
-            pushFollow(FOLLOW_rule__SparqlQuery__Group__0__Impl_in_rule__SparqlQuery__Group__011923);
+            pushFollow(FOLLOW_rule__SparqlQuery__Group__0__Impl_in_rule__SparqlQuery__Group__012300);
             rule__SparqlQuery__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SparqlQuery__Group__1_in_rule__SparqlQuery__Group__011926);
+            pushFollow(FOLLOW_rule__SparqlQuery__Group__1_in_rule__SparqlQuery__Group__012303);
             rule__SparqlQuery__Group__1();
 
             state._fsp--;
@@ -15939,23 +16404,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SparqlQuery__Group__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5783:1: rule__SparqlQuery__Group__0__Impl : ( ( rule__SparqlQuery__VariableAssignment_0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5976:1: rule__SparqlQuery__Group__0__Impl : ( ( rule__SparqlQuery__VariableAssignment_0 ) ) ;
     public final void rule__SparqlQuery__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5787:1: ( ( ( rule__SparqlQuery__VariableAssignment_0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5788:1: ( ( rule__SparqlQuery__VariableAssignment_0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5980:1: ( ( ( rule__SparqlQuery__VariableAssignment_0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5981:1: ( ( rule__SparqlQuery__VariableAssignment_0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5788:1: ( ( rule__SparqlQuery__VariableAssignment_0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5789:1: ( rule__SparqlQuery__VariableAssignment_0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5981:1: ( ( rule__SparqlQuery__VariableAssignment_0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5982:1: ( rule__SparqlQuery__VariableAssignment_0 )
             {
              before(grammarAccess.getSparqlQueryAccess().getVariableAssignment_0()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5790:1: ( rule__SparqlQuery__VariableAssignment_0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5790:2: rule__SparqlQuery__VariableAssignment_0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5983:1: ( rule__SparqlQuery__VariableAssignment_0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5983:2: rule__SparqlQuery__VariableAssignment_0
             {
-            pushFollow(FOLLOW_rule__SparqlQuery__VariableAssignment_0_in_rule__SparqlQuery__Group__0__Impl11953);
+            pushFollow(FOLLOW_rule__SparqlQuery__VariableAssignment_0_in_rule__SparqlQuery__Group__0__Impl12330);
             rule__SparqlQuery__VariableAssignment_0();
 
             state._fsp--;
@@ -15986,21 +16451,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SparqlQuery__Group__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5800:1: rule__SparqlQuery__Group__1 : rule__SparqlQuery__Group__1__Impl rule__SparqlQuery__Group__2 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5993:1: rule__SparqlQuery__Group__1 : rule__SparqlQuery__Group__1__Impl rule__SparqlQuery__Group__2 ;
     public final void rule__SparqlQuery__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5804:1: ( rule__SparqlQuery__Group__1__Impl rule__SparqlQuery__Group__2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5805:2: rule__SparqlQuery__Group__1__Impl rule__SparqlQuery__Group__2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5997:1: ( rule__SparqlQuery__Group__1__Impl rule__SparqlQuery__Group__2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5998:2: rule__SparqlQuery__Group__1__Impl rule__SparqlQuery__Group__2
             {
-            pushFollow(FOLLOW_rule__SparqlQuery__Group__1__Impl_in_rule__SparqlQuery__Group__111983);
+            pushFollow(FOLLOW_rule__SparqlQuery__Group__1__Impl_in_rule__SparqlQuery__Group__112360);
             rule__SparqlQuery__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SparqlQuery__Group__2_in_rule__SparqlQuery__Group__111986);
+            pushFollow(FOLLOW_rule__SparqlQuery__Group__2_in_rule__SparqlQuery__Group__112363);
             rule__SparqlQuery__Group__2();
 
             state._fsp--;
@@ -16024,20 +16489,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SparqlQuery__Group__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5812:1: rule__SparqlQuery__Group__1__Impl : ( 'WHERE' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6005:1: rule__SparqlQuery__Group__1__Impl : ( 'WHERE' ) ;
     public final void rule__SparqlQuery__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5816:1: ( ( 'WHERE' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5817:1: ( 'WHERE' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6009:1: ( ( 'WHERE' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6010:1: ( 'WHERE' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5817:1: ( 'WHERE' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5818:1: 'WHERE'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6010:1: ( 'WHERE' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6011:1: 'WHERE'
             {
              before(grammarAccess.getSparqlQueryAccess().getWHEREKeyword_1()); 
-            match(input,46,FOLLOW_46_in_rule__SparqlQuery__Group__1__Impl12014); 
+            match(input,47,FOLLOW_47_in_rule__SparqlQuery__Group__1__Impl12391); 
              after(grammarAccess.getSparqlQueryAccess().getWHEREKeyword_1()); 
 
             }
@@ -16061,21 +16526,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SparqlQuery__Group__2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5831:1: rule__SparqlQuery__Group__2 : rule__SparqlQuery__Group__2__Impl rule__SparqlQuery__Group__3 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6024:1: rule__SparqlQuery__Group__2 : rule__SparqlQuery__Group__2__Impl rule__SparqlQuery__Group__3 ;
     public final void rule__SparqlQuery__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5835:1: ( rule__SparqlQuery__Group__2__Impl rule__SparqlQuery__Group__3 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5836:2: rule__SparqlQuery__Group__2__Impl rule__SparqlQuery__Group__3
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6028:1: ( rule__SparqlQuery__Group__2__Impl rule__SparqlQuery__Group__3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6029:2: rule__SparqlQuery__Group__2__Impl rule__SparqlQuery__Group__3
             {
-            pushFollow(FOLLOW_rule__SparqlQuery__Group__2__Impl_in_rule__SparqlQuery__Group__212045);
+            pushFollow(FOLLOW_rule__SparqlQuery__Group__2__Impl_in_rule__SparqlQuery__Group__212422);
             rule__SparqlQuery__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SparqlQuery__Group__3_in_rule__SparqlQuery__Group__212048);
+            pushFollow(FOLLOW_rule__SparqlQuery__Group__3_in_rule__SparqlQuery__Group__212425);
             rule__SparqlQuery__Group__3();
 
             state._fsp--;
@@ -16099,20 +16564,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SparqlQuery__Group__2__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5843:1: rule__SparqlQuery__Group__2__Impl : ( '{' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6036:1: rule__SparqlQuery__Group__2__Impl : ( '{' ) ;
     public final void rule__SparqlQuery__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5847:1: ( ( '{' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5848:1: ( '{' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6040:1: ( ( '{' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6041:1: ( '{' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5848:1: ( '{' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5849:1: '{'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6041:1: ( '{' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6042:1: '{'
             {
              before(grammarAccess.getSparqlQueryAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,27,FOLLOW_27_in_rule__SparqlQuery__Group__2__Impl12076); 
+            match(input,27,FOLLOW_27_in_rule__SparqlQuery__Group__2__Impl12453); 
              after(grammarAccess.getSparqlQueryAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -16136,16 +16601,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SparqlQuery__Group__3"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5862:1: rule__SparqlQuery__Group__3 : rule__SparqlQuery__Group__3__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6055:1: rule__SparqlQuery__Group__3 : rule__SparqlQuery__Group__3__Impl ;
     public final void rule__SparqlQuery__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5866:1: ( rule__SparqlQuery__Group__3__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5867:2: rule__SparqlQuery__Group__3__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6059:1: ( rule__SparqlQuery__Group__3__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6060:2: rule__SparqlQuery__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__SparqlQuery__Group__3__Impl_in_rule__SparqlQuery__Group__312107);
+            pushFollow(FOLLOW_rule__SparqlQuery__Group__3__Impl_in_rule__SparqlQuery__Group__312484);
             rule__SparqlQuery__Group__3__Impl();
 
             state._fsp--;
@@ -16169,20 +16634,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SparqlQuery__Group__3__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5873:1: rule__SparqlQuery__Group__3__Impl : ( '}' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6066:1: rule__SparqlQuery__Group__3__Impl : ( '}' ) ;
     public final void rule__SparqlQuery__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5877:1: ( ( '}' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5878:1: ( '}' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6070:1: ( ( '}' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6071:1: ( '}' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5878:1: ( '}' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5879:1: '}'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6071:1: ( '}' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6072:1: '}'
             {
              before(grammarAccess.getSparqlQueryAccess().getRightCurlyBracketKeyword_3()); 
-            match(input,28,FOLLOW_28_in_rule__SparqlQuery__Group__3__Impl12135); 
+            match(input,28,FOLLOW_28_in_rule__SparqlQuery__Group__3__Impl12512); 
              after(grammarAccess.getSparqlQueryAccess().getRightCurlyBracketKeyword_3()); 
 
             }
@@ -16206,21 +16671,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SparqlQueryVariable__Group__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5900:1: rule__SparqlQueryVariable__Group__0 : rule__SparqlQueryVariable__Group__0__Impl rule__SparqlQueryVariable__Group__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6093:1: rule__SparqlQueryVariable__Group__0 : rule__SparqlQueryVariable__Group__0__Impl rule__SparqlQueryVariable__Group__1 ;
     public final void rule__SparqlQueryVariable__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5904:1: ( rule__SparqlQueryVariable__Group__0__Impl rule__SparqlQueryVariable__Group__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5905:2: rule__SparqlQueryVariable__Group__0__Impl rule__SparqlQueryVariable__Group__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6097:1: ( rule__SparqlQueryVariable__Group__0__Impl rule__SparqlQueryVariable__Group__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6098:2: rule__SparqlQueryVariable__Group__0__Impl rule__SparqlQueryVariable__Group__1
             {
-            pushFollow(FOLLOW_rule__SparqlQueryVariable__Group__0__Impl_in_rule__SparqlQueryVariable__Group__012174);
+            pushFollow(FOLLOW_rule__SparqlQueryVariable__Group__0__Impl_in_rule__SparqlQueryVariable__Group__012551);
             rule__SparqlQueryVariable__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SparqlQueryVariable__Group__1_in_rule__SparqlQueryVariable__Group__012177);
+            pushFollow(FOLLOW_rule__SparqlQueryVariable__Group__1_in_rule__SparqlQueryVariable__Group__012554);
             rule__SparqlQueryVariable__Group__1();
 
             state._fsp--;
@@ -16244,20 +16709,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SparqlQueryVariable__Group__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5912:1: rule__SparqlQueryVariable__Group__0__Impl : ( '?' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6105:1: rule__SparqlQueryVariable__Group__0__Impl : ( '?' ) ;
     public final void rule__SparqlQueryVariable__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5916:1: ( ( '?' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5917:1: ( '?' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6109:1: ( ( '?' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6110:1: ( '?' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5917:1: ( '?' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5918:1: '?'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6110:1: ( '?' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6111:1: '?'
             {
              before(grammarAccess.getSparqlQueryVariableAccess().getQuestionMarkKeyword_0()); 
-            match(input,47,FOLLOW_47_in_rule__SparqlQueryVariable__Group__0__Impl12205); 
+            match(input,48,FOLLOW_48_in_rule__SparqlQueryVariable__Group__0__Impl12582); 
              after(grammarAccess.getSparqlQueryVariableAccess().getQuestionMarkKeyword_0()); 
 
             }
@@ -16281,21 +16746,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SparqlQueryVariable__Group__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5931:1: rule__SparqlQueryVariable__Group__1 : rule__SparqlQueryVariable__Group__1__Impl rule__SparqlQueryVariable__Group__2 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6124:1: rule__SparqlQueryVariable__Group__1 : rule__SparqlQueryVariable__Group__1__Impl rule__SparqlQueryVariable__Group__2 ;
     public final void rule__SparqlQueryVariable__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5935:1: ( rule__SparqlQueryVariable__Group__1__Impl rule__SparqlQueryVariable__Group__2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5936:2: rule__SparqlQueryVariable__Group__1__Impl rule__SparqlQueryVariable__Group__2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6128:1: ( rule__SparqlQueryVariable__Group__1__Impl rule__SparqlQueryVariable__Group__2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6129:2: rule__SparqlQueryVariable__Group__1__Impl rule__SparqlQueryVariable__Group__2
             {
-            pushFollow(FOLLOW_rule__SparqlQueryVariable__Group__1__Impl_in_rule__SparqlQueryVariable__Group__112236);
+            pushFollow(FOLLOW_rule__SparqlQueryVariable__Group__1__Impl_in_rule__SparqlQueryVariable__Group__112613);
             rule__SparqlQueryVariable__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SparqlQueryVariable__Group__2_in_rule__SparqlQueryVariable__Group__112239);
+            pushFollow(FOLLOW_rule__SparqlQueryVariable__Group__2_in_rule__SparqlQueryVariable__Group__112616);
             rule__SparqlQueryVariable__Group__2();
 
             state._fsp--;
@@ -16319,23 +16784,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SparqlQueryVariable__Group__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5943:1: rule__SparqlQueryVariable__Group__1__Impl : ( ( rule__SparqlQueryVariable__VariableAssignment_1 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6136:1: rule__SparqlQueryVariable__Group__1__Impl : ( ( rule__SparqlQueryVariable__VariableAssignment_1 ) ) ;
     public final void rule__SparqlQueryVariable__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5947:1: ( ( ( rule__SparqlQueryVariable__VariableAssignment_1 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5948:1: ( ( rule__SparqlQueryVariable__VariableAssignment_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6140:1: ( ( ( rule__SparqlQueryVariable__VariableAssignment_1 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6141:1: ( ( rule__SparqlQueryVariable__VariableAssignment_1 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5948:1: ( ( rule__SparqlQueryVariable__VariableAssignment_1 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5949:1: ( rule__SparqlQueryVariable__VariableAssignment_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6141:1: ( ( rule__SparqlQueryVariable__VariableAssignment_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6142:1: ( rule__SparqlQueryVariable__VariableAssignment_1 )
             {
              before(grammarAccess.getSparqlQueryVariableAccess().getVariableAssignment_1()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5950:1: ( rule__SparqlQueryVariable__VariableAssignment_1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5950:2: rule__SparqlQueryVariable__VariableAssignment_1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6143:1: ( rule__SparqlQueryVariable__VariableAssignment_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6143:2: rule__SparqlQueryVariable__VariableAssignment_1
             {
-            pushFollow(FOLLOW_rule__SparqlQueryVariable__VariableAssignment_1_in_rule__SparqlQueryVariable__Group__1__Impl12266);
+            pushFollow(FOLLOW_rule__SparqlQueryVariable__VariableAssignment_1_in_rule__SparqlQueryVariable__Group__1__Impl12643);
             rule__SparqlQueryVariable__VariableAssignment_1();
 
             state._fsp--;
@@ -16366,16 +16831,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SparqlQueryVariable__Group__2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5960:1: rule__SparqlQueryVariable__Group__2 : rule__SparqlQueryVariable__Group__2__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6153:1: rule__SparqlQueryVariable__Group__2 : rule__SparqlQueryVariable__Group__2__Impl ;
     public final void rule__SparqlQueryVariable__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5964:1: ( rule__SparqlQueryVariable__Group__2__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5965:2: rule__SparqlQueryVariable__Group__2__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6157:1: ( rule__SparqlQueryVariable__Group__2__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6158:2: rule__SparqlQueryVariable__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__SparqlQueryVariable__Group__2__Impl_in_rule__SparqlQueryVariable__Group__212296);
+            pushFollow(FOLLOW_rule__SparqlQueryVariable__Group__2__Impl_in_rule__SparqlQueryVariable__Group__212673);
             rule__SparqlQueryVariable__Group__2__Impl();
 
             state._fsp--;
@@ -16399,35 +16864,35 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SparqlQueryVariable__Group__2__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5971:1: rule__SparqlQueryVariable__Group__2__Impl : ( ( rule__SparqlQueryVariable__Group_2__0 )* ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6164:1: rule__SparqlQueryVariable__Group__2__Impl : ( ( rule__SparqlQueryVariable__Group_2__0 )* ) ;
     public final void rule__SparqlQueryVariable__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5975:1: ( ( ( rule__SparqlQueryVariable__Group_2__0 )* ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5976:1: ( ( rule__SparqlQueryVariable__Group_2__0 )* )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6168:1: ( ( ( rule__SparqlQueryVariable__Group_2__0 )* ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6169:1: ( ( rule__SparqlQueryVariable__Group_2__0 )* )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5976:1: ( ( rule__SparqlQueryVariable__Group_2__0 )* )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5977:1: ( rule__SparqlQueryVariable__Group_2__0 )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6169:1: ( ( rule__SparqlQueryVariable__Group_2__0 )* )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6170:1: ( rule__SparqlQueryVariable__Group_2__0 )*
             {
              before(grammarAccess.getSparqlQueryVariableAccess().getGroup_2()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5978:1: ( rule__SparqlQueryVariable__Group_2__0 )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6171:1: ( rule__SparqlQueryVariable__Group_2__0 )*
             loop32:
             do {
                 int alt32=2;
                 int LA32_0 = input.LA(1);
 
-                if ( (LA32_0==47) ) {
+                if ( (LA32_0==48) ) {
                     alt32=1;
                 }
 
 
                 switch (alt32) {
             	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5978:2: rule__SparqlQueryVariable__Group_2__0
+            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6171:2: rule__SparqlQueryVariable__Group_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__SparqlQueryVariable__Group_2__0_in_rule__SparqlQueryVariable__Group__2__Impl12323);
+            	    pushFollow(FOLLOW_rule__SparqlQueryVariable__Group_2__0_in_rule__SparqlQueryVariable__Group__2__Impl12700);
             	    rule__SparqlQueryVariable__Group_2__0();
 
             	    state._fsp--;
@@ -16464,21 +16929,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SparqlQueryVariable__Group_2__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5994:1: rule__SparqlQueryVariable__Group_2__0 : rule__SparqlQueryVariable__Group_2__0__Impl rule__SparqlQueryVariable__Group_2__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6187:1: rule__SparqlQueryVariable__Group_2__0 : rule__SparqlQueryVariable__Group_2__0__Impl rule__SparqlQueryVariable__Group_2__1 ;
     public final void rule__SparqlQueryVariable__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5998:1: ( rule__SparqlQueryVariable__Group_2__0__Impl rule__SparqlQueryVariable__Group_2__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:5999:2: rule__SparqlQueryVariable__Group_2__0__Impl rule__SparqlQueryVariable__Group_2__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6191:1: ( rule__SparqlQueryVariable__Group_2__0__Impl rule__SparqlQueryVariable__Group_2__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6192:2: rule__SparqlQueryVariable__Group_2__0__Impl rule__SparqlQueryVariable__Group_2__1
             {
-            pushFollow(FOLLOW_rule__SparqlQueryVariable__Group_2__0__Impl_in_rule__SparqlQueryVariable__Group_2__012360);
+            pushFollow(FOLLOW_rule__SparqlQueryVariable__Group_2__0__Impl_in_rule__SparqlQueryVariable__Group_2__012737);
             rule__SparqlQueryVariable__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SparqlQueryVariable__Group_2__1_in_rule__SparqlQueryVariable__Group_2__012363);
+            pushFollow(FOLLOW_rule__SparqlQueryVariable__Group_2__1_in_rule__SparqlQueryVariable__Group_2__012740);
             rule__SparqlQueryVariable__Group_2__1();
 
             state._fsp--;
@@ -16502,20 +16967,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SparqlQueryVariable__Group_2__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6006:1: rule__SparqlQueryVariable__Group_2__0__Impl : ( '?' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6199:1: rule__SparqlQueryVariable__Group_2__0__Impl : ( '?' ) ;
     public final void rule__SparqlQueryVariable__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6010:1: ( ( '?' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6011:1: ( '?' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6203:1: ( ( '?' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6204:1: ( '?' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6011:1: ( '?' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6012:1: '?'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6204:1: ( '?' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6205:1: '?'
             {
              before(grammarAccess.getSparqlQueryVariableAccess().getQuestionMarkKeyword_2_0()); 
-            match(input,47,FOLLOW_47_in_rule__SparqlQueryVariable__Group_2__0__Impl12391); 
+            match(input,48,FOLLOW_48_in_rule__SparqlQueryVariable__Group_2__0__Impl12768); 
              after(grammarAccess.getSparqlQueryVariableAccess().getQuestionMarkKeyword_2_0()); 
 
             }
@@ -16539,16 +17004,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SparqlQueryVariable__Group_2__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6025:1: rule__SparqlQueryVariable__Group_2__1 : rule__SparqlQueryVariable__Group_2__1__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6218:1: rule__SparqlQueryVariable__Group_2__1 : rule__SparqlQueryVariable__Group_2__1__Impl ;
     public final void rule__SparqlQueryVariable__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6029:1: ( rule__SparqlQueryVariable__Group_2__1__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6030:2: rule__SparqlQueryVariable__Group_2__1__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6222:1: ( rule__SparqlQueryVariable__Group_2__1__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6223:2: rule__SparqlQueryVariable__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__SparqlQueryVariable__Group_2__1__Impl_in_rule__SparqlQueryVariable__Group_2__112422);
+            pushFollow(FOLLOW_rule__SparqlQueryVariable__Group_2__1__Impl_in_rule__SparqlQueryVariable__Group_2__112799);
             rule__SparqlQueryVariable__Group_2__1__Impl();
 
             state._fsp--;
@@ -16572,23 +17037,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SparqlQueryVariable__Group_2__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6036:1: rule__SparqlQueryVariable__Group_2__1__Impl : ( ( rule__SparqlQueryVariable__VariableAssignment_2_1 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6229:1: rule__SparqlQueryVariable__Group_2__1__Impl : ( ( rule__SparqlQueryVariable__VariableAssignment_2_1 ) ) ;
     public final void rule__SparqlQueryVariable__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6040:1: ( ( ( rule__SparqlQueryVariable__VariableAssignment_2_1 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6041:1: ( ( rule__SparqlQueryVariable__VariableAssignment_2_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6233:1: ( ( ( rule__SparqlQueryVariable__VariableAssignment_2_1 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6234:1: ( ( rule__SparqlQueryVariable__VariableAssignment_2_1 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6041:1: ( ( rule__SparqlQueryVariable__VariableAssignment_2_1 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6042:1: ( rule__SparqlQueryVariable__VariableAssignment_2_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6234:1: ( ( rule__SparqlQueryVariable__VariableAssignment_2_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6235:1: ( rule__SparqlQueryVariable__VariableAssignment_2_1 )
             {
              before(grammarAccess.getSparqlQueryVariableAccess().getVariableAssignment_2_1()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6043:1: ( rule__SparqlQueryVariable__VariableAssignment_2_1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6043:2: rule__SparqlQueryVariable__VariableAssignment_2_1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6236:1: ( rule__SparqlQueryVariable__VariableAssignment_2_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6236:2: rule__SparqlQueryVariable__VariableAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__SparqlQueryVariable__VariableAssignment_2_1_in_rule__SparqlQueryVariable__Group_2__1__Impl12449);
+            pushFollow(FOLLOW_rule__SparqlQueryVariable__VariableAssignment_2_1_in_rule__SparqlQueryVariable__Group_2__1__Impl12826);
             rule__SparqlQueryVariable__VariableAssignment_2_1();
 
             state._fsp--;
@@ -16619,21 +17084,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagOperator__Group__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6057:1: rule__UnTagOperator__Group__0 : rule__UnTagOperator__Group__0__Impl rule__UnTagOperator__Group__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6250:1: rule__UnTagOperator__Group__0 : rule__UnTagOperator__Group__0__Impl rule__UnTagOperator__Group__1 ;
     public final void rule__UnTagOperator__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6061:1: ( rule__UnTagOperator__Group__0__Impl rule__UnTagOperator__Group__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6062:2: rule__UnTagOperator__Group__0__Impl rule__UnTagOperator__Group__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6254:1: ( rule__UnTagOperator__Group__0__Impl rule__UnTagOperator__Group__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6255:2: rule__UnTagOperator__Group__0__Impl rule__UnTagOperator__Group__1
             {
-            pushFollow(FOLLOW_rule__UnTagOperator__Group__0__Impl_in_rule__UnTagOperator__Group__012483);
+            pushFollow(FOLLOW_rule__UnTagOperator__Group__0__Impl_in_rule__UnTagOperator__Group__012860);
             rule__UnTagOperator__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__UnTagOperator__Group__1_in_rule__UnTagOperator__Group__012486);
+            pushFollow(FOLLOW_rule__UnTagOperator__Group__1_in_rule__UnTagOperator__Group__012863);
             rule__UnTagOperator__Group__1();
 
             state._fsp--;
@@ -16657,20 +17122,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagOperator__Group__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6069:1: rule__UnTagOperator__Group__0__Impl : ( 'untag' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6262:1: rule__UnTagOperator__Group__0__Impl : ( 'untag' ) ;
     public final void rule__UnTagOperator__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6073:1: ( ( 'untag' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6074:1: ( 'untag' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6266:1: ( ( 'untag' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6267:1: ( 'untag' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6074:1: ( 'untag' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6075:1: 'untag'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6267:1: ( 'untag' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6268:1: 'untag'
             {
              before(grammarAccess.getUnTagOperatorAccess().getUntagKeyword_0()); 
-            match(input,48,FOLLOW_48_in_rule__UnTagOperator__Group__0__Impl12514); 
+            match(input,49,FOLLOW_49_in_rule__UnTagOperator__Group__0__Impl12891); 
              after(grammarAccess.getUnTagOperatorAccess().getUntagKeyword_0()); 
 
             }
@@ -16694,21 +17159,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagOperator__Group__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6088:1: rule__UnTagOperator__Group__1 : rule__UnTagOperator__Group__1__Impl rule__UnTagOperator__Group__2 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6281:1: rule__UnTagOperator__Group__1 : rule__UnTagOperator__Group__1__Impl rule__UnTagOperator__Group__2 ;
     public final void rule__UnTagOperator__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6092:1: ( rule__UnTagOperator__Group__1__Impl rule__UnTagOperator__Group__2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6093:2: rule__UnTagOperator__Group__1__Impl rule__UnTagOperator__Group__2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6285:1: ( rule__UnTagOperator__Group__1__Impl rule__UnTagOperator__Group__2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6286:2: rule__UnTagOperator__Group__1__Impl rule__UnTagOperator__Group__2
             {
-            pushFollow(FOLLOW_rule__UnTagOperator__Group__1__Impl_in_rule__UnTagOperator__Group__112545);
+            pushFollow(FOLLOW_rule__UnTagOperator__Group__1__Impl_in_rule__UnTagOperator__Group__112922);
             rule__UnTagOperator__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__UnTagOperator__Group__2_in_rule__UnTagOperator__Group__112548);
+            pushFollow(FOLLOW_rule__UnTagOperator__Group__2_in_rule__UnTagOperator__Group__112925);
             rule__UnTagOperator__Group__2();
 
             state._fsp--;
@@ -16732,20 +17197,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagOperator__Group__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6100:1: rule__UnTagOperator__Group__1__Impl : ( '(' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6293:1: rule__UnTagOperator__Group__1__Impl : ( '(' ) ;
     public final void rule__UnTagOperator__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6104:1: ( ( '(' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6105:1: ( '(' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6297:1: ( ( '(' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6298:1: ( '(' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6105:1: ( '(' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6106:1: '('
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6298:1: ( '(' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6299:1: '('
             {
              before(grammarAccess.getUnTagOperatorAccess().getLeftParenthesisKeyword_1()); 
-            match(input,35,FOLLOW_35_in_rule__UnTagOperator__Group__1__Impl12576); 
+            match(input,35,FOLLOW_35_in_rule__UnTagOperator__Group__1__Impl12953); 
              after(grammarAccess.getUnTagOperatorAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -16769,21 +17234,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagOperator__Group__2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6119:1: rule__UnTagOperator__Group__2 : rule__UnTagOperator__Group__2__Impl rule__UnTagOperator__Group__3 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6312:1: rule__UnTagOperator__Group__2 : rule__UnTagOperator__Group__2__Impl rule__UnTagOperator__Group__3 ;
     public final void rule__UnTagOperator__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6123:1: ( rule__UnTagOperator__Group__2__Impl rule__UnTagOperator__Group__3 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6124:2: rule__UnTagOperator__Group__2__Impl rule__UnTagOperator__Group__3
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6316:1: ( rule__UnTagOperator__Group__2__Impl rule__UnTagOperator__Group__3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6317:2: rule__UnTagOperator__Group__2__Impl rule__UnTagOperator__Group__3
             {
-            pushFollow(FOLLOW_rule__UnTagOperator__Group__2__Impl_in_rule__UnTagOperator__Group__212607);
+            pushFollow(FOLLOW_rule__UnTagOperator__Group__2__Impl_in_rule__UnTagOperator__Group__212984);
             rule__UnTagOperator__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__UnTagOperator__Group__3_in_rule__UnTagOperator__Group__212610);
+            pushFollow(FOLLOW_rule__UnTagOperator__Group__3_in_rule__UnTagOperator__Group__212987);
             rule__UnTagOperator__Group__3();
 
             state._fsp--;
@@ -16807,23 +17272,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagOperator__Group__2__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6131:1: rule__UnTagOperator__Group__2__Impl : ( ( rule__UnTagOperator__ParametersAssignment_2 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6324:1: rule__UnTagOperator__Group__2__Impl : ( ( rule__UnTagOperator__ParametersAssignment_2 ) ) ;
     public final void rule__UnTagOperator__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6135:1: ( ( ( rule__UnTagOperator__ParametersAssignment_2 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6136:1: ( ( rule__UnTagOperator__ParametersAssignment_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6328:1: ( ( ( rule__UnTagOperator__ParametersAssignment_2 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6329:1: ( ( rule__UnTagOperator__ParametersAssignment_2 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6136:1: ( ( rule__UnTagOperator__ParametersAssignment_2 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6137:1: ( rule__UnTagOperator__ParametersAssignment_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6329:1: ( ( rule__UnTagOperator__ParametersAssignment_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6330:1: ( rule__UnTagOperator__ParametersAssignment_2 )
             {
              before(grammarAccess.getUnTagOperatorAccess().getParametersAssignment_2()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6138:1: ( rule__UnTagOperator__ParametersAssignment_2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6138:2: rule__UnTagOperator__ParametersAssignment_2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6331:1: ( rule__UnTagOperator__ParametersAssignment_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6331:2: rule__UnTagOperator__ParametersAssignment_2
             {
-            pushFollow(FOLLOW_rule__UnTagOperator__ParametersAssignment_2_in_rule__UnTagOperator__Group__2__Impl12637);
+            pushFollow(FOLLOW_rule__UnTagOperator__ParametersAssignment_2_in_rule__UnTagOperator__Group__2__Impl13014);
             rule__UnTagOperator__ParametersAssignment_2();
 
             state._fsp--;
@@ -16854,21 +17319,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagOperator__Group__3"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6148:1: rule__UnTagOperator__Group__3 : rule__UnTagOperator__Group__3__Impl rule__UnTagOperator__Group__4 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6341:1: rule__UnTagOperator__Group__3 : rule__UnTagOperator__Group__3__Impl rule__UnTagOperator__Group__4 ;
     public final void rule__UnTagOperator__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6152:1: ( rule__UnTagOperator__Group__3__Impl rule__UnTagOperator__Group__4 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6153:2: rule__UnTagOperator__Group__3__Impl rule__UnTagOperator__Group__4
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6345:1: ( rule__UnTagOperator__Group__3__Impl rule__UnTagOperator__Group__4 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6346:2: rule__UnTagOperator__Group__3__Impl rule__UnTagOperator__Group__4
             {
-            pushFollow(FOLLOW_rule__UnTagOperator__Group__3__Impl_in_rule__UnTagOperator__Group__312667);
+            pushFollow(FOLLOW_rule__UnTagOperator__Group__3__Impl_in_rule__UnTagOperator__Group__313044);
             rule__UnTagOperator__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__UnTagOperator__Group__4_in_rule__UnTagOperator__Group__312670);
+            pushFollow(FOLLOW_rule__UnTagOperator__Group__4_in_rule__UnTagOperator__Group__313047);
             rule__UnTagOperator__Group__4();
 
             state._fsp--;
@@ -16892,20 +17357,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagOperator__Group__3__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6160:1: rule__UnTagOperator__Group__3__Impl : ( ( rule__UnTagOperator__Group_3__0 )* ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6353:1: rule__UnTagOperator__Group__3__Impl : ( ( rule__UnTagOperator__Group_3__0 )* ) ;
     public final void rule__UnTagOperator__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6164:1: ( ( ( rule__UnTagOperator__Group_3__0 )* ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6165:1: ( ( rule__UnTagOperator__Group_3__0 )* )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6357:1: ( ( ( rule__UnTagOperator__Group_3__0 )* ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6358:1: ( ( rule__UnTagOperator__Group_3__0 )* )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6165:1: ( ( rule__UnTagOperator__Group_3__0 )* )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6166:1: ( rule__UnTagOperator__Group_3__0 )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6358:1: ( ( rule__UnTagOperator__Group_3__0 )* )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6359:1: ( rule__UnTagOperator__Group_3__0 )*
             {
              before(grammarAccess.getUnTagOperatorAccess().getGroup_3()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6167:1: ( rule__UnTagOperator__Group_3__0 )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6360:1: ( rule__UnTagOperator__Group_3__0 )*
             loop33:
             do {
                 int alt33=2;
@@ -16924,9 +17389,9 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
                 switch (alt33) {
             	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6167:2: rule__UnTagOperator__Group_3__0
+            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6360:2: rule__UnTagOperator__Group_3__0
             	    {
-            	    pushFollow(FOLLOW_rule__UnTagOperator__Group_3__0_in_rule__UnTagOperator__Group__3__Impl12697);
+            	    pushFollow(FOLLOW_rule__UnTagOperator__Group_3__0_in_rule__UnTagOperator__Group__3__Impl13074);
             	    rule__UnTagOperator__Group_3__0();
 
             	    state._fsp--;
@@ -16963,21 +17428,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagOperator__Group__4"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6177:1: rule__UnTagOperator__Group__4 : rule__UnTagOperator__Group__4__Impl rule__UnTagOperator__Group__5 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6370:1: rule__UnTagOperator__Group__4 : rule__UnTagOperator__Group__4__Impl rule__UnTagOperator__Group__5 ;
     public final void rule__UnTagOperator__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6181:1: ( rule__UnTagOperator__Group__4__Impl rule__UnTagOperator__Group__5 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6182:2: rule__UnTagOperator__Group__4__Impl rule__UnTagOperator__Group__5
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6374:1: ( rule__UnTagOperator__Group__4__Impl rule__UnTagOperator__Group__5 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6375:2: rule__UnTagOperator__Group__4__Impl rule__UnTagOperator__Group__5
             {
-            pushFollow(FOLLOW_rule__UnTagOperator__Group__4__Impl_in_rule__UnTagOperator__Group__412728);
+            pushFollow(FOLLOW_rule__UnTagOperator__Group__4__Impl_in_rule__UnTagOperator__Group__413105);
             rule__UnTagOperator__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__UnTagOperator__Group__5_in_rule__UnTagOperator__Group__412731);
+            pushFollow(FOLLOW_rule__UnTagOperator__Group__5_in_rule__UnTagOperator__Group__413108);
             rule__UnTagOperator__Group__5();
 
             state._fsp--;
@@ -17001,20 +17466,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagOperator__Group__4__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6189:1: rule__UnTagOperator__Group__4__Impl : ( ',' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6382:1: rule__UnTagOperator__Group__4__Impl : ( ',' ) ;
     public final void rule__UnTagOperator__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6193:1: ( ( ',' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6194:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6386:1: ( ( ',' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6387:1: ( ',' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6194:1: ( ',' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6195:1: ','
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6387:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6388:1: ','
             {
              before(grammarAccess.getUnTagOperatorAccess().getCommaKeyword_4()); 
-            match(input,32,FOLLOW_32_in_rule__UnTagOperator__Group__4__Impl12759); 
+            match(input,32,FOLLOW_32_in_rule__UnTagOperator__Group__4__Impl13136); 
              after(grammarAccess.getUnTagOperatorAccess().getCommaKeyword_4()); 
 
             }
@@ -17038,21 +17503,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagOperator__Group__5"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6208:1: rule__UnTagOperator__Group__5 : rule__UnTagOperator__Group__5__Impl rule__UnTagOperator__Group__6 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6401:1: rule__UnTagOperator__Group__5 : rule__UnTagOperator__Group__5__Impl rule__UnTagOperator__Group__6 ;
     public final void rule__UnTagOperator__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6212:1: ( rule__UnTagOperator__Group__5__Impl rule__UnTagOperator__Group__6 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6213:2: rule__UnTagOperator__Group__5__Impl rule__UnTagOperator__Group__6
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6405:1: ( rule__UnTagOperator__Group__5__Impl rule__UnTagOperator__Group__6 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6406:2: rule__UnTagOperator__Group__5__Impl rule__UnTagOperator__Group__6
             {
-            pushFollow(FOLLOW_rule__UnTagOperator__Group__5__Impl_in_rule__UnTagOperator__Group__512790);
+            pushFollow(FOLLOW_rule__UnTagOperator__Group__5__Impl_in_rule__UnTagOperator__Group__513167);
             rule__UnTagOperator__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__UnTagOperator__Group__6_in_rule__UnTagOperator__Group__512793);
+            pushFollow(FOLLOW_rule__UnTagOperator__Group__6_in_rule__UnTagOperator__Group__513170);
             rule__UnTagOperator__Group__6();
 
             state._fsp--;
@@ -17076,23 +17541,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagOperator__Group__5__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6220:1: rule__UnTagOperator__Group__5__Impl : ( ( rule__UnTagOperator__StreamAssignment_5 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6413:1: rule__UnTagOperator__Group__5__Impl : ( ( rule__UnTagOperator__StreamAssignment_5 ) ) ;
     public final void rule__UnTagOperator__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6224:1: ( ( ( rule__UnTagOperator__StreamAssignment_5 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6225:1: ( ( rule__UnTagOperator__StreamAssignment_5 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6417:1: ( ( ( rule__UnTagOperator__StreamAssignment_5 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6418:1: ( ( rule__UnTagOperator__StreamAssignment_5 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6225:1: ( ( rule__UnTagOperator__StreamAssignment_5 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6226:1: ( rule__UnTagOperator__StreamAssignment_5 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6418:1: ( ( rule__UnTagOperator__StreamAssignment_5 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6419:1: ( rule__UnTagOperator__StreamAssignment_5 )
             {
              before(grammarAccess.getUnTagOperatorAccess().getStreamAssignment_5()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6227:1: ( rule__UnTagOperator__StreamAssignment_5 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6227:2: rule__UnTagOperator__StreamAssignment_5
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6420:1: ( rule__UnTagOperator__StreamAssignment_5 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6420:2: rule__UnTagOperator__StreamAssignment_5
             {
-            pushFollow(FOLLOW_rule__UnTagOperator__StreamAssignment_5_in_rule__UnTagOperator__Group__5__Impl12820);
+            pushFollow(FOLLOW_rule__UnTagOperator__StreamAssignment_5_in_rule__UnTagOperator__Group__5__Impl13197);
             rule__UnTagOperator__StreamAssignment_5();
 
             state._fsp--;
@@ -17123,16 +17588,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagOperator__Group__6"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6237:1: rule__UnTagOperator__Group__6 : rule__UnTagOperator__Group__6__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6430:1: rule__UnTagOperator__Group__6 : rule__UnTagOperator__Group__6__Impl ;
     public final void rule__UnTagOperator__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6241:1: ( rule__UnTagOperator__Group__6__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6242:2: rule__UnTagOperator__Group__6__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6434:1: ( rule__UnTagOperator__Group__6__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6435:2: rule__UnTagOperator__Group__6__Impl
             {
-            pushFollow(FOLLOW_rule__UnTagOperator__Group__6__Impl_in_rule__UnTagOperator__Group__612850);
+            pushFollow(FOLLOW_rule__UnTagOperator__Group__6__Impl_in_rule__UnTagOperator__Group__613227);
             rule__UnTagOperator__Group__6__Impl();
 
             state._fsp--;
@@ -17156,20 +17621,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagOperator__Group__6__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6248:1: rule__UnTagOperator__Group__6__Impl : ( ')' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6441:1: rule__UnTagOperator__Group__6__Impl : ( ')' ) ;
     public final void rule__UnTagOperator__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6252:1: ( ( ')' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6253:1: ( ')' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6445:1: ( ( ')' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6446:1: ( ')' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6253:1: ( ')' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6254:1: ')'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6446:1: ( ')' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6447:1: ')'
             {
              before(grammarAccess.getUnTagOperatorAccess().getRightParenthesisKeyword_6()); 
-            match(input,36,FOLLOW_36_in_rule__UnTagOperator__Group__6__Impl12878); 
+            match(input,36,FOLLOW_36_in_rule__UnTagOperator__Group__6__Impl13255); 
              after(grammarAccess.getUnTagOperatorAccess().getRightParenthesisKeyword_6()); 
 
             }
@@ -17193,21 +17658,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagOperator__Group_3__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6281:1: rule__UnTagOperator__Group_3__0 : rule__UnTagOperator__Group_3__0__Impl rule__UnTagOperator__Group_3__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6474:1: rule__UnTagOperator__Group_3__0 : rule__UnTagOperator__Group_3__0__Impl rule__UnTagOperator__Group_3__1 ;
     public final void rule__UnTagOperator__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6285:1: ( rule__UnTagOperator__Group_3__0__Impl rule__UnTagOperator__Group_3__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6286:2: rule__UnTagOperator__Group_3__0__Impl rule__UnTagOperator__Group_3__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6478:1: ( rule__UnTagOperator__Group_3__0__Impl rule__UnTagOperator__Group_3__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6479:2: rule__UnTagOperator__Group_3__0__Impl rule__UnTagOperator__Group_3__1
             {
-            pushFollow(FOLLOW_rule__UnTagOperator__Group_3__0__Impl_in_rule__UnTagOperator__Group_3__012923);
+            pushFollow(FOLLOW_rule__UnTagOperator__Group_3__0__Impl_in_rule__UnTagOperator__Group_3__013300);
             rule__UnTagOperator__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__UnTagOperator__Group_3__1_in_rule__UnTagOperator__Group_3__012926);
+            pushFollow(FOLLOW_rule__UnTagOperator__Group_3__1_in_rule__UnTagOperator__Group_3__013303);
             rule__UnTagOperator__Group_3__1();
 
             state._fsp--;
@@ -17231,20 +17696,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagOperator__Group_3__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6293:1: rule__UnTagOperator__Group_3__0__Impl : ( ',' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6486:1: rule__UnTagOperator__Group_3__0__Impl : ( ',' ) ;
     public final void rule__UnTagOperator__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6297:1: ( ( ',' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6298:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6490:1: ( ( ',' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6491:1: ( ',' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6298:1: ( ',' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6299:1: ','
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6491:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6492:1: ','
             {
              before(grammarAccess.getUnTagOperatorAccess().getCommaKeyword_3_0()); 
-            match(input,32,FOLLOW_32_in_rule__UnTagOperator__Group_3__0__Impl12954); 
+            match(input,32,FOLLOW_32_in_rule__UnTagOperator__Group_3__0__Impl13331); 
              after(grammarAccess.getUnTagOperatorAccess().getCommaKeyword_3_0()); 
 
             }
@@ -17268,16 +17733,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagOperator__Group_3__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6312:1: rule__UnTagOperator__Group_3__1 : rule__UnTagOperator__Group_3__1__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6505:1: rule__UnTagOperator__Group_3__1 : rule__UnTagOperator__Group_3__1__Impl ;
     public final void rule__UnTagOperator__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6316:1: ( rule__UnTagOperator__Group_3__1__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6317:2: rule__UnTagOperator__Group_3__1__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6509:1: ( rule__UnTagOperator__Group_3__1__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6510:2: rule__UnTagOperator__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__UnTagOperator__Group_3__1__Impl_in_rule__UnTagOperator__Group_3__112985);
+            pushFollow(FOLLOW_rule__UnTagOperator__Group_3__1__Impl_in_rule__UnTagOperator__Group_3__113362);
             rule__UnTagOperator__Group_3__1__Impl();
 
             state._fsp--;
@@ -17301,23 +17766,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagOperator__Group_3__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6323:1: rule__UnTagOperator__Group_3__1__Impl : ( ( rule__UnTagOperator__ParametersAssignment_3_1 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6516:1: rule__UnTagOperator__Group_3__1__Impl : ( ( rule__UnTagOperator__ParametersAssignment_3_1 ) ) ;
     public final void rule__UnTagOperator__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6327:1: ( ( ( rule__UnTagOperator__ParametersAssignment_3_1 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6328:1: ( ( rule__UnTagOperator__ParametersAssignment_3_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6520:1: ( ( ( rule__UnTagOperator__ParametersAssignment_3_1 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6521:1: ( ( rule__UnTagOperator__ParametersAssignment_3_1 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6328:1: ( ( rule__UnTagOperator__ParametersAssignment_3_1 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6329:1: ( rule__UnTagOperator__ParametersAssignment_3_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6521:1: ( ( rule__UnTagOperator__ParametersAssignment_3_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6522:1: ( rule__UnTagOperator__ParametersAssignment_3_1 )
             {
              before(grammarAccess.getUnTagOperatorAccess().getParametersAssignment_3_1()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6330:1: ( rule__UnTagOperator__ParametersAssignment_3_1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6330:2: rule__UnTagOperator__ParametersAssignment_3_1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6523:1: ( rule__UnTagOperator__ParametersAssignment_3_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6523:2: rule__UnTagOperator__ParametersAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__UnTagOperator__ParametersAssignment_3_1_in_rule__UnTagOperator__Group_3__1__Impl13012);
+            pushFollow(FOLLOW_rule__UnTagOperator__ParametersAssignment_3_1_in_rule__UnTagOperator__Group_3__1__Impl13389);
             rule__UnTagOperator__ParametersAssignment_3_1();
 
             state._fsp--;
@@ -17348,21 +17813,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagElement__Group__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6344:1: rule__UnTagElement__Group__0 : rule__UnTagElement__Group__0__Impl rule__UnTagElement__Group__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6537:1: rule__UnTagElement__Group__0 : rule__UnTagElement__Group__0__Impl rule__UnTagElement__Group__1 ;
     public final void rule__UnTagElement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6348:1: ( rule__UnTagElement__Group__0__Impl rule__UnTagElement__Group__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6349:2: rule__UnTagElement__Group__0__Impl rule__UnTagElement__Group__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6541:1: ( rule__UnTagElement__Group__0__Impl rule__UnTagElement__Group__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6542:2: rule__UnTagElement__Group__0__Impl rule__UnTagElement__Group__1
             {
-            pushFollow(FOLLOW_rule__UnTagElement__Group__0__Impl_in_rule__UnTagElement__Group__013046);
+            pushFollow(FOLLOW_rule__UnTagElement__Group__0__Impl_in_rule__UnTagElement__Group__013423);
             rule__UnTagElement__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__UnTagElement__Group__1_in_rule__UnTagElement__Group__013049);
+            pushFollow(FOLLOW_rule__UnTagElement__Group__1_in_rule__UnTagElement__Group__013426);
             rule__UnTagElement__Group__1();
 
             state._fsp--;
@@ -17386,23 +17851,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagElement__Group__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6356:1: rule__UnTagElement__Group__0__Impl : ( ( rule__UnTagElement__ElementAssignment_0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6549:1: rule__UnTagElement__Group__0__Impl : ( ( rule__UnTagElement__ElementAssignment_0 ) ) ;
     public final void rule__UnTagElement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6360:1: ( ( ( rule__UnTagElement__ElementAssignment_0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6361:1: ( ( rule__UnTagElement__ElementAssignment_0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6553:1: ( ( ( rule__UnTagElement__ElementAssignment_0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6554:1: ( ( rule__UnTagElement__ElementAssignment_0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6361:1: ( ( rule__UnTagElement__ElementAssignment_0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6362:1: ( rule__UnTagElement__ElementAssignment_0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6554:1: ( ( rule__UnTagElement__ElementAssignment_0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6555:1: ( rule__UnTagElement__ElementAssignment_0 )
             {
              before(grammarAccess.getUnTagElementAccess().getElementAssignment_0()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6363:1: ( rule__UnTagElement__ElementAssignment_0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6363:2: rule__UnTagElement__ElementAssignment_0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6556:1: ( rule__UnTagElement__ElementAssignment_0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6556:2: rule__UnTagElement__ElementAssignment_0
             {
-            pushFollow(FOLLOW_rule__UnTagElement__ElementAssignment_0_in_rule__UnTagElement__Group__0__Impl13076);
+            pushFollow(FOLLOW_rule__UnTagElement__ElementAssignment_0_in_rule__UnTagElement__Group__0__Impl13453);
             rule__UnTagElement__ElementAssignment_0();
 
             state._fsp--;
@@ -17433,21 +17898,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagElement__Group__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6373:1: rule__UnTagElement__Group__1 : rule__UnTagElement__Group__1__Impl rule__UnTagElement__Group__2 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6566:1: rule__UnTagElement__Group__1 : rule__UnTagElement__Group__1__Impl rule__UnTagElement__Group__2 ;
     public final void rule__UnTagElement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6377:1: ( rule__UnTagElement__Group__1__Impl rule__UnTagElement__Group__2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6378:2: rule__UnTagElement__Group__1__Impl rule__UnTagElement__Group__2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6570:1: ( rule__UnTagElement__Group__1__Impl rule__UnTagElement__Group__2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6571:2: rule__UnTagElement__Group__1__Impl rule__UnTagElement__Group__2
             {
-            pushFollow(FOLLOW_rule__UnTagElement__Group__1__Impl_in_rule__UnTagElement__Group__113106);
+            pushFollow(FOLLOW_rule__UnTagElement__Group__1__Impl_in_rule__UnTagElement__Group__113483);
             rule__UnTagElement__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__UnTagElement__Group__2_in_rule__UnTagElement__Group__113109);
+            pushFollow(FOLLOW_rule__UnTagElement__Group__2_in_rule__UnTagElement__Group__113486);
             rule__UnTagElement__Group__2();
 
             state._fsp--;
@@ -17471,20 +17936,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagElement__Group__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6385:1: rule__UnTagElement__Group__1__Impl : ( 'is' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6578:1: rule__UnTagElement__Group__1__Impl : ( 'is' ) ;
     public final void rule__UnTagElement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6389:1: ( ( 'is' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6390:1: ( 'is' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6582:1: ( ( 'is' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6583:1: ( 'is' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6390:1: ( 'is' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6391:1: 'is'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6583:1: ( 'is' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6584:1: 'is'
             {
              before(grammarAccess.getUnTagElementAccess().getIsKeyword_1()); 
-            match(input,49,FOLLOW_49_in_rule__UnTagElement__Group__1__Impl13137); 
+            match(input,50,FOLLOW_50_in_rule__UnTagElement__Group__1__Impl13514); 
              after(grammarAccess.getUnTagElementAccess().getIsKeyword_1()); 
 
             }
@@ -17508,16 +17973,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagElement__Group__2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6404:1: rule__UnTagElement__Group__2 : rule__UnTagElement__Group__2__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6597:1: rule__UnTagElement__Group__2 : rule__UnTagElement__Group__2__Impl ;
     public final void rule__UnTagElement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6408:1: ( rule__UnTagElement__Group__2__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6409:2: rule__UnTagElement__Group__2__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6601:1: ( rule__UnTagElement__Group__2__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6602:2: rule__UnTagElement__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__UnTagElement__Group__2__Impl_in_rule__UnTagElement__Group__213168);
+            pushFollow(FOLLOW_rule__UnTagElement__Group__2__Impl_in_rule__UnTagElement__Group__213545);
             rule__UnTagElement__Group__2__Impl();
 
             state._fsp--;
@@ -17541,23 +18006,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagElement__Group__2__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6415:1: rule__UnTagElement__Group__2__Impl : ( ( rule__UnTagElement__ReferenceAssignment_2 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6608:1: rule__UnTagElement__Group__2__Impl : ( ( rule__UnTagElement__ReferenceAssignment_2 ) ) ;
     public final void rule__UnTagElement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6419:1: ( ( ( rule__UnTagElement__ReferenceAssignment_2 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6420:1: ( ( rule__UnTagElement__ReferenceAssignment_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6612:1: ( ( ( rule__UnTagElement__ReferenceAssignment_2 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6613:1: ( ( rule__UnTagElement__ReferenceAssignment_2 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6420:1: ( ( rule__UnTagElement__ReferenceAssignment_2 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6421:1: ( rule__UnTagElement__ReferenceAssignment_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6613:1: ( ( rule__UnTagElement__ReferenceAssignment_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6614:1: ( rule__UnTagElement__ReferenceAssignment_2 )
             {
              before(grammarAccess.getUnTagElementAccess().getReferenceAssignment_2()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6422:1: ( rule__UnTagElement__ReferenceAssignment_2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6422:2: rule__UnTagElement__ReferenceAssignment_2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6615:1: ( rule__UnTagElement__ReferenceAssignment_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6615:2: rule__UnTagElement__ReferenceAssignment_2
             {
-            pushFollow(FOLLOW_rule__UnTagElement__ReferenceAssignment_2_in_rule__UnTagElement__Group__2__Impl13195);
+            pushFollow(FOLLOW_rule__UnTagElement__ReferenceAssignment_2_in_rule__UnTagElement__Group__2__Impl13572);
             rule__UnTagElement__ReferenceAssignment_2();
 
             state._fsp--;
@@ -17588,21 +18053,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagClassElement__Group__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6438:1: rule__TagClassElement__Group__0 : rule__TagClassElement__Group__0__Impl rule__TagClassElement__Group__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6631:1: rule__TagClassElement__Group__0 : rule__TagClassElement__Group__0__Impl rule__TagClassElement__Group__1 ;
     public final void rule__TagClassElement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6442:1: ( rule__TagClassElement__Group__0__Impl rule__TagClassElement__Group__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6443:2: rule__TagClassElement__Group__0__Impl rule__TagClassElement__Group__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6635:1: ( rule__TagClassElement__Group__0__Impl rule__TagClassElement__Group__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6636:2: rule__TagClassElement__Group__0__Impl rule__TagClassElement__Group__1
             {
-            pushFollow(FOLLOW_rule__TagClassElement__Group__0__Impl_in_rule__TagClassElement__Group__013231);
+            pushFollow(FOLLOW_rule__TagClassElement__Group__0__Impl_in_rule__TagClassElement__Group__013608);
             rule__TagClassElement__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TagClassElement__Group__1_in_rule__TagClassElement__Group__013234);
+            pushFollow(FOLLOW_rule__TagClassElement__Group__1_in_rule__TagClassElement__Group__013611);
             rule__TagClassElement__Group__1();
 
             state._fsp--;
@@ -17626,23 +18091,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagClassElement__Group__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6450:1: rule__TagClassElement__Group__0__Impl : ( ( rule__TagClassElement__ReferenceAssignment_0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6643:1: rule__TagClassElement__Group__0__Impl : ( ( rule__TagClassElement__ReferenceAssignment_0 ) ) ;
     public final void rule__TagClassElement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6454:1: ( ( ( rule__TagClassElement__ReferenceAssignment_0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6455:1: ( ( rule__TagClassElement__ReferenceAssignment_0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6647:1: ( ( ( rule__TagClassElement__ReferenceAssignment_0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6648:1: ( ( rule__TagClassElement__ReferenceAssignment_0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6455:1: ( ( rule__TagClassElement__ReferenceAssignment_0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6456:1: ( rule__TagClassElement__ReferenceAssignment_0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6648:1: ( ( rule__TagClassElement__ReferenceAssignment_0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6649:1: ( rule__TagClassElement__ReferenceAssignment_0 )
             {
              before(grammarAccess.getTagClassElementAccess().getReferenceAssignment_0()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6457:1: ( rule__TagClassElement__ReferenceAssignment_0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6457:2: rule__TagClassElement__ReferenceAssignment_0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6650:1: ( rule__TagClassElement__ReferenceAssignment_0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6650:2: rule__TagClassElement__ReferenceAssignment_0
             {
-            pushFollow(FOLLOW_rule__TagClassElement__ReferenceAssignment_0_in_rule__TagClassElement__Group__0__Impl13261);
+            pushFollow(FOLLOW_rule__TagClassElement__ReferenceAssignment_0_in_rule__TagClassElement__Group__0__Impl13638);
             rule__TagClassElement__ReferenceAssignment_0();
 
             state._fsp--;
@@ -17673,21 +18138,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagClassElement__Group__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6467:1: rule__TagClassElement__Group__1 : rule__TagClassElement__Group__1__Impl rule__TagClassElement__Group__2 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6660:1: rule__TagClassElement__Group__1 : rule__TagClassElement__Group__1__Impl rule__TagClassElement__Group__2 ;
     public final void rule__TagClassElement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6471:1: ( rule__TagClassElement__Group__1__Impl rule__TagClassElement__Group__2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6472:2: rule__TagClassElement__Group__1__Impl rule__TagClassElement__Group__2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6664:1: ( rule__TagClassElement__Group__1__Impl rule__TagClassElement__Group__2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6665:2: rule__TagClassElement__Group__1__Impl rule__TagClassElement__Group__2
             {
-            pushFollow(FOLLOW_rule__TagClassElement__Group__1__Impl_in_rule__TagClassElement__Group__113291);
+            pushFollow(FOLLOW_rule__TagClassElement__Group__1__Impl_in_rule__TagClassElement__Group__113668);
             rule__TagClassElement__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TagClassElement__Group__2_in_rule__TagClassElement__Group__113294);
+            pushFollow(FOLLOW_rule__TagClassElement__Group__2_in_rule__TagClassElement__Group__113671);
             rule__TagClassElement__Group__2();
 
             state._fsp--;
@@ -17711,20 +18176,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagClassElement__Group__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6479:1: rule__TagClassElement__Group__1__Impl : ( 'is' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6672:1: rule__TagClassElement__Group__1__Impl : ( 'is' ) ;
     public final void rule__TagClassElement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6483:1: ( ( 'is' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6484:1: ( 'is' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6676:1: ( ( 'is' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6677:1: ( 'is' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6484:1: ( 'is' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6485:1: 'is'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6677:1: ( 'is' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6678:1: 'is'
             {
              before(grammarAccess.getTagClassElementAccess().getIsKeyword_1()); 
-            match(input,49,FOLLOW_49_in_rule__TagClassElement__Group__1__Impl13322); 
+            match(input,50,FOLLOW_50_in_rule__TagClassElement__Group__1__Impl13699); 
              after(grammarAccess.getTagClassElementAccess().getIsKeyword_1()); 
 
             }
@@ -17748,21 +18213,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagClassElement__Group__2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6498:1: rule__TagClassElement__Group__2 : rule__TagClassElement__Group__2__Impl rule__TagClassElement__Group__3 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6691:1: rule__TagClassElement__Group__2 : rule__TagClassElement__Group__2__Impl rule__TagClassElement__Group__3 ;
     public final void rule__TagClassElement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6502:1: ( rule__TagClassElement__Group__2__Impl rule__TagClassElement__Group__3 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6503:2: rule__TagClassElement__Group__2__Impl rule__TagClassElement__Group__3
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6695:1: ( rule__TagClassElement__Group__2__Impl rule__TagClassElement__Group__3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6696:2: rule__TagClassElement__Group__2__Impl rule__TagClassElement__Group__3
             {
-            pushFollow(FOLLOW_rule__TagClassElement__Group__2__Impl_in_rule__TagClassElement__Group__213353);
+            pushFollow(FOLLOW_rule__TagClassElement__Group__2__Impl_in_rule__TagClassElement__Group__213730);
             rule__TagClassElement__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TagClassElement__Group__3_in_rule__TagClassElement__Group__213356);
+            pushFollow(FOLLOW_rule__TagClassElement__Group__3_in_rule__TagClassElement__Group__213733);
             rule__TagClassElement__Group__3();
 
             state._fsp--;
@@ -17786,20 +18251,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagClassElement__Group__2__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6510:1: rule__TagClassElement__Group__2__Impl : ( 'class' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6703:1: rule__TagClassElement__Group__2__Impl : ( 'class' ) ;
     public final void rule__TagClassElement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6514:1: ( ( 'class' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6515:1: ( 'class' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6707:1: ( ( 'class' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6708:1: ( 'class' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6515:1: ( 'class' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6516:1: 'class'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6708:1: ( 'class' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6709:1: 'class'
             {
              before(grammarAccess.getTagClassElementAccess().getClassKeyword_2()); 
-            match(input,50,FOLLOW_50_in_rule__TagClassElement__Group__2__Impl13384); 
+            match(input,51,FOLLOW_51_in_rule__TagClassElement__Group__2__Impl13761); 
              after(grammarAccess.getTagClassElementAccess().getClassKeyword_2()); 
 
             }
@@ -17823,16 +18288,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagClassElement__Group__3"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6529:1: rule__TagClassElement__Group__3 : rule__TagClassElement__Group__3__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6722:1: rule__TagClassElement__Group__3 : rule__TagClassElement__Group__3__Impl ;
     public final void rule__TagClassElement__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6533:1: ( rule__TagClassElement__Group__3__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6534:2: rule__TagClassElement__Group__3__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6726:1: ( rule__TagClassElement__Group__3__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6727:2: rule__TagClassElement__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__TagClassElement__Group__3__Impl_in_rule__TagClassElement__Group__313415);
+            pushFollow(FOLLOW_rule__TagClassElement__Group__3__Impl_in_rule__TagClassElement__Group__313792);
             rule__TagClassElement__Group__3__Impl();
 
             state._fsp--;
@@ -17856,23 +18321,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagClassElement__Group__3__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6540:1: rule__TagClassElement__Group__3__Impl : ( ( rule__TagClassElement__ElementAssignment_3 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6733:1: rule__TagClassElement__Group__3__Impl : ( ( rule__TagClassElement__ElementAssignment_3 ) ) ;
     public final void rule__TagClassElement__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6544:1: ( ( ( rule__TagClassElement__ElementAssignment_3 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6545:1: ( ( rule__TagClassElement__ElementAssignment_3 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6737:1: ( ( ( rule__TagClassElement__ElementAssignment_3 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6738:1: ( ( rule__TagClassElement__ElementAssignment_3 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6545:1: ( ( rule__TagClassElement__ElementAssignment_3 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6546:1: ( rule__TagClassElement__ElementAssignment_3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6738:1: ( ( rule__TagClassElement__ElementAssignment_3 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6739:1: ( rule__TagClassElement__ElementAssignment_3 )
             {
              before(grammarAccess.getTagClassElementAccess().getElementAssignment_3()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6547:1: ( rule__TagClassElement__ElementAssignment_3 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6547:2: rule__TagClassElement__ElementAssignment_3
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6740:1: ( rule__TagClassElement__ElementAssignment_3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6740:2: rule__TagClassElement__ElementAssignment_3
             {
-            pushFollow(FOLLOW_rule__TagClassElement__ElementAssignment_3_in_rule__TagClassElement__Group__3__Impl13442);
+            pushFollow(FOLLOW_rule__TagClassElement__ElementAssignment_3_in_rule__TagClassElement__Group__3__Impl13819);
             rule__TagClassElement__ElementAssignment_3();
 
             state._fsp--;
@@ -17903,21 +18368,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagObjectPropertyElement__Group__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6565:1: rule__TagObjectPropertyElement__Group__0 : rule__TagObjectPropertyElement__Group__0__Impl rule__TagObjectPropertyElement__Group__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6758:1: rule__TagObjectPropertyElement__Group__0 : rule__TagObjectPropertyElement__Group__0__Impl rule__TagObjectPropertyElement__Group__1 ;
     public final void rule__TagObjectPropertyElement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6569:1: ( rule__TagObjectPropertyElement__Group__0__Impl rule__TagObjectPropertyElement__Group__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6570:2: rule__TagObjectPropertyElement__Group__0__Impl rule__TagObjectPropertyElement__Group__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6762:1: ( rule__TagObjectPropertyElement__Group__0__Impl rule__TagObjectPropertyElement__Group__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6763:2: rule__TagObjectPropertyElement__Group__0__Impl rule__TagObjectPropertyElement__Group__1
             {
-            pushFollow(FOLLOW_rule__TagObjectPropertyElement__Group__0__Impl_in_rule__TagObjectPropertyElement__Group__013480);
+            pushFollow(FOLLOW_rule__TagObjectPropertyElement__Group__0__Impl_in_rule__TagObjectPropertyElement__Group__013857);
             rule__TagObjectPropertyElement__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TagObjectPropertyElement__Group__1_in_rule__TagObjectPropertyElement__Group__013483);
+            pushFollow(FOLLOW_rule__TagObjectPropertyElement__Group__1_in_rule__TagObjectPropertyElement__Group__013860);
             rule__TagObjectPropertyElement__Group__1();
 
             state._fsp--;
@@ -17941,23 +18406,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagObjectPropertyElement__Group__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6577:1: rule__TagObjectPropertyElement__Group__0__Impl : ( ( rule__TagObjectPropertyElement__ReferenceAssignment_0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6770:1: rule__TagObjectPropertyElement__Group__0__Impl : ( ( rule__TagObjectPropertyElement__ReferenceAssignment_0 ) ) ;
     public final void rule__TagObjectPropertyElement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6581:1: ( ( ( rule__TagObjectPropertyElement__ReferenceAssignment_0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6582:1: ( ( rule__TagObjectPropertyElement__ReferenceAssignment_0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6774:1: ( ( ( rule__TagObjectPropertyElement__ReferenceAssignment_0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6775:1: ( ( rule__TagObjectPropertyElement__ReferenceAssignment_0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6582:1: ( ( rule__TagObjectPropertyElement__ReferenceAssignment_0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6583:1: ( rule__TagObjectPropertyElement__ReferenceAssignment_0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6775:1: ( ( rule__TagObjectPropertyElement__ReferenceAssignment_0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6776:1: ( rule__TagObjectPropertyElement__ReferenceAssignment_0 )
             {
              before(grammarAccess.getTagObjectPropertyElementAccess().getReferenceAssignment_0()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6584:1: ( rule__TagObjectPropertyElement__ReferenceAssignment_0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6584:2: rule__TagObjectPropertyElement__ReferenceAssignment_0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6777:1: ( rule__TagObjectPropertyElement__ReferenceAssignment_0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6777:2: rule__TagObjectPropertyElement__ReferenceAssignment_0
             {
-            pushFollow(FOLLOW_rule__TagObjectPropertyElement__ReferenceAssignment_0_in_rule__TagObjectPropertyElement__Group__0__Impl13510);
+            pushFollow(FOLLOW_rule__TagObjectPropertyElement__ReferenceAssignment_0_in_rule__TagObjectPropertyElement__Group__0__Impl13887);
             rule__TagObjectPropertyElement__ReferenceAssignment_0();
 
             state._fsp--;
@@ -17988,21 +18453,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagObjectPropertyElement__Group__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6594:1: rule__TagObjectPropertyElement__Group__1 : rule__TagObjectPropertyElement__Group__1__Impl rule__TagObjectPropertyElement__Group__2 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6787:1: rule__TagObjectPropertyElement__Group__1 : rule__TagObjectPropertyElement__Group__1__Impl rule__TagObjectPropertyElement__Group__2 ;
     public final void rule__TagObjectPropertyElement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6598:1: ( rule__TagObjectPropertyElement__Group__1__Impl rule__TagObjectPropertyElement__Group__2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6599:2: rule__TagObjectPropertyElement__Group__1__Impl rule__TagObjectPropertyElement__Group__2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6791:1: ( rule__TagObjectPropertyElement__Group__1__Impl rule__TagObjectPropertyElement__Group__2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6792:2: rule__TagObjectPropertyElement__Group__1__Impl rule__TagObjectPropertyElement__Group__2
             {
-            pushFollow(FOLLOW_rule__TagObjectPropertyElement__Group__1__Impl_in_rule__TagObjectPropertyElement__Group__113540);
+            pushFollow(FOLLOW_rule__TagObjectPropertyElement__Group__1__Impl_in_rule__TagObjectPropertyElement__Group__113917);
             rule__TagObjectPropertyElement__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TagObjectPropertyElement__Group__2_in_rule__TagObjectPropertyElement__Group__113543);
+            pushFollow(FOLLOW_rule__TagObjectPropertyElement__Group__2_in_rule__TagObjectPropertyElement__Group__113920);
             rule__TagObjectPropertyElement__Group__2();
 
             state._fsp--;
@@ -18026,20 +18491,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagObjectPropertyElement__Group__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6606:1: rule__TagObjectPropertyElement__Group__1__Impl : ( 'is' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6799:1: rule__TagObjectPropertyElement__Group__1__Impl : ( 'is' ) ;
     public final void rule__TagObjectPropertyElement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6610:1: ( ( 'is' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6611:1: ( 'is' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6803:1: ( ( 'is' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6804:1: ( 'is' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6611:1: ( 'is' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6612:1: 'is'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6804:1: ( 'is' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6805:1: 'is'
             {
              before(grammarAccess.getTagObjectPropertyElementAccess().getIsKeyword_1()); 
-            match(input,49,FOLLOW_49_in_rule__TagObjectPropertyElement__Group__1__Impl13571); 
+            match(input,50,FOLLOW_50_in_rule__TagObjectPropertyElement__Group__1__Impl13948); 
              after(grammarAccess.getTagObjectPropertyElementAccess().getIsKeyword_1()); 
 
             }
@@ -18063,21 +18528,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagObjectPropertyElement__Group__2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6625:1: rule__TagObjectPropertyElement__Group__2 : rule__TagObjectPropertyElement__Group__2__Impl rule__TagObjectPropertyElement__Group__3 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6818:1: rule__TagObjectPropertyElement__Group__2 : rule__TagObjectPropertyElement__Group__2__Impl rule__TagObjectPropertyElement__Group__3 ;
     public final void rule__TagObjectPropertyElement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6629:1: ( rule__TagObjectPropertyElement__Group__2__Impl rule__TagObjectPropertyElement__Group__3 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6630:2: rule__TagObjectPropertyElement__Group__2__Impl rule__TagObjectPropertyElement__Group__3
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6822:1: ( rule__TagObjectPropertyElement__Group__2__Impl rule__TagObjectPropertyElement__Group__3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6823:2: rule__TagObjectPropertyElement__Group__2__Impl rule__TagObjectPropertyElement__Group__3
             {
-            pushFollow(FOLLOW_rule__TagObjectPropertyElement__Group__2__Impl_in_rule__TagObjectPropertyElement__Group__213602);
+            pushFollow(FOLLOW_rule__TagObjectPropertyElement__Group__2__Impl_in_rule__TagObjectPropertyElement__Group__213979);
             rule__TagObjectPropertyElement__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TagObjectPropertyElement__Group__3_in_rule__TagObjectPropertyElement__Group__213605);
+            pushFollow(FOLLOW_rule__TagObjectPropertyElement__Group__3_in_rule__TagObjectPropertyElement__Group__213982);
             rule__TagObjectPropertyElement__Group__3();
 
             state._fsp--;
@@ -18101,20 +18566,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagObjectPropertyElement__Group__2__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6637:1: rule__TagObjectPropertyElement__Group__2__Impl : ( 'objectproperty' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6830:1: rule__TagObjectPropertyElement__Group__2__Impl : ( 'objectproperty' ) ;
     public final void rule__TagObjectPropertyElement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6641:1: ( ( 'objectproperty' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6642:1: ( 'objectproperty' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6834:1: ( ( 'objectproperty' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6835:1: ( 'objectproperty' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6642:1: ( 'objectproperty' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6643:1: 'objectproperty'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6835:1: ( 'objectproperty' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6836:1: 'objectproperty'
             {
              before(grammarAccess.getTagObjectPropertyElementAccess().getObjectpropertyKeyword_2()); 
-            match(input,51,FOLLOW_51_in_rule__TagObjectPropertyElement__Group__2__Impl13633); 
+            match(input,52,FOLLOW_52_in_rule__TagObjectPropertyElement__Group__2__Impl14010); 
              after(grammarAccess.getTagObjectPropertyElementAccess().getObjectpropertyKeyword_2()); 
 
             }
@@ -18138,16 +18603,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagObjectPropertyElement__Group__3"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6656:1: rule__TagObjectPropertyElement__Group__3 : rule__TagObjectPropertyElement__Group__3__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6849:1: rule__TagObjectPropertyElement__Group__3 : rule__TagObjectPropertyElement__Group__3__Impl ;
     public final void rule__TagObjectPropertyElement__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6660:1: ( rule__TagObjectPropertyElement__Group__3__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6661:2: rule__TagObjectPropertyElement__Group__3__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6853:1: ( rule__TagObjectPropertyElement__Group__3__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6854:2: rule__TagObjectPropertyElement__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__TagObjectPropertyElement__Group__3__Impl_in_rule__TagObjectPropertyElement__Group__313664);
+            pushFollow(FOLLOW_rule__TagObjectPropertyElement__Group__3__Impl_in_rule__TagObjectPropertyElement__Group__314041);
             rule__TagObjectPropertyElement__Group__3__Impl();
 
             state._fsp--;
@@ -18171,23 +18636,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagObjectPropertyElement__Group__3__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6667:1: rule__TagObjectPropertyElement__Group__3__Impl : ( ( rule__TagObjectPropertyElement__ElementAssignment_3 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6860:1: rule__TagObjectPropertyElement__Group__3__Impl : ( ( rule__TagObjectPropertyElement__ElementAssignment_3 ) ) ;
     public final void rule__TagObjectPropertyElement__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6671:1: ( ( ( rule__TagObjectPropertyElement__ElementAssignment_3 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6672:1: ( ( rule__TagObjectPropertyElement__ElementAssignment_3 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6864:1: ( ( ( rule__TagObjectPropertyElement__ElementAssignment_3 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6865:1: ( ( rule__TagObjectPropertyElement__ElementAssignment_3 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6672:1: ( ( rule__TagObjectPropertyElement__ElementAssignment_3 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6673:1: ( rule__TagObjectPropertyElement__ElementAssignment_3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6865:1: ( ( rule__TagObjectPropertyElement__ElementAssignment_3 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6866:1: ( rule__TagObjectPropertyElement__ElementAssignment_3 )
             {
              before(grammarAccess.getTagObjectPropertyElementAccess().getElementAssignment_3()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6674:1: ( rule__TagObjectPropertyElement__ElementAssignment_3 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6674:2: rule__TagObjectPropertyElement__ElementAssignment_3
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6867:1: ( rule__TagObjectPropertyElement__ElementAssignment_3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6867:2: rule__TagObjectPropertyElement__ElementAssignment_3
             {
-            pushFollow(FOLLOW_rule__TagObjectPropertyElement__ElementAssignment_3_in_rule__TagObjectPropertyElement__Group__3__Impl13691);
+            pushFollow(FOLLOW_rule__TagObjectPropertyElement__ElementAssignment_3_in_rule__TagObjectPropertyElement__Group__3__Impl14068);
             rule__TagObjectPropertyElement__ElementAssignment_3();
 
             state._fsp--;
@@ -18218,21 +18683,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagDataTypePropertyElement__Group__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6692:1: rule__TagDataTypePropertyElement__Group__0 : rule__TagDataTypePropertyElement__Group__0__Impl rule__TagDataTypePropertyElement__Group__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6885:1: rule__TagDataTypePropertyElement__Group__0 : rule__TagDataTypePropertyElement__Group__0__Impl rule__TagDataTypePropertyElement__Group__1 ;
     public final void rule__TagDataTypePropertyElement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6696:1: ( rule__TagDataTypePropertyElement__Group__0__Impl rule__TagDataTypePropertyElement__Group__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6697:2: rule__TagDataTypePropertyElement__Group__0__Impl rule__TagDataTypePropertyElement__Group__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6889:1: ( rule__TagDataTypePropertyElement__Group__0__Impl rule__TagDataTypePropertyElement__Group__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6890:2: rule__TagDataTypePropertyElement__Group__0__Impl rule__TagDataTypePropertyElement__Group__1
             {
-            pushFollow(FOLLOW_rule__TagDataTypePropertyElement__Group__0__Impl_in_rule__TagDataTypePropertyElement__Group__013729);
+            pushFollow(FOLLOW_rule__TagDataTypePropertyElement__Group__0__Impl_in_rule__TagDataTypePropertyElement__Group__014106);
             rule__TagDataTypePropertyElement__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TagDataTypePropertyElement__Group__1_in_rule__TagDataTypePropertyElement__Group__013732);
+            pushFollow(FOLLOW_rule__TagDataTypePropertyElement__Group__1_in_rule__TagDataTypePropertyElement__Group__014109);
             rule__TagDataTypePropertyElement__Group__1();
 
             state._fsp--;
@@ -18256,23 +18721,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagDataTypePropertyElement__Group__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6704:1: rule__TagDataTypePropertyElement__Group__0__Impl : ( ( rule__TagDataTypePropertyElement__ReferenceAssignment_0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6897:1: rule__TagDataTypePropertyElement__Group__0__Impl : ( ( rule__TagDataTypePropertyElement__ReferenceAssignment_0 ) ) ;
     public final void rule__TagDataTypePropertyElement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6708:1: ( ( ( rule__TagDataTypePropertyElement__ReferenceAssignment_0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6709:1: ( ( rule__TagDataTypePropertyElement__ReferenceAssignment_0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6901:1: ( ( ( rule__TagDataTypePropertyElement__ReferenceAssignment_0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6902:1: ( ( rule__TagDataTypePropertyElement__ReferenceAssignment_0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6709:1: ( ( rule__TagDataTypePropertyElement__ReferenceAssignment_0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6710:1: ( rule__TagDataTypePropertyElement__ReferenceAssignment_0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6902:1: ( ( rule__TagDataTypePropertyElement__ReferenceAssignment_0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6903:1: ( rule__TagDataTypePropertyElement__ReferenceAssignment_0 )
             {
              before(grammarAccess.getTagDataTypePropertyElementAccess().getReferenceAssignment_0()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6711:1: ( rule__TagDataTypePropertyElement__ReferenceAssignment_0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6711:2: rule__TagDataTypePropertyElement__ReferenceAssignment_0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6904:1: ( rule__TagDataTypePropertyElement__ReferenceAssignment_0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6904:2: rule__TagDataTypePropertyElement__ReferenceAssignment_0
             {
-            pushFollow(FOLLOW_rule__TagDataTypePropertyElement__ReferenceAssignment_0_in_rule__TagDataTypePropertyElement__Group__0__Impl13759);
+            pushFollow(FOLLOW_rule__TagDataTypePropertyElement__ReferenceAssignment_0_in_rule__TagDataTypePropertyElement__Group__0__Impl14136);
             rule__TagDataTypePropertyElement__ReferenceAssignment_0();
 
             state._fsp--;
@@ -18303,21 +18768,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagDataTypePropertyElement__Group__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6721:1: rule__TagDataTypePropertyElement__Group__1 : rule__TagDataTypePropertyElement__Group__1__Impl rule__TagDataTypePropertyElement__Group__2 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6914:1: rule__TagDataTypePropertyElement__Group__1 : rule__TagDataTypePropertyElement__Group__1__Impl rule__TagDataTypePropertyElement__Group__2 ;
     public final void rule__TagDataTypePropertyElement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6725:1: ( rule__TagDataTypePropertyElement__Group__1__Impl rule__TagDataTypePropertyElement__Group__2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6726:2: rule__TagDataTypePropertyElement__Group__1__Impl rule__TagDataTypePropertyElement__Group__2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6918:1: ( rule__TagDataTypePropertyElement__Group__1__Impl rule__TagDataTypePropertyElement__Group__2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6919:2: rule__TagDataTypePropertyElement__Group__1__Impl rule__TagDataTypePropertyElement__Group__2
             {
-            pushFollow(FOLLOW_rule__TagDataTypePropertyElement__Group__1__Impl_in_rule__TagDataTypePropertyElement__Group__113789);
+            pushFollow(FOLLOW_rule__TagDataTypePropertyElement__Group__1__Impl_in_rule__TagDataTypePropertyElement__Group__114166);
             rule__TagDataTypePropertyElement__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TagDataTypePropertyElement__Group__2_in_rule__TagDataTypePropertyElement__Group__113792);
+            pushFollow(FOLLOW_rule__TagDataTypePropertyElement__Group__2_in_rule__TagDataTypePropertyElement__Group__114169);
             rule__TagDataTypePropertyElement__Group__2();
 
             state._fsp--;
@@ -18341,20 +18806,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagDataTypePropertyElement__Group__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6733:1: rule__TagDataTypePropertyElement__Group__1__Impl : ( 'is' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6926:1: rule__TagDataTypePropertyElement__Group__1__Impl : ( 'is' ) ;
     public final void rule__TagDataTypePropertyElement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6737:1: ( ( 'is' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6738:1: ( 'is' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6930:1: ( ( 'is' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6931:1: ( 'is' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6738:1: ( 'is' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6739:1: 'is'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6931:1: ( 'is' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6932:1: 'is'
             {
              before(grammarAccess.getTagDataTypePropertyElementAccess().getIsKeyword_1()); 
-            match(input,49,FOLLOW_49_in_rule__TagDataTypePropertyElement__Group__1__Impl13820); 
+            match(input,50,FOLLOW_50_in_rule__TagDataTypePropertyElement__Group__1__Impl14197); 
              after(grammarAccess.getTagDataTypePropertyElementAccess().getIsKeyword_1()); 
 
             }
@@ -18378,21 +18843,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagDataTypePropertyElement__Group__2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6752:1: rule__TagDataTypePropertyElement__Group__2 : rule__TagDataTypePropertyElement__Group__2__Impl rule__TagDataTypePropertyElement__Group__3 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6945:1: rule__TagDataTypePropertyElement__Group__2 : rule__TagDataTypePropertyElement__Group__2__Impl rule__TagDataTypePropertyElement__Group__3 ;
     public final void rule__TagDataTypePropertyElement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6756:1: ( rule__TagDataTypePropertyElement__Group__2__Impl rule__TagDataTypePropertyElement__Group__3 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6757:2: rule__TagDataTypePropertyElement__Group__2__Impl rule__TagDataTypePropertyElement__Group__3
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6949:1: ( rule__TagDataTypePropertyElement__Group__2__Impl rule__TagDataTypePropertyElement__Group__3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6950:2: rule__TagDataTypePropertyElement__Group__2__Impl rule__TagDataTypePropertyElement__Group__3
             {
-            pushFollow(FOLLOW_rule__TagDataTypePropertyElement__Group__2__Impl_in_rule__TagDataTypePropertyElement__Group__213851);
+            pushFollow(FOLLOW_rule__TagDataTypePropertyElement__Group__2__Impl_in_rule__TagDataTypePropertyElement__Group__214228);
             rule__TagDataTypePropertyElement__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TagDataTypePropertyElement__Group__3_in_rule__TagDataTypePropertyElement__Group__213854);
+            pushFollow(FOLLOW_rule__TagDataTypePropertyElement__Group__3_in_rule__TagDataTypePropertyElement__Group__214231);
             rule__TagDataTypePropertyElement__Group__3();
 
             state._fsp--;
@@ -18416,20 +18881,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagDataTypePropertyElement__Group__2__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6764:1: rule__TagDataTypePropertyElement__Group__2__Impl : ( 'datatype' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6957:1: rule__TagDataTypePropertyElement__Group__2__Impl : ( 'datatype' ) ;
     public final void rule__TagDataTypePropertyElement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6768:1: ( ( 'datatype' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6769:1: ( 'datatype' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6961:1: ( ( 'datatype' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6962:1: ( 'datatype' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6769:1: ( 'datatype' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6770:1: 'datatype'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6962:1: ( 'datatype' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6963:1: 'datatype'
             {
              before(grammarAccess.getTagDataTypePropertyElementAccess().getDatatypeKeyword_2()); 
-            match(input,52,FOLLOW_52_in_rule__TagDataTypePropertyElement__Group__2__Impl13882); 
+            match(input,53,FOLLOW_53_in_rule__TagDataTypePropertyElement__Group__2__Impl14259); 
              after(grammarAccess.getTagDataTypePropertyElementAccess().getDatatypeKeyword_2()); 
 
             }
@@ -18453,16 +18918,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagDataTypePropertyElement__Group__3"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6783:1: rule__TagDataTypePropertyElement__Group__3 : rule__TagDataTypePropertyElement__Group__3__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6976:1: rule__TagDataTypePropertyElement__Group__3 : rule__TagDataTypePropertyElement__Group__3__Impl ;
     public final void rule__TagDataTypePropertyElement__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6787:1: ( rule__TagDataTypePropertyElement__Group__3__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6788:2: rule__TagDataTypePropertyElement__Group__3__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6980:1: ( rule__TagDataTypePropertyElement__Group__3__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6981:2: rule__TagDataTypePropertyElement__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__TagDataTypePropertyElement__Group__3__Impl_in_rule__TagDataTypePropertyElement__Group__313913);
+            pushFollow(FOLLOW_rule__TagDataTypePropertyElement__Group__3__Impl_in_rule__TagDataTypePropertyElement__Group__314290);
             rule__TagDataTypePropertyElement__Group__3__Impl();
 
             state._fsp--;
@@ -18486,23 +18951,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagDataTypePropertyElement__Group__3__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6794:1: rule__TagDataTypePropertyElement__Group__3__Impl : ( ( rule__TagDataTypePropertyElement__ElementAssignment_3 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6987:1: rule__TagDataTypePropertyElement__Group__3__Impl : ( ( rule__TagDataTypePropertyElement__ElementAssignment_3 ) ) ;
     public final void rule__TagDataTypePropertyElement__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6798:1: ( ( ( rule__TagDataTypePropertyElement__ElementAssignment_3 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6799:1: ( ( rule__TagDataTypePropertyElement__ElementAssignment_3 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6991:1: ( ( ( rule__TagDataTypePropertyElement__ElementAssignment_3 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6992:1: ( ( rule__TagDataTypePropertyElement__ElementAssignment_3 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6799:1: ( ( rule__TagDataTypePropertyElement__ElementAssignment_3 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6800:1: ( rule__TagDataTypePropertyElement__ElementAssignment_3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6992:1: ( ( rule__TagDataTypePropertyElement__ElementAssignment_3 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6993:1: ( rule__TagDataTypePropertyElement__ElementAssignment_3 )
             {
              before(grammarAccess.getTagDataTypePropertyElementAccess().getElementAssignment_3()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6801:1: ( rule__TagDataTypePropertyElement__ElementAssignment_3 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6801:2: rule__TagDataTypePropertyElement__ElementAssignment_3
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6994:1: ( rule__TagDataTypePropertyElement__ElementAssignment_3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6994:2: rule__TagDataTypePropertyElement__ElementAssignment_3
             {
-            pushFollow(FOLLOW_rule__TagDataTypePropertyElement__ElementAssignment_3_in_rule__TagDataTypePropertyElement__Group__3__Impl13940);
+            pushFollow(FOLLOW_rule__TagDataTypePropertyElement__ElementAssignment_3_in_rule__TagDataTypePropertyElement__Group__3__Impl14317);
             rule__TagDataTypePropertyElement__ElementAssignment_3();
 
             state._fsp--;
@@ -18533,21 +18998,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WindowOperator__Group_0__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6819:1: rule__WindowOperator__Group_0__0 : rule__WindowOperator__Group_0__0__Impl rule__WindowOperator__Group_0__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7012:1: rule__WindowOperator__Group_0__0 : rule__WindowOperator__Group_0__0__Impl rule__WindowOperator__Group_0__1 ;
     public final void rule__WindowOperator__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6823:1: ( rule__WindowOperator__Group_0__0__Impl rule__WindowOperator__Group_0__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6824:2: rule__WindowOperator__Group_0__0__Impl rule__WindowOperator__Group_0__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7016:1: ( rule__WindowOperator__Group_0__0__Impl rule__WindowOperator__Group_0__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7017:2: rule__WindowOperator__Group_0__0__Impl rule__WindowOperator__Group_0__1
             {
-            pushFollow(FOLLOW_rule__WindowOperator__Group_0__0__Impl_in_rule__WindowOperator__Group_0__013978);
+            pushFollow(FOLLOW_rule__WindowOperator__Group_0__0__Impl_in_rule__WindowOperator__Group_0__014355);
             rule__WindowOperator__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__WindowOperator__Group_0__1_in_rule__WindowOperator__Group_0__013981);
+            pushFollow(FOLLOW_rule__WindowOperator__Group_0__1_in_rule__WindowOperator__Group_0__014358);
             rule__WindowOperator__Group_0__1();
 
             state._fsp--;
@@ -18571,23 +19036,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WindowOperator__Group_0__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6831:1: rule__WindowOperator__Group_0__0__Impl : ( ( rule__WindowOperator__SettingAssignment_0_0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7024:1: rule__WindowOperator__Group_0__0__Impl : ( ( rule__WindowOperator__SettingAssignment_0_0 ) ) ;
     public final void rule__WindowOperator__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6835:1: ( ( ( rule__WindowOperator__SettingAssignment_0_0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6836:1: ( ( rule__WindowOperator__SettingAssignment_0_0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7028:1: ( ( ( rule__WindowOperator__SettingAssignment_0_0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7029:1: ( ( rule__WindowOperator__SettingAssignment_0_0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6836:1: ( ( rule__WindowOperator__SettingAssignment_0_0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6837:1: ( rule__WindowOperator__SettingAssignment_0_0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7029:1: ( ( rule__WindowOperator__SettingAssignment_0_0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7030:1: ( rule__WindowOperator__SettingAssignment_0_0 )
             {
              before(grammarAccess.getWindowOperatorAccess().getSettingAssignment_0_0()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6838:1: ( rule__WindowOperator__SettingAssignment_0_0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6838:2: rule__WindowOperator__SettingAssignment_0_0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7031:1: ( rule__WindowOperator__SettingAssignment_0_0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7031:2: rule__WindowOperator__SettingAssignment_0_0
             {
-            pushFollow(FOLLOW_rule__WindowOperator__SettingAssignment_0_0_in_rule__WindowOperator__Group_0__0__Impl14008);
+            pushFollow(FOLLOW_rule__WindowOperator__SettingAssignment_0_0_in_rule__WindowOperator__Group_0__0__Impl14385);
             rule__WindowOperator__SettingAssignment_0_0();
 
             state._fsp--;
@@ -18618,21 +19083,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WindowOperator__Group_0__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6848:1: rule__WindowOperator__Group_0__1 : rule__WindowOperator__Group_0__1__Impl rule__WindowOperator__Group_0__2 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7041:1: rule__WindowOperator__Group_0__1 : rule__WindowOperator__Group_0__1__Impl rule__WindowOperator__Group_0__2 ;
     public final void rule__WindowOperator__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6852:1: ( rule__WindowOperator__Group_0__1__Impl rule__WindowOperator__Group_0__2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6853:2: rule__WindowOperator__Group_0__1__Impl rule__WindowOperator__Group_0__2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7045:1: ( rule__WindowOperator__Group_0__1__Impl rule__WindowOperator__Group_0__2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7046:2: rule__WindowOperator__Group_0__1__Impl rule__WindowOperator__Group_0__2
             {
-            pushFollow(FOLLOW_rule__WindowOperator__Group_0__1__Impl_in_rule__WindowOperator__Group_0__114038);
+            pushFollow(FOLLOW_rule__WindowOperator__Group_0__1__Impl_in_rule__WindowOperator__Group_0__114415);
             rule__WindowOperator__Group_0__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__WindowOperator__Group_0__2_in_rule__WindowOperator__Group_0__114041);
+            pushFollow(FOLLOW_rule__WindowOperator__Group_0__2_in_rule__WindowOperator__Group_0__114418);
             rule__WindowOperator__Group_0__2();
 
             state._fsp--;
@@ -18656,23 +19121,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WindowOperator__Group_0__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6860:1: rule__WindowOperator__Group_0__1__Impl : ( ( rule__WindowOperator__ValueAssignment_0_1 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7053:1: rule__WindowOperator__Group_0__1__Impl : ( ( rule__WindowOperator__ValueAssignment_0_1 ) ) ;
     public final void rule__WindowOperator__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6864:1: ( ( ( rule__WindowOperator__ValueAssignment_0_1 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6865:1: ( ( rule__WindowOperator__ValueAssignment_0_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7057:1: ( ( ( rule__WindowOperator__ValueAssignment_0_1 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7058:1: ( ( rule__WindowOperator__ValueAssignment_0_1 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6865:1: ( ( rule__WindowOperator__ValueAssignment_0_1 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6866:1: ( rule__WindowOperator__ValueAssignment_0_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7058:1: ( ( rule__WindowOperator__ValueAssignment_0_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7059:1: ( rule__WindowOperator__ValueAssignment_0_1 )
             {
              before(grammarAccess.getWindowOperatorAccess().getValueAssignment_0_1()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6867:1: ( rule__WindowOperator__ValueAssignment_0_1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6867:2: rule__WindowOperator__ValueAssignment_0_1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7060:1: ( rule__WindowOperator__ValueAssignment_0_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7060:2: rule__WindowOperator__ValueAssignment_0_1
             {
-            pushFollow(FOLLOW_rule__WindowOperator__ValueAssignment_0_1_in_rule__WindowOperator__Group_0__1__Impl14068);
+            pushFollow(FOLLOW_rule__WindowOperator__ValueAssignment_0_1_in_rule__WindowOperator__Group_0__1__Impl14445);
             rule__WindowOperator__ValueAssignment_0_1();
 
             state._fsp--;
@@ -18703,16 +19168,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WindowOperator__Group_0__2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6877:1: rule__WindowOperator__Group_0__2 : rule__WindowOperator__Group_0__2__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7070:1: rule__WindowOperator__Group_0__2 : rule__WindowOperator__Group_0__2__Impl ;
     public final void rule__WindowOperator__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6881:1: ( rule__WindowOperator__Group_0__2__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6882:2: rule__WindowOperator__Group_0__2__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7074:1: ( rule__WindowOperator__Group_0__2__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7075:2: rule__WindowOperator__Group_0__2__Impl
             {
-            pushFollow(FOLLOW_rule__WindowOperator__Group_0__2__Impl_in_rule__WindowOperator__Group_0__214098);
+            pushFollow(FOLLOW_rule__WindowOperator__Group_0__2__Impl_in_rule__WindowOperator__Group_0__214475);
             rule__WindowOperator__Group_0__2__Impl();
 
             state._fsp--;
@@ -18736,20 +19201,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WindowOperator__Group_0__2__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6888:1: rule__WindowOperator__Group_0__2__Impl : ( ( rule__WindowOperator__UnitAssignment_0_2 )? ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7081:1: rule__WindowOperator__Group_0__2__Impl : ( ( rule__WindowOperator__UnitAssignment_0_2 )? ) ;
     public final void rule__WindowOperator__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6892:1: ( ( ( rule__WindowOperator__UnitAssignment_0_2 )? ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6893:1: ( ( rule__WindowOperator__UnitAssignment_0_2 )? )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7085:1: ( ( ( rule__WindowOperator__UnitAssignment_0_2 )? ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7086:1: ( ( rule__WindowOperator__UnitAssignment_0_2 )? )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6893:1: ( ( rule__WindowOperator__UnitAssignment_0_2 )? )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6894:1: ( rule__WindowOperator__UnitAssignment_0_2 )?
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7086:1: ( ( rule__WindowOperator__UnitAssignment_0_2 )? )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7087:1: ( rule__WindowOperator__UnitAssignment_0_2 )?
             {
              before(grammarAccess.getWindowOperatorAccess().getUnitAssignment_0_2()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6895:1: ( rule__WindowOperator__UnitAssignment_0_2 )?
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7088:1: ( rule__WindowOperator__UnitAssignment_0_2 )?
             int alt34=2;
             int LA34_0 = input.LA(1);
 
@@ -18758,9 +19223,9 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
             }
             switch (alt34) {
                 case 1 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6895:2: rule__WindowOperator__UnitAssignment_0_2
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7088:2: rule__WindowOperator__UnitAssignment_0_2
                     {
-                    pushFollow(FOLLOW_rule__WindowOperator__UnitAssignment_0_2_in_rule__WindowOperator__Group_0__2__Impl14125);
+                    pushFollow(FOLLOW_rule__WindowOperator__UnitAssignment_0_2_in_rule__WindowOperator__Group_0__2__Impl14502);
                     rule__WindowOperator__UnitAssignment_0_2();
 
                     state._fsp--;
@@ -18794,21 +19259,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MarkerOperator__Group__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6911:1: rule__MarkerOperator__Group__0 : rule__MarkerOperator__Group__0__Impl rule__MarkerOperator__Group__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7104:1: rule__MarkerOperator__Group__0 : rule__MarkerOperator__Group__0__Impl rule__MarkerOperator__Group__1 ;
     public final void rule__MarkerOperator__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6915:1: ( rule__MarkerOperator__Group__0__Impl rule__MarkerOperator__Group__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6916:2: rule__MarkerOperator__Group__0__Impl rule__MarkerOperator__Group__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7108:1: ( rule__MarkerOperator__Group__0__Impl rule__MarkerOperator__Group__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7109:2: rule__MarkerOperator__Group__0__Impl rule__MarkerOperator__Group__1
             {
-            pushFollow(FOLLOW_rule__MarkerOperator__Group__0__Impl_in_rule__MarkerOperator__Group__014162);
+            pushFollow(FOLLOW_rule__MarkerOperator__Group__0__Impl_in_rule__MarkerOperator__Group__014539);
             rule__MarkerOperator__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MarkerOperator__Group__1_in_rule__MarkerOperator__Group__014165);
+            pushFollow(FOLLOW_rule__MarkerOperator__Group__1_in_rule__MarkerOperator__Group__014542);
             rule__MarkerOperator__Group__1();
 
             state._fsp--;
@@ -18832,20 +19297,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MarkerOperator__Group__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6923:1: rule__MarkerOperator__Group__0__Impl : ( 'marker' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7116:1: rule__MarkerOperator__Group__0__Impl : ( 'marker' ) ;
     public final void rule__MarkerOperator__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6927:1: ( ( 'marker' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6928:1: ( 'marker' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7120:1: ( ( 'marker' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7121:1: ( 'marker' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6928:1: ( 'marker' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6929:1: 'marker'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7121:1: ( 'marker' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7122:1: 'marker'
             {
              before(grammarAccess.getMarkerOperatorAccess().getMarkerKeyword_0()); 
-            match(input,53,FOLLOW_53_in_rule__MarkerOperator__Group__0__Impl14193); 
+            match(input,54,FOLLOW_54_in_rule__MarkerOperator__Group__0__Impl14570); 
              after(grammarAccess.getMarkerOperatorAccess().getMarkerKeyword_0()); 
 
             }
@@ -18869,16 +19334,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MarkerOperator__Group__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6942:1: rule__MarkerOperator__Group__1 : rule__MarkerOperator__Group__1__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7135:1: rule__MarkerOperator__Group__1 : rule__MarkerOperator__Group__1__Impl ;
     public final void rule__MarkerOperator__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6946:1: ( rule__MarkerOperator__Group__1__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6947:2: rule__MarkerOperator__Group__1__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7139:1: ( rule__MarkerOperator__Group__1__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7140:2: rule__MarkerOperator__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__MarkerOperator__Group__1__Impl_in_rule__MarkerOperator__Group__114224);
+            pushFollow(FOLLOW_rule__MarkerOperator__Group__1__Impl_in_rule__MarkerOperator__Group__114601);
             rule__MarkerOperator__Group__1__Impl();
 
             state._fsp--;
@@ -18902,23 +19367,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MarkerOperator__Group__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6953:1: rule__MarkerOperator__Group__1__Impl : ( ( rule__MarkerOperator__ExpressionAssignment_1 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7146:1: rule__MarkerOperator__Group__1__Impl : ( ( rule__MarkerOperator__ExpressionAssignment_1 ) ) ;
     public final void rule__MarkerOperator__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6957:1: ( ( ( rule__MarkerOperator__ExpressionAssignment_1 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6958:1: ( ( rule__MarkerOperator__ExpressionAssignment_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7150:1: ( ( ( rule__MarkerOperator__ExpressionAssignment_1 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7151:1: ( ( rule__MarkerOperator__ExpressionAssignment_1 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6958:1: ( ( rule__MarkerOperator__ExpressionAssignment_1 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6959:1: ( rule__MarkerOperator__ExpressionAssignment_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7151:1: ( ( rule__MarkerOperator__ExpressionAssignment_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7152:1: ( rule__MarkerOperator__ExpressionAssignment_1 )
             {
              before(grammarAccess.getMarkerOperatorAccess().getExpressionAssignment_1()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6960:1: ( rule__MarkerOperator__ExpressionAssignment_1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6960:2: rule__MarkerOperator__ExpressionAssignment_1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7153:1: ( rule__MarkerOperator__ExpressionAssignment_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7153:2: rule__MarkerOperator__ExpressionAssignment_1
             {
-            pushFollow(FOLLOW_rule__MarkerOperator__ExpressionAssignment_1_in_rule__MarkerOperator__Group__1__Impl14251);
+            pushFollow(FOLLOW_rule__MarkerOperator__ExpressionAssignment_1_in_rule__MarkerOperator__Group__1__Impl14628);
             rule__MarkerOperator__ExpressionAssignment_1();
 
             state._fsp--;
@@ -18949,21 +19414,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLOperator__Group__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6974:1: rule__SWRLOperator__Group__0 : rule__SWRLOperator__Group__0__Impl rule__SWRLOperator__Group__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7167:1: rule__SWRLOperator__Group__0 : rule__SWRLOperator__Group__0__Impl rule__SWRLOperator__Group__1 ;
     public final void rule__SWRLOperator__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6978:1: ( rule__SWRLOperator__Group__0__Impl rule__SWRLOperator__Group__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6979:2: rule__SWRLOperator__Group__0__Impl rule__SWRLOperator__Group__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7171:1: ( rule__SWRLOperator__Group__0__Impl rule__SWRLOperator__Group__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7172:2: rule__SWRLOperator__Group__0__Impl rule__SWRLOperator__Group__1
             {
-            pushFollow(FOLLOW_rule__SWRLOperator__Group__0__Impl_in_rule__SWRLOperator__Group__014285);
+            pushFollow(FOLLOW_rule__SWRLOperator__Group__0__Impl_in_rule__SWRLOperator__Group__014662);
             rule__SWRLOperator__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SWRLOperator__Group__1_in_rule__SWRLOperator__Group__014288);
+            pushFollow(FOLLOW_rule__SWRLOperator__Group__1_in_rule__SWRLOperator__Group__014665);
             rule__SWRLOperator__Group__1();
 
             state._fsp--;
@@ -18987,20 +19452,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLOperator__Group__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6986:1: rule__SWRLOperator__Group__0__Impl : ( 'swrl' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7179:1: rule__SWRLOperator__Group__0__Impl : ( 'swrl' ) ;
     public final void rule__SWRLOperator__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6990:1: ( ( 'swrl' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6991:1: ( 'swrl' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7183:1: ( ( 'swrl' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7184:1: ( 'swrl' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6991:1: ( 'swrl' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:6992:1: 'swrl'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7184:1: ( 'swrl' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7185:1: 'swrl'
             {
              before(grammarAccess.getSWRLOperatorAccess().getSwrlKeyword_0()); 
-            match(input,54,FOLLOW_54_in_rule__SWRLOperator__Group__0__Impl14316); 
+            match(input,55,FOLLOW_55_in_rule__SWRLOperator__Group__0__Impl14693); 
              after(grammarAccess.getSWRLOperatorAccess().getSwrlKeyword_0()); 
 
             }
@@ -19024,21 +19489,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLOperator__Group__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7005:1: rule__SWRLOperator__Group__1 : rule__SWRLOperator__Group__1__Impl rule__SWRLOperator__Group__2 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7198:1: rule__SWRLOperator__Group__1 : rule__SWRLOperator__Group__1__Impl rule__SWRLOperator__Group__2 ;
     public final void rule__SWRLOperator__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7009:1: ( rule__SWRLOperator__Group__1__Impl rule__SWRLOperator__Group__2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7010:2: rule__SWRLOperator__Group__1__Impl rule__SWRLOperator__Group__2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7202:1: ( rule__SWRLOperator__Group__1__Impl rule__SWRLOperator__Group__2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7203:2: rule__SWRLOperator__Group__1__Impl rule__SWRLOperator__Group__2
             {
-            pushFollow(FOLLOW_rule__SWRLOperator__Group__1__Impl_in_rule__SWRLOperator__Group__114347);
+            pushFollow(FOLLOW_rule__SWRLOperator__Group__1__Impl_in_rule__SWRLOperator__Group__114724);
             rule__SWRLOperator__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SWRLOperator__Group__2_in_rule__SWRLOperator__Group__114350);
+            pushFollow(FOLLOW_rule__SWRLOperator__Group__2_in_rule__SWRLOperator__Group__114727);
             rule__SWRLOperator__Group__2();
 
             state._fsp--;
@@ -19062,20 +19527,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLOperator__Group__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7017:1: rule__SWRLOperator__Group__1__Impl : ( '(' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7210:1: rule__SWRLOperator__Group__1__Impl : ( '(' ) ;
     public final void rule__SWRLOperator__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7021:1: ( ( '(' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7022:1: ( '(' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7214:1: ( ( '(' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7215:1: ( '(' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7022:1: ( '(' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7023:1: '('
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7215:1: ( '(' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7216:1: '('
             {
              before(grammarAccess.getSWRLOperatorAccess().getLeftParenthesisKeyword_1()); 
-            match(input,35,FOLLOW_35_in_rule__SWRLOperator__Group__1__Impl14378); 
+            match(input,35,FOLLOW_35_in_rule__SWRLOperator__Group__1__Impl14755); 
              after(grammarAccess.getSWRLOperatorAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -19099,21 +19564,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLOperator__Group__2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7036:1: rule__SWRLOperator__Group__2 : rule__SWRLOperator__Group__2__Impl rule__SWRLOperator__Group__3 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7229:1: rule__SWRLOperator__Group__2 : rule__SWRLOperator__Group__2__Impl rule__SWRLOperator__Group__3 ;
     public final void rule__SWRLOperator__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7040:1: ( rule__SWRLOperator__Group__2__Impl rule__SWRLOperator__Group__3 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7041:2: rule__SWRLOperator__Group__2__Impl rule__SWRLOperator__Group__3
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7233:1: ( rule__SWRLOperator__Group__2__Impl rule__SWRLOperator__Group__3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7234:2: rule__SWRLOperator__Group__2__Impl rule__SWRLOperator__Group__3
             {
-            pushFollow(FOLLOW_rule__SWRLOperator__Group__2__Impl_in_rule__SWRLOperator__Group__214409);
+            pushFollow(FOLLOW_rule__SWRLOperator__Group__2__Impl_in_rule__SWRLOperator__Group__214786);
             rule__SWRLOperator__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SWRLOperator__Group__3_in_rule__SWRLOperator__Group__214412);
+            pushFollow(FOLLOW_rule__SWRLOperator__Group__3_in_rule__SWRLOperator__Group__214789);
             rule__SWRLOperator__Group__3();
 
             state._fsp--;
@@ -19137,23 +19602,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLOperator__Group__2__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7048:1: rule__SWRLOperator__Group__2__Impl : ( ( rule__SWRLOperator__RuleAssignment_2 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7241:1: rule__SWRLOperator__Group__2__Impl : ( ( rule__SWRLOperator__RuleAssignment_2 ) ) ;
     public final void rule__SWRLOperator__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7052:1: ( ( ( rule__SWRLOperator__RuleAssignment_2 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7053:1: ( ( rule__SWRLOperator__RuleAssignment_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7245:1: ( ( ( rule__SWRLOperator__RuleAssignment_2 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7246:1: ( ( rule__SWRLOperator__RuleAssignment_2 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7053:1: ( ( rule__SWRLOperator__RuleAssignment_2 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7054:1: ( rule__SWRLOperator__RuleAssignment_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7246:1: ( ( rule__SWRLOperator__RuleAssignment_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7247:1: ( rule__SWRLOperator__RuleAssignment_2 )
             {
              before(grammarAccess.getSWRLOperatorAccess().getRuleAssignment_2()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7055:1: ( rule__SWRLOperator__RuleAssignment_2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7055:2: rule__SWRLOperator__RuleAssignment_2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7248:1: ( rule__SWRLOperator__RuleAssignment_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7248:2: rule__SWRLOperator__RuleAssignment_2
             {
-            pushFollow(FOLLOW_rule__SWRLOperator__RuleAssignment_2_in_rule__SWRLOperator__Group__2__Impl14439);
+            pushFollow(FOLLOW_rule__SWRLOperator__RuleAssignment_2_in_rule__SWRLOperator__Group__2__Impl14816);
             rule__SWRLOperator__RuleAssignment_2();
 
             state._fsp--;
@@ -19184,21 +19649,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLOperator__Group__3"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7065:1: rule__SWRLOperator__Group__3 : rule__SWRLOperator__Group__3__Impl rule__SWRLOperator__Group__4 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7258:1: rule__SWRLOperator__Group__3 : rule__SWRLOperator__Group__3__Impl rule__SWRLOperator__Group__4 ;
     public final void rule__SWRLOperator__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7069:1: ( rule__SWRLOperator__Group__3__Impl rule__SWRLOperator__Group__4 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7070:2: rule__SWRLOperator__Group__3__Impl rule__SWRLOperator__Group__4
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7262:1: ( rule__SWRLOperator__Group__3__Impl rule__SWRLOperator__Group__4 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7263:2: rule__SWRLOperator__Group__3__Impl rule__SWRLOperator__Group__4
             {
-            pushFollow(FOLLOW_rule__SWRLOperator__Group__3__Impl_in_rule__SWRLOperator__Group__314469);
+            pushFollow(FOLLOW_rule__SWRLOperator__Group__3__Impl_in_rule__SWRLOperator__Group__314846);
             rule__SWRLOperator__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SWRLOperator__Group__4_in_rule__SWRLOperator__Group__314472);
+            pushFollow(FOLLOW_rule__SWRLOperator__Group__4_in_rule__SWRLOperator__Group__314849);
             rule__SWRLOperator__Group__4();
 
             state._fsp--;
@@ -19222,20 +19687,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLOperator__Group__3__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7077:1: rule__SWRLOperator__Group__3__Impl : ( ',' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7270:1: rule__SWRLOperator__Group__3__Impl : ( ',' ) ;
     public final void rule__SWRLOperator__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7081:1: ( ( ',' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7082:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7274:1: ( ( ',' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7275:1: ( ',' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7082:1: ( ',' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7083:1: ','
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7275:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7276:1: ','
             {
              before(grammarAccess.getSWRLOperatorAccess().getCommaKeyword_3()); 
-            match(input,32,FOLLOW_32_in_rule__SWRLOperator__Group__3__Impl14500); 
+            match(input,32,FOLLOW_32_in_rule__SWRLOperator__Group__3__Impl14877); 
              after(grammarAccess.getSWRLOperatorAccess().getCommaKeyword_3()); 
 
             }
@@ -19259,21 +19724,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLOperator__Group__4"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7096:1: rule__SWRLOperator__Group__4 : rule__SWRLOperator__Group__4__Impl rule__SWRLOperator__Group__5 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7289:1: rule__SWRLOperator__Group__4 : rule__SWRLOperator__Group__4__Impl rule__SWRLOperator__Group__5 ;
     public final void rule__SWRLOperator__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7100:1: ( rule__SWRLOperator__Group__4__Impl rule__SWRLOperator__Group__5 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7101:2: rule__SWRLOperator__Group__4__Impl rule__SWRLOperator__Group__5
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7293:1: ( rule__SWRLOperator__Group__4__Impl rule__SWRLOperator__Group__5 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7294:2: rule__SWRLOperator__Group__4__Impl rule__SWRLOperator__Group__5
             {
-            pushFollow(FOLLOW_rule__SWRLOperator__Group__4__Impl_in_rule__SWRLOperator__Group__414531);
+            pushFollow(FOLLOW_rule__SWRLOperator__Group__4__Impl_in_rule__SWRLOperator__Group__414908);
             rule__SWRLOperator__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SWRLOperator__Group__5_in_rule__SWRLOperator__Group__414534);
+            pushFollow(FOLLOW_rule__SWRLOperator__Group__5_in_rule__SWRLOperator__Group__414911);
             rule__SWRLOperator__Group__5();
 
             state._fsp--;
@@ -19297,23 +19762,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLOperator__Group__4__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7108:1: rule__SWRLOperator__Group__4__Impl : ( ( rule__SWRLOperator__BarrierAssignment_4 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7301:1: rule__SWRLOperator__Group__4__Impl : ( ( rule__SWRLOperator__BarrierAssignment_4 ) ) ;
     public final void rule__SWRLOperator__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7112:1: ( ( ( rule__SWRLOperator__BarrierAssignment_4 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7113:1: ( ( rule__SWRLOperator__BarrierAssignment_4 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7305:1: ( ( ( rule__SWRLOperator__BarrierAssignment_4 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7306:1: ( ( rule__SWRLOperator__BarrierAssignment_4 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7113:1: ( ( rule__SWRLOperator__BarrierAssignment_4 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7114:1: ( rule__SWRLOperator__BarrierAssignment_4 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7306:1: ( ( rule__SWRLOperator__BarrierAssignment_4 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7307:1: ( rule__SWRLOperator__BarrierAssignment_4 )
             {
              before(grammarAccess.getSWRLOperatorAccess().getBarrierAssignment_4()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7115:1: ( rule__SWRLOperator__BarrierAssignment_4 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7115:2: rule__SWRLOperator__BarrierAssignment_4
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7308:1: ( rule__SWRLOperator__BarrierAssignment_4 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7308:2: rule__SWRLOperator__BarrierAssignment_4
             {
-            pushFollow(FOLLOW_rule__SWRLOperator__BarrierAssignment_4_in_rule__SWRLOperator__Group__4__Impl14561);
+            pushFollow(FOLLOW_rule__SWRLOperator__BarrierAssignment_4_in_rule__SWRLOperator__Group__4__Impl14938);
             rule__SWRLOperator__BarrierAssignment_4();
 
             state._fsp--;
@@ -19344,21 +19809,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLOperator__Group__5"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7125:1: rule__SWRLOperator__Group__5 : rule__SWRLOperator__Group__5__Impl rule__SWRLOperator__Group__6 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7318:1: rule__SWRLOperator__Group__5 : rule__SWRLOperator__Group__5__Impl rule__SWRLOperator__Group__6 ;
     public final void rule__SWRLOperator__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7129:1: ( rule__SWRLOperator__Group__5__Impl rule__SWRLOperator__Group__6 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7130:2: rule__SWRLOperator__Group__5__Impl rule__SWRLOperator__Group__6
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7322:1: ( rule__SWRLOperator__Group__5__Impl rule__SWRLOperator__Group__6 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7323:2: rule__SWRLOperator__Group__5__Impl rule__SWRLOperator__Group__6
             {
-            pushFollow(FOLLOW_rule__SWRLOperator__Group__5__Impl_in_rule__SWRLOperator__Group__514591);
+            pushFollow(FOLLOW_rule__SWRLOperator__Group__5__Impl_in_rule__SWRLOperator__Group__514968);
             rule__SWRLOperator__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SWRLOperator__Group__6_in_rule__SWRLOperator__Group__514594);
+            pushFollow(FOLLOW_rule__SWRLOperator__Group__6_in_rule__SWRLOperator__Group__514971);
             rule__SWRLOperator__Group__6();
 
             state._fsp--;
@@ -19382,20 +19847,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLOperator__Group__5__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7137:1: rule__SWRLOperator__Group__5__Impl : ( ( rule__SWRLOperator__Group_5__0 )* ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7330:1: rule__SWRLOperator__Group__5__Impl : ( ( rule__SWRLOperator__Group_5__0 )* ) ;
     public final void rule__SWRLOperator__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7141:1: ( ( ( rule__SWRLOperator__Group_5__0 )* ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7142:1: ( ( rule__SWRLOperator__Group_5__0 )* )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7334:1: ( ( ( rule__SWRLOperator__Group_5__0 )* ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7335:1: ( ( rule__SWRLOperator__Group_5__0 )* )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7142:1: ( ( rule__SWRLOperator__Group_5__0 )* )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7143:1: ( rule__SWRLOperator__Group_5__0 )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7335:1: ( ( rule__SWRLOperator__Group_5__0 )* )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7336:1: ( rule__SWRLOperator__Group_5__0 )*
             {
              before(grammarAccess.getSWRLOperatorAccess().getGroup_5()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7144:1: ( rule__SWRLOperator__Group_5__0 )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7337:1: ( rule__SWRLOperator__Group_5__0 )*
             loop35:
             do {
                 int alt35=2;
@@ -19408,9 +19873,9 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
                 switch (alt35) {
             	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7144:2: rule__SWRLOperator__Group_5__0
+            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7337:2: rule__SWRLOperator__Group_5__0
             	    {
-            	    pushFollow(FOLLOW_rule__SWRLOperator__Group_5__0_in_rule__SWRLOperator__Group__5__Impl14621);
+            	    pushFollow(FOLLOW_rule__SWRLOperator__Group_5__0_in_rule__SWRLOperator__Group__5__Impl14998);
             	    rule__SWRLOperator__Group_5__0();
 
             	    state._fsp--;
@@ -19447,16 +19912,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLOperator__Group__6"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7154:1: rule__SWRLOperator__Group__6 : rule__SWRLOperator__Group__6__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7347:1: rule__SWRLOperator__Group__6 : rule__SWRLOperator__Group__6__Impl ;
     public final void rule__SWRLOperator__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7158:1: ( rule__SWRLOperator__Group__6__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7159:2: rule__SWRLOperator__Group__6__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7351:1: ( rule__SWRLOperator__Group__6__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7352:2: rule__SWRLOperator__Group__6__Impl
             {
-            pushFollow(FOLLOW_rule__SWRLOperator__Group__6__Impl_in_rule__SWRLOperator__Group__614652);
+            pushFollow(FOLLOW_rule__SWRLOperator__Group__6__Impl_in_rule__SWRLOperator__Group__615029);
             rule__SWRLOperator__Group__6__Impl();
 
             state._fsp--;
@@ -19480,20 +19945,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLOperator__Group__6__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7165:1: rule__SWRLOperator__Group__6__Impl : ( ')' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7358:1: rule__SWRLOperator__Group__6__Impl : ( ')' ) ;
     public final void rule__SWRLOperator__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7169:1: ( ( ')' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7170:1: ( ')' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7362:1: ( ( ')' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7363:1: ( ')' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7170:1: ( ')' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7171:1: ')'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7363:1: ( ')' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7364:1: ')'
             {
              before(grammarAccess.getSWRLOperatorAccess().getRightParenthesisKeyword_6()); 
-            match(input,36,FOLLOW_36_in_rule__SWRLOperator__Group__6__Impl14680); 
+            match(input,36,FOLLOW_36_in_rule__SWRLOperator__Group__6__Impl15057); 
              after(grammarAccess.getSWRLOperatorAccess().getRightParenthesisKeyword_6()); 
 
             }
@@ -19517,21 +19982,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLOperator__Group_5__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7198:1: rule__SWRLOperator__Group_5__0 : rule__SWRLOperator__Group_5__0__Impl rule__SWRLOperator__Group_5__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7391:1: rule__SWRLOperator__Group_5__0 : rule__SWRLOperator__Group_5__0__Impl rule__SWRLOperator__Group_5__1 ;
     public final void rule__SWRLOperator__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7202:1: ( rule__SWRLOperator__Group_5__0__Impl rule__SWRLOperator__Group_5__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7203:2: rule__SWRLOperator__Group_5__0__Impl rule__SWRLOperator__Group_5__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7395:1: ( rule__SWRLOperator__Group_5__0__Impl rule__SWRLOperator__Group_5__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7396:2: rule__SWRLOperator__Group_5__0__Impl rule__SWRLOperator__Group_5__1
             {
-            pushFollow(FOLLOW_rule__SWRLOperator__Group_5__0__Impl_in_rule__SWRLOperator__Group_5__014725);
+            pushFollow(FOLLOW_rule__SWRLOperator__Group_5__0__Impl_in_rule__SWRLOperator__Group_5__015102);
             rule__SWRLOperator__Group_5__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SWRLOperator__Group_5__1_in_rule__SWRLOperator__Group_5__014728);
+            pushFollow(FOLLOW_rule__SWRLOperator__Group_5__1_in_rule__SWRLOperator__Group_5__015105);
             rule__SWRLOperator__Group_5__1();
 
             state._fsp--;
@@ -19555,20 +20020,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLOperator__Group_5__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7210:1: rule__SWRLOperator__Group_5__0__Impl : ( ',' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7403:1: rule__SWRLOperator__Group_5__0__Impl : ( ',' ) ;
     public final void rule__SWRLOperator__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7214:1: ( ( ',' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7215:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7407:1: ( ( ',' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7408:1: ( ',' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7215:1: ( ',' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7216:1: ','
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7408:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7409:1: ','
             {
              before(grammarAccess.getSWRLOperatorAccess().getCommaKeyword_5_0()); 
-            match(input,32,FOLLOW_32_in_rule__SWRLOperator__Group_5__0__Impl14756); 
+            match(input,32,FOLLOW_32_in_rule__SWRLOperator__Group_5__0__Impl15133); 
              after(grammarAccess.getSWRLOperatorAccess().getCommaKeyword_5_0()); 
 
             }
@@ -19592,16 +20057,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLOperator__Group_5__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7229:1: rule__SWRLOperator__Group_5__1 : rule__SWRLOperator__Group_5__1__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7422:1: rule__SWRLOperator__Group_5__1 : rule__SWRLOperator__Group_5__1__Impl ;
     public final void rule__SWRLOperator__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7233:1: ( rule__SWRLOperator__Group_5__1__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7234:2: rule__SWRLOperator__Group_5__1__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7426:1: ( rule__SWRLOperator__Group_5__1__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7427:2: rule__SWRLOperator__Group_5__1__Impl
             {
-            pushFollow(FOLLOW_rule__SWRLOperator__Group_5__1__Impl_in_rule__SWRLOperator__Group_5__114787);
+            pushFollow(FOLLOW_rule__SWRLOperator__Group_5__1__Impl_in_rule__SWRLOperator__Group_5__115164);
             rule__SWRLOperator__Group_5__1__Impl();
 
             state._fsp--;
@@ -19625,23 +20090,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLOperator__Group_5__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7240:1: rule__SWRLOperator__Group_5__1__Impl : ( ( rule__SWRLOperator__BarrierAssignment_5_1 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7433:1: rule__SWRLOperator__Group_5__1__Impl : ( ( rule__SWRLOperator__BarrierAssignment_5_1 ) ) ;
     public final void rule__SWRLOperator__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7244:1: ( ( ( rule__SWRLOperator__BarrierAssignment_5_1 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7245:1: ( ( rule__SWRLOperator__BarrierAssignment_5_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7437:1: ( ( ( rule__SWRLOperator__BarrierAssignment_5_1 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7438:1: ( ( rule__SWRLOperator__BarrierAssignment_5_1 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7245:1: ( ( rule__SWRLOperator__BarrierAssignment_5_1 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7246:1: ( rule__SWRLOperator__BarrierAssignment_5_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7438:1: ( ( rule__SWRLOperator__BarrierAssignment_5_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7439:1: ( rule__SWRLOperator__BarrierAssignment_5_1 )
             {
              before(grammarAccess.getSWRLOperatorAccess().getBarrierAssignment_5_1()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7247:1: ( rule__SWRLOperator__BarrierAssignment_5_1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7247:2: rule__SWRLOperator__BarrierAssignment_5_1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7440:1: ( rule__SWRLOperator__BarrierAssignment_5_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7440:2: rule__SWRLOperator__BarrierAssignment_5_1
             {
-            pushFollow(FOLLOW_rule__SWRLOperator__BarrierAssignment_5_1_in_rule__SWRLOperator__Group_5__1__Impl14814);
+            pushFollow(FOLLOW_rule__SWRLOperator__BarrierAssignment_5_1_in_rule__SWRLOperator__Group_5__1__Impl15191);
             rule__SWRLOperator__BarrierAssignment_5_1();
 
             state._fsp--;
@@ -19672,21 +20137,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLRule__Group__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7261:1: rule__SWRLRule__Group__0 : rule__SWRLRule__Group__0__Impl rule__SWRLRule__Group__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7454:1: rule__SWRLRule__Group__0 : rule__SWRLRule__Group__0__Impl rule__SWRLRule__Group__1 ;
     public final void rule__SWRLRule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7265:1: ( rule__SWRLRule__Group__0__Impl rule__SWRLRule__Group__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7266:2: rule__SWRLRule__Group__0__Impl rule__SWRLRule__Group__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7458:1: ( rule__SWRLRule__Group__0__Impl rule__SWRLRule__Group__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7459:2: rule__SWRLRule__Group__0__Impl rule__SWRLRule__Group__1
             {
-            pushFollow(FOLLOW_rule__SWRLRule__Group__0__Impl_in_rule__SWRLRule__Group__014848);
+            pushFollow(FOLLOW_rule__SWRLRule__Group__0__Impl_in_rule__SWRLRule__Group__015225);
             rule__SWRLRule__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SWRLRule__Group__1_in_rule__SWRLRule__Group__014851);
+            pushFollow(FOLLOW_rule__SWRLRule__Group__1_in_rule__SWRLRule__Group__015228);
             rule__SWRLRule__Group__1();
 
             state._fsp--;
@@ -19710,20 +20175,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLRule__Group__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7273:1: rule__SWRLRule__Group__0__Impl : ( 'Implies' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7466:1: rule__SWRLRule__Group__0__Impl : ( 'Implies' ) ;
     public final void rule__SWRLRule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7277:1: ( ( 'Implies' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7278:1: ( 'Implies' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7470:1: ( ( 'Implies' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7471:1: ( 'Implies' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7278:1: ( 'Implies' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7279:1: 'Implies'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7471:1: ( 'Implies' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7472:1: 'Implies'
             {
              before(grammarAccess.getSWRLRuleAccess().getImpliesKeyword_0()); 
-            match(input,55,FOLLOW_55_in_rule__SWRLRule__Group__0__Impl14879); 
+            match(input,56,FOLLOW_56_in_rule__SWRLRule__Group__0__Impl15256); 
              after(grammarAccess.getSWRLRuleAccess().getImpliesKeyword_0()); 
 
             }
@@ -19747,21 +20212,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLRule__Group__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7292:1: rule__SWRLRule__Group__1 : rule__SWRLRule__Group__1__Impl rule__SWRLRule__Group__2 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7485:1: rule__SWRLRule__Group__1 : rule__SWRLRule__Group__1__Impl rule__SWRLRule__Group__2 ;
     public final void rule__SWRLRule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7296:1: ( rule__SWRLRule__Group__1__Impl rule__SWRLRule__Group__2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7297:2: rule__SWRLRule__Group__1__Impl rule__SWRLRule__Group__2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7489:1: ( rule__SWRLRule__Group__1__Impl rule__SWRLRule__Group__2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7490:2: rule__SWRLRule__Group__1__Impl rule__SWRLRule__Group__2
             {
-            pushFollow(FOLLOW_rule__SWRLRule__Group__1__Impl_in_rule__SWRLRule__Group__114910);
+            pushFollow(FOLLOW_rule__SWRLRule__Group__1__Impl_in_rule__SWRLRule__Group__115287);
             rule__SWRLRule__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SWRLRule__Group__2_in_rule__SWRLRule__Group__114913);
+            pushFollow(FOLLOW_rule__SWRLRule__Group__2_in_rule__SWRLRule__Group__115290);
             rule__SWRLRule__Group__2();
 
             state._fsp--;
@@ -19785,20 +20250,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLRule__Group__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7304:1: rule__SWRLRule__Group__1__Impl : ( '(' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7497:1: rule__SWRLRule__Group__1__Impl : ( '(' ) ;
     public final void rule__SWRLRule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7308:1: ( ( '(' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7309:1: ( '(' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7501:1: ( ( '(' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7502:1: ( '(' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7309:1: ( '(' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7310:1: '('
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7502:1: ( '(' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7503:1: '('
             {
              before(grammarAccess.getSWRLRuleAccess().getLeftParenthesisKeyword_1()); 
-            match(input,35,FOLLOW_35_in_rule__SWRLRule__Group__1__Impl14941); 
+            match(input,35,FOLLOW_35_in_rule__SWRLRule__Group__1__Impl15318); 
              after(grammarAccess.getSWRLRuleAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -19822,21 +20287,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLRule__Group__2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7323:1: rule__SWRLRule__Group__2 : rule__SWRLRule__Group__2__Impl rule__SWRLRule__Group__3 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7516:1: rule__SWRLRule__Group__2 : rule__SWRLRule__Group__2__Impl rule__SWRLRule__Group__3 ;
     public final void rule__SWRLRule__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7327:1: ( rule__SWRLRule__Group__2__Impl rule__SWRLRule__Group__3 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7328:2: rule__SWRLRule__Group__2__Impl rule__SWRLRule__Group__3
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7520:1: ( rule__SWRLRule__Group__2__Impl rule__SWRLRule__Group__3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7521:2: rule__SWRLRule__Group__2__Impl rule__SWRLRule__Group__3
             {
-            pushFollow(FOLLOW_rule__SWRLRule__Group__2__Impl_in_rule__SWRLRule__Group__214972);
+            pushFollow(FOLLOW_rule__SWRLRule__Group__2__Impl_in_rule__SWRLRule__Group__215349);
             rule__SWRLRule__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SWRLRule__Group__3_in_rule__SWRLRule__Group__214975);
+            pushFollow(FOLLOW_rule__SWRLRule__Group__3_in_rule__SWRLRule__Group__215352);
             rule__SWRLRule__Group__3();
 
             state._fsp--;
@@ -19860,23 +20325,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLRule__Group__2__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7335:1: rule__SWRLRule__Group__2__Impl : ( ( rule__SWRLRule__AntecedentAssignment_2 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7528:1: rule__SWRLRule__Group__2__Impl : ( ( rule__SWRLRule__AntecedentAssignment_2 ) ) ;
     public final void rule__SWRLRule__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7339:1: ( ( ( rule__SWRLRule__AntecedentAssignment_2 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7340:1: ( ( rule__SWRLRule__AntecedentAssignment_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7532:1: ( ( ( rule__SWRLRule__AntecedentAssignment_2 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7533:1: ( ( rule__SWRLRule__AntecedentAssignment_2 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7340:1: ( ( rule__SWRLRule__AntecedentAssignment_2 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7341:1: ( rule__SWRLRule__AntecedentAssignment_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7533:1: ( ( rule__SWRLRule__AntecedentAssignment_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7534:1: ( rule__SWRLRule__AntecedentAssignment_2 )
             {
              before(grammarAccess.getSWRLRuleAccess().getAntecedentAssignment_2()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7342:1: ( rule__SWRLRule__AntecedentAssignment_2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7342:2: rule__SWRLRule__AntecedentAssignment_2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7535:1: ( rule__SWRLRule__AntecedentAssignment_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7535:2: rule__SWRLRule__AntecedentAssignment_2
             {
-            pushFollow(FOLLOW_rule__SWRLRule__AntecedentAssignment_2_in_rule__SWRLRule__Group__2__Impl15002);
+            pushFollow(FOLLOW_rule__SWRLRule__AntecedentAssignment_2_in_rule__SWRLRule__Group__2__Impl15379);
             rule__SWRLRule__AntecedentAssignment_2();
 
             state._fsp--;
@@ -19907,21 +20372,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLRule__Group__3"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7352:1: rule__SWRLRule__Group__3 : rule__SWRLRule__Group__3__Impl rule__SWRLRule__Group__4 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7545:1: rule__SWRLRule__Group__3 : rule__SWRLRule__Group__3__Impl rule__SWRLRule__Group__4 ;
     public final void rule__SWRLRule__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7356:1: ( rule__SWRLRule__Group__3__Impl rule__SWRLRule__Group__4 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7357:2: rule__SWRLRule__Group__3__Impl rule__SWRLRule__Group__4
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7549:1: ( rule__SWRLRule__Group__3__Impl rule__SWRLRule__Group__4 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7550:2: rule__SWRLRule__Group__3__Impl rule__SWRLRule__Group__4
             {
-            pushFollow(FOLLOW_rule__SWRLRule__Group__3__Impl_in_rule__SWRLRule__Group__315032);
+            pushFollow(FOLLOW_rule__SWRLRule__Group__3__Impl_in_rule__SWRLRule__Group__315409);
             rule__SWRLRule__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SWRLRule__Group__4_in_rule__SWRLRule__Group__315035);
+            pushFollow(FOLLOW_rule__SWRLRule__Group__4_in_rule__SWRLRule__Group__315412);
             rule__SWRLRule__Group__4();
 
             state._fsp--;
@@ -19945,20 +20410,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLRule__Group__3__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7364:1: rule__SWRLRule__Group__3__Impl : ( ',' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7557:1: rule__SWRLRule__Group__3__Impl : ( ',' ) ;
     public final void rule__SWRLRule__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7368:1: ( ( ',' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7369:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7561:1: ( ( ',' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7562:1: ( ',' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7369:1: ( ',' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7370:1: ','
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7562:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7563:1: ','
             {
              before(grammarAccess.getSWRLRuleAccess().getCommaKeyword_3()); 
-            match(input,32,FOLLOW_32_in_rule__SWRLRule__Group__3__Impl15063); 
+            match(input,32,FOLLOW_32_in_rule__SWRLRule__Group__3__Impl15440); 
              after(grammarAccess.getSWRLRuleAccess().getCommaKeyword_3()); 
 
             }
@@ -19982,21 +20447,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLRule__Group__4"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7383:1: rule__SWRLRule__Group__4 : rule__SWRLRule__Group__4__Impl rule__SWRLRule__Group__5 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7576:1: rule__SWRLRule__Group__4 : rule__SWRLRule__Group__4__Impl rule__SWRLRule__Group__5 ;
     public final void rule__SWRLRule__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7387:1: ( rule__SWRLRule__Group__4__Impl rule__SWRLRule__Group__5 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7388:2: rule__SWRLRule__Group__4__Impl rule__SWRLRule__Group__5
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7580:1: ( rule__SWRLRule__Group__4__Impl rule__SWRLRule__Group__5 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7581:2: rule__SWRLRule__Group__4__Impl rule__SWRLRule__Group__5
             {
-            pushFollow(FOLLOW_rule__SWRLRule__Group__4__Impl_in_rule__SWRLRule__Group__415094);
+            pushFollow(FOLLOW_rule__SWRLRule__Group__4__Impl_in_rule__SWRLRule__Group__415471);
             rule__SWRLRule__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SWRLRule__Group__5_in_rule__SWRLRule__Group__415097);
+            pushFollow(FOLLOW_rule__SWRLRule__Group__5_in_rule__SWRLRule__Group__415474);
             rule__SWRLRule__Group__5();
 
             state._fsp--;
@@ -20020,23 +20485,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLRule__Group__4__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7395:1: rule__SWRLRule__Group__4__Impl : ( ( rule__SWRLRule__ConsequentAssignment_4 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7588:1: rule__SWRLRule__Group__4__Impl : ( ( rule__SWRLRule__ConsequentAssignment_4 ) ) ;
     public final void rule__SWRLRule__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7399:1: ( ( ( rule__SWRLRule__ConsequentAssignment_4 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7400:1: ( ( rule__SWRLRule__ConsequentAssignment_4 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7592:1: ( ( ( rule__SWRLRule__ConsequentAssignment_4 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7593:1: ( ( rule__SWRLRule__ConsequentAssignment_4 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7400:1: ( ( rule__SWRLRule__ConsequentAssignment_4 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7401:1: ( rule__SWRLRule__ConsequentAssignment_4 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7593:1: ( ( rule__SWRLRule__ConsequentAssignment_4 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7594:1: ( rule__SWRLRule__ConsequentAssignment_4 )
             {
              before(grammarAccess.getSWRLRuleAccess().getConsequentAssignment_4()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7402:1: ( rule__SWRLRule__ConsequentAssignment_4 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7402:2: rule__SWRLRule__ConsequentAssignment_4
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7595:1: ( rule__SWRLRule__ConsequentAssignment_4 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7595:2: rule__SWRLRule__ConsequentAssignment_4
             {
-            pushFollow(FOLLOW_rule__SWRLRule__ConsequentAssignment_4_in_rule__SWRLRule__Group__4__Impl15124);
+            pushFollow(FOLLOW_rule__SWRLRule__ConsequentAssignment_4_in_rule__SWRLRule__Group__4__Impl15501);
             rule__SWRLRule__ConsequentAssignment_4();
 
             state._fsp--;
@@ -20067,16 +20532,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLRule__Group__5"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7412:1: rule__SWRLRule__Group__5 : rule__SWRLRule__Group__5__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7605:1: rule__SWRLRule__Group__5 : rule__SWRLRule__Group__5__Impl ;
     public final void rule__SWRLRule__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7416:1: ( rule__SWRLRule__Group__5__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7417:2: rule__SWRLRule__Group__5__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7609:1: ( rule__SWRLRule__Group__5__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7610:2: rule__SWRLRule__Group__5__Impl
             {
-            pushFollow(FOLLOW_rule__SWRLRule__Group__5__Impl_in_rule__SWRLRule__Group__515154);
+            pushFollow(FOLLOW_rule__SWRLRule__Group__5__Impl_in_rule__SWRLRule__Group__515531);
             rule__SWRLRule__Group__5__Impl();
 
             state._fsp--;
@@ -20100,20 +20565,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLRule__Group__5__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7423:1: rule__SWRLRule__Group__5__Impl : ( ')' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7616:1: rule__SWRLRule__Group__5__Impl : ( ')' ) ;
     public final void rule__SWRLRule__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7427:1: ( ( ')' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7428:1: ( ')' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7620:1: ( ( ')' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7621:1: ( ')' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7428:1: ( ')' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7429:1: ')'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7621:1: ( ')' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7622:1: ')'
             {
              before(grammarAccess.getSWRLRuleAccess().getRightParenthesisKeyword_5()); 
-            match(input,36,FOLLOW_36_in_rule__SWRLRule__Group__5__Impl15182); 
+            match(input,36,FOLLOW_36_in_rule__SWRLRule__Group__5__Impl15559); 
              after(grammarAccess.getSWRLRuleAccess().getRightParenthesisKeyword_5()); 
 
             }
@@ -20137,21 +20602,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AntecedentRule__Group__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7454:1: rule__AntecedentRule__Group__0 : rule__AntecedentRule__Group__0__Impl rule__AntecedentRule__Group__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7647:1: rule__AntecedentRule__Group__0 : rule__AntecedentRule__Group__0__Impl rule__AntecedentRule__Group__1 ;
     public final void rule__AntecedentRule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7458:1: ( rule__AntecedentRule__Group__0__Impl rule__AntecedentRule__Group__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7459:2: rule__AntecedentRule__Group__0__Impl rule__AntecedentRule__Group__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7651:1: ( rule__AntecedentRule__Group__0__Impl rule__AntecedentRule__Group__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7652:2: rule__AntecedentRule__Group__0__Impl rule__AntecedentRule__Group__1
             {
-            pushFollow(FOLLOW_rule__AntecedentRule__Group__0__Impl_in_rule__AntecedentRule__Group__015225);
+            pushFollow(FOLLOW_rule__AntecedentRule__Group__0__Impl_in_rule__AntecedentRule__Group__015602);
             rule__AntecedentRule__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AntecedentRule__Group__1_in_rule__AntecedentRule__Group__015228);
+            pushFollow(FOLLOW_rule__AntecedentRule__Group__1_in_rule__AntecedentRule__Group__015605);
             rule__AntecedentRule__Group__1();
 
             state._fsp--;
@@ -20175,20 +20640,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AntecedentRule__Group__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7466:1: rule__AntecedentRule__Group__0__Impl : ( 'Antecedent' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7659:1: rule__AntecedentRule__Group__0__Impl : ( 'Antecedent' ) ;
     public final void rule__AntecedentRule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7470:1: ( ( 'Antecedent' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7471:1: ( 'Antecedent' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7663:1: ( ( 'Antecedent' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7664:1: ( 'Antecedent' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7471:1: ( 'Antecedent' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7472:1: 'Antecedent'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7664:1: ( 'Antecedent' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7665:1: 'Antecedent'
             {
              before(grammarAccess.getAntecedentRuleAccess().getAntecedentKeyword_0()); 
-            match(input,56,FOLLOW_56_in_rule__AntecedentRule__Group__0__Impl15256); 
+            match(input,57,FOLLOW_57_in_rule__AntecedentRule__Group__0__Impl15633); 
              after(grammarAccess.getAntecedentRuleAccess().getAntecedentKeyword_0()); 
 
             }
@@ -20212,21 +20677,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AntecedentRule__Group__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7485:1: rule__AntecedentRule__Group__1 : rule__AntecedentRule__Group__1__Impl rule__AntecedentRule__Group__2 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7678:1: rule__AntecedentRule__Group__1 : rule__AntecedentRule__Group__1__Impl rule__AntecedentRule__Group__2 ;
     public final void rule__AntecedentRule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7489:1: ( rule__AntecedentRule__Group__1__Impl rule__AntecedentRule__Group__2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7490:2: rule__AntecedentRule__Group__1__Impl rule__AntecedentRule__Group__2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7682:1: ( rule__AntecedentRule__Group__1__Impl rule__AntecedentRule__Group__2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7683:2: rule__AntecedentRule__Group__1__Impl rule__AntecedentRule__Group__2
             {
-            pushFollow(FOLLOW_rule__AntecedentRule__Group__1__Impl_in_rule__AntecedentRule__Group__115287);
+            pushFollow(FOLLOW_rule__AntecedentRule__Group__1__Impl_in_rule__AntecedentRule__Group__115664);
             rule__AntecedentRule__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AntecedentRule__Group__2_in_rule__AntecedentRule__Group__115290);
+            pushFollow(FOLLOW_rule__AntecedentRule__Group__2_in_rule__AntecedentRule__Group__115667);
             rule__AntecedentRule__Group__2();
 
             state._fsp--;
@@ -20250,20 +20715,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AntecedentRule__Group__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7497:1: rule__AntecedentRule__Group__1__Impl : ( '(' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7690:1: rule__AntecedentRule__Group__1__Impl : ( '(' ) ;
     public final void rule__AntecedentRule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7501:1: ( ( '(' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7502:1: ( '(' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7694:1: ( ( '(' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7695:1: ( '(' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7502:1: ( '(' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7503:1: '('
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7695:1: ( '(' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7696:1: '('
             {
              before(grammarAccess.getAntecedentRuleAccess().getLeftParenthesisKeyword_1()); 
-            match(input,35,FOLLOW_35_in_rule__AntecedentRule__Group__1__Impl15318); 
+            match(input,35,FOLLOW_35_in_rule__AntecedentRule__Group__1__Impl15695); 
              after(grammarAccess.getAntecedentRuleAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -20287,21 +20752,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AntecedentRule__Group__2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7516:1: rule__AntecedentRule__Group__2 : rule__AntecedentRule__Group__2__Impl rule__AntecedentRule__Group__3 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7709:1: rule__AntecedentRule__Group__2 : rule__AntecedentRule__Group__2__Impl rule__AntecedentRule__Group__3 ;
     public final void rule__AntecedentRule__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7520:1: ( rule__AntecedentRule__Group__2__Impl rule__AntecedentRule__Group__3 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7521:2: rule__AntecedentRule__Group__2__Impl rule__AntecedentRule__Group__3
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7713:1: ( rule__AntecedentRule__Group__2__Impl rule__AntecedentRule__Group__3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7714:2: rule__AntecedentRule__Group__2__Impl rule__AntecedentRule__Group__3
             {
-            pushFollow(FOLLOW_rule__AntecedentRule__Group__2__Impl_in_rule__AntecedentRule__Group__215349);
+            pushFollow(FOLLOW_rule__AntecedentRule__Group__2__Impl_in_rule__AntecedentRule__Group__215726);
             rule__AntecedentRule__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AntecedentRule__Group__3_in_rule__AntecedentRule__Group__215352);
+            pushFollow(FOLLOW_rule__AntecedentRule__Group__3_in_rule__AntecedentRule__Group__215729);
             rule__AntecedentRule__Group__3();
 
             state._fsp--;
@@ -20325,23 +20790,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AntecedentRule__Group__2__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7528:1: rule__AntecedentRule__Group__2__Impl : ( ( rule__AntecedentRule__AtomsAssignment_2 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7721:1: rule__AntecedentRule__Group__2__Impl : ( ( rule__AntecedentRule__AtomsAssignment_2 ) ) ;
     public final void rule__AntecedentRule__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7532:1: ( ( ( rule__AntecedentRule__AtomsAssignment_2 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7533:1: ( ( rule__AntecedentRule__AtomsAssignment_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7725:1: ( ( ( rule__AntecedentRule__AtomsAssignment_2 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7726:1: ( ( rule__AntecedentRule__AtomsAssignment_2 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7533:1: ( ( rule__AntecedentRule__AtomsAssignment_2 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7534:1: ( rule__AntecedentRule__AtomsAssignment_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7726:1: ( ( rule__AntecedentRule__AtomsAssignment_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7727:1: ( rule__AntecedentRule__AtomsAssignment_2 )
             {
              before(grammarAccess.getAntecedentRuleAccess().getAtomsAssignment_2()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7535:1: ( rule__AntecedentRule__AtomsAssignment_2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7535:2: rule__AntecedentRule__AtomsAssignment_2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7728:1: ( rule__AntecedentRule__AtomsAssignment_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7728:2: rule__AntecedentRule__AtomsAssignment_2
             {
-            pushFollow(FOLLOW_rule__AntecedentRule__AtomsAssignment_2_in_rule__AntecedentRule__Group__2__Impl15379);
+            pushFollow(FOLLOW_rule__AntecedentRule__AtomsAssignment_2_in_rule__AntecedentRule__Group__2__Impl15756);
             rule__AntecedentRule__AtomsAssignment_2();
 
             state._fsp--;
@@ -20372,21 +20837,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AntecedentRule__Group__3"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7545:1: rule__AntecedentRule__Group__3 : rule__AntecedentRule__Group__3__Impl rule__AntecedentRule__Group__4 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7738:1: rule__AntecedentRule__Group__3 : rule__AntecedentRule__Group__3__Impl rule__AntecedentRule__Group__4 ;
     public final void rule__AntecedentRule__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7549:1: ( rule__AntecedentRule__Group__3__Impl rule__AntecedentRule__Group__4 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7550:2: rule__AntecedentRule__Group__3__Impl rule__AntecedentRule__Group__4
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7742:1: ( rule__AntecedentRule__Group__3__Impl rule__AntecedentRule__Group__4 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7743:2: rule__AntecedentRule__Group__3__Impl rule__AntecedentRule__Group__4
             {
-            pushFollow(FOLLOW_rule__AntecedentRule__Group__3__Impl_in_rule__AntecedentRule__Group__315409);
+            pushFollow(FOLLOW_rule__AntecedentRule__Group__3__Impl_in_rule__AntecedentRule__Group__315786);
             rule__AntecedentRule__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AntecedentRule__Group__4_in_rule__AntecedentRule__Group__315412);
+            pushFollow(FOLLOW_rule__AntecedentRule__Group__4_in_rule__AntecedentRule__Group__315789);
             rule__AntecedentRule__Group__4();
 
             state._fsp--;
@@ -20410,20 +20875,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AntecedentRule__Group__3__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7557:1: rule__AntecedentRule__Group__3__Impl : ( ( rule__AntecedentRule__Group_3__0 )* ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7750:1: rule__AntecedentRule__Group__3__Impl : ( ( rule__AntecedentRule__Group_3__0 )* ) ;
     public final void rule__AntecedentRule__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7561:1: ( ( ( rule__AntecedentRule__Group_3__0 )* ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7562:1: ( ( rule__AntecedentRule__Group_3__0 )* )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7754:1: ( ( ( rule__AntecedentRule__Group_3__0 )* ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7755:1: ( ( rule__AntecedentRule__Group_3__0 )* )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7562:1: ( ( rule__AntecedentRule__Group_3__0 )* )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7563:1: ( rule__AntecedentRule__Group_3__0 )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7755:1: ( ( rule__AntecedentRule__Group_3__0 )* )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7756:1: ( rule__AntecedentRule__Group_3__0 )*
             {
              before(grammarAccess.getAntecedentRuleAccess().getGroup_3()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7564:1: ( rule__AntecedentRule__Group_3__0 )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7757:1: ( rule__AntecedentRule__Group_3__0 )*
             loop36:
             do {
                 int alt36=2;
@@ -20436,9 +20901,9 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
                 switch (alt36) {
             	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7564:2: rule__AntecedentRule__Group_3__0
+            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7757:2: rule__AntecedentRule__Group_3__0
             	    {
-            	    pushFollow(FOLLOW_rule__AntecedentRule__Group_3__0_in_rule__AntecedentRule__Group__3__Impl15439);
+            	    pushFollow(FOLLOW_rule__AntecedentRule__Group_3__0_in_rule__AntecedentRule__Group__3__Impl15816);
             	    rule__AntecedentRule__Group_3__0();
 
             	    state._fsp--;
@@ -20475,16 +20940,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AntecedentRule__Group__4"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7574:1: rule__AntecedentRule__Group__4 : rule__AntecedentRule__Group__4__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7767:1: rule__AntecedentRule__Group__4 : rule__AntecedentRule__Group__4__Impl ;
     public final void rule__AntecedentRule__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7578:1: ( rule__AntecedentRule__Group__4__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7579:2: rule__AntecedentRule__Group__4__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7771:1: ( rule__AntecedentRule__Group__4__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7772:2: rule__AntecedentRule__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__AntecedentRule__Group__4__Impl_in_rule__AntecedentRule__Group__415470);
+            pushFollow(FOLLOW_rule__AntecedentRule__Group__4__Impl_in_rule__AntecedentRule__Group__415847);
             rule__AntecedentRule__Group__4__Impl();
 
             state._fsp--;
@@ -20508,20 +20973,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AntecedentRule__Group__4__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7585:1: rule__AntecedentRule__Group__4__Impl : ( ')' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7778:1: rule__AntecedentRule__Group__4__Impl : ( ')' ) ;
     public final void rule__AntecedentRule__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7589:1: ( ( ')' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7590:1: ( ')' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7782:1: ( ( ')' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7783:1: ( ')' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7590:1: ( ')' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7591:1: ')'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7783:1: ( ')' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7784:1: ')'
             {
              before(grammarAccess.getAntecedentRuleAccess().getRightParenthesisKeyword_4()); 
-            match(input,36,FOLLOW_36_in_rule__AntecedentRule__Group__4__Impl15498); 
+            match(input,36,FOLLOW_36_in_rule__AntecedentRule__Group__4__Impl15875); 
              after(grammarAccess.getAntecedentRuleAccess().getRightParenthesisKeyword_4()); 
 
             }
@@ -20545,21 +21010,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AntecedentRule__Group_3__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7614:1: rule__AntecedentRule__Group_3__0 : rule__AntecedentRule__Group_3__0__Impl rule__AntecedentRule__Group_3__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7807:1: rule__AntecedentRule__Group_3__0 : rule__AntecedentRule__Group_3__0__Impl rule__AntecedentRule__Group_3__1 ;
     public final void rule__AntecedentRule__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7618:1: ( rule__AntecedentRule__Group_3__0__Impl rule__AntecedentRule__Group_3__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7619:2: rule__AntecedentRule__Group_3__0__Impl rule__AntecedentRule__Group_3__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7811:1: ( rule__AntecedentRule__Group_3__0__Impl rule__AntecedentRule__Group_3__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7812:2: rule__AntecedentRule__Group_3__0__Impl rule__AntecedentRule__Group_3__1
             {
-            pushFollow(FOLLOW_rule__AntecedentRule__Group_3__0__Impl_in_rule__AntecedentRule__Group_3__015539);
+            pushFollow(FOLLOW_rule__AntecedentRule__Group_3__0__Impl_in_rule__AntecedentRule__Group_3__015916);
             rule__AntecedentRule__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AntecedentRule__Group_3__1_in_rule__AntecedentRule__Group_3__015542);
+            pushFollow(FOLLOW_rule__AntecedentRule__Group_3__1_in_rule__AntecedentRule__Group_3__015919);
             rule__AntecedentRule__Group_3__1();
 
             state._fsp--;
@@ -20583,20 +21048,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AntecedentRule__Group_3__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7626:1: rule__AntecedentRule__Group_3__0__Impl : ( ',' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7819:1: rule__AntecedentRule__Group_3__0__Impl : ( ',' ) ;
     public final void rule__AntecedentRule__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7630:1: ( ( ',' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7631:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7823:1: ( ( ',' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7824:1: ( ',' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7631:1: ( ',' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7632:1: ','
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7824:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7825:1: ','
             {
              before(grammarAccess.getAntecedentRuleAccess().getCommaKeyword_3_0()); 
-            match(input,32,FOLLOW_32_in_rule__AntecedentRule__Group_3__0__Impl15570); 
+            match(input,32,FOLLOW_32_in_rule__AntecedentRule__Group_3__0__Impl15947); 
              after(grammarAccess.getAntecedentRuleAccess().getCommaKeyword_3_0()); 
 
             }
@@ -20620,16 +21085,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AntecedentRule__Group_3__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7645:1: rule__AntecedentRule__Group_3__1 : rule__AntecedentRule__Group_3__1__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7838:1: rule__AntecedentRule__Group_3__1 : rule__AntecedentRule__Group_3__1__Impl ;
     public final void rule__AntecedentRule__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7649:1: ( rule__AntecedentRule__Group_3__1__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7650:2: rule__AntecedentRule__Group_3__1__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7842:1: ( rule__AntecedentRule__Group_3__1__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7843:2: rule__AntecedentRule__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__AntecedentRule__Group_3__1__Impl_in_rule__AntecedentRule__Group_3__115601);
+            pushFollow(FOLLOW_rule__AntecedentRule__Group_3__1__Impl_in_rule__AntecedentRule__Group_3__115978);
             rule__AntecedentRule__Group_3__1__Impl();
 
             state._fsp--;
@@ -20653,23 +21118,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AntecedentRule__Group_3__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7656:1: rule__AntecedentRule__Group_3__1__Impl : ( ( rule__AntecedentRule__AtomsAssignment_3_1 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7849:1: rule__AntecedentRule__Group_3__1__Impl : ( ( rule__AntecedentRule__AtomsAssignment_3_1 ) ) ;
     public final void rule__AntecedentRule__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7660:1: ( ( ( rule__AntecedentRule__AtomsAssignment_3_1 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7661:1: ( ( rule__AntecedentRule__AtomsAssignment_3_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7853:1: ( ( ( rule__AntecedentRule__AtomsAssignment_3_1 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7854:1: ( ( rule__AntecedentRule__AtomsAssignment_3_1 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7661:1: ( ( rule__AntecedentRule__AtomsAssignment_3_1 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7662:1: ( rule__AntecedentRule__AtomsAssignment_3_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7854:1: ( ( rule__AntecedentRule__AtomsAssignment_3_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7855:1: ( rule__AntecedentRule__AtomsAssignment_3_1 )
             {
              before(grammarAccess.getAntecedentRuleAccess().getAtomsAssignment_3_1()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7663:1: ( rule__AntecedentRule__AtomsAssignment_3_1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7663:2: rule__AntecedentRule__AtomsAssignment_3_1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7856:1: ( rule__AntecedentRule__AtomsAssignment_3_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7856:2: rule__AntecedentRule__AtomsAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__AntecedentRule__AtomsAssignment_3_1_in_rule__AntecedentRule__Group_3__1__Impl15628);
+            pushFollow(FOLLOW_rule__AntecedentRule__AtomsAssignment_3_1_in_rule__AntecedentRule__Group_3__1__Impl16005);
             rule__AntecedentRule__AtomsAssignment_3_1();
 
             state._fsp--;
@@ -20700,21 +21165,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConsequentRule__Group__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7677:1: rule__ConsequentRule__Group__0 : rule__ConsequentRule__Group__0__Impl rule__ConsequentRule__Group__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7870:1: rule__ConsequentRule__Group__0 : rule__ConsequentRule__Group__0__Impl rule__ConsequentRule__Group__1 ;
     public final void rule__ConsequentRule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7681:1: ( rule__ConsequentRule__Group__0__Impl rule__ConsequentRule__Group__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7682:2: rule__ConsequentRule__Group__0__Impl rule__ConsequentRule__Group__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7874:1: ( rule__ConsequentRule__Group__0__Impl rule__ConsequentRule__Group__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7875:2: rule__ConsequentRule__Group__0__Impl rule__ConsequentRule__Group__1
             {
-            pushFollow(FOLLOW_rule__ConsequentRule__Group__0__Impl_in_rule__ConsequentRule__Group__015662);
+            pushFollow(FOLLOW_rule__ConsequentRule__Group__0__Impl_in_rule__ConsequentRule__Group__016039);
             rule__ConsequentRule__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ConsequentRule__Group__1_in_rule__ConsequentRule__Group__015665);
+            pushFollow(FOLLOW_rule__ConsequentRule__Group__1_in_rule__ConsequentRule__Group__016042);
             rule__ConsequentRule__Group__1();
 
             state._fsp--;
@@ -20738,20 +21203,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConsequentRule__Group__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7689:1: rule__ConsequentRule__Group__0__Impl : ( 'Consequent' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7882:1: rule__ConsequentRule__Group__0__Impl : ( 'Consequent' ) ;
     public final void rule__ConsequentRule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7693:1: ( ( 'Consequent' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7694:1: ( 'Consequent' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7886:1: ( ( 'Consequent' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7887:1: ( 'Consequent' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7694:1: ( 'Consequent' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7695:1: 'Consequent'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7887:1: ( 'Consequent' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7888:1: 'Consequent'
             {
              before(grammarAccess.getConsequentRuleAccess().getConsequentKeyword_0()); 
-            match(input,57,FOLLOW_57_in_rule__ConsequentRule__Group__0__Impl15693); 
+            match(input,58,FOLLOW_58_in_rule__ConsequentRule__Group__0__Impl16070); 
              after(grammarAccess.getConsequentRuleAccess().getConsequentKeyword_0()); 
 
             }
@@ -20775,21 +21240,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConsequentRule__Group__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7708:1: rule__ConsequentRule__Group__1 : rule__ConsequentRule__Group__1__Impl rule__ConsequentRule__Group__2 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7901:1: rule__ConsequentRule__Group__1 : rule__ConsequentRule__Group__1__Impl rule__ConsequentRule__Group__2 ;
     public final void rule__ConsequentRule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7712:1: ( rule__ConsequentRule__Group__1__Impl rule__ConsequentRule__Group__2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7713:2: rule__ConsequentRule__Group__1__Impl rule__ConsequentRule__Group__2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7905:1: ( rule__ConsequentRule__Group__1__Impl rule__ConsequentRule__Group__2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7906:2: rule__ConsequentRule__Group__1__Impl rule__ConsequentRule__Group__2
             {
-            pushFollow(FOLLOW_rule__ConsequentRule__Group__1__Impl_in_rule__ConsequentRule__Group__115724);
+            pushFollow(FOLLOW_rule__ConsequentRule__Group__1__Impl_in_rule__ConsequentRule__Group__116101);
             rule__ConsequentRule__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ConsequentRule__Group__2_in_rule__ConsequentRule__Group__115727);
+            pushFollow(FOLLOW_rule__ConsequentRule__Group__2_in_rule__ConsequentRule__Group__116104);
             rule__ConsequentRule__Group__2();
 
             state._fsp--;
@@ -20813,20 +21278,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConsequentRule__Group__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7720:1: rule__ConsequentRule__Group__1__Impl : ( '(' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7913:1: rule__ConsequentRule__Group__1__Impl : ( '(' ) ;
     public final void rule__ConsequentRule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7724:1: ( ( '(' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7725:1: ( '(' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7917:1: ( ( '(' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7918:1: ( '(' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7725:1: ( '(' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7726:1: '('
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7918:1: ( '(' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7919:1: '('
             {
              before(grammarAccess.getConsequentRuleAccess().getLeftParenthesisKeyword_1()); 
-            match(input,35,FOLLOW_35_in_rule__ConsequentRule__Group__1__Impl15755); 
+            match(input,35,FOLLOW_35_in_rule__ConsequentRule__Group__1__Impl16132); 
              after(grammarAccess.getConsequentRuleAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -20850,21 +21315,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConsequentRule__Group__2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7739:1: rule__ConsequentRule__Group__2 : rule__ConsequentRule__Group__2__Impl rule__ConsequentRule__Group__3 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7932:1: rule__ConsequentRule__Group__2 : rule__ConsequentRule__Group__2__Impl rule__ConsequentRule__Group__3 ;
     public final void rule__ConsequentRule__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7743:1: ( rule__ConsequentRule__Group__2__Impl rule__ConsequentRule__Group__3 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7744:2: rule__ConsequentRule__Group__2__Impl rule__ConsequentRule__Group__3
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7936:1: ( rule__ConsequentRule__Group__2__Impl rule__ConsequentRule__Group__3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7937:2: rule__ConsequentRule__Group__2__Impl rule__ConsequentRule__Group__3
             {
-            pushFollow(FOLLOW_rule__ConsequentRule__Group__2__Impl_in_rule__ConsequentRule__Group__215786);
+            pushFollow(FOLLOW_rule__ConsequentRule__Group__2__Impl_in_rule__ConsequentRule__Group__216163);
             rule__ConsequentRule__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ConsequentRule__Group__3_in_rule__ConsequentRule__Group__215789);
+            pushFollow(FOLLOW_rule__ConsequentRule__Group__3_in_rule__ConsequentRule__Group__216166);
             rule__ConsequentRule__Group__3();
 
             state._fsp--;
@@ -20888,23 +21353,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConsequentRule__Group__2__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7751:1: rule__ConsequentRule__Group__2__Impl : ( ( rule__ConsequentRule__AtomsAssignment_2 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7944:1: rule__ConsequentRule__Group__2__Impl : ( ( rule__ConsequentRule__AtomsAssignment_2 ) ) ;
     public final void rule__ConsequentRule__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7755:1: ( ( ( rule__ConsequentRule__AtomsAssignment_2 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7756:1: ( ( rule__ConsequentRule__AtomsAssignment_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7948:1: ( ( ( rule__ConsequentRule__AtomsAssignment_2 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7949:1: ( ( rule__ConsequentRule__AtomsAssignment_2 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7756:1: ( ( rule__ConsequentRule__AtomsAssignment_2 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7757:1: ( rule__ConsequentRule__AtomsAssignment_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7949:1: ( ( rule__ConsequentRule__AtomsAssignment_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7950:1: ( rule__ConsequentRule__AtomsAssignment_2 )
             {
              before(grammarAccess.getConsequentRuleAccess().getAtomsAssignment_2()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7758:1: ( rule__ConsequentRule__AtomsAssignment_2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7758:2: rule__ConsequentRule__AtomsAssignment_2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7951:1: ( rule__ConsequentRule__AtomsAssignment_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7951:2: rule__ConsequentRule__AtomsAssignment_2
             {
-            pushFollow(FOLLOW_rule__ConsequentRule__AtomsAssignment_2_in_rule__ConsequentRule__Group__2__Impl15816);
+            pushFollow(FOLLOW_rule__ConsequentRule__AtomsAssignment_2_in_rule__ConsequentRule__Group__2__Impl16193);
             rule__ConsequentRule__AtomsAssignment_2();
 
             state._fsp--;
@@ -20935,21 +21400,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConsequentRule__Group__3"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7768:1: rule__ConsequentRule__Group__3 : rule__ConsequentRule__Group__3__Impl rule__ConsequentRule__Group__4 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7961:1: rule__ConsequentRule__Group__3 : rule__ConsequentRule__Group__3__Impl rule__ConsequentRule__Group__4 ;
     public final void rule__ConsequentRule__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7772:1: ( rule__ConsequentRule__Group__3__Impl rule__ConsequentRule__Group__4 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7773:2: rule__ConsequentRule__Group__3__Impl rule__ConsequentRule__Group__4
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7965:1: ( rule__ConsequentRule__Group__3__Impl rule__ConsequentRule__Group__4 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7966:2: rule__ConsequentRule__Group__3__Impl rule__ConsequentRule__Group__4
             {
-            pushFollow(FOLLOW_rule__ConsequentRule__Group__3__Impl_in_rule__ConsequentRule__Group__315846);
+            pushFollow(FOLLOW_rule__ConsequentRule__Group__3__Impl_in_rule__ConsequentRule__Group__316223);
             rule__ConsequentRule__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ConsequentRule__Group__4_in_rule__ConsequentRule__Group__315849);
+            pushFollow(FOLLOW_rule__ConsequentRule__Group__4_in_rule__ConsequentRule__Group__316226);
             rule__ConsequentRule__Group__4();
 
             state._fsp--;
@@ -20973,20 +21438,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConsequentRule__Group__3__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7780:1: rule__ConsequentRule__Group__3__Impl : ( ( rule__ConsequentRule__Group_3__0 )* ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7973:1: rule__ConsequentRule__Group__3__Impl : ( ( rule__ConsequentRule__Group_3__0 )* ) ;
     public final void rule__ConsequentRule__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7784:1: ( ( ( rule__ConsequentRule__Group_3__0 )* ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7785:1: ( ( rule__ConsequentRule__Group_3__0 )* )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7977:1: ( ( ( rule__ConsequentRule__Group_3__0 )* ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7978:1: ( ( rule__ConsequentRule__Group_3__0 )* )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7785:1: ( ( rule__ConsequentRule__Group_3__0 )* )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7786:1: ( rule__ConsequentRule__Group_3__0 )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7978:1: ( ( rule__ConsequentRule__Group_3__0 )* )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7979:1: ( rule__ConsequentRule__Group_3__0 )*
             {
              before(grammarAccess.getConsequentRuleAccess().getGroup_3()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7787:1: ( rule__ConsequentRule__Group_3__0 )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7980:1: ( rule__ConsequentRule__Group_3__0 )*
             loop37:
             do {
                 int alt37=2;
@@ -20999,9 +21464,9 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
                 switch (alt37) {
             	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7787:2: rule__ConsequentRule__Group_3__0
+            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7980:2: rule__ConsequentRule__Group_3__0
             	    {
-            	    pushFollow(FOLLOW_rule__ConsequentRule__Group_3__0_in_rule__ConsequentRule__Group__3__Impl15876);
+            	    pushFollow(FOLLOW_rule__ConsequentRule__Group_3__0_in_rule__ConsequentRule__Group__3__Impl16253);
             	    rule__ConsequentRule__Group_3__0();
 
             	    state._fsp--;
@@ -21038,16 +21503,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConsequentRule__Group__4"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7797:1: rule__ConsequentRule__Group__4 : rule__ConsequentRule__Group__4__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7990:1: rule__ConsequentRule__Group__4 : rule__ConsequentRule__Group__4__Impl ;
     public final void rule__ConsequentRule__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7801:1: ( rule__ConsequentRule__Group__4__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7802:2: rule__ConsequentRule__Group__4__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7994:1: ( rule__ConsequentRule__Group__4__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7995:2: rule__ConsequentRule__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__ConsequentRule__Group__4__Impl_in_rule__ConsequentRule__Group__415907);
+            pushFollow(FOLLOW_rule__ConsequentRule__Group__4__Impl_in_rule__ConsequentRule__Group__416284);
             rule__ConsequentRule__Group__4__Impl();
 
             state._fsp--;
@@ -21071,20 +21536,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConsequentRule__Group__4__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7808:1: rule__ConsequentRule__Group__4__Impl : ( ')' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8001:1: rule__ConsequentRule__Group__4__Impl : ( ')' ) ;
     public final void rule__ConsequentRule__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7812:1: ( ( ')' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7813:1: ( ')' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8005:1: ( ( ')' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8006:1: ( ')' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7813:1: ( ')' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7814:1: ')'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8006:1: ( ')' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8007:1: ')'
             {
              before(grammarAccess.getConsequentRuleAccess().getRightParenthesisKeyword_4()); 
-            match(input,36,FOLLOW_36_in_rule__ConsequentRule__Group__4__Impl15935); 
+            match(input,36,FOLLOW_36_in_rule__ConsequentRule__Group__4__Impl16312); 
              after(grammarAccess.getConsequentRuleAccess().getRightParenthesisKeyword_4()); 
 
             }
@@ -21108,21 +21573,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConsequentRule__Group_3__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7837:1: rule__ConsequentRule__Group_3__0 : rule__ConsequentRule__Group_3__0__Impl rule__ConsequentRule__Group_3__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8030:1: rule__ConsequentRule__Group_3__0 : rule__ConsequentRule__Group_3__0__Impl rule__ConsequentRule__Group_3__1 ;
     public final void rule__ConsequentRule__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7841:1: ( rule__ConsequentRule__Group_3__0__Impl rule__ConsequentRule__Group_3__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7842:2: rule__ConsequentRule__Group_3__0__Impl rule__ConsequentRule__Group_3__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8034:1: ( rule__ConsequentRule__Group_3__0__Impl rule__ConsequentRule__Group_3__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8035:2: rule__ConsequentRule__Group_3__0__Impl rule__ConsequentRule__Group_3__1
             {
-            pushFollow(FOLLOW_rule__ConsequentRule__Group_3__0__Impl_in_rule__ConsequentRule__Group_3__015976);
+            pushFollow(FOLLOW_rule__ConsequentRule__Group_3__0__Impl_in_rule__ConsequentRule__Group_3__016353);
             rule__ConsequentRule__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ConsequentRule__Group_3__1_in_rule__ConsequentRule__Group_3__015979);
+            pushFollow(FOLLOW_rule__ConsequentRule__Group_3__1_in_rule__ConsequentRule__Group_3__016356);
             rule__ConsequentRule__Group_3__1();
 
             state._fsp--;
@@ -21146,20 +21611,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConsequentRule__Group_3__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7849:1: rule__ConsequentRule__Group_3__0__Impl : ( ',' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8042:1: rule__ConsequentRule__Group_3__0__Impl : ( ',' ) ;
     public final void rule__ConsequentRule__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7853:1: ( ( ',' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7854:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8046:1: ( ( ',' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8047:1: ( ',' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7854:1: ( ',' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7855:1: ','
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8047:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8048:1: ','
             {
              before(grammarAccess.getConsequentRuleAccess().getCommaKeyword_3_0()); 
-            match(input,32,FOLLOW_32_in_rule__ConsequentRule__Group_3__0__Impl16007); 
+            match(input,32,FOLLOW_32_in_rule__ConsequentRule__Group_3__0__Impl16384); 
              after(grammarAccess.getConsequentRuleAccess().getCommaKeyword_3_0()); 
 
             }
@@ -21183,16 +21648,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConsequentRule__Group_3__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7868:1: rule__ConsequentRule__Group_3__1 : rule__ConsequentRule__Group_3__1__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8061:1: rule__ConsequentRule__Group_3__1 : rule__ConsequentRule__Group_3__1__Impl ;
     public final void rule__ConsequentRule__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7872:1: ( rule__ConsequentRule__Group_3__1__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7873:2: rule__ConsequentRule__Group_3__1__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8065:1: ( rule__ConsequentRule__Group_3__1__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8066:2: rule__ConsequentRule__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__ConsequentRule__Group_3__1__Impl_in_rule__ConsequentRule__Group_3__116038);
+            pushFollow(FOLLOW_rule__ConsequentRule__Group_3__1__Impl_in_rule__ConsequentRule__Group_3__116415);
             rule__ConsequentRule__Group_3__1__Impl();
 
             state._fsp--;
@@ -21216,23 +21681,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConsequentRule__Group_3__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7879:1: rule__ConsequentRule__Group_3__1__Impl : ( ( rule__ConsequentRule__AtomsAssignment_3_1 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8072:1: rule__ConsequentRule__Group_3__1__Impl : ( ( rule__ConsequentRule__AtomsAssignment_3_1 ) ) ;
     public final void rule__ConsequentRule__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7883:1: ( ( ( rule__ConsequentRule__AtomsAssignment_3_1 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7884:1: ( ( rule__ConsequentRule__AtomsAssignment_3_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8076:1: ( ( ( rule__ConsequentRule__AtomsAssignment_3_1 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8077:1: ( ( rule__ConsequentRule__AtomsAssignment_3_1 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7884:1: ( ( rule__ConsequentRule__AtomsAssignment_3_1 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7885:1: ( rule__ConsequentRule__AtomsAssignment_3_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8077:1: ( ( rule__ConsequentRule__AtomsAssignment_3_1 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8078:1: ( rule__ConsequentRule__AtomsAssignment_3_1 )
             {
              before(grammarAccess.getConsequentRuleAccess().getAtomsAssignment_3_1()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7886:1: ( rule__ConsequentRule__AtomsAssignment_3_1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7886:2: rule__ConsequentRule__AtomsAssignment_3_1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8079:1: ( rule__ConsequentRule__AtomsAssignment_3_1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8079:2: rule__ConsequentRule__AtomsAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__ConsequentRule__AtomsAssignment_3_1_in_rule__ConsequentRule__Group_3__1__Impl16065);
+            pushFollow(FOLLOW_rule__ConsequentRule__AtomsAssignment_3_1_in_rule__ConsequentRule__Group_3__1__Impl16442);
             rule__ConsequentRule__AtomsAssignment_3_1();
 
             state._fsp--;
@@ -21263,21 +21728,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7900:1: rule__Rule__Group__0 : rule__Rule__Group__0__Impl rule__Rule__Group__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8093:1: rule__Rule__Group__0 : rule__Rule__Group__0__Impl rule__Rule__Group__1 ;
     public final void rule__Rule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7904:1: ( rule__Rule__Group__0__Impl rule__Rule__Group__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7905:2: rule__Rule__Group__0__Impl rule__Rule__Group__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8097:1: ( rule__Rule__Group__0__Impl rule__Rule__Group__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8098:2: rule__Rule__Group__0__Impl rule__Rule__Group__1
             {
-            pushFollow(FOLLOW_rule__Rule__Group__0__Impl_in_rule__Rule__Group__016099);
+            pushFollow(FOLLOW_rule__Rule__Group__0__Impl_in_rule__Rule__Group__016476);
             rule__Rule__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Rule__Group__1_in_rule__Rule__Group__016102);
+            pushFollow(FOLLOW_rule__Rule__Group__1_in_rule__Rule__Group__016479);
             rule__Rule__Group__1();
 
             state._fsp--;
@@ -21301,23 +21766,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7912:1: rule__Rule__Group__0__Impl : ( ( rule__Rule__NameAssignment_0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8105:1: rule__Rule__Group__0__Impl : ( ( rule__Rule__NameAssignment_0 ) ) ;
     public final void rule__Rule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7916:1: ( ( ( rule__Rule__NameAssignment_0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7917:1: ( ( rule__Rule__NameAssignment_0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8109:1: ( ( ( rule__Rule__NameAssignment_0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8110:1: ( ( rule__Rule__NameAssignment_0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7917:1: ( ( rule__Rule__NameAssignment_0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7918:1: ( rule__Rule__NameAssignment_0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8110:1: ( ( rule__Rule__NameAssignment_0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8111:1: ( rule__Rule__NameAssignment_0 )
             {
              before(grammarAccess.getRuleAccess().getNameAssignment_0()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7919:1: ( rule__Rule__NameAssignment_0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7919:2: rule__Rule__NameAssignment_0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8112:1: ( rule__Rule__NameAssignment_0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8112:2: rule__Rule__NameAssignment_0
             {
-            pushFollow(FOLLOW_rule__Rule__NameAssignment_0_in_rule__Rule__Group__0__Impl16129);
+            pushFollow(FOLLOW_rule__Rule__NameAssignment_0_in_rule__Rule__Group__0__Impl16506);
             rule__Rule__NameAssignment_0();
 
             state._fsp--;
@@ -21348,21 +21813,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7929:1: rule__Rule__Group__1 : rule__Rule__Group__1__Impl rule__Rule__Group__2 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8122:1: rule__Rule__Group__1 : rule__Rule__Group__1__Impl rule__Rule__Group__2 ;
     public final void rule__Rule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7933:1: ( rule__Rule__Group__1__Impl rule__Rule__Group__2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7934:2: rule__Rule__Group__1__Impl rule__Rule__Group__2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8126:1: ( rule__Rule__Group__1__Impl rule__Rule__Group__2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8127:2: rule__Rule__Group__1__Impl rule__Rule__Group__2
             {
-            pushFollow(FOLLOW_rule__Rule__Group__1__Impl_in_rule__Rule__Group__116159);
+            pushFollow(FOLLOW_rule__Rule__Group__1__Impl_in_rule__Rule__Group__116536);
             rule__Rule__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Rule__Group__2_in_rule__Rule__Group__116162);
+            pushFollow(FOLLOW_rule__Rule__Group__2_in_rule__Rule__Group__116539);
             rule__Rule__Group__2();
 
             state._fsp--;
@@ -21386,20 +21851,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7941:1: rule__Rule__Group__1__Impl : ( '(' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8134:1: rule__Rule__Group__1__Impl : ( '(' ) ;
     public final void rule__Rule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7945:1: ( ( '(' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7946:1: ( '(' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8138:1: ( ( '(' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8139:1: ( '(' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7946:1: ( '(' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7947:1: '('
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8139:1: ( '(' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8140:1: '('
             {
              before(grammarAccess.getRuleAccess().getLeftParenthesisKeyword_1()); 
-            match(input,35,FOLLOW_35_in_rule__Rule__Group__1__Impl16190); 
+            match(input,35,FOLLOW_35_in_rule__Rule__Group__1__Impl16567); 
              after(grammarAccess.getRuleAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -21423,21 +21888,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7960:1: rule__Rule__Group__2 : rule__Rule__Group__2__Impl rule__Rule__Group__3 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8153:1: rule__Rule__Group__2 : rule__Rule__Group__2__Impl rule__Rule__Group__3 ;
     public final void rule__Rule__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7964:1: ( rule__Rule__Group__2__Impl rule__Rule__Group__3 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7965:2: rule__Rule__Group__2__Impl rule__Rule__Group__3
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8157:1: ( rule__Rule__Group__2__Impl rule__Rule__Group__3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8158:2: rule__Rule__Group__2__Impl rule__Rule__Group__3
             {
-            pushFollow(FOLLOW_rule__Rule__Group__2__Impl_in_rule__Rule__Group__216221);
+            pushFollow(FOLLOW_rule__Rule__Group__2__Impl_in_rule__Rule__Group__216598);
             rule__Rule__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Rule__Group__3_in_rule__Rule__Group__216224);
+            pushFollow(FOLLOW_rule__Rule__Group__3_in_rule__Rule__Group__216601);
             rule__Rule__Group__3();
 
             state._fsp--;
@@ -21461,20 +21926,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__2__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7972:1: rule__Rule__Group__2__Impl : ( '?' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8165:1: rule__Rule__Group__2__Impl : ( '?' ) ;
     public final void rule__Rule__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7976:1: ( ( '?' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7977:1: ( '?' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8169:1: ( ( '?' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8170:1: ( '?' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7977:1: ( '?' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7978:1: '?'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8170:1: ( '?' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8171:1: '?'
             {
              before(grammarAccess.getRuleAccess().getQuestionMarkKeyword_2()); 
-            match(input,47,FOLLOW_47_in_rule__Rule__Group__2__Impl16252); 
+            match(input,48,FOLLOW_48_in_rule__Rule__Group__2__Impl16629); 
              after(grammarAccess.getRuleAccess().getQuestionMarkKeyword_2()); 
 
             }
@@ -21498,21 +21963,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__3"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7991:1: rule__Rule__Group__3 : rule__Rule__Group__3__Impl rule__Rule__Group__4 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8184:1: rule__Rule__Group__3 : rule__Rule__Group__3__Impl rule__Rule__Group__4 ;
     public final void rule__Rule__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7995:1: ( rule__Rule__Group__3__Impl rule__Rule__Group__4 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:7996:2: rule__Rule__Group__3__Impl rule__Rule__Group__4
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8188:1: ( rule__Rule__Group__3__Impl rule__Rule__Group__4 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8189:2: rule__Rule__Group__3__Impl rule__Rule__Group__4
             {
-            pushFollow(FOLLOW_rule__Rule__Group__3__Impl_in_rule__Rule__Group__316283);
+            pushFollow(FOLLOW_rule__Rule__Group__3__Impl_in_rule__Rule__Group__316660);
             rule__Rule__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Rule__Group__4_in_rule__Rule__Group__316286);
+            pushFollow(FOLLOW_rule__Rule__Group__4_in_rule__Rule__Group__316663);
             rule__Rule__Group__4();
 
             state._fsp--;
@@ -21536,23 +22001,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__3__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8003:1: rule__Rule__Group__3__Impl : ( ( rule__Rule__VariableAssignment_3 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8196:1: rule__Rule__Group__3__Impl : ( ( rule__Rule__VariableAssignment_3 ) ) ;
     public final void rule__Rule__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8007:1: ( ( ( rule__Rule__VariableAssignment_3 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8008:1: ( ( rule__Rule__VariableAssignment_3 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8200:1: ( ( ( rule__Rule__VariableAssignment_3 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8201:1: ( ( rule__Rule__VariableAssignment_3 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8008:1: ( ( rule__Rule__VariableAssignment_3 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8009:1: ( rule__Rule__VariableAssignment_3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8201:1: ( ( rule__Rule__VariableAssignment_3 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8202:1: ( rule__Rule__VariableAssignment_3 )
             {
              before(grammarAccess.getRuleAccess().getVariableAssignment_3()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8010:1: ( rule__Rule__VariableAssignment_3 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8010:2: rule__Rule__VariableAssignment_3
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8203:1: ( rule__Rule__VariableAssignment_3 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8203:2: rule__Rule__VariableAssignment_3
             {
-            pushFollow(FOLLOW_rule__Rule__VariableAssignment_3_in_rule__Rule__Group__3__Impl16313);
+            pushFollow(FOLLOW_rule__Rule__VariableAssignment_3_in_rule__Rule__Group__3__Impl16690);
             rule__Rule__VariableAssignment_3();
 
             state._fsp--;
@@ -21583,21 +22048,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__4"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8020:1: rule__Rule__Group__4 : rule__Rule__Group__4__Impl rule__Rule__Group__5 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8213:1: rule__Rule__Group__4 : rule__Rule__Group__4__Impl rule__Rule__Group__5 ;
     public final void rule__Rule__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8024:1: ( rule__Rule__Group__4__Impl rule__Rule__Group__5 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8025:2: rule__Rule__Group__4__Impl rule__Rule__Group__5
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8217:1: ( rule__Rule__Group__4__Impl rule__Rule__Group__5 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8218:2: rule__Rule__Group__4__Impl rule__Rule__Group__5
             {
-            pushFollow(FOLLOW_rule__Rule__Group__4__Impl_in_rule__Rule__Group__416343);
+            pushFollow(FOLLOW_rule__Rule__Group__4__Impl_in_rule__Rule__Group__416720);
             rule__Rule__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Rule__Group__5_in_rule__Rule__Group__416346);
+            pushFollow(FOLLOW_rule__Rule__Group__5_in_rule__Rule__Group__416723);
             rule__Rule__Group__5();
 
             state._fsp--;
@@ -21621,20 +22086,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__4__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8032:1: rule__Rule__Group__4__Impl : ( ( rule__Rule__Group_4__0 )* ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8225:1: rule__Rule__Group__4__Impl : ( ( rule__Rule__Group_4__0 )* ) ;
     public final void rule__Rule__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8036:1: ( ( ( rule__Rule__Group_4__0 )* ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8037:1: ( ( rule__Rule__Group_4__0 )* )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8229:1: ( ( ( rule__Rule__Group_4__0 )* ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8230:1: ( ( rule__Rule__Group_4__0 )* )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8037:1: ( ( rule__Rule__Group_4__0 )* )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8038:1: ( rule__Rule__Group_4__0 )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8230:1: ( ( rule__Rule__Group_4__0 )* )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8231:1: ( rule__Rule__Group_4__0 )*
             {
              before(grammarAccess.getRuleAccess().getGroup_4()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8039:1: ( rule__Rule__Group_4__0 )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8232:1: ( rule__Rule__Group_4__0 )*
             loop38:
             do {
                 int alt38=2;
@@ -21647,9 +22112,9 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
                 switch (alt38) {
             	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8039:2: rule__Rule__Group_4__0
+            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8232:2: rule__Rule__Group_4__0
             	    {
-            	    pushFollow(FOLLOW_rule__Rule__Group_4__0_in_rule__Rule__Group__4__Impl16373);
+            	    pushFollow(FOLLOW_rule__Rule__Group_4__0_in_rule__Rule__Group__4__Impl16750);
             	    rule__Rule__Group_4__0();
 
             	    state._fsp--;
@@ -21686,16 +22151,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__5"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8049:1: rule__Rule__Group__5 : rule__Rule__Group__5__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8242:1: rule__Rule__Group__5 : rule__Rule__Group__5__Impl ;
     public final void rule__Rule__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8053:1: ( rule__Rule__Group__5__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8054:2: rule__Rule__Group__5__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8246:1: ( rule__Rule__Group__5__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8247:2: rule__Rule__Group__5__Impl
             {
-            pushFollow(FOLLOW_rule__Rule__Group__5__Impl_in_rule__Rule__Group__516404);
+            pushFollow(FOLLOW_rule__Rule__Group__5__Impl_in_rule__Rule__Group__516781);
             rule__Rule__Group__5__Impl();
 
             state._fsp--;
@@ -21719,20 +22184,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__5__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8060:1: rule__Rule__Group__5__Impl : ( ')' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8253:1: rule__Rule__Group__5__Impl : ( ')' ) ;
     public final void rule__Rule__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8064:1: ( ( ')' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8065:1: ( ')' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8257:1: ( ( ')' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8258:1: ( ')' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8065:1: ( ')' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8066:1: ')'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8258:1: ( ')' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8259:1: ')'
             {
              before(grammarAccess.getRuleAccess().getRightParenthesisKeyword_5()); 
-            match(input,36,FOLLOW_36_in_rule__Rule__Group__5__Impl16432); 
+            match(input,36,FOLLOW_36_in_rule__Rule__Group__5__Impl16809); 
              after(grammarAccess.getRuleAccess().getRightParenthesisKeyword_5()); 
 
             }
@@ -21756,21 +22221,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group_4__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8091:1: rule__Rule__Group_4__0 : rule__Rule__Group_4__0__Impl rule__Rule__Group_4__1 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8284:1: rule__Rule__Group_4__0 : rule__Rule__Group_4__0__Impl rule__Rule__Group_4__1 ;
     public final void rule__Rule__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8095:1: ( rule__Rule__Group_4__0__Impl rule__Rule__Group_4__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8096:2: rule__Rule__Group_4__0__Impl rule__Rule__Group_4__1
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8288:1: ( rule__Rule__Group_4__0__Impl rule__Rule__Group_4__1 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8289:2: rule__Rule__Group_4__0__Impl rule__Rule__Group_4__1
             {
-            pushFollow(FOLLOW_rule__Rule__Group_4__0__Impl_in_rule__Rule__Group_4__016475);
+            pushFollow(FOLLOW_rule__Rule__Group_4__0__Impl_in_rule__Rule__Group_4__016852);
             rule__Rule__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Rule__Group_4__1_in_rule__Rule__Group_4__016478);
+            pushFollow(FOLLOW_rule__Rule__Group_4__1_in_rule__Rule__Group_4__016855);
             rule__Rule__Group_4__1();
 
             state._fsp--;
@@ -21794,20 +22259,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group_4__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8103:1: rule__Rule__Group_4__0__Impl : ( ',' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8296:1: rule__Rule__Group_4__0__Impl : ( ',' ) ;
     public final void rule__Rule__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8107:1: ( ( ',' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8108:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8300:1: ( ( ',' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8301:1: ( ',' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8108:1: ( ',' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8109:1: ','
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8301:1: ( ',' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8302:1: ','
             {
              before(grammarAccess.getRuleAccess().getCommaKeyword_4_0()); 
-            match(input,32,FOLLOW_32_in_rule__Rule__Group_4__0__Impl16506); 
+            match(input,32,FOLLOW_32_in_rule__Rule__Group_4__0__Impl16883); 
              after(grammarAccess.getRuleAccess().getCommaKeyword_4_0()); 
 
             }
@@ -21831,21 +22296,21 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group_4__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8122:1: rule__Rule__Group_4__1 : rule__Rule__Group_4__1__Impl rule__Rule__Group_4__2 ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8315:1: rule__Rule__Group_4__1 : rule__Rule__Group_4__1__Impl rule__Rule__Group_4__2 ;
     public final void rule__Rule__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8126:1: ( rule__Rule__Group_4__1__Impl rule__Rule__Group_4__2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8127:2: rule__Rule__Group_4__1__Impl rule__Rule__Group_4__2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8319:1: ( rule__Rule__Group_4__1__Impl rule__Rule__Group_4__2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8320:2: rule__Rule__Group_4__1__Impl rule__Rule__Group_4__2
             {
-            pushFollow(FOLLOW_rule__Rule__Group_4__1__Impl_in_rule__Rule__Group_4__116537);
+            pushFollow(FOLLOW_rule__Rule__Group_4__1__Impl_in_rule__Rule__Group_4__116914);
             rule__Rule__Group_4__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Rule__Group_4__2_in_rule__Rule__Group_4__116540);
+            pushFollow(FOLLOW_rule__Rule__Group_4__2_in_rule__Rule__Group_4__116917);
             rule__Rule__Group_4__2();
 
             state._fsp--;
@@ -21869,20 +22334,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group_4__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8134:1: rule__Rule__Group_4__1__Impl : ( '?' ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8327:1: rule__Rule__Group_4__1__Impl : ( '?' ) ;
     public final void rule__Rule__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8138:1: ( ( '?' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8139:1: ( '?' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8331:1: ( ( '?' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8332:1: ( '?' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8139:1: ( '?' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8140:1: '?'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8332:1: ( '?' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8333:1: '?'
             {
              before(grammarAccess.getRuleAccess().getQuestionMarkKeyword_4_1()); 
-            match(input,47,FOLLOW_47_in_rule__Rule__Group_4__1__Impl16568); 
+            match(input,48,FOLLOW_48_in_rule__Rule__Group_4__1__Impl16945); 
              after(grammarAccess.getRuleAccess().getQuestionMarkKeyword_4_1()); 
 
             }
@@ -21906,16 +22371,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group_4__2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8153:1: rule__Rule__Group_4__2 : rule__Rule__Group_4__2__Impl ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8346:1: rule__Rule__Group_4__2 : rule__Rule__Group_4__2__Impl ;
     public final void rule__Rule__Group_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8157:1: ( rule__Rule__Group_4__2__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8158:2: rule__Rule__Group_4__2__Impl
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8350:1: ( rule__Rule__Group_4__2__Impl )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8351:2: rule__Rule__Group_4__2__Impl
             {
-            pushFollow(FOLLOW_rule__Rule__Group_4__2__Impl_in_rule__Rule__Group_4__216599);
+            pushFollow(FOLLOW_rule__Rule__Group_4__2__Impl_in_rule__Rule__Group_4__216976);
             rule__Rule__Group_4__2__Impl();
 
             state._fsp--;
@@ -21939,23 +22404,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group_4__2__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8164:1: rule__Rule__Group_4__2__Impl : ( ( rule__Rule__VariableAssignment_4_2 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8357:1: rule__Rule__Group_4__2__Impl : ( ( rule__Rule__VariableAssignment_4_2 ) ) ;
     public final void rule__Rule__Group_4__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8168:1: ( ( ( rule__Rule__VariableAssignment_4_2 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8169:1: ( ( rule__Rule__VariableAssignment_4_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8361:1: ( ( ( rule__Rule__VariableAssignment_4_2 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8362:1: ( ( rule__Rule__VariableAssignment_4_2 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8169:1: ( ( rule__Rule__VariableAssignment_4_2 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8170:1: ( rule__Rule__VariableAssignment_4_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8362:1: ( ( rule__Rule__VariableAssignment_4_2 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8363:1: ( rule__Rule__VariableAssignment_4_2 )
             {
              before(grammarAccess.getRuleAccess().getVariableAssignment_4_2()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8171:1: ( rule__Rule__VariableAssignment_4_2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8171:2: rule__Rule__VariableAssignment_4_2
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8364:1: ( rule__Rule__VariableAssignment_4_2 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8364:2: rule__Rule__VariableAssignment_4_2
             {
-            pushFollow(FOLLOW_rule__Rule__VariableAssignment_4_2_in_rule__Rule__Group_4__2__Impl16626);
+            pushFollow(FOLLOW_rule__Rule__VariableAssignment_4_2_in_rule__Rule__Group_4__2__Impl17003);
             rule__Rule__VariableAssignment_4_2();
 
             state._fsp--;
@@ -21983,471 +22448,6 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "rule__Rule__Group_4__2__Impl"
-
-
-    // $ANTLR start "rule__OCLOperator__Group__0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8187:1: rule__OCLOperator__Group__0 : rule__OCLOperator__Group__0__Impl rule__OCLOperator__Group__1 ;
-    public final void rule__OCLOperator__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8191:1: ( rule__OCLOperator__Group__0__Impl rule__OCLOperator__Group__1 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8192:2: rule__OCLOperator__Group__0__Impl rule__OCLOperator__Group__1
-            {
-            pushFollow(FOLLOW_rule__OCLOperator__Group__0__Impl_in_rule__OCLOperator__Group__016662);
-            rule__OCLOperator__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__OCLOperator__Group__1_in_rule__OCLOperator__Group__016665);
-            rule__OCLOperator__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__OCLOperator__Group__0"
-
-
-    // $ANTLR start "rule__OCLOperator__Group__0__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8199:1: rule__OCLOperator__Group__0__Impl : ( 'ocl' ) ;
-    public final void rule__OCLOperator__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8203:1: ( ( 'ocl' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8204:1: ( 'ocl' )
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8204:1: ( 'ocl' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8205:1: 'ocl'
-            {
-             before(grammarAccess.getOCLOperatorAccess().getOclKeyword_0()); 
-            match(input,58,FOLLOW_58_in_rule__OCLOperator__Group__0__Impl16693); 
-             after(grammarAccess.getOCLOperatorAccess().getOclKeyword_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__OCLOperator__Group__0__Impl"
-
-
-    // $ANTLR start "rule__OCLOperator__Group__1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8218:1: rule__OCLOperator__Group__1 : rule__OCLOperator__Group__1__Impl rule__OCLOperator__Group__2 ;
-    public final void rule__OCLOperator__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8222:1: ( rule__OCLOperator__Group__1__Impl rule__OCLOperator__Group__2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8223:2: rule__OCLOperator__Group__1__Impl rule__OCLOperator__Group__2
-            {
-            pushFollow(FOLLOW_rule__OCLOperator__Group__1__Impl_in_rule__OCLOperator__Group__116724);
-            rule__OCLOperator__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__OCLOperator__Group__2_in_rule__OCLOperator__Group__116727);
-            rule__OCLOperator__Group__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__OCLOperator__Group__1"
-
-
-    // $ANTLR start "rule__OCLOperator__Group__1__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8230:1: rule__OCLOperator__Group__1__Impl : ( '(' ) ;
-    public final void rule__OCLOperator__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8234:1: ( ( '(' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8235:1: ( '(' )
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8235:1: ( '(' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8236:1: '('
-            {
-             before(grammarAccess.getOCLOperatorAccess().getLeftParenthesisKeyword_1()); 
-            match(input,35,FOLLOW_35_in_rule__OCLOperator__Group__1__Impl16755); 
-             after(grammarAccess.getOCLOperatorAccess().getLeftParenthesisKeyword_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__OCLOperator__Group__1__Impl"
-
-
-    // $ANTLR start "rule__OCLOperator__Group__2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8249:1: rule__OCLOperator__Group__2 : rule__OCLOperator__Group__2__Impl rule__OCLOperator__Group__3 ;
-    public final void rule__OCLOperator__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8253:1: ( rule__OCLOperator__Group__2__Impl rule__OCLOperator__Group__3 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8254:2: rule__OCLOperator__Group__2__Impl rule__OCLOperator__Group__3
-            {
-            pushFollow(FOLLOW_rule__OCLOperator__Group__2__Impl_in_rule__OCLOperator__Group__216786);
-            rule__OCLOperator__Group__2__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__OCLOperator__Group__3_in_rule__OCLOperator__Group__216789);
-            rule__OCLOperator__Group__3();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__OCLOperator__Group__2"
-
-
-    // $ANTLR start "rule__OCLOperator__Group__2__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8261:1: rule__OCLOperator__Group__2__Impl : ( ( rule__OCLOperator__ConstraintAssignment_2 ) ) ;
-    public final void rule__OCLOperator__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8265:1: ( ( ( rule__OCLOperator__ConstraintAssignment_2 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8266:1: ( ( rule__OCLOperator__ConstraintAssignment_2 ) )
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8266:1: ( ( rule__OCLOperator__ConstraintAssignment_2 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8267:1: ( rule__OCLOperator__ConstraintAssignment_2 )
-            {
-             before(grammarAccess.getOCLOperatorAccess().getConstraintAssignment_2()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8268:1: ( rule__OCLOperator__ConstraintAssignment_2 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8268:2: rule__OCLOperator__ConstraintAssignment_2
-            {
-            pushFollow(FOLLOW_rule__OCLOperator__ConstraintAssignment_2_in_rule__OCLOperator__Group__2__Impl16816);
-            rule__OCLOperator__ConstraintAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getOCLOperatorAccess().getConstraintAssignment_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__OCLOperator__Group__2__Impl"
-
-
-    // $ANTLR start "rule__OCLOperator__Group__3"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8278:1: rule__OCLOperator__Group__3 : rule__OCLOperator__Group__3__Impl rule__OCLOperator__Group__4 ;
-    public final void rule__OCLOperator__Group__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8282:1: ( rule__OCLOperator__Group__3__Impl rule__OCLOperator__Group__4 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8283:2: rule__OCLOperator__Group__3__Impl rule__OCLOperator__Group__4
-            {
-            pushFollow(FOLLOW_rule__OCLOperator__Group__3__Impl_in_rule__OCLOperator__Group__316846);
-            rule__OCLOperator__Group__3__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__OCLOperator__Group__4_in_rule__OCLOperator__Group__316849);
-            rule__OCLOperator__Group__4();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__OCLOperator__Group__3"
-
-
-    // $ANTLR start "rule__OCLOperator__Group__3__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8290:1: rule__OCLOperator__Group__3__Impl : ( ',' ) ;
-    public final void rule__OCLOperator__Group__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8294:1: ( ( ',' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8295:1: ( ',' )
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8295:1: ( ',' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8296:1: ','
-            {
-             before(grammarAccess.getOCLOperatorAccess().getCommaKeyword_3()); 
-            match(input,32,FOLLOW_32_in_rule__OCLOperator__Group__3__Impl16877); 
-             after(grammarAccess.getOCLOperatorAccess().getCommaKeyword_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__OCLOperator__Group__3__Impl"
-
-
-    // $ANTLR start "rule__OCLOperator__Group__4"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8309:1: rule__OCLOperator__Group__4 : rule__OCLOperator__Group__4__Impl rule__OCLOperator__Group__5 ;
-    public final void rule__OCLOperator__Group__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8313:1: ( rule__OCLOperator__Group__4__Impl rule__OCLOperator__Group__5 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8314:2: rule__OCLOperator__Group__4__Impl rule__OCLOperator__Group__5
-            {
-            pushFollow(FOLLOW_rule__OCLOperator__Group__4__Impl_in_rule__OCLOperator__Group__416908);
-            rule__OCLOperator__Group__4__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__OCLOperator__Group__5_in_rule__OCLOperator__Group__416911);
-            rule__OCLOperator__Group__5();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__OCLOperator__Group__4"
-
-
-    // $ANTLR start "rule__OCLOperator__Group__4__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8321:1: rule__OCLOperator__Group__4__Impl : ( ( rule__OCLOperator__StreamAssignment_4 ) ) ;
-    public final void rule__OCLOperator__Group__4__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8325:1: ( ( ( rule__OCLOperator__StreamAssignment_4 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8326:1: ( ( rule__OCLOperator__StreamAssignment_4 ) )
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8326:1: ( ( rule__OCLOperator__StreamAssignment_4 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8327:1: ( rule__OCLOperator__StreamAssignment_4 )
-            {
-             before(grammarAccess.getOCLOperatorAccess().getStreamAssignment_4()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8328:1: ( rule__OCLOperator__StreamAssignment_4 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8328:2: rule__OCLOperator__StreamAssignment_4
-            {
-            pushFollow(FOLLOW_rule__OCLOperator__StreamAssignment_4_in_rule__OCLOperator__Group__4__Impl16938);
-            rule__OCLOperator__StreamAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getOCLOperatorAccess().getStreamAssignment_4()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__OCLOperator__Group__4__Impl"
-
-
-    // $ANTLR start "rule__OCLOperator__Group__5"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8338:1: rule__OCLOperator__Group__5 : rule__OCLOperator__Group__5__Impl ;
-    public final void rule__OCLOperator__Group__5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8342:1: ( rule__OCLOperator__Group__5__Impl )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8343:2: rule__OCLOperator__Group__5__Impl
-            {
-            pushFollow(FOLLOW_rule__OCLOperator__Group__5__Impl_in_rule__OCLOperator__Group__516968);
-            rule__OCLOperator__Group__5__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__OCLOperator__Group__5"
-
-
-    // $ANTLR start "rule__OCLOperator__Group__5__Impl"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8349:1: rule__OCLOperator__Group__5__Impl : ( ')' ) ;
-    public final void rule__OCLOperator__Group__5__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8353:1: ( ( ')' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8354:1: ( ')' )
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8354:1: ( ')' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:8355:1: ')'
-            {
-             before(grammarAccess.getOCLOperatorAccess().getRightParenthesisKeyword_5()); 
-            match(input,36,FOLLOW_36_in_rule__OCLOperator__Group__5__Impl16996); 
-             after(grammarAccess.getOCLOperatorAccess().getRightParenthesisKeyword_5()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__OCLOperator__Group__5__Impl"
 
 
     // $ANTLR start "rule__CountOperator__Group__0"
@@ -34280,21 +34280,95 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__LogOperator__FormatAssignment_4"
 
 
+    // $ANTLR start "rule__RandomOperator__MaximumAssignment_2"
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13133:1: rule__RandomOperator__MaximumAssignment_2 : ( RULE_NUMBER ) ;
+    public final void rule__RandomOperator__MaximumAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13137:1: ( ( RULE_NUMBER ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13138:1: ( RULE_NUMBER )
+            {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13138:1: ( RULE_NUMBER )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13139:1: RULE_NUMBER
+            {
+             before(grammarAccess.getRandomOperatorAccess().getMaximumNUMBERTerminalRuleCall_2_0()); 
+            match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_rule__RandomOperator__MaximumAssignment_226375); 
+             after(grammarAccess.getRandomOperatorAccess().getMaximumNUMBERTerminalRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RandomOperator__MaximumAssignment_2"
+
+
+    // $ANTLR start "rule__RandomOperator__SleepAssignment_4"
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13148:1: rule__RandomOperator__SleepAssignment_4 : ( RULE_NUMBER ) ;
+    public final void rule__RandomOperator__SleepAssignment_4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13152:1: ( ( RULE_NUMBER ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13153:1: ( RULE_NUMBER )
+            {
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13153:1: ( RULE_NUMBER )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13154:1: RULE_NUMBER
+            {
+             before(grammarAccess.getRandomOperatorAccess().getSleepNUMBERTerminalRuleCall_4_0()); 
+            match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_rule__RandomOperator__SleepAssignment_426406); 
+             after(grammarAccess.getRandomOperatorAccess().getSleepNUMBERTerminalRuleCall_4_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RandomOperator__SleepAssignment_4"
+
+
     // $ANTLR start "rule__MatchOperator__ExpressionAssignment_2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13133:1: rule__MatchOperator__ExpressionAssignment_2 : ( ruleExpression ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13163:1: rule__MatchOperator__ExpressionAssignment_2 : ( ruleExpression ) ;
     public final void rule__MatchOperator__ExpressionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13137:1: ( ( ruleExpression ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13138:1: ( ruleExpression )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13167:1: ( ( ruleExpression ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13168:1: ( ruleExpression )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13138:1: ( ruleExpression )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13139:1: ruleExpression
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13168:1: ( ruleExpression )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13169:1: ruleExpression
             {
              before(grammarAccess.getMatchOperatorAccess().getExpressionExpressionParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleExpression_in_rule__MatchOperator__ExpressionAssignment_226375);
+            pushFollow(FOLLOW_ruleExpression_in_rule__MatchOperator__ExpressionAssignment_226437);
             ruleExpression();
 
             state._fsp--;
@@ -34322,20 +34396,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__CalculationAssignment_4"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13148:1: rule__MatchOperator__CalculationAssignment_4 : ( ruleExpression ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13178:1: rule__MatchOperator__CalculationAssignment_4 : ( ruleExpression ) ;
     public final void rule__MatchOperator__CalculationAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13152:1: ( ( ruleExpression ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13153:1: ( ruleExpression )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13182:1: ( ( ruleExpression ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13183:1: ( ruleExpression )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13153:1: ( ruleExpression )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13154:1: ruleExpression
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13183:1: ( ruleExpression )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13184:1: ruleExpression
             {
              before(grammarAccess.getMatchOperatorAccess().getCalculationExpressionParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleExpression_in_rule__MatchOperator__CalculationAssignment_426406);
+            pushFollow(FOLLOW_ruleExpression_in_rule__MatchOperator__CalculationAssignment_426468);
             ruleExpression();
 
             state._fsp--;
@@ -34363,20 +34437,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__StreamAssignment_6"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13163:1: rule__MatchOperator__StreamAssignment_6 : ( ruleStreamOperatorParameter ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13193:1: rule__MatchOperator__StreamAssignment_6 : ( ruleStreamOperatorParameter ) ;
     public final void rule__MatchOperator__StreamAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13167:1: ( ( ruleStreamOperatorParameter ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13168:1: ( ruleStreamOperatorParameter )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13197:1: ( ( ruleStreamOperatorParameter ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13198:1: ( ruleStreamOperatorParameter )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13168:1: ( ruleStreamOperatorParameter )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13169:1: ruleStreamOperatorParameter
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13198:1: ( ruleStreamOperatorParameter )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13199:1: ruleStreamOperatorParameter
             {
              before(grammarAccess.getMatchOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_6_0()); 
-            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_rule__MatchOperator__StreamAssignment_626437);
+            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_rule__MatchOperator__StreamAssignment_626499);
             ruleStreamOperatorParameter();
 
             state._fsp--;
@@ -34404,20 +34478,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MatchOperator__StreamAssignment_7_1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13178:1: rule__MatchOperator__StreamAssignment_7_1 : ( ruleStreamOperatorParameter ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13208:1: rule__MatchOperator__StreamAssignment_7_1 : ( ruleStreamOperatorParameter ) ;
     public final void rule__MatchOperator__StreamAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13182:1: ( ( ruleStreamOperatorParameter ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13183:1: ( ruleStreamOperatorParameter )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13212:1: ( ( ruleStreamOperatorParameter ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13213:1: ( ruleStreamOperatorParameter )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13183:1: ( ruleStreamOperatorParameter )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13184:1: ruleStreamOperatorParameter
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13213:1: ( ruleStreamOperatorParameter )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13214:1: ruleStreamOperatorParameter
             {
              before(grammarAccess.getMatchOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_7_1_0()); 
-            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_rule__MatchOperator__StreamAssignment_7_126468);
+            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_rule__MatchOperator__StreamAssignment_7_126530);
             ruleStreamOperatorParameter();
 
             state._fsp--;
@@ -34445,20 +34519,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__IriAssignment_2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13193:1: rule__InputOperator__IriAssignment_2 : ( RULE_STRING ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13223:1: rule__InputOperator__IriAssignment_2 : ( RULE_STRING ) ;
     public final void rule__InputOperator__IriAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13197:1: ( ( RULE_STRING ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13198:1: ( RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13227:1: ( ( RULE_STRING ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13228:1: ( RULE_STRING )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13198:1: ( RULE_STRING )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13199:1: RULE_STRING
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13228:1: ( RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13229:1: RULE_STRING
             {
              before(grammarAccess.getInputOperatorAccess().getIriSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__InputOperator__IriAssignment_226499); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__InputOperator__IriAssignment_226561); 
              after(grammarAccess.getInputOperatorAccess().getIriSTRINGTerminalRuleCall_2_0()); 
 
             }
@@ -34482,20 +34556,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__IriAssignment_3_1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13208:1: rule__InputOperator__IriAssignment_3_1 : ( RULE_STRING ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13238:1: rule__InputOperator__IriAssignment_3_1 : ( RULE_STRING ) ;
     public final void rule__InputOperator__IriAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13212:1: ( ( RULE_STRING ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13213:1: ( RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13242:1: ( ( RULE_STRING ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13243:1: ( RULE_STRING )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13213:1: ( RULE_STRING )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13214:1: RULE_STRING
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13243:1: ( RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13244:1: RULE_STRING
             {
              before(grammarAccess.getInputOperatorAccess().getIriSTRINGTerminalRuleCall_3_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__InputOperator__IriAssignment_3_126530); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__InputOperator__IriAssignment_3_126592); 
              after(grammarAccess.getInputOperatorAccess().getIriSTRINGTerminalRuleCall_3_1_0()); 
 
             }
@@ -34519,20 +34593,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__AddressAssignment_5"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13223:1: rule__InputOperator__AddressAssignment_5 : ( RULE_STRING ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13253:1: rule__InputOperator__AddressAssignment_5 : ( RULE_STRING ) ;
     public final void rule__InputOperator__AddressAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13227:1: ( ( RULE_STRING ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13228:1: ( RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13257:1: ( ( RULE_STRING ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13258:1: ( RULE_STRING )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13228:1: ( RULE_STRING )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13229:1: RULE_STRING
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13258:1: ( RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13259:1: RULE_STRING
             {
              before(grammarAccess.getInputOperatorAccess().getAddressSTRINGTerminalRuleCall_5_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__InputOperator__AddressAssignment_526561); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__InputOperator__AddressAssignment_526623); 
              after(grammarAccess.getInputOperatorAccess().getAddressSTRINGTerminalRuleCall_5_0()); 
 
             }
@@ -34556,20 +34630,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputOperator__PortAssignment_7"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13238:1: rule__InputOperator__PortAssignment_7 : ( RULE_NUMBER ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13268:1: rule__InputOperator__PortAssignment_7 : ( RULE_NUMBER ) ;
     public final void rule__InputOperator__PortAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13242:1: ( ( RULE_NUMBER ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13243:1: ( RULE_NUMBER )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13272:1: ( ( RULE_NUMBER ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13273:1: ( RULE_NUMBER )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13243:1: ( RULE_NUMBER )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13244:1: RULE_NUMBER
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13273:1: ( RULE_NUMBER )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13274:1: RULE_NUMBER
             {
              before(grammarAccess.getInputOperatorAccess().getPortNUMBERTerminalRuleCall_7_0()); 
-            match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_rule__InputOperator__PortAssignment_726592); 
+            match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_rule__InputOperator__PortAssignment_726654); 
              after(grammarAccess.getInputOperatorAccess().getPortNUMBERTerminalRuleCall_7_0()); 
 
             }
@@ -34593,20 +34667,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagOperator__ParametersAssignment_2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13253:1: rule__TagOperator__ParametersAssignment_2 : ( ruleTagElement ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13283:1: rule__TagOperator__ParametersAssignment_2 : ( ruleTagElement ) ;
     public final void rule__TagOperator__ParametersAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13257:1: ( ( ruleTagElement ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13258:1: ( ruleTagElement )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13287:1: ( ( ruleTagElement ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13288:1: ( ruleTagElement )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13258:1: ( ruleTagElement )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13259:1: ruleTagElement
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13288:1: ( ruleTagElement )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13289:1: ruleTagElement
             {
              before(grammarAccess.getTagOperatorAccess().getParametersTagElementParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleTagElement_in_rule__TagOperator__ParametersAssignment_226623);
+            pushFollow(FOLLOW_ruleTagElement_in_rule__TagOperator__ParametersAssignment_226685);
             ruleTagElement();
 
             state._fsp--;
@@ -34634,20 +34708,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagOperator__ParametersAssignment_3_1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13268:1: rule__TagOperator__ParametersAssignment_3_1 : ( ruleTagElement ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13298:1: rule__TagOperator__ParametersAssignment_3_1 : ( ruleTagElement ) ;
     public final void rule__TagOperator__ParametersAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13272:1: ( ( ruleTagElement ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13273:1: ( ruleTagElement )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13302:1: ( ( ruleTagElement ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13303:1: ( ruleTagElement )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13273:1: ( ruleTagElement )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13274:1: ruleTagElement
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13303:1: ( ruleTagElement )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13304:1: ruleTagElement
             {
              before(grammarAccess.getTagOperatorAccess().getParametersTagElementParserRuleCall_3_1_0()); 
-            pushFollow(FOLLOW_ruleTagElement_in_rule__TagOperator__ParametersAssignment_3_126654);
+            pushFollow(FOLLOW_ruleTagElement_in_rule__TagOperator__ParametersAssignment_3_126716);
             ruleTagElement();
 
             state._fsp--;
@@ -34675,20 +34749,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QueryTagOperator__QueryTypeAssignment_1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13285:1: rule__QueryTagOperator__QueryTypeAssignment_1 : ( ruleSparqlQueryType ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13315:1: rule__QueryTagOperator__QueryTypeAssignment_1 : ( ruleSparqlQueryType ) ;
     public final void rule__QueryTagOperator__QueryTypeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13289:1: ( ( ruleSparqlQueryType ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13290:1: ( ruleSparqlQueryType )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13319:1: ( ( ruleSparqlQueryType ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13320:1: ( ruleSparqlQueryType )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13290:1: ( ruleSparqlQueryType )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13291:1: ruleSparqlQueryType
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13320:1: ( ruleSparqlQueryType )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13321:1: ruleSparqlQueryType
             {
              before(grammarAccess.getQueryTagOperatorAccess().getQueryTypeSparqlQueryTypeEnumRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleSparqlQueryType_in_rule__QueryTagOperator__QueryTypeAssignment_126687);
+            pushFollow(FOLLOW_ruleSparqlQueryType_in_rule__QueryTagOperator__QueryTypeAssignment_126749);
             ruleSparqlQueryType();
 
             state._fsp--;
@@ -34716,20 +34790,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QueryTagOperator__QueryAssignment_2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13300:1: rule__QueryTagOperator__QueryAssignment_2 : ( ruleSparqlQuery ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13330:1: rule__QueryTagOperator__QueryAssignment_2 : ( ruleSparqlQuery ) ;
     public final void rule__QueryTagOperator__QueryAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13304:1: ( ( ruleSparqlQuery ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13305:1: ( ruleSparqlQuery )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13334:1: ( ( ruleSparqlQuery ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13335:1: ( ruleSparqlQuery )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13305:1: ( ruleSparqlQuery )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13306:1: ruleSparqlQuery
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13335:1: ( ruleSparqlQuery )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13336:1: ruleSparqlQuery
             {
              before(grammarAccess.getQueryTagOperatorAccess().getQuerySparqlQueryParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleSparqlQuery_in_rule__QueryTagOperator__QueryAssignment_226718);
+            pushFollow(FOLLOW_ruleSparqlQuery_in_rule__QueryTagOperator__QueryAssignment_226780);
             ruleSparqlQuery();
 
             state._fsp--;
@@ -34757,20 +34831,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SparqlQuery__VariableAssignment_0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13315:1: rule__SparqlQuery__VariableAssignment_0 : ( ruleSparqlQueryVariable ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13345:1: rule__SparqlQuery__VariableAssignment_0 : ( ruleSparqlQueryVariable ) ;
     public final void rule__SparqlQuery__VariableAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13319:1: ( ( ruleSparqlQueryVariable ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13320:1: ( ruleSparqlQueryVariable )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13349:1: ( ( ruleSparqlQueryVariable ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13350:1: ( ruleSparqlQueryVariable )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13320:1: ( ruleSparqlQueryVariable )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13321:1: ruleSparqlQueryVariable
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13350:1: ( ruleSparqlQueryVariable )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13351:1: ruleSparqlQueryVariable
             {
              before(grammarAccess.getSparqlQueryAccess().getVariableSparqlQueryVariableParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleSparqlQueryVariable_in_rule__SparqlQuery__VariableAssignment_026749);
+            pushFollow(FOLLOW_ruleSparqlQueryVariable_in_rule__SparqlQuery__VariableAssignment_026811);
             ruleSparqlQueryVariable();
 
             state._fsp--;
@@ -34798,20 +34872,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SparqlQueryVariable__VariableAssignment_1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13330:1: rule__SparqlQueryVariable__VariableAssignment_1 : ( RULE_STRING ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13360:1: rule__SparqlQueryVariable__VariableAssignment_1 : ( RULE_STRING ) ;
     public final void rule__SparqlQueryVariable__VariableAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13334:1: ( ( RULE_STRING ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13335:1: ( RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13364:1: ( ( RULE_STRING ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13365:1: ( RULE_STRING )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13335:1: ( RULE_STRING )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13336:1: RULE_STRING
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13365:1: ( RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13366:1: RULE_STRING
             {
              before(grammarAccess.getSparqlQueryVariableAccess().getVariableSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SparqlQueryVariable__VariableAssignment_126780); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SparqlQueryVariable__VariableAssignment_126842); 
              after(grammarAccess.getSparqlQueryVariableAccess().getVariableSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -34835,20 +34909,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SparqlQueryVariable__VariableAssignment_2_1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13345:1: rule__SparqlQueryVariable__VariableAssignment_2_1 : ( RULE_STRING ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13375:1: rule__SparqlQueryVariable__VariableAssignment_2_1 : ( RULE_STRING ) ;
     public final void rule__SparqlQueryVariable__VariableAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13349:1: ( ( RULE_STRING ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13350:1: ( RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13379:1: ( ( RULE_STRING ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13380:1: ( RULE_STRING )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13350:1: ( RULE_STRING )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13351:1: RULE_STRING
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13380:1: ( RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13381:1: RULE_STRING
             {
              before(grammarAccess.getSparqlQueryVariableAccess().getVariableSTRINGTerminalRuleCall_2_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SparqlQueryVariable__VariableAssignment_2_126811); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SparqlQueryVariable__VariableAssignment_2_126873); 
              after(grammarAccess.getSparqlQueryVariableAccess().getVariableSTRINGTerminalRuleCall_2_1_0()); 
 
             }
@@ -34872,20 +34946,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagOperator__ParametersAssignment_2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13360:1: rule__UnTagOperator__ParametersAssignment_2 : ( ruleUnTagElement ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13390:1: rule__UnTagOperator__ParametersAssignment_2 : ( ruleUnTagElement ) ;
     public final void rule__UnTagOperator__ParametersAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13364:1: ( ( ruleUnTagElement ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13365:1: ( ruleUnTagElement )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13394:1: ( ( ruleUnTagElement ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13395:1: ( ruleUnTagElement )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13365:1: ( ruleUnTagElement )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13366:1: ruleUnTagElement
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13395:1: ( ruleUnTagElement )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13396:1: ruleUnTagElement
             {
              before(grammarAccess.getUnTagOperatorAccess().getParametersUnTagElementParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleUnTagElement_in_rule__UnTagOperator__ParametersAssignment_226842);
+            pushFollow(FOLLOW_ruleUnTagElement_in_rule__UnTagOperator__ParametersAssignment_226904);
             ruleUnTagElement();
 
             state._fsp--;
@@ -34913,20 +34987,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagOperator__ParametersAssignment_3_1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13375:1: rule__UnTagOperator__ParametersAssignment_3_1 : ( ruleUnTagElement ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13405:1: rule__UnTagOperator__ParametersAssignment_3_1 : ( ruleUnTagElement ) ;
     public final void rule__UnTagOperator__ParametersAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13379:1: ( ( ruleUnTagElement ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13380:1: ( ruleUnTagElement )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13409:1: ( ( ruleUnTagElement ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13410:1: ( ruleUnTagElement )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13380:1: ( ruleUnTagElement )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13381:1: ruleUnTagElement
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13410:1: ( ruleUnTagElement )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13411:1: ruleUnTagElement
             {
              before(grammarAccess.getUnTagOperatorAccess().getParametersUnTagElementParserRuleCall_3_1_0()); 
-            pushFollow(FOLLOW_ruleUnTagElement_in_rule__UnTagOperator__ParametersAssignment_3_126873);
+            pushFollow(FOLLOW_ruleUnTagElement_in_rule__UnTagOperator__ParametersAssignment_3_126935);
             ruleUnTagElement();
 
             state._fsp--;
@@ -34954,20 +35028,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagOperator__StreamAssignment_5"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13390:1: rule__UnTagOperator__StreamAssignment_5 : ( ruleStreamOperatorParameter ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13420:1: rule__UnTagOperator__StreamAssignment_5 : ( ruleStreamOperatorParameter ) ;
     public final void rule__UnTagOperator__StreamAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13394:1: ( ( ruleStreamOperatorParameter ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13395:1: ( ruleStreamOperatorParameter )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13424:1: ( ( ruleStreamOperatorParameter ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13425:1: ( ruleStreamOperatorParameter )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13395:1: ( ruleStreamOperatorParameter )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13396:1: ruleStreamOperatorParameter
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13425:1: ( ruleStreamOperatorParameter )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13426:1: ruleStreamOperatorParameter
             {
              before(grammarAccess.getUnTagOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_5_0()); 
-            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_rule__UnTagOperator__StreamAssignment_526904);
+            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_rule__UnTagOperator__StreamAssignment_526966);
             ruleStreamOperatorParameter();
 
             state._fsp--;
@@ -34995,24 +35069,24 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagElement__ElementAssignment_0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13405:1: rule__UnTagElement__ElementAssignment_0 : ( ( RULE_STRING ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13435:1: rule__UnTagElement__ElementAssignment_0 : ( ( RULE_STRING ) ) ;
     public final void rule__UnTagElement__ElementAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13409:1: ( ( ( RULE_STRING ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13410:1: ( ( RULE_STRING ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13439:1: ( ( ( RULE_STRING ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13440:1: ( ( RULE_STRING ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13410:1: ( ( RULE_STRING ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13411:1: ( RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13440:1: ( ( RULE_STRING ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13441:1: ( RULE_STRING )
             {
              before(grammarAccess.getUnTagElementAccess().getElementOWLClassCrossReference_0_0()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13412:1: ( RULE_STRING )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13413:1: RULE_STRING
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13442:1: ( RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13443:1: RULE_STRING
             {
              before(grammarAccess.getUnTagElementAccess().getElementOWLClassSTRINGTerminalRuleCall_0_0_1()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__UnTagElement__ElementAssignment_026939); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__UnTagElement__ElementAssignment_027001); 
              after(grammarAccess.getUnTagElementAccess().getElementOWLClassSTRINGTerminalRuleCall_0_0_1()); 
 
             }
@@ -35040,20 +35114,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnTagElement__ReferenceAssignment_2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13424:1: rule__UnTagElement__ReferenceAssignment_2 : ( ruleStreamAccess ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13454:1: rule__UnTagElement__ReferenceAssignment_2 : ( ruleStreamAccess ) ;
     public final void rule__UnTagElement__ReferenceAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13428:1: ( ( ruleStreamAccess ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13429:1: ( ruleStreamAccess )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13458:1: ( ( ruleStreamAccess ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13459:1: ( ruleStreamAccess )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13429:1: ( ruleStreamAccess )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13430:1: ruleStreamAccess
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13459:1: ( ruleStreamAccess )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13460:1: ruleStreamAccess
             {
              before(grammarAccess.getUnTagElementAccess().getReferenceStreamAccessParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleStreamAccess_in_rule__UnTagElement__ReferenceAssignment_226974);
+            pushFollow(FOLLOW_ruleStreamAccess_in_rule__UnTagElement__ReferenceAssignment_227036);
             ruleStreamAccess();
 
             state._fsp--;
@@ -35081,20 +35155,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagClassElement__ReferenceAssignment_0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13439:1: rule__TagClassElement__ReferenceAssignment_0 : ( ruleStreamAccess ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13469:1: rule__TagClassElement__ReferenceAssignment_0 : ( ruleStreamAccess ) ;
     public final void rule__TagClassElement__ReferenceAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13443:1: ( ( ruleStreamAccess ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13444:1: ( ruleStreamAccess )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13473:1: ( ( ruleStreamAccess ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13474:1: ( ruleStreamAccess )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13444:1: ( ruleStreamAccess )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13445:1: ruleStreamAccess
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13474:1: ( ruleStreamAccess )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13475:1: ruleStreamAccess
             {
              before(grammarAccess.getTagClassElementAccess().getReferenceStreamAccessParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleStreamAccess_in_rule__TagClassElement__ReferenceAssignment_027005);
+            pushFollow(FOLLOW_ruleStreamAccess_in_rule__TagClassElement__ReferenceAssignment_027067);
             ruleStreamAccess();
 
             state._fsp--;
@@ -35122,24 +35196,24 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagClassElement__ElementAssignment_3"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13454:1: rule__TagClassElement__ElementAssignment_3 : ( ( RULE_STRING ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13484:1: rule__TagClassElement__ElementAssignment_3 : ( ( RULE_STRING ) ) ;
     public final void rule__TagClassElement__ElementAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13458:1: ( ( ( RULE_STRING ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13459:1: ( ( RULE_STRING ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13488:1: ( ( ( RULE_STRING ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13489:1: ( ( RULE_STRING ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13459:1: ( ( RULE_STRING ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13460:1: ( RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13489:1: ( ( RULE_STRING ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13490:1: ( RULE_STRING )
             {
              before(grammarAccess.getTagClassElementAccess().getElementOWLClassCrossReference_3_0()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13461:1: ( RULE_STRING )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13462:1: RULE_STRING
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13491:1: ( RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13492:1: RULE_STRING
             {
              before(grammarAccess.getTagClassElementAccess().getElementOWLClassSTRINGTerminalRuleCall_3_0_1()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TagClassElement__ElementAssignment_327040); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TagClassElement__ElementAssignment_327102); 
              after(grammarAccess.getTagClassElementAccess().getElementOWLClassSTRINGTerminalRuleCall_3_0_1()); 
 
             }
@@ -35167,20 +35241,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagObjectPropertyElement__ReferenceAssignment_0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13473:1: rule__TagObjectPropertyElement__ReferenceAssignment_0 : ( ruleStreamAccess ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13503:1: rule__TagObjectPropertyElement__ReferenceAssignment_0 : ( ruleStreamAccess ) ;
     public final void rule__TagObjectPropertyElement__ReferenceAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13477:1: ( ( ruleStreamAccess ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13478:1: ( ruleStreamAccess )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13507:1: ( ( ruleStreamAccess ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13508:1: ( ruleStreamAccess )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13478:1: ( ruleStreamAccess )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13479:1: ruleStreamAccess
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13508:1: ( ruleStreamAccess )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13509:1: ruleStreamAccess
             {
              before(grammarAccess.getTagObjectPropertyElementAccess().getReferenceStreamAccessParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleStreamAccess_in_rule__TagObjectPropertyElement__ReferenceAssignment_027075);
+            pushFollow(FOLLOW_ruleStreamAccess_in_rule__TagObjectPropertyElement__ReferenceAssignment_027137);
             ruleStreamAccess();
 
             state._fsp--;
@@ -35208,24 +35282,24 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagObjectPropertyElement__ElementAssignment_3"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13488:1: rule__TagObjectPropertyElement__ElementAssignment_3 : ( ( RULE_STRING ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13518:1: rule__TagObjectPropertyElement__ElementAssignment_3 : ( ( RULE_STRING ) ) ;
     public final void rule__TagObjectPropertyElement__ElementAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13492:1: ( ( ( RULE_STRING ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13493:1: ( ( RULE_STRING ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13522:1: ( ( ( RULE_STRING ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13523:1: ( ( RULE_STRING ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13493:1: ( ( RULE_STRING ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13494:1: ( RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13523:1: ( ( RULE_STRING ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13524:1: ( RULE_STRING )
             {
              before(grammarAccess.getTagObjectPropertyElementAccess().getElementOWLObjectPropertyCrossReference_3_0()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13495:1: ( RULE_STRING )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13496:1: RULE_STRING
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13525:1: ( RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13526:1: RULE_STRING
             {
              before(grammarAccess.getTagObjectPropertyElementAccess().getElementOWLObjectPropertySTRINGTerminalRuleCall_3_0_1()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TagObjectPropertyElement__ElementAssignment_327110); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TagObjectPropertyElement__ElementAssignment_327172); 
              after(grammarAccess.getTagObjectPropertyElementAccess().getElementOWLObjectPropertySTRINGTerminalRuleCall_3_0_1()); 
 
             }
@@ -35253,20 +35327,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagDataTypePropertyElement__ReferenceAssignment_0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13507:1: rule__TagDataTypePropertyElement__ReferenceAssignment_0 : ( ruleStreamAccess ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13537:1: rule__TagDataTypePropertyElement__ReferenceAssignment_0 : ( ruleStreamAccess ) ;
     public final void rule__TagDataTypePropertyElement__ReferenceAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13511:1: ( ( ruleStreamAccess ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13512:1: ( ruleStreamAccess )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13541:1: ( ( ruleStreamAccess ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13542:1: ( ruleStreamAccess )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13512:1: ( ruleStreamAccess )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13513:1: ruleStreamAccess
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13542:1: ( ruleStreamAccess )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13543:1: ruleStreamAccess
             {
              before(grammarAccess.getTagDataTypePropertyElementAccess().getReferenceStreamAccessParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleStreamAccess_in_rule__TagDataTypePropertyElement__ReferenceAssignment_027145);
+            pushFollow(FOLLOW_ruleStreamAccess_in_rule__TagDataTypePropertyElement__ReferenceAssignment_027207);
             ruleStreamAccess();
 
             state._fsp--;
@@ -35294,24 +35368,24 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagDataTypePropertyElement__ElementAssignment_3"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13522:1: rule__TagDataTypePropertyElement__ElementAssignment_3 : ( ( RULE_STRING ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13552:1: rule__TagDataTypePropertyElement__ElementAssignment_3 : ( ( RULE_STRING ) ) ;
     public final void rule__TagDataTypePropertyElement__ElementAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13526:1: ( ( ( RULE_STRING ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13527:1: ( ( RULE_STRING ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13556:1: ( ( ( RULE_STRING ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13557:1: ( ( RULE_STRING ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13527:1: ( ( RULE_STRING ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13528:1: ( RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13557:1: ( ( RULE_STRING ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13558:1: ( RULE_STRING )
             {
              before(grammarAccess.getTagDataTypePropertyElementAccess().getElementOWLDatatypePropertyCrossReference_3_0()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13529:1: ( RULE_STRING )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13530:1: RULE_STRING
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13559:1: ( RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13560:1: RULE_STRING
             {
              before(grammarAccess.getTagDataTypePropertyElementAccess().getElementOWLDatatypePropertySTRINGTerminalRuleCall_3_0_1()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TagDataTypePropertyElement__ElementAssignment_327180); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TagDataTypePropertyElement__ElementAssignment_327242); 
              after(grammarAccess.getTagDataTypePropertyElementAccess().getElementOWLDatatypePropertySTRINGTerminalRuleCall_3_0_1()); 
 
             }
@@ -35339,24 +35413,24 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WindowOperator__SettingAssignment_0_0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13541:1: rule__WindowOperator__SettingAssignment_0_0 : ( ( 'last' ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13571:1: rule__WindowOperator__SettingAssignment_0_0 : ( ( 'last' ) ) ;
     public final void rule__WindowOperator__SettingAssignment_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13545:1: ( ( ( 'last' ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13546:1: ( ( 'last' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13575:1: ( ( ( 'last' ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13576:1: ( ( 'last' ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13546:1: ( ( 'last' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13547:1: ( 'last' )
-            {
-             before(grammarAccess.getWindowOperatorAccess().getSettingLastKeyword_0_0_0()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13548:1: ( 'last' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13549:1: 'last'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13576:1: ( ( 'last' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13577:1: ( 'last' )
             {
              before(grammarAccess.getWindowOperatorAccess().getSettingLastKeyword_0_0_0()); 
-            match(input,78,FOLLOW_78_in_rule__WindowOperator__SettingAssignment_0_027220); 
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13578:1: ( 'last' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13579:1: 'last'
+            {
+             before(grammarAccess.getWindowOperatorAccess().getSettingLastKeyword_0_0_0()); 
+            match(input,78,FOLLOW_78_in_rule__WindowOperator__SettingAssignment_0_027282); 
              after(grammarAccess.getWindowOperatorAccess().getSettingLastKeyword_0_0_0()); 
 
             }
@@ -35384,20 +35458,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WindowOperator__ValueAssignment_0_1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13564:1: rule__WindowOperator__ValueAssignment_0_1 : ( RULE_NUMBER ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13594:1: rule__WindowOperator__ValueAssignment_0_1 : ( RULE_NUMBER ) ;
     public final void rule__WindowOperator__ValueAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13568:1: ( ( RULE_NUMBER ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13569:1: ( RULE_NUMBER )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13598:1: ( ( RULE_NUMBER ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13599:1: ( RULE_NUMBER )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13569:1: ( RULE_NUMBER )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13570:1: RULE_NUMBER
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13599:1: ( RULE_NUMBER )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13600:1: RULE_NUMBER
             {
              before(grammarAccess.getWindowOperatorAccess().getValueNUMBERTerminalRuleCall_0_1_0()); 
-            match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_rule__WindowOperator__ValueAssignment_0_127259); 
+            match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_rule__WindowOperator__ValueAssignment_0_127321); 
              after(grammarAccess.getWindowOperatorAccess().getValueNUMBERTerminalRuleCall_0_1_0()); 
 
             }
@@ -35421,23 +35495,23 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WindowOperator__UnitAssignment_0_2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13579:1: rule__WindowOperator__UnitAssignment_0_2 : ( ( rule__WindowOperator__UnitAlternatives_0_2_0 ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13609:1: rule__WindowOperator__UnitAssignment_0_2 : ( ( rule__WindowOperator__UnitAlternatives_0_2_0 ) ) ;
     public final void rule__WindowOperator__UnitAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13583:1: ( ( ( rule__WindowOperator__UnitAlternatives_0_2_0 ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13584:1: ( ( rule__WindowOperator__UnitAlternatives_0_2_0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13613:1: ( ( ( rule__WindowOperator__UnitAlternatives_0_2_0 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13614:1: ( ( rule__WindowOperator__UnitAlternatives_0_2_0 ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13584:1: ( ( rule__WindowOperator__UnitAlternatives_0_2_0 ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13585:1: ( rule__WindowOperator__UnitAlternatives_0_2_0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13614:1: ( ( rule__WindowOperator__UnitAlternatives_0_2_0 ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13615:1: ( rule__WindowOperator__UnitAlternatives_0_2_0 )
             {
              before(grammarAccess.getWindowOperatorAccess().getUnitAlternatives_0_2_0()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13586:1: ( rule__WindowOperator__UnitAlternatives_0_2_0 )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13586:2: rule__WindowOperator__UnitAlternatives_0_2_0
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13616:1: ( rule__WindowOperator__UnitAlternatives_0_2_0 )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13616:2: rule__WindowOperator__UnitAlternatives_0_2_0
             {
-            pushFollow(FOLLOW_rule__WindowOperator__UnitAlternatives_0_2_0_in_rule__WindowOperator__UnitAssignment_0_227290);
+            pushFollow(FOLLOW_rule__WindowOperator__UnitAlternatives_0_2_0_in_rule__WindowOperator__UnitAssignment_0_227352);
             rule__WindowOperator__UnitAlternatives_0_2_0();
 
             state._fsp--;
@@ -35468,24 +35542,24 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WindowOperator__SettingAssignment_1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13595:1: rule__WindowOperator__SettingAssignment_1 : ( ( 'now' ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13625:1: rule__WindowOperator__SettingAssignment_1 : ( ( 'now' ) ) ;
     public final void rule__WindowOperator__SettingAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13599:1: ( ( ( 'now' ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13600:1: ( ( 'now' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13629:1: ( ( ( 'now' ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13630:1: ( ( 'now' ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13600:1: ( ( 'now' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13601:1: ( 'now' )
-            {
-             before(grammarAccess.getWindowOperatorAccess().getSettingNowKeyword_1_0()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13602:1: ( 'now' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13603:1: 'now'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13630:1: ( ( 'now' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13631:1: ( 'now' )
             {
              before(grammarAccess.getWindowOperatorAccess().getSettingNowKeyword_1_0()); 
-            match(input,79,FOLLOW_79_in_rule__WindowOperator__SettingAssignment_127328); 
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13632:1: ( 'now' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13633:1: 'now'
+            {
+             before(grammarAccess.getWindowOperatorAccess().getSettingNowKeyword_1_0()); 
+            match(input,79,FOLLOW_79_in_rule__WindowOperator__SettingAssignment_127390); 
              after(grammarAccess.getWindowOperatorAccess().getSettingNowKeyword_1_0()); 
 
             }
@@ -35513,20 +35587,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MarkerOperator__ExpressionAssignment_1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13618:1: rule__MarkerOperator__ExpressionAssignment_1 : ( ruleExpression ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13648:1: rule__MarkerOperator__ExpressionAssignment_1 : ( ruleExpression ) ;
     public final void rule__MarkerOperator__ExpressionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13622:1: ( ( ruleExpression ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13623:1: ( ruleExpression )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13652:1: ( ( ruleExpression ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13653:1: ( ruleExpression )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13623:1: ( ruleExpression )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13624:1: ruleExpression
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13653:1: ( ruleExpression )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13654:1: ruleExpression
             {
              before(grammarAccess.getMarkerOperatorAccess().getExpressionExpressionParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleExpression_in_rule__MarkerOperator__ExpressionAssignment_127367);
+            pushFollow(FOLLOW_ruleExpression_in_rule__MarkerOperator__ExpressionAssignment_127429);
             ruleExpression();
 
             state._fsp--;
@@ -35554,20 +35628,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLOperator__RuleAssignment_2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13633:1: rule__SWRLOperator__RuleAssignment_2 : ( ruleSWRLRule ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13663:1: rule__SWRLOperator__RuleAssignment_2 : ( ruleSWRLRule ) ;
     public final void rule__SWRLOperator__RuleAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13637:1: ( ( ruleSWRLRule ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13638:1: ( ruleSWRLRule )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13667:1: ( ( ruleSWRLRule ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13668:1: ( ruleSWRLRule )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13638:1: ( ruleSWRLRule )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13639:1: ruleSWRLRule
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13668:1: ( ruleSWRLRule )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13669:1: ruleSWRLRule
             {
              before(grammarAccess.getSWRLOperatorAccess().getRuleSWRLRuleParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleSWRLRule_in_rule__SWRLOperator__RuleAssignment_227398);
+            pushFollow(FOLLOW_ruleSWRLRule_in_rule__SWRLOperator__RuleAssignment_227460);
             ruleSWRLRule();
 
             state._fsp--;
@@ -35595,20 +35669,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLOperator__BarrierAssignment_4"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13648:1: rule__SWRLOperator__BarrierAssignment_4 : ( ruleStreamOperatorParameter ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13678:1: rule__SWRLOperator__BarrierAssignment_4 : ( ruleStreamOperatorParameter ) ;
     public final void rule__SWRLOperator__BarrierAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13652:1: ( ( ruleStreamOperatorParameter ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13653:1: ( ruleStreamOperatorParameter )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13682:1: ( ( ruleStreamOperatorParameter ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13683:1: ( ruleStreamOperatorParameter )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13653:1: ( ruleStreamOperatorParameter )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13654:1: ruleStreamOperatorParameter
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13683:1: ( ruleStreamOperatorParameter )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13684:1: ruleStreamOperatorParameter
             {
              before(grammarAccess.getSWRLOperatorAccess().getBarrierStreamOperatorParameterParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_rule__SWRLOperator__BarrierAssignment_427429);
+            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_rule__SWRLOperator__BarrierAssignment_427491);
             ruleStreamOperatorParameter();
 
             state._fsp--;
@@ -35636,20 +35710,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLOperator__BarrierAssignment_5_1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13663:1: rule__SWRLOperator__BarrierAssignment_5_1 : ( ruleStreamOperatorParameter ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13693:1: rule__SWRLOperator__BarrierAssignment_5_1 : ( ruleStreamOperatorParameter ) ;
     public final void rule__SWRLOperator__BarrierAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13667:1: ( ( ruleStreamOperatorParameter ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13668:1: ( ruleStreamOperatorParameter )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13697:1: ( ( ruleStreamOperatorParameter ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13698:1: ( ruleStreamOperatorParameter )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13668:1: ( ruleStreamOperatorParameter )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13669:1: ruleStreamOperatorParameter
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13698:1: ( ruleStreamOperatorParameter )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13699:1: ruleStreamOperatorParameter
             {
              before(grammarAccess.getSWRLOperatorAccess().getBarrierStreamOperatorParameterParserRuleCall_5_1_0()); 
-            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_rule__SWRLOperator__BarrierAssignment_5_127460);
+            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_rule__SWRLOperator__BarrierAssignment_5_127522);
             ruleStreamOperatorParameter();
 
             state._fsp--;
@@ -35677,20 +35751,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLRule__AntecedentAssignment_2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13678:1: rule__SWRLRule__AntecedentAssignment_2 : ( ruleAntecedentRule ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13708:1: rule__SWRLRule__AntecedentAssignment_2 : ( ruleAntecedentRule ) ;
     public final void rule__SWRLRule__AntecedentAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13682:1: ( ( ruleAntecedentRule ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13683:1: ( ruleAntecedentRule )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13712:1: ( ( ruleAntecedentRule ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13713:1: ( ruleAntecedentRule )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13683:1: ( ruleAntecedentRule )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13684:1: ruleAntecedentRule
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13713:1: ( ruleAntecedentRule )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13714:1: ruleAntecedentRule
             {
              before(grammarAccess.getSWRLRuleAccess().getAntecedentAntecedentRuleParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleAntecedentRule_in_rule__SWRLRule__AntecedentAssignment_227491);
+            pushFollow(FOLLOW_ruleAntecedentRule_in_rule__SWRLRule__AntecedentAssignment_227553);
             ruleAntecedentRule();
 
             state._fsp--;
@@ -35718,20 +35792,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SWRLRule__ConsequentAssignment_4"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13693:1: rule__SWRLRule__ConsequentAssignment_4 : ( ruleConsequentRule ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13723:1: rule__SWRLRule__ConsequentAssignment_4 : ( ruleConsequentRule ) ;
     public final void rule__SWRLRule__ConsequentAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13697:1: ( ( ruleConsequentRule ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13698:1: ( ruleConsequentRule )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13727:1: ( ( ruleConsequentRule ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13728:1: ( ruleConsequentRule )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13698:1: ( ruleConsequentRule )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13699:1: ruleConsequentRule
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13728:1: ( ruleConsequentRule )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13729:1: ruleConsequentRule
             {
              before(grammarAccess.getSWRLRuleAccess().getConsequentConsequentRuleParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleConsequentRule_in_rule__SWRLRule__ConsequentAssignment_427522);
+            pushFollow(FOLLOW_ruleConsequentRule_in_rule__SWRLRule__ConsequentAssignment_427584);
             ruleConsequentRule();
 
             state._fsp--;
@@ -35759,20 +35833,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AntecedentRule__AtomsAssignment_2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13708:1: rule__AntecedentRule__AtomsAssignment_2 : ( ruleRule ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13738:1: rule__AntecedentRule__AtomsAssignment_2 : ( ruleRule ) ;
     public final void rule__AntecedentRule__AtomsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13712:1: ( ( ruleRule ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13713:1: ( ruleRule )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13742:1: ( ( ruleRule ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13743:1: ( ruleRule )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13713:1: ( ruleRule )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13714:1: ruleRule
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13743:1: ( ruleRule )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13744:1: ruleRule
             {
              before(grammarAccess.getAntecedentRuleAccess().getAtomsRuleParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleRule_in_rule__AntecedentRule__AtomsAssignment_227553);
+            pushFollow(FOLLOW_ruleRule_in_rule__AntecedentRule__AtomsAssignment_227615);
             ruleRule();
 
             state._fsp--;
@@ -35800,20 +35874,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AntecedentRule__AtomsAssignment_3_1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13723:1: rule__AntecedentRule__AtomsAssignment_3_1 : ( ruleRule ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13753:1: rule__AntecedentRule__AtomsAssignment_3_1 : ( ruleRule ) ;
     public final void rule__AntecedentRule__AtomsAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13727:1: ( ( ruleRule ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13728:1: ( ruleRule )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13757:1: ( ( ruleRule ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13758:1: ( ruleRule )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13728:1: ( ruleRule )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13729:1: ruleRule
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13758:1: ( ruleRule )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13759:1: ruleRule
             {
              before(grammarAccess.getAntecedentRuleAccess().getAtomsRuleParserRuleCall_3_1_0()); 
-            pushFollow(FOLLOW_ruleRule_in_rule__AntecedentRule__AtomsAssignment_3_127584);
+            pushFollow(FOLLOW_ruleRule_in_rule__AntecedentRule__AtomsAssignment_3_127646);
             ruleRule();
 
             state._fsp--;
@@ -35841,20 +35915,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConsequentRule__AtomsAssignment_2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13738:1: rule__ConsequentRule__AtomsAssignment_2 : ( ruleRule ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13768:1: rule__ConsequentRule__AtomsAssignment_2 : ( ruleRule ) ;
     public final void rule__ConsequentRule__AtomsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13742:1: ( ( ruleRule ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13743:1: ( ruleRule )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13772:1: ( ( ruleRule ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13773:1: ( ruleRule )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13743:1: ( ruleRule )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13744:1: ruleRule
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13773:1: ( ruleRule )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13774:1: ruleRule
             {
              before(grammarAccess.getConsequentRuleAccess().getAtomsRuleParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleRule_in_rule__ConsequentRule__AtomsAssignment_227615);
+            pushFollow(FOLLOW_ruleRule_in_rule__ConsequentRule__AtomsAssignment_227677);
             ruleRule();
 
             state._fsp--;
@@ -35882,20 +35956,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConsequentRule__AtomsAssignment_3_1"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13753:1: rule__ConsequentRule__AtomsAssignment_3_1 : ( ruleRule ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13783:1: rule__ConsequentRule__AtomsAssignment_3_1 : ( ruleRule ) ;
     public final void rule__ConsequentRule__AtomsAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13757:1: ( ( ruleRule ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13758:1: ( ruleRule )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13787:1: ( ( ruleRule ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13788:1: ( ruleRule )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13758:1: ( ruleRule )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13759:1: ruleRule
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13788:1: ( ruleRule )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13789:1: ruleRule
             {
              before(grammarAccess.getConsequentRuleAccess().getAtomsRuleParserRuleCall_3_1_0()); 
-            pushFollow(FOLLOW_ruleRule_in_rule__ConsequentRule__AtomsAssignment_3_127646);
+            pushFollow(FOLLOW_ruleRule_in_rule__ConsequentRule__AtomsAssignment_3_127708);
             ruleRule();
 
             state._fsp--;
@@ -35923,24 +35997,24 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__NameAssignment_0"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13768:1: rule__Rule__NameAssignment_0 : ( ( RULE_STRING ) ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13798:1: rule__Rule__NameAssignment_0 : ( ( RULE_STRING ) ) ;
     public final void rule__Rule__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13772:1: ( ( ( RULE_STRING ) ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13773:1: ( ( RULE_STRING ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13802:1: ( ( ( RULE_STRING ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13803:1: ( ( RULE_STRING ) )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13773:1: ( ( RULE_STRING ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13774:1: ( RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13803:1: ( ( RULE_STRING ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13804:1: ( RULE_STRING )
             {
              before(grammarAccess.getRuleAccess().getNameOWLObjectPropertyCrossReference_0_0()); 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13775:1: ( RULE_STRING )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13776:1: RULE_STRING
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13805:1: ( RULE_STRING )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13806:1: RULE_STRING
             {
              before(grammarAccess.getRuleAccess().getNameOWLObjectPropertySTRINGTerminalRuleCall_0_0_1()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Rule__NameAssignment_027681); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Rule__NameAssignment_027743); 
              after(grammarAccess.getRuleAccess().getNameOWLObjectPropertySTRINGTerminalRuleCall_0_0_1()); 
 
             }
@@ -35968,20 +36042,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__VariableAssignment_3"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13787:1: rule__Rule__VariableAssignment_3 : ( ruleStreamAccess ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13817:1: rule__Rule__VariableAssignment_3 : ( ruleStreamAccess ) ;
     public final void rule__Rule__VariableAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13791:1: ( ( ruleStreamAccess ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13792:1: ( ruleStreamAccess )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13821:1: ( ( ruleStreamAccess ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13822:1: ( ruleStreamAccess )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13792:1: ( ruleStreamAccess )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13793:1: ruleStreamAccess
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13822:1: ( ruleStreamAccess )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13823:1: ruleStreamAccess
             {
              before(grammarAccess.getRuleAccess().getVariableStreamAccessParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleStreamAccess_in_rule__Rule__VariableAssignment_327716);
+            pushFollow(FOLLOW_ruleStreamAccess_in_rule__Rule__VariableAssignment_327778);
             ruleStreamAccess();
 
             state._fsp--;
@@ -36009,20 +36083,20 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__VariableAssignment_4_2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13802:1: rule__Rule__VariableAssignment_4_2 : ( ruleStreamAccess ) ;
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13832:1: rule__Rule__VariableAssignment_4_2 : ( ruleStreamAccess ) ;
     public final void rule__Rule__VariableAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13806:1: ( ( ruleStreamAccess ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13807:1: ( ruleStreamAccess )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13836:1: ( ( ruleStreamAccess ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13837:1: ( ruleStreamAccess )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13807:1: ( ruleStreamAccess )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13808:1: ruleStreamAccess
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13837:1: ( ruleStreamAccess )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13838:1: ruleStreamAccess
             {
              before(grammarAccess.getRuleAccess().getVariableStreamAccessParserRuleCall_4_2_0()); 
-            pushFollow(FOLLOW_ruleStreamAccess_in_rule__Rule__VariableAssignment_4_227747);
+            pushFollow(FOLLOW_ruleStreamAccess_in_rule__Rule__VariableAssignment_4_227809);
             ruleStreamAccess();
 
             state._fsp--;
@@ -36047,84 +36121,6 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "rule__Rule__VariableAssignment_4_2"
-
-
-    // $ANTLR start "rule__OCLOperator__ConstraintAssignment_2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13817:1: rule__OCLOperator__ConstraintAssignment_2 : ( RULE_STRING ) ;
-    public final void rule__OCLOperator__ConstraintAssignment_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13821:1: ( ( RULE_STRING ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13822:1: ( RULE_STRING )
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13822:1: ( RULE_STRING )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13823:1: RULE_STRING
-            {
-             before(grammarAccess.getOCLOperatorAccess().getConstraintSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__OCLOperator__ConstraintAssignment_227778); 
-             after(grammarAccess.getOCLOperatorAccess().getConstraintSTRINGTerminalRuleCall_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__OCLOperator__ConstraintAssignment_2"
-
-
-    // $ANTLR start "rule__OCLOperator__StreamAssignment_4"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13832:1: rule__OCLOperator__StreamAssignment_4 : ( ruleStreamOperatorParameter ) ;
-    public final void rule__OCLOperator__StreamAssignment_4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13836:1: ( ( ruleStreamOperatorParameter ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13837:1: ( ruleStreamOperatorParameter )
-            {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13837:1: ( ruleStreamOperatorParameter )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:13838:1: ruleStreamOperatorParameter
-            {
-             before(grammarAccess.getOCLOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleStreamOperatorParameter_in_rule__OCLOperator__StreamAssignment_427809);
-            ruleStreamOperatorParameter();
-
-            state._fsp--;
-
-             after(grammarAccess.getOCLOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__OCLOperator__StreamAssignment_4"
 
 
     // $ANTLR start "rule__CountOperator__ParameterAssignment_2"
@@ -38232,75 +38228,75 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleLogOperator_in_entryRuleLogOperator802 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleLogOperator809 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__LogOperator__Group__0_in_ruleLogOperator835 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMatchOperator_in_entryRuleMatchOperator862 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMatchOperator869 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group__0_in_ruleMatchOperator895 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInputOperator_in_entryRuleInputOperator922 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInputOperator929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group__0_in_ruleInputOperator955 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReturnTypeOperator_in_entryRuleReturnTypeOperator982 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleReturnTypeOperator989 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ReturnTypeOperator__Alternatives_in_ruleReturnTypeOperator1015 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNoReturnTypeOperator_in_entryRuleNoReturnTypeOperator1042 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNoReturnTypeOperator1049 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOutputOperator_in_ruleNoReturnTypeOperator1075 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTagOperator_in_entryRuleTagOperator1101 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTagOperator1108 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagOperator__Group__0_in_ruleTagOperator1134 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQueryTagOperator_in_entryRuleQueryTagOperator1163 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQueryTagOperator1170 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QueryTagOperator__Group__0_in_ruleQueryTagOperator1196 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSparqlQuery_in_entryRuleSparqlQuery1223 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSparqlQuery1230 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SparqlQuery__Group__0_in_ruleSparqlQuery1256 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSparqlQueryVariable_in_entryRuleSparqlQueryVariable1283 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSparqlQueryVariable1290 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SparqlQueryVariable__Group__0_in_ruleSparqlQueryVariable1316 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnTagOperator_in_entryRuleUnTagOperator1343 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUnTagOperator1350 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnTagOperator__Group__0_in_ruleUnTagOperator1376 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnTagElement_in_entryRuleUnTagElement1403 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUnTagElement1410 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnTagElement__Group__0_in_ruleUnTagElement1436 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTagElement_in_entryRuleTagElement1463 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTagElement1470 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagElement__Alternatives_in_ruleTagElement1496 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTagClassElement_in_entryRuleTagClassElement1523 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTagClassElement1530 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagClassElement__Group__0_in_ruleTagClassElement1556 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTagObjectPropertyElement_in_entryRuleTagObjectPropertyElement1583 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTagObjectPropertyElement1590 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagObjectPropertyElement__Group__0_in_ruleTagObjectPropertyElement1616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTagDataTypePropertyElement_in_entryRuleTagDataTypePropertyElement1643 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTagDataTypePropertyElement1650 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagDataTypePropertyElement__Group__0_in_ruleTagDataTypePropertyElement1676 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBarrierOperator_in_entryRuleBarrierOperator1703 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBarrierOperator1710 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BarrierOperator__Alternatives_in_ruleBarrierOperator1736 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWindowOperator_in_entryRuleWindowOperator1763 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleWindowOperator1770 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WindowOperator__Alternatives_in_ruleWindowOperator1796 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMarkerOperator_in_entryRuleMarkerOperator1823 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMarkerOperator1830 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MarkerOperator__Group__0_in_ruleMarkerOperator1856 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSWRLOperator_in_entryRuleSWRLOperator1883 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSWRLOperator1890 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLOperator__Group__0_in_ruleSWRLOperator1916 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSWRLRule_in_entryRuleSWRLRule1943 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSWRLRule1950 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLRule__Group__0_in_ruleSWRLRule1976 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAntecedentRule_in_entryRuleAntecedentRule2003 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAntecedentRule2010 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AntecedentRule__Group__0_in_ruleAntecedentRule2036 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConsequentRule_in_entryRuleConsequentRule2063 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleConsequentRule2070 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConsequentRule__Group__0_in_ruleConsequentRule2096 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRule_in_entryRuleRule2123 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRule2130 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Rule__Group__0_in_ruleRule2156 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOCLOperator_in_entryRuleOCLOperator2183 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOCLOperator2190 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OCLOperator__Group__0_in_ruleOCLOperator2216 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRandomOperator_in_entryRuleRandomOperator862 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRandomOperator869 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RandomOperator__Group__0_in_ruleRandomOperator895 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMatchOperator_in_entryRuleMatchOperator922 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMatchOperator929 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group__0_in_ruleMatchOperator955 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInputOperator_in_entryRuleInputOperator982 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInputOperator989 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group__0_in_ruleInputOperator1015 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReturnTypeOperator_in_entryRuleReturnTypeOperator1042 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleReturnTypeOperator1049 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ReturnTypeOperator__Alternatives_in_ruleReturnTypeOperator1075 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNoReturnTypeOperator_in_entryRuleNoReturnTypeOperator1102 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNoReturnTypeOperator1109 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOutputOperator_in_ruleNoReturnTypeOperator1135 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTagOperator_in_entryRuleTagOperator1161 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTagOperator1168 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagOperator__Group__0_in_ruleTagOperator1194 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQueryTagOperator_in_entryRuleQueryTagOperator1223 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQueryTagOperator1230 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QueryTagOperator__Group__0_in_ruleQueryTagOperator1256 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSparqlQuery_in_entryRuleSparqlQuery1283 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSparqlQuery1290 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SparqlQuery__Group__0_in_ruleSparqlQuery1316 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSparqlQueryVariable_in_entryRuleSparqlQueryVariable1343 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSparqlQueryVariable1350 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SparqlQueryVariable__Group__0_in_ruleSparqlQueryVariable1376 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnTagOperator_in_entryRuleUnTagOperator1403 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUnTagOperator1410 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnTagOperator__Group__0_in_ruleUnTagOperator1436 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnTagElement_in_entryRuleUnTagElement1463 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUnTagElement1470 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnTagElement__Group__0_in_ruleUnTagElement1496 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTagElement_in_entryRuleTagElement1523 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTagElement1530 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagElement__Alternatives_in_ruleTagElement1556 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTagClassElement_in_entryRuleTagClassElement1583 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTagClassElement1590 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagClassElement__Group__0_in_ruleTagClassElement1616 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTagObjectPropertyElement_in_entryRuleTagObjectPropertyElement1643 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTagObjectPropertyElement1650 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagObjectPropertyElement__Group__0_in_ruleTagObjectPropertyElement1676 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTagDataTypePropertyElement_in_entryRuleTagDataTypePropertyElement1703 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTagDataTypePropertyElement1710 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagDataTypePropertyElement__Group__0_in_ruleTagDataTypePropertyElement1736 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBarrierOperator_in_entryRuleBarrierOperator1763 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBarrierOperator1770 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BarrierOperator__Alternatives_in_ruleBarrierOperator1796 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWindowOperator_in_entryRuleWindowOperator1823 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleWindowOperator1830 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WindowOperator__Alternatives_in_ruleWindowOperator1856 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMarkerOperator_in_entryRuleMarkerOperator1883 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMarkerOperator1890 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MarkerOperator__Group__0_in_ruleMarkerOperator1916 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSWRLOperator_in_entryRuleSWRLOperator1943 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSWRLOperator1950 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLOperator__Group__0_in_ruleSWRLOperator1976 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSWRLRule_in_entryRuleSWRLRule2003 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSWRLRule2010 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLRule__Group__0_in_ruleSWRLRule2036 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAntecedentRule_in_entryRuleAntecedentRule2063 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAntecedentRule2070 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AntecedentRule__Group__0_in_ruleAntecedentRule2096 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConsequentRule_in_entryRuleConsequentRule2123 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConsequentRule2130 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConsequentRule__Group__0_in_ruleConsequentRule2156 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRule_in_entryRuleRule2183 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRule2190 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Rule__Group__0_in_ruleRule2216 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleCountOperator_in_entryRuleCountOperator2243 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleCountOperator2250 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__CountOperator__Group__0_in_ruleCountOperator2276 = new BitSet(new long[]{0x0000000000000002L});
@@ -38418,7 +38414,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleAverageOperator_in_rule__ReturnTypeOperator__Alternatives4518 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleElementJoinOperator_in_rule__ReturnTypeOperator__Alternatives4535 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMatchOperator_in_rule__ReturnTypeOperator__Alternatives4552 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOCLOperator_in_rule__ReturnTypeOperator__Alternatives4569 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRandomOperator_in_rule__ReturnTypeOperator__Alternatives4569 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSWRLOperator_in_rule__ReturnTypeOperator__Alternatives4586 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAdditionOperator_in_rule__ReturnTypeOperator__Alternatives4603 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSubtractionOperator_in_rule__ReturnTypeOperator__Alternatives4620 = new BitSet(new long[]{0x0000000000000002L});
@@ -38496,7 +38492,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__StreamStatement__Group__1__Impl_in_rule__StreamStatement__Group__16299 = new BitSet(new long[]{0x0000000140000000L});
     public static final BitSet FOLLOW_rule__StreamStatement__Group__2_in_rule__StreamStatement__Group__16302 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__StreamStatement__Group_1__0_in_rule__StreamStatement__Group__1__Impl6329 = new BitSet(new long[]{0x0000000100000002L});
-    public static final BitSet FOLLOW_rule__StreamStatement__Group__2__Impl_in_rule__StreamStatement__Group__26360 = new BitSet(new long[]{0xFC413F8400000000L,0x0000000000000003L});
+    public static final BitSet FOLLOW_rule__StreamStatement__Group__2__Impl_in_rule__StreamStatement__Group__26360 = new BitSet(new long[]{0xF8827F8400000000L,0x0000000000000003L});
     public static final BitSet FOLLOW_rule__StreamStatement__Group__3_in_rule__StreamStatement__Group__26363 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_30_in_rule__StreamStatement__Group__2__Impl6391 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__StreamStatement__Group__3__Impl_in_rule__StreamStatement__Group__36422 = new BitSet(new long[]{0x0000000080000000L});
@@ -38555,7 +38551,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__StreamOperatorParameter__StreamAssignment_0_in_rule__StreamOperatorParameter__Group__0__Impl7639 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__StreamOperatorParameter__Group__1__Impl_in_rule__StreamOperatorParameter__Group__17669 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__StreamOperatorParameter__Group_1__0_in_rule__StreamOperatorParameter__Group__1__Impl7696 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StreamOperatorParameter__Group_1__0__Impl_in_rule__StreamOperatorParameter__Group_1__07731 = new BitSet(new long[]{0x0020000000000000L,0x000000000000C000L});
+    public static final BitSet FOLLOW_rule__StreamOperatorParameter__Group_1__0__Impl_in_rule__StreamOperatorParameter__Group_1__07731 = new BitSet(new long[]{0x0040000000000000L,0x000000000000C000L});
     public static final BitSet FOLLOW_rule__StreamOperatorParameter__Group_1__1_in_rule__StreamOperatorParameter__Group_1__07734 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_37_in_rule__StreamOperatorParameter__Group_1__0__Impl7762 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__StreamOperatorParameter__Group_1__1__Impl_in_rule__StreamOperatorParameter__Group_1__17793 = new BitSet(new long[]{0x0000004000000000L});
@@ -38649,323 +38645,323 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__LogOperator__FormatAssignment_4_in_rule__LogOperator__Group__4__Impl9757 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__LogOperator__Group__5__Impl_in_rule__LogOperator__Group__59787 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_36_in_rule__LogOperator__Group__5__Impl9815 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group__0__Impl_in_rule__MatchOperator__Group__09858 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group__1_in_rule__MatchOperator__Group__09861 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_rule__MatchOperator__Group__0__Impl9889 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group__1__Impl_in_rule__MatchOperator__Group__19920 = new BitSet(new long[]{0x0000000800000050L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group__2_in_rule__MatchOperator__Group__19923 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__MatchOperator__Group__1__Impl9951 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group__2__Impl_in_rule__MatchOperator__Group__29982 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group__3_in_rule__MatchOperator__Group__29985 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MatchOperator__ExpressionAssignment_2_in_rule__MatchOperator__Group__2__Impl10012 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group__3__Impl_in_rule__MatchOperator__Group__310042 = new BitSet(new long[]{0x0000000800000050L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group__4_in_rule__MatchOperator__Group__310045 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__MatchOperator__Group__3__Impl10073 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group__4__Impl_in_rule__MatchOperator__Group__410104 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group__5_in_rule__MatchOperator__Group__410107 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MatchOperator__CalculationAssignment_4_in_rule__MatchOperator__Group__4__Impl10134 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group__5__Impl_in_rule__MatchOperator__Group__510164 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group__6_in_rule__MatchOperator__Group__510167 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__MatchOperator__Group__5__Impl10195 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group__6__Impl_in_rule__MatchOperator__Group__610226 = new BitSet(new long[]{0x0000001100000000L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group__7_in_rule__MatchOperator__Group__610229 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MatchOperator__StreamAssignment_6_in_rule__MatchOperator__Group__6__Impl10256 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group__7__Impl_in_rule__MatchOperator__Group__710286 = new BitSet(new long[]{0x0000001100000000L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group__8_in_rule__MatchOperator__Group__710289 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group_7__0_in_rule__MatchOperator__Group__7__Impl10316 = new BitSet(new long[]{0x0000000100000002L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group__8__Impl_in_rule__MatchOperator__Group__810347 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__MatchOperator__Group__8__Impl10375 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group_7__0__Impl_in_rule__MatchOperator__Group_7__010424 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group_7__1_in_rule__MatchOperator__Group_7__010427 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__MatchOperator__Group_7__0__Impl10455 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group_7__1__Impl_in_rule__MatchOperator__Group_7__110486 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MatchOperator__StreamAssignment_7_1_in_rule__MatchOperator__Group_7__1__Impl10513 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group__0__Impl_in_rule__InputOperator__Group__010547 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group__1_in_rule__InputOperator__Group__010550 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_rule__InputOperator__Group__0__Impl10578 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group__1__Impl_in_rule__InputOperator__Group__110609 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group__2_in_rule__InputOperator__Group__110612 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__InputOperator__Group__1__Impl10640 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group__2__Impl_in_rule__InputOperator__Group__210671 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group__3_in_rule__InputOperator__Group__210674 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InputOperator__IriAssignment_2_in_rule__InputOperator__Group__2__Impl10701 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group__3__Impl_in_rule__InputOperator__Group__310731 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group__4_in_rule__InputOperator__Group__310734 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group_3__0_in_rule__InputOperator__Group__3__Impl10761 = new BitSet(new long[]{0x0000000100000002L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group__4__Impl_in_rule__InputOperator__Group__410792 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group__5_in_rule__InputOperator__Group__410795 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__InputOperator__Group__4__Impl10823 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group__5__Impl_in_rule__InputOperator__Group__510854 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group__6_in_rule__InputOperator__Group__510857 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InputOperator__AddressAssignment_5_in_rule__InputOperator__Group__5__Impl10884 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group__6__Impl_in_rule__InputOperator__Group__610914 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group__7_in_rule__InputOperator__Group__610917 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__InputOperator__Group__6__Impl10945 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group__7__Impl_in_rule__InputOperator__Group__710976 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group__8_in_rule__InputOperator__Group__710979 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InputOperator__PortAssignment_7_in_rule__InputOperator__Group__7__Impl11006 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group__8__Impl_in_rule__InputOperator__Group__811036 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__InputOperator__Group__8__Impl11064 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group_3__0__Impl_in_rule__InputOperator__Group_3__011113 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group_3__1_in_rule__InputOperator__Group_3__011116 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__InputOperator__Group_3__0__Impl11144 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InputOperator__Group_3__1__Impl_in_rule__InputOperator__Group_3__111175 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__InputOperator__IriAssignment_3_1_in_rule__InputOperator__Group_3__1__Impl11202 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagOperator__Group__0__Impl_in_rule__TagOperator__Group__011236 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__TagOperator__Group__1_in_rule__TagOperator__Group__011239 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_rule__TagOperator__Group__0__Impl11267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagOperator__Group__1__Impl_in_rule__TagOperator__Group__111298 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__TagOperator__Group__2_in_rule__TagOperator__Group__111301 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__TagOperator__Group__1__Impl11329 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagOperator__Group__2__Impl_in_rule__TagOperator__Group__211360 = new BitSet(new long[]{0x0000001100000000L});
-    public static final BitSet FOLLOW_rule__TagOperator__Group__3_in_rule__TagOperator__Group__211363 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagOperator__ParametersAssignment_2_in_rule__TagOperator__Group__2__Impl11390 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagOperator__Group__3__Impl_in_rule__TagOperator__Group__311420 = new BitSet(new long[]{0x0000001100000000L});
-    public static final BitSet FOLLOW_rule__TagOperator__Group__4_in_rule__TagOperator__Group__311423 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagOperator__Group_3__0_in_rule__TagOperator__Group__3__Impl11450 = new BitSet(new long[]{0x0000000100000002L});
-    public static final BitSet FOLLOW_rule__TagOperator__Group__4__Impl_in_rule__TagOperator__Group__411481 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__TagOperator__Group__4__Impl11509 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagOperator__Group_3__0__Impl_in_rule__TagOperator__Group_3__011550 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__TagOperator__Group_3__1_in_rule__TagOperator__Group_3__011553 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__TagOperator__Group_3__0__Impl11581 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagOperator__Group_3__1__Impl_in_rule__TagOperator__Group_3__111612 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagOperator__ParametersAssignment_3_1_in_rule__TagOperator__Group_3__1__Impl11639 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QueryTagOperator__Group__0__Impl_in_rule__QueryTagOperator__Group__011674 = new BitSet(new long[]{0x0000000003C00000L});
-    public static final BitSet FOLLOW_rule__QueryTagOperator__Group__1_in_rule__QueryTagOperator__Group__011677 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__QueryTagOperator__Group__0__Impl11705 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QueryTagOperator__Group__1__Impl_in_rule__QueryTagOperator__Group__111736 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_rule__QueryTagOperator__Group__2_in_rule__QueryTagOperator__Group__111739 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QueryTagOperator__QueryTypeAssignment_1_in_rule__QueryTagOperator__Group__1__Impl11766 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QueryTagOperator__Group__2__Impl_in_rule__QueryTagOperator__Group__211796 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_rule__QueryTagOperator__Group__3_in_rule__QueryTagOperator__Group__211799 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QueryTagOperator__QueryAssignment_2_in_rule__QueryTagOperator__Group__2__Impl11826 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QueryTagOperator__Group__3__Impl_in_rule__QueryTagOperator__Group__311856 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__QueryTagOperator__Group__3__Impl11884 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SparqlQuery__Group__0__Impl_in_rule__SparqlQuery__Group__011923 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_rule__SparqlQuery__Group__1_in_rule__SparqlQuery__Group__011926 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SparqlQuery__VariableAssignment_0_in_rule__SparqlQuery__Group__0__Impl11953 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SparqlQuery__Group__1__Impl_in_rule__SparqlQuery__Group__111983 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__SparqlQuery__Group__2_in_rule__SparqlQuery__Group__111986 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_46_in_rule__SparqlQuery__Group__1__Impl12014 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SparqlQuery__Group__2__Impl_in_rule__SparqlQuery__Group__212045 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_rule__SparqlQuery__Group__3_in_rule__SparqlQuery__Group__212048 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__SparqlQuery__Group__2__Impl12076 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SparqlQuery__Group__3__Impl_in_rule__SparqlQuery__Group__312107 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__SparqlQuery__Group__3__Impl12135 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SparqlQueryVariable__Group__0__Impl_in_rule__SparqlQueryVariable__Group__012174 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__SparqlQueryVariable__Group__1_in_rule__SparqlQueryVariable__Group__012177 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_47_in_rule__SparqlQueryVariable__Group__0__Impl12205 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SparqlQueryVariable__Group__1__Impl_in_rule__SparqlQueryVariable__Group__112236 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_rule__SparqlQueryVariable__Group__2_in_rule__SparqlQueryVariable__Group__112239 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SparqlQueryVariable__VariableAssignment_1_in_rule__SparqlQueryVariable__Group__1__Impl12266 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SparqlQueryVariable__Group__2__Impl_in_rule__SparqlQueryVariable__Group__212296 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SparqlQueryVariable__Group_2__0_in_rule__SparqlQueryVariable__Group__2__Impl12323 = new BitSet(new long[]{0x0000800000000002L});
-    public static final BitSet FOLLOW_rule__SparqlQueryVariable__Group_2__0__Impl_in_rule__SparqlQueryVariable__Group_2__012360 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__SparqlQueryVariable__Group_2__1_in_rule__SparqlQueryVariable__Group_2__012363 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_47_in_rule__SparqlQueryVariable__Group_2__0__Impl12391 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SparqlQueryVariable__Group_2__1__Impl_in_rule__SparqlQueryVariable__Group_2__112422 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SparqlQueryVariable__VariableAssignment_2_1_in_rule__SparqlQueryVariable__Group_2__1__Impl12449 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnTagOperator__Group__0__Impl_in_rule__UnTagOperator__Group__012483 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__UnTagOperator__Group__1_in_rule__UnTagOperator__Group__012486 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_48_in_rule__UnTagOperator__Group__0__Impl12514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnTagOperator__Group__1__Impl_in_rule__UnTagOperator__Group__112545 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__UnTagOperator__Group__2_in_rule__UnTagOperator__Group__112548 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__UnTagOperator__Group__1__Impl12576 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnTagOperator__Group__2__Impl_in_rule__UnTagOperator__Group__212607 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__UnTagOperator__Group__3_in_rule__UnTagOperator__Group__212610 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnTagOperator__ParametersAssignment_2_in_rule__UnTagOperator__Group__2__Impl12637 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnTagOperator__Group__3__Impl_in_rule__UnTagOperator__Group__312667 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__UnTagOperator__Group__4_in_rule__UnTagOperator__Group__312670 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnTagOperator__Group_3__0_in_rule__UnTagOperator__Group__3__Impl12697 = new BitSet(new long[]{0x0000000100000002L});
-    public static final BitSet FOLLOW_rule__UnTagOperator__Group__4__Impl_in_rule__UnTagOperator__Group__412728 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__UnTagOperator__Group__5_in_rule__UnTagOperator__Group__412731 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__UnTagOperator__Group__4__Impl12759 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnTagOperator__Group__5__Impl_in_rule__UnTagOperator__Group__512790 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_rule__UnTagOperator__Group__6_in_rule__UnTagOperator__Group__512793 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnTagOperator__StreamAssignment_5_in_rule__UnTagOperator__Group__5__Impl12820 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnTagOperator__Group__6__Impl_in_rule__UnTagOperator__Group__612850 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__UnTagOperator__Group__6__Impl12878 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnTagOperator__Group_3__0__Impl_in_rule__UnTagOperator__Group_3__012923 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__UnTagOperator__Group_3__1_in_rule__UnTagOperator__Group_3__012926 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__UnTagOperator__Group_3__0__Impl12954 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnTagOperator__Group_3__1__Impl_in_rule__UnTagOperator__Group_3__112985 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnTagOperator__ParametersAssignment_3_1_in_rule__UnTagOperator__Group_3__1__Impl13012 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnTagElement__Group__0__Impl_in_rule__UnTagElement__Group__013046 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_rule__UnTagElement__Group__1_in_rule__UnTagElement__Group__013049 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnTagElement__ElementAssignment_0_in_rule__UnTagElement__Group__0__Impl13076 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnTagElement__Group__1__Impl_in_rule__UnTagElement__Group__113106 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__UnTagElement__Group__2_in_rule__UnTagElement__Group__113109 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_rule__UnTagElement__Group__1__Impl13137 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnTagElement__Group__2__Impl_in_rule__UnTagElement__Group__213168 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnTagElement__ReferenceAssignment_2_in_rule__UnTagElement__Group__2__Impl13195 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagClassElement__Group__0__Impl_in_rule__TagClassElement__Group__013231 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_rule__TagClassElement__Group__1_in_rule__TagClassElement__Group__013234 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagClassElement__ReferenceAssignment_0_in_rule__TagClassElement__Group__0__Impl13261 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagClassElement__Group__1__Impl_in_rule__TagClassElement__Group__113291 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_rule__TagClassElement__Group__2_in_rule__TagClassElement__Group__113294 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_rule__TagClassElement__Group__1__Impl13322 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagClassElement__Group__2__Impl_in_rule__TagClassElement__Group__213353 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__TagClassElement__Group__3_in_rule__TagClassElement__Group__213356 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_rule__TagClassElement__Group__2__Impl13384 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagClassElement__Group__3__Impl_in_rule__TagClassElement__Group__313415 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagClassElement__ElementAssignment_3_in_rule__TagClassElement__Group__3__Impl13442 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagObjectPropertyElement__Group__0__Impl_in_rule__TagObjectPropertyElement__Group__013480 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_rule__TagObjectPropertyElement__Group__1_in_rule__TagObjectPropertyElement__Group__013483 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagObjectPropertyElement__ReferenceAssignment_0_in_rule__TagObjectPropertyElement__Group__0__Impl13510 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagObjectPropertyElement__Group__1__Impl_in_rule__TagObjectPropertyElement__Group__113540 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_rule__TagObjectPropertyElement__Group__2_in_rule__TagObjectPropertyElement__Group__113543 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_rule__TagObjectPropertyElement__Group__1__Impl13571 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagObjectPropertyElement__Group__2__Impl_in_rule__TagObjectPropertyElement__Group__213602 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__TagObjectPropertyElement__Group__3_in_rule__TagObjectPropertyElement__Group__213605 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_51_in_rule__TagObjectPropertyElement__Group__2__Impl13633 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagObjectPropertyElement__Group__3__Impl_in_rule__TagObjectPropertyElement__Group__313664 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagObjectPropertyElement__ElementAssignment_3_in_rule__TagObjectPropertyElement__Group__3__Impl13691 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagDataTypePropertyElement__Group__0__Impl_in_rule__TagDataTypePropertyElement__Group__013729 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_rule__TagDataTypePropertyElement__Group__1_in_rule__TagDataTypePropertyElement__Group__013732 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagDataTypePropertyElement__ReferenceAssignment_0_in_rule__TagDataTypePropertyElement__Group__0__Impl13759 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagDataTypePropertyElement__Group__1__Impl_in_rule__TagDataTypePropertyElement__Group__113789 = new BitSet(new long[]{0x0010000000000000L});
-    public static final BitSet FOLLOW_rule__TagDataTypePropertyElement__Group__2_in_rule__TagDataTypePropertyElement__Group__113792 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_rule__TagDataTypePropertyElement__Group__1__Impl13820 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagDataTypePropertyElement__Group__2__Impl_in_rule__TagDataTypePropertyElement__Group__213851 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__TagDataTypePropertyElement__Group__3_in_rule__TagDataTypePropertyElement__Group__213854 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_52_in_rule__TagDataTypePropertyElement__Group__2__Impl13882 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagDataTypePropertyElement__Group__3__Impl_in_rule__TagDataTypePropertyElement__Group__313913 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagDataTypePropertyElement__ElementAssignment_3_in_rule__TagDataTypePropertyElement__Group__3__Impl13940 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WindowOperator__Group_0__0__Impl_in_rule__WindowOperator__Group_0__013978 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__WindowOperator__Group_0__1_in_rule__WindowOperator__Group_0__013981 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WindowOperator__SettingAssignment_0_0_in_rule__WindowOperator__Group_0__0__Impl14008 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WindowOperator__Group_0__1__Impl_in_rule__WindowOperator__Group_0__114038 = new BitSet(new long[]{0x000000000000F000L});
-    public static final BitSet FOLLOW_rule__WindowOperator__Group_0__2_in_rule__WindowOperator__Group_0__114041 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WindowOperator__ValueAssignment_0_1_in_rule__WindowOperator__Group_0__1__Impl14068 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WindowOperator__Group_0__2__Impl_in_rule__WindowOperator__Group_0__214098 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WindowOperator__UnitAssignment_0_2_in_rule__WindowOperator__Group_0__2__Impl14125 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MarkerOperator__Group__0__Impl_in_rule__MarkerOperator__Group__014162 = new BitSet(new long[]{0x0000000800000050L});
-    public static final BitSet FOLLOW_rule__MarkerOperator__Group__1_in_rule__MarkerOperator__Group__014165 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_53_in_rule__MarkerOperator__Group__0__Impl14193 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MarkerOperator__Group__1__Impl_in_rule__MarkerOperator__Group__114224 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MarkerOperator__ExpressionAssignment_1_in_rule__MarkerOperator__Group__1__Impl14251 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLOperator__Group__0__Impl_in_rule__SWRLOperator__Group__014285 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__SWRLOperator__Group__1_in_rule__SWRLOperator__Group__014288 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_rule__SWRLOperator__Group__0__Impl14316 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLOperator__Group__1__Impl_in_rule__SWRLOperator__Group__114347 = new BitSet(new long[]{0x0080000000000000L});
-    public static final BitSet FOLLOW_rule__SWRLOperator__Group__2_in_rule__SWRLOperator__Group__114350 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__SWRLOperator__Group__1__Impl14378 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLOperator__Group__2__Impl_in_rule__SWRLOperator__Group__214409 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__SWRLOperator__Group__3_in_rule__SWRLOperator__Group__214412 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLOperator__RuleAssignment_2_in_rule__SWRLOperator__Group__2__Impl14439 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLOperator__Group__3__Impl_in_rule__SWRLOperator__Group__314469 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__SWRLOperator__Group__4_in_rule__SWRLOperator__Group__314472 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__SWRLOperator__Group__3__Impl14500 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLOperator__Group__4__Impl_in_rule__SWRLOperator__Group__414531 = new BitSet(new long[]{0x0000001100000000L});
-    public static final BitSet FOLLOW_rule__SWRLOperator__Group__5_in_rule__SWRLOperator__Group__414534 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLOperator__BarrierAssignment_4_in_rule__SWRLOperator__Group__4__Impl14561 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLOperator__Group__5__Impl_in_rule__SWRLOperator__Group__514591 = new BitSet(new long[]{0x0000001100000000L});
-    public static final BitSet FOLLOW_rule__SWRLOperator__Group__6_in_rule__SWRLOperator__Group__514594 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLOperator__Group_5__0_in_rule__SWRLOperator__Group__5__Impl14621 = new BitSet(new long[]{0x0000000100000002L});
-    public static final BitSet FOLLOW_rule__SWRLOperator__Group__6__Impl_in_rule__SWRLOperator__Group__614652 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__SWRLOperator__Group__6__Impl14680 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLOperator__Group_5__0__Impl_in_rule__SWRLOperator__Group_5__014725 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__SWRLOperator__Group_5__1_in_rule__SWRLOperator__Group_5__014728 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__SWRLOperator__Group_5__0__Impl14756 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLOperator__Group_5__1__Impl_in_rule__SWRLOperator__Group_5__114787 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLOperator__BarrierAssignment_5_1_in_rule__SWRLOperator__Group_5__1__Impl14814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLRule__Group__0__Impl_in_rule__SWRLRule__Group__014848 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__SWRLRule__Group__1_in_rule__SWRLRule__Group__014851 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_rule__SWRLRule__Group__0__Impl14879 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLRule__Group__1__Impl_in_rule__SWRLRule__Group__114910 = new BitSet(new long[]{0x0100000000000000L});
-    public static final BitSet FOLLOW_rule__SWRLRule__Group__2_in_rule__SWRLRule__Group__114913 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__SWRLRule__Group__1__Impl14941 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLRule__Group__2__Impl_in_rule__SWRLRule__Group__214972 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__SWRLRule__Group__3_in_rule__SWRLRule__Group__214975 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLRule__AntecedentAssignment_2_in_rule__SWRLRule__Group__2__Impl15002 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLRule__Group__3__Impl_in_rule__SWRLRule__Group__315032 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_rule__SWRLRule__Group__4_in_rule__SWRLRule__Group__315035 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__SWRLRule__Group__3__Impl15063 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLRule__Group__4__Impl_in_rule__SWRLRule__Group__415094 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_rule__SWRLRule__Group__5_in_rule__SWRLRule__Group__415097 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLRule__ConsequentAssignment_4_in_rule__SWRLRule__Group__4__Impl15124 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SWRLRule__Group__5__Impl_in_rule__SWRLRule__Group__515154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__SWRLRule__Group__5__Impl15182 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AntecedentRule__Group__0__Impl_in_rule__AntecedentRule__Group__015225 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__AntecedentRule__Group__1_in_rule__AntecedentRule__Group__015228 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_56_in_rule__AntecedentRule__Group__0__Impl15256 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AntecedentRule__Group__1__Impl_in_rule__AntecedentRule__Group__115287 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__AntecedentRule__Group__2_in_rule__AntecedentRule__Group__115290 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__AntecedentRule__Group__1__Impl15318 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AntecedentRule__Group__2__Impl_in_rule__AntecedentRule__Group__215349 = new BitSet(new long[]{0x0000001100000000L});
-    public static final BitSet FOLLOW_rule__AntecedentRule__Group__3_in_rule__AntecedentRule__Group__215352 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AntecedentRule__AtomsAssignment_2_in_rule__AntecedentRule__Group__2__Impl15379 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AntecedentRule__Group__3__Impl_in_rule__AntecedentRule__Group__315409 = new BitSet(new long[]{0x0000001100000000L});
-    public static final BitSet FOLLOW_rule__AntecedentRule__Group__4_in_rule__AntecedentRule__Group__315412 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AntecedentRule__Group_3__0_in_rule__AntecedentRule__Group__3__Impl15439 = new BitSet(new long[]{0x0000000100000002L});
-    public static final BitSet FOLLOW_rule__AntecedentRule__Group__4__Impl_in_rule__AntecedentRule__Group__415470 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__AntecedentRule__Group__4__Impl15498 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AntecedentRule__Group_3__0__Impl_in_rule__AntecedentRule__Group_3__015539 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__AntecedentRule__Group_3__1_in_rule__AntecedentRule__Group_3__015542 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__AntecedentRule__Group_3__0__Impl15570 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AntecedentRule__Group_3__1__Impl_in_rule__AntecedentRule__Group_3__115601 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AntecedentRule__AtomsAssignment_3_1_in_rule__AntecedentRule__Group_3__1__Impl15628 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConsequentRule__Group__0__Impl_in_rule__ConsequentRule__Group__015662 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__ConsequentRule__Group__1_in_rule__ConsequentRule__Group__015665 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_57_in_rule__ConsequentRule__Group__0__Impl15693 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConsequentRule__Group__1__Impl_in_rule__ConsequentRule__Group__115724 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__ConsequentRule__Group__2_in_rule__ConsequentRule__Group__115727 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__ConsequentRule__Group__1__Impl15755 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConsequentRule__Group__2__Impl_in_rule__ConsequentRule__Group__215786 = new BitSet(new long[]{0x0000001100000000L});
-    public static final BitSet FOLLOW_rule__ConsequentRule__Group__3_in_rule__ConsequentRule__Group__215789 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConsequentRule__AtomsAssignment_2_in_rule__ConsequentRule__Group__2__Impl15816 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConsequentRule__Group__3__Impl_in_rule__ConsequentRule__Group__315846 = new BitSet(new long[]{0x0000001100000000L});
-    public static final BitSet FOLLOW_rule__ConsequentRule__Group__4_in_rule__ConsequentRule__Group__315849 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConsequentRule__Group_3__0_in_rule__ConsequentRule__Group__3__Impl15876 = new BitSet(new long[]{0x0000000100000002L});
-    public static final BitSet FOLLOW_rule__ConsequentRule__Group__4__Impl_in_rule__ConsequentRule__Group__415907 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__ConsequentRule__Group__4__Impl15935 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConsequentRule__Group_3__0__Impl_in_rule__ConsequentRule__Group_3__015976 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__ConsequentRule__Group_3__1_in_rule__ConsequentRule__Group_3__015979 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__ConsequentRule__Group_3__0__Impl16007 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConsequentRule__Group_3__1__Impl_in_rule__ConsequentRule__Group_3__116038 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConsequentRule__AtomsAssignment_3_1_in_rule__ConsequentRule__Group_3__1__Impl16065 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Rule__Group__0__Impl_in_rule__Rule__Group__016099 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__Rule__Group__1_in_rule__Rule__Group__016102 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Rule__NameAssignment_0_in_rule__Rule__Group__0__Impl16129 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Rule__Group__1__Impl_in_rule__Rule__Group__116159 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_rule__Rule__Group__2_in_rule__Rule__Group__116162 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__Rule__Group__1__Impl16190 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Rule__Group__2__Impl_in_rule__Rule__Group__216221 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Rule__Group__3_in_rule__Rule__Group__216224 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_47_in_rule__Rule__Group__2__Impl16252 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Rule__Group__3__Impl_in_rule__Rule__Group__316283 = new BitSet(new long[]{0x0000001100000000L});
-    public static final BitSet FOLLOW_rule__Rule__Group__4_in_rule__Rule__Group__316286 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Rule__VariableAssignment_3_in_rule__Rule__Group__3__Impl16313 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Rule__Group__4__Impl_in_rule__Rule__Group__416343 = new BitSet(new long[]{0x0000001100000000L});
-    public static final BitSet FOLLOW_rule__Rule__Group__5_in_rule__Rule__Group__416346 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Rule__Group_4__0_in_rule__Rule__Group__4__Impl16373 = new BitSet(new long[]{0x0000000100000002L});
-    public static final BitSet FOLLOW_rule__Rule__Group__5__Impl_in_rule__Rule__Group__516404 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__Rule__Group__5__Impl16432 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Rule__Group_4__0__Impl_in_rule__Rule__Group_4__016475 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_rule__Rule__Group_4__1_in_rule__Rule__Group_4__016478 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__Rule__Group_4__0__Impl16506 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Rule__Group_4__1__Impl_in_rule__Rule__Group_4__116537 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Rule__Group_4__2_in_rule__Rule__Group_4__116540 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_47_in_rule__Rule__Group_4__1__Impl16568 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Rule__Group_4__2__Impl_in_rule__Rule__Group_4__216599 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Rule__VariableAssignment_4_2_in_rule__Rule__Group_4__2__Impl16626 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OCLOperator__Group__0__Impl_in_rule__OCLOperator__Group__016662 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__OCLOperator__Group__1_in_rule__OCLOperator__Group__016665 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_58_in_rule__OCLOperator__Group__0__Impl16693 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OCLOperator__Group__1__Impl_in_rule__OCLOperator__Group__116724 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__OCLOperator__Group__2_in_rule__OCLOperator__Group__116727 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__OCLOperator__Group__1__Impl16755 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OCLOperator__Group__2__Impl_in_rule__OCLOperator__Group__216786 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__OCLOperator__Group__3_in_rule__OCLOperator__Group__216789 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OCLOperator__ConstraintAssignment_2_in_rule__OCLOperator__Group__2__Impl16816 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OCLOperator__Group__3__Impl_in_rule__OCLOperator__Group__316846 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__OCLOperator__Group__4_in_rule__OCLOperator__Group__316849 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__OCLOperator__Group__3__Impl16877 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OCLOperator__Group__4__Impl_in_rule__OCLOperator__Group__416908 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_rule__OCLOperator__Group__5_in_rule__OCLOperator__Group__416911 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OCLOperator__StreamAssignment_4_in_rule__OCLOperator__Group__4__Impl16938 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OCLOperator__Group__5__Impl_in_rule__OCLOperator__Group__516968 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__OCLOperator__Group__5__Impl16996 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RandomOperator__Group__0__Impl_in_rule__RandomOperator__Group__09858 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__RandomOperator__Group__1_in_rule__RandomOperator__Group__09861 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_rule__RandomOperator__Group__0__Impl9889 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RandomOperator__Group__1__Impl_in_rule__RandomOperator__Group__19920 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__RandomOperator__Group__2_in_rule__RandomOperator__Group__19923 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__RandomOperator__Group__1__Impl9951 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RandomOperator__Group__2__Impl_in_rule__RandomOperator__Group__29982 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__RandomOperator__Group__3_in_rule__RandomOperator__Group__29985 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RandomOperator__MaximumAssignment_2_in_rule__RandomOperator__Group__2__Impl10012 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RandomOperator__Group__3__Impl_in_rule__RandomOperator__Group__310042 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__RandomOperator__Group__4_in_rule__RandomOperator__Group__310045 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__RandomOperator__Group__3__Impl10073 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RandomOperator__Group__4__Impl_in_rule__RandomOperator__Group__410104 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_rule__RandomOperator__Group__5_in_rule__RandomOperator__Group__410107 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RandomOperator__SleepAssignment_4_in_rule__RandomOperator__Group__4__Impl10134 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RandomOperator__Group__5__Impl_in_rule__RandomOperator__Group__510164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__RandomOperator__Group__5__Impl10192 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group__0__Impl_in_rule__MatchOperator__Group__010235 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group__1_in_rule__MatchOperator__Group__010238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_rule__MatchOperator__Group__0__Impl10266 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group__1__Impl_in_rule__MatchOperator__Group__110297 = new BitSet(new long[]{0x0000000800000050L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group__2_in_rule__MatchOperator__Group__110300 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__MatchOperator__Group__1__Impl10328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group__2__Impl_in_rule__MatchOperator__Group__210359 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group__3_in_rule__MatchOperator__Group__210362 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MatchOperator__ExpressionAssignment_2_in_rule__MatchOperator__Group__2__Impl10389 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group__3__Impl_in_rule__MatchOperator__Group__310419 = new BitSet(new long[]{0x0000000800000050L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group__4_in_rule__MatchOperator__Group__310422 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__MatchOperator__Group__3__Impl10450 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group__4__Impl_in_rule__MatchOperator__Group__410481 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group__5_in_rule__MatchOperator__Group__410484 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MatchOperator__CalculationAssignment_4_in_rule__MatchOperator__Group__4__Impl10511 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group__5__Impl_in_rule__MatchOperator__Group__510541 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group__6_in_rule__MatchOperator__Group__510544 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__MatchOperator__Group__5__Impl10572 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group__6__Impl_in_rule__MatchOperator__Group__610603 = new BitSet(new long[]{0x0000001100000000L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group__7_in_rule__MatchOperator__Group__610606 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MatchOperator__StreamAssignment_6_in_rule__MatchOperator__Group__6__Impl10633 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group__7__Impl_in_rule__MatchOperator__Group__710663 = new BitSet(new long[]{0x0000001100000000L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group__8_in_rule__MatchOperator__Group__710666 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group_7__0_in_rule__MatchOperator__Group__7__Impl10693 = new BitSet(new long[]{0x0000000100000002L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group__8__Impl_in_rule__MatchOperator__Group__810724 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__MatchOperator__Group__8__Impl10752 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group_7__0__Impl_in_rule__MatchOperator__Group_7__010801 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group_7__1_in_rule__MatchOperator__Group_7__010804 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__MatchOperator__Group_7__0__Impl10832 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group_7__1__Impl_in_rule__MatchOperator__Group_7__110863 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MatchOperator__StreamAssignment_7_1_in_rule__MatchOperator__Group_7__1__Impl10890 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group__0__Impl_in_rule__InputOperator__Group__010924 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group__1_in_rule__InputOperator__Group__010927 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_rule__InputOperator__Group__0__Impl10955 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group__1__Impl_in_rule__InputOperator__Group__110986 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group__2_in_rule__InputOperator__Group__110989 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__InputOperator__Group__1__Impl11017 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group__2__Impl_in_rule__InputOperator__Group__211048 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group__3_in_rule__InputOperator__Group__211051 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InputOperator__IriAssignment_2_in_rule__InputOperator__Group__2__Impl11078 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group__3__Impl_in_rule__InputOperator__Group__311108 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group__4_in_rule__InputOperator__Group__311111 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group_3__0_in_rule__InputOperator__Group__3__Impl11138 = new BitSet(new long[]{0x0000000100000002L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group__4__Impl_in_rule__InputOperator__Group__411169 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group__5_in_rule__InputOperator__Group__411172 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__InputOperator__Group__4__Impl11200 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group__5__Impl_in_rule__InputOperator__Group__511231 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group__6_in_rule__InputOperator__Group__511234 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InputOperator__AddressAssignment_5_in_rule__InputOperator__Group__5__Impl11261 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group__6__Impl_in_rule__InputOperator__Group__611291 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group__7_in_rule__InputOperator__Group__611294 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__InputOperator__Group__6__Impl11322 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group__7__Impl_in_rule__InputOperator__Group__711353 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group__8_in_rule__InputOperator__Group__711356 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InputOperator__PortAssignment_7_in_rule__InputOperator__Group__7__Impl11383 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group__8__Impl_in_rule__InputOperator__Group__811413 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__InputOperator__Group__8__Impl11441 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group_3__0__Impl_in_rule__InputOperator__Group_3__011490 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group_3__1_in_rule__InputOperator__Group_3__011493 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__InputOperator__Group_3__0__Impl11521 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InputOperator__Group_3__1__Impl_in_rule__InputOperator__Group_3__111552 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__InputOperator__IriAssignment_3_1_in_rule__InputOperator__Group_3__1__Impl11579 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagOperator__Group__0__Impl_in_rule__TagOperator__Group__011613 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__TagOperator__Group__1_in_rule__TagOperator__Group__011616 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_46_in_rule__TagOperator__Group__0__Impl11644 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagOperator__Group__1__Impl_in_rule__TagOperator__Group__111675 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__TagOperator__Group__2_in_rule__TagOperator__Group__111678 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__TagOperator__Group__1__Impl11706 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagOperator__Group__2__Impl_in_rule__TagOperator__Group__211737 = new BitSet(new long[]{0x0000001100000000L});
+    public static final BitSet FOLLOW_rule__TagOperator__Group__3_in_rule__TagOperator__Group__211740 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagOperator__ParametersAssignment_2_in_rule__TagOperator__Group__2__Impl11767 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagOperator__Group__3__Impl_in_rule__TagOperator__Group__311797 = new BitSet(new long[]{0x0000001100000000L});
+    public static final BitSet FOLLOW_rule__TagOperator__Group__4_in_rule__TagOperator__Group__311800 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagOperator__Group_3__0_in_rule__TagOperator__Group__3__Impl11827 = new BitSet(new long[]{0x0000000100000002L});
+    public static final BitSet FOLLOW_rule__TagOperator__Group__4__Impl_in_rule__TagOperator__Group__411858 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__TagOperator__Group__4__Impl11886 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagOperator__Group_3__0__Impl_in_rule__TagOperator__Group_3__011927 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__TagOperator__Group_3__1_in_rule__TagOperator__Group_3__011930 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__TagOperator__Group_3__0__Impl11958 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagOperator__Group_3__1__Impl_in_rule__TagOperator__Group_3__111989 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagOperator__ParametersAssignment_3_1_in_rule__TagOperator__Group_3__1__Impl12016 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QueryTagOperator__Group__0__Impl_in_rule__QueryTagOperator__Group__012051 = new BitSet(new long[]{0x0000000003C00000L});
+    public static final BitSet FOLLOW_rule__QueryTagOperator__Group__1_in_rule__QueryTagOperator__Group__012054 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__QueryTagOperator__Group__0__Impl12082 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QueryTagOperator__Group__1__Impl_in_rule__QueryTagOperator__Group__112113 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_rule__QueryTagOperator__Group__2_in_rule__QueryTagOperator__Group__112116 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QueryTagOperator__QueryTypeAssignment_1_in_rule__QueryTagOperator__Group__1__Impl12143 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QueryTagOperator__Group__2__Impl_in_rule__QueryTagOperator__Group__212173 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_rule__QueryTagOperator__Group__3_in_rule__QueryTagOperator__Group__212176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QueryTagOperator__QueryAssignment_2_in_rule__QueryTagOperator__Group__2__Impl12203 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QueryTagOperator__Group__3__Impl_in_rule__QueryTagOperator__Group__312233 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__QueryTagOperator__Group__3__Impl12261 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SparqlQuery__Group__0__Impl_in_rule__SparqlQuery__Group__012300 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_rule__SparqlQuery__Group__1_in_rule__SparqlQuery__Group__012303 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SparqlQuery__VariableAssignment_0_in_rule__SparqlQuery__Group__0__Impl12330 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SparqlQuery__Group__1__Impl_in_rule__SparqlQuery__Group__112360 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__SparqlQuery__Group__2_in_rule__SparqlQuery__Group__112363 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_47_in_rule__SparqlQuery__Group__1__Impl12391 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SparqlQuery__Group__2__Impl_in_rule__SparqlQuery__Group__212422 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_rule__SparqlQuery__Group__3_in_rule__SparqlQuery__Group__212425 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__SparqlQuery__Group__2__Impl12453 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SparqlQuery__Group__3__Impl_in_rule__SparqlQuery__Group__312484 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__SparqlQuery__Group__3__Impl12512 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SparqlQueryVariable__Group__0__Impl_in_rule__SparqlQueryVariable__Group__012551 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__SparqlQueryVariable__Group__1_in_rule__SparqlQueryVariable__Group__012554 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_rule__SparqlQueryVariable__Group__0__Impl12582 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SparqlQueryVariable__Group__1__Impl_in_rule__SparqlQueryVariable__Group__112613 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_rule__SparqlQueryVariable__Group__2_in_rule__SparqlQueryVariable__Group__112616 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SparqlQueryVariable__VariableAssignment_1_in_rule__SparqlQueryVariable__Group__1__Impl12643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SparqlQueryVariable__Group__2__Impl_in_rule__SparqlQueryVariable__Group__212673 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SparqlQueryVariable__Group_2__0_in_rule__SparqlQueryVariable__Group__2__Impl12700 = new BitSet(new long[]{0x0001000000000002L});
+    public static final BitSet FOLLOW_rule__SparqlQueryVariable__Group_2__0__Impl_in_rule__SparqlQueryVariable__Group_2__012737 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__SparqlQueryVariable__Group_2__1_in_rule__SparqlQueryVariable__Group_2__012740 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_rule__SparqlQueryVariable__Group_2__0__Impl12768 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SparqlQueryVariable__Group_2__1__Impl_in_rule__SparqlQueryVariable__Group_2__112799 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SparqlQueryVariable__VariableAssignment_2_1_in_rule__SparqlQueryVariable__Group_2__1__Impl12826 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnTagOperator__Group__0__Impl_in_rule__UnTagOperator__Group__012860 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__UnTagOperator__Group__1_in_rule__UnTagOperator__Group__012863 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_49_in_rule__UnTagOperator__Group__0__Impl12891 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnTagOperator__Group__1__Impl_in_rule__UnTagOperator__Group__112922 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__UnTagOperator__Group__2_in_rule__UnTagOperator__Group__112925 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__UnTagOperator__Group__1__Impl12953 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnTagOperator__Group__2__Impl_in_rule__UnTagOperator__Group__212984 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__UnTagOperator__Group__3_in_rule__UnTagOperator__Group__212987 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnTagOperator__ParametersAssignment_2_in_rule__UnTagOperator__Group__2__Impl13014 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnTagOperator__Group__3__Impl_in_rule__UnTagOperator__Group__313044 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__UnTagOperator__Group__4_in_rule__UnTagOperator__Group__313047 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnTagOperator__Group_3__0_in_rule__UnTagOperator__Group__3__Impl13074 = new BitSet(new long[]{0x0000000100000002L});
+    public static final BitSet FOLLOW_rule__UnTagOperator__Group__4__Impl_in_rule__UnTagOperator__Group__413105 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__UnTagOperator__Group__5_in_rule__UnTagOperator__Group__413108 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__UnTagOperator__Group__4__Impl13136 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnTagOperator__Group__5__Impl_in_rule__UnTagOperator__Group__513167 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_rule__UnTagOperator__Group__6_in_rule__UnTagOperator__Group__513170 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnTagOperator__StreamAssignment_5_in_rule__UnTagOperator__Group__5__Impl13197 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnTagOperator__Group__6__Impl_in_rule__UnTagOperator__Group__613227 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__UnTagOperator__Group__6__Impl13255 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnTagOperator__Group_3__0__Impl_in_rule__UnTagOperator__Group_3__013300 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__UnTagOperator__Group_3__1_in_rule__UnTagOperator__Group_3__013303 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__UnTagOperator__Group_3__0__Impl13331 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnTagOperator__Group_3__1__Impl_in_rule__UnTagOperator__Group_3__113362 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnTagOperator__ParametersAssignment_3_1_in_rule__UnTagOperator__Group_3__1__Impl13389 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnTagElement__Group__0__Impl_in_rule__UnTagElement__Group__013423 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_rule__UnTagElement__Group__1_in_rule__UnTagElement__Group__013426 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnTagElement__ElementAssignment_0_in_rule__UnTagElement__Group__0__Impl13453 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnTagElement__Group__1__Impl_in_rule__UnTagElement__Group__113483 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__UnTagElement__Group__2_in_rule__UnTagElement__Group__113486 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_rule__UnTagElement__Group__1__Impl13514 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnTagElement__Group__2__Impl_in_rule__UnTagElement__Group__213545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnTagElement__ReferenceAssignment_2_in_rule__UnTagElement__Group__2__Impl13572 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagClassElement__Group__0__Impl_in_rule__TagClassElement__Group__013608 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_rule__TagClassElement__Group__1_in_rule__TagClassElement__Group__013611 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagClassElement__ReferenceAssignment_0_in_rule__TagClassElement__Group__0__Impl13638 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagClassElement__Group__1__Impl_in_rule__TagClassElement__Group__113668 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_rule__TagClassElement__Group__2_in_rule__TagClassElement__Group__113671 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_rule__TagClassElement__Group__1__Impl13699 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagClassElement__Group__2__Impl_in_rule__TagClassElement__Group__213730 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__TagClassElement__Group__3_in_rule__TagClassElement__Group__213733 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_51_in_rule__TagClassElement__Group__2__Impl13761 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagClassElement__Group__3__Impl_in_rule__TagClassElement__Group__313792 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagClassElement__ElementAssignment_3_in_rule__TagClassElement__Group__3__Impl13819 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagObjectPropertyElement__Group__0__Impl_in_rule__TagObjectPropertyElement__Group__013857 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_rule__TagObjectPropertyElement__Group__1_in_rule__TagObjectPropertyElement__Group__013860 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagObjectPropertyElement__ReferenceAssignment_0_in_rule__TagObjectPropertyElement__Group__0__Impl13887 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagObjectPropertyElement__Group__1__Impl_in_rule__TagObjectPropertyElement__Group__113917 = new BitSet(new long[]{0x0010000000000000L});
+    public static final BitSet FOLLOW_rule__TagObjectPropertyElement__Group__2_in_rule__TagObjectPropertyElement__Group__113920 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_rule__TagObjectPropertyElement__Group__1__Impl13948 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagObjectPropertyElement__Group__2__Impl_in_rule__TagObjectPropertyElement__Group__213979 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__TagObjectPropertyElement__Group__3_in_rule__TagObjectPropertyElement__Group__213982 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_52_in_rule__TagObjectPropertyElement__Group__2__Impl14010 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagObjectPropertyElement__Group__3__Impl_in_rule__TagObjectPropertyElement__Group__314041 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagObjectPropertyElement__ElementAssignment_3_in_rule__TagObjectPropertyElement__Group__3__Impl14068 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagDataTypePropertyElement__Group__0__Impl_in_rule__TagDataTypePropertyElement__Group__014106 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_rule__TagDataTypePropertyElement__Group__1_in_rule__TagDataTypePropertyElement__Group__014109 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagDataTypePropertyElement__ReferenceAssignment_0_in_rule__TagDataTypePropertyElement__Group__0__Impl14136 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagDataTypePropertyElement__Group__1__Impl_in_rule__TagDataTypePropertyElement__Group__114166 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_rule__TagDataTypePropertyElement__Group__2_in_rule__TagDataTypePropertyElement__Group__114169 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_rule__TagDataTypePropertyElement__Group__1__Impl14197 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagDataTypePropertyElement__Group__2__Impl_in_rule__TagDataTypePropertyElement__Group__214228 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__TagDataTypePropertyElement__Group__3_in_rule__TagDataTypePropertyElement__Group__214231 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_53_in_rule__TagDataTypePropertyElement__Group__2__Impl14259 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagDataTypePropertyElement__Group__3__Impl_in_rule__TagDataTypePropertyElement__Group__314290 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagDataTypePropertyElement__ElementAssignment_3_in_rule__TagDataTypePropertyElement__Group__3__Impl14317 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WindowOperator__Group_0__0__Impl_in_rule__WindowOperator__Group_0__014355 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__WindowOperator__Group_0__1_in_rule__WindowOperator__Group_0__014358 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WindowOperator__SettingAssignment_0_0_in_rule__WindowOperator__Group_0__0__Impl14385 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WindowOperator__Group_0__1__Impl_in_rule__WindowOperator__Group_0__114415 = new BitSet(new long[]{0x000000000000F000L});
+    public static final BitSet FOLLOW_rule__WindowOperator__Group_0__2_in_rule__WindowOperator__Group_0__114418 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WindowOperator__ValueAssignment_0_1_in_rule__WindowOperator__Group_0__1__Impl14445 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WindowOperator__Group_0__2__Impl_in_rule__WindowOperator__Group_0__214475 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WindowOperator__UnitAssignment_0_2_in_rule__WindowOperator__Group_0__2__Impl14502 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MarkerOperator__Group__0__Impl_in_rule__MarkerOperator__Group__014539 = new BitSet(new long[]{0x0000000800000050L});
+    public static final BitSet FOLLOW_rule__MarkerOperator__Group__1_in_rule__MarkerOperator__Group__014542 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_54_in_rule__MarkerOperator__Group__0__Impl14570 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MarkerOperator__Group__1__Impl_in_rule__MarkerOperator__Group__114601 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MarkerOperator__ExpressionAssignment_1_in_rule__MarkerOperator__Group__1__Impl14628 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLOperator__Group__0__Impl_in_rule__SWRLOperator__Group__014662 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__SWRLOperator__Group__1_in_rule__SWRLOperator__Group__014665 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_55_in_rule__SWRLOperator__Group__0__Impl14693 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLOperator__Group__1__Impl_in_rule__SWRLOperator__Group__114724 = new BitSet(new long[]{0x0100000000000000L});
+    public static final BitSet FOLLOW_rule__SWRLOperator__Group__2_in_rule__SWRLOperator__Group__114727 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__SWRLOperator__Group__1__Impl14755 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLOperator__Group__2__Impl_in_rule__SWRLOperator__Group__214786 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__SWRLOperator__Group__3_in_rule__SWRLOperator__Group__214789 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLOperator__RuleAssignment_2_in_rule__SWRLOperator__Group__2__Impl14816 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLOperator__Group__3__Impl_in_rule__SWRLOperator__Group__314846 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__SWRLOperator__Group__4_in_rule__SWRLOperator__Group__314849 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__SWRLOperator__Group__3__Impl14877 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLOperator__Group__4__Impl_in_rule__SWRLOperator__Group__414908 = new BitSet(new long[]{0x0000001100000000L});
+    public static final BitSet FOLLOW_rule__SWRLOperator__Group__5_in_rule__SWRLOperator__Group__414911 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLOperator__BarrierAssignment_4_in_rule__SWRLOperator__Group__4__Impl14938 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLOperator__Group__5__Impl_in_rule__SWRLOperator__Group__514968 = new BitSet(new long[]{0x0000001100000000L});
+    public static final BitSet FOLLOW_rule__SWRLOperator__Group__6_in_rule__SWRLOperator__Group__514971 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLOperator__Group_5__0_in_rule__SWRLOperator__Group__5__Impl14998 = new BitSet(new long[]{0x0000000100000002L});
+    public static final BitSet FOLLOW_rule__SWRLOperator__Group__6__Impl_in_rule__SWRLOperator__Group__615029 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__SWRLOperator__Group__6__Impl15057 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLOperator__Group_5__0__Impl_in_rule__SWRLOperator__Group_5__015102 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__SWRLOperator__Group_5__1_in_rule__SWRLOperator__Group_5__015105 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__SWRLOperator__Group_5__0__Impl15133 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLOperator__Group_5__1__Impl_in_rule__SWRLOperator__Group_5__115164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLOperator__BarrierAssignment_5_1_in_rule__SWRLOperator__Group_5__1__Impl15191 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLRule__Group__0__Impl_in_rule__SWRLRule__Group__015225 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__SWRLRule__Group__1_in_rule__SWRLRule__Group__015228 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_56_in_rule__SWRLRule__Group__0__Impl15256 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLRule__Group__1__Impl_in_rule__SWRLRule__Group__115287 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_rule__SWRLRule__Group__2_in_rule__SWRLRule__Group__115290 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__SWRLRule__Group__1__Impl15318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLRule__Group__2__Impl_in_rule__SWRLRule__Group__215349 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__SWRLRule__Group__3_in_rule__SWRLRule__Group__215352 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLRule__AntecedentAssignment_2_in_rule__SWRLRule__Group__2__Impl15379 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLRule__Group__3__Impl_in_rule__SWRLRule__Group__315409 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_rule__SWRLRule__Group__4_in_rule__SWRLRule__Group__315412 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__SWRLRule__Group__3__Impl15440 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLRule__Group__4__Impl_in_rule__SWRLRule__Group__415471 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_rule__SWRLRule__Group__5_in_rule__SWRLRule__Group__415474 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLRule__ConsequentAssignment_4_in_rule__SWRLRule__Group__4__Impl15501 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SWRLRule__Group__5__Impl_in_rule__SWRLRule__Group__515531 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__SWRLRule__Group__5__Impl15559 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AntecedentRule__Group__0__Impl_in_rule__AntecedentRule__Group__015602 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__AntecedentRule__Group__1_in_rule__AntecedentRule__Group__015605 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_57_in_rule__AntecedentRule__Group__0__Impl15633 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AntecedentRule__Group__1__Impl_in_rule__AntecedentRule__Group__115664 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__AntecedentRule__Group__2_in_rule__AntecedentRule__Group__115667 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__AntecedentRule__Group__1__Impl15695 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AntecedentRule__Group__2__Impl_in_rule__AntecedentRule__Group__215726 = new BitSet(new long[]{0x0000001100000000L});
+    public static final BitSet FOLLOW_rule__AntecedentRule__Group__3_in_rule__AntecedentRule__Group__215729 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AntecedentRule__AtomsAssignment_2_in_rule__AntecedentRule__Group__2__Impl15756 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AntecedentRule__Group__3__Impl_in_rule__AntecedentRule__Group__315786 = new BitSet(new long[]{0x0000001100000000L});
+    public static final BitSet FOLLOW_rule__AntecedentRule__Group__4_in_rule__AntecedentRule__Group__315789 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AntecedentRule__Group_3__0_in_rule__AntecedentRule__Group__3__Impl15816 = new BitSet(new long[]{0x0000000100000002L});
+    public static final BitSet FOLLOW_rule__AntecedentRule__Group__4__Impl_in_rule__AntecedentRule__Group__415847 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__AntecedentRule__Group__4__Impl15875 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AntecedentRule__Group_3__0__Impl_in_rule__AntecedentRule__Group_3__015916 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__AntecedentRule__Group_3__1_in_rule__AntecedentRule__Group_3__015919 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__AntecedentRule__Group_3__0__Impl15947 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AntecedentRule__Group_3__1__Impl_in_rule__AntecedentRule__Group_3__115978 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AntecedentRule__AtomsAssignment_3_1_in_rule__AntecedentRule__Group_3__1__Impl16005 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConsequentRule__Group__0__Impl_in_rule__ConsequentRule__Group__016039 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__ConsequentRule__Group__1_in_rule__ConsequentRule__Group__016042 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_58_in_rule__ConsequentRule__Group__0__Impl16070 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConsequentRule__Group__1__Impl_in_rule__ConsequentRule__Group__116101 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__ConsequentRule__Group__2_in_rule__ConsequentRule__Group__116104 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__ConsequentRule__Group__1__Impl16132 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConsequentRule__Group__2__Impl_in_rule__ConsequentRule__Group__216163 = new BitSet(new long[]{0x0000001100000000L});
+    public static final BitSet FOLLOW_rule__ConsequentRule__Group__3_in_rule__ConsequentRule__Group__216166 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConsequentRule__AtomsAssignment_2_in_rule__ConsequentRule__Group__2__Impl16193 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConsequentRule__Group__3__Impl_in_rule__ConsequentRule__Group__316223 = new BitSet(new long[]{0x0000001100000000L});
+    public static final BitSet FOLLOW_rule__ConsequentRule__Group__4_in_rule__ConsequentRule__Group__316226 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConsequentRule__Group_3__0_in_rule__ConsequentRule__Group__3__Impl16253 = new BitSet(new long[]{0x0000000100000002L});
+    public static final BitSet FOLLOW_rule__ConsequentRule__Group__4__Impl_in_rule__ConsequentRule__Group__416284 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__ConsequentRule__Group__4__Impl16312 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConsequentRule__Group_3__0__Impl_in_rule__ConsequentRule__Group_3__016353 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__ConsequentRule__Group_3__1_in_rule__ConsequentRule__Group_3__016356 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__ConsequentRule__Group_3__0__Impl16384 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConsequentRule__Group_3__1__Impl_in_rule__ConsequentRule__Group_3__116415 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConsequentRule__AtomsAssignment_3_1_in_rule__ConsequentRule__Group_3__1__Impl16442 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Rule__Group__0__Impl_in_rule__Rule__Group__016476 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__Rule__Group__1_in_rule__Rule__Group__016479 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Rule__NameAssignment_0_in_rule__Rule__Group__0__Impl16506 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Rule__Group__1__Impl_in_rule__Rule__Group__116536 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_rule__Rule__Group__2_in_rule__Rule__Group__116539 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__Rule__Group__1__Impl16567 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Rule__Group__2__Impl_in_rule__Rule__Group__216598 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Rule__Group__3_in_rule__Rule__Group__216601 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_rule__Rule__Group__2__Impl16629 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Rule__Group__3__Impl_in_rule__Rule__Group__316660 = new BitSet(new long[]{0x0000001100000000L});
+    public static final BitSet FOLLOW_rule__Rule__Group__4_in_rule__Rule__Group__316663 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Rule__VariableAssignment_3_in_rule__Rule__Group__3__Impl16690 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Rule__Group__4__Impl_in_rule__Rule__Group__416720 = new BitSet(new long[]{0x0000001100000000L});
+    public static final BitSet FOLLOW_rule__Rule__Group__5_in_rule__Rule__Group__416723 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Rule__Group_4__0_in_rule__Rule__Group__4__Impl16750 = new BitSet(new long[]{0x0000000100000002L});
+    public static final BitSet FOLLOW_rule__Rule__Group__5__Impl_in_rule__Rule__Group__516781 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__Rule__Group__5__Impl16809 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Rule__Group_4__0__Impl_in_rule__Rule__Group_4__016852 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_rule__Rule__Group_4__1_in_rule__Rule__Group_4__016855 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__Rule__Group_4__0__Impl16883 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Rule__Group_4__1__Impl_in_rule__Rule__Group_4__116914 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Rule__Group_4__2_in_rule__Rule__Group_4__116917 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_rule__Rule__Group_4__1__Impl16945 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Rule__Group_4__2__Impl_in_rule__Rule__Group_4__216976 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Rule__VariableAssignment_4_2_in_rule__Rule__Group_4__2__Impl17003 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__CountOperator__Group__0__Impl_in_rule__CountOperator__Group__017039 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_rule__CountOperator__Group__1_in_rule__CountOperator__Group__017042 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_59_in_rule__CountOperator__Group__0__Impl17070 = new BitSet(new long[]{0x0000000000000002L});
@@ -39348,51 +39344,51 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_rule__SplitOperator__ParameterAssignment_226282 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__LogOperator__LocationAssignment_226313 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__LogOperator__FormatAssignment_426344 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpression_in_rule__MatchOperator__ExpressionAssignment_226375 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpression_in_rule__MatchOperator__CalculationAssignment_426406 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_rule__MatchOperator__StreamAssignment_626437 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_rule__MatchOperator__StreamAssignment_7_126468 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__InputOperator__IriAssignment_226499 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__InputOperator__IriAssignment_3_126530 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__InputOperator__AddressAssignment_526561 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_NUMBER_in_rule__InputOperator__PortAssignment_726592 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTagElement_in_rule__TagOperator__ParametersAssignment_226623 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTagElement_in_rule__TagOperator__ParametersAssignment_3_126654 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSparqlQueryType_in_rule__QueryTagOperator__QueryTypeAssignment_126687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSparqlQuery_in_rule__QueryTagOperator__QueryAssignment_226718 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSparqlQueryVariable_in_rule__SparqlQuery__VariableAssignment_026749 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__SparqlQueryVariable__VariableAssignment_126780 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__SparqlQueryVariable__VariableAssignment_2_126811 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnTagElement_in_rule__UnTagOperator__ParametersAssignment_226842 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnTagElement_in_rule__UnTagOperator__ParametersAssignment_3_126873 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_rule__UnTagOperator__StreamAssignment_526904 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__UnTagElement__ElementAssignment_026939 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__UnTagElement__ReferenceAssignment_226974 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__TagClassElement__ReferenceAssignment_027005 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__TagClassElement__ElementAssignment_327040 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__TagObjectPropertyElement__ReferenceAssignment_027075 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__TagObjectPropertyElement__ElementAssignment_327110 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__TagDataTypePropertyElement__ReferenceAssignment_027145 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__TagDataTypePropertyElement__ElementAssignment_327180 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_78_in_rule__WindowOperator__SettingAssignment_0_027220 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_NUMBER_in_rule__WindowOperator__ValueAssignment_0_127259 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WindowOperator__UnitAlternatives_0_2_0_in_rule__WindowOperator__UnitAssignment_0_227290 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_79_in_rule__WindowOperator__SettingAssignment_127328 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpression_in_rule__MarkerOperator__ExpressionAssignment_127367 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSWRLRule_in_rule__SWRLOperator__RuleAssignment_227398 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_rule__SWRLOperator__BarrierAssignment_427429 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_rule__SWRLOperator__BarrierAssignment_5_127460 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAntecedentRule_in_rule__SWRLRule__AntecedentAssignment_227491 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConsequentRule_in_rule__SWRLRule__ConsequentAssignment_427522 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRule_in_rule__AntecedentRule__AtomsAssignment_227553 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRule_in_rule__AntecedentRule__AtomsAssignment_3_127584 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRule_in_rule__ConsequentRule__AtomsAssignment_227615 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRule_in_rule__ConsequentRule__AtomsAssignment_3_127646 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Rule__NameAssignment_027681 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__Rule__VariableAssignment_327716 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__Rule__VariableAssignment_4_227747 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__OCLOperator__ConstraintAssignment_227778 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_rule__OCLOperator__StreamAssignment_427809 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_NUMBER_in_rule__RandomOperator__MaximumAssignment_226375 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_NUMBER_in_rule__RandomOperator__SleepAssignment_426406 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpression_in_rule__MatchOperator__ExpressionAssignment_226437 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpression_in_rule__MatchOperator__CalculationAssignment_426468 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_rule__MatchOperator__StreamAssignment_626499 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_rule__MatchOperator__StreamAssignment_7_126530 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__InputOperator__IriAssignment_226561 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__InputOperator__IriAssignment_3_126592 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__InputOperator__AddressAssignment_526623 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_NUMBER_in_rule__InputOperator__PortAssignment_726654 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTagElement_in_rule__TagOperator__ParametersAssignment_226685 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTagElement_in_rule__TagOperator__ParametersAssignment_3_126716 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSparqlQueryType_in_rule__QueryTagOperator__QueryTypeAssignment_126749 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSparqlQuery_in_rule__QueryTagOperator__QueryAssignment_226780 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSparqlQueryVariable_in_rule__SparqlQuery__VariableAssignment_026811 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__SparqlQueryVariable__VariableAssignment_126842 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__SparqlQueryVariable__VariableAssignment_2_126873 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnTagElement_in_rule__UnTagOperator__ParametersAssignment_226904 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnTagElement_in_rule__UnTagOperator__ParametersAssignment_3_126935 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_rule__UnTagOperator__StreamAssignment_526966 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__UnTagElement__ElementAssignment_027001 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__UnTagElement__ReferenceAssignment_227036 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__TagClassElement__ReferenceAssignment_027067 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__TagClassElement__ElementAssignment_327102 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__TagObjectPropertyElement__ReferenceAssignment_027137 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__TagObjectPropertyElement__ElementAssignment_327172 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__TagDataTypePropertyElement__ReferenceAssignment_027207 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__TagDataTypePropertyElement__ElementAssignment_327242 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_78_in_rule__WindowOperator__SettingAssignment_0_027282 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_NUMBER_in_rule__WindowOperator__ValueAssignment_0_127321 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WindowOperator__UnitAlternatives_0_2_0_in_rule__WindowOperator__UnitAssignment_0_227352 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_79_in_rule__WindowOperator__SettingAssignment_127390 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpression_in_rule__MarkerOperator__ExpressionAssignment_127429 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSWRLRule_in_rule__SWRLOperator__RuleAssignment_227460 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_rule__SWRLOperator__BarrierAssignment_427491 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_rule__SWRLOperator__BarrierAssignment_5_127522 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAntecedentRule_in_rule__SWRLRule__AntecedentAssignment_227553 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConsequentRule_in_rule__SWRLRule__ConsequentAssignment_427584 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRule_in_rule__AntecedentRule__AtomsAssignment_227615 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRule_in_rule__AntecedentRule__AtomsAssignment_3_127646 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRule_in_rule__ConsequentRule__AtomsAssignment_227677 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRule_in_rule__ConsequentRule__AtomsAssignment_3_127708 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Rule__NameAssignment_027743 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__Rule__VariableAssignment_327778 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__Rule__VariableAssignment_4_227809 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStreamAccess_in_rule__CountOperator__ParameterAssignment_227840 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStreamOperatorParameter_in_rule__CountOperator__StreamAssignment_427871 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStreamAccess_in_rule__StandardDeviationOperator__ParameterAssignment_227902 = new BitSet(new long[]{0x0000000000000002L});

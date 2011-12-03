@@ -374,7 +374,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getReturnTypeOperator()
    * @generated
    */
-  int RETURN_TYPE_OPERATOR = 17;
+  int RETURN_TYPE_OPERATOR = 18;
 
   /**
    * The number of structural features of the '<em>Return Type Operator</em>' class.
@@ -599,6 +599,43 @@ public interface FlowPackage extends EPackage
   int LOG_OPERATOR_FEATURE_COUNT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.RandomOperatorImpl <em>Random Operator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.RandomOperatorImpl
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getRandomOperator()
+   * @generated
+   */
+  int RANDOM_OPERATOR = 15;
+
+  /**
+   * The feature id for the '<em><b>Maximum</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RANDOM_OPERATOR__MAXIMUM = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Sleep</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RANDOM_OPERATOR__SLEEP = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Random Operator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RANDOM_OPERATOR_FEATURE_COUNT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.MatchOperatorImpl <em>Match Operator</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -606,7 +643,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMatchOperator()
    * @generated
    */
-  int MATCH_OPERATOR = 15;
+  int MATCH_OPERATOR = 16;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -652,7 +689,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getInputOperator()
    * @generated
    */
-  int INPUT_OPERATOR = 16;
+  int INPUT_OPERATOR = 17;
 
   /**
    * The feature id for the '<em><b>Iri</b></em>' attribute list.
@@ -698,7 +735,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getNoReturnTypeOperator()
    * @generated
    */
-  int NO_RETURN_TYPE_OPERATOR = 18;
+  int NO_RETURN_TYPE_OPERATOR = 19;
 
   /**
    * The number of structural features of the '<em>No Return Type Operator</em>' class.
@@ -717,7 +754,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getTagOperator()
    * @generated
    */
-  int TAG_OPERATOR = 19;
+  int TAG_OPERATOR = 20;
 
   /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -745,7 +782,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getNewTagOperator()
    * @generated
    */
-  int NEW_TAG_OPERATOR = 20;
+  int NEW_TAG_OPERATOR = 21;
 
   /**
    * The feature id for the '<em><b>Query</b></em>' containment reference.
@@ -782,7 +819,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getQueryTagOperator()
    * @generated
    */
-  int QUERY_TAG_OPERATOR = 21;
+  int QUERY_TAG_OPERATOR = 22;
 
   /**
    * The feature id for the '<em><b>Query Type</b></em>' attribute.
@@ -819,7 +856,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSparqlQuery()
    * @generated
    */
-  int SPARQL_QUERY = 22;
+  int SPARQL_QUERY = 23;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' containment reference.
@@ -847,7 +884,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSparqlQueryVariable()
    * @generated
    */
-  int SPARQL_QUERY_VARIABLE = 23;
+  int SPARQL_QUERY_VARIABLE = 24;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' attribute list.
@@ -875,7 +912,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getUnTagOperator()
    * @generated
    */
-  int UN_TAG_OPERATOR = 24;
+  int UN_TAG_OPERATOR = 25;
 
   /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -912,7 +949,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getUnTagElement()
    * @generated
    */
-  int UN_TAG_ELEMENT = 25;
+  int UN_TAG_ELEMENT = 26;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' reference.
@@ -949,7 +986,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getTagElement()
    * @generated
    */
-  int TAG_ELEMENT = 26;
+  int TAG_ELEMENT = 27;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' containment reference.
@@ -977,7 +1014,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getTagClassElement()
    * @generated
    */
-  int TAG_CLASS_ELEMENT = 27;
+  int TAG_CLASS_ELEMENT = 28;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' containment reference.
@@ -1014,7 +1051,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getTagObjectPropertyElement()
    * @generated
    */
-  int TAG_OBJECT_PROPERTY_ELEMENT = 28;
+  int TAG_OBJECT_PROPERTY_ELEMENT = 29;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' containment reference.
@@ -1051,7 +1088,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getTagDataTypePropertyElement()
    * @generated
    */
-  int TAG_DATA_TYPE_PROPERTY_ELEMENT = 29;
+  int TAG_DATA_TYPE_PROPERTY_ELEMENT = 30;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' containment reference.
@@ -1088,7 +1125,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBarrierOperator()
    * @generated
    */
-  int BARRIER_OPERATOR = 30;
+  int BARRIER_OPERATOR = 31;
 
   /**
    * The number of structural features of the '<em>Barrier Operator</em>' class.
@@ -1107,7 +1144,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getWindowOperator()
    * @generated
    */
-  int WINDOW_OPERATOR = 31;
+  int WINDOW_OPERATOR = 32;
 
   /**
    * The feature id for the '<em><b>Setting</b></em>' attribute.
@@ -1153,7 +1190,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMarkerOperator()
    * @generated
    */
-  int MARKER_OPERATOR = 32;
+  int MARKER_OPERATOR = 33;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1181,7 +1218,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSWRLOperator()
    * @generated
    */
-  int SWRL_OPERATOR = 33;
+  int SWRL_OPERATOR = 34;
 
   /**
    * The feature id for the '<em><b>Rule</b></em>' containment reference.
@@ -1218,7 +1255,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSWRLRule()
    * @generated
    */
-  int SWRL_RULE = 34;
+  int SWRL_RULE = 35;
 
   /**
    * The feature id for the '<em><b>Antecedent</b></em>' containment reference.
@@ -1255,7 +1292,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getAntecedentRule()
    * @generated
    */
-  int ANTECEDENT_RULE = 35;
+  int ANTECEDENT_RULE = 36;
 
   /**
    * The feature id for the '<em><b>Atoms</b></em>' containment reference list.
@@ -1283,7 +1320,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getConsequentRule()
    * @generated
    */
-  int CONSEQUENT_RULE = 36;
+  int CONSEQUENT_RULE = 37;
 
   /**
    * The feature id for the '<em><b>Atoms</b></em>' containment reference list.
@@ -1311,7 +1348,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getRule()
    * @generated
    */
-  int RULE = 37;
+  int RULE = 38;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' reference.
@@ -1339,43 +1376,6 @@ public interface FlowPackage extends EPackage
    * @ordered
    */
   int RULE_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.OCLOperatorImpl <em>OCL Operator</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.OCLOperatorImpl
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getOCLOperator()
-   * @generated
-   */
-  int OCL_OPERATOR = 38;
-
-  /**
-   * The feature id for the '<em><b>Constraint</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OCL_OPERATOR__CONSTRAINT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Stream</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OCL_OPERATOR__STREAM = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>OCL Operator</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OCL_OPERATOR_FEATURE_COUNT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.CountOperatorImpl <em>Count Operator</em>}' class.
@@ -2901,6 +2901,38 @@ public interface FlowPackage extends EPackage
   EAttribute getLogOperator_Format();
 
   /**
+   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.RandomOperator <em>Random Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Random Operator</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.RandomOperator
+   * @generated
+   */
+  EClass getRandomOperator();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.RandomOperator#getMaximum <em>Maximum</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Maximum</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.RandomOperator#getMaximum()
+   * @see #getRandomOperator()
+   * @generated
+   */
+  EAttribute getRandomOperator_Maximum();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.RandomOperator#getSleep <em>Sleep</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sleep</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.RandomOperator#getSleep()
+   * @see #getRandomOperator()
+   * @generated
+   */
+  EAttribute getRandomOperator_Sleep();
+
+  /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.MatchOperator <em>Match Operator</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3492,38 +3524,6 @@ public interface FlowPackage extends EPackage
    * @generated
    */
   EReference getRule_Variable();
-
-  /**
-   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.OCLOperator <em>OCL Operator</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>OCL Operator</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.OCLOperator
-   * @generated
-   */
-  EClass getOCLOperator();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.OCLOperator#getConstraint <em>Constraint</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Constraint</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.OCLOperator#getConstraint()
-   * @see #getOCLOperator()
-   * @generated
-   */
-  EAttribute getOCLOperator_Constraint();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.OCLOperator#getStream <em>Stream</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Stream</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.OCLOperator#getStream()
-   * @see #getOCLOperator()
-   * @generated
-   */
-  EReference getOCLOperator_Stream();
 
   /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.CountOperator <em>Count Operator</em>}'.
@@ -4776,6 +4776,32 @@ public interface FlowPackage extends EPackage
     EAttribute LOG_OPERATOR__FORMAT = eINSTANCE.getLogOperator_Format();
 
     /**
+     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.RandomOperatorImpl <em>Random Operator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.RandomOperatorImpl
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getRandomOperator()
+     * @generated
+     */
+    EClass RANDOM_OPERATOR = eINSTANCE.getRandomOperator();
+
+    /**
+     * The meta object literal for the '<em><b>Maximum</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RANDOM_OPERATOR__MAXIMUM = eINSTANCE.getRandomOperator_Maximum();
+
+    /**
+     * The meta object literal for the '<em><b>Sleep</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RANDOM_OPERATOR__SLEEP = eINSTANCE.getRandomOperator_Sleep();
+
+    /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.MatchOperatorImpl <em>Match Operator</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5268,32 +5294,6 @@ public interface FlowPackage extends EPackage
      * @generated
      */
     EReference RULE__VARIABLE = eINSTANCE.getRule_Variable();
-
-    /**
-     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.OCLOperatorImpl <em>OCL Operator</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.OCLOperatorImpl
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getOCLOperator()
-     * @generated
-     */
-    EClass OCL_OPERATOR = eINSTANCE.getOCLOperator();
-
-    /**
-     * The meta object literal for the '<em><b>Constraint</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute OCL_OPERATOR__CONSTRAINT = eINSTANCE.getOCLOperator_Constraint();
-
-    /**
-     * The meta object literal for the '<em><b>Stream</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference OCL_OPERATOR__STREAM = eINSTANCE.getOCLOperator_Stream();
 
     /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.CountOperatorImpl <em>Count Operator</em>}' class.
