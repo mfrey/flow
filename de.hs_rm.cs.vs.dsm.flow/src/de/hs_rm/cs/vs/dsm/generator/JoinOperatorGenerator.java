@@ -16,7 +16,7 @@ import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
  */
 public class JoinOperatorGenerator extends AbstractOperatorGenerator {
 	/** The type of the operator */
-	private final String OPERATOR_TYPE = "join";
+	private final String OPERATOR_TYPE = "Merge";
 	/** The internal representation of the count operator */
 	private JoinOperator mOperator = null;
 	
@@ -29,8 +29,6 @@ public class JoinOperatorGenerator extends AbstractOperatorGenerator {
 		for(int i = 0; i < this.mOperator.getParameters().size(); i++){
 			this.getInputStreams().add( this.mOperator.getParameters().get(i).getStream().getName());
 		}
-		// Set name of the internal stream representation
-		this.setOperatorStream(OPERATOR_TYPE + this.mOperator.hashCode());
 	}
 	
 	/**
@@ -38,7 +36,13 @@ public class JoinOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String initializeOperator(){
-		return Util.getInstance().createOperator("merge", this.getOperatorStream());
+		if(this.getOutputStreams().size() == 1){
+			return Util.getInstance().createOperator(OPERATOR_TYPE, this.getOutputStreams().get(0));
+		}else if(this.getOutputStreams().size() > 1){
+			return Util.getInstance().createOperator(OPERATOR_TYPE, "stream" + this.getInputStreams().hashCode() + "");
+		}else{
+			return "Error in initializeOperator() in class JoinOperatorGenerator";
+		}
 	}
 	
 	/**

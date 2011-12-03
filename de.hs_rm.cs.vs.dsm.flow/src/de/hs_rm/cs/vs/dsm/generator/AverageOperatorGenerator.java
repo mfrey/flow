@@ -1,6 +1,7 @@
 package de.hs_rm.cs.vs.dsm.generator;
 
 import de.hs_rm.cs.vs.dsm.flow.AverageOperator;
+import de.hs_rm.cs.vs.dsm.flow.FloatDataType;
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
 
 /**
@@ -17,7 +18,7 @@ import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
  */
 public class AverageOperatorGenerator extends AbstractOperatorGenerator {
 	/** The type of the operator */
-	private final String OPERATOR_TYPE = "avg";
+	private String OPERATOR_TYPE = "IntAvg";
 	/** The internal representation of the avg operator */
 	private AverageOperator mOperator = null;
 	
@@ -34,6 +35,10 @@ public class AverageOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String initializeOperator() {
+		if(this.mOperator.getParameter().getElement().getType() instanceof FloatDataType){
+			OPERATOR_TYPE = "FloatAvg"; 
+		}
+		
 		if(this.getOutputStreams().size() == 1){
 			return Util.getInstance().createOperator(OPERATOR_TYPE, this.getOutputStreams().get(0));
 		}else if(this.getOutputStreams().size() > 1){

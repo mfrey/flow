@@ -17,7 +17,7 @@ import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
  */
 public class CountOperatorGenerator extends AbstractOperatorGenerator {
 	/** The type of the operator */
-	private final String OPERATOR_TYPE = "count";
+	private final String OPERATOR_TYPE = "MessageCounter";
 	/** The internal representation of the count operator */
 	private CountOperator mOperator = null;
 	
