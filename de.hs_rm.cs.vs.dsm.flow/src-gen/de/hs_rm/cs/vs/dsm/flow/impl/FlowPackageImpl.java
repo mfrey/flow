@@ -28,6 +28,7 @@ import de.hs_rm.cs.vs.dsm.flow.Import;
 import de.hs_rm.cs.vs.dsm.flow.InputOperator;
 import de.hs_rm.cs.vs.dsm.flow.IntegerDataType;
 import de.hs_rm.cs.vs.dsm.flow.JoinOperator;
+import de.hs_rm.cs.vs.dsm.flow.LogOperator;
 import de.hs_rm.cs.vs.dsm.flow.MarkerOperator;
 import de.hs_rm.cs.vs.dsm.flow.MatchOperator;
 import de.hs_rm.cs.vs.dsm.flow.Minus;
@@ -196,6 +197,13 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * @generated
    */
   private EClass splitOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass logOperatorEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1041,6 +1049,36 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
   public EReference getSplitOperator_Parameter()
   {
     return (EReference)splitOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLogOperator()
+  {
+    return logOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLogOperator_Location()
+  {
+    return (EAttribute)logOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLogOperator_Format()
+  {
+    return (EAttribute)logOperatorEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2535,6 +2573,10 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     splitOperatorEClass = createEClass(SPLIT_OPERATOR);
     createEReference(splitOperatorEClass, SPLIT_OPERATOR__PARAMETER);
 
+    logOperatorEClass = createEClass(LOG_OPERATOR);
+    createEAttribute(logOperatorEClass, LOG_OPERATOR__LOCATION);
+    createEAttribute(logOperatorEClass, LOG_OPERATOR__FORMAT);
+
     matchOperatorEClass = createEClass(MATCH_OPERATOR);
     createEReference(matchOperatorEClass, MATCH_OPERATOR__EXPRESSION);
     createEReference(matchOperatorEClass, MATCH_OPERATOR__CALCULATION);
@@ -2777,6 +2819,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     elementJoinOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     filterOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     splitOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
+    logOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     matchOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     inputOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     noReturnTypeOperatorEClass.getESuperTypes().add(this.getModelElement());
@@ -2871,6 +2914,10 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     initEClass(splitOperatorEClass, SplitOperator.class, "SplitOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSplitOperator_Parameter(), this.getStreamOperatorParameter(), null, "parameter", null, 0, 1, SplitOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(logOperatorEClass, LogOperator.class, "LogOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLogOperator_Location(), ecorePackage.getEString(), "location", null, 0, 1, LogOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLogOperator_Format(), ecorePackage.getEString(), "format", null, 0, 1, LogOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(matchOperatorEClass, MatchOperator.class, "MatchOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMatchOperator_Expression(), this.getExpression(), null, "expression", null, 0, 1, MatchOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

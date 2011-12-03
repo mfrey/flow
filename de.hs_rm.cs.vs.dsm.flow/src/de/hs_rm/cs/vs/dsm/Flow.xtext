@@ -104,7 +104,11 @@ FilterOperator:
  */
 SplitOperator:
 	'split''('parameter=StreamOperatorParameter')';
-	
+
+LogOperator:
+	'log' '('location=STRING ',' format=STRING ')'
+;
+
 /**
  * The MatchOperator rule joins two streams depending on a expression and does a calculation
  * based on a second expression.
@@ -120,7 +124,7 @@ InputOperator:
  * The rule summarizes the operators which have a return type
  */
 ReturnTypeOperator:
-	InputOperator | JoinOperator |   
+	InputOperator | JoinOperator |  LogOperator | 
 	TagOperator | UnTagOperator | FilterOperator | SplitOperator | CountOperator | 
 	StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | 
 	OCLOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | 

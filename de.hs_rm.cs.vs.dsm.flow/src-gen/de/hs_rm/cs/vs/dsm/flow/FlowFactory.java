@@ -152,6 +152,15 @@ public interface FlowFactory extends EFactory
   SplitOperator createSplitOperator();
 
   /**
+   * Returns a new object of class '<em>Log Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Log Operator</em>'.
+   * @generated
+   */
+  LogOperator createLogOperator();
+
+  /**
    * Returns a new object of class '<em>Match Operator</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

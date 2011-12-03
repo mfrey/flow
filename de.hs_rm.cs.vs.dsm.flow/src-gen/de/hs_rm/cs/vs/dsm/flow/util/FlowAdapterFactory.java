@@ -148,6 +148,11 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
         return createSplitOperatorAdapter();
       }
       @Override
+      public Adapter caseLogOperator(LogOperator object)
+      {
+        return createLogOperatorAdapter();
+      }
+      @Override
       public Adapter caseMatchOperator(MatchOperator object)
       {
         return createMatchOperatorAdapter();
@@ -655,6 +660,21 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSplitOperatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.LogOperator <em>Log Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.hs_rm.cs.vs.dsm.flow.LogOperator
+   * @generated
+   */
+  public Adapter createLogOperatorAdapter()
   {
     return null;
   }

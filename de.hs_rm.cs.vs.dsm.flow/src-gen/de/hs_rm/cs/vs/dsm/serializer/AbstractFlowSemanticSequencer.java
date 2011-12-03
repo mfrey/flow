@@ -20,6 +20,7 @@ import de.hs_rm.cs.vs.dsm.flow.Import;
 import de.hs_rm.cs.vs.dsm.flow.InputOperator;
 import de.hs_rm.cs.vs.dsm.flow.IntegerDataType;
 import de.hs_rm.cs.vs.dsm.flow.JoinOperator;
+import de.hs_rm.cs.vs.dsm.flow.LogOperator;
 import de.hs_rm.cs.vs.dsm.flow.MarkerOperator;
 import de.hs_rm.cs.vs.dsm.flow.MatchOperator;
 import de.hs_rm.cs.vs.dsm.flow.Minus;
@@ -245,6 +246,13 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				if(context == grammarAccess.getJoinOperatorRule() ||
 				   context == grammarAccess.getReturnTypeOperatorRule()) {
 					sequence_JoinOperator(context, (JoinOperator) semanticObject); 
+					return; 
+				}
+				else break;
+			case FlowPackage.LOG_OPERATOR:
+				if(context == grammarAccess.getLogOperatorRule() ||
+				   context == grammarAccess.getReturnTypeOperatorRule()) {
+					sequence_LogOperator(context, (LogOperator) semanticObject); 
 					return; 
 				}
 				else break;
@@ -938,6 +946,29 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 */
 	protected void sequence_JoinOperator(EObject context, JoinOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (location=STRING format=STRING)
+	 *
+	 * Features:
+	 *    location[1, 1]
+	 *    format[1, 1]
+	 */
+	protected void sequence_LogOperator(EObject context, LogOperator semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.LOG_OPERATOR__LOCATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.LOG_OPERATOR__LOCATION));
+			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.LOG_OPERATOR__FORMAT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.LOG_OPERATOR__FORMAT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getLogOperatorAccess().getLocationSTRINGTerminalRuleCall_2_0(), semanticObject.getLocation());
+		feeder.accept(grammarAccess.getLogOperatorAccess().getFormatSTRINGTerminalRuleCall_4_0(), semanticObject.getFormat());
+		feeder.finish();
 	}
 	
 	

@@ -940,6 +940,79 @@ ruleSplitOperator returns [EObject current=null]
 
 
 
+// Entry rule entryRuleLogOperator
+entryRuleLogOperator returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getLogOperatorRule()); }
+	 iv_ruleLogOperator=ruleLogOperator 
+	 { $current=$iv_ruleLogOperator.current; } 
+	 EOF 
+;
+
+// Rule LogOperator
+ruleLogOperator returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='log' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getLogOperatorAccess().getLogKeyword_0());
+    }
+	otherlv_1='(' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getLogOperatorAccess().getLeftParenthesisKeyword_1());
+    }
+(
+(
+		lv_location_2_0=RULE_STRING
+		{
+			newLeafNode(lv_location_2_0, grammarAccess.getLogOperatorAccess().getLocationSTRINGTerminalRuleCall_2_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getLogOperatorRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"location",
+        		lv_location_2_0, 
+        		"STRING");
+	    }
+
+)
+)	otherlv_3=',' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getLogOperatorAccess().getCommaKeyword_3());
+    }
+(
+(
+		lv_format_4_0=RULE_STRING
+		{
+			newLeafNode(lv_format_4_0, grammarAccess.getLogOperatorAccess().getFormatSTRINGTerminalRuleCall_4_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getLogOperatorRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"format",
+        		lv_format_4_0, 
+        		"STRING");
+	    }
+
+)
+)	otherlv_5=')' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getLogOperatorAccess().getRightParenthesisKeyword_5());
+    }
+)
+;
+
+
+
+
+
 // Entry rule entryRuleMatchOperator
 entryRuleMatchOperator returns [EObject current=null] 
 	:
@@ -1210,151 +1283,161 @@ ruleReturnTypeOperator returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getTagOperatorParserRuleCall_2()); 
+        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getLogOperatorParserRuleCall_2()); 
     }
-    this_TagOperator_2=ruleTagOperator
+    this_LogOperator_2=ruleLogOperator
     { 
-        $current = $this_TagOperator_2.current; 
+        $current = $this_LogOperator_2.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getUnTagOperatorParserRuleCall_3()); 
+        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getTagOperatorParserRuleCall_3()); 
     }
-    this_UnTagOperator_3=ruleUnTagOperator
+    this_TagOperator_3=ruleTagOperator
     { 
-        $current = $this_UnTagOperator_3.current; 
+        $current = $this_TagOperator_3.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getFilterOperatorParserRuleCall_4()); 
+        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getUnTagOperatorParserRuleCall_4()); 
     }
-    this_FilterOperator_4=ruleFilterOperator
+    this_UnTagOperator_4=ruleUnTagOperator
     { 
-        $current = $this_FilterOperator_4.current; 
+        $current = $this_UnTagOperator_4.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getSplitOperatorParserRuleCall_5()); 
+        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getFilterOperatorParserRuleCall_5()); 
     }
-    this_SplitOperator_5=ruleSplitOperator
+    this_FilterOperator_5=ruleFilterOperator
     { 
-        $current = $this_SplitOperator_5.current; 
+        $current = $this_FilterOperator_5.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getCountOperatorParserRuleCall_6()); 
+        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getSplitOperatorParserRuleCall_6()); 
     }
-    this_CountOperator_6=ruleCountOperator
+    this_SplitOperator_6=ruleSplitOperator
     { 
-        $current = $this_CountOperator_6.current; 
+        $current = $this_SplitOperator_6.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getStandardDeviationOperatorParserRuleCall_7()); 
+        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getCountOperatorParserRuleCall_7()); 
     }
-    this_StandardDeviationOperator_7=ruleStandardDeviationOperator
+    this_CountOperator_7=ruleCountOperator
     { 
-        $current = $this_StandardDeviationOperator_7.current; 
+        $current = $this_CountOperator_7.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getAverageOperatorParserRuleCall_8()); 
+        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getStandardDeviationOperatorParserRuleCall_8()); 
     }
-    this_AverageOperator_8=ruleAverageOperator
+    this_StandardDeviationOperator_8=ruleStandardDeviationOperator
     { 
-        $current = $this_AverageOperator_8.current; 
+        $current = $this_StandardDeviationOperator_8.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getElementJoinOperatorParserRuleCall_9()); 
+        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getAverageOperatorParserRuleCall_9()); 
     }
-    this_ElementJoinOperator_9=ruleElementJoinOperator
+    this_AverageOperator_9=ruleAverageOperator
     { 
-        $current = $this_ElementJoinOperator_9.current; 
+        $current = $this_AverageOperator_9.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getMatchOperatorParserRuleCall_10()); 
+        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getElementJoinOperatorParserRuleCall_10()); 
     }
-    this_MatchOperator_10=ruleMatchOperator
+    this_ElementJoinOperator_10=ruleElementJoinOperator
     { 
-        $current = $this_MatchOperator_10.current; 
+        $current = $this_ElementJoinOperator_10.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getOCLOperatorParserRuleCall_11()); 
+        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getMatchOperatorParserRuleCall_11()); 
     }
-    this_OCLOperator_11=ruleOCLOperator
+    this_MatchOperator_11=ruleMatchOperator
     { 
-        $current = $this_OCLOperator_11.current; 
+        $current = $this_MatchOperator_11.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getSWRLOperatorParserRuleCall_12()); 
+        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getOCLOperatorParserRuleCall_12()); 
     }
-    this_SWRLOperator_12=ruleSWRLOperator
+    this_OCLOperator_12=ruleOCLOperator
     { 
-        $current = $this_SWRLOperator_12.current; 
+        $current = $this_OCLOperator_12.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getAdditionOperatorParserRuleCall_13()); 
+        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getSWRLOperatorParserRuleCall_13()); 
     }
-    this_AdditionOperator_13=ruleAdditionOperator
+    this_SWRLOperator_13=ruleSWRLOperator
     { 
-        $current = $this_AdditionOperator_13.current; 
+        $current = $this_SWRLOperator_13.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getSubtractionOperatorParserRuleCall_14()); 
+        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getAdditionOperatorParserRuleCall_14()); 
     }
-    this_SubtractionOperator_14=ruleSubtractionOperator
+    this_AdditionOperator_14=ruleAdditionOperator
     { 
-        $current = $this_SubtractionOperator_14.current; 
+        $current = $this_AdditionOperator_14.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getMultiplicationOperatorParserRuleCall_15()); 
+        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getSubtractionOperatorParserRuleCall_15()); 
     }
-    this_MultiplicationOperator_15=ruleMultiplicationOperator
+    this_SubtractionOperator_15=ruleSubtractionOperator
     { 
-        $current = $this_MultiplicationOperator_15.current; 
+        $current = $this_SubtractionOperator_15.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getDivisionOperatorParserRuleCall_16()); 
+        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getMultiplicationOperatorParserRuleCall_16()); 
     }
-    this_DivisionOperator_16=ruleDivisionOperator
+    this_MultiplicationOperator_16=ruleMultiplicationOperator
     { 
-        $current = $this_DivisionOperator_16.current; 
+        $current = $this_MultiplicationOperator_16.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getDivisionOperatorParserRuleCall_17()); 
+    }
+    this_DivisionOperator_17=ruleDivisionOperator
+    { 
+        $current = $this_DivisionOperator_17.current; 
         afterParserOrEnumRuleCall();
     }
 )

@@ -692,6 +692,50 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 
+	public class LogOperatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LogOperator");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLogKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cLocationAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cLocationSTRINGTerminalRuleCall_2_0 = (RuleCall)cLocationAssignment_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cFormatAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cFormatSTRINGTerminalRuleCall_4_0 = (RuleCall)cFormatAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//LogOperator:
+		//	"log" "(" location=STRING "," format=STRING ")";
+		public ParserRule getRule() { return rule; }
+
+		//"log" "(" location=STRING "," format=STRING ")"
+		public Group getGroup() { return cGroup; }
+
+		//"log"
+		public Keyword getLogKeyword_0() { return cLogKeyword_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//location=STRING
+		public Assignment getLocationAssignment_2() { return cLocationAssignment_2; }
+
+		//STRING
+		public RuleCall getLocationSTRINGTerminalRuleCall_2_0() { return cLocationSTRINGTerminalRuleCall_2_0; }
+
+		//","
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+
+		//format=STRING
+		public Assignment getFormatAssignment_4() { return cFormatAssignment_4; }
+
+		//STRING
+		public RuleCall getFormatSTRINGTerminalRuleCall_4_0() { return cFormatSTRINGTerminalRuleCall_4_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+	}
+
 	public class MatchOperatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MatchOperator");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -846,33 +890,34 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cInputOperatorParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cJoinOperatorParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cTagOperatorParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cUnTagOperatorParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cFilterOperatorParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cSplitOperatorParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cCountOperatorParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		private final RuleCall cStandardDeviationOperatorParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
-		private final RuleCall cAverageOperatorParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
-		private final RuleCall cElementJoinOperatorParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
-		private final RuleCall cMatchOperatorParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
-		private final RuleCall cOCLOperatorParserRuleCall_11 = (RuleCall)cAlternatives.eContents().get(11);
-		private final RuleCall cSWRLOperatorParserRuleCall_12 = (RuleCall)cAlternatives.eContents().get(12);
-		private final RuleCall cAdditionOperatorParserRuleCall_13 = (RuleCall)cAlternatives.eContents().get(13);
-		private final RuleCall cSubtractionOperatorParserRuleCall_14 = (RuleCall)cAlternatives.eContents().get(14);
-		private final RuleCall cMultiplicationOperatorParserRuleCall_15 = (RuleCall)cAlternatives.eContents().get(15);
-		private final RuleCall cDivisionOperatorParserRuleCall_16 = (RuleCall)cAlternatives.eContents().get(16);
+		private final RuleCall cLogOperatorParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cTagOperatorParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cUnTagOperatorParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cFilterOperatorParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cSplitOperatorParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cCountOperatorParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cStandardDeviationOperatorParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final RuleCall cAverageOperatorParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
+		private final RuleCall cElementJoinOperatorParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
+		private final RuleCall cMatchOperatorParserRuleCall_11 = (RuleCall)cAlternatives.eContents().get(11);
+		private final RuleCall cOCLOperatorParserRuleCall_12 = (RuleCall)cAlternatives.eContents().get(12);
+		private final RuleCall cSWRLOperatorParserRuleCall_13 = (RuleCall)cAlternatives.eContents().get(13);
+		private final RuleCall cAdditionOperatorParserRuleCall_14 = (RuleCall)cAlternatives.eContents().get(14);
+		private final RuleCall cSubtractionOperatorParserRuleCall_15 = (RuleCall)cAlternatives.eContents().get(15);
+		private final RuleCall cMultiplicationOperatorParserRuleCall_16 = (RuleCall)cAlternatives.eContents().get(16);
+		private final RuleCall cDivisionOperatorParserRuleCall_17 = (RuleCall)cAlternatives.eContents().get(17);
 		
 		/// **
 		// * The rule summarizes the operators which have a return type
 		// * / ReturnTypeOperator:
-		//	InputOperator | JoinOperator | TagOperator | UnTagOperator | FilterOperator | SplitOperator | CountOperator |
-		//	StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | OCLOperator | SWRLOperator |
-		//	AdditionOperator | SubtractionOperator | MultiplicationOperator | DivisionOperator;
+		//	InputOperator | JoinOperator | LogOperator | TagOperator | UnTagOperator | FilterOperator | SplitOperator |
+		//	CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | OCLOperator |
+		//	SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | DivisionOperator;
 		public ParserRule getRule() { return rule; }
 
-		//InputOperator | JoinOperator | TagOperator | UnTagOperator | FilterOperator | SplitOperator | CountOperator |
-		//StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | OCLOperator | SWRLOperator |
-		//AdditionOperator | SubtractionOperator | MultiplicationOperator | DivisionOperator
+		//InputOperator | JoinOperator | LogOperator | TagOperator | UnTagOperator | FilterOperator | SplitOperator |
+		//CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | OCLOperator |
+		//SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | DivisionOperator
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//InputOperator
@@ -881,50 +926,53 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//JoinOperator
 		public RuleCall getJoinOperatorParserRuleCall_1() { return cJoinOperatorParserRuleCall_1; }
 
+		//LogOperator
+		public RuleCall getLogOperatorParserRuleCall_2() { return cLogOperatorParserRuleCall_2; }
+
 		//TagOperator
-		public RuleCall getTagOperatorParserRuleCall_2() { return cTagOperatorParserRuleCall_2; }
+		public RuleCall getTagOperatorParserRuleCall_3() { return cTagOperatorParserRuleCall_3; }
 
 		//UnTagOperator
-		public RuleCall getUnTagOperatorParserRuleCall_3() { return cUnTagOperatorParserRuleCall_3; }
+		public RuleCall getUnTagOperatorParserRuleCall_4() { return cUnTagOperatorParserRuleCall_4; }
 
 		//FilterOperator
-		public RuleCall getFilterOperatorParserRuleCall_4() { return cFilterOperatorParserRuleCall_4; }
+		public RuleCall getFilterOperatorParserRuleCall_5() { return cFilterOperatorParserRuleCall_5; }
 
 		//SplitOperator
-		public RuleCall getSplitOperatorParserRuleCall_5() { return cSplitOperatorParserRuleCall_5; }
+		public RuleCall getSplitOperatorParserRuleCall_6() { return cSplitOperatorParserRuleCall_6; }
 
 		//CountOperator
-		public RuleCall getCountOperatorParserRuleCall_6() { return cCountOperatorParserRuleCall_6; }
+		public RuleCall getCountOperatorParserRuleCall_7() { return cCountOperatorParserRuleCall_7; }
 
 		//StandardDeviationOperator
-		public RuleCall getStandardDeviationOperatorParserRuleCall_7() { return cStandardDeviationOperatorParserRuleCall_7; }
+		public RuleCall getStandardDeviationOperatorParserRuleCall_8() { return cStandardDeviationOperatorParserRuleCall_8; }
 
 		//AverageOperator
-		public RuleCall getAverageOperatorParserRuleCall_8() { return cAverageOperatorParserRuleCall_8; }
+		public RuleCall getAverageOperatorParserRuleCall_9() { return cAverageOperatorParserRuleCall_9; }
 
 		//ElementJoinOperator
-		public RuleCall getElementJoinOperatorParserRuleCall_9() { return cElementJoinOperatorParserRuleCall_9; }
+		public RuleCall getElementJoinOperatorParserRuleCall_10() { return cElementJoinOperatorParserRuleCall_10; }
 
 		//MatchOperator
-		public RuleCall getMatchOperatorParserRuleCall_10() { return cMatchOperatorParserRuleCall_10; }
+		public RuleCall getMatchOperatorParserRuleCall_11() { return cMatchOperatorParserRuleCall_11; }
 
 		//OCLOperator
-		public RuleCall getOCLOperatorParserRuleCall_11() { return cOCLOperatorParserRuleCall_11; }
+		public RuleCall getOCLOperatorParserRuleCall_12() { return cOCLOperatorParserRuleCall_12; }
 
 		//SWRLOperator
-		public RuleCall getSWRLOperatorParserRuleCall_12() { return cSWRLOperatorParserRuleCall_12; }
+		public RuleCall getSWRLOperatorParserRuleCall_13() { return cSWRLOperatorParserRuleCall_13; }
 
 		//AdditionOperator
-		public RuleCall getAdditionOperatorParserRuleCall_13() { return cAdditionOperatorParserRuleCall_13; }
+		public RuleCall getAdditionOperatorParserRuleCall_14() { return cAdditionOperatorParserRuleCall_14; }
 
 		//SubtractionOperator
-		public RuleCall getSubtractionOperatorParserRuleCall_14() { return cSubtractionOperatorParserRuleCall_14; }
+		public RuleCall getSubtractionOperatorParserRuleCall_15() { return cSubtractionOperatorParserRuleCall_15; }
 
 		//MultiplicationOperator
-		public RuleCall getMultiplicationOperatorParserRuleCall_15() { return cMultiplicationOperatorParserRuleCall_15; }
+		public RuleCall getMultiplicationOperatorParserRuleCall_16() { return cMultiplicationOperatorParserRuleCall_16; }
 
 		//DivisionOperator
-		public RuleCall getDivisionOperatorParserRuleCall_16() { return cDivisionOperatorParserRuleCall_16; }
+		public RuleCall getDivisionOperatorParserRuleCall_17() { return cDivisionOperatorParserRuleCall_17; }
 	}
 
 	public class NoReturnTypeOperatorElements extends AbstractParserRuleElementFinder {
@@ -3200,6 +3248,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	private ElementJoinOperatorElements pElementJoinOperator;
 	private FilterOperatorElements pFilterOperator;
 	private SplitOperatorElements pSplitOperator;
+	private LogOperatorElements pLogOperator;
 	private MatchOperatorElements pMatchOperator;
 	private InputOperatorElements pInputOperator;
 	private ReturnTypeOperatorElements pReturnTypeOperator;
@@ -3454,6 +3503,16 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		return getSplitOperatorAccess().getRule();
 	}
 
+	//LogOperator:
+	//	"log" "(" location=STRING "," format=STRING ")";
+	public LogOperatorElements getLogOperatorAccess() {
+		return (pLogOperator != null) ? pLogOperator : (pLogOperator = new LogOperatorElements());
+	}
+	
+	public ParserRule getLogOperatorRule() {
+		return getLogOperatorAccess().getRule();
+	}
+
 	/// **
 	// * The MatchOperator rule joins two streams depending on a expression and does a calculation
 	// * based on a second expression.
@@ -3481,9 +3540,9 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	/// **
 	// * The rule summarizes the operators which have a return type
 	// * / ReturnTypeOperator:
-	//	InputOperator | JoinOperator | TagOperator | UnTagOperator | FilterOperator | SplitOperator | CountOperator |
-	//	StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | OCLOperator | SWRLOperator |
-	//	AdditionOperator | SubtractionOperator | MultiplicationOperator | DivisionOperator;
+	//	InputOperator | JoinOperator | LogOperator | TagOperator | UnTagOperator | FilterOperator | SplitOperator |
+	//	CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | OCLOperator |
+	//	SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | DivisionOperator;
 	public ReturnTypeOperatorElements getReturnTypeOperatorAccess() {
 		return (pReturnTypeOperator != null) ? pReturnTypeOperator : (pReturnTypeOperator = new ReturnTypeOperatorElements());
 	}

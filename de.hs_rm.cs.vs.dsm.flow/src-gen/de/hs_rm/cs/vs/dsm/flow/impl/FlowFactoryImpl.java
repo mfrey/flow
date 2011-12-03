@@ -82,6 +82,7 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.ELEMENT_JOIN_OPERATOR: return createElementJoinOperator();
       case FlowPackage.FILTER_OPERATOR: return createFilterOperator();
       case FlowPackage.SPLIT_OPERATOR: return createSplitOperator();
+      case FlowPackage.LOG_OPERATOR: return createLogOperator();
       case FlowPackage.MATCH_OPERATOR: return createMatchOperator();
       case FlowPackage.INPUT_OPERATOR: return createInputOperator();
       case FlowPackage.RETURN_TYPE_OPERATOR: return createReturnTypeOperator();
@@ -329,6 +330,17 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
   {
     SplitOperatorImpl splitOperator = new SplitOperatorImpl();
     return splitOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LogOperator createLogOperator()
+  {
+    LogOperatorImpl logOperator = new LogOperatorImpl();
+    return logOperator;
   }
 
   /**
