@@ -12,6 +12,8 @@ import de.hs_rm.cs.vs.dsm.flow.StreamDeclaration
 
 import de.hs_rm.cs.vs.dsm.flow.InputOperator
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator
+import de.hs_rm.cs.vs.dsm.flow.LogOperator
+
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement
 
 import de.hs_rm.cs.vs.dsm.flow.CountOperator
@@ -99,6 +101,8 @@ class FlowGenerator implements IGenerator {
 		«write((statement.operator as FilterOperator),statement)»
 		«ELSEIF statement.operator.eClass.name.equals("InputOperator")»
 		«write((statement.operator as InputOperator),statement)»
+		«ELSEIF statement.operator.eClass.name.equals("LogOperator")»
+		«write((statement.operator as LogOperator),statement)»
 		«ENDIF»
 	'''
 
@@ -174,10 +178,10 @@ class FlowGenerator implements IGenerator {
 	}
 	
 	def dispatch String write(InputOperator pOperator, StreamStatement pStatement){
-		var InputOperatorGenerator std = new InputOperatorGenerator(
+		var InputOperatorGenerator in = new InputOperatorGenerator(
 			pStatement
 		)
-		std.toString()
+		in.toString()
 	}
 	
 	
@@ -187,6 +191,13 @@ class FlowGenerator implements IGenerator {
     		o.toString();
     	}»
     '''  
+    
+    def dispatch String write(LogOperator pOperator, StreamStatement pStatement){
+		var LogOperatorGenerator log = new LogOperatorGenerator(
+			pStatement
+		)
+		log.toString()
+	}
     
     def dispatch String write(FilterOperator pOperator, StreamStatement pStatement){
 		var FilterOperatorGenerator filter = new FilterOperatorGenerator(
