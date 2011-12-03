@@ -15,6 +15,7 @@ import de.hs_rm.cs.vs.dsm.flow.OutputOperator
 import de.hs_rm.cs.vs.dsm.flow.LogOperator
 import de.hs_rm.cs.vs.dsm.flow.RandomOperator
 
+import de.hs_rm.cs.vs.dsm.flow.DecisionTreeOperator
 
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement
 
@@ -107,6 +108,8 @@ class FlowGenerator implements IGenerator {
 		«write((statement.operator as LogOperator),statement)»
 		«ELSEIF statement.operator.eClass.name.equals("RandomOperator")»
 		«write((statement.operator as RandomOperator),statement)»
+		«ELSEIF statement.operator.eClass.name.equals("DecisionTreeOperator")»
+		«write((statement.operator as DecisionTreeOperator),statement)»
 		«ENDIF»
 	'''
 
@@ -216,4 +219,11 @@ class FlowGenerator implements IGenerator {
 		)
 		filter.toString()
 	}   
+	
+	def dispatch String write(DecisionTreeOperator pOperator, StreamStatement pStatement){
+		var DecisionTreeOperatorGenerator dtree = new DecisionTreeOperatorGenerator(
+			pStatement
+		)
+		dtree.toString()
+	}
 }

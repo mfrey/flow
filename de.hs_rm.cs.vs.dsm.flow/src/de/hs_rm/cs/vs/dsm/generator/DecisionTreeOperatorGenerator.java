@@ -7,7 +7,7 @@ import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
  * 
  * @author Michael Frey 
  */
-public class DecisionTreeGenerator extends AbstractOperatorGenerator {
+public class DecisionTreeOperatorGenerator extends AbstractOperatorGenerator {
 	/** The type of the operator */
 	private final String OPERATOR_TYPE = "DecisionTree";
 	/** The decision tree operator */
@@ -15,7 +15,7 @@ public class DecisionTreeGenerator extends AbstractOperatorGenerator {
 	/** */
 	private String mStream;
 	
-	public DecisionTreeGenerator(final StreamStatement pStatement){
+	public DecisionTreeOperatorGenerator(final StreamStatement pStatement){
 		super(pStatement);
 		mOperator = (DecisionTreeOperator) pStatement.getOperator();
 	}
