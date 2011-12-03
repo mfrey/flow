@@ -158,6 +158,16 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
         return createRandomOperatorAdapter();
       }
       @Override
+      public Adapter caseDecisionTreeOperator(DecisionTreeOperator object)
+      {
+        return createDecisionTreeOperatorAdapter();
+      }
+      @Override
+      public Adapter caseDecisionTreeAttribute(DecisionTreeAttribute object)
+      {
+        return createDecisionTreeAttributeAdapter();
+      }
+      @Override
       public Adapter caseMatchOperator(MatchOperator object)
       {
         return createMatchOperatorAdapter();
@@ -690,6 +700,36 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRandomOperatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.DecisionTreeOperator <em>Decision Tree Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.hs_rm.cs.vs.dsm.flow.DecisionTreeOperator
+   * @generated
+   */
+  public Adapter createDecisionTreeOperatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.DecisionTreeAttribute <em>Decision Tree Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.hs_rm.cs.vs.dsm.flow.DecisionTreeAttribute
+   * @generated
+   */
+  public Adapter createDecisionTreeAttributeAdapter()
   {
     return null;
   }

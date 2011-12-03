@@ -16,6 +16,8 @@ import de.hs_rm.cs.vs.dsm.flow.ComplexDataType;
 import de.hs_rm.cs.vs.dsm.flow.ConsequentRule;
 import de.hs_rm.cs.vs.dsm.flow.CountOperator;
 import de.hs_rm.cs.vs.dsm.flow.DataType;
+import de.hs_rm.cs.vs.dsm.flow.DecisionTreeAttribute;
+import de.hs_rm.cs.vs.dsm.flow.DecisionTreeOperator;
 import de.hs_rm.cs.vs.dsm.flow.Div;
 import de.hs_rm.cs.vs.dsm.flow.DivisionOperator;
 import de.hs_rm.cs.vs.dsm.flow.ElementJoinOperator;
@@ -211,6 +213,20 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * @generated
    */
   private EClass randomOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass decisionTreeOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass decisionTreeAttributeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1109,6 +1125,96 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
   public EAttribute getRandomOperator_Sleep()
   {
     return (EAttribute)randomOperatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDecisionTreeOperator()
+  {
+    return decisionTreeOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDecisionTreeOperator_Attributes()
+  {
+    return (EReference)decisionTreeOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDecisionTreeOperator_Delta()
+  {
+    return (EAttribute)decisionTreeOperatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDecisionTreeOperator_Tau()
+  {
+    return (EAttribute)decisionTreeOperatorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDecisionTreeOperator_Barrier()
+  {
+    return (EAttribute)decisionTreeOperatorEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDecisionTreeOperator_Frequency()
+  {
+    return (EAttribute)decisionTreeOperatorEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDecisionTreeAttribute()
+  {
+    return decisionTreeAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDecisionTreeAttribute_Key()
+  {
+    return (EAttribute)decisionTreeAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDecisionTreeAttribute_Value()
+  {
+    return (EAttribute)decisionTreeAttributeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2581,6 +2687,17 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     createEAttribute(randomOperatorEClass, RANDOM_OPERATOR__MAXIMUM);
     createEAttribute(randomOperatorEClass, RANDOM_OPERATOR__SLEEP);
 
+    decisionTreeOperatorEClass = createEClass(DECISION_TREE_OPERATOR);
+    createEReference(decisionTreeOperatorEClass, DECISION_TREE_OPERATOR__ATTRIBUTES);
+    createEAttribute(decisionTreeOperatorEClass, DECISION_TREE_OPERATOR__DELTA);
+    createEAttribute(decisionTreeOperatorEClass, DECISION_TREE_OPERATOR__TAU);
+    createEAttribute(decisionTreeOperatorEClass, DECISION_TREE_OPERATOR__BARRIER);
+    createEAttribute(decisionTreeOperatorEClass, DECISION_TREE_OPERATOR__FREQUENCY);
+
+    decisionTreeAttributeEClass = createEClass(DECISION_TREE_ATTRIBUTE);
+    createEAttribute(decisionTreeAttributeEClass, DECISION_TREE_ATTRIBUTE__KEY);
+    createEAttribute(decisionTreeAttributeEClass, DECISION_TREE_ATTRIBUTE__VALUE);
+
     matchOperatorEClass = createEClass(MATCH_OPERATOR);
     createEReference(matchOperatorEClass, MATCH_OPERATOR__EXPRESSION);
     createEReference(matchOperatorEClass, MATCH_OPERATOR__CALCULATION);
@@ -2821,6 +2938,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     splitOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     logOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     randomOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
+    decisionTreeOperatorEClass.getESuperTypes().add(this.getModelElement());
     matchOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     inputOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     noReturnTypeOperatorEClass.getESuperTypes().add(this.getModelElement());
@@ -2922,6 +3040,17 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEClass(randomOperatorEClass, RandomOperator.class, "RandomOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRandomOperator_Maximum(), ecorePackage.getEBigDecimal(), "maximum", null, 0, 1, RandomOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRandomOperator_Sleep(), ecorePackage.getEBigDecimal(), "sleep", null, 0, 1, RandomOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(decisionTreeOperatorEClass, DecisionTreeOperator.class, "DecisionTreeOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDecisionTreeOperator_Attributes(), this.getDecisionTreeAttribute(), null, "attributes", null, 0, -1, DecisionTreeOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDecisionTreeOperator_Delta(), ecorePackage.getEBigDecimal(), "delta", null, 0, 1, DecisionTreeOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDecisionTreeOperator_Tau(), ecorePackage.getEBigDecimal(), "tau", null, 0, 1, DecisionTreeOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDecisionTreeOperator_Barrier(), ecorePackage.getEBigDecimal(), "barrier", null, 0, 1, DecisionTreeOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDecisionTreeOperator_Frequency(), ecorePackage.getEBigDecimal(), "frequency", null, 0, 1, DecisionTreeOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(decisionTreeAttributeEClass, DecisionTreeAttribute.class, "DecisionTreeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDecisionTreeAttribute_Key(), ecorePackage.getEString(), "key", null, 0, 1, DecisionTreeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDecisionTreeAttribute_Value(), ecorePackage.getEString(), "value", null, 0, -1, DecisionTreeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(matchOperatorEClass, MatchOperator.class, "MatchOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMatchOperator_Expression(), this.getExpression(), null, "expression", null, 0, 1, MatchOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

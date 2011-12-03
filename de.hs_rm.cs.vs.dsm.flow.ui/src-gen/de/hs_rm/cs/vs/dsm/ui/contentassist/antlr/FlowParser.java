@@ -77,6 +77,10 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSplitOperatorAccess().getGroup(), "rule__SplitOperator__Group__0");
 					put(grammarAccess.getLogOperatorAccess().getGroup(), "rule__LogOperator__Group__0");
 					put(grammarAccess.getRandomOperatorAccess().getGroup(), "rule__RandomOperator__Group__0");
+					put(grammarAccess.getDecisionTreeOperatorAccess().getGroup(), "rule__DecisionTreeOperator__Group__0");
+					put(grammarAccess.getDecisionTreeOperatorAccess().getGroup_4(), "rule__DecisionTreeOperator__Group_4__0");
+					put(grammarAccess.getDecisionTreeAttributeAccess().getGroup(), "rule__DecisionTreeAttribute__Group__0");
+					put(grammarAccess.getDecisionTreeAttributeAccess().getGroup_3(), "rule__DecisionTreeAttribute__Group_3__0");
 					put(grammarAccess.getMatchOperatorAccess().getGroup(), "rule__MatchOperator__Group__0");
 					put(grammarAccess.getMatchOperatorAccess().getGroup_7(), "rule__MatchOperator__Group_7__0");
 					put(grammarAccess.getInputOperatorAccess().getGroup(), "rule__InputOperator__Group__0");
@@ -176,6 +180,15 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLogOperatorAccess().getFormatAssignment_4(), "rule__LogOperator__FormatAssignment_4");
 					put(grammarAccess.getRandomOperatorAccess().getMaximumAssignment_2(), "rule__RandomOperator__MaximumAssignment_2");
 					put(grammarAccess.getRandomOperatorAccess().getSleepAssignment_4(), "rule__RandomOperator__SleepAssignment_4");
+					put(grammarAccess.getDecisionTreeOperatorAccess().getAttributesAssignment_2(), "rule__DecisionTreeOperator__AttributesAssignment_2");
+					put(grammarAccess.getDecisionTreeOperatorAccess().getAttributesAssignment_4_0(), "rule__DecisionTreeOperator__AttributesAssignment_4_0");
+					put(grammarAccess.getDecisionTreeOperatorAccess().getDeltaAssignment_5(), "rule__DecisionTreeOperator__DeltaAssignment_5");
+					put(grammarAccess.getDecisionTreeOperatorAccess().getTauAssignment_7(), "rule__DecisionTreeOperator__TauAssignment_7");
+					put(grammarAccess.getDecisionTreeOperatorAccess().getBarrierAssignment_9(), "rule__DecisionTreeOperator__BarrierAssignment_9");
+					put(grammarAccess.getDecisionTreeOperatorAccess().getFrequencyAssignment_11(), "rule__DecisionTreeOperator__FrequencyAssignment_11");
+					put(grammarAccess.getDecisionTreeAttributeAccess().getKeyAssignment_0(), "rule__DecisionTreeAttribute__KeyAssignment_0");
+					put(grammarAccess.getDecisionTreeAttributeAccess().getValueAssignment_2(), "rule__DecisionTreeAttribute__ValueAssignment_2");
+					put(grammarAccess.getDecisionTreeAttributeAccess().getValueAssignment_3_1(), "rule__DecisionTreeAttribute__ValueAssignment_3_1");
 					put(grammarAccess.getMatchOperatorAccess().getExpressionAssignment_2(), "rule__MatchOperator__ExpressionAssignment_2");
 					put(grammarAccess.getMatchOperatorAccess().getCalculationAssignment_4(), "rule__MatchOperator__CalculationAssignment_4");
 					put(grammarAccess.getMatchOperatorAccess().getStreamAssignment_6(), "rule__MatchOperator__StreamAssignment_6");

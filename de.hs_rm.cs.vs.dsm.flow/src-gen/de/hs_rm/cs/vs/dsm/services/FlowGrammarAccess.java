@@ -82,20 +82,21 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPackageDeclarationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cImportParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cStructureDeclarationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cStreamDeclarationParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cVariableDefinitionParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cStreamStatementParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cStreamDefinitionParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		private final RuleCall cStreamAccessParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
-		private final RuleCall cNoReturnTypeOperatorParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final RuleCall cDecisionTreeOperatorParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cStreamDeclarationParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cVariableDefinitionParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cStreamStatementParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cStreamDefinitionParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cStreamAccessParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final RuleCall cNoReturnTypeOperatorParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		
 		//ModelElement:
-		//	PackageDeclaration | Import | StructureDeclaration | StreamDeclaration | VariableDefinition | StreamStatement |
-		//	StreamDefinition | StreamAccess | NoReturnTypeOperator;
+		//	PackageDeclaration | Import | StructureDeclaration | DecisionTreeOperator | StreamDeclaration | VariableDefinition |
+		//	StreamStatement | StreamDefinition | StreamAccess | NoReturnTypeOperator;
 		public ParserRule getRule() { return rule; }
 
-		//PackageDeclaration | Import | StructureDeclaration | StreamDeclaration | VariableDefinition | StreamStatement |
-		//StreamDefinition | StreamAccess | NoReturnTypeOperator
+		//PackageDeclaration | Import | StructureDeclaration | DecisionTreeOperator | StreamDeclaration | VariableDefinition |
+		//StreamStatement | StreamDefinition | StreamAccess | NoReturnTypeOperator
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//PackageDeclaration
@@ -107,23 +108,26 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//StructureDeclaration
 		public RuleCall getStructureDeclarationParserRuleCall_2() { return cStructureDeclarationParserRuleCall_2; }
 
+		//DecisionTreeOperator
+		public RuleCall getDecisionTreeOperatorParserRuleCall_3() { return cDecisionTreeOperatorParserRuleCall_3; }
+
 		//StreamDeclaration
-		public RuleCall getStreamDeclarationParserRuleCall_3() { return cStreamDeclarationParserRuleCall_3; }
+		public RuleCall getStreamDeclarationParserRuleCall_4() { return cStreamDeclarationParserRuleCall_4; }
 
 		//VariableDefinition
-		public RuleCall getVariableDefinitionParserRuleCall_4() { return cVariableDefinitionParserRuleCall_4; }
+		public RuleCall getVariableDefinitionParserRuleCall_5() { return cVariableDefinitionParserRuleCall_5; }
 
 		//StreamStatement
-		public RuleCall getStreamStatementParserRuleCall_5() { return cStreamStatementParserRuleCall_5; }
+		public RuleCall getStreamStatementParserRuleCall_6() { return cStreamStatementParserRuleCall_6; }
 
 		//StreamDefinition
-		public RuleCall getStreamDefinitionParserRuleCall_6() { return cStreamDefinitionParserRuleCall_6; }
+		public RuleCall getStreamDefinitionParserRuleCall_7() { return cStreamDefinitionParserRuleCall_7; }
 
 		//StreamAccess
-		public RuleCall getStreamAccessParserRuleCall_7() { return cStreamAccessParserRuleCall_7; }
+		public RuleCall getStreamAccessParserRuleCall_8() { return cStreamAccessParserRuleCall_8; }
 
 		//NoReturnTypeOperator
-		public RuleCall getNoReturnTypeOperatorParserRuleCall_8() { return cNoReturnTypeOperatorParserRuleCall_8; }
+		public RuleCall getNoReturnTypeOperatorParserRuleCall_9() { return cNoReturnTypeOperatorParserRuleCall_9; }
 	}
 
 	public class ImportElements extends AbstractParserRuleElementFinder {
@@ -778,6 +782,156 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 
 		//")"
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+	}
+
+	public class DecisionTreeOperatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DecisionTreeOperator");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDtreeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cAttributesAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cAttributesDecisionTreeAttributeParserRuleCall_2_0 = (RuleCall)cAttributesAssignment_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Assignment cAttributesAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
+		private final RuleCall cAttributesDecisionTreeAttributeParserRuleCall_4_0_0 = (RuleCall)cAttributesAssignment_4_0.eContents().get(0);
+		private final Keyword cCommaKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cDeltaAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cDeltaNUMBERTerminalRuleCall_5_0 = (RuleCall)cDeltaAssignment_5.eContents().get(0);
+		private final Keyword cCommaKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cTauAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cTauNUMBERTerminalRuleCall_7_0 = (RuleCall)cTauAssignment_7.eContents().get(0);
+		private final Keyword cCommaKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cBarrierAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cBarrierNUMBERTerminalRuleCall_9_0 = (RuleCall)cBarrierAssignment_9.eContents().get(0);
+		private final Keyword cCommaKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cFrequencyAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cFrequencyNUMBERTerminalRuleCall_11_0 = (RuleCall)cFrequencyAssignment_11.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		
+		//DecisionTreeOperator:
+		//	"dtree" "(" attributes+=DecisionTreeAttribute "," (attributes+=DecisionTreeAttribute ",")* delta=NUMBER "," tau=NUMBER
+		//	"," barrier=NUMBER "," frequency=NUMBER ")";
+		public ParserRule getRule() { return rule; }
+
+		//"dtree" "(" attributes+=DecisionTreeAttribute "," (attributes+=DecisionTreeAttribute ",")* delta=NUMBER "," tau=NUMBER
+		//"," barrier=NUMBER "," frequency=NUMBER ")"
+		public Group getGroup() { return cGroup; }
+
+		//"dtree"
+		public Keyword getDtreeKeyword_0() { return cDtreeKeyword_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//attributes+=DecisionTreeAttribute
+		public Assignment getAttributesAssignment_2() { return cAttributesAssignment_2; }
+
+		//DecisionTreeAttribute
+		public RuleCall getAttributesDecisionTreeAttributeParserRuleCall_2_0() { return cAttributesDecisionTreeAttributeParserRuleCall_2_0; }
+
+		//","
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+
+		//(attributes+=DecisionTreeAttribute ",")*
+		public Group getGroup_4() { return cGroup_4; }
+
+		//attributes+=DecisionTreeAttribute
+		public Assignment getAttributesAssignment_4_0() { return cAttributesAssignment_4_0; }
+
+		//DecisionTreeAttribute
+		public RuleCall getAttributesDecisionTreeAttributeParserRuleCall_4_0_0() { return cAttributesDecisionTreeAttributeParserRuleCall_4_0_0; }
+
+		//","
+		public Keyword getCommaKeyword_4_1() { return cCommaKeyword_4_1; }
+
+		//delta=NUMBER
+		public Assignment getDeltaAssignment_5() { return cDeltaAssignment_5; }
+
+		//NUMBER
+		public RuleCall getDeltaNUMBERTerminalRuleCall_5_0() { return cDeltaNUMBERTerminalRuleCall_5_0; }
+
+		//","
+		public Keyword getCommaKeyword_6() { return cCommaKeyword_6; }
+
+		//tau=NUMBER
+		public Assignment getTauAssignment_7() { return cTauAssignment_7; }
+
+		//NUMBER
+		public RuleCall getTauNUMBERTerminalRuleCall_7_0() { return cTauNUMBERTerminalRuleCall_7_0; }
+
+		//","
+		public Keyword getCommaKeyword_8() { return cCommaKeyword_8; }
+
+		//barrier=NUMBER
+		public Assignment getBarrierAssignment_9() { return cBarrierAssignment_9; }
+
+		//NUMBER
+		public RuleCall getBarrierNUMBERTerminalRuleCall_9_0() { return cBarrierNUMBERTerminalRuleCall_9_0; }
+
+		//","
+		public Keyword getCommaKeyword_10() { return cCommaKeyword_10; }
+
+		//frequency=NUMBER
+		public Assignment getFrequencyAssignment_11() { return cFrequencyAssignment_11; }
+
+		//NUMBER
+		public RuleCall getFrequencyNUMBERTerminalRuleCall_11_0() { return cFrequencyNUMBERTerminalRuleCall_11_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_12() { return cRightParenthesisKeyword_12; }
+	}
+
+	public class DecisionTreeAttributeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DecisionTreeAttribute");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cKeyAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cKeySTRINGTerminalRuleCall_0_0 = (RuleCall)cKeyAssignment_0.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueSTRINGTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cValueAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cValueAssignment_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//DecisionTreeAttribute:
+		//	key=STRING "{" value+=STRING ("," value+=STRING)* "}";
+		public ParserRule getRule() { return rule; }
+
+		//key=STRING "{" value+=STRING ("," value+=STRING)* "}"
+		public Group getGroup() { return cGroup; }
+
+		//key=STRING
+		public Assignment getKeyAssignment_0() { return cKeyAssignment_0; }
+
+		//STRING
+		public RuleCall getKeySTRINGTerminalRuleCall_0_0() { return cKeySTRINGTerminalRuleCall_0_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+
+		//value+=STRING
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_2_0() { return cValueSTRINGTerminalRuleCall_2_0; }
+
+		//("," value+=STRING)*
+		public Group getGroup_3() { return cGroup_3; }
+
+		//","
+		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+
+		//value+=STRING
+		public Assignment getValueAssignment_3_1() { return cValueAssignment_3_1; }
+
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_3_1_0() { return cValueSTRINGTerminalRuleCall_3_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 
 	public class MatchOperatorElements extends AbstractParserRuleElementFinder {
@@ -3216,6 +3370,8 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	private SplitOperatorElements pSplitOperator;
 	private LogOperatorElements pLogOperator;
 	private RandomOperatorElements pRandomOperator;
+	private DecisionTreeOperatorElements pDecisionTreeOperator;
+	private DecisionTreeAttributeElements pDecisionTreeAttribute;
 	private MatchOperatorElements pMatchOperator;
 	private InputOperatorElements pInputOperator;
 	private ReturnTypeOperatorElements pReturnTypeOperator;
@@ -3318,8 +3474,8 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ModelElement:
-	//	PackageDeclaration | Import | StructureDeclaration | StreamDeclaration | VariableDefinition | StreamStatement |
-	//	StreamDefinition | StreamAccess | NoReturnTypeOperator;
+	//	PackageDeclaration | Import | StructureDeclaration | DecisionTreeOperator | StreamDeclaration | VariableDefinition |
+	//	StreamStatement | StreamDefinition | StreamAccess | NoReturnTypeOperator;
 	public ModelElementElements getModelElementAccess() {
 		return (pModelElement != null) ? pModelElement : (pModelElement = new ModelElementElements());
 	}
@@ -3487,6 +3643,27 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getRandomOperatorRule() {
 		return getRandomOperatorAccess().getRule();
+	}
+
+	//DecisionTreeOperator:
+	//	"dtree" "(" attributes+=DecisionTreeAttribute "," (attributes+=DecisionTreeAttribute ",")* delta=NUMBER "," tau=NUMBER
+	//	"," barrier=NUMBER "," frequency=NUMBER ")";
+	public DecisionTreeOperatorElements getDecisionTreeOperatorAccess() {
+		return (pDecisionTreeOperator != null) ? pDecisionTreeOperator : (pDecisionTreeOperator = new DecisionTreeOperatorElements());
+	}
+	
+	public ParserRule getDecisionTreeOperatorRule() {
+		return getDecisionTreeOperatorAccess().getRule();
+	}
+
+	//DecisionTreeAttribute:
+	//	key=STRING "{" value+=STRING ("," value+=STRING)* "}";
+	public DecisionTreeAttributeElements getDecisionTreeAttributeAccess() {
+		return (pDecisionTreeAttribute != null) ? pDecisionTreeAttribute : (pDecisionTreeAttribute = new DecisionTreeAttributeElements());
+	}
+	
+	public ParserRule getDecisionTreeAttributeRule() {
+		return getDecisionTreeAttributeAccess().getRule();
 	}
 
 	/// **

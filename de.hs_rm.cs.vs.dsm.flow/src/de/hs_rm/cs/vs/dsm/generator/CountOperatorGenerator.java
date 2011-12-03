@@ -20,6 +20,8 @@ public class CountOperatorGenerator extends AbstractOperatorGenerator {
 	private final String OPERATOR_TYPE = "MessageCounter";
 	/** The internal representation of the count operator */
 	private CountOperator mOperator = null;
+	/***/
+	private String mStream;
 	
 	public CountOperatorGenerator(final StreamStatement pStatement){
 		// Call the constructor of the abstract operator class
@@ -36,12 +38,15 @@ public class CountOperatorGenerator extends AbstractOperatorGenerator {
 	@Override
 	public String initializeOperator() {
 		if(this.getOutputStreams().size() == 1){
-			return Util.getInstance().createOperator(OPERATOR_TYPE, this.getOutputStreams().get(0));
+			mStream = this.getOutputStreams().get(0);
+			return Util.getInstance().createOperator(OPERATOR_TYPE, mStream);
 		}else if(this.getOutputStreams().size() > 1){
-			return Util.getInstance().createOperator(OPERATOR_TYPE, "stream" + this.getInputStreams().hashCode() + "");
+			mStream = "stream" + this.getInputStreams().hashCode();
+			return Util.getInstance().createOperator(OPERATOR_TYPE, mStream);
 		}else{
 			return "Error in initializeOperator() in class CountOperatorGenerator";
-		}	}
+		}	
+	}
 
 	/**
 	 * {@inheritDoc} 

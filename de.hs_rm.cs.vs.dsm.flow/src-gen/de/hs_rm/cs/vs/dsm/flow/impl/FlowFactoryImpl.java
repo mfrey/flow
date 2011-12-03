@@ -84,6 +84,8 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.SPLIT_OPERATOR: return createSplitOperator();
       case FlowPackage.LOG_OPERATOR: return createLogOperator();
       case FlowPackage.RANDOM_OPERATOR: return createRandomOperator();
+      case FlowPackage.DECISION_TREE_OPERATOR: return createDecisionTreeOperator();
+      case FlowPackage.DECISION_TREE_ATTRIBUTE: return createDecisionTreeAttribute();
       case FlowPackage.MATCH_OPERATOR: return createMatchOperator();
       case FlowPackage.INPUT_OPERATOR: return createInputOperator();
       case FlowPackage.RETURN_TYPE_OPERATOR: return createReturnTypeOperator();
@@ -352,6 +354,28 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
   {
     RandomOperatorImpl randomOperator = new RandomOperatorImpl();
     return randomOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DecisionTreeOperator createDecisionTreeOperator()
+  {
+    DecisionTreeOperatorImpl decisionTreeOperator = new DecisionTreeOperatorImpl();
+    return decisionTreeOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DecisionTreeAttribute createDecisionTreeAttribute()
+  {
+    DecisionTreeAttributeImpl decisionTreeAttribute = new DecisionTreeAttributeImpl();
+    return decisionTreeAttribute;
   }
 
   /**

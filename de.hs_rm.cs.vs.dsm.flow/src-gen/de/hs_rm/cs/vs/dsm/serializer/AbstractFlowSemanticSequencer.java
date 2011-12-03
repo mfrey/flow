@@ -10,6 +10,8 @@ import de.hs_rm.cs.vs.dsm.flow.BooleanOperation;
 import de.hs_rm.cs.vs.dsm.flow.BooleanVariableDefinition;
 import de.hs_rm.cs.vs.dsm.flow.ConsequentRule;
 import de.hs_rm.cs.vs.dsm.flow.CountOperator;
+import de.hs_rm.cs.vs.dsm.flow.DecisionTreeAttribute;
+import de.hs_rm.cs.vs.dsm.flow.DecisionTreeOperator;
 import de.hs_rm.cs.vs.dsm.flow.Div;
 import de.hs_rm.cs.vs.dsm.flow.DivisionOperator;
 import de.hs_rm.cs.vs.dsm.flow.ElementJoinOperator;
@@ -169,6 +171,19 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				if(context == grammarAccess.getCountOperatorRule() ||
 				   context == grammarAccess.getReturnTypeOperatorRule()) {
 					sequence_CountOperator(context, (CountOperator) semanticObject); 
+					return; 
+				}
+				else break;
+			case FlowPackage.DECISION_TREE_ATTRIBUTE:
+				if(context == grammarAccess.getDecisionTreeAttributeRule()) {
+					sequence_DecisionTreeAttribute(context, (DecisionTreeAttribute) semanticObject); 
+					return; 
+				}
+				else break;
+			case FlowPackage.DECISION_TREE_OPERATOR:
+				if(context == grammarAccess.getDecisionTreeOperatorRule() ||
+				   context == grammarAccess.getModelElementRule()) {
+					sequence_DecisionTreeOperator(context, (DecisionTreeOperator) semanticObject); 
 					return; 
 				}
 				else break;
@@ -852,6 +867,42 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 * Features:
 	 */
 	protected void sequence_DataType(EObject context, StringDataType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (key=STRING value+=STRING value+=STRING*)
+	 *
+	 * Features:
+	 *    key[1, 1]
+	 *    value[1, *]
+	 */
+	protected void sequence_DecisionTreeAttribute(EObject context, DecisionTreeAttribute semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         attributes+=DecisionTreeAttribute 
+	 *         attributes+=DecisionTreeAttribute* 
+	 *         delta=NUMBER 
+	 *         tau=NUMBER 
+	 *         barrier=NUMBER 
+	 *         frequency=NUMBER
+	 *     )
+	 *
+	 * Features:
+	 *    attributes[1, *]
+	 *    delta[1, 1]
+	 *    tau[1, 1]
+	 *    barrier[1, 1]
+	 *    frequency[1, 1]
+	 */
+	protected void sequence_DecisionTreeOperator(EObject context, DecisionTreeOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

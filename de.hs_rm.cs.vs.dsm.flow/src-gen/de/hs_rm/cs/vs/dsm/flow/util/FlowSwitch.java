@@ -199,6 +199,21 @@ public class FlowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case FlowPackage.DECISION_TREE_OPERATOR:
+      {
+        DecisionTreeOperator decisionTreeOperator = (DecisionTreeOperator)theEObject;
+        T result = caseDecisionTreeOperator(decisionTreeOperator);
+        if (result == null) result = caseModelElement(decisionTreeOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowPackage.DECISION_TREE_ATTRIBUTE:
+      {
+        DecisionTreeAttribute decisionTreeAttribute = (DecisionTreeAttribute)theEObject;
+        T result = caseDecisionTreeAttribute(decisionTreeAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case FlowPackage.MATCH_OPERATOR:
       {
         MatchOperator matchOperator = (MatchOperator)theEObject;
@@ -888,6 +903,38 @@ public class FlowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRandomOperator(RandomOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Decision Tree Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Decision Tree Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDecisionTreeOperator(DecisionTreeOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Decision Tree Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Decision Tree Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDecisionTreeAttribute(DecisionTreeAttribute object)
   {
     return null;
   }

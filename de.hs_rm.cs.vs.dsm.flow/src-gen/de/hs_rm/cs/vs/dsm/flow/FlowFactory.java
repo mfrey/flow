@@ -170,6 +170,24 @@ public interface FlowFactory extends EFactory
   RandomOperator createRandomOperator();
 
   /**
+   * Returns a new object of class '<em>Decision Tree Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Decision Tree Operator</em>'.
+   * @generated
+   */
+  DecisionTreeOperator createDecisionTreeOperator();
+
+  /**
+   * Returns a new object of class '<em>Decision Tree Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Decision Tree Attribute</em>'.
+   * @generated
+   */
+  DecisionTreeAttribute createDecisionTreeAttribute();
+
+  /**
    * Returns a new object of class '<em>Match Operator</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

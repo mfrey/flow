@@ -25,7 +25,7 @@ NOTES
 2. Operators:
 	- (arithmetic) expressions are written with the corresponding operator, e.g. add(...); 
 	- operators which should be tested in terms of generated code are: avg, std, count, add, sub, 
-        div, multi, join, split, in, out
+        div, multi, join, split, in, out, log, rand
 
 3. Examples:
 	- there is a examples/ directory for a few examples of operators and generated code

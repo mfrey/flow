@@ -24,7 +24,7 @@ PackageDeclaration:
 	'}';
 
 ModelElement:
-	PackageDeclaration | Import | StructureDeclaration | 
+	PackageDeclaration | Import | StructureDeclaration | DecisionTreeOperator |
 	StreamDeclaration | VariableDefinition | StreamStatement | StreamDefinition | StreamAccess  | 
 	NoReturnTypeOperator;
 	
@@ -110,6 +110,13 @@ LogOperator:
 
 RandomOperator:
 	'rand' '('maximum=NUMBER ',' sleep=NUMBER ')';
+
+DecisionTreeOperator:
+	'dtree' '('attributes+=DecisionTreeAttribute ',' (attributes+=DecisionTreeAttribute ',')* delta=NUMBER ',' tau=NUMBER ',' barrier= NUMBER ',' frequency= NUMBER ')';
+	
+DecisionTreeAttribute:
+	key = STRING '{' value+=STRING (',' value+=STRING)* '}';
+	
 
 /**
  * The MatchOperator rule joins two streams depending on a expression and does a calculation
