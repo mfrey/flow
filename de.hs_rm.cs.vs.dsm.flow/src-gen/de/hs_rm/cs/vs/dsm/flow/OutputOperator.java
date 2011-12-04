@@ -28,7 +28,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface OutputOperator extends NoReturnTypeOperator
+public interface OutputOperator extends ReturnTypeOperator
 {
   /**
    * Returns the value of the '<em><b>Stream</b></em>' containment reference.

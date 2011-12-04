@@ -599,34 +599,6 @@ finally {
 
 
 
-// Entry rule entryRuleNoReturnTypeOperator
-entryRuleNoReturnTypeOperator 
-:
-{ before(grammarAccess.getNoReturnTypeOperatorRule()); }
-	 ruleNoReturnTypeOperator
-{ after(grammarAccess.getNoReturnTypeOperatorRule()); } 
-	 EOF 
-;
-
-// Rule NoReturnTypeOperator
-ruleNoReturnTypeOperator
-    @init {
-		int stackSize = keepStackSize();
-    }
-	:
-(
-{ before(grammarAccess.getNoReturnTypeOperatorAccess().getOutputOperatorParserRuleCall()); }
-	ruleOutputOperator
-{ after(grammarAccess.getNoReturnTypeOperatorAccess().getOutputOperatorParserRuleCall()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
 // Entry rule entryRuleTagOperator
 entryRuleTagOperator 
 :
@@ -2108,12 +2080,6 @@ rule__ModelElement__Alternatives
 { after(grammarAccess.getModelElementAccess().getStreamAccessParserRuleCall_8()); }
 )
 
-    |(
-{ before(grammarAccess.getModelElementAccess().getNoReturnTypeOperatorParserRuleCall_9()); }
-	ruleNoReturnTypeOperator
-{ after(grammarAccess.getModelElementAccess().getNoReturnTypeOperatorParserRuleCall_9()); }
-)
-
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -2258,6 +2224,12 @@ rule__ReturnTypeOperator__Alternatives
 { before(grammarAccess.getReturnTypeOperatorAccess().getDivisionOperatorParserRuleCall_18()); }
 	ruleDivisionOperator
 { after(grammarAccess.getReturnTypeOperatorAccess().getDivisionOperatorParserRuleCall_18()); }
+)
+
+    |(
+{ before(grammarAccess.getReturnTypeOperatorAccess().getOutputOperatorParserRuleCall_19()); }
+	ruleOutputOperator
+{ after(grammarAccess.getReturnTypeOperatorAccess().getOutputOperatorParserRuleCall_19()); }
 )
 
 ;

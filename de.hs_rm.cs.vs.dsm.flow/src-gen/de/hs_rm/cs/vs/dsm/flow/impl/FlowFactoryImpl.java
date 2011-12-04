@@ -89,7 +89,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.MATCH_OPERATOR: return createMatchOperator();
       case FlowPackage.INPUT_OPERATOR: return createInputOperator();
       case FlowPackage.RETURN_TYPE_OPERATOR: return createReturnTypeOperator();
-      case FlowPackage.NO_RETURN_TYPE_OPERATOR: return createNoReturnTypeOperator();
       case FlowPackage.TAG_OPERATOR: return createTagOperator();
       case FlowPackage.NEW_TAG_OPERATOR: return createNewTagOperator();
       case FlowPackage.QUERY_TAG_OPERATOR: return createQueryTagOperator();
@@ -410,17 +409,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
   {
     ReturnTypeOperatorImpl returnTypeOperator = new ReturnTypeOperatorImpl();
     return returnTypeOperator;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NoReturnTypeOperator createNoReturnTypeOperator()
-  {
-    NoReturnTypeOperatorImpl noReturnTypeOperator = new NoReturnTypeOperatorImpl();
-    return noReturnTypeOperator;
   }
 
   /**

@@ -183,11 +183,6 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
         return createReturnTypeOperatorAdapter();
       }
       @Override
-      public Adapter caseNoReturnTypeOperator(NoReturnTypeOperator object)
-      {
-        return createNoReturnTypeOperatorAdapter();
-      }
-      @Override
       public Adapter caseTagOperator(TagOperator object)
       {
         return createTagOperatorAdapter();
@@ -780,21 +775,6 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createReturnTypeOperatorAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.NoReturnTypeOperator <em>No Return Type Operator</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.NoReturnTypeOperator
-   * @generated
-   */
-  public Adapter createNoReturnTypeOperatorAdapter()
   {
     return null;
   }

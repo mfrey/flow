@@ -71,11 +71,7 @@ class FlowGenerator implements IGenerator {
       «{ Util::instance.stopOperators }»
     '''
     
-    def compile(ModelElement m)'''
-    	«IF m.eClass.name.equals("OutputOperator")»
-    	«(m as OutputOperator).compile»
-    	«ENDIF»
-    	
+    def compile(ModelElement m)'''  	
     	«IF m.eClass.name.equals("StreamStatement")»
     	«(m as StreamStatement).compile»
     	«ENDIF»
@@ -114,6 +110,8 @@ class FlowGenerator implements IGenerator {
 		«write((statement.operator as DecisionTreeOperator),statement)»
 		«ELSEIF statement.operator.eClass.name.equals("ModuloOperator")»
 		«write((statement.operator as ModuloOperator),statement)»
+		«ELSEIF statement.operator.eClass.name.equals("OutputOperator")»
+		«write((statement.operator as OutputOperator),statement)»
 		«ENDIF»
 	'''
 
@@ -196,9 +194,9 @@ class FlowGenerator implements IGenerator {
 	}
 	
 	
-    def compile(OutputOperator output)'''
+    def compile(OutputOperator output, StreamStatement pStatement)'''
     	«{
-    		val OutputOperatorGenerator o = new OutputOperatorGenerator(output);
+    		val OutputOperatorGenerator o = new OutputOperatorGenerator(pStatement);
     		o.toString();
     	}»
     '''  

@@ -40,7 +40,6 @@ import de.hs_rm.cs.vs.dsm.flow.ModuloOperator;
 import de.hs_rm.cs.vs.dsm.flow.Multi;
 import de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator;
 import de.hs_rm.cs.vs.dsm.flow.NewTagOperator;
-import de.hs_rm.cs.vs.dsm.flow.NoReturnTypeOperator;
 import de.hs_rm.cs.vs.dsm.flow.NumberLiteral;
 import de.hs_rm.cs.vs.dsm.flow.NumberVariableDefinition;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
@@ -249,13 +248,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * @generated
    */
   private EClass returnTypeOperatorEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass noReturnTypeOperatorEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1353,16 +1345,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
   public EClass getReturnTypeOperator()
   {
     return returnTypeOperatorEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getNoReturnTypeOperator()
-  {
-    return noReturnTypeOperatorEClass;
   }
 
   /**
@@ -2852,8 +2834,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     returnTypeOperatorEClass = createEClass(RETURN_TYPE_OPERATOR);
 
-    noReturnTypeOperatorEClass = createEClass(NO_RETURN_TYPE_OPERATOR);
-
     tagOperatorEClass = createEClass(TAG_OPERATOR);
     createEReference(tagOperatorEClass, TAG_OPERATOR__PARAMETERS);
 
@@ -3093,7 +3073,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     decisionTreeOperatorEClass.getESuperTypes().add(this.getModelElement());
     matchOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     inputOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
-    noReturnTypeOperatorEClass.getESuperTypes().add(this.getModelElement());
     tagOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     unTagOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     tagClassElementEClass.getESuperTypes().add(this.getTagElement());
@@ -3110,7 +3089,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     multiplicationOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     divisionOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     moduloOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
-    outputOperatorEClass.getESuperTypes().add(this.getNoReturnTypeOperator());
+    outputOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     variableDefinitionEClass.getESuperTypes().add(this.getModelElement());
     variableDeclarationEClass.getESuperTypes().add(this.getStreamElement());
     numberVariableDefinitionEClass.getESuperTypes().add(this.getVariableDefinition());
@@ -3220,8 +3199,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEAttribute(getInputOperator_Port(), ecorePackage.getEBigDecimal(), "port", null, 0, 1, InputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(returnTypeOperatorEClass, ReturnTypeOperator.class, "ReturnTypeOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(noReturnTypeOperatorEClass, NoReturnTypeOperator.class, "NoReturnTypeOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(tagOperatorEClass, TagOperator.class, "TagOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTagOperator_Parameters(), this.getTagElement(), null, "parameters", null, 0, -1, TagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

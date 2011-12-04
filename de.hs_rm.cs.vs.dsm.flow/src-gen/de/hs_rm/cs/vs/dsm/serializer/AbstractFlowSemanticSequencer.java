@@ -378,9 +378,8 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				}
 				else break;
 			case FlowPackage.OUTPUT_OPERATOR:
-				if(context == grammarAccess.getModelElementRule() ||
-				   context == grammarAccess.getNoReturnTypeOperatorRule() ||
-				   context == grammarAccess.getOutputOperatorRule()) {
+				if(context == grammarAccess.getOutputOperatorRule() ||
+				   context == grammarAccess.getReturnTypeOperatorRule()) {
 					sequence_OutputOperator(context, (OutputOperator) semanticObject); 
 					return; 
 				}

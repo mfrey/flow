@@ -237,14 +237,6 @@ public class FlowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FlowPackage.NO_RETURN_TYPE_OPERATOR:
-      {
-        NoReturnTypeOperator noReturnTypeOperator = (NoReturnTypeOperator)theEObject;
-        T result = caseNoReturnTypeOperator(noReturnTypeOperator);
-        if (result == null) result = caseModelElement(noReturnTypeOperator);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case FlowPackage.TAG_OPERATOR:
       {
         TagOperator tagOperator = (TagOperator)theEObject;
@@ -454,8 +446,7 @@ public class FlowSwitch<T> extends Switch<T>
       {
         OutputOperator outputOperator = (OutputOperator)theEObject;
         T result = caseOutputOperator(outputOperator);
-        if (result == null) result = caseNoReturnTypeOperator(outputOperator);
-        if (result == null) result = caseModelElement(outputOperator);
+        if (result == null) result = caseReturnTypeOperator(outputOperator);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -991,22 +982,6 @@ public class FlowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseReturnTypeOperator(ReturnTypeOperator object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>No Return Type Operator</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>No Return Type Operator</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseNoReturnTypeOperator(NoReturnTypeOperator object)
   {
     return null;
   }

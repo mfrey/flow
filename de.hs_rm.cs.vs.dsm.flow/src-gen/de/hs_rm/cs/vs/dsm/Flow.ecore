@@ -120,7 +120,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReturnTypeOperator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NoReturnTypeOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ModelElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="TagOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//TagElement"
@@ -272,7 +271,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//VariableDefinition"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OutputOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//NoReturnTypeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="OutputOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="stream" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamOperatorParameter"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iri" unique="false" upperBound="-1"

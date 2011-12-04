@@ -1607,10 +1607,10 @@ public class InternalFlowLexer extends Lexer {
         try {
             int _type = RULE_NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16331:13: ( ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16331:15: ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )?
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16303:13: ( ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16303:15: ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )?
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16331:15: ( '0' .. '9' )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16303:15: ( '0' .. '9' )*
             loop1:
             do {
                 int alt1=2;
@@ -1623,7 +1623,7 @@ public class InternalFlowLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16331:16: '0' .. '9'
+            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16303:16: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1635,7 +1635,7 @@ public class InternalFlowLexer extends Lexer {
                 }
             } while (true);
 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16331:27: ( '.' ( '0' .. '9' )+ )?
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16303:27: ( '.' ( '0' .. '9' )+ )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -1644,10 +1644,10 @@ public class InternalFlowLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16331:28: '.' ( '0' .. '9' )+
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16303:28: '.' ( '0' .. '9' )+
                     {
                     match('.'); 
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16331:32: ( '0' .. '9' )+
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16303:32: ( '0' .. '9' )+
                     int cnt2=0;
                     loop2:
                     do {
@@ -1661,7 +1661,7 @@ public class InternalFlowLexer extends Lexer {
 
                         switch (alt2) {
                     	case 1 :
-                    	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16331:33: '0' .. '9'
+                    	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16303:33: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -1699,10 +1699,10 @@ public class InternalFlowLexer extends Lexer {
         try {
             int _type = RULE_BOOLVALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16333:16: ( ( 'true' | 'false' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16333:18: ( 'true' | 'false' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16305:16: ( ( 'true' | 'false' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16305:18: ( 'true' | 'false' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16333:18: ( 'true' | 'false' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16305:18: ( 'true' | 'false' )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1720,7 +1720,7 @@ public class InternalFlowLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16333:19: 'true'
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16305:19: 'true'
                     {
                     match("true"); 
 
@@ -1728,7 +1728,7 @@ public class InternalFlowLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16333:26: 'false'
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16305:26: 'false'
                     {
                     match("false"); 
 
@@ -1754,8 +1754,8 @@ public class InternalFlowLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16335:10: ( 'this one has been deactivated' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16335:12: 'this one has been deactivated'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16307:10: ( 'this one has been deactivated' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16307:12: 'this one has been deactivated'
             {
             match("this one has been deactivated"); 
 
@@ -1775,10 +1775,10 @@ public class InternalFlowLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16337:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16337:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16309:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16309:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16337:11: ( '^' )?
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16309:11: ( '^' )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -1787,7 +1787,7 @@ public class InternalFlowLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16337:11: '^'
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16309:11: '^'
                     {
                     match('^'); 
 
@@ -1805,7 +1805,7 @@ public class InternalFlowLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16337:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16309:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop6:
             do {
                 int alt6=2;
@@ -1854,10 +1854,10 @@ public class InternalFlowLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16339:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16339:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16311:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16311:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16339:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16311:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1875,10 +1875,10 @@ public class InternalFlowLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16339:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16311:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16339:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16311:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -1894,7 +1894,7 @@ public class InternalFlowLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16339:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16311:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -1910,7 +1910,7 @@ public class InternalFlowLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16339:62: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16311:62: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1935,10 +1935,10 @@ public class InternalFlowLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16339:82: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16311:82: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16339:87: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16311:87: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop8:
                     do {
                         int alt8=3;
@@ -1954,7 +1954,7 @@ public class InternalFlowLexer extends Lexer {
 
                         switch (alt8) {
                     	case 1 :
-                    	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16339:88: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16311:88: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -1970,7 +1970,7 @@ public class InternalFlowLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16339:129: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16311:129: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2013,12 +2013,12 @@ public class InternalFlowLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16341:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16341:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16313:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16313:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16341:24: ( options {greedy=false; } : . )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16313:24: ( options {greedy=false; } : . )*
             loop10:
             do {
                 int alt10=2;
@@ -2043,7 +2043,7 @@ public class InternalFlowLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16341:52: .
+            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16313:52: .
             	    {
             	    matchAny(); 
 
@@ -2073,12 +2073,12 @@ public class InternalFlowLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16343:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16343:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16315:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16315:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16343:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16315:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop11:
             do {
                 int alt11=2;
@@ -2091,7 +2091,7 @@ public class InternalFlowLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16343:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16315:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2111,7 +2111,7 @@ public class InternalFlowLexer extends Lexer {
                 }
             } while (true);
 
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16343:40: ( ( '\\r' )? '\\n' )?
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16315:40: ( ( '\\r' )? '\\n' )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -2120,9 +2120,9 @@ public class InternalFlowLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16343:41: ( '\\r' )? '\\n'
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16315:41: ( '\\r' )? '\\n'
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16343:41: ( '\\r' )?
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16315:41: ( '\\r' )?
                     int alt12=2;
                     int LA12_0 = input.LA(1);
 
@@ -2131,7 +2131,7 @@ public class InternalFlowLexer extends Lexer {
                     }
                     switch (alt12) {
                         case 1 :
-                            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16343:41: '\\r'
+                            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16315:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2163,10 +2163,10 @@ public class InternalFlowLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16345:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16345:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16317:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16317:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16345:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:16317:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt14=0;
             loop14:
             do {

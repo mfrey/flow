@@ -275,16 +275,6 @@ ruleModelElement returns [EObject current=null]
         $current = $this_StreamAccess_8.current; 
         afterParserOrEnumRuleCall();
     }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getModelElementAccess().getNoReturnTypeOperatorParserRuleCall_9()); 
-    }
-    this_NoReturnTypeOperator_9=ruleNoReturnTypeOperator
-    { 
-        $current = $this_NoReturnTypeOperator_9.current; 
-        afterParserOrEnumRuleCall();
-    }
 )
 ;
 
@@ -1887,37 +1877,17 @@ ruleReturnTypeOperator returns [EObject current=null]
         $current = $this_DivisionOperator_18.current; 
         afterParserOrEnumRuleCall();
     }
-)
-;
 
-
-
-
-
-// Entry rule entryRuleNoReturnTypeOperator
-entryRuleNoReturnTypeOperator returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getNoReturnTypeOperatorRule()); }
-	 iv_ruleNoReturnTypeOperator=ruleNoReturnTypeOperator 
-	 { $current=$iv_ruleNoReturnTypeOperator.current; } 
-	 EOF 
-;
-
-// Rule NoReturnTypeOperator
-ruleNoReturnTypeOperator returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-
+    |
     { 
-        newCompositeNode(grammarAccess.getNoReturnTypeOperatorAccess().getOutputOperatorParserRuleCall()); 
+        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getOutputOperatorParserRuleCall_19()); 
     }
-    this_OutputOperator_0=ruleOutputOperator
+    this_OutputOperator_19=ruleOutputOperator
     { 
-        $current = $this_OutputOperator_0.current; 
+        $current = $this_OutputOperator_19.current; 
         afterParserOrEnumRuleCall();
     }
-
+)
 ;
 
 

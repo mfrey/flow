@@ -88,15 +88,14 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cStreamStatementParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		private final RuleCall cStreamDefinitionParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		private final RuleCall cStreamAccessParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
-		private final RuleCall cNoReturnTypeOperatorParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		
 		//ModelElement:
 		//	PackageDeclaration | Import | StructureDeclaration | DecisionTreeOperator | StreamDeclaration | VariableDefinition |
-		//	StreamStatement | StreamDefinition | StreamAccess | NoReturnTypeOperator;
+		//	StreamStatement | StreamDefinition | StreamAccess;
 		public ParserRule getRule() { return rule; }
 
 		//PackageDeclaration | Import | StructureDeclaration | DecisionTreeOperator | StreamDeclaration | VariableDefinition |
-		//StreamStatement | StreamDefinition | StreamAccess | NoReturnTypeOperator
+		//StreamStatement | StreamDefinition | StreamAccess
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//PackageDeclaration
@@ -125,9 +124,6 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 
 		//StreamAccess
 		public RuleCall getStreamAccessParserRuleCall_8() { return cStreamAccessParserRuleCall_8; }
-
-		//NoReturnTypeOperator
-		public RuleCall getNoReturnTypeOperatorParserRuleCall_9() { return cNoReturnTypeOperatorParserRuleCall_9; }
 	}
 
 	public class ImportElements extends AbstractParserRuleElementFinder {
@@ -1167,18 +1163,21 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSubtractionOperatorParserRuleCall_16 = (RuleCall)cAlternatives.eContents().get(16);
 		private final RuleCall cMultiplicationOperatorParserRuleCall_17 = (RuleCall)cAlternatives.eContents().get(17);
 		private final RuleCall cDivisionOperatorParserRuleCall_18 = (RuleCall)cAlternatives.eContents().get(18);
+		private final RuleCall cOutputOperatorParserRuleCall_19 = (RuleCall)cAlternatives.eContents().get(19);
 		
 		/// **
 		// * The rule summarizes the operators which have a return type
 		// * / ReturnTypeOperator:
 		//	InputOperator | JoinOperator | LogOperator | TagOperator | UnTagOperator | FilterOperator | SplitOperator |
 		//	CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | ModuloOperator |
-		//	RandomOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | DivisionOperator;
+		//	RandomOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | DivisionOperator |
+		//	OutputOperator;
 		public ParserRule getRule() { return rule; }
 
 		//InputOperator | JoinOperator | LogOperator | TagOperator | UnTagOperator | FilterOperator | SplitOperator |
 		//CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | ModuloOperator |
-		//RandomOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | DivisionOperator
+		//RandomOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | DivisionOperator |
+		//OutputOperator
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//InputOperator
@@ -1237,20 +1236,9 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 
 		//DivisionOperator
 		public RuleCall getDivisionOperatorParserRuleCall_18() { return cDivisionOperatorParserRuleCall_18; }
-	}
-
-	public class NoReturnTypeOperatorElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NoReturnTypeOperator");
-		private final RuleCall cOutputOperatorParserRuleCall = (RuleCall)rule.eContents().get(1);
-		
-		/// **
-		// * The rule summarizes the operators which have no return type
-		// * / NoReturnTypeOperator:
-		//	OutputOperator;
-		public ParserRule getRule() { return rule; }
 
 		//OutputOperator
-		public RuleCall getOutputOperatorParserRuleCall() { return cOutputOperatorParserRuleCall; }
+		public RuleCall getOutputOperatorParserRuleCall_19() { return cOutputOperatorParserRuleCall_19; }
 	}
 
 	public class TagOperatorElements extends AbstractParserRuleElementFinder {
@@ -3564,7 +3552,6 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	private MatchOperatorElements pMatchOperator;
 	private InputOperatorElements pInputOperator;
 	private ReturnTypeOperatorElements pReturnTypeOperator;
-	private NoReturnTypeOperatorElements pNoReturnTypeOperator;
 	private TagOperatorElements pTagOperator;
 	private NewTagOperatorElements pNewTagOperator;
 	private QueryTagOperatorElements pQueryTagOperator;
@@ -3665,7 +3652,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 
 	//ModelElement:
 	//	PackageDeclaration | Import | StructureDeclaration | DecisionTreeOperator | StreamDeclaration | VariableDefinition |
-	//	StreamStatement | StreamDefinition | StreamAccess | NoReturnTypeOperator;
+	//	StreamStatement | StreamDefinition | StreamAccess;
 	public ModelElementElements getModelElementAccess() {
 		return (pModelElement != null) ? pModelElement : (pModelElement = new ModelElementElements());
 	}
@@ -3886,25 +3873,14 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	// * / ReturnTypeOperator:
 	//	InputOperator | JoinOperator | LogOperator | TagOperator | UnTagOperator | FilterOperator | SplitOperator |
 	//	CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | ModuloOperator |
-	//	RandomOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | DivisionOperator;
+	//	RandomOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | DivisionOperator |
+	//	OutputOperator;
 	public ReturnTypeOperatorElements getReturnTypeOperatorAccess() {
 		return (pReturnTypeOperator != null) ? pReturnTypeOperator : (pReturnTypeOperator = new ReturnTypeOperatorElements());
 	}
 	
 	public ParserRule getReturnTypeOperatorRule() {
 		return getReturnTypeOperatorAccess().getRule();
-	}
-
-	/// **
-	// * The rule summarizes the operators which have no return type
-	// * / NoReturnTypeOperator:
-	//	OutputOperator;
-	public NoReturnTypeOperatorElements getNoReturnTypeOperatorAccess() {
-		return (pNoReturnTypeOperator != null) ? pNoReturnTypeOperator : (pNoReturnTypeOperator = new NoReturnTypeOperatorElements());
-	}
-	
-	public ParserRule getNoReturnTypeOperatorRule() {
-		return getNoReturnTypeOperatorAccess().getRule();
 	}
 
 	/// **

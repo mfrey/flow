@@ -41,7 +41,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *
  * @generated
  */
-public class OutputOperatorImpl extends NoReturnTypeOperatorImpl implements OutputOperator
+public class OutputOperatorImpl extends ReturnTypeOperatorImpl implements OutputOperator
 {
   /**
    * The cached value of the '{@link #getStream() <em>Stream</em>}' containment reference.

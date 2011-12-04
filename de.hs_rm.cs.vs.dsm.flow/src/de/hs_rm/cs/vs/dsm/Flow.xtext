@@ -25,9 +25,8 @@ PackageDeclaration:
 
 ModelElement:
 	PackageDeclaration | Import | StructureDeclaration | DecisionTreeOperator |
-	StreamDeclaration | VariableDefinition | StreamStatement | StreamDefinition | StreamAccess  | 
-	NoReturnTypeOperator;
-	
+	StreamDeclaration | VariableDefinition | StreamStatement | StreamDefinition | StreamAccess;
+		
 /**
  * The Import rule defines a import statement for referring to other *.flow files as well as 
  * files of knowledge representations such as *.owl and *.ocl
@@ -138,13 +137,7 @@ ReturnTypeOperator:
 	TagOperator | UnTagOperator | FilterOperator | SplitOperator | CountOperator | 
 	StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | ModuloOperator |
 	RandomOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | 
-	DivisionOperator;
-
-/**
- * The rule summarizes the operators which have no return type
- */
-NoReturnTypeOperator:
-	OutputOperator;
+	DivisionOperator | OutputOperator;
 
 /**
  * The TagOperator rule tags elements of a stream with elements of an ontology
