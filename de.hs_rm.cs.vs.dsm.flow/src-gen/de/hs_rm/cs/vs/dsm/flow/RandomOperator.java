@@ -17,6 +17,7 @@ import java.math.BigDecimal;
  * <ul>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.RandomOperator#getMaximum <em>Maximum</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.RandomOperator#getSleep <em>Sleep</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.RandomOperator#getStream <em>Stream</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,5 +78,31 @@ public interface RandomOperator extends ReturnTypeOperator
    * @generated
    */
   void setSleep(BigDecimal value);
+
+  /**
+   * Returns the value of the '<em><b>Stream</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Stream</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Stream</em>' containment reference.
+   * @see #setStream(StreamOperatorParameter)
+   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getRandomOperator_Stream()
+   * @model containment="true"
+   * @generated
+   */
+  StreamOperatorParameter getStream();
+
+  /**
+   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.RandomOperator#getStream <em>Stream</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Stream</em>' containment reference.
+   * @see #getStream()
+   * @generated
+   */
+  void setStream(StreamOperatorParameter value);
 
 } // RandomOperator

@@ -762,13 +762,16 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cSleepAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cSleepNUMBERTerminalRuleCall_4_0 = (RuleCall)cSleepAssignment_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cStreamAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cStreamStreamOperatorParameterParserRuleCall_6_0 = (RuleCall)cStreamAssignment_6.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//RandomOperator:
-		//	"rand" "(" maximum=NUMBER "," sleep=NUMBER ")";
+		//	"rand" "(" maximum=NUMBER "," sleep=NUMBER "," stream=StreamOperatorParameter ")";
 		public ParserRule getRule() { return rule; }
 
-		//"rand" "(" maximum=NUMBER "," sleep=NUMBER ")"
+		//"rand" "(" maximum=NUMBER "," sleep=NUMBER "," stream=StreamOperatorParameter ")"
 		public Group getGroup() { return cGroup; }
 
 		//"rand"
@@ -792,8 +795,17 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//NUMBER
 		public RuleCall getSleepNUMBERTerminalRuleCall_4_0() { return cSleepNUMBERTerminalRuleCall_4_0; }
 
+		//","
+		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
+
+		//stream=StreamOperatorParameter
+		public Assignment getStreamAssignment_6() { return cStreamAssignment_6; }
+
+		//StreamOperatorParameter
+		public RuleCall getStreamStreamOperatorParameterParserRuleCall_6_0() { return cStreamStreamOperatorParameterParserRuleCall_6_0; }
+
 		//")"
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 	}
 
 	public class DecisionTreeOperatorElements extends AbstractParserRuleElementFinder {
@@ -3686,7 +3698,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//RandomOperator:
-	//	"rand" "(" maximum=NUMBER "," sleep=NUMBER ")";
+	//	"rand" "(" maximum=NUMBER "," sleep=NUMBER "," stream=StreamOperatorParameter ")";
 	public RandomOperatorElements getRandomOperatorAccess() {
 		return (pRandomOperator != null) ? pRandomOperator : (pRandomOperator = new RandomOperatorElements());
 	}

@@ -636,13 +636,22 @@ public interface FlowPackage extends EPackage
   int RANDOM_OPERATOR__SLEEP = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Stream</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RANDOM_OPERATOR__STREAM = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Random Operator</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RANDOM_OPERATOR_FEATURE_COUNT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
+  int RANDOM_OPERATOR_FEATURE_COUNT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.DecisionTreeOperatorImpl <em>Decision Tree Operator</em>}' class.
@@ -3072,6 +3081,17 @@ public interface FlowPackage extends EPackage
   EAttribute getRandomOperator_Sleep();
 
   /**
+   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.RandomOperator#getStream <em>Stream</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Stream</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.RandomOperator#getStream()
+   * @see #getRandomOperator()
+   * @generated
+   */
+  EReference getRandomOperator_Stream();
+
+  /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.DecisionTreeOperator <em>Decision Tree Operator</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5066,6 +5086,14 @@ public interface FlowPackage extends EPackage
      * @generated
      */
     EAttribute RANDOM_OPERATOR__SLEEP = eINSTANCE.getRandomOperator_Sleep();
+
+    /**
+     * The meta object literal for the '<em><b>Stream</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RANDOM_OPERATOR__STREAM = eINSTANCE.getRandomOperator_Stream();
 
     /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.DecisionTreeOperatorImpl <em>Decision Tree Operator</em>}' class.

@@ -1142,6 +1142,16 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getRandomOperator_Stream()
+  {
+    return (EReference)randomOperatorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getDecisionTreeOperator()
   {
     return decisionTreeOperatorEClass;
@@ -2717,6 +2727,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     randomOperatorEClass = createEClass(RANDOM_OPERATOR);
     createEAttribute(randomOperatorEClass, RANDOM_OPERATOR__MAXIMUM);
     createEAttribute(randomOperatorEClass, RANDOM_OPERATOR__SLEEP);
+    createEReference(randomOperatorEClass, RANDOM_OPERATOR__STREAM);
 
     decisionTreeOperatorEClass = createEClass(DECISION_TREE_OPERATOR);
     createEReference(decisionTreeOperatorEClass, DECISION_TREE_OPERATOR__ATTRIBUTES);
@@ -3074,6 +3085,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEClass(randomOperatorEClass, RandomOperator.class, "RandomOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRandomOperator_Maximum(), ecorePackage.getEBigDecimal(), "maximum", null, 0, 1, RandomOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRandomOperator_Sleep(), ecorePackage.getEBigDecimal(), "sleep", null, 0, 1, RandomOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRandomOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, RandomOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(decisionTreeOperatorEClass, DecisionTreeOperator.class, "DecisionTreeOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDecisionTreeOperator_Attributes(), this.getDecisionTreeAttribute(), null, "attributes", null, 0, -1, DecisionTreeOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

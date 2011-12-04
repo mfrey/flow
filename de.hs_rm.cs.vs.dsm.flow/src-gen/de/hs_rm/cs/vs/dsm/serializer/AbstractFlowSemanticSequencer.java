@@ -1292,11 +1292,12 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (maximum=NUMBER sleep=NUMBER)
+	 *     (maximum=NUMBER sleep=NUMBER stream=StreamOperatorParameter)
 	 *
 	 * Features:
 	 *    maximum[1, 1]
 	 *    sleep[1, 1]
+	 *    stream[1, 1]
 	 */
 	protected void sequence_RandomOperator(EObject context, RandomOperator semanticObject) {
 		if(errorAcceptor != null) {
@@ -1304,11 +1305,14 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.RANDOM_OPERATOR__MAXIMUM));
 			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.RANDOM_OPERATOR__SLEEP) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.RANDOM_OPERATOR__SLEEP));
+			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.RANDOM_OPERATOR__STREAM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.RANDOM_OPERATOR__STREAM));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getRandomOperatorAccess().getMaximumNUMBERTerminalRuleCall_2_0(), semanticObject.getMaximum());
 		feeder.accept(grammarAccess.getRandomOperatorAccess().getSleepNUMBERTerminalRuleCall_4_0(), semanticObject.getSleep());
+		feeder.accept(grammarAccess.getRandomOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_6_0(), semanticObject.getStream());
 		feeder.finish();
 	}
 	

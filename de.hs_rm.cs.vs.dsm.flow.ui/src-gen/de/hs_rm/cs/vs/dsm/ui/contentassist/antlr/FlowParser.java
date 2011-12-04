@@ -182,6 +182,7 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLogOperatorAccess().getStreamAssignment_6(), "rule__LogOperator__StreamAssignment_6");
 					put(grammarAccess.getRandomOperatorAccess().getMaximumAssignment_2(), "rule__RandomOperator__MaximumAssignment_2");
 					put(grammarAccess.getRandomOperatorAccess().getSleepAssignment_4(), "rule__RandomOperator__SleepAssignment_4");
+					put(grammarAccess.getRandomOperatorAccess().getStreamAssignment_6(), "rule__RandomOperator__StreamAssignment_6");
 					put(grammarAccess.getDecisionTreeOperatorAccess().getAttributesAssignment_2(), "rule__DecisionTreeOperator__AttributesAssignment_2");
 					put(grammarAccess.getDecisionTreeOperatorAccess().getAttributesAssignment_4_0(), "rule__DecisionTreeOperator__AttributesAssignment_4_0");
 					put(grammarAccess.getDecisionTreeOperatorAccess().getDeltaAssignment_5(), "rule__DecisionTreeOperator__DeltaAssignment_5");

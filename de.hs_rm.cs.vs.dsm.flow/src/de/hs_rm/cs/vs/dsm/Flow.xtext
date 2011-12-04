@@ -109,7 +109,7 @@ LogOperator:
 	'log' '('location=STRING ',' format=STRING ',' stream=StreamOperatorParameter ')';
 
 RandomOperator:
-	'rand' '('maximum=NUMBER ',' sleep=NUMBER ')';
+	'rand' '('maximum=NUMBER ',' sleep=NUMBER ',' stream=StreamOperatorParameter ')';
 
 DecisionTreeOperator:
 	'dtree' '('attributes+=DecisionTreeAttribute ',' (attributes+=DecisionTreeAttribute ',')* delta=NUMBER ',' tau=NUMBER ',' barrier= NUMBER ',' frequency= NUMBER 

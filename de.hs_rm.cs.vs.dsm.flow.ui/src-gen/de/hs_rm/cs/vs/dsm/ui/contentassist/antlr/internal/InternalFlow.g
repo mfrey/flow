@@ -4998,6 +4998,7 @@ rule__RandomOperator__Group__5
     }
 :
 	rule__RandomOperator__Group__5__Impl
+	rule__RandomOperator__Group__6
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -5009,17 +5010,80 @@ rule__RandomOperator__Group__5__Impl
     }
 :
 (
-{ before(grammarAccess.getRandomOperatorAccess().getRightParenthesisKeyword_5()); }
+{ before(grammarAccess.getRandomOperatorAccess().getCommaKeyword_5()); }
 
-	')' 
+	',' 
 
-{ after(grammarAccess.getRandomOperatorAccess().getRightParenthesisKeyword_5()); }
+{ after(grammarAccess.getRandomOperatorAccess().getCommaKeyword_5()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__RandomOperator__Group__6
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__RandomOperator__Group__6__Impl
+	rule__RandomOperator__Group__7
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__RandomOperator__Group__6__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getRandomOperatorAccess().getStreamAssignment_6()); }
+(rule__RandomOperator__StreamAssignment_6)
+{ after(grammarAccess.getRandomOperatorAccess().getStreamAssignment_6()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__RandomOperator__Group__7
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__RandomOperator__Group__7__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__RandomOperator__Group__7__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getRandomOperatorAccess().getRightParenthesisKeyword_7()); }
+
+	')' 
+
+{ after(grammarAccess.getRandomOperatorAccess().getRightParenthesisKeyword_7()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
 
 
 
@@ -14183,6 +14247,21 @@ rule__RandomOperator__SleepAssignment_4
 (
 { before(grammarAccess.getRandomOperatorAccess().getSleepNUMBERTerminalRuleCall_4_0()); }
 	RULE_NUMBER{ after(grammarAccess.getRandomOperatorAccess().getSleepNUMBERTerminalRuleCall_4_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__RandomOperator__StreamAssignment_6
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getRandomOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_6_0()); }
+	ruleStreamOperatorParameter{ after(grammarAccess.getRandomOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_6_0()); }
 )
 
 ;
