@@ -29,22 +29,9 @@ public class RandomOperatorGenerator extends AbstractOperatorGenerator  {
 		// Save the operator
 		mOperator = (RandomOperator) pStatement.getOperator();
 		this.getInputStreams().add(mOperator.getStream().getStream().getName());
-	}
-
-	/**
-	 * {@inheritDoc} 
-	 */
-	@Override
-	public String initializeOperator() {
-		if(this.getOutputStreams().size() == 1){
-			mStream = this.getOutputStreams().get(0);
-			return Util.getInstance().createOperator(OPERATOR_TYPE, mStream);
-		}else if(this.getOutputStreams().size() > 1){
-			mStream = "stream" + this.getOutputStreams().hashCode();
-			return Util.getInstance().createOperator(OPERATOR_TYPE, mStream);
-		}else{
-			return "Error in initializeOperator() in class RandomOperatorGenerator";
-		}
+		
+		this.setOperatorType(OPERATOR_TYPE);
+		mStream = this.getOperatorStream();
 	}
 	
 	/**

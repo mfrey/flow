@@ -8,7 +8,7 @@ import de.hs_rm.cs.vs.dsm.flow.VariableDefinition;
 
 public class ArithmeticOperatorGenerator extends AbstractOperatorGenerator {
 	/** The type of the operator */
-	private String OPERATOR_TYPE = "math";
+	private String OPERATOR_TYPE = "Math";
 	/** The type of the operator */
 	private String OPERATION = "";
 	/** The barrier of the operator */
@@ -22,6 +22,8 @@ public class ArithmeticOperatorGenerator extends AbstractOperatorGenerator {
 	
 	public ArithmeticOperatorGenerator(StreamStatement pStatement){
 		super(pStatement);
+		this.setOperatorType(OPERATOR_TYPE);
+		mStream = this.getOperatorStream();
 	}
 	
 	/**
@@ -30,22 +32,6 @@ public class ArithmeticOperatorGenerator extends AbstractOperatorGenerator {
 	@Override
 	public String setBarrier() {
 		return "";
-	}
-	
-	/**
-	 * {@inheritDoc} 
-	 */
-	@Override
-	public String initializeOperator() {
-		if(this.getOutputStreams().size() == 1){
-			mStream = this.getOutputStreams().get(0);
-			return Util.getInstance().createOperator(OPERATOR_TYPE, mStream);
-		}else if(this.getOutputStreams().size() > 1){
-			mStream = "stream" + this.getOutputStreams();
-			return Util.getInstance().createOperator(OPERATOR_TYPE, mStream);
-		}else{
-			return "Error in initializeOperator() in class ArithmeticOperatorGenerator";
-		}
 	}
 
 	/**

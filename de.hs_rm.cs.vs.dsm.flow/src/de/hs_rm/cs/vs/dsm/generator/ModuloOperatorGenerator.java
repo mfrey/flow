@@ -5,7 +5,7 @@ import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
 
 public class ModuloOperatorGenerator extends ArithmeticOperatorGenerator {
 	/** The type of the operator */
-	private final String OPERATOR_TYPE = "add";
+	private final String OPERATOR_TYPE = "mod";
 	/** The internal representation of the avg operator */
 	private ModuloOperator mOperator = null;
 	

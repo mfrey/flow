@@ -20,6 +20,8 @@ public class SplitOperatorGenerator extends AbstractOperatorGenerator {
 	private final String OPERATOR_TYPE = "split";
 	/** The internal representation of the count operator */
 	private SplitOperator mOperator = null;
+	
+	private String mStream = "";
 
 	/**
 	 * The constructor initializes the 
@@ -33,6 +35,9 @@ public class SplitOperatorGenerator extends AbstractOperatorGenerator {
 		this.mOperator = (SplitOperator) pStatement.getOperator();
 		// Add the input stream to the corresponding array list (in the abstract operator class)
 		this.getInputStreams().add(this.mOperator.getParameter().getStream().getName());
+		
+		this.setOperatorType(OPERATOR_TYPE);
+		mStream = this.getOperatorStream();
 	}
 	
 	/**

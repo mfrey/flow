@@ -37,7 +37,6 @@ public abstract class AbstractOperatorGenerator {
 			// Add the output stream to the list
 			mOutputStreams.add(streamDefinition.next().getName());
 		}
-		this.mOperatorStream = OPERATOR_TYPE + pStatement.hashCode();
 	}
 	
 	public ArrayList<String> getOutputStreams() {
@@ -72,7 +71,17 @@ public abstract class AbstractOperatorGenerator {
 	 *
 	 * @return A string which includes the initialization setting for the operator
 	 */
-	public abstract String initializeOperator();
+	public String initializeOperator(){
+		if(this.getOutputStreams().size() == 1){
+			mOperatorStream = this.getOutputStreams().get(0);
+			return Util.getInstance().createOperator(OPERATOR_TYPE, mOperatorStream);
+		}else if(this.getOutputStreams().size() > 1){
+			mOperatorStream = "stream" + this.getOutputStreams().hashCode();
+			return Util.getInstance().createOperator(OPERATOR_TYPE, mOperatorStream);
+		}else{
+			return "Error in initializeOperator() in class ArithmeticOperatorGenerator";
+		}
+	}
 	
 	/**
 	 * The method sets parameters of the operator. Setting parameters of the operator 
@@ -96,5 +105,9 @@ public abstract class AbstractOperatorGenerator {
 	@Override
 	public String toString(){
 		return initializeOperator() + setBarrier() + setOperatorProperties() + setOperatorConnection();
+	}
+	
+	public void setOperatorType(final String pType){
+		OPERATOR_TYPE = pType;
 	}
 }

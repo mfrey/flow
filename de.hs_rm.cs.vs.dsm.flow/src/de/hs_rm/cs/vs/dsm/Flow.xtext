@@ -320,7 +320,6 @@ DivisionOperator:
 ModuloOperator:
 	'mod''('parameter=StreamAccess ',' (literal=NUMBER | streamElement=StreamAccess | variable=[VariableDefinition])')';	
 
-
 /**
  * The OutputOperator rule defines a operator which prints the content of the
  * a stream specified in parameter to a location specified in location.

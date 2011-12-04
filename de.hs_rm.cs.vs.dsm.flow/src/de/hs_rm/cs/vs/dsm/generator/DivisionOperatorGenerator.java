@@ -6,8 +6,9 @@ import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
 public class DivisionOperatorGenerator extends ArithmeticOperatorGenerator {
 	/** The type of the operator */
 	private final String OPERATOR_TYPE = "div";
-	/** The internal representation of the avg operator */
+	/** The internal representation of the division operator */
 	private DivisionOperator mOperator = null;
+	
 	
 	public DivisionOperatorGenerator(final StreamStatement pStatement){
 		super(pStatement);

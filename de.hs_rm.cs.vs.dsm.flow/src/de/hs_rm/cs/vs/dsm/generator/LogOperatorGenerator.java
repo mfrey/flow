@@ -29,23 +29,11 @@ public class LogOperatorGenerator extends AbstractOperatorGenerator  {
 		// Save the operator
 		mOperator = (LogOperator) pStatement.getOperator();
 		this.getInputStreams().add(mOperator.getStream().getStream().getName());
+		
+		this.setOperatorType(OPERATOR_TYPE);
+		mStream = this.getOperatorStream();
 	}
 
-	/**
-	 * {@inheritDoc} 
-	 */
-	@Override
-	public String initializeOperator() {
-		if(this.getOutputStreams().size() == 1){
-			mStream = this.getOutputStreams().get(0);
-			return Util.getInstance().createOperator(OPERATOR_TYPE, mStream);
-		}else if(this.getOutputStreams().size() > 1){
-			mStream = "stream" + this.getOutputStreams().hashCode();
-			return Util.getInstance().createOperator(OPERATOR_TYPE, mStream);
-		}else{
-			return "Error in initializeOperator() in class LogOperatorGenerator";
-		}
-	}
 	
 	/**
 	 * {@inheritDoc} 

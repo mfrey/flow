@@ -29,22 +29,10 @@ public class JoinOperatorGenerator extends AbstractOperatorGenerator {
 		for(int i = 0; i < this.mOperator.getParameters().size(); i++){
 			this.getInputStreams().add( this.mOperator.getParameters().get(i).getStream().getName());
 		}
+		
+		this.setOperatorType(OPERATOR_TYPE);
 	}
-	
-	/**
-	 * {@inheritDoc} 
-	 */
-	@Override
-	public String initializeOperator(){
-		if(this.getOutputStreams().size() == 1){
-			return Util.getInstance().createOperator(OPERATOR_TYPE, this.getOutputStreams().get(0));
-		}else if(this.getOutputStreams().size() > 1){
-			return Util.getInstance().createOperator(OPERATOR_TYPE, "stream" + this.getInputStreams().hashCode() + "");
-		}else{
-			return "Error in initializeOperator() in class JoinOperatorGenerator";
-		}
-	}
-	
+
 	/**
 	 * {@inheritDoc} 
 	 */

@@ -22,30 +22,21 @@ public class AverageOperatorGenerator extends AbstractOperatorGenerator {
 	/** The internal representation of the avg operator */
 	private AverageOperator mOperator = null;
 	
+	private String mStream = "";
+	
 	public AverageOperatorGenerator(final StreamStatement pStatement) {
 		super(pStatement);
 		// Store the operator in the attribute
 		this.mOperator = (AverageOperator) pStatement.getOperator();
 		// Add the input stream to the corresponding array list (in the abstract operator class)
 		this.getInputStreams().add(this.mOperator.getParameter().getReference().getName());
-	}
 
-	/**
-	 * {@inheritDoc} 
-	 */
-	@Override
-	public String initializeOperator() {
 		if(this.mOperator.getParameter().getElement().getType() instanceof FloatDataType){
 			OPERATOR_TYPE = "FloatAvg"; 
 		}
 		
-		if(this.getOutputStreams().size() == 1){
-			return Util.getInstance().createOperator(OPERATOR_TYPE, this.getOutputStreams().get(0));
-		}else if(this.getOutputStreams().size() > 1){
-			return Util.getInstance().createOperator(OPERATOR_TYPE, "stream" + this.getInputStreams().hashCode() + "");
-		}else{
-			return "Error in initializeOperator() in class AverageOperatorGenerator";
-		}
+		this.setOperatorType(OPERATOR_TYPE);
+		mStream = this.getOperatorStream();
 	}
 
 	/**
@@ -53,7 +44,7 @@ public class AverageOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String setOperatorProperties() {
-		return Util.getInstance().createParameter(this.getOutputStreams().get(0) + "", "element", this.mOperator.getParameter().getElement().getName());
+		return Util.getInstance().createParameter(mStream, "element", this.mOperator.getParameter().getElement().getName());
 	}
 
 	/**
@@ -69,12 +60,6 @@ public class AverageOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String setBarrier() {
-		if(this.getOutputStreams().size() == 1){
-			return Util.getInstance().createBarrier(this.getOutputStreams().get(0), this.mOperator.getStream().getBarrier());
-		}else if(this.getOutputStreams().size() > 1){
-			return Util.getInstance().createBarrier("stream" + this.getInputStreams().hashCode() + "", this.mOperator.getStream().getBarrier());
-		}else{
-			return "Error in setBarrier() in class AverageOperatorGenerator";
-		}
+		return Util.getInstance().createBarrier(mStream, this.mOperator.getStream().getBarrier());
 	}
 }

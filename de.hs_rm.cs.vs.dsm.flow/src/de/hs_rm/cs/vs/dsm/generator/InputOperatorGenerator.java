@@ -24,30 +24,16 @@ public class InputOperatorGenerator extends SystemOperatorGenerator {
 	/** The output streams of the operator */
 	private EList<StreamDefinition> mOutputStreams;
 	/***/
-	private String mStream;
+	private String mStream = "";
 	
 	public InputOperatorGenerator(final StreamStatement pStatement){
 		// Call the constructor of the super class
 		super(((InputOperator) pStatement.getOperator()).getIri(), ((InputOperator) pStatement.getOperator()).getAddress(), ((InputOperator) pStatement.getOperator()).getPort().toPlainString());
 		// Store the output streams in a member
 		mOutputStreams = pStatement.getReturnStream();
-	}
-
-	/**
-	 * {@inheritDoc} 
-	 */
-	@Override
-	public String initializeOperator() {
-		if(this.mOutputStreams.size() == 1){
-			mStream = this.mOutputStreams.get(0).getName();
-			setStream(mStream);
-			return Util.getInstance().createOperator(OPERATOR_TYPE, mStream);
-		}else if(this.getOutputStreams().size() > 1){
-			mStream = "stream" + this.mOutputStreams.hashCode() + "";
-			return Util.getInstance().createOperator(OPERATOR_TYPE, mStream);
-		}else{
-			return "Error in initializeOperator() in class InputOperatorGenerator";
-		}
+		
+		this.setOperatorType(OPERATOR_TYPE);
+		mStream = this.getOperatorStream();
 	}
 	
 	/**

@@ -20,8 +20,8 @@ public class CountOperatorGenerator extends AbstractOperatorGenerator {
 	private final String OPERATOR_TYPE = "MessageCounter";
 	/** The internal representation of the count operator */
 	private CountOperator mOperator = null;
-	/***/
-	private String mStream;
+	/** The stream name of the operator in LUA */
+	private String mStream = "";
 	
 	public CountOperatorGenerator(final StreamStatement pStatement){
 		// Call the constructor of the abstract operator class
@@ -30,30 +30,17 @@ public class CountOperatorGenerator extends AbstractOperatorGenerator {
 		this.mOperator = (CountOperator) pStatement.getOperator();
 		// Add the input stream to the corresponding array list (in the abstract operator class)
 		this.getInputStreams().add(this.mOperator.getParameter().getReference().getName());
+		
+		this.setOperatorType(OPERATOR_TYPE);
+		mStream = this.getOperatorStream();
 	}
 	
 	/**
 	 * {@inheritDoc} 
 	 */
 	@Override
-	public String initializeOperator() {
-		if(this.getOutputStreams().size() == 1){
-			mStream = this.getOutputStreams().get(0);
-			return Util.getInstance().createOperator(OPERATOR_TYPE, mStream);
-		}else if(this.getOutputStreams().size() > 1){
-			mStream = "stream" + this.getInputStreams().hashCode();
-			return Util.getInstance().createOperator(OPERATOR_TYPE, mStream);
-		}else{
-			return "Error in initializeOperator() in class CountOperatorGenerator";
-		}	
-	}
-
-	/**
-	 * {@inheritDoc} 
-	 */
-	@Override
 	public String setOperatorProperties() {
-		return Util.getInstance().createParameter(this.getOutputStreams().get(0) + "", "element", this.mOperator.getParameter().getElement().getName());
+		return Util.getInstance().createParameter(mStream, "element", this.mOperator.getParameter().getElement().getName());
 	}
 
 	/**
@@ -69,12 +56,6 @@ public class CountOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String setBarrier() {
-		if(this.getOutputStreams().size() == 1){
-			return Util.getInstance().createBarrier(this.getOutputStreams().get(0), this.mOperator.getStream().getBarrier());
-		}else if(this.getOutputStreams().size() > 1){
-			return Util.getInstance().createBarrier("stream" + this.getInputStreams().hashCode() + "", this.mOperator.getStream().getBarrier());
-		}else{
-			return "Error in setBarrier() in class CountOperatorGenerator";
-		}	
+		return Util.getInstance().createBarrier(mStream, this.mOperator.getStream().getBarrier());
 	}
 }
