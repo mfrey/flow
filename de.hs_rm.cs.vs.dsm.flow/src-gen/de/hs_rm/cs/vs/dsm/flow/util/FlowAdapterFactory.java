@@ -318,6 +318,11 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
         return createDivisionOperatorAdapter();
       }
       @Override
+      public Adapter caseModuloOperator(ModuloOperator object)
+      {
+        return createModuloOperatorAdapter();
+      }
+      @Override
       public Adapter caseOutputOperator(OutputOperator object)
       {
         return createOutputOperatorAdapter();
@@ -1180,6 +1185,21 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDivisionOperatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.ModuloOperator <em>Modulo Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.hs_rm.cs.vs.dsm.flow.ModuloOperator
+   * @generated
+   */
+  public Adapter createModuloOperatorAdapter()
   {
     return null;
   }

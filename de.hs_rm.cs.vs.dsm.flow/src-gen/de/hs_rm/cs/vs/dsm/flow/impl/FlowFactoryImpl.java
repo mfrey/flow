@@ -116,6 +116,7 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.SUBTRACTION_OPERATOR: return createSubtractionOperator();
       case FlowPackage.MULTIPLICATION_OPERATOR: return createMultiplicationOperator();
       case FlowPackage.DIVISION_OPERATOR: return createDivisionOperator();
+      case FlowPackage.MODULO_OPERATOR: return createModuloOperator();
       case FlowPackage.OUTPUT_OPERATOR: return createOutputOperator();
       case FlowPackage.VARIABLE_DEFINITION: return createVariableDefinition();
       case FlowPackage.VARIABLE_DECLARATION: return createVariableDeclaration();
@@ -706,6 +707,17 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
   {
     DivisionOperatorImpl divisionOperator = new DivisionOperatorImpl();
     return divisionOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ModuloOperator createModuloOperator()
+  {
+    ModuloOperatorImpl moduloOperator = new ModuloOperatorImpl();
+    return moduloOperator;
   }
 
   /**

@@ -442,6 +442,14 @@ public class FlowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case FlowPackage.MODULO_OPERATOR:
+      {
+        ModuloOperator moduloOperator = (ModuloOperator)theEObject;
+        T result = caseModuloOperator(moduloOperator);
+        if (result == null) result = caseReturnTypeOperator(moduloOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case FlowPackage.OUTPUT_OPERATOR:
       {
         OutputOperator outputOperator = (OutputOperator)theEObject;
@@ -1415,6 +1423,22 @@ public class FlowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDivisionOperator(DivisionOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Modulo Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Modulo Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseModuloOperator(ModuloOperator object)
   {
     return null;
   }

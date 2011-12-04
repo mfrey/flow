@@ -458,6 +458,15 @@ public interface FlowFactory extends EFactory
   DivisionOperator createDivisionOperator();
 
   /**
+   * Returns a new object of class '<em>Modulo Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Modulo Operator</em>'.
+   * @generated
+   */
+  ModuloOperator createModuloOperator();
+
+  /**
    * Returns a new object of class '<em>Output Operator</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

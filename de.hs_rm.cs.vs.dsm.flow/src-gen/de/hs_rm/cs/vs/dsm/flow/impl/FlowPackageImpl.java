@@ -36,6 +36,7 @@ import de.hs_rm.cs.vs.dsm.flow.MatchOperator;
 import de.hs_rm.cs.vs.dsm.flow.Minus;
 import de.hs_rm.cs.vs.dsm.flow.Model;
 import de.hs_rm.cs.vs.dsm.flow.ModelElement;
+import de.hs_rm.cs.vs.dsm.flow.ModuloOperator;
 import de.hs_rm.cs.vs.dsm.flow.Multi;
 import de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator;
 import de.hs_rm.cs.vs.dsm.flow.NewTagOperator;
@@ -437,6 +438,13 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * @generated
    */
   private EClass divisionOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass moduloOperatorEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1942,9 +1950,19 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAdditionOperator_StreamElements()
+  public EReference getAdditionOperator_StreamElement()
   {
     return (EReference)additionOperatorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAdditionOperator_Variable()
+  {
+    return (EReference)additionOperatorEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1982,9 +2000,19 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSubtractionOperator_StreamElements()
+  public EReference getSubtractionOperator_StreamElement()
   {
     return (EReference)subtractionOperatorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSubtractionOperator_Variable()
+  {
+    return (EReference)subtractionOperatorEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2022,9 +2050,19 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMultiplicationOperator_StreamElements()
+  public EReference getMultiplicationOperator_StreamElement()
   {
     return (EReference)multiplicationOperatorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMultiplicationOperator_Variable()
+  {
+    return (EReference)multiplicationOperatorEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2062,9 +2100,69 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDivisionOperator_StreamElements()
+  public EReference getDivisionOperator_StreamElement()
   {
     return (EReference)divisionOperatorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDivisionOperator_Variable()
+  {
+    return (EReference)divisionOperatorEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getModuloOperator()
+  {
+    return moduloOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getModuloOperator_Parameter()
+  {
+    return (EReference)moduloOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getModuloOperator_Literal()
+  {
+    return (EAttribute)moduloOperatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getModuloOperator_StreamElement()
+  {
+    return (EReference)moduloOperatorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getModuloOperator_Variable()
+  {
+    return (EReference)moduloOperatorEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2836,22 +2934,32 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     additionOperatorEClass = createEClass(ADDITION_OPERATOR);
     createEReference(additionOperatorEClass, ADDITION_OPERATOR__PARAMETER);
     createEAttribute(additionOperatorEClass, ADDITION_OPERATOR__LITERAL);
-    createEReference(additionOperatorEClass, ADDITION_OPERATOR__STREAM_ELEMENTS);
+    createEReference(additionOperatorEClass, ADDITION_OPERATOR__STREAM_ELEMENT);
+    createEReference(additionOperatorEClass, ADDITION_OPERATOR__VARIABLE);
 
     subtractionOperatorEClass = createEClass(SUBTRACTION_OPERATOR);
     createEReference(subtractionOperatorEClass, SUBTRACTION_OPERATOR__PARAMETER);
     createEAttribute(subtractionOperatorEClass, SUBTRACTION_OPERATOR__LITERAL);
-    createEReference(subtractionOperatorEClass, SUBTRACTION_OPERATOR__STREAM_ELEMENTS);
+    createEReference(subtractionOperatorEClass, SUBTRACTION_OPERATOR__STREAM_ELEMENT);
+    createEReference(subtractionOperatorEClass, SUBTRACTION_OPERATOR__VARIABLE);
 
     multiplicationOperatorEClass = createEClass(MULTIPLICATION_OPERATOR);
     createEReference(multiplicationOperatorEClass, MULTIPLICATION_OPERATOR__PARAMETER);
     createEAttribute(multiplicationOperatorEClass, MULTIPLICATION_OPERATOR__LITERAL);
-    createEReference(multiplicationOperatorEClass, MULTIPLICATION_OPERATOR__STREAM_ELEMENTS);
+    createEReference(multiplicationOperatorEClass, MULTIPLICATION_OPERATOR__STREAM_ELEMENT);
+    createEReference(multiplicationOperatorEClass, MULTIPLICATION_OPERATOR__VARIABLE);
 
     divisionOperatorEClass = createEClass(DIVISION_OPERATOR);
     createEReference(divisionOperatorEClass, DIVISION_OPERATOR__PARAMETER);
     createEAttribute(divisionOperatorEClass, DIVISION_OPERATOR__LITERAL);
-    createEReference(divisionOperatorEClass, DIVISION_OPERATOR__STREAM_ELEMENTS);
+    createEReference(divisionOperatorEClass, DIVISION_OPERATOR__STREAM_ELEMENT);
+    createEReference(divisionOperatorEClass, DIVISION_OPERATOR__VARIABLE);
+
+    moduloOperatorEClass = createEClass(MODULO_OPERATOR);
+    createEReference(moduloOperatorEClass, MODULO_OPERATOR__PARAMETER);
+    createEAttribute(moduloOperatorEClass, MODULO_OPERATOR__LITERAL);
+    createEReference(moduloOperatorEClass, MODULO_OPERATOR__STREAM_ELEMENT);
+    createEReference(moduloOperatorEClass, MODULO_OPERATOR__VARIABLE);
 
     outputOperatorEClass = createEClass(OUTPUT_OPERATOR);
     createEReference(outputOperatorEClass, OUTPUT_OPERATOR__STREAM);
@@ -3001,6 +3109,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     subtractionOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     multiplicationOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     divisionOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
+    moduloOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     outputOperatorEClass.getESuperTypes().add(this.getNoReturnTypeOperator());
     variableDefinitionEClass.getESuperTypes().add(this.getModelElement());
     variableDeclarationEClass.getESuperTypes().add(this.getStreamElement());
@@ -3194,22 +3303,32 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEClass(additionOperatorEClass, AdditionOperator.class, "AdditionOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAdditionOperator_Parameter(), this.getStreamAccess(), null, "parameter", null, 0, 1, AdditionOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAdditionOperator_Literal(), ecorePackage.getEBigDecimal(), "literal", null, 0, 1, AdditionOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAdditionOperator_StreamElements(), this.getStreamAccess(), null, "streamElements", null, 0, -1, AdditionOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAdditionOperator_StreamElement(), this.getStreamAccess(), null, "streamElement", null, 0, 1, AdditionOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAdditionOperator_Variable(), this.getVariableDefinition(), null, "variable", null, 0, 1, AdditionOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(subtractionOperatorEClass, SubtractionOperator.class, "SubtractionOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSubtractionOperator_Parameter(), this.getStreamAccess(), null, "parameter", null, 0, 1, SubtractionOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSubtractionOperator_Literal(), ecorePackage.getEBigDecimal(), "literal", null, 0, 1, SubtractionOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSubtractionOperator_StreamElements(), this.getStreamAccess(), null, "streamElements", null, 0, -1, SubtractionOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSubtractionOperator_StreamElement(), this.getStreamAccess(), null, "streamElement", null, 0, 1, SubtractionOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSubtractionOperator_Variable(), this.getVariableDefinition(), null, "variable", null, 0, 1, SubtractionOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(multiplicationOperatorEClass, MultiplicationOperator.class, "MultiplicationOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMultiplicationOperator_Parameter(), this.getStreamAccess(), null, "parameter", null, 0, 1, MultiplicationOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getMultiplicationOperator_Literal(), ecorePackage.getEBigDecimal(), "literal", null, 0, 1, MultiplicationOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMultiplicationOperator_StreamElements(), this.getStreamAccess(), null, "streamElements", null, 0, -1, MultiplicationOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMultiplicationOperator_StreamElement(), this.getStreamAccess(), null, "streamElement", null, 0, 1, MultiplicationOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMultiplicationOperator_Variable(), this.getVariableDefinition(), null, "variable", null, 0, 1, MultiplicationOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(divisionOperatorEClass, DivisionOperator.class, "DivisionOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDivisionOperator_Parameter(), this.getStreamAccess(), null, "parameter", null, 0, 1, DivisionOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDivisionOperator_Literal(), ecorePackage.getEBigDecimal(), "literal", null, 0, 1, DivisionOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDivisionOperator_StreamElements(), this.getStreamAccess(), null, "streamElements", null, 0, -1, DivisionOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDivisionOperator_StreamElement(), this.getStreamAccess(), null, "streamElement", null, 0, 1, DivisionOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDivisionOperator_Variable(), this.getVariableDefinition(), null, "variable", null, 0, 1, DivisionOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(moduloOperatorEClass, ModuloOperator.class, "ModuloOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getModuloOperator_Parameter(), this.getStreamAccess(), null, "parameter", null, 0, 1, ModuloOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getModuloOperator_Literal(), ecorePackage.getEBigDecimal(), "literal", null, 0, 1, ModuloOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModuloOperator_StreamElement(), this.getStreamAccess(), null, "streamElement", null, 0, 1, ModuloOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModuloOperator_Variable(), this.getVariableDefinition(), null, "variable", null, 0, 1, ModuloOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(outputOperatorEClass, OutputOperator.class, "OutputOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOutputOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, OutputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

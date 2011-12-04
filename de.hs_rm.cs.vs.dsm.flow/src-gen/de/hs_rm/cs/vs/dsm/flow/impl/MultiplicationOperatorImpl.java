@@ -8,23 +8,17 @@ package de.hs_rm.cs.vs.dsm.flow.impl;
 import de.hs_rm.cs.vs.dsm.flow.FlowPackage;
 import de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamAccess;
+import de.hs_rm.cs.vs.dsm.flow.VariableDefinition;
 
 import java.math.BigDecimal;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +29,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.MultiplicationOperatorImpl#getParameter <em>Parameter</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.MultiplicationOperatorImpl#getLiteral <em>Literal</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.MultiplicationOperatorImpl#getStreamElements <em>Stream Elements</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.MultiplicationOperatorImpl#getStreamElement <em>Stream Element</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.MultiplicationOperatorImpl#getVariable <em>Variable</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,14 +69,24 @@ public class MultiplicationOperatorImpl extends ReturnTypeOperatorImpl implement
   protected BigDecimal literal = LITERAL_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getStreamElements() <em>Stream Elements</em>}' containment reference list.
+   * The cached value of the '{@link #getStreamElement() <em>Stream Element</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStreamElements()
+   * @see #getStreamElement()
    * @generated
    * @ordered
    */
-  protected EList<StreamAccess> streamElements;
+  protected StreamAccess streamElement;
+
+  /**
+   * The cached value of the '{@link #getVariable() <em>Variable</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVariable()
+   * @generated
+   * @ordered
+   */
+  protected VariableDefinition variable;
 
   /**
    * <!-- begin-user-doc -->
@@ -180,13 +185,90 @@ public class MultiplicationOperatorImpl extends ReturnTypeOperatorImpl implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<StreamAccess> getStreamElements()
+  public StreamAccess getStreamElement()
   {
-    if (streamElements == null)
+    return streamElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetStreamElement(StreamAccess newStreamElement, NotificationChain msgs)
+  {
+    StreamAccess oldStreamElement = streamElement;
+    streamElement = newStreamElement;
+    if (eNotificationRequired())
     {
-      streamElements = new EObjectContainmentEList<StreamAccess>(StreamAccess.class, this, FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENTS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENT, oldStreamElement, newStreamElement);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return streamElements;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setStreamElement(StreamAccess newStreamElement)
+  {
+    if (newStreamElement != streamElement)
+    {
+      NotificationChain msgs = null;
+      if (streamElement != null)
+        msgs = ((InternalEObject)streamElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENT, null, msgs);
+      if (newStreamElement != null)
+        msgs = ((InternalEObject)newStreamElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENT, null, msgs);
+      msgs = basicSetStreamElement(newStreamElement, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENT, newStreamElement, newStreamElement));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableDefinition getVariable()
+  {
+    if (variable != null && variable.eIsProxy())
+    {
+      InternalEObject oldVariable = (InternalEObject)variable;
+      variable = (VariableDefinition)eResolveProxy(oldVariable);
+      if (variable != oldVariable)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, FlowPackage.MULTIPLICATION_OPERATOR__VARIABLE, oldVariable, variable));
+      }
+    }
+    return variable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableDefinition basicGetVariable()
+  {
+    return variable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVariable(VariableDefinition newVariable)
+  {
+    VariableDefinition oldVariable = variable;
+    variable = newVariable;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.MULTIPLICATION_OPERATOR__VARIABLE, oldVariable, variable));
   }
 
   /**
@@ -201,8 +283,8 @@ public class MultiplicationOperatorImpl extends ReturnTypeOperatorImpl implement
     {
       case FlowPackage.MULTIPLICATION_OPERATOR__PARAMETER:
         return basicSetParameter(null, msgs);
-      case FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENTS:
-        return ((InternalEList<?>)getStreamElements()).basicRemove(otherEnd, msgs);
+      case FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENT:
+        return basicSetStreamElement(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -221,8 +303,11 @@ public class MultiplicationOperatorImpl extends ReturnTypeOperatorImpl implement
         return getParameter();
       case FlowPackage.MULTIPLICATION_OPERATOR__LITERAL:
         return getLiteral();
-      case FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENTS:
-        return getStreamElements();
+      case FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENT:
+        return getStreamElement();
+      case FlowPackage.MULTIPLICATION_OPERATOR__VARIABLE:
+        if (resolve) return getVariable();
+        return basicGetVariable();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -232,7 +317,6 @@ public class MultiplicationOperatorImpl extends ReturnTypeOperatorImpl implement
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -244,9 +328,11 @@ public class MultiplicationOperatorImpl extends ReturnTypeOperatorImpl implement
       case FlowPackage.MULTIPLICATION_OPERATOR__LITERAL:
         setLiteral((BigDecimal)newValue);
         return;
-      case FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENTS:
-        getStreamElements().clear();
-        getStreamElements().addAll((Collection<? extends StreamAccess>)newValue);
+      case FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENT:
+        setStreamElement((StreamAccess)newValue);
+        return;
+      case FlowPackage.MULTIPLICATION_OPERATOR__VARIABLE:
+        setVariable((VariableDefinition)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -268,8 +354,11 @@ public class MultiplicationOperatorImpl extends ReturnTypeOperatorImpl implement
       case FlowPackage.MULTIPLICATION_OPERATOR__LITERAL:
         setLiteral(LITERAL_EDEFAULT);
         return;
-      case FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENTS:
-        getStreamElements().clear();
+      case FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENT:
+        setStreamElement((StreamAccess)null);
+        return;
+      case FlowPackage.MULTIPLICATION_OPERATOR__VARIABLE:
+        setVariable((VariableDefinition)null);
         return;
     }
     super.eUnset(featureID);
@@ -289,8 +378,10 @@ public class MultiplicationOperatorImpl extends ReturnTypeOperatorImpl implement
         return parameter != null;
       case FlowPackage.MULTIPLICATION_OPERATOR__LITERAL:
         return LITERAL_EDEFAULT == null ? literal != null : !LITERAL_EDEFAULT.equals(literal);
-      case FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENTS:
-        return streamElements != null && !streamElements.isEmpty();
+      case FlowPackage.MULTIPLICATION_OPERATOR__STREAM_ELEMENT:
+        return streamElement != null;
+      case FlowPackage.MULTIPLICATION_OPERATOR__VARIABLE:
+        return variable != null;
     }
     return super.eIsSet(featureID);
   }

@@ -10,6 +10,8 @@ import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration
 import de.hs_rm.cs.vs.dsm.flow.ModelElement
 import de.hs_rm.cs.vs.dsm.flow.StreamDeclaration
 
+import de.hs_rm.cs.vs.dsm.flow.VariableDefinition
+
 import de.hs_rm.cs.vs.dsm.flow.InputOperator
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator
 import de.hs_rm.cs.vs.dsm.flow.LogOperator
@@ -34,7 +36,7 @@ import de.hs_rm.cs.vs.dsm.flow.AdditionOperator
 import de.hs_rm.cs.vs.dsm.flow.SubtractionOperator
 import de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator
 import de.hs_rm.cs.vs.dsm.flow.DivisionOperator
-
+import de.hs_rm.cs.vs.dsm.flow.ModuloOperator
 
 import org.eclipse.xtext.naming.IQualifiedNameProvider
 
@@ -110,6 +112,8 @@ class FlowGenerator implements IGenerator {
 		«write((statement.operator as RandomOperator),statement)»
 		«ELSEIF statement.operator.eClass.name.equals("DecisionTreeOperator")»
 		«write((statement.operator as DecisionTreeOperator),statement)»
+		«ELSEIF statement.operator.eClass.name.equals("ModuloOperator")»
+		«write((statement.operator as ModuloOperator),statement)»
 		«ENDIF»
 	'''
 
@@ -225,5 +229,12 @@ class FlowGenerator implements IGenerator {
 			pStatement
 		)
 		dtree.toString()
+	}
+	
+	def dispatch String write(ModuloOperator pOperator, StreamStatement pStatement){
+		var ModuloOperatorGenerator modulo = new ModuloOperatorGenerator(
+			pStatement
+		)	
+		modulo.toString()
 	}
 }

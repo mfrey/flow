@@ -136,7 +136,7 @@ InputOperator:
 ReturnTypeOperator:
 	InputOperator | JoinOperator |  LogOperator | 
 	TagOperator | UnTagOperator | FilterOperator | SplitOperator | CountOperator | 
-	StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | 
+	StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | ModuloOperator |
 	RandomOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | 
 	DivisionOperator;
 
@@ -294,25 +294,31 @@ AverageOperator:
  * The AdditionOperator rule defines a operator for addition of elements
  */			
 AdditionOperator:
-	'add''('parameter=StreamAccess ',' (literal=NUMBER | streamElements+=StreamAccess )')';	
+	'add''('parameter=StreamAccess ',' (literal=NUMBER | streamElement=StreamAccess | variable=[VariableDefinition])')';	
 
 /**
  * The SubtractionOperator rule defines a operator for subtraction of elements
  */			
 SubtractionOperator:
-	'sub''('parameter=StreamAccess ',' (literal=NUMBER | streamElements+=StreamAccess )')';	
+	'sub''('parameter=StreamAccess ',' (literal=NUMBER | streamElement=StreamAccess | variable=[VariableDefinition])')';	
 
 /**
  * The MultiplicationOperator rule defines a operator for multiplication of elements
  */			
 MultiplicationOperator:
-	'mult''('parameter=StreamAccess ',' (literal=NUMBER | streamElements+=StreamAccess )')';	
+	'mult''('parameter=StreamAccess ',' (literal=NUMBER | streamElement=StreamAccess | variable=[VariableDefinition])')';	
 
 /**
  * The DivisionOperator rule defines a operator for division of elements
  */			
 DivisionOperator:
-	'div''('parameter=StreamAccess ',' (literal=NUMBER | streamElements+=StreamAccess )')';	
+	'div''('parameter=StreamAccess ',' (literal=NUMBER | streamElement=StreamAccess | variable=[VariableDefinition])')';	
+
+/**
+ * The ModuloOperator rule defines a operator for modulo operation on elements
+ */			
+ModuloOperator:
+	'mod''('parameter=StreamAccess ',' (literal=NUMBER | streamElement=StreamAccess | variable=[VariableDefinition])')';	
 
 
 /**

@@ -1,10 +1,6 @@
 package de.hs_rm.cs.vs.dsm.generator;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
 import de.hs_rm.cs.vs.dsm.flow.AdditionOperator;
-import de.hs_rm.cs.vs.dsm.flow.StreamAccess;
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
 
 public class AdditionOperatorGenerator extends ArithmeticOperatorGenerator {
@@ -19,20 +15,13 @@ public class AdditionOperatorGenerator extends ArithmeticOperatorGenerator {
 		mOperator = (AdditionOperator) pStatement.getOperator();
 		// Set the operator type
 		this.setOperationType(OPERATOR_TYPE);
-		// Set the streams which will be used for calculation
-		if(mOperator.getStreamElements() != null){
-			ArrayList<StreamAccess> elements = new ArrayList<StreamAccess>();
-			// Setup an iterator for the elist
-			Iterator<StreamAccess> iterator = this.mOperator.getStreamElements().iterator();
-			// Iterate over the elist
-			while(iterator.hasNext()){
-				elements.add(iterator.next());
-			}
-			// Add the streams to the operator streams list
-			this.setOperatorStreams(elements);
-		}
+		
 		if(mOperator.getLiteral() != null){
 			this.setLiteral(mOperator.getLiteral().toPlainString());
+		}else if(mOperator.getVariable() != null){
+			this.setVariableDefinition(mOperator.getVariable());
+		}else{
+			this.setStreamParameter(mOperator.getStreamElement());
 		}
 	}
 }

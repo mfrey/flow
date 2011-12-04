@@ -21,8 +21,11 @@ import de.hs_rm.cs.vs.dsm.flow.WindowOperator;
 public class Util {
 	/** Initialize the only instance of the class */ 
 	private static final Util mInstance = new Util();
-	/** A in-memory representation of the complex event processing network */
+	/** TODO: This is a bug in code generation, caused by the singleton pattern and my
+	 * stupidity 
+	 * A in-memory representation of the complex event processing network */
 	private Network mNetwork = new Network();
+ 
 	
 	/**
 	 * The constructor is private in order to guarantee that the class is

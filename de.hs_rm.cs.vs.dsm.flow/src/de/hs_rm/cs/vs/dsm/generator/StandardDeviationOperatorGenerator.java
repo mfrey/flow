@@ -17,7 +17,7 @@ import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
  */
 public class StandardDeviationOperatorGenerator extends AbstractOperatorGenerator {
 	/** The type of the operator */
-	private final String OPERATOR_TYPE = "std";
+	private final String OPERATOR_TYPE = "StandardDeviation";
 	/** The internal representation of the std operator */
 	private StandardDeviationOperator mOperator = null;
 	

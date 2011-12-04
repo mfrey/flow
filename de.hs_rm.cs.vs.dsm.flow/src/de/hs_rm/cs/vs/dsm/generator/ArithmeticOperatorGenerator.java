@@ -1,10 +1,10 @@
 package de.hs_rm.cs.vs.dsm.generator;
 
-import java.util.ArrayList;
-
 import de.hs_rm.cs.vs.dsm.flow.BarrierOperator;
+import de.hs_rm.cs.vs.dsm.flow.NumberVariableDefinition;
 import de.hs_rm.cs.vs.dsm.flow.StreamAccess;
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
+import de.hs_rm.cs.vs.dsm.flow.VariableDefinition;
 
 public class ArithmeticOperatorGenerator extends AbstractOperatorGenerator {
 	/** The type of the operator */
@@ -13,50 +13,75 @@ public class ArithmeticOperatorGenerator extends AbstractOperatorGenerator {
 	private String OPERATION = "";
 	/** The barrier of the operator */
 	private BarrierOperator mBarrier;
-	/** A list with streams and elements which are used in an arithmetic operation */ 
-	private ArrayList<StreamAccess> mStreams = new ArrayList<StreamAccess>();
+	/** The stream and its element which is used in an arithmetic operation */ 
+	private StreamAccess mStreamParameter;
 	/** The literal which is used in an arithmetic operation */
 	private String mLiteral = "";
+	/** The name of the output stream */
+	private String mStream = "";
 	
 	public ArithmeticOperatorGenerator(StreamStatement pStatement){
 		super(pStatement);
 	}
 	
+	/**
+	 * {@inheritDoc} 
+	 */
 	@Override
 	public String setBarrier() {
 		return "";
 	}
-
+	
+	/**
+	 * {@inheritDoc} 
+	 */
 	@Override
 	public String initializeOperator() {
 		if(this.getOutputStreams().size() == 1){
-			return Util.getInstance().createOperator(OPERATOR_TYPE, this.getOutputStreams().get(0));
+			mStream = this.getOutputStreams().get(0);
+			return Util.getInstance().createOperator(OPERATOR_TYPE, mStream);
 		}else if(this.getOutputStreams().size() > 1){
-			return Util.getInstance().createOperator(OPERATOR_TYPE, "stream" + this.getInputStreams().hashCode() + "");
+			mStream = "stream" + this.getOutputStreams();
+			return Util.getInstance().createOperator(OPERATOR_TYPE, mStream);
 		}else{
-			return "Error in initializeOperator() in class AverageOperatorGenerator";
+			return "Error in initializeOperator() in class ArithmeticOperatorGenerator";
 		}
 	}
 
+	/**
+	 * {@inheritDoc} 
+	 */
 	@Override
 	public String setOperatorProperties() {
-		String result = Util.getInstance().createParameter(this.getOutputStreams().get(0) + "", "operationType", OPERATION);
-		/**
-		 * TODO: MEETING: Wie sollen die Elemente unterschiedlicher Streams unterschieden werden, vielleicht
-		 * ein Funktionsaufruf mit drei statt zwei Parametern? 
-		 */
-		for(int i = 0; i < mStreams.size(); i++){
-			result += Util.getInstance().createParameter(this.getOutputStreams().get(0) + "", "stream", mStreams.get(i).getReference().getName());
-			result += Util.getInstance().createParameter(this.getOutputStreams().get(0) + "", "element", mStreams.get(i).getElement().getName());
-		}
-		
-		if(!mLiteral.equals("")){
-			result += Util.getInstance().createParameter(this.getOutputStreams().get(0) + "", "literal", mLiteral);
+		String result = Util.getInstance().createParameter(mStream, "operationType", OPERATION);
+
+		if(mStreamParameter != null){
+			result += Util.getInstance().createParameter(mStream, "stream", mStreamParameter.getStreamVariable().getReference().getName());
+			result += Util.getInstance().createParameter(mStream, "element", mStreamParameter.getElement().getName());
+		}else if(!mLiteral.equals("")){
+			result += Util.getInstance().createParameter(mStream, "literal", mLiteral);
+		}else{
+			// Shouldn't happen
 		}
 		
 		return result;
 	}
 
+	/**
+	 * The method stores the value of a variable definition. The value itself is
+	 * stored in the mLiteral member variable of the class.
+	 * 
+	 * @param pVariable The variable which should be saved
+	 */
+	public void setVariableDefinition(final VariableDefinition pVariable){
+		if(pVariable instanceof NumberVariableDefinition){
+			mLiteral = ((NumberVariableDefinition)pVariable).getValue().toPlainString();
+		}
+	}
+	
+	/**
+	 * {@inheritDoc} 
+	 */
 	@Override
 	public String setOperatorConnection() {
 		return Util.getInstance().connectOperator(this.getInputStreams(), "in", this.getOutputStreams(), "out");
@@ -78,12 +103,9 @@ public class ArithmeticOperatorGenerator extends AbstractOperatorGenerator {
 		this.mBarrier = pBarrier;
 	}
 
-	public ArrayList<StreamAccess> getOperatorStreams() {
-		return mStreams;
-	}
 
-	public void setOperatorStreams(ArrayList<StreamAccess> pStreams) {
-		this.mStreams = pStreams;
+	public void setStreamParameter(StreamAccess pStream) {
+		this.mStreamParameter = pStream;
 	}
 
 	public String getLiteral() {

@@ -9,24 +9,24 @@ import java.math.BigDecimal;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Addition Operator</b></em>'.
+ * A representation of the model object '<em><b>Modulo Operator</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getParameter <em>Parameter</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getLiteral <em>Literal</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getStreamElement <em>Stream Element</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getVariable <em>Variable</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.ModuloOperator#getParameter <em>Parameter</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.ModuloOperator#getLiteral <em>Literal</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.ModuloOperator#getStreamElement <em>Stream Element</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.ModuloOperator#getVariable <em>Variable</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getAdditionOperator()
+ * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getModuloOperator()
  * @model
  * @generated
  */
-public interface AdditionOperator extends ReturnTypeOperator
+public interface ModuloOperator extends ReturnTypeOperator
 {
   /**
    * Returns the value of the '<em><b>Parameter</b></em>' containment reference.
@@ -38,14 +38,14 @@ public interface AdditionOperator extends ReturnTypeOperator
    * <!-- end-user-doc -->
    * @return the value of the '<em>Parameter</em>' containment reference.
    * @see #setParameter(StreamAccess)
-   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getAdditionOperator_Parameter()
+   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getModuloOperator_Parameter()
    * @model containment="true"
    * @generated
    */
   StreamAccess getParameter();
 
   /**
-   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getParameter <em>Parameter</em>}' containment reference.
+   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.ModuloOperator#getParameter <em>Parameter</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Parameter</em>' containment reference.
@@ -64,14 +64,14 @@ public interface AdditionOperator extends ReturnTypeOperator
    * <!-- end-user-doc -->
    * @return the value of the '<em>Literal</em>' attribute.
    * @see #setLiteral(BigDecimal)
-   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getAdditionOperator_Literal()
+   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getModuloOperator_Literal()
    * @model
    * @generated
    */
   BigDecimal getLiteral();
 
   /**
-   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getLiteral <em>Literal</em>}' attribute.
+   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.ModuloOperator#getLiteral <em>Literal</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Literal</em>' attribute.
@@ -90,14 +90,14 @@ public interface AdditionOperator extends ReturnTypeOperator
    * <!-- end-user-doc -->
    * @return the value of the '<em>Stream Element</em>' containment reference.
    * @see #setStreamElement(StreamAccess)
-   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getAdditionOperator_StreamElement()
+   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getModuloOperator_StreamElement()
    * @model containment="true"
    * @generated
    */
   StreamAccess getStreamElement();
 
   /**
-   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getStreamElement <em>Stream Element</em>}' containment reference.
+   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.ModuloOperator#getStreamElement <em>Stream Element</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Stream Element</em>' containment reference.
@@ -116,14 +116,14 @@ public interface AdditionOperator extends ReturnTypeOperator
    * <!-- end-user-doc -->
    * @return the value of the '<em>Variable</em>' reference.
    * @see #setVariable(VariableDefinition)
-   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getAdditionOperator_Variable()
+   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getModuloOperator_Variable()
    * @model
    * @generated
    */
   VariableDefinition getVariable();
 
   /**
-   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.AdditionOperator#getVariable <em>Variable</em>}' reference.
+   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.ModuloOperator#getVariable <em>Variable</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Variable</em>' reference.
@@ -132,4 +132,4 @@ public interface AdditionOperator extends ReturnTypeOperator
    */
   void setVariable(VariableDefinition value);
 
-} // AdditionOperator
+} // ModuloOperator

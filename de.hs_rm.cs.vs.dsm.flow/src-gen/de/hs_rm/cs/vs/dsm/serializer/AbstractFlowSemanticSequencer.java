@@ -27,6 +27,7 @@ import de.hs_rm.cs.vs.dsm.flow.MarkerOperator;
 import de.hs_rm.cs.vs.dsm.flow.MatchOperator;
 import de.hs_rm.cs.vs.dsm.flow.Minus;
 import de.hs_rm.cs.vs.dsm.flow.Model;
+import de.hs_rm.cs.vs.dsm.flow.ModuloOperator;
 import de.hs_rm.cs.vs.dsm.flow.Multi;
 import de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator;
 import de.hs_rm.cs.vs.dsm.flow.NewTagOperator;
@@ -307,6 +308,13 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 			case FlowPackage.MODEL:
 				if(context == grammarAccess.getModelRule()) {
 					sequence_Model(context, (Model) semanticObject); 
+					return; 
+				}
+				else break;
+			case FlowPackage.MODULO_OPERATOR:
+				if(context == grammarAccess.getModuloOperatorRule() ||
+				   context == grammarAccess.getReturnTypeOperatorRule()) {
+					sequence_ModuloOperator(context, (ModuloOperator) semanticObject); 
 					return; 
 				}
 				else break;
@@ -641,14 +649,19 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (parameter=StreamAccess (literal=NUMBER | streamElements+=StreamAccess))
+	 *     (parameter=StreamAccess (literal=NUMBER | streamElement=StreamAccess | variable=[VariableDefinition|ID]))
 	 *
 	 * Features:
 	 *    parameter[1, 1]
 	 *    literal[0, 1]
-	 *         EXCLUDE_IF_SET streamElements
-	 *    streamElements[0, 1]
+	 *         EXCLUDE_IF_SET streamElement
+	 *         EXCLUDE_IF_SET variable
+	 *    streamElement[0, 1]
 	 *         EXCLUDE_IF_SET literal
+	 *         EXCLUDE_IF_SET variable
+	 *    variable[0, 1]
+	 *         EXCLUDE_IF_SET literal
+	 *         EXCLUDE_IF_SET streamElement
 	 */
 	protected void sequence_AdditionOperator(EObject context, AdditionOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -914,14 +927,19 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (parameter=StreamAccess (literal=NUMBER | streamElements+=StreamAccess))
+	 *     (parameter=StreamAccess (literal=NUMBER | streamElement=StreamAccess | variable=[VariableDefinition|ID]))
 	 *
 	 * Features:
 	 *    parameter[1, 1]
 	 *    literal[0, 1]
-	 *         EXCLUDE_IF_SET streamElements
-	 *    streamElements[0, 1]
+	 *         EXCLUDE_IF_SET streamElement
+	 *         EXCLUDE_IF_SET variable
+	 *    streamElement[0, 1]
 	 *         EXCLUDE_IF_SET literal
+	 *         EXCLUDE_IF_SET variable
+	 *    variable[0, 1]
+	 *         EXCLUDE_IF_SET literal
+	 *         EXCLUDE_IF_SET streamElement
 	 */
 	protected void sequence_DivisionOperator(EObject context, DivisionOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1079,14 +1097,40 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (parameter=StreamAccess (literal=NUMBER | streamElements+=StreamAccess))
+	 *     (parameter=StreamAccess (literal=NUMBER | streamElement=StreamAccess | variable=[VariableDefinition|ID]))
 	 *
 	 * Features:
 	 *    parameter[1, 1]
 	 *    literal[0, 1]
-	 *         EXCLUDE_IF_SET streamElements
-	 *    streamElements[0, 1]
+	 *         EXCLUDE_IF_SET streamElement
+	 *         EXCLUDE_IF_SET variable
+	 *    streamElement[0, 1]
 	 *         EXCLUDE_IF_SET literal
+	 *         EXCLUDE_IF_SET variable
+	 *    variable[0, 1]
+	 *         EXCLUDE_IF_SET literal
+	 *         EXCLUDE_IF_SET streamElement
+	 */
+	protected void sequence_ModuloOperator(EObject context, ModuloOperator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (parameter=StreamAccess (literal=NUMBER | streamElement=StreamAccess | variable=[VariableDefinition|ID]))
+	 *
+	 * Features:
+	 *    parameter[1, 1]
+	 *    literal[0, 1]
+	 *         EXCLUDE_IF_SET streamElement
+	 *         EXCLUDE_IF_SET variable
+	 *    streamElement[0, 1]
+	 *         EXCLUDE_IF_SET literal
+	 *         EXCLUDE_IF_SET variable
+	 *    variable[0, 1]
+	 *         EXCLUDE_IF_SET literal
+	 *         EXCLUDE_IF_SET streamElement
 	 */
 	protected void sequence_MultiplicationOperator(EObject context, MultiplicationOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1621,14 +1665,19 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (parameter=StreamAccess (literal=NUMBER | streamElements+=StreamAccess))
+	 *     (parameter=StreamAccess (literal=NUMBER | streamElement=StreamAccess | variable=[VariableDefinition|ID]))
 	 *
 	 * Features:
 	 *    parameter[1, 1]
 	 *    literal[0, 1]
-	 *         EXCLUDE_IF_SET streamElements
-	 *    streamElements[0, 1]
+	 *         EXCLUDE_IF_SET streamElement
+	 *         EXCLUDE_IF_SET variable
+	 *    streamElement[0, 1]
 	 *         EXCLUDE_IF_SET literal
+	 *         EXCLUDE_IF_SET variable
+	 *    variable[0, 1]
+	 *         EXCLUDE_IF_SET literal
+	 *         EXCLUDE_IF_SET streamElement
 	 */
 	protected void sequence_SubtractionOperator(EObject context, SubtractionOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

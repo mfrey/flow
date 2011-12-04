@@ -12,6 +12,7 @@ import de.hs_rm.cs.vs.dsm.flow.InputOperator;
 import de.hs_rm.cs.vs.dsm.flow.JoinOperator;
 import de.hs_rm.cs.vs.dsm.flow.LogOperator;
 import de.hs_rm.cs.vs.dsm.flow.ModelElement;
+import de.hs_rm.cs.vs.dsm.flow.ModuloOperator;
 import de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
 import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration;
@@ -31,6 +32,7 @@ import de.hs_rm.cs.vs.dsm.generator.FilterOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.InputOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.JoinOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.LogOperatorGenerator;
+import de.hs_rm.cs.vs.dsm.generator.ModuloOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.MultiplicationOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.OutputOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.RandomOperatorGenerator;
@@ -256,7 +258,17 @@ public class FlowGenerator implements IGenerator {
                                     ReturnTypeOperator _operator_29 = statement.getOperator();
                                     String _write_14 = this.write(((DecisionTreeOperator) _operator_29), statement);
                                     _builder.append(_write_14, "");
-                                    _builder.newLineIfNotEmpty();
+                                    _builder.newLineIfNotEmpty();} else {
+                                    ReturnTypeOperator _operator_30 = statement.getOperator();
+                                    EClass _eClass_15 = _operator_30.eClass();
+                                    String _name_15 = _eClass_15.getName();
+                                    boolean _equals_15 = _name_15.equals("ModuloOperator");
+                                    if (_equals_15) {
+                                      ReturnTypeOperator _operator_31 = statement.getOperator();
+                                      String _write_15 = this.write(((ModuloOperator) _operator_31), statement);
+                                      _builder.append(_write_15, "");
+                                      _builder.newLineIfNotEmpty();
+                                    }
                                   }
                                 }
                               }
@@ -455,6 +467,17 @@ public class FlowGenerator implements IGenerator {
     return _xblockexpression;
   }
   
+  protected String _write(final ModuloOperator pOperator, final StreamStatement pStatement) {
+    String _xblockexpression = null;
+    {
+      ModuloOperatorGenerator _moduloOperatorGenerator = new ModuloOperatorGenerator(pStatement);
+      ModuloOperatorGenerator modulo = _moduloOperatorGenerator;
+      String _string = modulo.toString();
+      _xblockexpression = (_string);
+    }
+    return _xblockexpression;
+  }
+  
   public String write(final EObject pOperator, final StreamStatement pStatement) {
     if ((pOperator instanceof AdditionOperator)
          && (pStatement instanceof StreamStatement)) {
@@ -486,6 +509,9 @@ public class FlowGenerator implements IGenerator {
     } else if ((pOperator instanceof LogOperator)
          && (pStatement instanceof StreamStatement)) {
       return _write((LogOperator)pOperator, (StreamStatement)pStatement);
+    } else if ((pOperator instanceof ModuloOperator)
+         && (pStatement instanceof StreamStatement)) {
+      return _write((ModuloOperator)pOperator, (StreamStatement)pStatement);
     } else if ((pOperator instanceof MultiplicationOperator)
          && (pStatement instanceof StreamStatement)) {
       return _write((MultiplicationOperator)pOperator, (StreamStatement)pStatement);
