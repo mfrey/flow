@@ -1102,6 +1102,16 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getLogOperator_Stream()
+  {
+    return (EReference)logOperatorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getRandomOperator()
   {
     return randomOperatorEClass;
@@ -2702,6 +2712,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     logOperatorEClass = createEClass(LOG_OPERATOR);
     createEAttribute(logOperatorEClass, LOG_OPERATOR__LOCATION);
     createEAttribute(logOperatorEClass, LOG_OPERATOR__FORMAT);
+    createEReference(logOperatorEClass, LOG_OPERATOR__STREAM);
 
     randomOperatorEClass = createEClass(RANDOM_OPERATOR);
     createEAttribute(randomOperatorEClass, RANDOM_OPERATOR__MAXIMUM);
@@ -3058,6 +3069,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEClass(logOperatorEClass, LogOperator.class, "LogOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLogOperator_Location(), ecorePackage.getEString(), "location", null, 0, 1, LogOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getLogOperator_Format(), ecorePackage.getEString(), "format", null, 0, 1, LogOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLogOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, LogOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(randomOperatorEClass, RandomOperator.class, "RandomOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRandomOperator_Maximum(), ecorePackage.getEBigDecimal(), "maximum", null, 0, 1, RandomOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

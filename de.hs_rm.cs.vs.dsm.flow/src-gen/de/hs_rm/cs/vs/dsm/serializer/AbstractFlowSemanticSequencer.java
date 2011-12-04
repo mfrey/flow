@@ -1007,11 +1007,12 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (location=STRING format=STRING)
+	 *     (location=STRING format=STRING stream=StreamOperatorParameter)
 	 *
 	 * Features:
 	 *    location[1, 1]
 	 *    format[1, 1]
+	 *    stream[1, 1]
 	 */
 	protected void sequence_LogOperator(EObject context, LogOperator semanticObject) {
 		if(errorAcceptor != null) {
@@ -1019,11 +1020,14 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.LOG_OPERATOR__LOCATION));
 			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.LOG_OPERATOR__FORMAT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.LOG_OPERATOR__FORMAT));
+			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.LOG_OPERATOR__STREAM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.LOG_OPERATOR__STREAM));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getLogOperatorAccess().getLocationSTRINGTerminalRuleCall_2_0(), semanticObject.getLocation());
 		feeder.accept(grammarAccess.getLogOperatorAccess().getFormatSTRINGTerminalRuleCall_4_0(), semanticObject.getFormat());
+		feeder.accept(grammarAccess.getLogOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_6_0(), semanticObject.getStream());
 		feeder.finish();
 	}
 	

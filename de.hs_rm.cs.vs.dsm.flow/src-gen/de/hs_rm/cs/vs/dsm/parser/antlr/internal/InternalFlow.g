@@ -1012,9 +1012,31 @@ ruleLogOperator returns [EObject current=null]
 	    }
 
 )
-)	otherlv_5=')' 
+)	otherlv_5=',' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getLogOperatorAccess().getRightParenthesisKeyword_5());
+    	newLeafNode(otherlv_5, grammarAccess.getLogOperatorAccess().getCommaKeyword_5());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getLogOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_6_0()); 
+	    }
+		lv_stream_6_0=ruleStreamOperatorParameter		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getLogOperatorRule());
+	        }
+       		set(
+       			$current, 
+       			"stream",
+        		lv_stream_6_0, 
+        		"StreamOperatorParameter");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_7=')' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getLogOperatorAccess().getRightParenthesisKeyword_7());
     }
 )
 ;

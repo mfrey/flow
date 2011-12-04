@@ -706,13 +706,16 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cFormatAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cFormatSTRINGTerminalRuleCall_4_0 = (RuleCall)cFormatAssignment_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cStreamAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cStreamStreamOperatorParameterParserRuleCall_6_0 = (RuleCall)cStreamAssignment_6.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//LogOperator:
-		//	"log" "(" location=STRING "," format=STRING ")";
+		//	"log" "(" location=STRING "," format=STRING "," stream=StreamOperatorParameter ")";
 		public ParserRule getRule() { return rule; }
 
-		//"log" "(" location=STRING "," format=STRING ")"
+		//"log" "(" location=STRING "," format=STRING "," stream=StreamOperatorParameter ")"
 		public Group getGroup() { return cGroup; }
 
 		//"log"
@@ -736,8 +739,17 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getFormatSTRINGTerminalRuleCall_4_0() { return cFormatSTRINGTerminalRuleCall_4_0; }
 
+		//","
+		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
+
+		//stream=StreamOperatorParameter
+		public Assignment getStreamAssignment_6() { return cStreamAssignment_6; }
+
+		//StreamOperatorParameter
+		public RuleCall getStreamStreamOperatorParameterParserRuleCall_6_0() { return cStreamStreamOperatorParameterParserRuleCall_6_0; }
+
 		//")"
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 	}
 
 	public class RandomOperatorElements extends AbstractParserRuleElementFinder {
@@ -3664,7 +3676,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//LogOperator:
-	//	"log" "(" location=STRING "," format=STRING ")";
+	//	"log" "(" location=STRING "," format=STRING "," stream=StreamOperatorParameter ")";
 	public LogOperatorElements getLogOperatorAccess() {
 		return (pLogOperator != null) ? pLogOperator : (pLogOperator = new LogOperatorElements());
 	}

@@ -28,6 +28,7 @@ public class LogOperatorGenerator extends AbstractOperatorGenerator  {
 		super(pStatement);
 		// Save the operator
 		mOperator = (LogOperator) pStatement.getOperator();
+		this.getInputStreams().add(mOperator.getStream().getStream().getName());
 	}
 
 	/**
@@ -69,6 +70,6 @@ public class LogOperatorGenerator extends AbstractOperatorGenerator  {
 	 */
 	@Override
 	public String setOperatorConnection() {
-		return "";
+		return Util.getInstance().connectOperator(getInputStreams(), "in", getOutputStreams(), "out");
 	}
 }

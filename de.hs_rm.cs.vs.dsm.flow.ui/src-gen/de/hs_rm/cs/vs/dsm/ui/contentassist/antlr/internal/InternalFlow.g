@@ -4741,6 +4741,7 @@ rule__LogOperator__Group__5
     }
 :
 	rule__LogOperator__Group__5__Impl
+	rule__LogOperator__Group__6
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -4752,17 +4753,80 @@ rule__LogOperator__Group__5__Impl
     }
 :
 (
-{ before(grammarAccess.getLogOperatorAccess().getRightParenthesisKeyword_5()); }
+{ before(grammarAccess.getLogOperatorAccess().getCommaKeyword_5()); }
 
-	')' 
+	',' 
 
-{ after(grammarAccess.getLogOperatorAccess().getRightParenthesisKeyword_5()); }
+{ after(grammarAccess.getLogOperatorAccess().getCommaKeyword_5()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__LogOperator__Group__6
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__LogOperator__Group__6__Impl
+	rule__LogOperator__Group__7
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__LogOperator__Group__6__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getLogOperatorAccess().getStreamAssignment_6()); }
+(rule__LogOperator__StreamAssignment_6)
+{ after(grammarAccess.getLogOperatorAccess().getStreamAssignment_6()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__LogOperator__Group__7
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__LogOperator__Group__7__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__LogOperator__Group__7__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getLogOperatorAccess().getRightParenthesisKeyword_7()); }
+
+	')' 
+
+{ after(grammarAccess.getLogOperatorAccess().getRightParenthesisKeyword_7()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
 
 
 
@@ -14074,6 +14138,21 @@ rule__LogOperator__FormatAssignment_4
 (
 { before(grammarAccess.getLogOperatorAccess().getFormatSTRINGTerminalRuleCall_4_0()); }
 	RULE_STRING{ after(grammarAccess.getLogOperatorAccess().getFormatSTRINGTerminalRuleCall_4_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__LogOperator__StreamAssignment_6
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getLogOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_6_0()); }
+	ruleStreamOperatorParameter{ after(grammarAccess.getLogOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_6_0()); }
 )
 
 ;

@@ -73,7 +73,7 @@ public class DecisionTreeOperatorGenerator extends AbstractOperatorGenerator {
 			mStream = "stream" + this.getInputStreams().hashCode();
 			return Util.getInstance().createOperator(OPERATOR_TYPE, mStream);
 		}else{
-			return "Error in initializeOperator() in class CountOperatorGenerator";
+			return "Error in initializeOperator() in class DecisionTreeOperatorGenerator";
 		}	
 	}
 

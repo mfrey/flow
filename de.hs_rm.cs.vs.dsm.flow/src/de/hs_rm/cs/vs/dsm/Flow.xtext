@@ -106,7 +106,7 @@ SplitOperator:
 	'split''('parameter=StreamOperatorParameter')';
 
 LogOperator:
-	'log' '('location=STRING ',' format=STRING ')';
+	'log' '('location=STRING ',' format=STRING ',' stream=StreamOperatorParameter ')';
 
 RandomOperator:
 	'rand' '('maximum=NUMBER ',' sleep=NUMBER ')';
