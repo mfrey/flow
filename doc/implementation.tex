@@ -1,6 +1,114 @@
 %\lstloadlanguages{Flow}
 \section{Implementation}
+\subsection{Introduction}
+In a previous version of the query language, code was generated for a DSM system
+specified in \cite{285:Fischer2010}. Required extensions for this system were 
+defined in \cite{297:Frey2010}. In particular, this included XML schema for the 
+code generator, operators in the framework and a message format for the complex 
+event processing system. This work provides a code generator for LUA which forms
+the foundation for a rewritten DSM framework for the DataStreamMiner project.
+
+\subsection{Deprecated Features of the Query Language}
+Operators and language features which were part of previous version of the query
+language are denoted in table \ref{tab:deprecated}. The expressivness of a query
+language is limited to the system on which the language is executed.
+
+The transformation of procedural statements to a complex event processing system
+has its limitations. Typically, a complex event processing system can be 
+intepreted as a acyclic directed graph, where edges can be intepreted as 
+operators and vertices as streams. Control structures such as loops violate the
+acyclic property of a acyclic directed graph. Conditional structurs such as 
+if/else or switch statements can be expressed by means of the \texttt{filter}
+operator and therefore are syntactic sugar. 
+\begin{center}
+  \begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Feature} & \textbf{Type} & \textbf{Comment} \\
+  \hline
+  \hline
+  \texttt{map} & Operator & Operator for projections \\
+  \hline
+  marker & Operator & Mechanism for creating flexible barriers \\
+  \hline
+  \texttt{match} & Operator & Operator which compared two streams depending on a expression \\
+  \hline
+  \texttt{dif} & Operator & Operator for creating differences in sets (set theory) \\
+  \hline
+  \texttt{sdif} & Operator & Operator for creating symmetric differences in sets (set theory) \\
+  \hline
+  loops & Feature & Loop statements such as while  \\
+  \hline
+  conditions & Feature & Conditional statements such as if/else or switch/case \\
+  \hline
+  functions & Feature & Procedural functions for the map operator \\
+  \hline
+  \end{tabular}
+  \captionof{table}{Deprecated features of the query language}
+  \label{tab:deprecated}
+\end{center}
+
 \subsection{Language}
+Table \ref{tab:overview} depicts a comparison of operators in the query language
+and the corresponding name of the operator in LUA. Operators which are italic 
+are not yet implemented in the DataStreamMiner framework, but will be generated
+by the generator of the query language.
+\begin{center}
+  \begin{tabular}{|l|l|l|l|}
+  \hline 
+  \textbf{Operator Flow} &  \textbf{Operator LUA} &  \textbf{Comment} \\
+  \hline 
+  \hline 
+  avg & IntAvg, \textit{FloatAvg} & c \\
+  \hline 
+  count & MessageCounter & c \\
+  \hline 
+  std & \textit{StandardDeviation} & c \\
+  \hline 
+  add & \textit{Math} & c \\
+  \hline 
+  sub & \textit{Math} & c \\
+  \hline 
+  mult & \textit{Math} & c \\
+  \hline 
+  div & \textit{Math} & c \\
+  \hline 
+  join & Merge & c \\
+  \hline 
+  ejoin & \textit{ElementMerge} & c \\
+  \hline
+  split & ? & c \\
+  \hline
+  filter & b & c \\
+  \hline
+  tag & b & c \\
+  \hline   
+  untag & b & c \\
+  \hline 
+  swrl & b & c \\
+  \hline
+  dtree & DecisionTree & c \\
+  \hline  
+  a & Tag (Sparql) & c \\
+  \hline 
+  in & CacheIn & c \\
+  \hline
+  out & CacheOut & c \\
+  \hline
+  rand & RandomInts & c \\
+  \hline
+  ? & PrintOnScreen & c \\
+  \hline  
+  ? & SeparateOddEven & c \\
+  \hline  
+  a & NumberGenerator & c \\
+  \hline  
+  log & Log & c \\
+  \hline
+  \end{tabular}
+  \captionof{table}{Comparision of operators in query language and framework}
+  \label{tab:overview}
+\end{center}
+
 \subsubsection{Streams}
 \subsubsection{Barriers}
 \subsubsection{Operators}
@@ -45,3 +153,4 @@ import "platform:/resource/de.hs_rm.cs.vs.dsm.flow/model/owl.ecore"
 \subsubsection{Unified Modeling Language}
 \subsubsection{Web Ontology Language}
 \subsection{Generator}
+\subsection{Summary}
