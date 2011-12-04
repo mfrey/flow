@@ -8,7 +8,7 @@ import de.hs_rm.cs.vs.dsm.flow.StringVariableDefinition;
 
 public class ElementJoinOperatorGenerator extends AbstractOperatorGenerator {
 	/** The type of the operator */
-	private final String OPERATOR_TYPE = "ElementJoin";
+	private final String OPERATOR_TYPE = "ElementMerge";
 	/** The internal representation of the count operator */
 	private ElementJoinOperator mOperator = null;
 	
