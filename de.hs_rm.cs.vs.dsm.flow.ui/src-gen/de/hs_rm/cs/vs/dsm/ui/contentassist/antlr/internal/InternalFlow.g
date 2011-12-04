@@ -5394,6 +5394,7 @@ rule__DecisionTreeOperator__Group__14
     }
 :
 	rule__DecisionTreeOperator__Group__14__Impl
+	rule__DecisionTreeOperator__Group__15
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -5405,17 +5406,80 @@ rule__DecisionTreeOperator__Group__14__Impl
     }
 :
 (
-{ before(grammarAccess.getDecisionTreeOperatorAccess().getRightParenthesisKeyword_14()); }
+{ before(grammarAccess.getDecisionTreeOperatorAccess().getCommaKeyword_14()); }
 
-	')' 
+	',' 
 
-{ after(grammarAccess.getDecisionTreeOperatorAccess().getRightParenthesisKeyword_14()); }
+{ after(grammarAccess.getDecisionTreeOperatorAccess().getCommaKeyword_14()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__DecisionTreeOperator__Group__15
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__DecisionTreeOperator__Group__15__Impl
+	rule__DecisionTreeOperator__Group__16
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__DecisionTreeOperator__Group__15__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getDecisionTreeOperatorAccess().getStreamAssignment_15()); }
+(rule__DecisionTreeOperator__StreamAssignment_15)
+{ after(grammarAccess.getDecisionTreeOperatorAccess().getStreamAssignment_15()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__DecisionTreeOperator__Group__16
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__DecisionTreeOperator__Group__16__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__DecisionTreeOperator__Group__16__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getDecisionTreeOperatorAccess().getRightParenthesisKeyword_16()); }
+
+	')' 
+
+{ after(grammarAccess.getDecisionTreeOperatorAccess().getRightParenthesisKeyword_16()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
 
 
 
@@ -14160,6 +14224,21 @@ rule__DecisionTreeOperator__ClassAttributesAssignment_13_1
 (
 { before(grammarAccess.getDecisionTreeOperatorAccess().getClassAttributesDecisionTreeAttributeParserRuleCall_13_1_0()); }
 	ruleDecisionTreeAttribute{ after(grammarAccess.getDecisionTreeOperatorAccess().getClassAttributesDecisionTreeAttributeParserRuleCall_13_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__DecisionTreeOperator__StreamAssignment_15
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getDecisionTreeOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_15_0()); }
+	ruleStreamOperatorParameter{ after(grammarAccess.getDecisionTreeOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_15_0()); }
 )
 
 ;

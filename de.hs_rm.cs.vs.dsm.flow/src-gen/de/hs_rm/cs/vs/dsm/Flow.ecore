@@ -92,6 +92,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="classAttributes" upperBound="-1"
         eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//DecisionTreeAttribute"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stream" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamOperatorParameter"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DecisionTreeAttribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

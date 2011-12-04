@@ -1286,9 +1286,31 @@ ruleDecisionTreeOperator returns [EObject current=null]
 	    }
 
 )
-))*	otherlv_16=')' 
+))*	otherlv_16=',' 
     {
-    	newLeafNode(otherlv_16, grammarAccess.getDecisionTreeOperatorAccess().getRightParenthesisKeyword_14());
+    	newLeafNode(otherlv_16, grammarAccess.getDecisionTreeOperatorAccess().getCommaKeyword_14());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDecisionTreeOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_15_0()); 
+	    }
+		lv_stream_17_0=ruleStreamOperatorParameter		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDecisionTreeOperatorRule());
+	        }
+       		set(
+       			$current, 
+       			"stream",
+        		lv_stream_17_0, 
+        		"StreamOperatorParameter");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_18=')' 
+    {
+    	newLeafNode(otherlv_18, grammarAccess.getDecisionTreeOperatorAccess().getRightParenthesisKeyword_16());
     }
 )
 ;

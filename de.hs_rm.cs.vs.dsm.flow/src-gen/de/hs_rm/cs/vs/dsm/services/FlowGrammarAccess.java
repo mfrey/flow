@@ -813,17 +813,20 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCommaKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
 		private final Assignment cClassAttributesAssignment_13_1 = (Assignment)cGroup_13.eContents().get(1);
 		private final RuleCall cClassAttributesDecisionTreeAttributeParserRuleCall_13_1_0 = (RuleCall)cClassAttributesAssignment_13_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Keyword cCommaKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Assignment cStreamAssignment_15 = (Assignment)cGroup.eContents().get(15);
+		private final RuleCall cStreamStreamOperatorParameterParserRuleCall_15_0 = (RuleCall)cStreamAssignment_15.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_16 = (Keyword)cGroup.eContents().get(16);
 		
 		//DecisionTreeOperator:
 		//	"dtree" "(" attributes+=DecisionTreeAttribute "," (attributes+=DecisionTreeAttribute ",")* delta=NUMBER "," tau=NUMBER
 		//	"," barrier=NUMBER "," frequency=NUMBER classAttributes+=DecisionTreeAttribute (","
-		//	classAttributes+=DecisionTreeAttribute)* ")";
+		//	classAttributes+=DecisionTreeAttribute)* "," stream=StreamOperatorParameter ")";
 		public ParserRule getRule() { return rule; }
 
 		//"dtree" "(" attributes+=DecisionTreeAttribute "," (attributes+=DecisionTreeAttribute ",")* delta=NUMBER "," tau=NUMBER
 		//"," barrier=NUMBER "," frequency=NUMBER classAttributes+=DecisionTreeAttribute (","
-		//classAttributes+=DecisionTreeAttribute)* ")"
+		//classAttributes+=DecisionTreeAttribute)* "," stream=StreamOperatorParameter ")"
 		public Group getGroup() { return cGroup; }
 
 		//"dtree"
@@ -904,8 +907,17 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//DecisionTreeAttribute
 		public RuleCall getClassAttributesDecisionTreeAttributeParserRuleCall_13_1_0() { return cClassAttributesDecisionTreeAttributeParserRuleCall_13_1_0; }
 
+		//","
+		public Keyword getCommaKeyword_14() { return cCommaKeyword_14; }
+
+		//stream=StreamOperatorParameter
+		public Assignment getStreamAssignment_15() { return cStreamAssignment_15; }
+
+		//StreamOperatorParameter
+		public RuleCall getStreamStreamOperatorParameterParserRuleCall_15_0() { return cStreamStreamOperatorParameterParserRuleCall_15_0; }
+
 		//")"
-		public Keyword getRightParenthesisKeyword_14() { return cRightParenthesisKeyword_14; }
+		public Keyword getRightParenthesisKeyword_16() { return cRightParenthesisKeyword_16; }
 	}
 
 	public class DecisionTreeAttributeElements extends AbstractParserRuleElementFinder {
@@ -3674,7 +3686,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	//DecisionTreeOperator:
 	//	"dtree" "(" attributes+=DecisionTreeAttribute "," (attributes+=DecisionTreeAttribute ",")* delta=NUMBER "," tau=NUMBER
 	//	"," barrier=NUMBER "," frequency=NUMBER classAttributes+=DecisionTreeAttribute (","
-	//	classAttributes+=DecisionTreeAttribute)* ")";
+	//	classAttributes+=DecisionTreeAttribute)* "," stream=StreamOperatorParameter ")";
 	public DecisionTreeOperatorElements getDecisionTreeOperatorAccess() {
 		return (pDecisionTreeOperator != null) ? pDecisionTreeOperator : (pDecisionTreeOperator = new DecisionTreeOperatorElements());
 	}

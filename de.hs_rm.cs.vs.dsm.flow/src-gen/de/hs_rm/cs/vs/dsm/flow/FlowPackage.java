@@ -700,13 +700,22 @@ public interface FlowPackage extends EPackage
   int DECISION_TREE_OPERATOR__CLASS_ATTRIBUTES = MODEL_ELEMENT_FEATURE_COUNT + 5;
 
   /**
+   * The feature id for the '<em><b>Stream</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECISION_TREE_OPERATOR__STREAM = MODEL_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
    * The number of structural features of the '<em>Decision Tree Operator</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DECISION_TREE_OPERATOR_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 6;
+  int DECISION_TREE_OPERATOR_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.DecisionTreeAttributeImpl <em>Decision Tree Attribute</em>}' class.
@@ -3119,6 +3128,17 @@ public interface FlowPackage extends EPackage
   EReference getDecisionTreeOperator_ClassAttributes();
 
   /**
+   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.DecisionTreeOperator#getStream <em>Stream</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Stream</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.DecisionTreeOperator#getStream()
+   * @see #getDecisionTreeOperator()
+   * @generated
+   */
+  EReference getDecisionTreeOperator_Stream();
+
+  /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.DecisionTreeAttribute <em>Decision Tree Attribute</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5076,6 +5096,14 @@ public interface FlowPackage extends EPackage
      * @generated
      */
     EReference DECISION_TREE_OPERATOR__CLASS_ATTRIBUTES = eINSTANCE.getDecisionTreeOperator_ClassAttributes();
+
+    /**
+     * The meta object literal for the '<em><b>Stream</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECISION_TREE_OPERATOR__STREAM = eINSTANCE.getDecisionTreeOperator_Stream();
 
     /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.DecisionTreeAttributeImpl <em>Decision Tree Attribute</em>}' class.

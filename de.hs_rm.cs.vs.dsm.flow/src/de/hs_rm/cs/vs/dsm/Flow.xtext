@@ -113,7 +113,7 @@ RandomOperator:
 
 DecisionTreeOperator:
 	'dtree' '('attributes+=DecisionTreeAttribute ',' (attributes+=DecisionTreeAttribute ',')* delta=NUMBER ',' tau=NUMBER ',' barrier= NUMBER ',' frequency= NUMBER 
-		classAttributes+=DecisionTreeAttribute (',' classAttributes+=DecisionTreeAttribute)* ')';
+		classAttributes+=DecisionTreeAttribute (',' classAttributes+=DecisionTreeAttribute)* ',' stream=StreamOperatorParameter ')';
 	
 DecisionTreeAttribute:
 	key = STRING '{' value+=STRING (',' value+=STRING)* '}';

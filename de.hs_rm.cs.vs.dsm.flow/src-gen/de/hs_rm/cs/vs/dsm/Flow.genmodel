@@ -81,6 +81,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//DecisionTreeOperator/barrier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//DecisionTreeOperator/frequency"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//DecisionTreeOperator/classAttributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//DecisionTreeOperator/stream"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//DecisionTreeAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//DecisionTreeAttribute/key"/>
