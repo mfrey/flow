@@ -73,13 +73,32 @@
 \lstdefinelanguage{Flow}{
   morekeywords={structure, stream, processing, datatype, package, using, namespace, use, tag, join, ejoin, map, std, avg, in, out, untag,
   count, int, float, string, boolean, now, last, elements, min, hrs, sec, match, split, import, if, else, return, operator, filter,
-  diff, sdif, swrl, ocl, add, sub, div, mult},
+  diff, sdif, swrl, ocl, add, sub, div, mult, mod},
   sensitive=false,
   morecomment=[l]{//},
   morecomment=[s]{/*}{*/},
   morestring=[b]",
   keywordstyle=\bfseries\color{defblue},
   commentstyle=\bfseries\color{defgreen},
+  stringstyle=\bfseries\color{defgreen},
+  identifierstyle=\bfseries\color{deforange},
+  basicstyle=\scriptsize\ttfamily,	
+  showstringspaces=false,
+  numberstyle=\scriptsize,					
+  captionpos=b,
+  tabsize=4,
+  stepnumber=1,										
+  breaklines=true
+}
+
+\lstdefinelanguage{Lua}{
+  morekeywords={fm, create_operator_of_type, set_parameter, connect_operators},
+  sensitive=false,
+  morecomment=[l]{--},
+  morecomment=[s]{--[[}{--]]},
+  morestring=[b]",
+  keywordstyle=\bfseries\color{defblue},
+  commentstyle=\bfseries\color{defred},
   stringstyle=\bfseries\color{defgreen},
   identifierstyle=\bfseries\color{deforange},
   basicstyle=\scriptsize\ttfamily,	
@@ -142,9 +161,12 @@
 \newpage
 \tableofcontents
 \newpage
-\lstlistoflistings
+\listoffigures
 \newpage
 \listoftables
+\newpage
+\lstlistoflistings
+
 
 \include{introduction}
 \include{installation}
@@ -153,7 +175,7 @@
 \include{summary}
 
 \addcontentsline{toc}{section}{Literature}
-\bibliographystyle{ieeetr}
+\bibliographystyle{alphadin}
 \bibliography{doc}
 
 \end{document}

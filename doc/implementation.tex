@@ -1,4 +1,3 @@
-%\lstloadlanguages{Flow}
 \section{Implementation}
 \subsection{Introduction}
 In a previous version of the query language, code was generated for a DSM system
@@ -8,7 +7,236 @@ code generator, operators in the framework and a message format for the complex
 event processing system. This work provides a code generator for LUA which forms
 the foundation for a rewritten DSM framework for the DataStreamMiner project.
 
-\subsection{Deprecated Features of the Query Language}
+The remainder of this section is organized as follows. First the deprecated 
+features of the query language are presented followed by an overview of the 
+implemented operators and examples. 
+
+\subsection{Language}
+Table \ref{tab:overview} depicts a comparison of operators in the query language
+and the corresponding name of the operator in LUA. Operators which are italic 
+are not yet implemented in the DataStreamMiner framework, but will be generated
+by the generator of the query language.
+\begin{center}
+  \begin{tabular}{|l|l|l|l|}
+  \hline 
+  \textbf{Operator Flow} &  \textbf{Operator LUA} &  \textbf{Comment} \\
+  \hline 
+  \hline 
+  \texttt{avg} & IntAvg, \textit{FloatAvg} & computes the average value \\
+  \hline 
+  \texttt{count} & MessageCounter & counts a element in a stream \\
+  \hline 
+  \texttt{std} & \textit{StandardDeviation} & computes standard deviation of a element \\
+  \hline 
+  \texttt{add} & \textit{Math} & addition operation \\
+  \hline 
+  \texttt{sub} & \textit{Math} & subtraction operation \\
+  \hline 
+  \texttt{mult} & \textit{Math} & multiplication operation \\
+  \hline 
+  \texttt{div} & \textit{Math} & division operation \\
+  \hline 
+  \texttt{mod} & \textit{Math} & modulo operation \\
+  \hline 
+  \texttt{join} & Merge & joins multiple operators \\
+  \hline 
+  \texttt{ejoin} & \textit{ElementMerge} & adds elements to the stream \\
+  \hline
+  \texttt{split} & ? & duplicates a stream \\
+  \hline
+  \texttt{filter} & \textit{Filter} & filter a stream after a multiple criterias \\
+  \hline
+  tag & b & c \\
+  \hline   
+  untag & b & c \\
+  \hline 
+  swrl & b & c \\
+  \hline
+  \texttt{dtree} & DecisionTree & decision tree \\
+  \hline  
+  ? & Tag (Sparql) & c \\
+  \hline 
+  \texttt{in} & CacheIn & input operator \\
+  \hline
+  \texttt{out} & CacheOut & output operator \\
+  \hline
+  \texttt{rand} & RandomInts & generates random integer values \\
+  \hline
+  ? & PrintOnScreen & c \\
+  \hline  
+  - & SeparateOddEven & Operator can be realized using the \texttt{mod} operator \\
+  \hline  
+  ? & NumberGenerator & generates numbers \\
+  \hline  
+  \texttt{log} & Log & Log operator \\
+  \hline
+  \end{tabular}
+  \captionof{table}{\emph{Comparision of operators in query language and framework}}
+  \label{tab:overview}
+\end{center}
+
+\subsubsection{Streams}
+\subsubsection{Barriers}
+The query language introduced two types of barrier mechanisms 
+\cite{297:Frey2010}. The first barrier mechanism provides a sliding window over
+a stream of data, whereas the sliding window can be specified in terms of time
+(seconds, minutes or hours) or elements. The second barrier mechanism is a 
+marker mechanism which provides a special element in a data stream. Elements 
+in a stream are processed while a marker passes the operator. For further 
+information about the marker barrier mechanism please be referred to 
+\cite{297:Frey2010}. Since the DSM framework does not support markers, the 
+feature was disabled and might be included in future versions of the language 
+and the DSM framework. Listing \ref{lst:exbaflw} shows an example for a barrier
+in the average operator \texttt{avg} of the query language.
+\begin{lstlisting}[language=Flow, caption={\emph{Example of Barrier Mechanism in Flow}},label={lst:exbaflw}]
+// Operation: Computes the average of an element 'element' in a stream r over the last 10 hours
+a = avg(r.element, r[last 10 hrs]);
+\end{lstlisting}
+The barrier is transformed into the LUA construct depicted in listing 
+\ref{lst:exbalua}. The barrier mechanism is transformed into a 
+\texttt{set\_parameter()} operation of the operator. The first parameter in line
+one denotes the step size of the sliding window whereas the time is set in 
+miliseconds. The last parameter in line 2 sets the type of the sliding window,
+here it is \texttt{time}. Another option for the window type is 
+\texttt{elements}. At present the \texttt{time} option only supports seconds,
+minutes and hours. 
+\begin{lstlisting}[language=Lua, caption={\emph{Example of Barrier Mechanism in LUA}},label={lst:exbalua}]
+-- step_size_num denotes the step size, window_type the type of the window
+a:set_parameter("step_size_num", "36000000");
+a:set_parameter("window_type", "time");
+\end{lstlisting}
+
+\subsubsection{Operators}
+The following section presents examples for operators written in the query 
+language and the corresponding  transformation into LUA artifacts. Every 
+operator is initialized by a \texttt{create\_operator\_of\_type}() operation. 
+Paramters of each operator are set with a \texttt{set\_param\-eter()} operation 
+which consists of a key/value structure. The first argument of the operation
+denotes the key, the second argument the value of the key. Typically input and
+output streams of different operators are connected by the 
+\texttt{connect\_operators()} operation. Parameters of the operation are the 
+input and output streams and string value which denotes the direction of the 
+stream. 
+
+Analysis operators are average (\texttt{avg}), standard deviation (\texttt{std})
+and count (\texttt{count}). Each operator has a parameter which denotes the 
+element in a stream while the second parameter defines the sliding window over
+the stream. Listing \ref{lst:exanflw} depicts examples for the analysis 
+operators. The initialization of the streams is omitted. 
+\begin{lstlisting}[language=Flow, caption={\emph{Examples of Analysis Operators in Flow}},label={lst:exanflw}]
+// Operation: Computes the average of an element 'element' in a stream r over the last 10 hours
+a = avg(r.element, r[last 10 hrs]);
+// Operation: Computes the standard deviation of an element 'element' in a stream s over the last 20 elements
+b = std(s.element, s[last 20 elements]);
+// Operation: Counts the occurrence of element 'element' in a stream t in the last 10 minutes
+c = count(t.element, t[last 10 min]);
+\end{lstlisting}
+The operators specified in the previous listing are transformed in the 
+corresponding LUA language artifacts which are depicted in listing 
+\ref{lst:exanlua}. 
+\begin{lstlisting}[language=Lua, caption={\emph{Examples of Analysis Operators in LUA}},label={lst:exanlua}]
+-- average operator
+a = fm:create_operator_of_type("a", "IntAvg");
+a:set_parameter("step_size_num", "36000000");
+a:set_parameter("window_type", "time");
+a:set_parameter("element", "element");
+fm:connect_operators(a, "out", r, "in");
+
+-- standard deviation operator
+b = fm:create_operator_of_type("b", "StandardDeviation");
+b:set_parameter("step_size_num", "20");
+b:set_parameter("window_type", "elements");
+b:set_parameter("element", "element");
+fm:connect_operators(b, "out", s, "in");
+
+-- count operator
+c = fm:create_operator_of_type("c", "MessageCounter");
+c:set_parameter("step_size_num", "600000");
+c:set_parameter("window_type", "time");
+c:set_parameter("element", "element");
+fm:connect_operators(c, "out", t, "in");
+\end{lstlisting}
+
+
+Arithmetic operators are addition (\texttt{add}), subtraction 
+(\texttt{sub}), multiplication (\texttt{mult}), division (\texttt{div}) and
+modulo (\texttt{mod}). Parameter of each arithmetic operator is an element in
+a stream which represents the left operand of the arithmetic operation and
+a right operand which can be a number, variable or another element in a stream. 
+The result of each arithmetic operation is a value which is saved in a output
+stream. Listing \ref{lst:exarflw} depicts an example for each arithmetic 
+operator.
+\begin{lstlisting}[language=Flow, caption={\emph{Examples of Arithmetic Operators in Flow}},label={lst:exarflw}]
+// Operation: d = u.element + 2
+d = add(u.element, 2);
+// Operation: e = v.element - o
+e = sub(v.element, o);
+// Operation: f = w.element * x.element
+f = mult(w.element, x.element);
+// Operation: g = y.element / 3
+g = div(y.element, 3);
+// Operation: h = a.element % z.element
+h = mod(a.element, z.element); 
+\end{lstlisting}
+
+\begin{lstlisting}[language=LUA, caption={\emph{Examples of Arithmetic Operators in LUA}},label={lst:exanlua}]
+-- Add
+d = fm:create_operator_of_type("d", "Math");
+d:set_parameter("operationType", "add");
+d:set_parameter("literal", "2");
+fm:connect_operators(d, "out", u, "in");
+-- Sub
+e = fm:create_operator_of_type("e", "Math");
+e:set_parameter("operationType", "sub");
+e:set_parameter("literal", "42");
+fm:connect_operators(e, "out", v, "in");
+-- Mult
+f = fm:create_operator_of_type("f", "Math");
+f:set_parameter("operationType", "mult");
+f:set_parameter("stream", "x");
+f:set_parameter("element", "element");
+fm:connect_operators(f, "out", w, "in0");
+fm:connect_operators(f, "out", x, "in1");
+-- Div
+g = fm:create_operator_of_type("g", "Math");
+g:set_parameter("operationType", "div");
+g:set_parameter("literal", "3");
+fm:connect_operators(g, "out", y, "in");
+-- Mod
+h = fm:create_operator_of_type("h", "Math");
+h:set_parameter("operationType", "mod");
+h:set_parameter("stream", "z");
+h:set_parameter("element", "element");
+fm:connect_operators(h, "out", a, "in0");
+fm:connect_operators(h, "out", z, "in1");
+\end{lstlisting}
+System operatores are the input (\texttt{in}), output (\texttt{out}) and log
+(\texttt{log}) operator. The input and ouput operators require a single 
+internationalized resource identifier (IRI) or a list of IRIs, a address and a 
+port. In addition, the output operator requires a input stream. The log operator
+requires a location, a format and a input stream. Examples for the system 
+operators are shown in listing \ref{lst:exsysflw}.
+\begin{lstlisting}[language=Flow, caption={\emph{Examples of system operators}},label={lst:exsysflw}]
+
+// The location is a file called 'generated3.txt', the format is the file 'aal', input stream is 'dt'
+logIn = log("generated3.txt", "aal", dt);
+\end{lstlisting}
+
+\begin{lstlisting}[language=Flow, caption={\emph{Generated LUA code of system operators}},label={lst:exanlua}]
+cacheIn = fm:create_operator_of_type("cacheIn", "CacheIn");
+cacheIn:set_parameter("list_iris", "http://www.anothertest.de ");
+cacheIn:set_parameter("connector_socket_address", "localhost");
+cacheIn:set_parameter("connector_socket_port", "9595");
+
+
+
+logIn = fm:create_operator_of_type("logIn", "Log");
+logIn:set_parameter("log_file_location", "generated3.txt");
+logIn:set_parameter("log_format", "aal");
+fm:connect_operators(logIn, "out", dt, "in");
+\end{lstlisting}
+
+\subsubsection{Deprecated Features of the Query Language}
 Operators and language features which were part of previous version of the query
 language are denoted in table \ref{tab:deprecated}. The expressivness of a query
 language is limited to the system on which the language is executed.
@@ -43,92 +271,9 @@ operator and therefore are syntactic sugar.
   functions & Feature & Procedural functions for the map operator \\
   \hline
   \end{tabular}
-  \captionof{table}{Deprecated features of the query language}
+  \captionof{table}{\emph{Deprecated features of the query language}}
   \label{tab:deprecated}
 \end{center}
-
-\subsection{Language}
-Table \ref{tab:overview} depicts a comparison of operators in the query language
-and the corresponding name of the operator in LUA. Operators which are italic 
-are not yet implemented in the DataStreamMiner framework, but will be generated
-by the generator of the query language.
-\begin{center}
-  \begin{tabular}{|l|l|l|l|}
-  \hline 
-  \textbf{Operator Flow} &  \textbf{Operator LUA} &  \textbf{Comment} \\
-  \hline 
-  \hline 
-  avg & IntAvg, \textit{FloatAvg} & c \\
-  \hline 
-  count & MessageCounter & c \\
-  \hline 
-  std & \textit{StandardDeviation} & c \\
-  \hline 
-  add & \textit{Math} & c \\
-  \hline 
-  sub & \textit{Math} & c \\
-  \hline 
-  mult & \textit{Math} & c \\
-  \hline 
-  div & \textit{Math} & c \\
-  \hline 
-  join & Merge & c \\
-  \hline 
-  ejoin & \textit{ElementMerge} & c \\
-  \hline
-  split & ? & c \\
-  \hline
-  filter & b & c \\
-  \hline
-  tag & b & c \\
-  \hline   
-  untag & b & c \\
-  \hline 
-  swrl & b & c \\
-  \hline
-  dtree & DecisionTree & c \\
-  \hline  
-  a & Tag (Sparql) & c \\
-  \hline 
-  in & CacheIn & c \\
-  \hline
-  out & CacheOut & c \\
-  \hline
-  rand & RandomInts & c \\
-  \hline
-  ? & PrintOnScreen & c \\
-  \hline  
-  ? & SeparateOddEven & c \\
-  \hline  
-  a & NumberGenerator & c \\
-  \hline  
-  log & Log & c \\
-  \hline
-  \end{tabular}
-  \captionof{table}{Comparision of operators in query language and framework}
-  \label{tab:overview}
-\end{center}
-
-\subsubsection{Streams}
-\subsubsection{Barriers}
-\subsubsection{Operators}
-
-\begin{lstlisting}[language=Flow, caption={\emph{Examples of Analysis Operators in Flow}},label={lst:exanflw}]
-// Examples of Operators average, standard deviation and count
-a = avg(r.element, r[now]);
-b = std(t.element, s[last 20 elements]);
-c = count(t.element, t[last 10 min]);
-// Examples of Operators addition, subtraction, multiplication and division
-d = add(u.element, 2);
-e = sub(v.element, 4);
-f = mult(w.element, x.element);
-g = div(y.element, 3);
-\end{lstlisting}
-
-\begin{lstlisting}[language=Flow, caption={\emph{Examples of Analysis Operators in LUA}},label={lst:exanlua}]
-todo
-\end{lstlisting}
-
 
 \subsection{Integration of Meta-models}
 Xtext allows to reference instances of metamodels within a DSL. One example is 
