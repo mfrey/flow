@@ -42,7 +42,7 @@ public class ArithmeticOperatorGenerator extends AbstractOperatorGenerator {
 		String result = Util.getInstance().createParameter(mStream, "operationType", OPERATION);
 
 		if(mStreamParameter != null){
-			result += Util.getInstance().createParameter(mStream, "stream", mStreamParameter.getStreamVariable().getReference().getName());
+			result += Util.getInstance().createParameter(mStream, "stream", mStreamParameter.getReference().getName());
 			result += Util.getInstance().createParameter(mStream, "element", mStreamParameter.getElement().getName());
 		}else if(!mLiteral.equals("")){
 			result += Util.getInstance().createParameter(mStream, "literal", mLiteral);
