@@ -1,8 +1,15 @@
 NOTES
 =====
-0.0.1
------
-1. Installation:
+Flow is a query/analysis language for the DataStreamMiner complex event processing system developed at
+the Distributed Systems Lab (Dopsy) at Hochschule RheinMain.
+
+Installation from git
+---------------------
+1. Clone the repository:
+
+		git clone git://github.com/mfrey/flow.git
+
+2. Install the dependencies for your distribution (packages names can differ):
 	- Install the following plugins
 		- null (todo)
 			- Eclipse Modeling Tools
@@ -18,7 +25,7 @@ NOTES
 		- Sonatype
 			- Tycho Project Configurators
 		- m2e
-			-m2e Maven Integration for Eclipse
+			- m2e Maven Integration for Eclipse
 
 	- The plugins of the project are imported via the import functionality of eclipse. Please select from the "File" menu the entry "Import ..." > "Maven" > "Existing Maven Projects". Select as root directory the root of the project directory which contains the parent pom.xml. Select all projects for an import to your workspace. Usually the import process takes some time, especially in cases of a first initial import. 
 

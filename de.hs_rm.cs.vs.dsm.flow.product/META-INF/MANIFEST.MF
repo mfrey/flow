@@ -4,3 +4,4 @@ Bundle-Name: Flow Product
 Bundle-SymbolicName: de.hs_rm.cs.vs.dsm.flow.product;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Hochschule RheinMain
+Require-Bundle: org.eclipse.core.runtime;bundle-version="3.7.0"

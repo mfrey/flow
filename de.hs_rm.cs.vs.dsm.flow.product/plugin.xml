@@ -6,10 +6,10 @@
          point="org.eclipse.core.runtime.products">
       <product
             application="org.eclipse.ui.ide.workbench"
-            name="Flow Product">
+            name="Flow">
          <property
                name="appName"
-               value="Flow Product">
+               value="Flow">
          </property>
       </product>
    </extension>
