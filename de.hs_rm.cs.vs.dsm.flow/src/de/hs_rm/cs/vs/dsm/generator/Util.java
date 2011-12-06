@@ -25,13 +25,21 @@ public class Util {
 	 * stupidity 
 	 * A in-memory representation of the complex event processing network */
 	private Network mNetwork = new Network();
- 
-	
+ 	
 	/**
 	 * The constructor is private in order to guarantee that the class is
 	 * only initialized once. 
 	 */
 	private Util(){}
+	
+	/**
+	 * The method resets the in-memory representation of the complex event
+	 * processing network. This method should be called from the generator
+	 * every time a file is generated.
+	 */
+	public void clearNetwork(){
+		mNetwork.clear();
+	}
 	
 	/**
 	 * The method returns an instance of the class
@@ -47,7 +55,6 @@ public class Util {
 		this.mNetwork.getStreams().add(pName);
 		// TODO: Is it necessary to add operator at this point to the network?
 		
-		//
 		return pName + " = fm:create_operator_of_type(\"" + pName + "\", \"" + pOperator + "\");\n";
 	}
 	
@@ -233,7 +240,7 @@ public class Util {
 		 */
 		
 		// Create a unique identifier for the ouput stream (which is a input stream for the 
-		String stream = "stream" + pIn.hashCode();
+		String stream = "stream" + pOut.hashCode();
 		// Create a stream statement for the split operator
 		StreamStatement statement = FlowFactory.eINSTANCE.createStreamStatement();
 		// Create a split operator
@@ -261,7 +268,8 @@ public class Util {
 			result += Util.getInstance().connectOperator(pIn.get(0), "in",  stream, "out");
 		}
 		
-		for(int i = 0; i < pOut.size(); i+=2){
+		
+		if(pOut.size() == 2){
 			// Set the name of the stream which will be 'splitted'
 			StreamDefinition splitStream = FlowFactory.eINSTANCE.createStreamDefinition();
 			// Set the name of the stream
@@ -274,24 +282,53 @@ public class Util {
 			operator.setParameter(parameter);
 			// Set the operator to the statement
 			statement.setOperator(operator);
-			// Set the first return type of the operator
-			stream = stream + i;
-		
-			if((i+2) == pOut.size()){
-				statement.getReturnStream().get(0).setName(pOut.get(i));
-				statement.getReturnStream().get(1).setName(pOut.get(i+1));
-			}else{
+			// Set the return types of the operator
+			statement.getReturnStream().get(0).setName(pOut.get(0));
+			statement.getReturnStream().get(1).setName(pOut.get(1));
+			
+			SplitOperatorGenerator generator = new SplitOperatorGenerator(statement);
+			result += generator.toString();
+			
+		//	mNetwork.getStreams().add(pOut.get(0));
+		//	mNetwork.getStreams().add(pOut.get(1));
+		}else{
+			SplitOperatorGenerator generator = null;
+			StreamDefinition splitStream = null;
+			
+			for(int i = 0; i < (pOut.size()-1); i++){
+				// Set the name of the stream which will be 'splitted'
+				splitStream = FlowFactory.eINSTANCE.createStreamDefinition();
+				// Set the name of the stream
+				splitStream.setName(stream);
+				// Set the stream in the parameter of the operator
+				parameter.setStream(splitStream);
+				// Set the barrier of the parameter
+				parameter.setBarrier(barrier);
+				// Set the parameter of the split operator
+				operator.setParameter(parameter);
+				// Set the operator to the statement
+				statement.setOperator(operator);
+				// Set the first return type of the operator
+				stream = stream + i;
+			
 				statement.getReturnStream().get(0).setName(stream);
 				// Set the second return type of the operator
 				statement.getReturnStream().get(1).setName(pOut.get(i));
+
+				// Create a split operator generator
+				generator = new SplitOperatorGenerator(statement);
+				if((i+1) != (pOut.size()-1)){
+					// Store the result
+					result += generator.toString();
+				}
+			}
+			// Replace the string 
+			generator.replaceStream(stream, pOut.get((pOut.size()-1)));
+			
+			if(generator != null){
+				result += generator.toString();
 			}
 
-			// Create a split operator generator
-			SplitOperatorGenerator generator = new SplitOperatorGenerator(statement);
-			// Store the result
-			result += generator.toString();
-			// Create a new operator (for a new hash code)
-			//operator = FlowFactory.eINSTANCE.createSplitOperator();
 		}
 		
 		return result;		

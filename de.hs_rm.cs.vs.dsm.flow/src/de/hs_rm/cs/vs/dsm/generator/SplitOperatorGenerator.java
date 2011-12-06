@@ -52,6 +52,15 @@ public class SplitOperatorGenerator extends AbstractOperatorGenerator {
 		}
 	}
 	
+	public void replaceStream(final String pOldStream, final String pReplacement){
+		for(int i = 0; i < this.getOutputStreams().size(); i++){
+			if(this.getOutputStreams().get(i).equals(pOldStream)){
+				this.getOutputStreams().remove(i);
+				this.getOutputStreams().add(pReplacement);
+			}
+		}
+	}
+	
 	/**
 	 * {@inheritDoc} 
 	 */

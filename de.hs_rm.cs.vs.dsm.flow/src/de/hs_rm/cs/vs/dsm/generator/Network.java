@@ -17,4 +17,8 @@ public class Network {
 	public void setStreams(Set<String> pStreams) {
 		this.mStreams = pStreams;
 	}
+	
+	public void clear(){
+		this.mStreams.clear();
+	}
 }

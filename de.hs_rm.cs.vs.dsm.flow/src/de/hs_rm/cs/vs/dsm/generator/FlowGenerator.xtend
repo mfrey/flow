@@ -69,6 +69,7 @@ class FlowGenerator implements IGenerator {
       «ENDFOR»
       «{ Util::instance.startOperators }»
       «{ Util::instance.stopOperators }»
+      «{ Util::instance.clearNetwork }»
     '''
     
     def compile(ModelElement m)'''  	

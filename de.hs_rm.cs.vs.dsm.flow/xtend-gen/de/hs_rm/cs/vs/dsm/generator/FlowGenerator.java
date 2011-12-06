@@ -92,6 +92,9 @@ public class FlowGenerator implements IGenerator {
     String _stopOperators = _instance_1.getStopOperators();
     _builder.append(_stopOperators, "");
     _builder.newLineIfNotEmpty();
+    Util _instance_2 = Util.getInstance();
+    _instance_2.clearNetwork();
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
