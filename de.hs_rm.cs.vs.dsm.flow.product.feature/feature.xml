@@ -7331,6 +7331,7 @@
 
    <plugin
          id="de.hs_rm.cs.vs.dsm.flow.feature"
+         os="linux"
          download-size="0"
          install-size="0"
          version="0.0.0"
