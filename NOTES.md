@@ -31,7 +31,6 @@ NOTES
 	- there is a examples/ directory for a few examples of operators and generated code
 
 4. Known Issues:
-	- multiple return types are not working
 	- sparql-, tag-, untag-, swrl- operators need to be implemented
 	- scoping and generators interfere in a 'chaotic' way (see also bug report on github)
 	- maven/tycho setup is broken
