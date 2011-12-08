@@ -40,6 +40,23 @@ corresponding software.
 
 		mvn package
 
+Get Started
+-----------
+There is a tutorial in the doc/tutorial directory which provides a good starting
+point for writing code for the DataStreamMiner framework.
+
+
+Known Issues
+------------
+1. Operators
+	- sparql-, tag-, untag-, swrl- operators need to be implemented
+
+2. Language Workbench
+	- scoping and generators interfere in a 'chaotic' way (see also bug report on github)
+
+3. Build
+	- maven/tycho setup is broken
+
 Bug tracker
 -----------
 Have a bug or feature request? Please create an issue here on GitHub!
