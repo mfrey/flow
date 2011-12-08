@@ -14,9 +14,35 @@ and their relation. The figure omits method and attribute details which are
 described later in that section.
 \begin{figure}[htpb]
   \centering
-  \includegraphics[width=0.8\textwidth]{figures/overview}
+  \includegraphics[width=0.7\textwidth]{figures/overview}
   \caption{\emph{Overview of classes which are used in code generation}}
   \label{fig:generator}
 \end{figure}
-\subsubsection{Bla}
+Every operator of the query language is transformed into a set of LUA 
+statements. The LUA script typically consists of statements for the 
+initializiation of the framework, initialization and parameterization of 
+operators, interconnecting operators, start and operators of operators. This 
+sequence of statements is used in the code transformation process. The class 
+\texttt{AbstractOperatorGenerator} is depicted in figure 
+\ref{fig:abstractoperatorgenerator} and provides abstract methods for the 
+initialization (\texttt{initializeOperator()}), parameterization 
+(\texttt{setOperatorProperties()}) and interconnection 
+(\texttt{setOperatorConnection()}) of operators. Each operator generalizes from
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/overview}
+  \caption{\emph{UML class diagram of \texttt{AbstractOperatorGenerator}}}
+  \label{fig:abstractoperatorgenerator}
+\end{figure}
+class \texttt{AbstractOperatorGenerator} and overwrites the abstract methods.
 
+\subsubsection{Arithmetic Operators}
+Arithmetic Operators are 
+
+\subsubsection{Analysis Operators}
+
+\subsubsection{Structural Operators}
+
+\subsubsection{Knowledge Operators}
+
+\subsubsection{System Operators}

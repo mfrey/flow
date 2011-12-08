@@ -1,11 +1,13 @@
 \section{Implementation}
 \subsection{Introduction}
 In a previous version of the query language, code was generated for a DSM system
-specified in \cite{285:Fischer2010}. Required extensions for this system were 
-defined in \cite{297:Frey2010}. In particular, this included XML schema for the 
-code generator, operators in the framework and a message format for the complex 
-event processing system. This work provides a code generator for LUA which forms
-the foundation for a rewritten DSM framework for the DataStreamMiner project.
+specified in \cite{285:Fischer2010}. While the introduced system had its 
+limitations, extensions for this system were defined in \cite{297:Frey2010}. In 
+particular, this included a XML schema for the code generator, operators in the 
+framework and a message format for the DSM framework. This work provides a code 
+generator for LUA which forms the foundation for the rewritten DSM framework for 
+the DataStreamMiner project. It is a complete rewrite of the code generator of 
+previous versions of the query language.
 
 The remainder of this section is organized as follows. First the deprecated 
 features of the query language are presented followed by an overview of the 
@@ -133,7 +135,7 @@ c = count(t.element, t[last 10 min]);
 \end{lstlisting}
 The operators specified in the previous listing are transformed in the 
 corresponding LUA language artifacts which are depicted in listing 
-\ref{lst:exanlua}. 
+\ref{lst:exanlua}. Each 
 \begin{lstlisting}[language=Lua, caption={\emph{Examples of Analysis Operators in LUA}},label={lst:exanlua}]
 -- average operator
 a = fm:create_operator_of_type("a", "IntAvg");
@@ -156,8 +158,6 @@ c:set_parameter("window_type", "time");
 c:set_parameter("element", "element");
 fm:connect_operators(c, "out", t, "in");
 \end{lstlisting}
-
-
 Arithmetic operators are addition (\texttt{add}), subtraction 
 (\texttt{sub}), multiplication (\texttt{mult}), division (\texttt{div}) and
 modulo (\texttt{mod}). Parameter of each arithmetic operator is an element in
@@ -178,7 +178,9 @@ g = div(y.element, 3);
 // Operation: h = a.element % z.element
 h = mod(a.element, z.element); 
 \end{lstlisting}
-
+The previously in listing \ref{lst:exarflw} presented examples for 
+arithmetic operators are transformed into LUA artifacts and are shown in listing
+\ref{lst:exanlua}.
 \begin{lstlisting}[language=LUA, caption={\emph{Examples of Arithmetic Operators in LUA}},label={lst:exanlua}]
 -- Add
 d = fm:create_operator_of_type("d", "Math");
@@ -223,13 +225,12 @@ logIn = log("generated3.txt", "aal", dt);
 \end{lstlisting}
 
 \begin{lstlisting}[language=Flow, caption={\emph{Generated LUA code of system operators}},label={lst:exanlua}]
+-- input/cachein operator
 cacheIn = fm:create_operator_of_type("cacheIn", "CacheIn");
 cacheIn:set_parameter("list_iris", "http://www.anothertest.de ");
 cacheIn:set_parameter("connector_socket_address", "localhost");
 cacheIn:set_parameter("connector_socket_port", "9595");
-
-
-
+-- log operator
 logIn = fm:create_operator_of_type("logIn", "Log");
 logIn:set_parameter("log_file_location", "generated3.txt");
 logIn:set_parameter("log_format", "aal");
