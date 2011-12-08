@@ -21,8 +21,7 @@ described later in that section.
 Every operator of the query language is transformed into a set of LUA 
 statements. The LUA script typically consists of statements for the 
 initializiation of the framework, initialization and parameterization of 
-operators, interconnecting operators, start and operators of operators. This 
-sequence of statements is used in the code transformation process. The class 
+operators, interconnecting operators, start and stop of operators. The class 
 \texttt{AbstractOperatorGenerator} is depicted in figure 
 \ref{fig:abstractoperatorgenerator} and provides abstract methods for the 
 initialization (\texttt{initializeOperator()}), parameterization 
@@ -37,7 +36,16 @@ initialization (\texttt{initializeOperator()}), parameterization
 class \texttt{AbstractOperatorGenerator} and overwrites the abstract methods.
 
 \subsubsection{Arithmetic Operators}
-Arithmetic Operators are 
+Supported arithmetic operators are \texttt{add} 
+(\texttt{AdditionOperatorGenerator}), \texttt{sub} 
+(\texttt{Subtraction\-OperatorGenerator}), \texttt{mult} 
+(\texttt{MultiplicationOperatorGenerator}), \texttt{div} 
+(\texttt{DivisionOperator\-Generator}) and \texttt{mod} 
+(\texttt{ModuloOperatorGenerator}). Each operator inherits from class 
+\texttt{Arithm\-eticperatorGenerator} which itself inherits from class
+\texttt{AbstractOperatorGenerator}. Arithmetic operators are transformed to a
+operator of type \texttt{Math}. The type of the arithmetic operation is set
+as an attribute in LUA.
 
 \subsubsection{Analysis Operators}
 
