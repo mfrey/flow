@@ -24,7 +24,7 @@ PackageDeclaration:
 	'}';
 
 ModelElement:
-	PackageDeclaration | Import | StructureDeclaration | DecisionTreeOperator |
+	PackageDeclaration | Import | StructureDeclaration | 
 	StreamDeclaration | VariableDefinition | StreamStatement | StreamDefinition | StreamAccess;
 		
 /**
@@ -133,7 +133,7 @@ InputOperator:
  * The rule summarizes the operators which have a return type
  */
 ReturnTypeOperator:
-	InputOperator | JoinOperator |  LogOperator | 
+	InputOperator | JoinOperator |  LogOperator | DecisionTreeOperator | 
 	TagOperator | UnTagOperator | FilterOperator | SplitOperator | CountOperator | 
 	StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | ModuloOperator |
 	RandomOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | 

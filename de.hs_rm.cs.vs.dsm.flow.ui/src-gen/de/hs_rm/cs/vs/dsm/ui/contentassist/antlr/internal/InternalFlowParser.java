@@ -5535,14 +5535,14 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ModelElement__Alternatives"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2024:1: rule__ModelElement__Alternatives : ( ( rulePackageDeclaration ) | ( ruleImport ) | ( ruleStructureDeclaration ) | ( ruleDecisionTreeOperator ) | ( ruleStreamDeclaration ) | ( ruleVariableDefinition ) | ( ruleStreamStatement ) | ( ruleStreamDefinition ) | ( ruleStreamAccess ) );
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2024:1: rule__ModelElement__Alternatives : ( ( rulePackageDeclaration ) | ( ruleImport ) | ( ruleStructureDeclaration ) | ( ruleStreamDeclaration ) | ( ruleVariableDefinition ) | ( ruleStreamStatement ) | ( ruleStreamDefinition ) | ( ruleStreamAccess ) );
     public final void rule__ModelElement__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2028:1: ( ( rulePackageDeclaration ) | ( ruleImport ) | ( ruleStructureDeclaration ) | ( ruleDecisionTreeOperator ) | ( ruleStreamDeclaration ) | ( ruleVariableDefinition ) | ( ruleStreamStatement ) | ( ruleStreamDefinition ) | ( ruleStreamAccess ) )
-            int alt2=9;
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2028:1: ( ( rulePackageDeclaration ) | ( ruleImport ) | ( ruleStructureDeclaration ) | ( ruleStreamDeclaration ) | ( ruleVariableDefinition ) | ( ruleStreamStatement ) | ( ruleStreamDefinition ) | ( ruleStreamAccess ) )
+            int alt2=8;
             alt2 = dfa2.predict(input);
             switch (alt2) {
                 case 1 :
@@ -5603,18 +5603,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2047:6: ( ruleDecisionTreeOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2047:6: ( ruleStreamDeclaration )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2047:6: ( ruleDecisionTreeOperator )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2048:1: ruleDecisionTreeOperator
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2047:6: ( ruleStreamDeclaration )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2048:1: ruleStreamDeclaration
                     {
-                     before(grammarAccess.getModelElementAccess().getDecisionTreeOperatorParserRuleCall_3()); 
-                    pushFollow(FOLLOW_ruleDecisionTreeOperator_in_rule__ModelElement__Alternatives4318);
-                    ruleDecisionTreeOperator();
+                     before(grammarAccess.getModelElementAccess().getStreamDeclarationParserRuleCall_3()); 
+                    pushFollow(FOLLOW_ruleStreamDeclaration_in_rule__ModelElement__Alternatives4318);
+                    ruleStreamDeclaration();
 
                     state._fsp--;
 
-                     after(grammarAccess.getModelElementAccess().getDecisionTreeOperatorParserRuleCall_3()); 
+                     after(grammarAccess.getModelElementAccess().getStreamDeclarationParserRuleCall_3()); 
 
                     }
 
@@ -5622,18 +5622,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2053:6: ( ruleStreamDeclaration )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2053:6: ( ruleVariableDefinition )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2053:6: ( ruleStreamDeclaration )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2054:1: ruleStreamDeclaration
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2053:6: ( ruleVariableDefinition )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2054:1: ruleVariableDefinition
                     {
-                     before(grammarAccess.getModelElementAccess().getStreamDeclarationParserRuleCall_4()); 
-                    pushFollow(FOLLOW_ruleStreamDeclaration_in_rule__ModelElement__Alternatives4335);
-                    ruleStreamDeclaration();
+                     before(grammarAccess.getModelElementAccess().getVariableDefinitionParserRuleCall_4()); 
+                    pushFollow(FOLLOW_ruleVariableDefinition_in_rule__ModelElement__Alternatives4335);
+                    ruleVariableDefinition();
 
                     state._fsp--;
 
-                     after(grammarAccess.getModelElementAccess().getStreamDeclarationParserRuleCall_4()); 
+                     after(grammarAccess.getModelElementAccess().getVariableDefinitionParserRuleCall_4()); 
 
                     }
 
@@ -5641,18 +5641,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2059:6: ( ruleVariableDefinition )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2059:6: ( ruleStreamStatement )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2059:6: ( ruleVariableDefinition )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2060:1: ruleVariableDefinition
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2059:6: ( ruleStreamStatement )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2060:1: ruleStreamStatement
                     {
-                     before(grammarAccess.getModelElementAccess().getVariableDefinitionParserRuleCall_5()); 
-                    pushFollow(FOLLOW_ruleVariableDefinition_in_rule__ModelElement__Alternatives4352);
-                    ruleVariableDefinition();
+                     before(grammarAccess.getModelElementAccess().getStreamStatementParserRuleCall_5()); 
+                    pushFollow(FOLLOW_ruleStreamStatement_in_rule__ModelElement__Alternatives4352);
+                    ruleStreamStatement();
 
                     state._fsp--;
 
-                     after(grammarAccess.getModelElementAccess().getVariableDefinitionParserRuleCall_5()); 
+                     after(grammarAccess.getModelElementAccess().getStreamStatementParserRuleCall_5()); 
 
                     }
 
@@ -5660,18 +5660,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 7 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2065:6: ( ruleStreamStatement )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2065:6: ( ruleStreamDefinition )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2065:6: ( ruleStreamStatement )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2066:1: ruleStreamStatement
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2065:6: ( ruleStreamDefinition )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2066:1: ruleStreamDefinition
                     {
-                     before(grammarAccess.getModelElementAccess().getStreamStatementParserRuleCall_6()); 
-                    pushFollow(FOLLOW_ruleStreamStatement_in_rule__ModelElement__Alternatives4369);
-                    ruleStreamStatement();
+                     before(grammarAccess.getModelElementAccess().getStreamDefinitionParserRuleCall_6()); 
+                    pushFollow(FOLLOW_ruleStreamDefinition_in_rule__ModelElement__Alternatives4369);
+                    ruleStreamDefinition();
 
                     state._fsp--;
 
-                     after(grammarAccess.getModelElementAccess().getStreamStatementParserRuleCall_6()); 
+                     after(grammarAccess.getModelElementAccess().getStreamDefinitionParserRuleCall_6()); 
 
                     }
 
@@ -5679,37 +5679,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 8 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2071:6: ( ruleStreamDefinition )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2071:6: ( ruleStreamAccess )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2071:6: ( ruleStreamDefinition )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2072:1: ruleStreamDefinition
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2071:6: ( ruleStreamAccess )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2072:1: ruleStreamAccess
                     {
-                     before(grammarAccess.getModelElementAccess().getStreamDefinitionParserRuleCall_7()); 
-                    pushFollow(FOLLOW_ruleStreamDefinition_in_rule__ModelElement__Alternatives4386);
-                    ruleStreamDefinition();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getModelElementAccess().getStreamDefinitionParserRuleCall_7()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 9 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2077:6: ( ruleStreamAccess )
-                    {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2077:6: ( ruleStreamAccess )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2078:1: ruleStreamAccess
-                    {
-                     before(grammarAccess.getModelElementAccess().getStreamAccessParserRuleCall_8()); 
-                    pushFollow(FOLLOW_ruleStreamAccess_in_rule__ModelElement__Alternatives4403);
+                     before(grammarAccess.getModelElementAccess().getStreamAccessParserRuleCall_7()); 
+                    pushFollow(FOLLOW_ruleStreamAccess_in_rule__ModelElement__Alternatives4386);
                     ruleStreamAccess();
 
                     state._fsp--;
 
-                     after(grammarAccess.getModelElementAccess().getStreamAccessParserRuleCall_8()); 
+                     after(grammarAccess.getModelElementAccess().getStreamAccessParserRuleCall_7()); 
 
                     }
 
@@ -5734,13 +5715,13 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ElementJoinOperator__Alternatives_2"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2088:1: rule__ElementJoinOperator__Alternatives_2 : ( ( ( rule__ElementJoinOperator__ElementParametersAssignment_2_0 ) ) | ( ( rule__ElementJoinOperator__VariableElementParametersAssignment_2_1 ) ) );
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2082:1: rule__ElementJoinOperator__Alternatives_2 : ( ( ( rule__ElementJoinOperator__ElementParametersAssignment_2_0 ) ) | ( ( rule__ElementJoinOperator__VariableElementParametersAssignment_2_1 ) ) );
     public final void rule__ElementJoinOperator__Alternatives_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2092:1: ( ( ( rule__ElementJoinOperator__ElementParametersAssignment_2_0 ) ) | ( ( rule__ElementJoinOperator__VariableElementParametersAssignment_2_1 ) ) )
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2086:1: ( ( ( rule__ElementJoinOperator__ElementParametersAssignment_2_0 ) ) | ( ( rule__ElementJoinOperator__VariableElementParametersAssignment_2_1 ) ) )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -5768,16 +5749,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
             }
             switch (alt3) {
                 case 1 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2093:1: ( ( rule__ElementJoinOperator__ElementParametersAssignment_2_0 ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2087:1: ( ( rule__ElementJoinOperator__ElementParametersAssignment_2_0 ) )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2093:1: ( ( rule__ElementJoinOperator__ElementParametersAssignment_2_0 ) )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2094:1: ( rule__ElementJoinOperator__ElementParametersAssignment_2_0 )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2087:1: ( ( rule__ElementJoinOperator__ElementParametersAssignment_2_0 ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2088:1: ( rule__ElementJoinOperator__ElementParametersAssignment_2_0 )
                     {
                      before(grammarAccess.getElementJoinOperatorAccess().getElementParametersAssignment_2_0()); 
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2095:1: ( rule__ElementJoinOperator__ElementParametersAssignment_2_0 )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2095:2: rule__ElementJoinOperator__ElementParametersAssignment_2_0
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2089:1: ( rule__ElementJoinOperator__ElementParametersAssignment_2_0 )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2089:2: rule__ElementJoinOperator__ElementParametersAssignment_2_0
                     {
-                    pushFollow(FOLLOW_rule__ElementJoinOperator__ElementParametersAssignment_2_0_in_rule__ElementJoinOperator__Alternatives_24435);
+                    pushFollow(FOLLOW_rule__ElementJoinOperator__ElementParametersAssignment_2_0_in_rule__ElementJoinOperator__Alternatives_24418);
                     rule__ElementJoinOperator__ElementParametersAssignment_2_0();
 
                     state._fsp--;
@@ -5793,16 +5774,16 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2099:6: ( ( rule__ElementJoinOperator__VariableElementParametersAssignment_2_1 ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2093:6: ( ( rule__ElementJoinOperator__VariableElementParametersAssignment_2_1 ) )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2099:6: ( ( rule__ElementJoinOperator__VariableElementParametersAssignment_2_1 ) )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2100:1: ( rule__ElementJoinOperator__VariableElementParametersAssignment_2_1 )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2093:6: ( ( rule__ElementJoinOperator__VariableElementParametersAssignment_2_1 ) )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2094:1: ( rule__ElementJoinOperator__VariableElementParametersAssignment_2_1 )
                     {
                      before(grammarAccess.getElementJoinOperatorAccess().getVariableElementParametersAssignment_2_1()); 
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2101:1: ( rule__ElementJoinOperator__VariableElementParametersAssignment_2_1 )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2101:2: rule__ElementJoinOperator__VariableElementParametersAssignment_2_1
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2095:1: ( rule__ElementJoinOperator__VariableElementParametersAssignment_2_1 )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2095:2: rule__ElementJoinOperator__VariableElementParametersAssignment_2_1
                     {
-                    pushFollow(FOLLOW_rule__ElementJoinOperator__VariableElementParametersAssignment_2_1_in_rule__ElementJoinOperator__Alternatives_24453);
+                    pushFollow(FOLLOW_rule__ElementJoinOperator__VariableElementParametersAssignment_2_1_in_rule__ElementJoinOperator__Alternatives_24436);
                     rule__ElementJoinOperator__VariableElementParametersAssignment_2_1();
 
                     state._fsp--;
@@ -5835,14 +5816,14 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ReturnTypeOperator__Alternatives"
-    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2110:1: rule__ReturnTypeOperator__Alternatives : ( ( ruleInputOperator ) | ( ruleJoinOperator ) | ( ruleLogOperator ) | ( ruleTagOperator ) | ( ruleUnTagOperator ) | ( ruleFilterOperator ) | ( ruleSplitOperator ) | ( ruleCountOperator ) | ( ruleStandardDeviationOperator ) | ( ruleAverageOperator ) | ( ruleElementJoinOperator ) | ( ruleMatchOperator ) | ( ruleModuloOperator ) | ( ruleRandomOperator ) | ( ruleSWRLOperator ) | ( ruleAdditionOperator ) | ( ruleSubtractionOperator ) | ( ruleMultiplicationOperator ) | ( ruleDivisionOperator ) | ( ruleOutputOperator ) );
+    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2104:1: rule__ReturnTypeOperator__Alternatives : ( ( ruleInputOperator ) | ( ruleJoinOperator ) | ( ruleLogOperator ) | ( ruleDecisionTreeOperator ) | ( ruleTagOperator ) | ( ruleUnTagOperator ) | ( ruleFilterOperator ) | ( ruleSplitOperator ) | ( ruleCountOperator ) | ( ruleStandardDeviationOperator ) | ( ruleAverageOperator ) | ( ruleElementJoinOperator ) | ( ruleMatchOperator ) | ( ruleModuloOperator ) | ( ruleRandomOperator ) | ( ruleSWRLOperator ) | ( ruleAdditionOperator ) | ( ruleSubtractionOperator ) | ( ruleMultiplicationOperator ) | ( ruleDivisionOperator ) | ( ruleOutputOperator ) );
     public final void rule__ReturnTypeOperator__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2114:1: ( ( ruleInputOperator ) | ( ruleJoinOperator ) | ( ruleLogOperator ) | ( ruleTagOperator ) | ( ruleUnTagOperator ) | ( ruleFilterOperator ) | ( ruleSplitOperator ) | ( ruleCountOperator ) | ( ruleStandardDeviationOperator ) | ( ruleAverageOperator ) | ( ruleElementJoinOperator ) | ( ruleMatchOperator ) | ( ruleModuloOperator ) | ( ruleRandomOperator ) | ( ruleSWRLOperator ) | ( ruleAdditionOperator ) | ( ruleSubtractionOperator ) | ( ruleMultiplicationOperator ) | ( ruleDivisionOperator ) | ( ruleOutputOperator ) )
-            int alt4=20;
+            // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2108:1: ( ( ruleInputOperator ) | ( ruleJoinOperator ) | ( ruleLogOperator ) | ( ruleDecisionTreeOperator ) | ( ruleTagOperator ) | ( ruleUnTagOperator ) | ( ruleFilterOperator ) | ( ruleSplitOperator ) | ( ruleCountOperator ) | ( ruleStandardDeviationOperator ) | ( ruleAverageOperator ) | ( ruleElementJoinOperator ) | ( ruleMatchOperator ) | ( ruleModuloOperator ) | ( ruleRandomOperator ) | ( ruleSWRLOperator ) | ( ruleAdditionOperator ) | ( ruleSubtractionOperator ) | ( ruleMultiplicationOperator ) | ( ruleDivisionOperator ) | ( ruleOutputOperator ) )
+            int alt4=21;
             switch ( input.LA(1) ) {
             case 46:
                 {
@@ -5859,89 +5840,94 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                 alt4=3;
                 }
                 break;
-            case 47:
+            case 44:
                 {
                 alt4=4;
                 }
                 break;
-            case 50:
+            case 47:
                 {
                 alt4=5;
                 }
                 break;
-            case 40:
+            case 50:
                 {
                 alt4=6;
                 }
                 break;
-            case 41:
+            case 40:
                 {
                 alt4=7;
                 }
                 break;
-            case 60:
+            case 41:
                 {
                 alt4=8;
                 }
                 break;
-            case 61:
+            case 60:
                 {
                 alt4=9;
                 }
                 break;
-            case 62:
+            case 61:
                 {
                 alt4=10;
                 }
                 break;
-            case 39:
+            case 62:
                 {
                 alt4=11;
                 }
                 break;
-            case 45:
+            case 39:
                 {
                 alt4=12;
                 }
                 break;
-            case 67:
+            case 45:
                 {
                 alt4=13;
                 }
                 break;
-            case 43:
+            case 67:
                 {
                 alt4=14;
                 }
                 break;
-            case 56:
+            case 43:
                 {
                 alt4=15;
                 }
                 break;
-            case 63:
+            case 56:
                 {
                 alt4=16;
                 }
                 break;
-            case 64:
+            case 63:
                 {
                 alt4=17;
                 }
                 break;
-            case 65:
+            case 64:
                 {
                 alt4=18;
                 }
                 break;
-            case 66:
+            case 65:
                 {
                 alt4=19;
                 }
                 break;
-            case 68:
+            case 66:
                 {
                 alt4=20;
+                }
+                break;
+            case 68:
+                {
+                alt4=21;
                 }
                 break;
             default:
@@ -5953,13 +5939,13 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
             switch (alt4) {
                 case 1 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2115:1: ( ruleInputOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2109:1: ( ruleInputOperator )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2115:1: ( ruleInputOperator )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2116:1: ruleInputOperator
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2109:1: ( ruleInputOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2110:1: ruleInputOperator
                     {
                      before(grammarAccess.getReturnTypeOperatorAccess().getInputOperatorParserRuleCall_0()); 
-                    pushFollow(FOLLOW_ruleInputOperator_in_rule__ReturnTypeOperator__Alternatives4486);
+                    pushFollow(FOLLOW_ruleInputOperator_in_rule__ReturnTypeOperator__Alternatives4469);
                     ruleInputOperator();
 
                     state._fsp--;
@@ -5972,13 +5958,13 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2121:6: ( ruleJoinOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2115:6: ( ruleJoinOperator )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2121:6: ( ruleJoinOperator )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2122:1: ruleJoinOperator
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2115:6: ( ruleJoinOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2116:1: ruleJoinOperator
                     {
                      before(grammarAccess.getReturnTypeOperatorAccess().getJoinOperatorParserRuleCall_1()); 
-                    pushFollow(FOLLOW_ruleJoinOperator_in_rule__ReturnTypeOperator__Alternatives4503);
+                    pushFollow(FOLLOW_ruleJoinOperator_in_rule__ReturnTypeOperator__Alternatives4486);
                     ruleJoinOperator();
 
                     state._fsp--;
@@ -5991,13 +5977,13 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2127:6: ( ruleLogOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2121:6: ( ruleLogOperator )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2127:6: ( ruleLogOperator )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2128:1: ruleLogOperator
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2121:6: ( ruleLogOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2122:1: ruleLogOperator
                     {
                      before(grammarAccess.getReturnTypeOperatorAccess().getLogOperatorParserRuleCall_2()); 
-                    pushFollow(FOLLOW_ruleLogOperator_in_rule__ReturnTypeOperator__Alternatives4520);
+                    pushFollow(FOLLOW_ruleLogOperator_in_rule__ReturnTypeOperator__Alternatives4503);
                     ruleLogOperator();
 
                     state._fsp--;
@@ -6010,18 +5996,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2133:6: ( ruleTagOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2127:6: ( ruleDecisionTreeOperator )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2133:6: ( ruleTagOperator )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2134:1: ruleTagOperator
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2127:6: ( ruleDecisionTreeOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2128:1: ruleDecisionTreeOperator
                     {
-                     before(grammarAccess.getReturnTypeOperatorAccess().getTagOperatorParserRuleCall_3()); 
-                    pushFollow(FOLLOW_ruleTagOperator_in_rule__ReturnTypeOperator__Alternatives4537);
-                    ruleTagOperator();
+                     before(grammarAccess.getReturnTypeOperatorAccess().getDecisionTreeOperatorParserRuleCall_3()); 
+                    pushFollow(FOLLOW_ruleDecisionTreeOperator_in_rule__ReturnTypeOperator__Alternatives4520);
+                    ruleDecisionTreeOperator();
 
                     state._fsp--;
 
-                     after(grammarAccess.getReturnTypeOperatorAccess().getTagOperatorParserRuleCall_3()); 
+                     after(grammarAccess.getReturnTypeOperatorAccess().getDecisionTreeOperatorParserRuleCall_3()); 
 
                     }
 
@@ -6029,18 +6015,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2139:6: ( ruleUnTagOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2133:6: ( ruleTagOperator )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2139:6: ( ruleUnTagOperator )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2140:1: ruleUnTagOperator
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2133:6: ( ruleTagOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2134:1: ruleTagOperator
                     {
-                     before(grammarAccess.getReturnTypeOperatorAccess().getUnTagOperatorParserRuleCall_4()); 
-                    pushFollow(FOLLOW_ruleUnTagOperator_in_rule__ReturnTypeOperator__Alternatives4554);
-                    ruleUnTagOperator();
+                     before(grammarAccess.getReturnTypeOperatorAccess().getTagOperatorParserRuleCall_4()); 
+                    pushFollow(FOLLOW_ruleTagOperator_in_rule__ReturnTypeOperator__Alternatives4537);
+                    ruleTagOperator();
 
                     state._fsp--;
 
-                     after(grammarAccess.getReturnTypeOperatorAccess().getUnTagOperatorParserRuleCall_4()); 
+                     after(grammarAccess.getReturnTypeOperatorAccess().getTagOperatorParserRuleCall_4()); 
 
                     }
 
@@ -6048,18 +6034,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2145:6: ( ruleFilterOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2139:6: ( ruleUnTagOperator )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2145:6: ( ruleFilterOperator )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2146:1: ruleFilterOperator
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2139:6: ( ruleUnTagOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2140:1: ruleUnTagOperator
                     {
-                     before(grammarAccess.getReturnTypeOperatorAccess().getFilterOperatorParserRuleCall_5()); 
-                    pushFollow(FOLLOW_ruleFilterOperator_in_rule__ReturnTypeOperator__Alternatives4571);
-                    ruleFilterOperator();
+                     before(grammarAccess.getReturnTypeOperatorAccess().getUnTagOperatorParserRuleCall_5()); 
+                    pushFollow(FOLLOW_ruleUnTagOperator_in_rule__ReturnTypeOperator__Alternatives4554);
+                    ruleUnTagOperator();
 
                     state._fsp--;
 
-                     after(grammarAccess.getReturnTypeOperatorAccess().getFilterOperatorParserRuleCall_5()); 
+                     after(grammarAccess.getReturnTypeOperatorAccess().getUnTagOperatorParserRuleCall_5()); 
 
                     }
 
@@ -6067,18 +6053,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 7 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2151:6: ( ruleSplitOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2145:6: ( ruleFilterOperator )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2151:6: ( ruleSplitOperator )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2152:1: ruleSplitOperator
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2145:6: ( ruleFilterOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2146:1: ruleFilterOperator
                     {
-                     before(grammarAccess.getReturnTypeOperatorAccess().getSplitOperatorParserRuleCall_6()); 
-                    pushFollow(FOLLOW_ruleSplitOperator_in_rule__ReturnTypeOperator__Alternatives4588);
-                    ruleSplitOperator();
+                     before(grammarAccess.getReturnTypeOperatorAccess().getFilterOperatorParserRuleCall_6()); 
+                    pushFollow(FOLLOW_ruleFilterOperator_in_rule__ReturnTypeOperator__Alternatives4571);
+                    ruleFilterOperator();
 
                     state._fsp--;
 
-                     after(grammarAccess.getReturnTypeOperatorAccess().getSplitOperatorParserRuleCall_6()); 
+                     after(grammarAccess.getReturnTypeOperatorAccess().getFilterOperatorParserRuleCall_6()); 
 
                     }
 
@@ -6086,18 +6072,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 8 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2157:6: ( ruleCountOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2151:6: ( ruleSplitOperator )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2157:6: ( ruleCountOperator )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2158:1: ruleCountOperator
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2151:6: ( ruleSplitOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2152:1: ruleSplitOperator
                     {
-                     before(grammarAccess.getReturnTypeOperatorAccess().getCountOperatorParserRuleCall_7()); 
-                    pushFollow(FOLLOW_ruleCountOperator_in_rule__ReturnTypeOperator__Alternatives4605);
-                    ruleCountOperator();
+                     before(grammarAccess.getReturnTypeOperatorAccess().getSplitOperatorParserRuleCall_7()); 
+                    pushFollow(FOLLOW_ruleSplitOperator_in_rule__ReturnTypeOperator__Alternatives4588);
+                    ruleSplitOperator();
 
                     state._fsp--;
 
-                     after(grammarAccess.getReturnTypeOperatorAccess().getCountOperatorParserRuleCall_7()); 
+                     after(grammarAccess.getReturnTypeOperatorAccess().getSplitOperatorParserRuleCall_7()); 
 
                     }
 
@@ -6105,18 +6091,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 9 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2163:6: ( ruleStandardDeviationOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2157:6: ( ruleCountOperator )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2163:6: ( ruleStandardDeviationOperator )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2164:1: ruleStandardDeviationOperator
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2157:6: ( ruleCountOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2158:1: ruleCountOperator
                     {
-                     before(grammarAccess.getReturnTypeOperatorAccess().getStandardDeviationOperatorParserRuleCall_8()); 
-                    pushFollow(FOLLOW_ruleStandardDeviationOperator_in_rule__ReturnTypeOperator__Alternatives4622);
-                    ruleStandardDeviationOperator();
+                     before(grammarAccess.getReturnTypeOperatorAccess().getCountOperatorParserRuleCall_8()); 
+                    pushFollow(FOLLOW_ruleCountOperator_in_rule__ReturnTypeOperator__Alternatives4605);
+                    ruleCountOperator();
 
                     state._fsp--;
 
-                     after(grammarAccess.getReturnTypeOperatorAccess().getStandardDeviationOperatorParserRuleCall_8()); 
+                     after(grammarAccess.getReturnTypeOperatorAccess().getCountOperatorParserRuleCall_8()); 
 
                     }
 
@@ -6124,18 +6110,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 10 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2169:6: ( ruleAverageOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2163:6: ( ruleStandardDeviationOperator )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2169:6: ( ruleAverageOperator )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2170:1: ruleAverageOperator
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2163:6: ( ruleStandardDeviationOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2164:1: ruleStandardDeviationOperator
                     {
-                     before(grammarAccess.getReturnTypeOperatorAccess().getAverageOperatorParserRuleCall_9()); 
-                    pushFollow(FOLLOW_ruleAverageOperator_in_rule__ReturnTypeOperator__Alternatives4639);
-                    ruleAverageOperator();
+                     before(grammarAccess.getReturnTypeOperatorAccess().getStandardDeviationOperatorParserRuleCall_9()); 
+                    pushFollow(FOLLOW_ruleStandardDeviationOperator_in_rule__ReturnTypeOperator__Alternatives4622);
+                    ruleStandardDeviationOperator();
 
                     state._fsp--;
 
-                     after(grammarAccess.getReturnTypeOperatorAccess().getAverageOperatorParserRuleCall_9()); 
+                     after(grammarAccess.getReturnTypeOperatorAccess().getStandardDeviationOperatorParserRuleCall_9()); 
 
                     }
 
@@ -6143,18 +6129,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 11 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2175:6: ( ruleElementJoinOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2169:6: ( ruleAverageOperator )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2175:6: ( ruleElementJoinOperator )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2176:1: ruleElementJoinOperator
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2169:6: ( ruleAverageOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2170:1: ruleAverageOperator
                     {
-                     before(grammarAccess.getReturnTypeOperatorAccess().getElementJoinOperatorParserRuleCall_10()); 
-                    pushFollow(FOLLOW_ruleElementJoinOperator_in_rule__ReturnTypeOperator__Alternatives4656);
-                    ruleElementJoinOperator();
+                     before(grammarAccess.getReturnTypeOperatorAccess().getAverageOperatorParserRuleCall_10()); 
+                    pushFollow(FOLLOW_ruleAverageOperator_in_rule__ReturnTypeOperator__Alternatives4639);
+                    ruleAverageOperator();
 
                     state._fsp--;
 
-                     after(grammarAccess.getReturnTypeOperatorAccess().getElementJoinOperatorParserRuleCall_10()); 
+                     after(grammarAccess.getReturnTypeOperatorAccess().getAverageOperatorParserRuleCall_10()); 
 
                     }
 
@@ -6162,18 +6148,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 12 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2181:6: ( ruleMatchOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2175:6: ( ruleElementJoinOperator )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2181:6: ( ruleMatchOperator )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2182:1: ruleMatchOperator
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2175:6: ( ruleElementJoinOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2176:1: ruleElementJoinOperator
                     {
-                     before(grammarAccess.getReturnTypeOperatorAccess().getMatchOperatorParserRuleCall_11()); 
-                    pushFollow(FOLLOW_ruleMatchOperator_in_rule__ReturnTypeOperator__Alternatives4673);
-                    ruleMatchOperator();
+                     before(grammarAccess.getReturnTypeOperatorAccess().getElementJoinOperatorParserRuleCall_11()); 
+                    pushFollow(FOLLOW_ruleElementJoinOperator_in_rule__ReturnTypeOperator__Alternatives4656);
+                    ruleElementJoinOperator();
 
                     state._fsp--;
 
-                     after(grammarAccess.getReturnTypeOperatorAccess().getMatchOperatorParserRuleCall_11()); 
+                     after(grammarAccess.getReturnTypeOperatorAccess().getElementJoinOperatorParserRuleCall_11()); 
 
                     }
 
@@ -6181,18 +6167,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 13 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2187:6: ( ruleModuloOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2181:6: ( ruleMatchOperator )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2187:6: ( ruleModuloOperator )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2188:1: ruleModuloOperator
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2181:6: ( ruleMatchOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2182:1: ruleMatchOperator
                     {
-                     before(grammarAccess.getReturnTypeOperatorAccess().getModuloOperatorParserRuleCall_12()); 
-                    pushFollow(FOLLOW_ruleModuloOperator_in_rule__ReturnTypeOperator__Alternatives4690);
-                    ruleModuloOperator();
+                     before(grammarAccess.getReturnTypeOperatorAccess().getMatchOperatorParserRuleCall_12()); 
+                    pushFollow(FOLLOW_ruleMatchOperator_in_rule__ReturnTypeOperator__Alternatives4673);
+                    ruleMatchOperator();
 
                     state._fsp--;
 
-                     after(grammarAccess.getReturnTypeOperatorAccess().getModuloOperatorParserRuleCall_12()); 
+                     after(grammarAccess.getReturnTypeOperatorAccess().getMatchOperatorParserRuleCall_12()); 
 
                     }
 
@@ -6200,18 +6186,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 14 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2193:6: ( ruleRandomOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2187:6: ( ruleModuloOperator )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2193:6: ( ruleRandomOperator )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2194:1: ruleRandomOperator
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2187:6: ( ruleModuloOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2188:1: ruleModuloOperator
                     {
-                     before(grammarAccess.getReturnTypeOperatorAccess().getRandomOperatorParserRuleCall_13()); 
-                    pushFollow(FOLLOW_ruleRandomOperator_in_rule__ReturnTypeOperator__Alternatives4707);
-                    ruleRandomOperator();
+                     before(grammarAccess.getReturnTypeOperatorAccess().getModuloOperatorParserRuleCall_13()); 
+                    pushFollow(FOLLOW_ruleModuloOperator_in_rule__ReturnTypeOperator__Alternatives4690);
+                    ruleModuloOperator();
 
                     state._fsp--;
 
-                     after(grammarAccess.getReturnTypeOperatorAccess().getRandomOperatorParserRuleCall_13()); 
+                     after(grammarAccess.getReturnTypeOperatorAccess().getModuloOperatorParserRuleCall_13()); 
 
                     }
 
@@ -6219,18 +6205,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 15 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2199:6: ( ruleSWRLOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2193:6: ( ruleRandomOperator )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2199:6: ( ruleSWRLOperator )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2200:1: ruleSWRLOperator
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2193:6: ( ruleRandomOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2194:1: ruleRandomOperator
                     {
-                     before(grammarAccess.getReturnTypeOperatorAccess().getSWRLOperatorParserRuleCall_14()); 
-                    pushFollow(FOLLOW_ruleSWRLOperator_in_rule__ReturnTypeOperator__Alternatives4724);
-                    ruleSWRLOperator();
+                     before(grammarAccess.getReturnTypeOperatorAccess().getRandomOperatorParserRuleCall_14()); 
+                    pushFollow(FOLLOW_ruleRandomOperator_in_rule__ReturnTypeOperator__Alternatives4707);
+                    ruleRandomOperator();
 
                     state._fsp--;
 
-                     after(grammarAccess.getReturnTypeOperatorAccess().getSWRLOperatorParserRuleCall_14()); 
+                     after(grammarAccess.getReturnTypeOperatorAccess().getRandomOperatorParserRuleCall_14()); 
 
                     }
 
@@ -6238,18 +6224,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 16 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2205:6: ( ruleAdditionOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2199:6: ( ruleSWRLOperator )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2205:6: ( ruleAdditionOperator )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2206:1: ruleAdditionOperator
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2199:6: ( ruleSWRLOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2200:1: ruleSWRLOperator
                     {
-                     before(grammarAccess.getReturnTypeOperatorAccess().getAdditionOperatorParserRuleCall_15()); 
-                    pushFollow(FOLLOW_ruleAdditionOperator_in_rule__ReturnTypeOperator__Alternatives4741);
-                    ruleAdditionOperator();
+                     before(grammarAccess.getReturnTypeOperatorAccess().getSWRLOperatorParserRuleCall_15()); 
+                    pushFollow(FOLLOW_ruleSWRLOperator_in_rule__ReturnTypeOperator__Alternatives4724);
+                    ruleSWRLOperator();
 
                     state._fsp--;
 
-                     after(grammarAccess.getReturnTypeOperatorAccess().getAdditionOperatorParserRuleCall_15()); 
+                     after(grammarAccess.getReturnTypeOperatorAccess().getSWRLOperatorParserRuleCall_15()); 
 
                     }
 
@@ -6257,18 +6243,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 17 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2211:6: ( ruleSubtractionOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2205:6: ( ruleAdditionOperator )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2211:6: ( ruleSubtractionOperator )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2212:1: ruleSubtractionOperator
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2205:6: ( ruleAdditionOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2206:1: ruleAdditionOperator
                     {
-                     before(grammarAccess.getReturnTypeOperatorAccess().getSubtractionOperatorParserRuleCall_16()); 
-                    pushFollow(FOLLOW_ruleSubtractionOperator_in_rule__ReturnTypeOperator__Alternatives4758);
-                    ruleSubtractionOperator();
+                     before(grammarAccess.getReturnTypeOperatorAccess().getAdditionOperatorParserRuleCall_16()); 
+                    pushFollow(FOLLOW_ruleAdditionOperator_in_rule__ReturnTypeOperator__Alternatives4741);
+                    ruleAdditionOperator();
 
                     state._fsp--;
 
-                     after(grammarAccess.getReturnTypeOperatorAccess().getSubtractionOperatorParserRuleCall_16()); 
+                     after(grammarAccess.getReturnTypeOperatorAccess().getAdditionOperatorParserRuleCall_16()); 
 
                     }
 
@@ -6276,18 +6262,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 18 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2217:6: ( ruleMultiplicationOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2211:6: ( ruleSubtractionOperator )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2217:6: ( ruleMultiplicationOperator )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2218:1: ruleMultiplicationOperator
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2211:6: ( ruleSubtractionOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2212:1: ruleSubtractionOperator
                     {
-                     before(grammarAccess.getReturnTypeOperatorAccess().getMultiplicationOperatorParserRuleCall_17()); 
-                    pushFollow(FOLLOW_ruleMultiplicationOperator_in_rule__ReturnTypeOperator__Alternatives4775);
-                    ruleMultiplicationOperator();
+                     before(grammarAccess.getReturnTypeOperatorAccess().getSubtractionOperatorParserRuleCall_17()); 
+                    pushFollow(FOLLOW_ruleSubtractionOperator_in_rule__ReturnTypeOperator__Alternatives4758);
+                    ruleSubtractionOperator();
 
                     state._fsp--;
 
-                     after(grammarAccess.getReturnTypeOperatorAccess().getMultiplicationOperatorParserRuleCall_17()); 
+                     after(grammarAccess.getReturnTypeOperatorAccess().getSubtractionOperatorParserRuleCall_17()); 
 
                     }
 
@@ -6295,18 +6281,18 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 19 :
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2223:6: ( ruleDivisionOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2217:6: ( ruleMultiplicationOperator )
                     {
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2223:6: ( ruleDivisionOperator )
-                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2224:1: ruleDivisionOperator
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2217:6: ( ruleMultiplicationOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2218:1: ruleMultiplicationOperator
                     {
-                     before(grammarAccess.getReturnTypeOperatorAccess().getDivisionOperatorParserRuleCall_18()); 
-                    pushFollow(FOLLOW_ruleDivisionOperator_in_rule__ReturnTypeOperator__Alternatives4792);
-                    ruleDivisionOperator();
+                     before(grammarAccess.getReturnTypeOperatorAccess().getMultiplicationOperatorParserRuleCall_18()); 
+                    pushFollow(FOLLOW_ruleMultiplicationOperator_in_rule__ReturnTypeOperator__Alternatives4775);
+                    ruleMultiplicationOperator();
 
                     state._fsp--;
 
-                     after(grammarAccess.getReturnTypeOperatorAccess().getDivisionOperatorParserRuleCall_18()); 
+                     after(grammarAccess.getReturnTypeOperatorAccess().getMultiplicationOperatorParserRuleCall_18()); 
 
                     }
 
@@ -6314,18 +6300,37 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 20 :
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2223:6: ( ruleDivisionOperator )
+                    {
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2223:6: ( ruleDivisionOperator )
+                    // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2224:1: ruleDivisionOperator
+                    {
+                     before(grammarAccess.getReturnTypeOperatorAccess().getDivisionOperatorParserRuleCall_19()); 
+                    pushFollow(FOLLOW_ruleDivisionOperator_in_rule__ReturnTypeOperator__Alternatives4792);
+                    ruleDivisionOperator();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getReturnTypeOperatorAccess().getDivisionOperatorParserRuleCall_19()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 21 :
                     // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2229:6: ( ruleOutputOperator )
                     {
                     // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2229:6: ( ruleOutputOperator )
                     // ../de.hs_rm.cs.vs.dsm.flow.ui/src-gen/de/hs_rm/cs/vs/dsm/ui/contentassist/antlr/internal/InternalFlow.g:2230:1: ruleOutputOperator
                     {
-                     before(grammarAccess.getReturnTypeOperatorAccess().getOutputOperatorParserRuleCall_19()); 
+                     before(grammarAccess.getReturnTypeOperatorAccess().getOutputOperatorParserRuleCall_20()); 
                     pushFollow(FOLLOW_ruleOutputOperator_in_rule__ReturnTypeOperator__Alternatives4809);
                     ruleOutputOperator();
 
                     state._fsp--;
 
-                     after(grammarAccess.getReturnTypeOperatorAccess().getOutputOperatorParserRuleCall_19()); 
+                     after(grammarAccess.getReturnTypeOperatorAccess().getOutputOperatorParserRuleCall_20()); 
 
                     }
 
@@ -8764,7 +8769,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
                 int alt23=2;
                 int LA23_0 = input.LA(1);
 
-                if ( (LA23_0==RULE_ID||LA23_0==26||LA23_0==29||LA23_0==44||(LA23_0>=69 && LA23_0<=70)||(LA23_0>=76 && LA23_0<=79)) ) {
+                if ( (LA23_0==RULE_ID||LA23_0==26||LA23_0==29||(LA23_0>=69 && LA23_0<=70)||(LA23_0>=76 && LA23_0<=79)) ) {
                     alt23=1;
                 }
 
@@ -42578,27 +42583,25 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
 
     protected DFA2 dfa2 = new DFA2(this);
     static final String DFA2_eotS =
-        "\13\uffff";
+        "\12\uffff";
     static final String DFA2_eofS =
-        "\13\uffff";
+        "\12\uffff";
     static final String DFA2_minS =
-        "\1\4\6\uffff\1\4\3\uffff";
+        "\1\4\5\uffff\1\4\3\uffff";
     static final String DFA2_maxS =
-        "\1\117\6\uffff\1\41\3\uffff";
+        "\1\117\5\uffff\1\41\3\uffff";
     static final String DFA2_acceptS =
-        "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\uffff\1\7\1\11\1\10";
+        "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\uffff\1\10\1\6\1\7";
     static final String DFA2_specialS =
-        "\13\uffff}>";
+        "\12\uffff}>";
     static final String[] DFA2_transitionS = {
-            "\1\7\25\uffff\1\1\2\uffff\1\2\16\uffff\1\4\30\uffff\1\3\1\5"+
-            "\5\uffff\4\6",
+            "\1\6\25\uffff\1\1\2\uffff\1\2\47\uffff\1\3\1\4\5\uffff\4\5",
             "",
             "",
             "",
             "",
             "",
-            "",
-            "\1\12\31\uffff\1\10\1\uffff\1\10\1\11",
+            "\1\11\31\uffff\1\10\1\uffff\1\10\1\7",
             "",
             "",
             ""
@@ -42634,7 +42637,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
             this.transition = DFA2_transition;
         }
         public String getDescription() {
-            return "2024:1: rule__ModelElement__Alternatives : ( ( rulePackageDeclaration ) | ( ruleImport ) | ( ruleStructureDeclaration ) | ( ruleDecisionTreeOperator ) | ( ruleStreamDeclaration ) | ( ruleVariableDefinition ) | ( ruleStreamStatement ) | ( ruleStreamDefinition ) | ( ruleStreamAccess ) );";
+            return "2024:1: rule__ModelElement__Alternatives : ( ( rulePackageDeclaration ) | ( ruleImport ) | ( ruleStructureDeclaration ) | ( ruleStreamDeclaration ) | ( ruleVariableDefinition ) | ( ruleStreamStatement ) | ( ruleStreamDefinition ) | ( ruleStreamAccess ) );";
         }
     }
  
@@ -42851,17 +42854,17 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rulePackageDeclaration_in_rule__ModelElement__Alternatives4267 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleImport_in_rule__ModelElement__Alternatives4284 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStructureDeclaration_in_rule__ModelElement__Alternatives4301 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDecisionTreeOperator_in_rule__ModelElement__Alternatives4318 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamDeclaration_in_rule__ModelElement__Alternatives4335 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariableDefinition_in_rule__ModelElement__Alternatives4352 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamStatement_in_rule__ModelElement__Alternatives4369 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamDefinition_in_rule__ModelElement__Alternatives4386 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__ModelElement__Alternatives4403 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ElementJoinOperator__ElementParametersAssignment_2_0_in_rule__ElementJoinOperator__Alternatives_24435 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ElementJoinOperator__VariableElementParametersAssignment_2_1_in_rule__ElementJoinOperator__Alternatives_24453 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInputOperator_in_rule__ReturnTypeOperator__Alternatives4486 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJoinOperator_in_rule__ReturnTypeOperator__Alternatives4503 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLogOperator_in_rule__ReturnTypeOperator__Alternatives4520 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamDeclaration_in_rule__ModelElement__Alternatives4318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariableDefinition_in_rule__ModelElement__Alternatives4335 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamStatement_in_rule__ModelElement__Alternatives4352 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamDefinition_in_rule__ModelElement__Alternatives4369 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStreamAccess_in_rule__ModelElement__Alternatives4386 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ElementJoinOperator__ElementParametersAssignment_2_0_in_rule__ElementJoinOperator__Alternatives_24418 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ElementJoinOperator__VariableElementParametersAssignment_2_1_in_rule__ElementJoinOperator__Alternatives_24436 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInputOperator_in_rule__ReturnTypeOperator__Alternatives4469 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJoinOperator_in_rule__ReturnTypeOperator__Alternatives4486 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLogOperator_in_rule__ReturnTypeOperator__Alternatives4503 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDecisionTreeOperator_in_rule__ReturnTypeOperator__Alternatives4520 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleTagOperator_in_rule__ReturnTypeOperator__Alternatives4537 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleUnTagOperator_in_rule__ReturnTypeOperator__Alternatives4554 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFilterOperator_in_rule__ReturnTypeOperator__Alternatives4571 = new BitSet(new long[]{0x0000000000000002L});
@@ -42939,12 +42942,12 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__PackageDeclaration__Group__1__Impl_in_rule__PackageDeclaration__Group__16160 = new BitSet(new long[]{0x0000000008000000L});
     public static final BitSet FOLLOW_rule__PackageDeclaration__Group__2_in_rule__PackageDeclaration__Group__16163 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__PackageDeclaration__NameAssignment_1_in_rule__PackageDeclaration__Group__1__Impl6190 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PackageDeclaration__Group__2__Impl_in_rule__PackageDeclaration__Group__26220 = new BitSet(new long[]{0x0000100034000010L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__PackageDeclaration__Group__2__Impl_in_rule__PackageDeclaration__Group__26220 = new BitSet(new long[]{0x0000000034000010L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__PackageDeclaration__Group__3_in_rule__PackageDeclaration__Group__26223 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_27_in_rule__PackageDeclaration__Group__2__Impl6251 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PackageDeclaration__Group__3__Impl_in_rule__PackageDeclaration__Group__36282 = new BitSet(new long[]{0x0000100034000010L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__PackageDeclaration__Group__3__Impl_in_rule__PackageDeclaration__Group__36282 = new BitSet(new long[]{0x0000000034000010L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__PackageDeclaration__Group__4_in_rule__PackageDeclaration__Group__36285 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PackageDeclaration__ElementsAssignment_3_in_rule__PackageDeclaration__Group__3__Impl6312 = new BitSet(new long[]{0x0000100024000012L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__PackageDeclaration__ElementsAssignment_3_in_rule__PackageDeclaration__Group__3__Impl6312 = new BitSet(new long[]{0x0000000024000012L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__PackageDeclaration__Group__4__Impl_in_rule__PackageDeclaration__Group__46343 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_28_in_rule__PackageDeclaration__Group__4__Impl6371 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Import__Group__0__Impl_in_rule__Import__Group__06412 = new BitSet(new long[]{0x0000000000000020L});
@@ -42958,7 +42961,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__StreamStatement__Group__1__Impl_in_rule__StreamStatement__Group__16595 = new BitSet(new long[]{0x0000000140000000L});
     public static final BitSet FOLLOW_rule__StreamStatement__Group__2_in_rule__StreamStatement__Group__16598 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__StreamStatement__Group_1__0_in_rule__StreamStatement__Group__1__Impl6625 = new BitSet(new long[]{0x0000000100000002L});
-    public static final BitSet FOLLOW_rule__StreamStatement__Group__2__Impl_in_rule__StreamStatement__Group__26656 = new BitSet(new long[]{0xF104EF8400000000L,0x000000000000001FL});
+    public static final BitSet FOLLOW_rule__StreamStatement__Group__2__Impl_in_rule__StreamStatement__Group__26656 = new BitSet(new long[]{0xF104FF8400000000L,0x000000000000001FL});
     public static final BitSet FOLLOW_rule__StreamStatement__Group__3_in_rule__StreamStatement__Group__26659 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_30_in_rule__StreamStatement__Group__2__Impl6687 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__StreamStatement__Group__3__Impl_in_rule__StreamStatement__Group__36718 = new BitSet(new long[]{0x0000000080000000L});
@@ -43028,7 +43031,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__ElementJoinOperator__Group__0__Impl_in_rule__ElementJoinOperator__Group__08214 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_rule__ElementJoinOperator__Group__1_in_rule__ElementJoinOperator__Group__08217 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_39_in_rule__ElementJoinOperator__Group__0__Impl8245 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ElementJoinOperator__Group__1__Impl_in_rule__ElementJoinOperator__Group__18276 = new BitSet(new long[]{0x0000100024000010L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__ElementJoinOperator__Group__1__Impl_in_rule__ElementJoinOperator__Group__18276 = new BitSet(new long[]{0x0000000024000010L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__ElementJoinOperator__Group__2_in_rule__ElementJoinOperator__Group__18279 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_35_in_rule__ElementJoinOperator__Group__1__Impl8307 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ElementJoinOperator__Group__2__Impl_in_rule__ElementJoinOperator__Group__28338 = new BitSet(new long[]{0x0000000100000000L});
@@ -43048,7 +43051,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__ElementJoinOperator__ParameterAssignment_6_in_rule__ElementJoinOperator__Group__6__Impl8612 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ElementJoinOperator__Group__7__Impl_in_rule__ElementJoinOperator__Group__78642 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_36_in_rule__ElementJoinOperator__Group__7__Impl8670 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ElementJoinOperator__Group_3__0__Impl_in_rule__ElementJoinOperator__Group_3__08717 = new BitSet(new long[]{0x0000100024000010L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__ElementJoinOperator__Group_3__0__Impl_in_rule__ElementJoinOperator__Group_3__08717 = new BitSet(new long[]{0x0000000024000010L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__ElementJoinOperator__Group_3__1_in_rule__ElementJoinOperator__Group_3__08720 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_32_in_rule__ElementJoinOperator__Group_3__0__Impl8748 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ElementJoinOperator__Group_3__1__Impl_in_rule__ElementJoinOperator__Group_3__18779 = new BitSet(new long[]{0x0000000000000002L});
@@ -43061,7 +43064,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__FilterOperator__Group__0__Impl_in_rule__FilterOperator__Group__08963 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_rule__FilterOperator__Group__1_in_rule__FilterOperator__Group__08966 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_40_in_rule__FilterOperator__Group__0__Impl8994 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FilterOperator__Group__1__Impl_in_rule__FilterOperator__Group__19025 = new BitSet(new long[]{0x0000100824000050L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__FilterOperator__Group__1__Impl_in_rule__FilterOperator__Group__19025 = new BitSet(new long[]{0x0000000824000050L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__FilterOperator__Group__2_in_rule__FilterOperator__Group__19028 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_35_in_rule__FilterOperator__Group__1__Impl9056 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__FilterOperator__Group__2__Impl_in_rule__FilterOperator__Group__29087 = new BitSet(new long[]{0x0000000100000000L});
@@ -43078,7 +43081,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__FilterOperator__StreamAssignment_5_in_rule__FilterOperator__Group__5__Impl9300 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__FilterOperator__Group__6__Impl_in_rule__FilterOperator__Group__69330 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_36_in_rule__FilterOperator__Group__6__Impl9358 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FilterOperator__Group_3__0__Impl_in_rule__FilterOperator__Group_3__09403 = new BitSet(new long[]{0x0000100824000050L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__FilterOperator__Group_3__0__Impl_in_rule__FilterOperator__Group_3__09403 = new BitSet(new long[]{0x0000000824000050L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__FilterOperator__Group_3__1_in_rule__FilterOperator__Group_3__09406 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_32_in_rule__FilterOperator__Group_3__0__Impl9434 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__FilterOperator__Group_3__1__Impl_in_rule__FilterOperator__Group_3__19465 = new BitSet(new long[]{0x0000000000000002L});
@@ -43222,13 +43225,13 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__MatchOperator__Group__0__Impl_in_rule__MatchOperator__Group__012533 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_rule__MatchOperator__Group__1_in_rule__MatchOperator__Group__012536 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_45_in_rule__MatchOperator__Group__0__Impl12564 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group__1__Impl_in_rule__MatchOperator__Group__112595 = new BitSet(new long[]{0x0000100824000050L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group__1__Impl_in_rule__MatchOperator__Group__112595 = new BitSet(new long[]{0x0000000824000050L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__MatchOperator__Group__2_in_rule__MatchOperator__Group__112598 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_35_in_rule__MatchOperator__Group__1__Impl12626 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__MatchOperator__Group__2__Impl_in_rule__MatchOperator__Group__212657 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_rule__MatchOperator__Group__3_in_rule__MatchOperator__Group__212660 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__MatchOperator__ExpressionAssignment_2_in_rule__MatchOperator__Group__2__Impl12687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MatchOperator__Group__3__Impl_in_rule__MatchOperator__Group__312717 = new BitSet(new long[]{0x0000100824000050L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__MatchOperator__Group__3__Impl_in_rule__MatchOperator__Group__312717 = new BitSet(new long[]{0x0000000824000050L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__MatchOperator__Group__4_in_rule__MatchOperator__Group__312720 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_32_in_rule__MatchOperator__Group__3__Impl12748 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__MatchOperator__Group__4__Impl_in_rule__MatchOperator__Group__412779 = new BitSet(new long[]{0x0000000100000000L});
@@ -43284,7 +43287,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__TagOperator__Group__0__Impl_in_rule__TagOperator__Group__013911 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_rule__TagOperator__Group__1_in_rule__TagOperator__Group__013914 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_47_in_rule__TagOperator__Group__0__Impl13942 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagOperator__Group__1__Impl_in_rule__TagOperator__Group__113973 = new BitSet(new long[]{0x0000100024000010L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__TagOperator__Group__1__Impl_in_rule__TagOperator__Group__113973 = new BitSet(new long[]{0x0000000024000010L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__TagOperator__Group__2_in_rule__TagOperator__Group__113976 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_35_in_rule__TagOperator__Group__1__Impl14004 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__TagOperator__Group__2__Impl_in_rule__TagOperator__Group__214035 = new BitSet(new long[]{0x0000001100000000L});
@@ -43295,7 +43298,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__TagOperator__Group_3__0_in_rule__TagOperator__Group__3__Impl14125 = new BitSet(new long[]{0x0000000100000002L});
     public static final BitSet FOLLOW_rule__TagOperator__Group__4__Impl_in_rule__TagOperator__Group__414156 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_36_in_rule__TagOperator__Group__4__Impl14184 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagOperator__Group_3__0__Impl_in_rule__TagOperator__Group_3__014225 = new BitSet(new long[]{0x0000100024000010L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__TagOperator__Group_3__0__Impl_in_rule__TagOperator__Group_3__014225 = new BitSet(new long[]{0x0000000024000010L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__TagOperator__Group_3__1_in_rule__TagOperator__Group_3__014228 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_32_in_rule__TagOperator__Group_3__0__Impl14256 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__TagOperator__Group_3__1__Impl_in_rule__TagOperator__Group_3__114287 = new BitSet(new long[]{0x0000000000000002L});
@@ -43363,7 +43366,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__UnTagElement__Group__0__Impl_in_rule__UnTagElement__Group__015721 = new BitSet(new long[]{0x0008000000000000L});
     public static final BitSet FOLLOW_rule__UnTagElement__Group__1_in_rule__UnTagElement__Group__015724 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__UnTagElement__ElementAssignment_0_in_rule__UnTagElement__Group__0__Impl15751 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnTagElement__Group__1__Impl_in_rule__UnTagElement__Group__115781 = new BitSet(new long[]{0x0000100024000010L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__UnTagElement__Group__1__Impl_in_rule__UnTagElement__Group__115781 = new BitSet(new long[]{0x0000000024000010L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__UnTagElement__Group__2_in_rule__UnTagElement__Group__115784 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_51_in_rule__UnTagElement__Group__1__Impl15812 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__UnTagElement__Group__2__Impl_in_rule__UnTagElement__Group__215843 = new BitSet(new long[]{0x0000000000000002L});
@@ -43409,7 +43412,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__WindowOperator__ValueAssignment_0_1_in_rule__WindowOperator__Group_0__1__Impl16743 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__WindowOperator__Group_0__2__Impl_in_rule__WindowOperator__Group_0__216773 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__WindowOperator__UnitAssignment_0_2_in_rule__WindowOperator__Group_0__2__Impl16800 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MarkerOperator__Group__0__Impl_in_rule__MarkerOperator__Group__016837 = new BitSet(new long[]{0x0000100824000050L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__MarkerOperator__Group__0__Impl_in_rule__MarkerOperator__Group__016837 = new BitSet(new long[]{0x0000000824000050L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__MarkerOperator__Group__1_in_rule__MarkerOperator__Group__016840 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_55_in_rule__MarkerOperator__Group__0__Impl16868 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__MarkerOperator__Group__1__Impl_in_rule__MarkerOperator__Group__116899 = new BitSet(new long[]{0x0000000000000002L});
@@ -43500,7 +43503,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Rule__Group__1__Impl_in_rule__Rule__Group__118834 = new BitSet(new long[]{0x0002000000000000L});
     public static final BitSet FOLLOW_rule__Rule__Group__2_in_rule__Rule__Group__118837 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_35_in_rule__Rule__Group__1__Impl18865 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Rule__Group__2__Impl_in_rule__Rule__Group__218896 = new BitSet(new long[]{0x0000100024000010L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__Rule__Group__2__Impl_in_rule__Rule__Group__218896 = new BitSet(new long[]{0x0000000024000010L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__Rule__Group__3_in_rule__Rule__Group__218899 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_49_in_rule__Rule__Group__2__Impl18927 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Rule__Group__3__Impl_in_rule__Rule__Group__318958 = new BitSet(new long[]{0x0000001100000000L});
@@ -43514,7 +43517,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Rule__Group_4__0__Impl_in_rule__Rule__Group_4__019150 = new BitSet(new long[]{0x0002000000000000L});
     public static final BitSet FOLLOW_rule__Rule__Group_4__1_in_rule__Rule__Group_4__019153 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_32_in_rule__Rule__Group_4__0__Impl19181 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Rule__Group_4__1__Impl_in_rule__Rule__Group_4__119212 = new BitSet(new long[]{0x0000100024000010L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__Rule__Group_4__1__Impl_in_rule__Rule__Group_4__119212 = new BitSet(new long[]{0x0000000024000010L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__Rule__Group_4__2_in_rule__Rule__Group_4__119215 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_49_in_rule__Rule__Group_4__1__Impl19243 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Rule__Group_4__2__Impl_in_rule__Rule__Group_4__219274 = new BitSet(new long[]{0x0000000000000002L});
@@ -43522,7 +43525,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__CountOperator__Group__0__Impl_in_rule__CountOperator__Group__019337 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_rule__CountOperator__Group__1_in_rule__CountOperator__Group__019340 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_60_in_rule__CountOperator__Group__0__Impl19368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CountOperator__Group__1__Impl_in_rule__CountOperator__Group__119399 = new BitSet(new long[]{0x0000100024000010L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__CountOperator__Group__1__Impl_in_rule__CountOperator__Group__119399 = new BitSet(new long[]{0x0000000024000010L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__CountOperator__Group__2_in_rule__CountOperator__Group__119402 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_35_in_rule__CountOperator__Group__1__Impl19430 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__CountOperator__Group__2__Impl_in_rule__CountOperator__Group__219461 = new BitSet(new long[]{0x0000000100000000L});
@@ -43539,7 +43542,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__StandardDeviationOperator__Group__0__Impl_in_rule__StandardDeviationOperator__Group__019714 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_rule__StandardDeviationOperator__Group__1_in_rule__StandardDeviationOperator__Group__019717 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_61_in_rule__StandardDeviationOperator__Group__0__Impl19745 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StandardDeviationOperator__Group__1__Impl_in_rule__StandardDeviationOperator__Group__119776 = new BitSet(new long[]{0x0000100024000010L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__StandardDeviationOperator__Group__1__Impl_in_rule__StandardDeviationOperator__Group__119776 = new BitSet(new long[]{0x0000000024000010L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__StandardDeviationOperator__Group__2_in_rule__StandardDeviationOperator__Group__119779 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_35_in_rule__StandardDeviationOperator__Group__1__Impl19807 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__StandardDeviationOperator__Group__2__Impl_in_rule__StandardDeviationOperator__Group__219838 = new BitSet(new long[]{0x0000000100000000L});
@@ -43556,7 +43559,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__AverageOperator__Group__0__Impl_in_rule__AverageOperator__Group__020091 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_rule__AverageOperator__Group__1_in_rule__AverageOperator__Group__020094 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_62_in_rule__AverageOperator__Group__0__Impl20122 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AverageOperator__Group__1__Impl_in_rule__AverageOperator__Group__120153 = new BitSet(new long[]{0x0000100024000010L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__AverageOperator__Group__1__Impl_in_rule__AverageOperator__Group__120153 = new BitSet(new long[]{0x0000000024000010L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__AverageOperator__Group__2_in_rule__AverageOperator__Group__120156 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_35_in_rule__AverageOperator__Group__1__Impl20184 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__AverageOperator__Group__2__Impl_in_rule__AverageOperator__Group__220215 = new BitSet(new long[]{0x0000000100000000L});
@@ -43573,13 +43576,13 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__AdditionOperator__Group__0__Impl_in_rule__AdditionOperator__Group__020468 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_rule__AdditionOperator__Group__1_in_rule__AdditionOperator__Group__020471 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_63_in_rule__AdditionOperator__Group__0__Impl20499 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AdditionOperator__Group__1__Impl_in_rule__AdditionOperator__Group__120530 = new BitSet(new long[]{0x0000100024000010L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__AdditionOperator__Group__1__Impl_in_rule__AdditionOperator__Group__120530 = new BitSet(new long[]{0x0000000024000010L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__AdditionOperator__Group__2_in_rule__AdditionOperator__Group__120533 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_35_in_rule__AdditionOperator__Group__1__Impl20561 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__AdditionOperator__Group__2__Impl_in_rule__AdditionOperator__Group__220592 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_rule__AdditionOperator__Group__3_in_rule__AdditionOperator__Group__220595 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__AdditionOperator__ParameterAssignment_2_in_rule__AdditionOperator__Group__2__Impl20622 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AdditionOperator__Group__3__Impl_in_rule__AdditionOperator__Group__320652 = new BitSet(new long[]{0x0000100024000050L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__AdditionOperator__Group__3__Impl_in_rule__AdditionOperator__Group__320652 = new BitSet(new long[]{0x0000000024000050L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__AdditionOperator__Group__4_in_rule__AdditionOperator__Group__320655 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_32_in_rule__AdditionOperator__Group__3__Impl20683 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__AdditionOperator__Group__4__Impl_in_rule__AdditionOperator__Group__420714 = new BitSet(new long[]{0x0000001000000000L});
@@ -43590,13 +43593,13 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__SubtractionOperator__Group__0__Impl_in_rule__SubtractionOperator__Group__020845 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_rule__SubtractionOperator__Group__1_in_rule__SubtractionOperator__Group__020848 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_64_in_rule__SubtractionOperator__Group__0__Impl20876 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SubtractionOperator__Group__1__Impl_in_rule__SubtractionOperator__Group__120907 = new BitSet(new long[]{0x0000100024000010L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__SubtractionOperator__Group__1__Impl_in_rule__SubtractionOperator__Group__120907 = new BitSet(new long[]{0x0000000024000010L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__SubtractionOperator__Group__2_in_rule__SubtractionOperator__Group__120910 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_35_in_rule__SubtractionOperator__Group__1__Impl20938 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SubtractionOperator__Group__2__Impl_in_rule__SubtractionOperator__Group__220969 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_rule__SubtractionOperator__Group__3_in_rule__SubtractionOperator__Group__220972 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SubtractionOperator__ParameterAssignment_2_in_rule__SubtractionOperator__Group__2__Impl20999 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SubtractionOperator__Group__3__Impl_in_rule__SubtractionOperator__Group__321029 = new BitSet(new long[]{0x0000100024000050L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__SubtractionOperator__Group__3__Impl_in_rule__SubtractionOperator__Group__321029 = new BitSet(new long[]{0x0000000024000050L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__SubtractionOperator__Group__4_in_rule__SubtractionOperator__Group__321032 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_32_in_rule__SubtractionOperator__Group__3__Impl21060 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SubtractionOperator__Group__4__Impl_in_rule__SubtractionOperator__Group__421091 = new BitSet(new long[]{0x0000001000000000L});
@@ -43607,13 +43610,13 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__MultiplicationOperator__Group__0__Impl_in_rule__MultiplicationOperator__Group__021222 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_rule__MultiplicationOperator__Group__1_in_rule__MultiplicationOperator__Group__021225 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_65_in_rule__MultiplicationOperator__Group__0__Impl21253 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MultiplicationOperator__Group__1__Impl_in_rule__MultiplicationOperator__Group__121284 = new BitSet(new long[]{0x0000100024000010L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__MultiplicationOperator__Group__1__Impl_in_rule__MultiplicationOperator__Group__121284 = new BitSet(new long[]{0x0000000024000010L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__MultiplicationOperator__Group__2_in_rule__MultiplicationOperator__Group__121287 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_35_in_rule__MultiplicationOperator__Group__1__Impl21315 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__MultiplicationOperator__Group__2__Impl_in_rule__MultiplicationOperator__Group__221346 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_rule__MultiplicationOperator__Group__3_in_rule__MultiplicationOperator__Group__221349 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__MultiplicationOperator__ParameterAssignment_2_in_rule__MultiplicationOperator__Group__2__Impl21376 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MultiplicationOperator__Group__3__Impl_in_rule__MultiplicationOperator__Group__321406 = new BitSet(new long[]{0x0000100024000050L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__MultiplicationOperator__Group__3__Impl_in_rule__MultiplicationOperator__Group__321406 = new BitSet(new long[]{0x0000000024000050L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__MultiplicationOperator__Group__4_in_rule__MultiplicationOperator__Group__321409 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_32_in_rule__MultiplicationOperator__Group__3__Impl21437 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__MultiplicationOperator__Group__4__Impl_in_rule__MultiplicationOperator__Group__421468 = new BitSet(new long[]{0x0000001000000000L});
@@ -43624,13 +43627,13 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__DivisionOperator__Group__0__Impl_in_rule__DivisionOperator__Group__021599 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_rule__DivisionOperator__Group__1_in_rule__DivisionOperator__Group__021602 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_66_in_rule__DivisionOperator__Group__0__Impl21630 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__DivisionOperator__Group__1__Impl_in_rule__DivisionOperator__Group__121661 = new BitSet(new long[]{0x0000100024000010L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__DivisionOperator__Group__1__Impl_in_rule__DivisionOperator__Group__121661 = new BitSet(new long[]{0x0000000024000010L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__DivisionOperator__Group__2_in_rule__DivisionOperator__Group__121664 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_35_in_rule__DivisionOperator__Group__1__Impl21692 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__DivisionOperator__Group__2__Impl_in_rule__DivisionOperator__Group__221723 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_rule__DivisionOperator__Group__3_in_rule__DivisionOperator__Group__221726 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__DivisionOperator__ParameterAssignment_2_in_rule__DivisionOperator__Group__2__Impl21753 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__DivisionOperator__Group__3__Impl_in_rule__DivisionOperator__Group__321783 = new BitSet(new long[]{0x0000100024000050L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__DivisionOperator__Group__3__Impl_in_rule__DivisionOperator__Group__321783 = new BitSet(new long[]{0x0000000024000050L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__DivisionOperator__Group__4_in_rule__DivisionOperator__Group__321786 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_32_in_rule__DivisionOperator__Group__3__Impl21814 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__DivisionOperator__Group__4__Impl_in_rule__DivisionOperator__Group__421845 = new BitSet(new long[]{0x0000001000000000L});
@@ -43641,13 +43644,13 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__ModuloOperator__Group__0__Impl_in_rule__ModuloOperator__Group__021976 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_rule__ModuloOperator__Group__1_in_rule__ModuloOperator__Group__021979 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_67_in_rule__ModuloOperator__Group__0__Impl22007 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ModuloOperator__Group__1__Impl_in_rule__ModuloOperator__Group__122038 = new BitSet(new long[]{0x0000100024000010L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__ModuloOperator__Group__1__Impl_in_rule__ModuloOperator__Group__122038 = new BitSet(new long[]{0x0000000024000010L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__ModuloOperator__Group__2_in_rule__ModuloOperator__Group__122041 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_35_in_rule__ModuloOperator__Group__1__Impl22069 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ModuloOperator__Group__2__Impl_in_rule__ModuloOperator__Group__222100 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_rule__ModuloOperator__Group__3_in_rule__ModuloOperator__Group__222103 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ModuloOperator__ParameterAssignment_2_in_rule__ModuloOperator__Group__2__Impl22130 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ModuloOperator__Group__3__Impl_in_rule__ModuloOperator__Group__322160 = new BitSet(new long[]{0x0000100024000050L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__ModuloOperator__Group__3__Impl_in_rule__ModuloOperator__Group__322160 = new BitSet(new long[]{0x0000000024000050L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__ModuloOperator__Group__4_in_rule__ModuloOperator__Group__322163 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_32_in_rule__ModuloOperator__Group__3__Impl22191 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ModuloOperator__Group__4__Impl_in_rule__ModuloOperator__Group__422222 = new BitSet(new long[]{0x0000001000000000L});
@@ -43790,7 +43793,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Or__Group_1__0_in_rule__Or__Group__1__Impl25283 = new BitSet(new long[]{0x0000000000000002L,0x0000000000040000L});
     public static final BitSet FOLLOW_rule__Or__Group_1__0__Impl_in_rule__Or__Group_1__025318 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
     public static final BitSet FOLLOW_rule__Or__Group_1__1_in_rule__Or__Group_1__025321 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Or__Group_1__1__Impl_in_rule__Or__Group_1__125379 = new BitSet(new long[]{0x0000100824000050L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__Or__Group_1__1__Impl_in_rule__Or__Group_1__125379 = new BitSet(new long[]{0x0000000824000050L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__Or__Group_1__2_in_rule__Or__Group_1__125382 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Or__OperatorAssignment_1_1_in_rule__Or__Group_1__1__Impl25409 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Or__Group_1__2__Impl_in_rule__Or__Group_1__225439 = new BitSet(new long[]{0x0000000000000002L});
@@ -43802,7 +43805,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__And__Group_1__0_in_rule__And__Group__1__Impl25588 = new BitSet(new long[]{0x0000000000000002L,0x0000000000080000L});
     public static final BitSet FOLLOW_rule__And__Group_1__0__Impl_in_rule__And__Group_1__025623 = new BitSet(new long[]{0x0000000000000000L,0x0000000000080000L});
     public static final BitSet FOLLOW_rule__And__Group_1__1_in_rule__And__Group_1__025626 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__And__Group_1__1__Impl_in_rule__And__Group_1__125684 = new BitSet(new long[]{0x0000100824000050L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__And__Group_1__1__Impl_in_rule__And__Group_1__125684 = new BitSet(new long[]{0x0000000824000050L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__And__Group_1__2_in_rule__And__Group_1__125687 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__And__OperatorAssignment_1_1_in_rule__And__Group_1__1__Impl25714 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__And__Group_1__2__Impl_in_rule__And__Group_1__225744 = new BitSet(new long[]{0x0000000000000002L});
@@ -43814,7 +43817,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__RelationalExpression__Group_1__0_in_rule__RelationalExpression__Group__1__Impl25893 = new BitSet(new long[]{0x00000000003F0002L});
     public static final BitSet FOLLOW_rule__RelationalExpression__Group_1__0__Impl_in_rule__RelationalExpression__Group_1__025928 = new BitSet(new long[]{0x00000000003F0000L});
     public static final BitSet FOLLOW_rule__RelationalExpression__Group_1__1_in_rule__RelationalExpression__Group_1__025931 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RelationalExpression__Group_1__1__Impl_in_rule__RelationalExpression__Group_1__125989 = new BitSet(new long[]{0x0000100824000050L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__RelationalExpression__Group_1__1__Impl_in_rule__RelationalExpression__Group_1__125989 = new BitSet(new long[]{0x0000000824000050L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__RelationalExpression__Group_1__2_in_rule__RelationalExpression__Group_1__125992 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__RelationalExpression__OperatorAssignment_1_1_in_rule__RelationalExpression__Group_1__1__Impl26019 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__RelationalExpression__Group_1__2__Impl_in_rule__RelationalExpression__Group_1__226049 = new BitSet(new long[]{0x0000000000000002L});
@@ -43824,7 +43827,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleMultiplication_in_rule__Addition__Group__0__Impl26142 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Addition__Group__1__Impl_in_rule__Addition__Group__126171 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Addition__Group_1__0_in_rule__Addition__Group__1__Impl26198 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000300L});
-    public static final BitSet FOLLOW_rule__Addition__Group_1__0__Impl_in_rule__Addition__Group_1__026233 = new BitSet(new long[]{0x0000100824000050L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__Addition__Group_1__0__Impl_in_rule__Addition__Group_1__026233 = new BitSet(new long[]{0x0000000824000050L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__Addition__Group_1__1_in_rule__Addition__Group_1__026236 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Addition__Alternatives_1_0_in_rule__Addition__Group_1__0__Impl26263 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Addition__Group_1__1__Impl_in_rule__Addition__Group_1__126293 = new BitSet(new long[]{0x0000000000000002L});
@@ -43842,7 +43845,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rulePrimaryExpression_in_rule__Multiplication__Group__0__Impl26632 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Multiplication__Group__1__Impl_in_rule__Multiplication__Group__126661 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Multiplication__Group_1__0_in_rule__Multiplication__Group__1__Impl26688 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000C00L});
-    public static final BitSet FOLLOW_rule__Multiplication__Group_1__0__Impl_in_rule__Multiplication__Group_1__026723 = new BitSet(new long[]{0x0000100824000050L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__Multiplication__Group_1__0__Impl_in_rule__Multiplication__Group_1__026723 = new BitSet(new long[]{0x0000000824000050L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__Multiplication__Group_1__1_in_rule__Multiplication__Group_1__026726 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Multiplication__Alternatives_1_0_in_rule__Multiplication__Group_1__0__Impl26753 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Multiplication__Group_1__1__Impl_in_rule__Multiplication__Group_1__126783 = new BitSet(new long[]{0x0000000000000002L});
@@ -43855,7 +43858,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Multiplication__Group_1_0_1__1_in_rule__Multiplication__Group_1_0_1__026971 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Multiplication__Group_1_0_1__1__Impl_in_rule__Multiplication__Group_1_0_1__127029 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_75_in_rule__Multiplication__Group_1_0_1__1__Impl27057 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PrimaryExpression__Group_0__0__Impl_in_rule__PrimaryExpression__Group_0__027092 = new BitSet(new long[]{0x0000100824000050L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__PrimaryExpression__Group_0__0__Impl_in_rule__PrimaryExpression__Group_0__027092 = new BitSet(new long[]{0x0000000824000050L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__PrimaryExpression__Group_0__1_in_rule__PrimaryExpression__Group_0__027095 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_35_in_rule__PrimaryExpression__Group_0__0__Impl27123 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__PrimaryExpression__Group_0__1__Impl_in_rule__PrimaryExpression__Group_0__127154 = new BitSet(new long[]{0x0000001000000000L});
@@ -43871,7 +43874,7 @@ public class InternalFlowParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__PrimaryExpression__Group_2__1_in_rule__PrimaryExpression__Group_2__027403 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__PrimaryExpression__Group_2__1__Impl_in_rule__PrimaryExpression__Group_2__127461 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__PrimaryExpression__VariableAssignment_2_1_in_rule__PrimaryExpression__Group_2__1__Impl27488 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PrimaryExpression__Group_3__0__Impl_in_rule__PrimaryExpression__Group_3__027522 = new BitSet(new long[]{0x0000100824000050L,0x000000000000F060L});
+    public static final BitSet FOLLOW_rule__PrimaryExpression__Group_3__0__Impl_in_rule__PrimaryExpression__Group_3__027522 = new BitSet(new long[]{0x0000000824000050L,0x000000000000F060L});
     public static final BitSet FOLLOW_rule__PrimaryExpression__Group_3__1_in_rule__PrimaryExpression__Group_3__027525 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__PrimaryExpression__Group_3__1__Impl_in_rule__PrimaryExpression__Group_3__127583 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__PrimaryExpression__StreamVariableAssignment_3_1_in_rule__PrimaryExpression__Group_3__1__Impl27610 = new BitSet(new long[]{0x0000000000000002L});

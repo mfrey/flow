@@ -1,6 +1,10 @@
 package de.hs_rm.cs.vs.dsm.generator;
 
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
+import de.hs_rm.cs.vs.dsm.flow.TagClassElement;
+import de.hs_rm.cs.vs.dsm.flow.TagDataTypePropertyElement;
+import de.hs_rm.cs.vs.dsm.flow.TagElement;
+import de.hs_rm.cs.vs.dsm.flow.TagObjectPropertyElement;
 import de.hs_rm.cs.vs.dsm.flow.TagOperator;
 
 /**
@@ -28,8 +32,8 @@ public class TagOperatorGenerator extends AbstractOperatorGenerator {
 		super(pStatement);
 		// Store the operator in the attribute
 		this.mOperator = (TagOperator) pStatement.getOperator();
-		// TODO: Add the input stream to the list
-		// this.getInputStreams().add(this.mOperator.getStream().getStream().getName());
+		// Set the operator type
+		this.setOperatorType(OPERATOR_TYPE);
 	}
 	
 	/**
@@ -44,16 +48,31 @@ public class TagOperatorGenerator extends AbstractOperatorGenerator {
 	 * {@inheritDoc} 
 	 */
 	@Override
-	public String initializeOperator() {
-		return Util.getInstance().createOperator(OPERATOR_TYPE, this.getInputStreams().get(0));
-	}
-
-	/**
-	 * {@inheritDoc} 
-	 */
-	@Override
 	public String setOperatorProperties() {
-		return "TODO tag\n";
+		String result = "";
+		
+		for(int i = 0; i < this.mOperator.getParameters().size(); i++){
+			TagElement element = this.mOperator.getParameters().get(i);
+			
+			if(element instanceof TagClassElement){
+				TagClassElement tag = (TagClassElement)element;
+				result +=  Util.getInstance().createParameter("todo", "owl_class", tag.getElement().getLocalName());
+				result +=  Util.getInstance().createParameter("todo", "element", tag.getReference().getElement().getName());
+			}else if(element instanceof TagObjectPropertyElement){
+				TagObjectPropertyElement tag = (TagObjectPropertyElement)element;
+				result +=  Util.getInstance().createParameter("todo", "owl_object_property", tag.getElement().getLocalName());
+				result +=  Util.getInstance().createParameter("todo", "element", tag.getReference().getElement().getName());
+			}else{
+				if(element instanceof TagDataTypePropertyElement){
+					TagDataTypePropertyElement tag = (TagDataTypePropertyElement)element;
+					result +=  Util.getInstance().createParameter("todo", "owl_datatype_property", tag.getElement().getLocalName());
+					result +=  Util.getInstance().createParameter("todo", "element", tag.getReference().getElement().getName());
+				}
+			}
+			
+		}
+		
+		return result;
 	}
 
 	/**
@@ -61,6 +80,6 @@ public class TagOperatorGenerator extends AbstractOperatorGenerator {
 	 */
 	@Override
 	public String setOperatorConnection() {
-		return Util.getInstance().connectOperator(this.getInputStreams().get(0), "in", this.getOutputStreams(), "out");
+		return Util.getInstance().connectOperator(this.getInputStreams(), "in", this.getOutputStreams(), "out");
 	}
 }

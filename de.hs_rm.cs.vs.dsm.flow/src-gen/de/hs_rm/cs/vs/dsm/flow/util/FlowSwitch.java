@@ -203,7 +203,7 @@ public class FlowSwitch<T> extends Switch<T>
       {
         DecisionTreeOperator decisionTreeOperator = (DecisionTreeOperator)theEObject;
         T result = caseDecisionTreeOperator(decisionTreeOperator);
-        if (result == null) result = caseModelElement(decisionTreeOperator);
+        if (result == null) result = caseReturnTypeOperator(decisionTreeOperator);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

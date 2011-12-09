@@ -46,7 +46,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class DecisionTreeOperatorImpl extends ModelElementImpl implements DecisionTreeOperator
+public class DecisionTreeOperatorImpl extends ReturnTypeOperatorImpl implements DecisionTreeOperator
 {
   /**
    * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.

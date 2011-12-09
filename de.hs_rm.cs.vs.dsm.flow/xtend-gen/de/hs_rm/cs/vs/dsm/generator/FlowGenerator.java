@@ -480,7 +480,7 @@ public class FlowGenerator implements IGenerator {
     return _xblockexpression;
   }
   
-  public String write(final EObject pOperator, final StreamStatement pStatement) {
+  public String write(final ReturnTypeOperator pOperator, final StreamStatement pStatement) {
     if ((pOperator instanceof AdditionOperator)
          && (pStatement instanceof StreamStatement)) {
       return _write((AdditionOperator)pOperator, (StreamStatement)pStatement);

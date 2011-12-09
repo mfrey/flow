@@ -183,7 +183,7 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				else break;
 			case FlowPackage.DECISION_TREE_OPERATOR:
 				if(context == grammarAccess.getDecisionTreeOperatorRule() ||
-				   context == grammarAccess.getModelElementRule()) {
+				   context == grammarAccess.getReturnTypeOperatorRule()) {
 					sequence_DecisionTreeOperator(context, (DecisionTreeOperator) semanticObject); 
 					return; 
 				}

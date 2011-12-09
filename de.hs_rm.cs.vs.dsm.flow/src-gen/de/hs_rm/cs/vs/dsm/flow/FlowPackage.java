@@ -670,7 +670,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECISION_TREE_OPERATOR__ATTRIBUTES = MODEL_ELEMENT_FEATURE_COUNT + 0;
+  int DECISION_TREE_OPERATOR__ATTRIBUTES = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Delta</b></em>' attribute.
@@ -679,7 +679,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECISION_TREE_OPERATOR__DELTA = MODEL_ELEMENT_FEATURE_COUNT + 1;
+  int DECISION_TREE_OPERATOR__DELTA = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Tau</b></em>' attribute.
@@ -688,7 +688,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECISION_TREE_OPERATOR__TAU = MODEL_ELEMENT_FEATURE_COUNT + 2;
+  int DECISION_TREE_OPERATOR__TAU = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Barrier</b></em>' attribute.
@@ -697,7 +697,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECISION_TREE_OPERATOR__BARRIER = MODEL_ELEMENT_FEATURE_COUNT + 3;
+  int DECISION_TREE_OPERATOR__BARRIER = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Frequency</b></em>' attribute.
@@ -706,7 +706,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECISION_TREE_OPERATOR__FREQUENCY = MODEL_ELEMENT_FEATURE_COUNT + 4;
+  int DECISION_TREE_OPERATOR__FREQUENCY = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Class Attributes</b></em>' containment reference list.
@@ -715,7 +715,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECISION_TREE_OPERATOR__CLASS_ATTRIBUTES = MODEL_ELEMENT_FEATURE_COUNT + 5;
+  int DECISION_TREE_OPERATOR__CLASS_ATTRIBUTES = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Stream</b></em>' containment reference.
@@ -724,7 +724,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECISION_TREE_OPERATOR__STREAM = MODEL_ELEMENT_FEATURE_COUNT + 6;
+  int DECISION_TREE_OPERATOR__STREAM = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 6;
 
   /**
    * The number of structural features of the '<em>Decision Tree Operator</em>' class.
@@ -733,7 +733,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECISION_TREE_OPERATOR_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 7;
+  int DECISION_TREE_OPERATOR_FEATURE_COUNT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.DecisionTreeAttributeImpl <em>Decision Tree Attribute</em>}' class.

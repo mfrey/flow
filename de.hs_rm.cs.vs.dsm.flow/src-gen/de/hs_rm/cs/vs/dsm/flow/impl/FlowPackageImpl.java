@@ -3070,7 +3070,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     splitOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     logOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     randomOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
-    decisionTreeOperatorEClass.getESuperTypes().add(this.getModelElement());
+    decisionTreeOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     matchOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     inputOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     tagOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
