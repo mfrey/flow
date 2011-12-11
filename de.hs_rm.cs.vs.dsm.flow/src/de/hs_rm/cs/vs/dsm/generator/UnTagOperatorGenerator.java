@@ -34,17 +34,10 @@ public class UnTagOperatorGenerator extends AbstractOperatorGenerator {
 		// Set the operator type
 		this.setOperatorType(OPERATOR_TYPE);
 	}
-	
-	/**
-	 * {@inheritDoc} 
-	 */
-	@Override
-	public String setBarrier() {
-		return "";
-	}
 
 	/**
-	 * {@inheritDoc} 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorProperties()
 	 */
 	@Override
 	public String setOperatorProperties() {
@@ -60,7 +53,8 @@ public class UnTagOperatorGenerator extends AbstractOperatorGenerator {
 	}
 
 	/**
-	 * {@inheritDoc} 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorConnection()
 	 */
 	@Override
 	public String setOperatorConnection() {

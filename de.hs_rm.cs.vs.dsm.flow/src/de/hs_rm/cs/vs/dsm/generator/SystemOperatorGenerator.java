@@ -30,20 +30,13 @@ public class SystemOperatorGenerator extends AbstractOperatorGenerator {
 	 * {@inheritDoc} 
 	 */
 	@Override
-	public String setBarrier() {
-		return "";
-	}
-
-	/**
-	 * {@inheritDoc} 
-	 */
-	@Override
 	public String initializeOperator() {
 		return "";
 	}
 
 	/**
-	 * {@inheritDoc} 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorProperties()
 	 */
 	@Override
 	public String setOperatorProperties() {
@@ -68,7 +61,8 @@ public class SystemOperatorGenerator extends AbstractOperatorGenerator {
 	}
 
 	/**
-	 * {@inheritDoc} 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorConnection()
 	 */
 	@Override
 	public String setOperatorConnection() {

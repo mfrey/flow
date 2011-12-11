@@ -68,7 +68,16 @@ public abstract class AbstractOperatorGenerator {
 		this.mOperatorStream = pOperatorStream;
 	}
 	
-	public abstract String setBarrier();
+	
+	/**
+	 * The method sets barrier mechanism of the operator. Basically this is done
+	 * setting methods of an operator.
+	 *
+	 * @return A string which includes the arguments of the barrier mechanism transformed to LUA code
+	 */
+	public String setBarrier(){
+		return "";
+	}
 	
 	/**
 	 * The method initializes the operator. The initialization of the operator 

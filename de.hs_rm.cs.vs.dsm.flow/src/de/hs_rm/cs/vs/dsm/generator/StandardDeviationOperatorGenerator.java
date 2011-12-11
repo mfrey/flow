@@ -35,23 +35,26 @@ public class StandardDeviationOperatorGenerator extends AbstractOperatorGenerato
 	}
 
 	/**
-	 * {@inheritDoc} 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorProperties()
 	 */
 	@Override
 	public String setOperatorProperties() {
 		return Util.getInstance().createParameter(mStream, "element", this.mOperator.getParameter().getElement().getName());
 	}
 
-	/**
-	 * {@inheritDoc} 
+	/** 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorConnection()
 	 */
 	@Override
 	public String setOperatorConnection() {
 		return Util.getInstance().connectOperator(this.getInputStreams(), "in", this.getOutputStreams(), "out");
 	}
 	
-	/**
-	 * {@inheritDoc} 
+	/** 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setBarrier()
 	 */
 	@Override
 	public String setBarrier() {
