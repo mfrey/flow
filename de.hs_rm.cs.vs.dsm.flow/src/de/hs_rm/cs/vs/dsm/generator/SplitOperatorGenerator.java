@@ -17,7 +17,7 @@ import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
  */
 public class SplitOperatorGenerator extends AbstractOperatorGenerator {
 	/** The type of the operator */
-	private final String OPERATOR_TYPE = "split";
+	private final String OPERATOR_TYPE = "Split";
 	/** The internal representation of the count operator */
 	private SplitOperator mOperator = null;
 	
@@ -35,22 +35,21 @@ public class SplitOperatorGenerator extends AbstractOperatorGenerator {
 		this.mOperator = (SplitOperator) pStatement.getOperator();
 		// Add the input stream to the corresponding array list (in the abstract operator class)
 		this.getInputStreams().add(this.mOperator.getParameter().getStream().getName());
-		
+		//
 		this.setOperatorType(OPERATOR_TYPE);
+		//
 		mStream = this.getOperatorStream();
 	}
 	
 	/**
 	 * {@inheritDoc} 
 	 */
+	/*
 	@Override
 	public String initializeOperator() {
-		if(this.getOutputStreams().size() > 1){
-			return Util.getInstance().createOperator(OPERATOR_TYPE, "stream" + this.getInputStreams().hashCode() + "");
-		}else{
-			return "Error in initializeOperator() in class SplitOperatorGenerator";
-		}
+		return Util.getInstance().createOperator(OPERATOR_TYPE, mStream);
 	}
+	*/
 	
 	public void replaceStream(final String pOldStream, final String pReplacement){
 		for(int i = 0; i < this.getOutputStreams().size(); i++){

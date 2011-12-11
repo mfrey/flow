@@ -24,8 +24,11 @@ public class FilterOperatorGenerator extends AbstractOperatorGenerator {
 		super(pStatement);
 		// Store the operator in the attribute
 		this.mOperator = (FilterOperator) pStatement.getOperator();
-		
+		// Add the input operator to the stream
+		this.getInputStreams().add(this.mOperator.getStream().getStream().getName());
+		// Set the type of the operator
 		this.setOperatorType(OPERATOR_TYPE);
+		// Set the name of the stream 
 		mStream = this.getOperatorStream();
 	}
 	
@@ -66,8 +69,8 @@ public class FilterOperatorGenerator extends AbstractOperatorGenerator {
 		String result = "";
 		if(pExpression instanceof StreamAccess){
 			StreamAccess stream = (StreamAccess) pExpression;
-			result += Util.getInstance().createParameter(mStream, "stream", stream.getReference().getName());
-			result += Util.getInstance().createParameter(mStream, "element", stream.getElement().getName());
+			result += Util.getInstance().createParameter(mStream, "stream", stream.getStreamVariable().getReference().getName());
+			result += Util.getInstance().createParameter(mStream, "element", stream.getStreamVariable().getElement().getName());
 		}else if(pExpression instanceof VariableDefinition){
 			
 			String value = "";
