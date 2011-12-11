@@ -247,20 +247,13 @@ MarkerOperator:
  * of a stream.
  */
 SWRLOperator:
-	'swrl''('rule=SWRLRule ',' barrier+=StreamOperatorParameter (',' barrier+=StreamOperatorParameter)*')';
+	'swrl''('rule=SWRLRule ',' stream=StreamOperatorParameter')';
 
 SWRLRule:
-	'Implies' '(' antecedent=AntecedentRule ',' consequent=ConsequentRule ')';
-
-AntecedentRule:
-	'Antecedent' '(' atoms+=Rule (',' atoms+=Rule)* ')';
-
-ConsequentRule:
-	'Consequent' '(' atoms+=Rule (',' atoms+=Rule)* ')';
+	atoms+=Rule ('∧' '(' atoms+=Rule)* '⇒' consequent=Rule;
 
 Rule:
 	name=[OWL::OWLObjectProperty|STRING] '(' '?' variable+=StreamAccess (','  '?' variable+=StreamAccess )* ')';
-
 
 /**
  * The CountOperator rule defines a count operator which counts an element

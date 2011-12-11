@@ -5,6 +5,8 @@
  */
 package de.hs_rm.cs.vs.dsm.flow;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SWRLRule#getAntecedent <em>Antecedent</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SWRLRule#getAtoms <em>Atoms</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SWRLRule#getConsequent <em>Consequent</em>}</li>
  * </ul>
  * </p>
@@ -27,30 +29,20 @@ import org.eclipse.emf.ecore.EObject;
 public interface SWRLRule extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Antecedent</b></em>' containment reference.
+   * Returns the value of the '<em><b>Atoms</b></em>' containment reference list.
+   * The list contents are of type {@link de.hs_rm.cs.vs.dsm.flow.Rule}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Antecedent</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Atoms</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Antecedent</em>' containment reference.
-   * @see #setAntecedent(AntecedentRule)
-   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getSWRLRule_Antecedent()
+   * @return the value of the '<em>Atoms</em>' containment reference list.
+   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getSWRLRule_Atoms()
    * @model containment="true"
    * @generated
    */
-  AntecedentRule getAntecedent();
-
-  /**
-   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.SWRLRule#getAntecedent <em>Antecedent</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Antecedent</em>' containment reference.
-   * @see #getAntecedent()
-   * @generated
-   */
-  void setAntecedent(AntecedentRule value);
+  EList<Rule> getAtoms();
 
   /**
    * Returns the value of the '<em><b>Consequent</b></em>' containment reference.
@@ -61,12 +53,12 @@ public interface SWRLRule extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Consequent</em>' containment reference.
-   * @see #setConsequent(ConsequentRule)
+   * @see #setConsequent(Rule)
    * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getSWRLRule_Consequent()
    * @model containment="true"
    * @generated
    */
-  ConsequentRule getConsequent();
+  Rule getConsequent();
 
   /**
    * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.SWRLRule#getConsequent <em>Consequent</em>}' containment reference.
@@ -76,6 +68,6 @@ public interface SWRLRule extends EObject
    * @see #getConsequent()
    * @generated
    */
-  void setConsequent(ConsequentRule value);
+  void setConsequent(Rule value);
 
 } // SWRLRule

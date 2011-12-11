@@ -5,19 +5,25 @@
  */
 package de.hs_rm.cs.vs.dsm.flow.impl;
 
-import de.hs_rm.cs.vs.dsm.flow.AntecedentRule;
-import de.hs_rm.cs.vs.dsm.flow.ConsequentRule;
 import de.hs_rm.cs.vs.dsm.flow.FlowPackage;
+import de.hs_rm.cs.vs.dsm.flow.Rule;
 import de.hs_rm.cs.vs.dsm.flow.SWRLRule;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +32,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SWRLRuleImpl#getAntecedent <em>Antecedent</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SWRLRuleImpl#getAtoms <em>Atoms</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SWRLRuleImpl#getConsequent <em>Consequent</em>}</li>
  * </ul>
  * </p>
@@ -36,14 +42,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class SWRLRuleImpl extends MinimalEObjectImpl.Container implements SWRLRule
 {
   /**
-   * The cached value of the '{@link #getAntecedent() <em>Antecedent</em>}' containment reference.
+   * The cached value of the '{@link #getAtoms() <em>Atoms</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAntecedent()
+   * @see #getAtoms()
    * @generated
    * @ordered
    */
-  protected AntecedentRule antecedent;
+  protected EList<Rule> atoms;
 
   /**
    * The cached value of the '{@link #getConsequent() <em>Consequent</em>}' containment reference.
@@ -53,7 +59,7 @@ public class SWRLRuleImpl extends MinimalEObjectImpl.Container implements SWRLRu
    * @generated
    * @ordered
    */
-  protected ConsequentRule consequent;
+  protected Rule consequent;
 
   /**
    * <!-- begin-user-doc -->
@@ -81,26 +87,13 @@ public class SWRLRuleImpl extends MinimalEObjectImpl.Container implements SWRLRu
    * <!-- end-user-doc -->
    * @generated
    */
-  public AntecedentRule getAntecedent()
+  public EList<Rule> getAtoms()
   {
-    return antecedent;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetAntecedent(AntecedentRule newAntecedent, NotificationChain msgs)
-  {
-    AntecedentRule oldAntecedent = antecedent;
-    antecedent = newAntecedent;
-    if (eNotificationRequired())
+    if (atoms == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FlowPackage.SWRL_RULE__ANTECEDENT, oldAntecedent, newAntecedent);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      atoms = new EObjectContainmentEList<Rule>(Rule.class, this, FlowPackage.SWRL_RULE__ATOMS);
     }
-    return msgs;
+    return atoms;
   }
 
   /**
@@ -108,28 +101,7 @@ public class SWRLRuleImpl extends MinimalEObjectImpl.Container implements SWRLRu
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAntecedent(AntecedentRule newAntecedent)
-  {
-    if (newAntecedent != antecedent)
-    {
-      NotificationChain msgs = null;
-      if (antecedent != null)
-        msgs = ((InternalEObject)antecedent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FlowPackage.SWRL_RULE__ANTECEDENT, null, msgs);
-      if (newAntecedent != null)
-        msgs = ((InternalEObject)newAntecedent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FlowPackage.SWRL_RULE__ANTECEDENT, null, msgs);
-      msgs = basicSetAntecedent(newAntecedent, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.SWRL_RULE__ANTECEDENT, newAntecedent, newAntecedent));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ConsequentRule getConsequent()
+  public Rule getConsequent()
   {
     return consequent;
   }
@@ -139,9 +111,9 @@ public class SWRLRuleImpl extends MinimalEObjectImpl.Container implements SWRLRu
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetConsequent(ConsequentRule newConsequent, NotificationChain msgs)
+  public NotificationChain basicSetConsequent(Rule newConsequent, NotificationChain msgs)
   {
-    ConsequentRule oldConsequent = consequent;
+    Rule oldConsequent = consequent;
     consequent = newConsequent;
     if (eNotificationRequired())
     {
@@ -156,7 +128,7 @@ public class SWRLRuleImpl extends MinimalEObjectImpl.Container implements SWRLRu
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setConsequent(ConsequentRule newConsequent)
+  public void setConsequent(Rule newConsequent)
   {
     if (newConsequent != consequent)
     {
@@ -182,8 +154,8 @@ public class SWRLRuleImpl extends MinimalEObjectImpl.Container implements SWRLRu
   {
     switch (featureID)
     {
-      case FlowPackage.SWRL_RULE__ANTECEDENT:
-        return basicSetAntecedent(null, msgs);
+      case FlowPackage.SWRL_RULE__ATOMS:
+        return ((InternalEList<?>)getAtoms()).basicRemove(otherEnd, msgs);
       case FlowPackage.SWRL_RULE__CONSEQUENT:
         return basicSetConsequent(null, msgs);
     }
@@ -200,8 +172,8 @@ public class SWRLRuleImpl extends MinimalEObjectImpl.Container implements SWRLRu
   {
     switch (featureID)
     {
-      case FlowPackage.SWRL_RULE__ANTECEDENT:
-        return getAntecedent();
+      case FlowPackage.SWRL_RULE__ATOMS:
+        return getAtoms();
       case FlowPackage.SWRL_RULE__CONSEQUENT:
         return getConsequent();
     }
@@ -213,16 +185,18 @@ public class SWRLRuleImpl extends MinimalEObjectImpl.Container implements SWRLRu
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case FlowPackage.SWRL_RULE__ANTECEDENT:
-        setAntecedent((AntecedentRule)newValue);
+      case FlowPackage.SWRL_RULE__ATOMS:
+        getAtoms().clear();
+        getAtoms().addAll((Collection<? extends Rule>)newValue);
         return;
       case FlowPackage.SWRL_RULE__CONSEQUENT:
-        setConsequent((ConsequentRule)newValue);
+        setConsequent((Rule)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -238,11 +212,11 @@ public class SWRLRuleImpl extends MinimalEObjectImpl.Container implements SWRLRu
   {
     switch (featureID)
     {
-      case FlowPackage.SWRL_RULE__ANTECEDENT:
-        setAntecedent((AntecedentRule)null);
+      case FlowPackage.SWRL_RULE__ATOMS:
+        getAtoms().clear();
         return;
       case FlowPackage.SWRL_RULE__CONSEQUENT:
-        setConsequent((ConsequentRule)null);
+        setConsequent((Rule)null);
         return;
     }
     super.eUnset(featureID);
@@ -258,8 +232,8 @@ public class SWRLRuleImpl extends MinimalEObjectImpl.Container implements SWRLRu
   {
     switch (featureID)
     {
-      case FlowPackage.SWRL_RULE__ANTECEDENT:
-        return antecedent != null;
+      case FlowPackage.SWRL_RULE__ATOMS:
+        return atoms != null && !atoms.isEmpty();
       case FlowPackage.SWRL_RULE__CONSEQUENT:
         return consequent != null;
     }

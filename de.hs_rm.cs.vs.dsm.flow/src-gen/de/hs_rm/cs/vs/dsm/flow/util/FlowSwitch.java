@@ -357,20 +357,6 @@ public class FlowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FlowPackage.ANTECEDENT_RULE:
-      {
-        AntecedentRule antecedentRule = (AntecedentRule)theEObject;
-        T result = caseAntecedentRule(antecedentRule);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FlowPackage.CONSEQUENT_RULE:
-      {
-        ConsequentRule consequentRule = (ConsequentRule)theEObject;
-        T result = caseConsequentRule(consequentRule);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case FlowPackage.RULE:
       {
         Rule rule = (Rule)theEObject;
@@ -1238,38 +1224,6 @@ public class FlowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseSWRLRule(SWRLRule object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Antecedent Rule</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Antecedent Rule</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAntecedentRule(AntecedentRule object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Consequent Rule</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Consequent Rule</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseConsequentRule(ConsequentRule object)
   {
     return null;
   }

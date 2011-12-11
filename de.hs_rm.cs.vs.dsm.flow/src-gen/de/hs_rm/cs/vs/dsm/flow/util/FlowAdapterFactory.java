@@ -263,16 +263,6 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
         return createSWRLRuleAdapter();
       }
       @Override
-      public Adapter caseAntecedentRule(AntecedentRule object)
-      {
-        return createAntecedentRuleAdapter();
-      }
-      @Override
-      public Adapter caseConsequentRule(ConsequentRule object)
-      {
-        return createConsequentRuleAdapter();
-      }
-      @Override
       public Adapter caseRule(Rule object)
       {
         return createRuleAdapter();
@@ -1015,36 +1005,6 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSWRLRuleAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.AntecedentRule <em>Antecedent Rule</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.AntecedentRule
-   * @generated
-   */
-  public Adapter createAntecedentRuleAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.ConsequentRule <em>Consequent Rule</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.ConsequentRule
-   * @generated
-   */
-  public Adapter createConsequentRuleAdapter()
   {
     return null;
   }

@@ -1829,22 +1829,18 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRuleAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cRuleSWRLRuleParserRuleCall_2_0 = (RuleCall)cRuleAssignment_2.eContents().get(0);
 		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cBarrierAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cBarrierStreamOperatorParameterParserRuleCall_4_0 = (RuleCall)cBarrierAssignment_4.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cBarrierAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cBarrierStreamOperatorParameterParserRuleCall_5_1_0 = (RuleCall)cBarrierAssignment_5_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cStreamAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cStreamStreamOperatorParameterParserRuleCall_4_0 = (RuleCall)cStreamAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		/// **
 		// * The SWRL rule defines a swrl operator which applies a swrl rule to elements
 		// * of a stream.
 		// * / SWRLOperator:
-		//	"swrl" "(" rule=SWRLRule "," barrier+=StreamOperatorParameter ("," barrier+=StreamOperatorParameter)* ")";
+		//	"swrl" "(" rule=SWRLRule "," stream=StreamOperatorParameter ")";
 		public ParserRule getRule() { return rule; }
 
-		//"swrl" "(" rule=SWRLRule "," barrier+=StreamOperatorParameter ("," barrier+=StreamOperatorParameter)* ")"
+		//"swrl" "(" rule=SWRLRule "," stream=StreamOperatorParameter ")"
 		public Group getGroup() { return cGroup; }
 
 		//"swrl"
@@ -1862,166 +1858,66 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//","
 		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
 
-		//barrier+=StreamOperatorParameter
-		public Assignment getBarrierAssignment_4() { return cBarrierAssignment_4; }
+		//stream=StreamOperatorParameter
+		public Assignment getStreamAssignment_4() { return cStreamAssignment_4; }
 
 		//StreamOperatorParameter
-		public RuleCall getBarrierStreamOperatorParameterParserRuleCall_4_0() { return cBarrierStreamOperatorParameterParserRuleCall_4_0; }
-
-		//("," barrier+=StreamOperatorParameter)*
-		public Group getGroup_5() { return cGroup_5; }
-
-		//","
-		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
-
-		//barrier+=StreamOperatorParameter
-		public Assignment getBarrierAssignment_5_1() { return cBarrierAssignment_5_1; }
-
-		//StreamOperatorParameter
-		public RuleCall getBarrierStreamOperatorParameterParserRuleCall_5_1_0() { return cBarrierStreamOperatorParameterParserRuleCall_5_1_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
-	}
-
-	public class SWRLRuleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SWRLRule");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cImpliesKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cAntecedentAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cAntecedentAntecedentRuleParserRuleCall_2_0 = (RuleCall)cAntecedentAssignment_2.eContents().get(0);
-		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cConsequentAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cConsequentConsequentRuleParserRuleCall_4_0 = (RuleCall)cConsequentAssignment_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		
-		//SWRLRule:
-		//	"Implies" "(" antecedent=AntecedentRule "," consequent=ConsequentRule ")";
-		public ParserRule getRule() { return rule; }
-
-		//"Implies" "(" antecedent=AntecedentRule "," consequent=ConsequentRule ")"
-		public Group getGroup() { return cGroup; }
-
-		//"Implies"
-		public Keyword getImpliesKeyword_0() { return cImpliesKeyword_0; }
-
-		//"("
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-
-		//antecedent=AntecedentRule
-		public Assignment getAntecedentAssignment_2() { return cAntecedentAssignment_2; }
-
-		//AntecedentRule
-		public RuleCall getAntecedentAntecedentRuleParserRuleCall_2_0() { return cAntecedentAntecedentRuleParserRuleCall_2_0; }
-
-		//","
-		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
-
-		//consequent=ConsequentRule
-		public Assignment getConsequentAssignment_4() { return cConsequentAssignment_4; }
-
-		//ConsequentRule
-		public RuleCall getConsequentConsequentRuleParserRuleCall_4_0() { return cConsequentConsequentRuleParserRuleCall_4_0; }
+		public RuleCall getStreamStreamOperatorParameterParserRuleCall_4_0() { return cStreamStreamOperatorParameterParserRuleCall_4_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 	}
 
-	public class AntecedentRuleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AntecedentRule");
+	public class SWRLRuleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SWRLRule");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cAntecedentKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cAtomsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cAtomsRuleParserRuleCall_2_0 = (RuleCall)cAtomsAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cAtomsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cAtomsRuleParserRuleCall_3_1_0 = (RuleCall)cAtomsAssignment_3_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cAtomsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cAtomsRuleParserRuleCall_0_0 = (RuleCall)cAtomsAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cLogicalAndKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cAtomsAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cAtomsRuleParserRuleCall_1_2_0 = (RuleCall)cAtomsAssignment_1_2.eContents().get(0);
+		private final Keyword cRightwardsDoubleArrowKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cConsequentAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cConsequentRuleParserRuleCall_3_0 = (RuleCall)cConsequentAssignment_3.eContents().get(0);
 		
-		//AntecedentRule:
-		//	"Antecedent" "(" atoms+=Rule ("," atoms+=Rule)* ")";
+		//SWRLRule:
+		//	atoms+=Rule ("∧" "(" atoms+=Rule)* "⇒" consequent=Rule;
 		public ParserRule getRule() { return rule; }
 
-		//"Antecedent" "(" atoms+=Rule ("," atoms+=Rule)* ")"
+		//atoms+=Rule ("∧" "(" atoms+=Rule)* "⇒" consequent=Rule
 		public Group getGroup() { return cGroup; }
 
-		//"Antecedent"
-		public Keyword getAntecedentKeyword_0() { return cAntecedentKeyword_0; }
+		//atoms+=Rule
+		public Assignment getAtomsAssignment_0() { return cAtomsAssignment_0; }
+
+		//Rule
+		public RuleCall getAtomsRuleParserRuleCall_0_0() { return cAtomsRuleParserRuleCall_0_0; }
+
+		//("∧" "(" atoms+=Rule)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"∧"
+		public Keyword getLogicalAndKeyword_1_0() { return cLogicalAndKeyword_1_0; }
 
 		//"("
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		public Keyword getLeftParenthesisKeyword_1_1() { return cLeftParenthesisKeyword_1_1; }
 
 		//atoms+=Rule
-		public Assignment getAtomsAssignment_2() { return cAtomsAssignment_2; }
+		public Assignment getAtomsAssignment_1_2() { return cAtomsAssignment_1_2; }
 
 		//Rule
-		public RuleCall getAtomsRuleParserRuleCall_2_0() { return cAtomsRuleParserRuleCall_2_0; }
+		public RuleCall getAtomsRuleParserRuleCall_1_2_0() { return cAtomsRuleParserRuleCall_1_2_0; }
 
-		//("," atoms+=Rule)*
-		public Group getGroup_3() { return cGroup_3; }
+		//"⇒"
+		public Keyword getRightwardsDoubleArrowKeyword_2() { return cRightwardsDoubleArrowKeyword_2; }
 
-		//","
-		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
-
-		//atoms+=Rule
-		public Assignment getAtomsAssignment_3_1() { return cAtomsAssignment_3_1; }
+		//consequent=Rule
+		public Assignment getConsequentAssignment_3() { return cConsequentAssignment_3; }
 
 		//Rule
-		public RuleCall getAtomsRuleParserRuleCall_3_1_0() { return cAtomsRuleParserRuleCall_3_1_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
-	}
-
-	public class ConsequentRuleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConsequentRule");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cConsequentKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cAtomsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cAtomsRuleParserRuleCall_2_0 = (RuleCall)cAtomsAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cAtomsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cAtomsRuleParserRuleCall_3_1_0 = (RuleCall)cAtomsAssignment_3_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		
-		//ConsequentRule:
-		//	"Consequent" "(" atoms+=Rule ("," atoms+=Rule)* ")";
-		public ParserRule getRule() { return rule; }
-
-		//"Consequent" "(" atoms+=Rule ("," atoms+=Rule)* ")"
-		public Group getGroup() { return cGroup; }
-
-		//"Consequent"
-		public Keyword getConsequentKeyword_0() { return cConsequentKeyword_0; }
-
-		//"("
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-
-		//atoms+=Rule
-		public Assignment getAtomsAssignment_2() { return cAtomsAssignment_2; }
-
-		//Rule
-		public RuleCall getAtomsRuleParserRuleCall_2_0() { return cAtomsRuleParserRuleCall_2_0; }
-
-		//("," atoms+=Rule)*
-		public Group getGroup_3() { return cGroup_3; }
-
-		//","
-		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
-
-		//atoms+=Rule
-		public Assignment getAtomsAssignment_3_1() { return cAtomsAssignment_3_1; }
-
-		//Rule
-		public RuleCall getAtomsRuleParserRuleCall_3_1_0() { return cAtomsRuleParserRuleCall_3_1_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+		public RuleCall getConsequentRuleParserRuleCall_3_0() { return cConsequentRuleParserRuleCall_3_0; }
 	}
 
 	public class RuleElements extends AbstractParserRuleElementFinder {
@@ -3569,8 +3465,6 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	private MarkerOperatorElements pMarkerOperator;
 	private SWRLOperatorElements pSWRLOperator;
 	private SWRLRuleElements pSWRLRule;
-	private AntecedentRuleElements pAntecedentRule;
-	private ConsequentRuleElements pConsequentRule;
 	private RuleElements pRule;
 	private CountOperatorElements pCountOperator;
 	private StandardDeviationOperatorElements pStandardDeviationOperator;
@@ -4069,7 +3963,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	// * The SWRL rule defines a swrl operator which applies a swrl rule to elements
 	// * of a stream.
 	// * / SWRLOperator:
-	//	"swrl" "(" rule=SWRLRule "," barrier+=StreamOperatorParameter ("," barrier+=StreamOperatorParameter)* ")";
+	//	"swrl" "(" rule=SWRLRule "," stream=StreamOperatorParameter ")";
 	public SWRLOperatorElements getSWRLOperatorAccess() {
 		return (pSWRLOperator != null) ? pSWRLOperator : (pSWRLOperator = new SWRLOperatorElements());
 	}
@@ -4079,33 +3973,13 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SWRLRule:
-	//	"Implies" "(" antecedent=AntecedentRule "," consequent=ConsequentRule ")";
+	//	atoms+=Rule ("∧" "(" atoms+=Rule)* "⇒" consequent=Rule;
 	public SWRLRuleElements getSWRLRuleAccess() {
 		return (pSWRLRule != null) ? pSWRLRule : (pSWRLRule = new SWRLRuleElements());
 	}
 	
 	public ParserRule getSWRLRuleRule() {
 		return getSWRLRuleAccess().getRule();
-	}
-
-	//AntecedentRule:
-	//	"Antecedent" "(" atoms+=Rule ("," atoms+=Rule)* ")";
-	public AntecedentRuleElements getAntecedentRuleAccess() {
-		return (pAntecedentRule != null) ? pAntecedentRule : (pAntecedentRule = new AntecedentRuleElements());
-	}
-	
-	public ParserRule getAntecedentRuleRule() {
-		return getAntecedentRuleAccess().getRule();
-	}
-
-	//ConsequentRule:
-	//	"Consequent" "(" atoms+=Rule ("," atoms+=Rule)* ")";
-	public ConsequentRuleElements getConsequentRuleAccess() {
-		return (pConsequentRule != null) ? pConsequentRule : (pConsequentRule = new ConsequentRuleElements());
-	}
-	
-	public ParserRule getConsequentRuleRule() {
-		return getConsequentRuleAccess().getRule();
 	}
 
 	//Rule:

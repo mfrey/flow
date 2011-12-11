@@ -10,20 +10,13 @@ import de.hs_rm.cs.vs.dsm.flow.SWRLOperator;
 import de.hs_rm.cs.vs.dsm.flow.SWRLRule;
 import de.hs_rm.cs.vs.dsm.flow.StreamOperatorParameter;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +26,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SWRLOperatorImpl#getRule <em>Rule</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SWRLOperatorImpl#getBarrier <em>Barrier</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SWRLOperatorImpl#getStream <em>Stream</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,14 +45,14 @@ public class SWRLOperatorImpl extends ReturnTypeOperatorImpl implements SWRLOper
   protected SWRLRule rule;
 
   /**
-   * The cached value of the '{@link #getBarrier() <em>Barrier</em>}' containment reference list.
+   * The cached value of the '{@link #getStream() <em>Stream</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBarrier()
+   * @see #getStream()
    * @generated
    * @ordered
    */
-  protected EList<StreamOperatorParameter> barrier;
+  protected StreamOperatorParameter stream;
 
   /**
    * <!-- begin-user-doc -->
@@ -135,13 +128,47 @@ public class SWRLOperatorImpl extends ReturnTypeOperatorImpl implements SWRLOper
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<StreamOperatorParameter> getBarrier()
+  public StreamOperatorParameter getStream()
   {
-    if (barrier == null)
+    return stream;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetStream(StreamOperatorParameter newStream, NotificationChain msgs)
+  {
+    StreamOperatorParameter oldStream = stream;
+    stream = newStream;
+    if (eNotificationRequired())
     {
-      barrier = new EObjectContainmentEList<StreamOperatorParameter>(StreamOperatorParameter.class, this, FlowPackage.SWRL_OPERATOR__BARRIER);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FlowPackage.SWRL_OPERATOR__STREAM, oldStream, newStream);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return barrier;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setStream(StreamOperatorParameter newStream)
+  {
+    if (newStream != stream)
+    {
+      NotificationChain msgs = null;
+      if (stream != null)
+        msgs = ((InternalEObject)stream).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FlowPackage.SWRL_OPERATOR__STREAM, null, msgs);
+      if (newStream != null)
+        msgs = ((InternalEObject)newStream).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FlowPackage.SWRL_OPERATOR__STREAM, null, msgs);
+      msgs = basicSetStream(newStream, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.SWRL_OPERATOR__STREAM, newStream, newStream));
   }
 
   /**
@@ -156,8 +183,8 @@ public class SWRLOperatorImpl extends ReturnTypeOperatorImpl implements SWRLOper
     {
       case FlowPackage.SWRL_OPERATOR__RULE:
         return basicSetRule(null, msgs);
-      case FlowPackage.SWRL_OPERATOR__BARRIER:
-        return ((InternalEList<?>)getBarrier()).basicRemove(otherEnd, msgs);
+      case FlowPackage.SWRL_OPERATOR__STREAM:
+        return basicSetStream(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -174,8 +201,8 @@ public class SWRLOperatorImpl extends ReturnTypeOperatorImpl implements SWRLOper
     {
       case FlowPackage.SWRL_OPERATOR__RULE:
         return getRule();
-      case FlowPackage.SWRL_OPERATOR__BARRIER:
-        return getBarrier();
+      case FlowPackage.SWRL_OPERATOR__STREAM:
+        return getStream();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -185,7 +212,6 @@ public class SWRLOperatorImpl extends ReturnTypeOperatorImpl implements SWRLOper
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -194,9 +220,8 @@ public class SWRLOperatorImpl extends ReturnTypeOperatorImpl implements SWRLOper
       case FlowPackage.SWRL_OPERATOR__RULE:
         setRule((SWRLRule)newValue);
         return;
-      case FlowPackage.SWRL_OPERATOR__BARRIER:
-        getBarrier().clear();
-        getBarrier().addAll((Collection<? extends StreamOperatorParameter>)newValue);
+      case FlowPackage.SWRL_OPERATOR__STREAM:
+        setStream((StreamOperatorParameter)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -215,8 +240,8 @@ public class SWRLOperatorImpl extends ReturnTypeOperatorImpl implements SWRLOper
       case FlowPackage.SWRL_OPERATOR__RULE:
         setRule((SWRLRule)null);
         return;
-      case FlowPackage.SWRL_OPERATOR__BARRIER:
-        getBarrier().clear();
+      case FlowPackage.SWRL_OPERATOR__STREAM:
+        setStream((StreamOperatorParameter)null);
         return;
     }
     super.eUnset(featureID);
@@ -234,8 +259,8 @@ public class SWRLOperatorImpl extends ReturnTypeOperatorImpl implements SWRLOper
     {
       case FlowPackage.SWRL_OPERATOR__RULE:
         return rule != null;
-      case FlowPackage.SWRL_OPERATOR__BARRIER:
-        return barrier != null && !barrier.isEmpty();
+      case FlowPackage.SWRL_OPERATOR__STREAM:
+        return stream != null;
     }
     return super.eIsSet(featureID);
   }

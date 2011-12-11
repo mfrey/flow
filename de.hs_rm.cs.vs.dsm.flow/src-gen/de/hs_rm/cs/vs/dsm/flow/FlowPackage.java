@@ -1348,13 +1348,13 @@ public interface FlowPackage extends EPackage
   int SWRL_OPERATOR__RULE = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Barrier</b></em>' containment reference list.
+   * The feature id for the '<em><b>Stream</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SWRL_OPERATOR__BARRIER = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
+  int SWRL_OPERATOR__STREAM = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>SWRL Operator</em>' class.
@@ -1376,13 +1376,13 @@ public interface FlowPackage extends EPackage
   int SWRL_RULE = 36;
 
   /**
-   * The feature id for the '<em><b>Antecedent</b></em>' containment reference.
+   * The feature id for the '<em><b>Atoms</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SWRL_RULE__ANTECEDENT = 0;
+  int SWRL_RULE__ATOMS = 0;
 
   /**
    * The feature id for the '<em><b>Consequent</b></em>' containment reference.
@@ -1403,62 +1403,6 @@ public interface FlowPackage extends EPackage
   int SWRL_RULE_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.AntecedentRuleImpl <em>Antecedent Rule</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.AntecedentRuleImpl
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getAntecedentRule()
-   * @generated
-   */
-  int ANTECEDENT_RULE = 37;
-
-  /**
-   * The feature id for the '<em><b>Atoms</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ANTECEDENT_RULE__ATOMS = 0;
-
-  /**
-   * The number of structural features of the '<em>Antecedent Rule</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ANTECEDENT_RULE_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.ConsequentRuleImpl <em>Consequent Rule</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.ConsequentRuleImpl
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getConsequentRule()
-   * @generated
-   */
-  int CONSEQUENT_RULE = 38;
-
-  /**
-   * The feature id for the '<em><b>Atoms</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONSEQUENT_RULE__ATOMS = 0;
-
-  /**
-   * The number of structural features of the '<em>Consequent Rule</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONSEQUENT_RULE_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.RuleImpl <em>Rule</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1466,7 +1410,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getRule()
    * @generated
    */
-  int RULE = 39;
+  int RULE = 37;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' reference.
@@ -1503,7 +1447,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getCountOperator()
    * @generated
    */
-  int COUNT_OPERATOR = 40;
+  int COUNT_OPERATOR = 38;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1540,7 +1484,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStandardDeviationOperator()
    * @generated
    */
-  int STANDARD_DEVIATION_OPERATOR = 41;
+  int STANDARD_DEVIATION_OPERATOR = 39;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1577,7 +1521,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getAverageOperator()
    * @generated
    */
-  int AVERAGE_OPERATOR = 42;
+  int AVERAGE_OPERATOR = 40;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1614,7 +1558,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getAdditionOperator()
    * @generated
    */
-  int ADDITION_OPERATOR = 43;
+  int ADDITION_OPERATOR = 41;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1669,7 +1613,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSubtractionOperator()
    * @generated
    */
-  int SUBTRACTION_OPERATOR = 44;
+  int SUBTRACTION_OPERATOR = 42;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1724,7 +1668,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMultiplicationOperator()
    * @generated
    */
-  int MULTIPLICATION_OPERATOR = 45;
+  int MULTIPLICATION_OPERATOR = 43;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1779,7 +1723,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getDivisionOperator()
    * @generated
    */
-  int DIVISION_OPERATOR = 46;
+  int DIVISION_OPERATOR = 44;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1834,7 +1778,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getModuloOperator()
    * @generated
    */
-  int MODULO_OPERATOR = 47;
+  int MODULO_OPERATOR = 45;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1889,7 +1833,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getOutputOperator()
    * @generated
    */
-  int OUTPUT_OPERATOR = 48;
+  int OUTPUT_OPERATOR = 46;
 
   /**
    * The feature id for the '<em><b>Stream</b></em>' containment reference.
@@ -1944,7 +1888,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getVariableDefinition()
    * @generated
    */
-  int VARIABLE_DEFINITION = 49;
+  int VARIABLE_DEFINITION = 47;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1972,7 +1916,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStreamElement()
    * @generated
    */
-  int STREAM_ELEMENT = 56;
+  int STREAM_ELEMENT = 54;
 
   /**
    * The number of structural features of the '<em>Stream Element</em>' class.
@@ -1991,7 +1935,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getVariableDeclaration()
    * @generated
    */
-  int VARIABLE_DECLARATION = 50;
+  int VARIABLE_DECLARATION = 48;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -2028,7 +1972,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getNumberVariableDefinition()
    * @generated
    */
-  int NUMBER_VARIABLE_DEFINITION = 51;
+  int NUMBER_VARIABLE_DEFINITION = 49;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2074,7 +2018,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStringVariableDefinition()
    * @generated
    */
-  int STRING_VARIABLE_DEFINITION = 52;
+  int STRING_VARIABLE_DEFINITION = 50;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2120,7 +2064,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBooleanVariableDefinition()
    * @generated
    */
-  int BOOLEAN_VARIABLE_DEFINITION = 53;
+  int BOOLEAN_VARIABLE_DEFINITION = 51;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2166,7 +2110,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStructureDeclaration()
    * @generated
    */
-  int STRUCTURE_DECLARATION = 54;
+  int STRUCTURE_DECLARATION = 52;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2203,7 +2147,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStreamDeclaration()
    * @generated
    */
-  int STREAM_DECLARATION = 55;
+  int STREAM_DECLARATION = 53;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2240,7 +2184,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStructureElements()
    * @generated
    */
-  int STRUCTURE_ELEMENTS = 57;
+  int STRUCTURE_ELEMENTS = 55;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' reference.
@@ -2268,7 +2212,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 58;
+  int EXPRESSION = 56;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -2287,7 +2231,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getDataType()
    * @generated
    */
-  int DATA_TYPE = 59;
+  int DATA_TYPE = 57;
 
   /**
    * The number of structural features of the '<em>Data Type</em>' class.
@@ -2306,7 +2250,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSimpleDataType()
    * @generated
    */
-  int SIMPLE_DATA_TYPE = 60;
+  int SIMPLE_DATA_TYPE = 58;
 
   /**
    * The number of structural features of the '<em>Simple Data Type</em>' class.
@@ -2325,7 +2269,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getComplexDataType()
    * @generated
    */
-  int COMPLEX_DATA_TYPE = 61;
+  int COMPLEX_DATA_TYPE = 59;
 
   /**
    * The number of structural features of the '<em>Complex Data Type</em>' class.
@@ -2344,7 +2288,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getIntegerDataType()
    * @generated
    */
-  int INTEGER_DATA_TYPE = 62;
+  int INTEGER_DATA_TYPE = 60;
 
   /**
    * The number of structural features of the '<em>Integer Data Type</em>' class.
@@ -2363,7 +2307,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBooleanDataType()
    * @generated
    */
-  int BOOLEAN_DATA_TYPE = 63;
+  int BOOLEAN_DATA_TYPE = 61;
 
   /**
    * The number of structural features of the '<em>Boolean Data Type</em>' class.
@@ -2382,7 +2326,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getFloatDataType()
    * @generated
    */
-  int FLOAT_DATA_TYPE = 64;
+  int FLOAT_DATA_TYPE = 62;
 
   /**
    * The number of structural features of the '<em>Float Data Type</em>' class.
@@ -2401,7 +2345,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStringDataType()
    * @generated
    */
-  int STRING_DATA_TYPE = 65;
+  int STRING_DATA_TYPE = 63;
 
   /**
    * The number of structural features of the '<em>String Data Type</em>' class.
@@ -2420,7 +2364,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBooleanOperation()
    * @generated
    */
-  int BOOLEAN_OPERATION = 66;
+  int BOOLEAN_OPERATION = 64;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2466,7 +2410,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getPlus()
    * @generated
    */
-  int PLUS = 67;
+  int PLUS = 65;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2503,7 +2447,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMinus()
    * @generated
    */
-  int MINUS = 68;
+  int MINUS = 66;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2540,7 +2484,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMulti()
    * @generated
    */
-  int MULTI = 69;
+  int MULTI = 67;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2577,7 +2521,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getDiv()
    * @generated
    */
-  int DIV = 70;
+  int DIV = 68;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2614,7 +2558,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 71;
+  int NUMBER_LITERAL = 69;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2642,7 +2586,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getVariableCall()
    * @generated
    */
-  int VARIABLE_CALL = 72;
+  int VARIABLE_CALL = 70;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' reference.
@@ -2670,7 +2614,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSparqlQueryType()
    * @generated
    */
-  int SPARQL_QUERY_TYPE = 73;
+  int SPARQL_QUERY_TYPE = 71;
 
 
   /**
@@ -3749,15 +3693,15 @@ public interface FlowPackage extends EPackage
   EReference getSWRLOperator_Rule();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.SWRLOperator#getBarrier <em>Barrier</em>}'.
+   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.SWRLOperator#getStream <em>Stream</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Barrier</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.SWRLOperator#getBarrier()
+   * @return the meta object for the containment reference '<em>Stream</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.SWRLOperator#getStream()
    * @see #getSWRLOperator()
    * @generated
    */
-  EReference getSWRLOperator_Barrier();
+  EReference getSWRLOperator_Stream();
 
   /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.SWRLRule <em>SWRL Rule</em>}'.
@@ -3770,15 +3714,15 @@ public interface FlowPackage extends EPackage
   EClass getSWRLRule();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.SWRLRule#getAntecedent <em>Antecedent</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.SWRLRule#getAtoms <em>Atoms</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Antecedent</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.SWRLRule#getAntecedent()
+   * @return the meta object for the containment reference list '<em>Atoms</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.SWRLRule#getAtoms()
    * @see #getSWRLRule()
    * @generated
    */
-  EReference getSWRLRule_Antecedent();
+  EReference getSWRLRule_Atoms();
 
   /**
    * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.SWRLRule#getConsequent <em>Consequent</em>}'.
@@ -3790,48 +3734,6 @@ public interface FlowPackage extends EPackage
    * @generated
    */
   EReference getSWRLRule_Consequent();
-
-  /**
-   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.AntecedentRule <em>Antecedent Rule</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Antecedent Rule</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.AntecedentRule
-   * @generated
-   */
-  EClass getAntecedentRule();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.AntecedentRule#getAtoms <em>Atoms</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Atoms</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.AntecedentRule#getAtoms()
-   * @see #getAntecedentRule()
-   * @generated
-   */
-  EReference getAntecedentRule_Atoms();
-
-  /**
-   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.ConsequentRule <em>Consequent Rule</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Consequent Rule</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.ConsequentRule
-   * @generated
-   */
-  EClass getConsequentRule();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link de.hs_rm.cs.vs.dsm.flow.ConsequentRule#getAtoms <em>Atoms</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Atoms</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.ConsequentRule#getAtoms()
-   * @see #getConsequentRule()
-   * @generated
-   */
-  EReference getConsequentRule_Atoms();
 
   /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.Rule <em>Rule</em>}'.
@@ -5736,12 +5638,12 @@ public interface FlowPackage extends EPackage
     EReference SWRL_OPERATOR__RULE = eINSTANCE.getSWRLOperator_Rule();
 
     /**
-     * The meta object literal for the '<em><b>Barrier</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Stream</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SWRL_OPERATOR__BARRIER = eINSTANCE.getSWRLOperator_Barrier();
+    EReference SWRL_OPERATOR__STREAM = eINSTANCE.getSWRLOperator_Stream();
 
     /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.SWRLRuleImpl <em>SWRL Rule</em>}' class.
@@ -5754,12 +5656,12 @@ public interface FlowPackage extends EPackage
     EClass SWRL_RULE = eINSTANCE.getSWRLRule();
 
     /**
-     * The meta object literal for the '<em><b>Antecedent</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Atoms</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SWRL_RULE__ANTECEDENT = eINSTANCE.getSWRLRule_Antecedent();
+    EReference SWRL_RULE__ATOMS = eINSTANCE.getSWRLRule_Atoms();
 
     /**
      * The meta object literal for the '<em><b>Consequent</b></em>' containment reference feature.
@@ -5768,42 +5670,6 @@ public interface FlowPackage extends EPackage
      * @generated
      */
     EReference SWRL_RULE__CONSEQUENT = eINSTANCE.getSWRLRule_Consequent();
-
-    /**
-     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.AntecedentRuleImpl <em>Antecedent Rule</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.AntecedentRuleImpl
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getAntecedentRule()
-     * @generated
-     */
-    EClass ANTECEDENT_RULE = eINSTANCE.getAntecedentRule();
-
-    /**
-     * The meta object literal for the '<em><b>Atoms</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ANTECEDENT_RULE__ATOMS = eINSTANCE.getAntecedentRule_Atoms();
-
-    /**
-     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.ConsequentRuleImpl <em>Consequent Rule</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.ConsequentRuleImpl
-     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getConsequentRule()
-     * @generated
-     */
-    EClass CONSEQUENT_RULE = eINSTANCE.getConsequentRule();
-
-    /**
-     * The meta object literal for the '<em><b>Atoms</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CONSEQUENT_RULE__ATOMS = eINSTANCE.getConsequentRule_Atoms();
 
     /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.RuleImpl <em>Rule</em>}' class.

@@ -6,14 +6,12 @@
 package de.hs_rm.cs.vs.dsm.flow.impl;
 
 import de.hs_rm.cs.vs.dsm.flow.AdditionOperator;
-import de.hs_rm.cs.vs.dsm.flow.AntecedentRule;
 import de.hs_rm.cs.vs.dsm.flow.AverageOperator;
 import de.hs_rm.cs.vs.dsm.flow.BarrierOperator;
 import de.hs_rm.cs.vs.dsm.flow.BooleanDataType;
 import de.hs_rm.cs.vs.dsm.flow.BooleanOperation;
 import de.hs_rm.cs.vs.dsm.flow.BooleanVariableDefinition;
 import de.hs_rm.cs.vs.dsm.flow.ComplexDataType;
-import de.hs_rm.cs.vs.dsm.flow.ConsequentRule;
 import de.hs_rm.cs.vs.dsm.flow.CountOperator;
 import de.hs_rm.cs.vs.dsm.flow.DataType;
 import de.hs_rm.cs.vs.dsm.flow.DecisionTreeAttribute;
@@ -360,20 +358,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * @generated
    */
   private EClass swrlRuleEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass antecedentRuleEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass consequentRuleEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1702,7 +1686,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSWRLOperator_Barrier()
+  public EReference getSWRLOperator_Stream()
   {
     return (EReference)swrlOperatorEClass.getEStructuralFeatures().get(1);
   }
@@ -1722,7 +1706,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSWRLRule_Antecedent()
+  public EReference getSWRLRule_Atoms()
   {
     return (EReference)swrlRuleEClass.getEStructuralFeatures().get(0);
   }
@@ -1735,46 +1719,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
   public EReference getSWRLRule_Consequent()
   {
     return (EReference)swrlRuleEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getAntecedentRule()
-  {
-    return antecedentRuleEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAntecedentRule_Atoms()
-  {
-    return (EReference)antecedentRuleEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getConsequentRule()
-  {
-    return consequentRuleEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getConsequentRule_Atoms()
-  {
-    return (EReference)consequentRuleEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2883,17 +2827,11 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     swrlOperatorEClass = createEClass(SWRL_OPERATOR);
     createEReference(swrlOperatorEClass, SWRL_OPERATOR__RULE);
-    createEReference(swrlOperatorEClass, SWRL_OPERATOR__BARRIER);
+    createEReference(swrlOperatorEClass, SWRL_OPERATOR__STREAM);
 
     swrlRuleEClass = createEClass(SWRL_RULE);
-    createEReference(swrlRuleEClass, SWRL_RULE__ANTECEDENT);
+    createEReference(swrlRuleEClass, SWRL_RULE__ATOMS);
     createEReference(swrlRuleEClass, SWRL_RULE__CONSEQUENT);
-
-    antecedentRuleEClass = createEClass(ANTECEDENT_RULE);
-    createEReference(antecedentRuleEClass, ANTECEDENT_RULE__ATOMS);
-
-    consequentRuleEClass = createEClass(CONSEQUENT_RULE);
-    createEReference(consequentRuleEClass, CONSEQUENT_RULE__ATOMS);
 
     ruleEClass = createEClass(RULE);
     createEReference(ruleEClass, RULE__NAME);
@@ -3249,17 +3187,11 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     initEClass(swrlOperatorEClass, SWRLOperator.class, "SWRLOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSWRLOperator_Rule(), this.getSWRLRule(), null, "rule", null, 0, 1, SWRLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSWRLOperator_Barrier(), this.getStreamOperatorParameter(), null, "barrier", null, 0, -1, SWRLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSWRLOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, SWRLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(swrlRuleEClass, SWRLRule.class, "SWRLRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSWRLRule_Antecedent(), this.getAntecedentRule(), null, "antecedent", null, 0, 1, SWRLRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSWRLRule_Consequent(), this.getConsequentRule(), null, "consequent", null, 0, 1, SWRLRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(antecedentRuleEClass, AntecedentRule.class, "AntecedentRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAntecedentRule_Atoms(), this.getRule(), null, "atoms", null, 0, -1, AntecedentRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(consequentRuleEClass, ConsequentRule.class, "ConsequentRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getConsequentRule_Atoms(), this.getRule(), null, "atoms", null, 0, -1, ConsequentRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSWRLRule_Atoms(), this.getRule(), null, "atoms", null, 0, -1, SWRLRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSWRLRule_Consequent(), this.getRule(), null, "consequent", null, 0, 1, SWRLRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRule_Name(), theOwlPackage.getOWLObjectProperty(), null, "name", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

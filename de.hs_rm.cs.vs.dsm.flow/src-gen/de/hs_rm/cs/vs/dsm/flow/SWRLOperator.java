@@ -5,7 +5,6 @@
  */
 package de.hs_rm.cs.vs.dsm.flow;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SWRLOperator#getRule <em>Rule</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SWRLOperator#getBarrier <em>Barrier</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SWRLOperator#getStream <em>Stream</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,19 +52,29 @@ public interface SWRLOperator extends ReturnTypeOperator
   void setRule(SWRLRule value);
 
   /**
-   * Returns the value of the '<em><b>Barrier</b></em>' containment reference list.
-   * The list contents are of type {@link de.hs_rm.cs.vs.dsm.flow.StreamOperatorParameter}.
+   * Returns the value of the '<em><b>Stream</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Barrier</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Stream</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Barrier</em>' containment reference list.
-   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getSWRLOperator_Barrier()
+   * @return the value of the '<em>Stream</em>' containment reference.
+   * @see #setStream(StreamOperatorParameter)
+   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getSWRLOperator_Stream()
    * @model containment="true"
    * @generated
    */
-  EList<StreamOperatorParameter> getBarrier();
+  StreamOperatorParameter getStream();
+
+  /**
+   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.SWRLOperator#getStream <em>Stream</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Stream</em>' containment reference.
+   * @see #getStream()
+   * @generated
+   */
+  void setStream(StreamOperatorParameter value);
 
 } // SWRLOperator

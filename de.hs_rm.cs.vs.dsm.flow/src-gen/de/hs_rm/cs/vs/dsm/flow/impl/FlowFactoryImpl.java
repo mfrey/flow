@@ -105,8 +105,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.MARKER_OPERATOR: return createMarkerOperator();
       case FlowPackage.SWRL_OPERATOR: return createSWRLOperator();
       case FlowPackage.SWRL_RULE: return createSWRLRule();
-      case FlowPackage.ANTECEDENT_RULE: return createAntecedentRule();
-      case FlowPackage.CONSEQUENT_RULE: return createConsequentRule();
       case FlowPackage.RULE: return createRule();
       case FlowPackage.COUNT_OPERATOR: return createCountOperator();
       case FlowPackage.STANDARD_DEVIATION_OPERATOR: return createStandardDeviationOperator();
@@ -585,28 +583,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
   {
     SWRLRuleImpl swrlRule = new SWRLRuleImpl();
     return swrlRule;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AntecedentRule createAntecedentRule()
-  {
-    AntecedentRuleImpl antecedentRule = new AntecedentRuleImpl();
-    return antecedentRule;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ConsequentRule createConsequentRule()
-  {
-    ConsequentRuleImpl consequentRule = new ConsequentRuleImpl();
-    return consequentRule;
   }
 
   /**

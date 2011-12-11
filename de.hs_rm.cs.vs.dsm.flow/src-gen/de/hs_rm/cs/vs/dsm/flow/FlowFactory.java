@@ -359,24 +359,6 @@ public interface FlowFactory extends EFactory
   SWRLRule createSWRLRule();
 
   /**
-   * Returns a new object of class '<em>Antecedent Rule</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Antecedent Rule</em>'.
-   * @generated
-   */
-  AntecedentRule createAntecedentRule();
-
-  /**
-   * Returns a new object of class '<em>Consequent Rule</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Consequent Rule</em>'.
-   * @generated
-   */
-  ConsequentRule createConsequentRule();
-
-  /**
    * Returns a new object of class '<em>Rule</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

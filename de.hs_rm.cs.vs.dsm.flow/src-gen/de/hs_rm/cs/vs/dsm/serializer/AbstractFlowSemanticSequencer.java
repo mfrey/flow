@@ -3,12 +3,10 @@ package de.hs_rm.cs.vs.dsm.serializer;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import de.hs_rm.cs.vs.dsm.flow.AdditionOperator;
-import de.hs_rm.cs.vs.dsm.flow.AntecedentRule;
 import de.hs_rm.cs.vs.dsm.flow.AverageOperator;
 import de.hs_rm.cs.vs.dsm.flow.BooleanDataType;
 import de.hs_rm.cs.vs.dsm.flow.BooleanOperation;
 import de.hs_rm.cs.vs.dsm.flow.BooleanVariableDefinition;
-import de.hs_rm.cs.vs.dsm.flow.ConsequentRule;
 import de.hs_rm.cs.vs.dsm.flow.CountOperator;
 import de.hs_rm.cs.vs.dsm.flow.DecisionTreeAttribute;
 import de.hs_rm.cs.vs.dsm.flow.DecisionTreeOperator;
@@ -114,12 +112,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
-			case FlowPackage.ANTECEDENT_RULE:
-				if(context == grammarAccess.getAntecedentRuleRule()) {
-					sequence_AntecedentRule(context, (AntecedentRule) semanticObject); 
-					return; 
-				}
-				else break;
 			case FlowPackage.AVERAGE_OPERATOR:
 				if(context == grammarAccess.getAverageOperatorRule() ||
 				   context == grammarAccess.getReturnTypeOperatorRule()) {
@@ -159,12 +151,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				   context == grammarAccess.getModelElementRule() ||
 				   context == grammarAccess.getVariableDefinitionRule()) {
 					sequence_BooleanVariableDefinition(context, (BooleanVariableDefinition) semanticObject); 
-					return; 
-				}
-				else break;
-			case FlowPackage.CONSEQUENT_RULE:
-				if(context == grammarAccess.getConsequentRuleRule()) {
-					sequence_ConsequentRule(context, (ConsequentRule) semanticObject); 
 					return; 
 				}
 				else break;
@@ -744,18 +730,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (atoms+=Rule atoms+=Rule*)
-	 *
-	 * Features:
-	 *    atoms[1, *]
-	 */
-	protected void sequence_AntecedentRule(EObject context, AntecedentRule semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (parameter=StreamAccess stream=StreamOperatorParameter)
 	 *
 	 * Features:
@@ -801,18 +775,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 		feeder.accept(grammarAccess.getBooleanVariableDefinitionAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getBooleanVariableDefinitionAccess().getValueBOOLVALUETerminalRuleCall_3_0(), semanticObject.isValue());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (atoms+=Rule atoms+=Rule*)
-	 *
-	 * Features:
-	 *    atoms[1, *]
-	 */
-	protected void sequence_ConsequentRule(EObject context, ConsequentRule semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1375,37 +1337,37 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (rule=SWRLRule barrier+=StreamOperatorParameter barrier+=StreamOperatorParameter*)
+	 *     (rule=SWRLRule stream=StreamOperatorParameter)
 	 *
 	 * Features:
 	 *    rule[1, 1]
-	 *    barrier[1, *]
+	 *    stream[1, 1]
 	 */
 	protected void sequence_SWRLOperator(EObject context, SWRLOperator semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.SWRL_OPERATOR__RULE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.SWRL_OPERATOR__RULE));
+			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.SWRL_OPERATOR__STREAM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.SWRL_OPERATOR__STREAM));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getSWRLOperatorAccess().getRuleSWRLRuleParserRuleCall_2_0(), semanticObject.getRule());
+		feeder.accept(grammarAccess.getSWRLOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_4_0(), semanticObject.getStream());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (antecedent=AntecedentRule consequent=ConsequentRule)
+	 *     (atoms+=Rule atoms+=Rule* consequent=Rule)
 	 *
 	 * Features:
-	 *    antecedent[1, 1]
+	 *    atoms[1, *]
 	 *    consequent[1, 1]
 	 */
 	protected void sequence_SWRLRule(EObject context, SWRLRule semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.SWRL_RULE__ANTECEDENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.SWRL_RULE__ANTECEDENT));
-			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.SWRL_RULE__CONSEQUENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.SWRL_RULE__CONSEQUENT));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getSWRLRuleAccess().getAntecedentAntecedentRuleParserRuleCall_2_0(), semanticObject.getAntecedent());
-		feeder.accept(grammarAccess.getSWRLRuleAccess().getConsequentConsequentRuleParserRuleCall_4_0(), semanticObject.getConsequent());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
