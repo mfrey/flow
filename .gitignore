@@ -1,6 +1,9 @@
 *.class
+*.aux
+*.blg
 *.*~
 *.swp
 target/
 build/
 bin/
+*.ini

@@ -9,15 +9,12 @@ generator for LUA which forms the foundation for the rewritten DSM framework for
 the DataStreamMiner project. It is a complete rewrite of the code generator of 
 previous versions of the query language.
 
-The remainder of this section is organized as follows. First the deprecated 
-features of the query language are presented followed by an overview of the 
-implemented operators and examples. 
-
-\subsection{Language}
-Table \ref{tab:overview} depicts a comparison of operators in the query language
-and the corresponding name of the operator in LUA. Operators which are italic 
-are not yet implemented in the DataStreamMiner framework, but will be generated
-by the generator of the query language.
+The remainder of this section is organized as follows. First, building blocks of 
+the query language such as streams, barriers and operators and their 
+corresponding LUA counterpart are presented. Second, deprecated features of the 
+query language are discussed followed by the integration of knowledge 
+representations into the query language. The section concludes with a short
+summary.
 \begin{center}
   \begin{tabular}{|l|l|l|l|}
   \hline 
@@ -44,19 +41,19 @@ by the generator of the query language.
   \hline 
   \texttt{ejoin} & \textit{ElementMerge} & adds elements to the stream \\
   \hline
-  \texttt{split} & ? & duplicates a stream \\
+  \texttt{split} & \textit{Split} & duplicates a stream \\
   \hline
   \texttt{filter} & \textit{Filter} & filter a stream after a multiple criterias \\
   \hline
-  tag & b & c \\
+  \texttt{tag} & \textit{Tag} & map elements stream/ontology \\
   \hline   
-  untag & b & c \\
+  \texttt{untag} & \textit{Untag} & map elements ontology/stream \\
   \hline 
-  swrl & b & c \\
+  \texttt{swrl} &  \textit{SWRL} & operator for specification of SWRL rules \\
   \hline
   \texttt{dtree} & DecisionTree & decision tree \\
   \hline  
-  ? & Tag (Sparql) & c \\
+  \texttt{sparql} & Tag (Sparql) & specifies sparql queries \\
   \hline 
   \texttt{in} & CacheIn & input operator \\
   \hline
@@ -64,20 +61,37 @@ by the generator of the query language.
   \hline
   \texttt{rand} & RandomInts & generates random integer values \\
   \hline
-  ? & PrintOnScreen & c \\
+  - & PrintOnScreen & prints data on screen \\
   \hline  
-  - & SeparateOddEven & Operator can be realized using the \texttt{mod} operator \\
+  - & SeparateOddEven & operator for modulo two \\
   \hline  
-  ? & NumberGenerator & generates numbers \\
+  - & NumberGenerator & operator which generates numbers \\
   \hline  
-  \texttt{log} & Log & Log operator \\
+  \texttt{log} & Log & log operator \\
   \hline
   \end{tabular}
   \captionof{table}{\emph{Comparision of operators in query language and framework}}
   \label{tab:overview}
 \end{center}
 
+\subsection{Language}
+Table \ref{tab:overview} depicts a comparison of operators in the query language
+and the corresponding name of the operator in LUA. Operators which are italic 
+are not yet implemented in the DataStreamMiner framework, but will be generated
+by the generator of the query language.
+
 \subsubsection{Streams}
+While streams are the main entities of the query language, the DSM framework 
+itself focuses on operators and the interconnection between them. Thus, streams
+are set as parameters of an operator where a additional string denotes if it is 
+a input or a output stream. Listing \ref{lst:stream} depicts an example where 
+two streams \texttt{one} and \texttt{two} are connected to the input and output 
+of an operator.
+\begin{lstlisting}[language=Lua, caption={\emph{Example of Streams in LUA}},label={lst:stream}]
+-- the strings represent the direction
+fm:connect_operators(two, "out", one, "in");
+\end{lstlisting}
+
 \subsubsection{Barriers}
 The query language introduced two types of barrier mechanisms 
 \cite{297:Frey2010}. The first barrier mechanism provides a sliding window over
@@ -212,19 +226,55 @@ h:set_parameter("element", "element");
 fm:connect_operators(h, "out", a, "in0");
 fm:connect_operators(h, "out", z, "in1");
 \end{lstlisting}
+Structural operators are
+\begin{lstlisting}[language=Flow, caption={\emph{Examples of Structural Operators}},label={lst:exsysflw}]
+// merges the two streams a and b
+c = join(a, b);
+// adds two elements to a stream b
+d = ejoin(newElement, a.element, b);	
+// filters stream on the stated condition
+e = filter(d.element > 2, d);
+\end{lstlisting}
+Bla $\wedge$
+\begin{lstlisting}[language=Lua, caption={\emph{Generated LUA code of Structural Operators}},label={lst:exanlua}]
+-- merge (join) operator
+c = fm:create_operator_of_type("c", "Merge");
+fm:connect_operators(c, "out", a, "in0");
+fm:connect_operators(c, "out", b, "in1");
+-- element join operation 
+d = fm:create_operator_of_type("d", "ElementMerge");
+d:set_parameter("name", "newElement");
+d:set_parameter("type", "number");
+d:set_parameter("value", "2");
+d:set_parameter("stream_name", "a");
+d:set_parameter("stream_element", "element");
+d:set_parameter("stream_element_type", "int");
+fm:connect_operators(d, "out", a, "in0");
+fm:connect_operators(d, "out", b, "in1");
+-- filter operation 
+e = fm:create_operator_of_type("e", "Filter");
+e:set_parameter("type", ">");
+e:set_parameter("operand", "right");
+e:set_parameter("type", "nuber");
+e:set_parameter("type", "2");
+e:set_parameter("operand", "left");
+e:set_parameter("stream", "d");
+e:set_parameter("element", "element");
+fm:connect_operators(e, "out", d, "in");
+\end{lstlisting}
 System operatores are the input (\texttt{in}), output (\texttt{out}) and log
 (\texttt{log}) operator. The input and ouput operators require a single 
 internationalized resource identifier (IRI) or a list of IRIs, a address and a 
 port. In addition, the output operator requires a input stream. The log operator
 requires a location, a format and a input stream. Examples for the system 
 operators are shown in listing \ref{lst:exsysflw}.
-\begin{lstlisting}[language=Flow, caption={\emph{Examples of system operators}},label={lst:exsysflw}]
+\begin{lstlisting}[language=Flow, caption={\emph{Examples of System Operators}},label={lst:exsysflw}]
 
 // The location is a file called 'generated3.txt', the format is the file 'aal', input stream is 'dt'
 logIn = log("generated3.txt", "aal", dt);
 \end{lstlisting}
 
-\begin{lstlisting}[language=Flow, caption={\emph{Generated LUA code of system operators}},label={lst:exanlua}]
+\begin{lstlisting}[language=Lua, caption={\emph{Generated LUA code of System Operators}},label={lst:exanlua}]
 -- input/cachein operator
 cacheIn = fm:create_operator_of_type("cacheIn", "CacheIn");
 cacheIn:set_parameter("list_iris", "http://www.anothertest.de ");
