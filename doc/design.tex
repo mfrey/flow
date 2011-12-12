@@ -1,4 +1,4 @@
-\section{Design}
+\section{Design}\label{chapter:design}
 \subsection{Generator}
 The generator resides in the \texttt{de.hs\_rm.cs.vs.dsm.flow} plug-in project 
 in the package \texttt{de.hs\-\_rm.\-cs.vs.dsm.flow.generator} and consists of 
@@ -14,7 +14,7 @@ and their relation. The figure omits method and attribute details which are
 described later in that section.
 \begin{figure}[htpb]
   \centering
-  \includegraphics[width=0.7\textwidth]{figures/overview}
+  \includegraphics[width=1.0\textwidth]{figures/overview}
   \caption{\emph{Overview of classes which are used in code generation}}
   \label{fig:generator}
 \end{figure}
@@ -57,5 +57,16 @@ Analysis operatores are \texttt{avg} (\texttt{AverageOperatorGenerator}),
 \subsubsection{Knowledge Operators}
 
 \subsubsection{System Operators}
-System operators are \texttt{in} (\texttt{InputOperatorGenerator}) and 
-\texttt{out} (\texttt{OutputOperatorGenerator}).
+System operators are \texttt{in} (\texttt{InputOperatorGenerator}), 
+\texttt{out} (\texttt{OutputOperatorGenerator}) and \texttt{log} 
+(\texttt{LogOperatorGenerator}). The generators for the \texttt{in} and 
+\texttt{out} operator are inheriting from a class \texttt{IOOperatorGenerator}.
+The class transforms internationalized resource identifiers (IRI) to the 
+corresponding LUA code. The corresponding UML class diagram is depicted in
+figure \ref{fig:iooperatorgenerator} 
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/overview}
+  \caption{\emph{UML class diagram of \texttt{IOOperatorGenerator}}}
+  \label{fig:iooperatorgenerator}
+\end{figure}

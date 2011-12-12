@@ -131,6 +131,45 @@
   breaklines=true
 }
 
+\lstdefinelanguage{Xtext}{
+  morekeywords={grammar, generate, with, returns, import, as},
+  sensitive=false,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  keywordstyle=\bfseries\color{deforange},
+  commentstyle=\bfseries\color{defgreen},
+  stringstyle=\bfseries\color{defred},
+  identifierstyle=\bfseries\color{defblue},
+  basicstyle=\scriptsize\ttfamily,	
+  showstringspaces=false,
+  numberstyle=\scriptsize,					
+  captionpos=b,
+  tabsize=4,
+  stepnumber=1,										
+  breaklines=true
+}
+
+\lstdefinelanguage{MWE2}{
+  morekeywords={fragment, component, language, referencedGenModels, 
+   fileExtensions, composedCheck, generatorProjectName, modelFileExtension, 
+   uri},
+  sensitive=false,
+  morecomment=[l]{//},
+  morestring=[b]",
+  keywordstyle=\bfseries\color{defblue},
+  commentstyle=\bfseries\color{defred},
+  stringstyle=\bfseries\color{deforange},
+  identifierstyle=\bfseries\color{defgreen},
+  basicstyle=\scriptsize\ttfamily,	
+  showstringspaces=false,
+  numberstyle=\scriptsize,					
+  captionpos=b,
+  tabsize=4,
+  stepnumber=1,										
+  breaklines=true
+}
+
 \begin{document}
 \begin{titlepage}   
 
@@ -153,8 +192,8 @@
 \smallskip  \centering
   \begin{minipage}{\textwidth}     \centering     \vspace{5cm}
     \renewcommand{\baselinestretch}{1.8}    \small\normalsize     {\Huge \bf
-    Documentation  \\ \normalsize Subtitle \\ Another Subtitle}\\ \vspace{2cm} {\normalsize \bf Michael Frey}\\  \vspace{6cm} {\small \bf
-    Last Update: 8th December 2011 }\\    \renewcommand{\baselinestretch}{1}
+    A LUA Code Generator for the Flow Query Language \\ \normalsize Documentation Service Contract}\\ \vspace{2cm} {\normalsize \bf Michael Frey}\\  \vspace{6cm} {\small \bf
+    Last Update: 12th December 2011 }\\    \renewcommand{\baselinestretch}{1}
     \small\normalsize   \end{minipage}   
 \clearpage 
 \end{titlepage} 
