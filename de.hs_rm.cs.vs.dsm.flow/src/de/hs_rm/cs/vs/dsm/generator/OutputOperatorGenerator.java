@@ -17,7 +17,7 @@ import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
  * 
  * @author Michael Frey
  */
-public class OutputOperatorGenerator extends SystemOperatorGenerator {
+public class OutputOperatorGenerator extends IOOperatorGenerator {
 	/** The type of the operator */
 	private final String OPERATOR_TYPE = "CacheOut";
 

@@ -52,7 +52,7 @@ public class FilterOperatorGenerator extends AbstractOperatorGenerator {
 			if(this.mOperator.getExpression().get(i) instanceof BooleanOperation){
 				BooleanOperation operation = (BooleanOperation) this.mOperator.getExpression().get(i);
 				// Add the type of the filter operation 
-				result += Util.getInstance().createParameter(mStream, "type", operation.getOperator());
+				result += Util.getInstance().createParameter(mStream, "operatortype", operation.getOperator());
 				// Add the right parameter of the filter operation
 				result += Util.getInstance().createParameter(mStream, "operand", "right");
 				result += this.createStringFromExpression(operation.getRight());
@@ -93,7 +93,7 @@ public class FilterOperatorGenerator extends AbstractOperatorGenerator {
 			result += Util.getInstance().createParameter(mStream, "value", value);
 			
 		}else if(pExpression instanceof NumberLiteral){
-			result += Util.getInstance().createParameter(mStream, "type", "nuber");
+			result += Util.getInstance().createParameter(mStream, "type", "number");
 			result += Util.getInstance().createParameter(mStream, "type", ((NumberLiteral)pExpression).getValue().toPlainString());
 		}else{
 			// TODO: This should not happen, but could happen if you write complex expressions in filter operator

@@ -17,7 +17,7 @@ import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
  * 
  * @author Michael Frey
  */
-public class InputOperatorGenerator extends SystemOperatorGenerator {
+public class InputOperatorGenerator extends IOOperatorGenerator {
 	/** The type of the operator */
 	private final String OPERATOR_TYPE = "CacheIn";
 	/** The output streams of the operator */
