@@ -137,7 +137,7 @@ ReturnTypeOperator:
 	TagOperator | UnTagOperator | FilterOperator | SplitOperator | CountOperator | 
 	StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | ModuloOperator |
 	RandomOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | 
-	DivisionOperator | OutputOperator;
+	DivisionOperator | OutputOperator | SPARQLOperator;
 
 /**
  * The TagOperator rule tags elements of a stream with elements of an ontology
@@ -145,8 +145,8 @@ ReturnTypeOperator:
 TagOperator:
 	'tag''('parameters+=TagElement (',' parameters+=TagElement)*')';
 
-NewTagOperator:
-	'tag''(' 
+SPARQLOperator:
+	'sparql''(' 
 		query=QueryTagOperator ', '
 		target=STRING
 	')'
@@ -169,7 +169,7 @@ QueryTagOperator:
  */
 SparqlQuery:
 	variable=SparqlQueryVariable 'WHERE' '{' 
-		
+		uri=STRING attribute=STRING
 	'}'
 ;
 
@@ -249,9 +249,15 @@ MarkerOperator:
 SWRLOperator:
 	'swrl''('rule=SWRLRule ',' stream=StreamOperatorParameter')';
 
+/**
+ * TODO
+ */
 SWRLRule:
 	atoms+=Rule ('∧' '(' atoms+=Rule)* '⇒' consequent=Rule;
 
+/**
+ * TODO
+ */
 Rule:
 	name=[OWL::OWLObjectProperty|STRING] '(' '?' variable+=StreamAccess (','  '?' variable+=StreamAccess )* ')';
 

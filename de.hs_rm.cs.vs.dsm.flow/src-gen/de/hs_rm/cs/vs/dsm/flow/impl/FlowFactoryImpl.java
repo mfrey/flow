@@ -90,7 +90,7 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.INPUT_OPERATOR: return createInputOperator();
       case FlowPackage.RETURN_TYPE_OPERATOR: return createReturnTypeOperator();
       case FlowPackage.TAG_OPERATOR: return createTagOperator();
-      case FlowPackage.NEW_TAG_OPERATOR: return createNewTagOperator();
+      case FlowPackage.SPARQL_OPERATOR: return createSPARQLOperator();
       case FlowPackage.QUERY_TAG_OPERATOR: return createQueryTagOperator();
       case FlowPackage.SPARQL_QUERY: return createSparqlQuery();
       case FlowPackage.SPARQL_QUERY_VARIABLE: return createSparqlQueryVariable();
@@ -425,10 +425,10 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public NewTagOperator createNewTagOperator()
+  public SPARQLOperator createSPARQLOperator()
   {
-    NewTagOperatorImpl newTagOperator = new NewTagOperatorImpl();
-    return newTagOperator;
+    SPARQLOperatorImpl sparqlOperator = new SPARQLOperatorImpl();
+    return sparqlOperator;
   }
 
   /**

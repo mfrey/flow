@@ -493,6 +493,7 @@
       <elements xsi:type="xtext:RuleCall" rule="//@rules.44"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.45"/>
       <elements xsi:type="xtext:RuleCall" rule="//@rules.47"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.22"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="TagOperator">
@@ -514,12 +515,12 @@
       <elements xsi:type="xtext:Keyword" value=")"/>
     </alternatives>
   </rules>
-  <rules xsi:type="xtext:ParserRule" name="NewTagOperator">
+  <rules xsi:type="xtext:ParserRule" name="SPARQLOperator">
     <type metamodel="//@metamodelDeclarations.2">
-      <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//NewTagOperator"/>
+      <classifier xsi:type="ecore:EClass" href="http://www.hs_rm.de/cs/vs/dsm/Flow#//SPARQLOperator"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:Keyword" value="tag"/>
+      <elements xsi:type="xtext:Keyword" value="sparql"/>
       <elements xsi:type="xtext:Keyword" value="("/>
       <elements xsi:type="xtext:Assignment" feature="query" operator="=">
         <terminal xsi:type="xtext:RuleCall" rule="//@rules.23"/>
@@ -556,6 +557,12 @@
       </elements>
       <elements xsi:type="xtext:Keyword" value="WHERE"/>
       <elements xsi:type="xtext:Keyword" value="{"/>
+      <elements xsi:type="xtext:Assignment" feature="uri" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.75"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="attribute" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.75"/>
+      </elements>
       <elements xsi:type="xtext:Keyword" value="}"/>
     </alternatives>
   </rules>

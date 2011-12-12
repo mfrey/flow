@@ -37,7 +37,6 @@ import de.hs_rm.cs.vs.dsm.flow.ModelElement;
 import de.hs_rm.cs.vs.dsm.flow.ModuloOperator;
 import de.hs_rm.cs.vs.dsm.flow.Multi;
 import de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator;
-import de.hs_rm.cs.vs.dsm.flow.NewTagOperator;
 import de.hs_rm.cs.vs.dsm.flow.NumberLiteral;
 import de.hs_rm.cs.vs.dsm.flow.NumberVariableDefinition;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
@@ -47,6 +46,7 @@ import de.hs_rm.cs.vs.dsm.flow.QueryTagOperator;
 import de.hs_rm.cs.vs.dsm.flow.RandomOperator;
 import de.hs_rm.cs.vs.dsm.flow.ReturnTypeOperator;
 import de.hs_rm.cs.vs.dsm.flow.Rule;
+import de.hs_rm.cs.vs.dsm.flow.SPARQLOperator;
 import de.hs_rm.cs.vs.dsm.flow.SWRLOperator;
 import de.hs_rm.cs.vs.dsm.flow.SWRLRule;
 import de.hs_rm.cs.vs.dsm.flow.SimpleDataType;
@@ -259,7 +259,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass newTagOperatorEClass = null;
+  private EClass sparqlOperatorEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1356,9 +1356,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getNewTagOperator()
+  public EClass getSPARQLOperator()
   {
-    return newTagOperatorEClass;
+    return sparqlOperatorEClass;
   }
 
   /**
@@ -1366,9 +1366,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNewTagOperator_Query()
+  public EReference getSPARQLOperator_Query()
   {
-    return (EReference)newTagOperatorEClass.getEStructuralFeatures().get(0);
+    return (EReference)sparqlOperatorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1376,9 +1376,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getNewTagOperator_Target()
+  public EAttribute getSPARQLOperator_Target()
   {
-    return (EAttribute)newTagOperatorEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)sparqlOperatorEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1429,6 +1429,26 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
   public EReference getSparqlQuery_Variable()
   {
     return (EReference)sparqlQueryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSparqlQuery_Uri()
+  {
+    return (EAttribute)sparqlQueryEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSparqlQuery_Attribute()
+  {
+    return (EAttribute)sparqlQueryEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2781,9 +2801,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     tagOperatorEClass = createEClass(TAG_OPERATOR);
     createEReference(tagOperatorEClass, TAG_OPERATOR__PARAMETERS);
 
-    newTagOperatorEClass = createEClass(NEW_TAG_OPERATOR);
-    createEReference(newTagOperatorEClass, NEW_TAG_OPERATOR__QUERY);
-    createEAttribute(newTagOperatorEClass, NEW_TAG_OPERATOR__TARGET);
+    sparqlOperatorEClass = createEClass(SPARQL_OPERATOR);
+    createEReference(sparqlOperatorEClass, SPARQL_OPERATOR__QUERY);
+    createEAttribute(sparqlOperatorEClass, SPARQL_OPERATOR__TARGET);
 
     queryTagOperatorEClass = createEClass(QUERY_TAG_OPERATOR);
     createEAttribute(queryTagOperatorEClass, QUERY_TAG_OPERATOR__QUERY_TYPE);
@@ -2791,6 +2811,8 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     sparqlQueryEClass = createEClass(SPARQL_QUERY);
     createEReference(sparqlQueryEClass, SPARQL_QUERY__VARIABLE);
+    createEAttribute(sparqlQueryEClass, SPARQL_QUERY__URI);
+    createEAttribute(sparqlQueryEClass, SPARQL_QUERY__ATTRIBUTE);
 
     sparqlQueryVariableEClass = createEClass(SPARQL_QUERY_VARIABLE);
     createEAttribute(sparqlQueryVariableEClass, SPARQL_QUERY_VARIABLE__VARIABLE);
@@ -3012,6 +3034,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     matchOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     inputOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     tagOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
+    sparqlOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     unTagOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     tagClassElementEClass.getESuperTypes().add(this.getTagElement());
     tagObjectPropertyElementEClass.getESuperTypes().add(this.getTagElement());
@@ -3141,9 +3164,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEClass(tagOperatorEClass, TagOperator.class, "TagOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTagOperator_Parameters(), this.getTagElement(), null, "parameters", null, 0, -1, TagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(newTagOperatorEClass, NewTagOperator.class, "NewTagOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getNewTagOperator_Query(), this.getQueryTagOperator(), null, "query", null, 0, 1, NewTagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getNewTagOperator_Target(), ecorePackage.getEString(), "target", null, 0, 1, NewTagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(sparqlOperatorEClass, SPARQLOperator.class, "SPARQLOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSPARQLOperator_Query(), this.getQueryTagOperator(), null, "query", null, 0, 1, SPARQLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSPARQLOperator_Target(), ecorePackage.getEString(), "target", null, 0, 1, SPARQLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(queryTagOperatorEClass, QueryTagOperator.class, "QueryTagOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getQueryTagOperator_QueryType(), this.getSparqlQueryType(), "queryType", null, 0, 1, QueryTagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3151,6 +3174,8 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     initEClass(sparqlQueryEClass, SparqlQuery.class, "SparqlQuery", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSparqlQuery_Variable(), this.getSparqlQueryVariable(), null, "variable", null, 0, 1, SparqlQuery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSparqlQuery_Uri(), ecorePackage.getEString(), "uri", null, 0, 1, SparqlQuery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSparqlQuery_Attribute(), ecorePackage.getEString(), "attribute", null, 0, 1, SparqlQuery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sparqlQueryVariableEClass, SparqlQueryVariable.class, "SparqlQueryVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSparqlQueryVariable_Variable(), ecorePackage.getEString(), "variable", null, 0, -1, SparqlQueryVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

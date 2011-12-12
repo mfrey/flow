@@ -1887,6 +1887,16 @@ ruleReturnTypeOperator returns [EObject current=null]
         $current = $this_OutputOperator_20.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getSPARQLOperatorParserRuleCall_21()); 
+    }
+    this_SPARQLOperator_21=ruleSPARQLOperator
+    { 
+        $current = $this_SPARQLOperator_21.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -1964,6 +1974,77 @@ ruleTagOperator returns [EObject current=null]
 ;
 
 
+
+
+
+// Entry rule entryRuleSPARQLOperator
+entryRuleSPARQLOperator returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getSPARQLOperatorRule()); }
+	 iv_ruleSPARQLOperator=ruleSPARQLOperator 
+	 { $current=$iv_ruleSPARQLOperator.current; } 
+	 EOF 
+;
+
+// Rule SPARQLOperator
+ruleSPARQLOperator returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='sparql' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getSPARQLOperatorAccess().getSparqlKeyword_0());
+    }
+	otherlv_1='(' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getSPARQLOperatorAccess().getLeftParenthesisKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSPARQLOperatorAccess().getQueryQueryTagOperatorParserRuleCall_2_0()); 
+	    }
+		lv_query_2_0=ruleQueryTagOperator		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSPARQLOperatorRule());
+	        }
+       		set(
+       			$current, 
+       			"query",
+        		lv_query_2_0, 
+        		"QueryTagOperator");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_3=', ' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getSPARQLOperatorAccess().getCommaSpaceKeyword_3());
+    }
+(
+(
+		lv_target_4_0=RULE_STRING
+		{
+			newLeafNode(lv_target_4_0, grammarAccess.getSPARQLOperatorAccess().getTargetSTRINGTerminalRuleCall_4_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSPARQLOperatorRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"target",
+        		lv_target_4_0, 
+        		"STRING");
+	    }
+
+)
+)	otherlv_5=')' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getSPARQLOperatorAccess().getRightParenthesisKeyword_5());
+    }
+)
+;
 
 
 
@@ -2074,9 +2155,45 @@ ruleSparqlQuery returns [EObject current=null]
     {
     	newLeafNode(otherlv_2, grammarAccess.getSparqlQueryAccess().getLeftCurlyBracketKeyword_2());
     }
-	otherlv_3='}' 
+(
+(
+		lv_uri_3_0=RULE_STRING
+		{
+			newLeafNode(lv_uri_3_0, grammarAccess.getSparqlQueryAccess().getUriSTRINGTerminalRuleCall_3_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSparqlQueryRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"uri",
+        		lv_uri_3_0, 
+        		"STRING");
+	    }
+
+)
+)(
+(
+		lv_attribute_4_0=RULE_STRING
+		{
+			newLeafNode(lv_attribute_4_0, grammarAccess.getSparqlQueryAccess().getAttributeSTRINGTerminalRuleCall_4_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSparqlQueryRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"attribute",
+        		lv_attribute_4_0, 
+        		"STRING");
+	    }
+
+)
+)	otherlv_5='}' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getSparqlQueryAccess().getRightCurlyBracketKeyword_3());
+    	newLeafNode(otherlv_5, grammarAccess.getSparqlQueryAccess().getRightCurlyBracketKeyword_5());
     }
 )
 ;

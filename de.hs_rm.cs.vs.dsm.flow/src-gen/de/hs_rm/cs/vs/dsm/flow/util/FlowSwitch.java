@@ -245,10 +245,11 @@ public class FlowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FlowPackage.NEW_TAG_OPERATOR:
+      case FlowPackage.SPARQL_OPERATOR:
       {
-        NewTagOperator newTagOperator = (NewTagOperator)theEObject;
-        T result = caseNewTagOperator(newTagOperator);
+        SPARQLOperator sparqlOperator = (SPARQLOperator)theEObject;
+        T result = caseSPARQLOperator(sparqlOperator);
+        if (result == null) result = caseReturnTypeOperator(sparqlOperator);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -989,17 +990,17 @@ public class FlowSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>New Tag Operator</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>SPARQL Operator</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>New Tag Operator</em>'.
+   * @return the result of interpreting the object as an instance of '<em>SPARQL Operator</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNewTagOperator(NewTagOperator object)
+  public T caseSPARQLOperator(SPARQLOperator object)
   {
     return null;
   }

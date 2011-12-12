@@ -224,13 +224,13 @@ public interface FlowFactory extends EFactory
   TagOperator createTagOperator();
 
   /**
-   * Returns a new object of class '<em>New Tag Operator</em>'.
+   * Returns a new object of class '<em>SPARQL Operator</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>New Tag Operator</em>'.
+   * @return a new object of class '<em>SPARQL Operator</em>'.
    * @generated
    */
-  NewTagOperator createNewTagOperator();
+  SPARQLOperator createSPARQLOperator();
 
   /**
    * Returns a new object of class '<em>Query Tag Operator</em>'.

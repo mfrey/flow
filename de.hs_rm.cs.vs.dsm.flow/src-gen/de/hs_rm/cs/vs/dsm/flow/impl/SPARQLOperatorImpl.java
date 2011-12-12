@@ -6,8 +6,8 @@
 package de.hs_rm.cs.vs.dsm.flow.impl;
 
 import de.hs_rm.cs.vs.dsm.flow.FlowPackage;
-import de.hs_rm.cs.vs.dsm.flow.NewTagOperator;
 import de.hs_rm.cs.vs.dsm.flow.QueryTagOperator;
+import de.hs_rm.cs.vs.dsm.flow.SPARQLOperator;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -16,23 +16,22 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>New Tag Operator</b></em>'.
+ * An implementation of the model object '<em><b>SPARQL Operator</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.NewTagOperatorImpl#getQuery <em>Query</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.NewTagOperatorImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SPARQLOperatorImpl#getQuery <em>Query</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SPARQLOperatorImpl#getTarget <em>Target</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class NewTagOperatorImpl extends MinimalEObjectImpl.Container implements NewTagOperator
+public class SPARQLOperatorImpl extends ReturnTypeOperatorImpl implements SPARQLOperator
 {
   /**
    * The cached value of the '{@link #getQuery() <em>Query</em>}' containment reference.
@@ -69,7 +68,7 @@ public class NewTagOperatorImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  protected NewTagOperatorImpl()
+  protected SPARQLOperatorImpl()
   {
     super();
   }
@@ -82,7 +81,7 @@ public class NewTagOperatorImpl extends MinimalEObjectImpl.Container implements 
   @Override
   protected EClass eStaticClass()
   {
-    return FlowPackage.Literals.NEW_TAG_OPERATOR;
+    return FlowPackage.Literals.SPARQL_OPERATOR;
   }
 
   /**
@@ -106,7 +105,7 @@ public class NewTagOperatorImpl extends MinimalEObjectImpl.Container implements 
     query = newQuery;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FlowPackage.NEW_TAG_OPERATOR__QUERY, oldQuery, newQuery);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FlowPackage.SPARQL_OPERATOR__QUERY, oldQuery, newQuery);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -123,14 +122,14 @@ public class NewTagOperatorImpl extends MinimalEObjectImpl.Container implements 
     {
       NotificationChain msgs = null;
       if (query != null)
-        msgs = ((InternalEObject)query).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FlowPackage.NEW_TAG_OPERATOR__QUERY, null, msgs);
+        msgs = ((InternalEObject)query).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FlowPackage.SPARQL_OPERATOR__QUERY, null, msgs);
       if (newQuery != null)
-        msgs = ((InternalEObject)newQuery).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FlowPackage.NEW_TAG_OPERATOR__QUERY, null, msgs);
+        msgs = ((InternalEObject)newQuery).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FlowPackage.SPARQL_OPERATOR__QUERY, null, msgs);
       msgs = basicSetQuery(newQuery, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.NEW_TAG_OPERATOR__QUERY, newQuery, newQuery));
+      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.SPARQL_OPERATOR__QUERY, newQuery, newQuery));
   }
 
   /**
@@ -153,7 +152,7 @@ public class NewTagOperatorImpl extends MinimalEObjectImpl.Container implements 
     String oldTarget = target;
     target = newTarget;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.NEW_TAG_OPERATOR__TARGET, oldTarget, target));
+      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.SPARQL_OPERATOR__TARGET, oldTarget, target));
   }
 
   /**
@@ -166,7 +165,7 @@ public class NewTagOperatorImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case FlowPackage.NEW_TAG_OPERATOR__QUERY:
+      case FlowPackage.SPARQL_OPERATOR__QUERY:
         return basicSetQuery(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -182,9 +181,9 @@ public class NewTagOperatorImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case FlowPackage.NEW_TAG_OPERATOR__QUERY:
+      case FlowPackage.SPARQL_OPERATOR__QUERY:
         return getQuery();
-      case FlowPackage.NEW_TAG_OPERATOR__TARGET:
+      case FlowPackage.SPARQL_OPERATOR__TARGET:
         return getTarget();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -200,10 +199,10 @@ public class NewTagOperatorImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case FlowPackage.NEW_TAG_OPERATOR__QUERY:
+      case FlowPackage.SPARQL_OPERATOR__QUERY:
         setQuery((QueryTagOperator)newValue);
         return;
-      case FlowPackage.NEW_TAG_OPERATOR__TARGET:
+      case FlowPackage.SPARQL_OPERATOR__TARGET:
         setTarget((String)newValue);
         return;
     }
@@ -220,10 +219,10 @@ public class NewTagOperatorImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case FlowPackage.NEW_TAG_OPERATOR__QUERY:
+      case FlowPackage.SPARQL_OPERATOR__QUERY:
         setQuery((QueryTagOperator)null);
         return;
-      case FlowPackage.NEW_TAG_OPERATOR__TARGET:
+      case FlowPackage.SPARQL_OPERATOR__TARGET:
         setTarget(TARGET_EDEFAULT);
         return;
     }
@@ -240,9 +239,9 @@ public class NewTagOperatorImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case FlowPackage.NEW_TAG_OPERATOR__QUERY:
+      case FlowPackage.SPARQL_OPERATOR__QUERY:
         return query != null;
-      case FlowPackage.NEW_TAG_OPERATOR__TARGET:
+      case FlowPackage.SPARQL_OPERATOR__TARGET:
         return TARGET_EDEFAULT == null ? target != null : !TARGET_EDEFAULT.equals(target);
     }
     return super.eIsSet(featureID);
@@ -265,4 +264,4 @@ public class NewTagOperatorImpl extends MinimalEObjectImpl.Container implements 
     return result.toString();
   }
 
-} //NewTagOperatorImpl
+} //SPARQLOperatorImpl

@@ -188,9 +188,9 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
         return createTagOperatorAdapter();
       }
       @Override
-      public Adapter caseNewTagOperator(NewTagOperator object)
+      public Adapter caseSPARQLOperator(SPARQLOperator object)
       {
-        return createNewTagOperatorAdapter();
+        return createSPARQLOperatorAdapter();
       }
       @Override
       public Adapter caseQueryTagOperator(QueryTagOperator object)
@@ -785,16 +785,16 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.NewTagOperator <em>New Tag Operator</em>}'.
+   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.SPARQLOperator <em>SPARQL Operator</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.hs_rm.cs.vs.dsm.flow.NewTagOperator
+   * @see de.hs_rm.cs.vs.dsm.flow.SPARQLOperator
    * @generated
    */
-  public Adapter createNewTagOperatorAdapter()
+  public Adapter createSPARQLOperatorAdapter()
   {
     return null;
   }

@@ -26,6 +26,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SparqlQueryImpl#getVariable <em>Variable</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SparqlQueryImpl#getUri <em>Uri</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SparqlQueryImpl#getAttribute <em>Attribute</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,6 +44,46 @@ public class SparqlQueryImpl extends MinimalEObjectImpl.Container implements Spa
    * @ordered
    */
   protected SparqlQueryVariable variable;
+
+  /**
+   * The default value of the '{@link #getUri() <em>Uri</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUri()
+   * @generated
+   * @ordered
+   */
+  protected static final String URI_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getUri() <em>Uri</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUri()
+   * @generated
+   * @ordered
+   */
+  protected String uri = URI_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getAttribute() <em>Attribute</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAttribute()
+   * @generated
+   * @ordered
+   */
+  protected static final String ATTRIBUTE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAttribute()
+   * @generated
+   * @ordered
+   */
+  protected String attribute = ATTRIBUTE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,6 +159,52 @@ public class SparqlQueryImpl extends MinimalEObjectImpl.Container implements Spa
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getUri()
+  {
+    return uri;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setUri(String newUri)
+  {
+    String oldUri = uri;
+    uri = newUri;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.SPARQL_QUERY__URI, oldUri, uri));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getAttribute()
+  {
+    return attribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAttribute(String newAttribute)
+  {
+    String oldAttribute = attribute;
+    attribute = newAttribute;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.SPARQL_QUERY__ATTRIBUTE, oldAttribute, attribute));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -140,6 +228,10 @@ public class SparqlQueryImpl extends MinimalEObjectImpl.Container implements Spa
     {
       case FlowPackage.SPARQL_QUERY__VARIABLE:
         return getVariable();
+      case FlowPackage.SPARQL_QUERY__URI:
+        return getUri();
+      case FlowPackage.SPARQL_QUERY__ATTRIBUTE:
+        return getAttribute();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -156,6 +248,12 @@ public class SparqlQueryImpl extends MinimalEObjectImpl.Container implements Spa
     {
       case FlowPackage.SPARQL_QUERY__VARIABLE:
         setVariable((SparqlQueryVariable)newValue);
+        return;
+      case FlowPackage.SPARQL_QUERY__URI:
+        setUri((String)newValue);
+        return;
+      case FlowPackage.SPARQL_QUERY__ATTRIBUTE:
+        setAttribute((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -174,6 +272,12 @@ public class SparqlQueryImpl extends MinimalEObjectImpl.Container implements Spa
       case FlowPackage.SPARQL_QUERY__VARIABLE:
         setVariable((SparqlQueryVariable)null);
         return;
+      case FlowPackage.SPARQL_QUERY__URI:
+        setUri(URI_EDEFAULT);
+        return;
+      case FlowPackage.SPARQL_QUERY__ATTRIBUTE:
+        setAttribute(ATTRIBUTE_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -190,8 +294,31 @@ public class SparqlQueryImpl extends MinimalEObjectImpl.Container implements Spa
     {
       case FlowPackage.SPARQL_QUERY__VARIABLE:
         return variable != null;
+      case FlowPackage.SPARQL_QUERY__URI:
+        return URI_EDEFAULT == null ? uri != null : !URI_EDEFAULT.equals(uri);
+      case FlowPackage.SPARQL_QUERY__ATTRIBUTE:
+        return ATTRIBUTE_EDEFAULT == null ? attribute != null : !ATTRIBUTE_EDEFAULT.equals(attribute);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (uri: ");
+    result.append(uri);
+    result.append(", attribute: ");
+    result.append(attribute);
+    result.append(')');
+    return result.toString();
   }
 
 } //SparqlQueryImpl
