@@ -29,7 +29,7 @@ initialization (\texttt{initializeOperator()}), parameterization
 (\texttt{setOperatorConnection()}) of operators. Each operator generalizes from
 \begin{figure}[htpb]
   \centering
-  \includegraphics[width=0.8\textwidth]{figures/overview}
+  \includegraphics[width=0.7\textwidth]{figures/AbstractOperatorGenerator}
   \caption{\emph{UML class diagram of \texttt{AbstractOperatorGenerator}}}
   \label{fig:abstractoperatorgenerator}
 \end{figure}
@@ -47,9 +47,16 @@ Supported arithmetic operators are \texttt{add}
 operator of type \texttt{Math}. The type of the arithmetic operation is set
 as an attribute in LUA.
 
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.9\textwidth]{figures/Util}
+  \caption{\emph{UML class diagram of \texttt{Util}}}
+  \label{fig:util}
+\end{figure}
+
 \subsubsection{Analysis Operators}
 Analysis operatores are \texttt{avg} (\texttt{AverageOperatorGenerator}), 
-\texttt{std} (\texttt{StandardDeviationOperatorGenerator}) and \texttt{count}
+\texttt{std} (\texttt{StandardDeviationOper\-atorGenerator}) and \texttt{count}
 (\texttt{CountOperatorGenerator}).
 
 \subsubsection{Structural Operators}
@@ -66,7 +73,7 @@ corresponding LUA code. The corresponding UML class diagram is depicted in
 figure \ref{fig:iooperatorgenerator} 
 \begin{figure}[htpb]
   \centering
-  \includegraphics[width=0.8\textwidth]{figures/overview}
+  \includegraphics[width=0.8\textwidth]{figures/IOOperatorGenerator}
   \caption{\emph{UML class diagram of \texttt{IOOperatorGenerator}}}
   \label{fig:iooperatorgenerator}
 \end{figure}
