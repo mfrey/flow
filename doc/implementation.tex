@@ -236,7 +236,7 @@ fm:connect_operators(h, "out", z, "in1");
 \end{lstlisting}
 Structural operators are \texttt{join}, \texttt{ejoin} and \texttt{split}. The
 following listing \ref{lst:exstructflw} depicts an example for each operation.
-\begin{lstlisting}[language=Flow, caption={\emph{Examples of Structural Operators}},label={lst:exstructflw}]
+\begin{lstlisting}[language=Flow, caption={\emph{Examples of Structural Operators \texttt{join},  \texttt{ejoin} and  \texttt{filter} in Flow}},label={lst:exstructflw}]
 // merges the two streams a and b
 c = join(a, b);
 // adds two elements to a stream b
@@ -257,7 +257,7 @@ LUA interface of the DSM framework, the expressions are compiled into a set of
 \texttt{set\_parameter()} operations where a expression is transformed to a 
 textual representation of each aspect of an expression. This includes type and 
 value of an operand as well as the operator of the boolean expression. 
-\begin{lstlisting}[language=Lua, caption={\emph{Generated LUA code of Structural Operators}},label={lst:exstructlua}]
+\begin{lstlisting}[language=Lua, caption={\emph{Examples of Structural Operators  \texttt{join},  \texttt{ejoin} and  \texttt{filter} in LUA}},label={lst:exstructlua}]
 -- merge (join) operator
 c = fm:create_operator_of_type("c", "Merge");
 fm:connect_operators(c, "out", a, "in0");
@@ -283,24 +283,61 @@ e:set_parameter("stream", "d");
 e:set_parameter("element", "element");
 fm:connect_operators(e, "out", d, "in");
 \end{lstlisting}
-System operatores are the input (\texttt{in}), output (\texttt{out}) and log
+Knowledge operators of the query language \texttt{tag}, \texttt{untag} and 
+\texttt{sparql}. Listing \ref{lst:knowledgeflw} shows an example for each
+knowledge operator. 
+\begin{lstlisting}[language=Flow, caption={\emph{Examples of Knowledge Operators in Flow}},label={lst:knowledgeflw}]
+// Tag
+d = tag(a.element is class "<http://www.semanticweb.org/ontologies/2007/7/A.owl#Class1186574909930821000>", a.anotherElement is class "<http://www.semanticweb.org/ontologies/2007/7/A.owl#Class1186574918251108000>", a);
+// UnTag
+d = untag("<http://www.semanticweb.org/ontologies/2007/7/A.owl#Class1186574909930821000>" is a.anotherElement, a);
+\end{lstlisting}
+Listing \ref{lst:knowledgelua} shows the transformation of the knowledge operators
+to LUA.
+\begin{lstlisting}[language=Lua, caption={\emph{Examples of Knowledge Operators in LUA}},label={lst:knowledgelua}]
+-- Tag
+e = fm:create_operator_of_type("e", "OperatorTag");
+d:set_parameter("owl_class", "<http://www.semanticweb.org/ontologies/2007/7/A.owl#Class1186574909930821000>");
+d:set_parameter("element", "element");
+d:set_parameter("owl_class", "<http://www.semanticweb.org/ontologies/2007/7/A.owl#Class1186574918251108000>");
+d:set_parameter("element", "anotherElement");
+fm:connect_operators(e, "out", a, "in");
+-- UnTag
+d = fm:create_operator_of_type("d", "UnTag");
+d:set_parameter("ontology_element", "<http://www.semanticweb.org/ontologies/2007/7/A.owl#Class1186574909930821000>");
+d:set_parameter("variable", "anotherElement");
+fm:connect_operators(d, "out", a, "in");
+\end{lstlisting}
+System operators are the input (\texttt{in}), output (\texttt{out}) and log
 (\texttt{log}) operator. The input and ouput operators require a single 
 internationalized resource identifier (IRI) or a list of IRIs, a address and a 
 port. In addition, the output operator requires a input stream. The log operator
 requires a location, a format and a input stream. Examples for the system 
 operators are shown in listing \ref{lst:exsysflw}.
-\begin{lstlisting}[language=Flow, caption={\emph{Examples of System Operators}},label={lst:exsysflw}]
-
+\begin{lstlisting}[language=Flow, caption={\emph{Examples of System Operators in Flow}},label={lst:exsysflw}]
+cacheIn = in("http://www.test.de", "localhost", 9595);
+// The location is a file called 'generated3.txt', the format is the file 'aal', input stream is 'dt'
+cacheOut = out(cacheIn, "http://www.anothertest.de", "localhost", 9596);
 // The location is a file called 'generated3.txt', the format is the file 'aal', input stream is 'dt'
 logIn = log("generated3.txt", "aal", dt);
 \end{lstlisting}
-
-\begin{lstlisting}[language=Lua, caption={\emph{Generated LUA code of System Operators}},label={lst:exanlua}]
+The transformed operators are depicted in listing \ref{lst:exanlua}, whereas the
+input operator is transformed to the \texttt{CacheIn} operator, the output operator 
+to the \texttt{CacheOut} and the log operator to the \texttt{Log} operator. Every
+parameter of an operator in the query language is transformed to a \texttt{set\_parameter()}
+operation in LUA.
+\begin{lstlisting}[language=Lua, caption={\emph{Examples of System Operators in LUA}},label={lst:exanlua}]
 -- input/cachein operator
 cacheIn = fm:create_operator_of_type("cacheIn", "CacheIn");
 cacheIn:set_parameter("list_iris", "http://www.anothertest.de ");
 cacheIn:set_parameter("connector_socket_address", "localhost");
 cacheIn:set_parameter("connector_socket_port", "9595");
+-- output/cacheout operator
+cacheOut = fm:create_operator_of_type("cacheOut", "CacheOut");
+cacheOut:set_parameter("list_iris", "http://www.anothertest.de ");
+cacheOut:set_parameter("connector_socket_address", "localhost");
+cacheOut:set_parameter("connector_socket_port", "9596");
+fm:connect_operators(cacheOut, "out", cacheIn, "in");
 -- log operator
 logIn = fm:create_operator_of_type("logIn", "Log");
 logIn:set_parameter("log_file_location", "generated3.txt");
