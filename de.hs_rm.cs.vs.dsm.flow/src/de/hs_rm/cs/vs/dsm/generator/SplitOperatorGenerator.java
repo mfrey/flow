@@ -40,16 +40,6 @@ public class SplitOperatorGenerator extends AbstractOperatorGenerator {
 		// Set the identifier of the operator in LUA
 		mStream = this.getOperatorStream();
 	}
-	
-	/**
-	 * {@inheritDoc} 
-	 */
-	/*
-	@Override
-	public String initializeOperator() {
-		return Util.getInstance().createOperator(OPERATOR_TYPE, mStream);
-	}
-	*/
 
 	/**
 	 * The method replaces an existing entry in the output stream list with a 
@@ -65,6 +55,8 @@ public class SplitOperatorGenerator extends AbstractOperatorGenerator {
 		for(int i = 0; i < this.getOutputStreams().size(); i++){
 			if(this.getOutputStreams().get(i).equals(pOldStream)){
 				this.getOutputStreams().remove(i);
+				this.setOperatorStream(pReplacement);
+				mStream = pReplacement;
 				this.getOutputStreams().add(pReplacement);
 			}
 		}

@@ -287,6 +287,14 @@ public class Util {
 			statement.getReturnStream().get(1).setName(pOut.get(1));
 			
 			SplitOperatorGenerator generator = new SplitOperatorGenerator(statement);
+			// TODO: That's ugly and should be done in a better way
+			for(int i = 0; i < generator.getInputStreams().size(); i++){
+				if(generator.getInputStreams().get(i).equals(generator.getOperatorStream())){
+					this.mNetwork.getStreams().add(statement.getReturnStream().get(0).getName());
+					// TODO: Check!
+					generator.setOperatorStream(statement.getReturnStream().get(0).getName());
+				}
+			}
 			result += generator.toString();
 			
 		//	mNetwork.getStreams().add(pOut.get(0));
@@ -317,18 +325,19 @@ public class Util {
 
 				// Create a split operator generator
 				generator = new SplitOperatorGenerator(statement);
+				generator.setOperatorStream(stream);
+				
 				if((i+1) != (pOut.size()-1)){
 					// Store the result
 					result += generator.toString();
 				}
 			}
-			// Replace the string 
-			generator.replaceStream(stream, pOut.get((pOut.size()-1)));
-			
-			if(generator != null){
-				result += generator.toString();
-			}
 
+			// Replace the string 
+			result += "DEBUG " + stream + " with " + pOut.get((pOut.size()-1)) + "\n";
+			generator.replaceStream(stream, pOut.get((pOut.size()-1)));
+			// Store the result
+			result += generator.toString();
 		}
 		
 		return result;		
