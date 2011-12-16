@@ -411,18 +411,15 @@ public class FlowGenerator implements IGenerator {
     return _xblockexpression;
   }
   
-  public StringConcatenation compile(final OutputOperator output, final StreamStatement pStatement) {
-    StringConcatenation _builder = new StringConcatenation();
+  protected String _write(final OutputOperator output, final StreamStatement pStatement) {
     String _xblockexpression = null;
     {
       OutputOperatorGenerator _outputOperatorGenerator = new OutputOperatorGenerator(pStatement);
-      final OutputOperatorGenerator o = _outputOperatorGenerator;
+      OutputOperatorGenerator o = _outputOperatorGenerator;
       String _string = o.toString();
       _xblockexpression = (_string);
     }
-    _builder.append(_xblockexpression, "");
-    _builder.newLineIfNotEmpty();
-    return _builder;
+    return _xblockexpression;
   }
   
   protected String _write(final LogOperator pOperator, final StreamStatement pStatement) {
@@ -517,6 +514,9 @@ public class FlowGenerator implements IGenerator {
     } else if ((pOperator instanceof MultiplicationOperator)
          && (pStatement instanceof StreamStatement)) {
       return _write((MultiplicationOperator)pOperator, (StreamStatement)pStatement);
+    } else if ((pOperator instanceof OutputOperator)
+         && (pStatement instanceof StreamStatement)) {
+      return _write((OutputOperator)pOperator, (StreamStatement)pStatement);
     } else if ((pOperator instanceof RandomOperator)
          && (pStatement instanceof StreamStatement)) {
       return _write((RandomOperator)pOperator, (StreamStatement)pStatement);

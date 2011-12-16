@@ -317,7 +317,7 @@ ModuloOperator:
  * a stream specified in parameter to a location specified in location.
  */	
 OutputOperator:
-	'out''(' stream=StreamOperatorParameter ',' iri+=STRING (',' iri+=STRING)* ',' address=STRING ',' port=NUMBER ')' ';';
+	'out''(' stream=StreamOperatorParameter ',' iri+=STRING (',' iri+=STRING)* ',' address=STRING ',' port=NUMBER ')';
 
 VariableDefinition:
 	NumberVariableDefinition | StringVariableDefinition | BooleanVariableDefinition;

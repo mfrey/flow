@@ -10858,7 +10858,6 @@ rule__OutputOperator__Group__10
     }
 :
 	rule__OutputOperator__Group__10__Impl
-	rule__OutputOperator__Group__11
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -10881,38 +10880,6 @@ rule__OutputOperator__Group__10__Impl
 finally {
 	restoreStackSize(stackSize);
 }
-
-
-rule__OutputOperator__Group__11
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__OutputOperator__Group__11__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__OutputOperator__Group__11__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getOutputOperatorAccess().getSemicolonKeyword_11()); }
-
-	';' 
-
-{ after(grammarAccess.getOutputOperatorAccess().getSemicolonKeyword_11()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
 
 
 

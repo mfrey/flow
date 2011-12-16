@@ -3905,10 +3905,6 @@ ruleOutputOperator returns [EObject current=null]
     {
     	newLeafNode(otherlv_11, grammarAccess.getOutputOperatorAccess().getRightParenthesisKeyword_10());
     }
-	otherlv_12=';' 
-    {
-    	newLeafNode(otherlv_12, grammarAccess.getOutputOperatorAccess().getSemicolonKeyword_11());
-    }
 )
 ;
 

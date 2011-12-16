@@ -194,13 +194,12 @@ class FlowGenerator implements IGenerator {
 		in.toString()
 	}
 	
-	
-    def compile(OutputOperator output, StreamStatement pStatement)'''
-    	«{
-    		val OutputOperatorGenerator o = new OutputOperatorGenerator(pStatement);
-    		o.toString();
-    	}»
-    '''  
+    def dispatch String write(OutputOperator output, StreamStatement pStatement){
+    	var OutputOperatorGenerator o = new OutputOperatorGenerator(
+    		pStatement
+    	)
+    	o.toString();
+    }  
     
     def dispatch String write(LogOperator pOperator, StreamStatement pStatement){
 		var LogOperatorGenerator log = new LogOperatorGenerator(

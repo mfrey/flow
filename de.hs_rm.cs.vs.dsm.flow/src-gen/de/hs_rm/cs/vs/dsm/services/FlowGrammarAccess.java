@@ -2521,17 +2521,15 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cPortAssignment_9 = (Assignment)cGroup.eContents().get(9);
 		private final RuleCall cPortNUMBERTerminalRuleCall_9_0 = (RuleCall)cPortAssignment_9.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Keyword cSemicolonKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		/// **
 		// * The OutputOperator rule defines a operator which prints the content of the
 		// * a stream specified in parameter to a location specified in location.
 		// * / OutputOperator:
-		//	"out" "(" stream=StreamOperatorParameter "," iri+=STRING ("," iri+=STRING)* "," address=STRING "," port=NUMBER ")"
-		//	";";
+		//	"out" "(" stream=StreamOperatorParameter "," iri+=STRING ("," iri+=STRING)* "," address=STRING "," port=NUMBER ")";
 		public ParserRule getRule() { return rule; }
 
-		//"out" "(" stream=StreamOperatorParameter "," iri+=STRING ("," iri+=STRING)* "," address=STRING "," port=NUMBER ")" ";"
+		//"out" "(" stream=StreamOperatorParameter "," iri+=STRING ("," iri+=STRING)* "," address=STRING "," port=NUMBER ")"
 		public Group getGroup() { return cGroup; }
 
 		//"out"
@@ -2587,9 +2585,6 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 
 		//")"
 		public Keyword getRightParenthesisKeyword_10() { return cRightParenthesisKeyword_10; }
-
-		//";"
-		public Keyword getSemicolonKeyword_11() { return cSemicolonKeyword_11; }
 	}
 
 	public class VariableDefinitionElements extends AbstractParserRuleElementFinder {
@@ -4124,8 +4119,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	// * The OutputOperator rule defines a operator which prints the content of the
 	// * a stream specified in parameter to a location specified in location.
 	// * / OutputOperator:
-	//	"out" "(" stream=StreamOperatorParameter "," iri+=STRING ("," iri+=STRING)* "," address=STRING "," port=NUMBER ")"
-	//	";";
+	//	"out" "(" stream=StreamOperatorParameter "," iri+=STRING ("," iri+=STRING)* "," address=STRING "," port=NUMBER ")";
 	public OutputOperatorElements getOutputOperatorAccess() {
 		return (pOutputOperator != null) ? pOutputOperator : (pOutputOperator = new OutputOperatorElements());
 	}
