@@ -3034,7 +3034,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     matchOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     inputOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     tagOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
-    sparqlOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     unTagOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     tagClassElementEClass.getESuperTypes().add(this.getTagElement());
     tagObjectPropertyElementEClass.getESuperTypes().add(this.getTagElement());

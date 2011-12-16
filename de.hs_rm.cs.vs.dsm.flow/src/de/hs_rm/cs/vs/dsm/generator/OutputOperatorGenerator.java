@@ -20,9 +20,9 @@ import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
 public class OutputOperatorGenerator extends IOOperatorGenerator {
 	/** The type of the operator */
 	private final String OPERATOR_TYPE = "CacheOut";
-
+	/** The identifier of the operator in LUA */
 	private String mStream;
-
+	/** The internal representation of the operator */
 	private OutputOperator mOperator;
 	
 	/**
@@ -65,7 +65,8 @@ public class OutputOperatorGenerator extends IOOperatorGenerator {
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#initializeOperator()
 	 */
 	@Override
 	public String initializeOperator() {
@@ -73,7 +74,8 @@ public class OutputOperatorGenerator extends IOOperatorGenerator {
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorConnection()
 	 */
 	@Override
 	public String setOperatorConnection() {
@@ -81,8 +83,10 @@ public class OutputOperatorGenerator extends IOOperatorGenerator {
 				this.getInputStreams(), "in", this.getOutputStreams(), "out");
 	}
 
+
 	/**
-	 * {@inheritDoc}
+	 * (non-Javadoc)
+	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {

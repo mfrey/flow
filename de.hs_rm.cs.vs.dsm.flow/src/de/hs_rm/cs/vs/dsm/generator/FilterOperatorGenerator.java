@@ -11,6 +11,20 @@ import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
 import de.hs_rm.cs.vs.dsm.flow.StringVariableDefinition;
 import de.hs_rm.cs.vs.dsm.flow.VariableDefinition;
 
+/**
+ * The FilterOperatorGenerator class generates a LUA code representation
+ * of the FilterOperator. The operator is defined as follows:
+ * 
+ *	'filter' '(' expression+=Expression (',' expression+=Expression)* ',' 
+ *    stream=StreamOperatorParameter')';
+ *	
+ * The operator is initialized with the 'filter' keyword followed by a list
+ * of arguments where the last argument denotes the input stream. Previous
+ * arguments are boolean expressions which specify how the stream is 
+ * sorted.
+ * 
+ * @author Michael Frey 
+ */
 public class FilterOperatorGenerator extends AbstractOperatorGenerator {
 	/** The type of the operator */
 	private final String OPERATOR_TYPE = "Filter";
@@ -33,15 +47,8 @@ public class FilterOperatorGenerator extends AbstractOperatorGenerator {
 	}
 	
 	/**
-	 * {@inheritDoc} 
-	 */
-	@Override
-	public String setBarrier() {
-		return "";
-	}
-
-	/**
-	 * {@inheritDoc} 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorProperties()
 	 */
 	@Override
 	public String setOperatorProperties() {
@@ -65,6 +72,14 @@ public class FilterOperatorGenerator extends AbstractOperatorGenerator {
 		return result;
 	}
 
+	/**
+	 * The method transforms an expression to a LUA code fragment for the
+	 * filter operator.
+	 * 
+	 * @param pExpression The expression which will be transformed in a LUA code representation
+	 * 
+	 * @return The LUA code representation of the input expression
+	 */
 	private String createStringFromExpression(Expression pExpression){
 		String result = "";
 		if(pExpression instanceof StreamAccess){
@@ -102,7 +117,8 @@ public class FilterOperatorGenerator extends AbstractOperatorGenerator {
 	}
 	
 	/**
-	 * {@inheritDoc} 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorConnection()
 	 */
 	@Override
 	public String setOperatorConnection() {

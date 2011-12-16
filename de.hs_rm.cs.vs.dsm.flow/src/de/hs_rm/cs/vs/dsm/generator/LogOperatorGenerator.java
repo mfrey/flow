@@ -34,17 +34,9 @@ public class LogOperatorGenerator extends AbstractOperatorGenerator  {
 		mStream = this.getOperatorStream();
 	}
 
-	
 	/**
-	 * {@inheritDoc} 
-	 */
-	@Override
-	public String setBarrier() {
-		return "";
-	}
-
-	/**
-	 * {@inheritDoc} 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorProperties()
 	 */
 	@Override
 	public String setOperatorProperties() {
@@ -54,7 +46,8 @@ public class LogOperatorGenerator extends AbstractOperatorGenerator  {
 	}
 
 	/**
-	 * {@inheritDoc} 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorConnection()
 	 */
 	@Override
 	public String setOperatorConnection() {

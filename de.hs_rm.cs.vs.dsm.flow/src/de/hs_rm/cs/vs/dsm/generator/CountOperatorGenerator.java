@@ -36,7 +36,8 @@ public class CountOperatorGenerator extends AbstractOperatorGenerator {
 	}
 	
 	/**
-	 * {@inheritDoc} 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorProperties()
 	 */
 	@Override
 	public String setOperatorProperties() {
@@ -44,7 +45,8 @@ public class CountOperatorGenerator extends AbstractOperatorGenerator {
 	}
 
 	/**
-	 * {@inheritDoc} 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorConnection()
 	 */
 	@Override
 	public String setOperatorConnection() {
@@ -52,7 +54,8 @@ public class CountOperatorGenerator extends AbstractOperatorGenerator {
 	}
 
 	/**
-	 * {@inheritDoc} 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setBarrier()
 	 */
 	@Override
 	public String setBarrier() {

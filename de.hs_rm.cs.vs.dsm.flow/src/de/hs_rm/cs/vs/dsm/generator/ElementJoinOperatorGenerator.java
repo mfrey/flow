@@ -11,7 +11,16 @@ import de.hs_rm.cs.vs.dsm.flow.StringDataType;
 import de.hs_rm.cs.vs.dsm.flow.StringVariableDefinition;
 
 /**
+ * The class generates a LUA code representation of the element join operation
+ * which is defined as follows:
  * 
+ *	'ejoin''('(elementParameters+=StreamAccess | variableElementParameters+=[VariableDefinition]) 
+ *	  (',' elementParameters+=StreamAccess)* (',' variableElementParameters+=[VariableDefinition])*
+ *	  ',' parameter=StreamOperatorParameter ')';
+ *
+ * The operator adds elements to an already existing stream. Possible sources of these elements 
+ * can be variables or elements of other existing streams. The operator is initialized via the 
+ * 'ejoin' keyword followed by a list of arguments which are of type variable or stream element.
  * 
  * @author Michael Frey 
  */
@@ -24,7 +33,10 @@ public class ElementJoinOperatorGenerator extends AbstractOperatorGenerator {
 	private String mStream = "";
 	
 	/**
+	 * The constructor sets the name of the operator, parses the input and
+	 * output streams and determines the name of the operator in LUA.
 	 * 
+	 * @param pStatement The statement which contains the operator
 	 */
 	public ElementJoinOperatorGenerator(final StreamStatement pStatement) {
 		// Call the constructor of the abstract operator class
@@ -44,7 +56,8 @@ public class ElementJoinOperatorGenerator extends AbstractOperatorGenerator {
 	}
 
 	/**
-	 * {@inheritDoc} 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorProperties()
 	 */
 	@Override
 	public String setOperatorProperties() {
@@ -92,18 +105,11 @@ public class ElementJoinOperatorGenerator extends AbstractOperatorGenerator {
 	}
 
 	/**
-	 * {@inheritDoc} 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorConnection()
 	 */
 	@Override
 	public String setOperatorConnection() {
 		return Util.getInstance().connectOperator(this.getInputStreams(), "in", this.getOutputStreams(), "out");
-	}
-
-	/**
-	 * {@inheritDoc} 
-	 */
-	@Override
-	public String setBarrier() {
-		return "";
 	}
 }

@@ -20,9 +20,9 @@ public class RandomOperatorGenerator extends AbstractOperatorGenerator  {
 	private final String OPERATOR_TYPE = "RandomInts";
 	/** The operator of the query language */
 	private RandomOperator mOperator;
-	/** The name of the stream */
+	/** The identifier of the operator in LUA */
 	private String mStream;
-	
+
 	public RandomOperatorGenerator(final StreamStatement pStatement){
 		// Call the constructor of the super class
 		super(pStatement);
@@ -35,15 +35,8 @@ public class RandomOperatorGenerator extends AbstractOperatorGenerator  {
 	}
 	
 	/**
-	 * {@inheritDoc} 
-	 */
-	@Override
-	public String setBarrier() {
-		return "";
-	}
-
-	/**
-	 * {@inheritDoc} 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorProperties()
 	 */
 	@Override
 	public String setOperatorProperties() {
@@ -53,7 +46,8 @@ public class RandomOperatorGenerator extends AbstractOperatorGenerator  {
 	}
 
 	/**
-	 * {@inheritDoc} 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorConnection()
 	 */
 	@Override
 	public String setOperatorConnection() {

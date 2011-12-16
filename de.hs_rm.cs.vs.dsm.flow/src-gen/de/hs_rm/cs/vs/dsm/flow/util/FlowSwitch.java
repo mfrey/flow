@@ -249,7 +249,6 @@ public class FlowSwitch<T> extends Switch<T>
       {
         SPARQLOperator sparqlOperator = (SPARQLOperator)theEObject;
         T result = caseSPARQLOperator(sparqlOperator);
-        if (result == null) result = caseReturnTypeOperator(sparqlOperator);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

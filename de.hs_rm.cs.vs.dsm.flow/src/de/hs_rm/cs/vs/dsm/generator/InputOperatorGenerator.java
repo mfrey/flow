@@ -6,6 +6,7 @@ import de.hs_rm.cs.vs.dsm.flow.InputOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamDefinition;
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
 
+
 /**
  * The class provides a generator for the input operator of the query language.
  * The operator is defined as follows
@@ -33,10 +34,13 @@ public class InputOperatorGenerator extends IOOperatorGenerator {
 						.toPlainString());
 		// Store the output streams in a member
 		mOutputStreams = pStatement.getReturnStream();
+		
+		
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#initializeOperator()
 	 */
 	@Override
 	public String initializeOperator() {
@@ -52,8 +56,10 @@ public class InputOperatorGenerator extends IOOperatorGenerator {
 		}
 	}
 
+	
 	/**
-	 * {@inheritDoc}
+	 * (non-Javadoc)
+	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {

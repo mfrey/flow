@@ -34,7 +34,8 @@ public class JoinOperatorGenerator extends AbstractOperatorGenerator {
 	}
 
 	/**
-	 * {@inheritDoc} 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorProperties()
 	 */
 	@Override
 	public String setOperatorProperties(){
@@ -42,18 +43,11 @@ public class JoinOperatorGenerator extends AbstractOperatorGenerator {
 	}
 
 	/**
-	 * {@inheritDoc} 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorConnection()
 	 */
 	@Override
 	public String setOperatorConnection() {
 		return Util.getInstance().connectOperator(this.getInputStreams(), "in", this.getOutputStreams(), "out");
-	}
-	
-	/**
-	 * {@inheritDoc} 
-	 */
-	@Override
-	public String setBarrier() {
-		return "";
 	}
 }

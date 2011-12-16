@@ -3,6 +3,9 @@ package de.hs_rm.cs.vs.dsm.generator;
 import org.eclipse.emf.common.util.EList;
 
 /**
+ * The class provides methods for system operators which have a focus 
+ * on the input or output of streams, such as 'in' or 'out'. Basically
+ * the handling of IRIs is defined in this operator generator.
  * 
  * @author Michael Frey
  */
@@ -22,12 +25,19 @@ public class IOOperatorGenerator extends AbstractOperatorGenerator {
 		this.mPort = pPort;
 	}
 	
+	/**
+	 * The method allows to set the name of the LUA code representation of
+	 * the corresponding operator
+	 * 
+	 * @param pStream The identifier of the operator
+	 */
 	public void setStream(final String pStream){
 		this.mStream = pStream;
 	}
 	
 	/**
-	 * {@inheritDoc} 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#initializeOperator()
 	 */
 	@Override
 	public String initializeOperator() {

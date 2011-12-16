@@ -20,7 +20,7 @@ public class SplitOperatorGenerator extends AbstractOperatorGenerator {
 	private final String OPERATOR_TYPE = "Split";
 	/** The internal representation of the count operator */
 	private SplitOperator mOperator = null;
-	
+	/** The identifier of the operator in LUA */
 	private String mStream = "";
 
 	/**
@@ -35,9 +35,9 @@ public class SplitOperatorGenerator extends AbstractOperatorGenerator {
 		this.mOperator = (SplitOperator) pStatement.getOperator();
 		// Add the input stream to the corresponding array list (in the abstract operator class)
 		this.getInputStreams().add(this.mOperator.getParameter().getStream().getName());
-		//
+		// Set the name of the operator
 		this.setOperatorType(OPERATOR_TYPE);
-		//
+		// Set the identifier of the operator in LUA
 		mStream = this.getOperatorStream();
 	}
 	
@@ -50,7 +50,17 @@ public class SplitOperatorGenerator extends AbstractOperatorGenerator {
 		return Util.getInstance().createOperator(OPERATOR_TYPE, mStream);
 	}
 	*/
-	
+
+	/**
+	 * The method replaces an existing entry in the output stream list with a 
+	 * name specified by the second argument of the operator. This method is 
+	 * used for splitting multiple return types into a set of split operations
+	 * where the temporary stream name replaces a stream which is part of a
+	 * multiple return type definition.
+	 * 
+	 * @param pOldStream The stream which should be replaced
+	 * @param pReplacement The stream which replaces a stream specified in the first argument
+	 */
 	public void replaceStream(final String pOldStream, final String pReplacement){
 		for(int i = 0; i < this.getOutputStreams().size(); i++){
 			if(this.getOutputStreams().get(i).equals(pOldStream)){
@@ -61,7 +71,8 @@ public class SplitOperatorGenerator extends AbstractOperatorGenerator {
 	}
 	
 	/**
-	 * {@inheritDoc} 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorProperties()
 	 */
 	@Override
 	public String setOperatorProperties() {
@@ -69,20 +80,11 @@ public class SplitOperatorGenerator extends AbstractOperatorGenerator {
 	}
 
 	/**
-	 * {@inheritDoc} 
+	 * (non-Javadoc)
+	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorConnection()
 	 */
 	@Override
 	public String setOperatorConnection() {
 		return Util.getInstance().connectOperator(this.getInputStreams().get(0), "in", this.getOutputStreams(), "out");
 	}
-	
-	/**
-	 * {@inheritDoc} 
-	 */
-	@Override
-	public String setBarrier() {
-		return "";
-	}
-	
-	
 }
