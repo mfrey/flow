@@ -22,6 +22,8 @@ import de.hs_rm.cs.vs.dsm.flow.SplitOperator;
 import de.hs_rm.cs.vs.dsm.flow.StandardDeviationOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
 import de.hs_rm.cs.vs.dsm.flow.SubtractionOperator;
+import de.hs_rm.cs.vs.dsm.flow.TagOperator;
+import de.hs_rm.cs.vs.dsm.flow.UnTagOperator;
 import de.hs_rm.cs.vs.dsm.generator.AdditionOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.AverageOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.CountOperatorGenerator;
@@ -39,6 +41,8 @@ import de.hs_rm.cs.vs.dsm.generator.RandomOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.SplitOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.StandardDeviationOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.SubtractionOperatorGenerator;
+import de.hs_rm.cs.vs.dsm.generator.TagOperatorGenerator;
+import de.hs_rm.cs.vs.dsm.generator.UnTagOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.Util;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -477,6 +481,28 @@ public class FlowGenerator implements IGenerator {
     return _xblockexpression;
   }
   
+  protected String _write(final TagOperator pOperator, final StreamStatement pStatement) {
+    String _xblockexpression = null;
+    {
+      TagOperatorGenerator _tagOperatorGenerator = new TagOperatorGenerator(pStatement);
+      TagOperatorGenerator tag = _tagOperatorGenerator;
+      String _string = tag.toString();
+      _xblockexpression = (_string);
+    }
+    return _xblockexpression;
+  }
+  
+  protected String _write(final UnTagOperator pOperator, final StreamStatement pStatement) {
+    String _xblockexpression = null;
+    {
+      UnTagOperatorGenerator _unTagOperatorGenerator = new UnTagOperatorGenerator(pStatement);
+      UnTagOperatorGenerator untag = _unTagOperatorGenerator;
+      String _string = untag.toString();
+      _xblockexpression = (_string);
+    }
+    return _xblockexpression;
+  }
+  
   public String write(final ReturnTypeOperator pOperator, final StreamStatement pStatement) {
     if ((pOperator instanceof AdditionOperator)
          && (pStatement instanceof StreamStatement)) {
@@ -529,6 +555,12 @@ public class FlowGenerator implements IGenerator {
     } else if ((pOperator instanceof SubtractionOperator)
          && (pStatement instanceof StreamStatement)) {
       return _write((SubtractionOperator)pOperator, (StreamStatement)pStatement);
+    } else if ((pOperator instanceof TagOperator)
+         && (pStatement instanceof StreamStatement)) {
+      return _write((TagOperator)pOperator, (StreamStatement)pStatement);
+    } else if ((pOperator instanceof UnTagOperator)
+         && (pStatement instanceof StreamStatement)) {
+      return _write((UnTagOperator)pOperator, (StreamStatement)pStatement);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         java.util.Arrays.<Object>asList(pOperator, pStatement).toString());

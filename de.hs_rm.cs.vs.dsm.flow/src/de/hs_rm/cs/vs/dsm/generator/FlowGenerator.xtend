@@ -17,6 +17,9 @@ import de.hs_rm.cs.vs.dsm.flow.OutputOperator
 import de.hs_rm.cs.vs.dsm.flow.LogOperator
 import de.hs_rm.cs.vs.dsm.flow.RandomOperator
 
+import de.hs_rm.cs.vs.dsm.flow.TagOperator
+import de.hs_rm.cs.vs.dsm.flow.UnTagOperator
+
 import de.hs_rm.cs.vs.dsm.flow.DecisionTreeOperator
 
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement
@@ -234,5 +237,19 @@ class FlowGenerator implements IGenerator {
 			pStatement
 		)	
 		modulo.toString()
+	}
+	
+	def dispatch String write(TagOperator pOperator, StreamStatement pStatement){
+		var TagOperatorGenerator tag = new TagOperatorGenerator(
+			pStatement
+		)	
+		tag.toString()
+	}
+	
+	def dispatch String write(UnTagOperator pOperator, StreamStatement pStatement){
+		var UnTagOperatorGenerator untag = new UnTagOperatorGenerator(
+			pStatement
+		)	
+		untag.toString()
 	}
 }
