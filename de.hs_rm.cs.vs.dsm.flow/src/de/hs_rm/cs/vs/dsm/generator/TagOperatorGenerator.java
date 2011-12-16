@@ -26,14 +26,24 @@ public class TagOperatorGenerator extends AbstractOperatorGenerator {
 	private final String OPERATOR_TYPE = "OperatorTag";
 	/** The internal representation of the count operator */
 	private TagOperator mOperator = null;
+	/** */
+	private String mStream = "";
 	
 	public TagOperatorGenerator(final StreamStatement pStatement){
 		// Call the constructor of the abstract operator class
 		super(pStatement);
 		// Store the operator in the attribute
 		this.mOperator = (TagOperator) pStatement.getOperator();
+		// Add the stream used in the parameter list as input streams
+		for(int i = 0; i < this.mOperator.getParameters().size(); i++){
+			String stream = this.mOperator.getParameters().get(i).getReference().getReference().getName();
+			if(!this.getInputStreams().contains(stream)){
+				this.getInputStreams().add(stream);
+			}
+		}
 		// Set the operator type
 		this.setOperatorType(OPERATOR_TYPE);
+		mStream = this.getOperatorStream();
 	}
 	
 	/**
@@ -49,17 +59,17 @@ public class TagOperatorGenerator extends AbstractOperatorGenerator {
 			
 			if(element instanceof TagClassElement){
 				TagClassElement tag = (TagClassElement)element;
-				result +=  Util.getInstance().createParameter("todo", "owl_class", tag.getElement().getLocalName());
-				result +=  Util.getInstance().createParameter("todo", "element", tag.getReference().getElement().getName());
+				result +=  Util.getInstance().createParameter(mStream, "owl_class", tag.getElement().getLocalName());
+				result +=  Util.getInstance().createParameter(mStream, "element", tag.getReference().getElement().getName());
 			}else if(element instanceof TagObjectPropertyElement){
 				TagObjectPropertyElement tag = (TagObjectPropertyElement)element;
-				result +=  Util.getInstance().createParameter("todo", "owl_object_property", tag.getElement().getLocalName());
-				result +=  Util.getInstance().createParameter("todo", "element", tag.getReference().getElement().getName());
+				result +=  Util.getInstance().createParameter(mStream, "owl_object_property", tag.getElement().getLocalName());
+				result +=  Util.getInstance().createParameter(mStream, "element", tag.getReference().getElement().getName());
 			}else{
 				if(element instanceof TagDataTypePropertyElement){
 					TagDataTypePropertyElement tag = (TagDataTypePropertyElement)element;
-					result +=  Util.getInstance().createParameter("todo", "owl_datatype_property", tag.getElement().getLocalName());
-					result +=  Util.getInstance().createParameter("todo", "element", tag.getReference().getElement().getName());
+					result +=  Util.getInstance().createParameter(mStream, "owl_datatype_property", tag.getElement().getLocalName());
+					result +=  Util.getInstance().createParameter(mStream, "element", tag.getReference().getElement().getName());
 				}
 			}
 			

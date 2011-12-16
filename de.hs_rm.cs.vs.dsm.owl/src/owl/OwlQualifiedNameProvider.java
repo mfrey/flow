@@ -24,10 +24,12 @@ public class OwlQualifiedNameProvider extends DefaultDeclarativeQualifiedNamePro
 		}
 		
 		if(pObject instanceof OWLObjectProperty) {
+			System.err.println(((OWLObjectProperty)pObject).toString());
 			return qualifiedNameConverter.toQualifiedName(((OWLObjectProperty)pObject).getLocalName());
 		}
 		
 		if(pObject instanceof OWLDatatypeProperty) {
+			System.err.println(((OWLDatatypeProperty)pObject).toString());
 			return qualifiedNameConverter.toQualifiedName(((OWLDatatypeProperty)pObject).getLocalName());
 		}
 		

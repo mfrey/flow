@@ -116,6 +116,10 @@ class FlowGenerator implements IGenerator {
 		«write((statement.operator as ModuloOperator),statement)»
 		«ELSEIF statement.operator.eClass.name.equals("OutputOperator")»
 		«write((statement.operator as OutputOperator),statement)»
+		«ELSEIF statement.operator.eClass.name.equals("TagOperator")»
+		«write((statement.operator as TagOperator),statement)»
+		«ELSEIF statement.operator.eClass.name.equals("UnTagOperator")»
+		«write((statement.operator as UnTagOperator),statement)»
 		«ENDIF»
 	'''
 

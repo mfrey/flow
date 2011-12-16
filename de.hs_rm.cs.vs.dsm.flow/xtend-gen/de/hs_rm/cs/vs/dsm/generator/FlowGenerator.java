@@ -272,7 +272,27 @@ public class FlowGenerator implements IGenerator {
                                         ReturnTypeOperator _operator_33 = statement.getOperator();
                                         String _write_16 = this.write(((OutputOperator) _operator_33), statement);
                                         _builder.append(_write_16, "");
-                                        _builder.newLineIfNotEmpty();
+                                        _builder.newLineIfNotEmpty();} else {
+                                        ReturnTypeOperator _operator_34 = statement.getOperator();
+                                        EClass _eClass_17 = _operator_34.eClass();
+                                        String _name_17 = _eClass_17.getName();
+                                        boolean _equals_17 = _name_17.equals("TagOperator");
+                                        if (_equals_17) {
+                                          ReturnTypeOperator _operator_35 = statement.getOperator();
+                                          String _write_17 = this.write(((TagOperator) _operator_35), statement);
+                                          _builder.append(_write_17, "");
+                                          _builder.newLineIfNotEmpty();} else {
+                                          ReturnTypeOperator _operator_36 = statement.getOperator();
+                                          EClass _eClass_18 = _operator_36.eClass();
+                                          String _name_18 = _eClass_18.getName();
+                                          boolean _equals_18 = _name_18.equals("UnTagOperator");
+                                          if (_equals_18) {
+                                            ReturnTypeOperator _operator_37 = statement.getOperator();
+                                            String _write_18 = this.write(((UnTagOperator) _operator_37), statement);
+                                            _builder.append(_write_18, "");
+                                            _builder.newLineIfNotEmpty();
+                                          }
+                                        }
                                       }
                                     }
                                   }
