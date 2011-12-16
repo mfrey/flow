@@ -1252,15 +1252,18 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cParametersAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cParametersTagElementParserRuleCall_3_1_0 = (RuleCall)cParametersAssignment_3_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cStreamAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cStreamStreamOperatorParameterParserRuleCall_5_0 = (RuleCall)cStreamAssignment_5.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		/// **
 		// * The TagOperator rule tags elements of a stream with elements of an ontology
 		// * / TagOperator:
-		//	"tag" "(" parameters+=TagElement ("," parameters+=TagElement)* ")";
+		//	"tag" "(" parameters+=TagElement ("," parameters+=TagElement)* "," stream=StreamOperatorParameter ")";
 		public ParserRule getRule() { return rule; }
 
-		//"tag" "(" parameters+=TagElement ("," parameters+=TagElement)* ")"
+		//"tag" "(" parameters+=TagElement ("," parameters+=TagElement)* "," stream=StreamOperatorParameter ")"
 		public Group getGroup() { return cGroup; }
 
 		//"tag"
@@ -1287,8 +1290,17 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//TagElement
 		public RuleCall getParametersTagElementParserRuleCall_3_1_0() { return cParametersTagElementParserRuleCall_3_1_0; }
 
+		//","
+		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
+
+		//stream=StreamOperatorParameter
+		public Assignment getStreamAssignment_5() { return cStreamAssignment_5; }
+
+		//StreamOperatorParameter
+		public RuleCall getStreamStreamOperatorParameterParserRuleCall_5_0() { return cStreamStreamOperatorParameterParserRuleCall_5_0; }
+
 		//")"
-		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
 	}
 
 	public class SPARQLOperatorElements extends AbstractParserRuleElementFinder {
@@ -3795,7 +3807,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	/// **
 	// * The TagOperator rule tags elements of a stream with elements of an ontology
 	// * / TagOperator:
-	//	"tag" "(" parameters+=TagElement ("," parameters+=TagElement)* ")";
+	//	"tag" "(" parameters+=TagElement ("," parameters+=TagElement)* "," stream=StreamOperatorParameter ")";
 	public TagOperatorElements getTagOperatorAccess() {
 		return (pTagOperator != null) ? pTagOperator : (pTagOperator = new TagOperatorElements());
 	}

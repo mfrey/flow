@@ -203,6 +203,7 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInputOperatorAccess().getPortAssignment_7(), "rule__InputOperator__PortAssignment_7");
 					put(grammarAccess.getTagOperatorAccess().getParametersAssignment_2(), "rule__TagOperator__ParametersAssignment_2");
 					put(grammarAccess.getTagOperatorAccess().getParametersAssignment_3_1(), "rule__TagOperator__ParametersAssignment_3_1");
+					put(grammarAccess.getTagOperatorAccess().getStreamAssignment_5(), "rule__TagOperator__StreamAssignment_5");
 					put(grammarAccess.getSPARQLOperatorAccess().getQueryAssignment_2(), "rule__SPARQLOperator__QueryAssignment_2");
 					put(grammarAccess.getSPARQLOperatorAccess().getTargetAssignment_4(), "rule__SPARQLOperator__TargetAssignment_4");
 					put(grammarAccess.getQueryTagOperatorAccess().getQueryTypeAssignment_1(), "rule__QueryTagOperator__QueryTypeAssignment_1");

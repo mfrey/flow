@@ -1724,10 +1724,11 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (parameters+=TagElement parameters+=TagElement*)
+	 *     (parameters+=TagElement parameters+=TagElement* stream=StreamOperatorParameter)
 	 *
 	 * Features:
 	 *    parameters[1, *]
+	 *    stream[1, 1]
 	 */
 	protected void sequence_TagOperator(EObject context, TagOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

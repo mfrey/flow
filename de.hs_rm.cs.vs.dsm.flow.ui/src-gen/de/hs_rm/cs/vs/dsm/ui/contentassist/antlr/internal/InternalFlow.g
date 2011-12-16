@@ -6817,6 +6817,7 @@ rule__TagOperator__Group__4
     }
 :
 	rule__TagOperator__Group__4__Impl
+	rule__TagOperator__Group__5
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -6828,17 +6829,80 @@ rule__TagOperator__Group__4__Impl
     }
 :
 (
-{ before(grammarAccess.getTagOperatorAccess().getRightParenthesisKeyword_4()); }
+{ before(grammarAccess.getTagOperatorAccess().getCommaKeyword_4()); }
 
-	')' 
+	',' 
 
-{ after(grammarAccess.getTagOperatorAccess().getRightParenthesisKeyword_4()); }
+{ after(grammarAccess.getTagOperatorAccess().getCommaKeyword_4()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__TagOperator__Group__5
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__TagOperator__Group__5__Impl
+	rule__TagOperator__Group__6
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__TagOperator__Group__5__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getTagOperatorAccess().getStreamAssignment_5()); }
+(rule__TagOperator__StreamAssignment_5)
+{ after(grammarAccess.getTagOperatorAccess().getStreamAssignment_5()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__TagOperator__Group__6
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__TagOperator__Group__6__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__TagOperator__Group__6__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getTagOperatorAccess().getRightParenthesisKeyword_6()); }
+
+	')' 
+
+{ after(grammarAccess.getTagOperatorAccess().getRightParenthesisKeyword_6()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
 
 
 
@@ -14304,6 +14368,21 @@ rule__TagOperator__ParametersAssignment_3_1
 (
 { before(grammarAccess.getTagOperatorAccess().getParametersTagElementParserRuleCall_3_1_0()); }
 	ruleTagElement{ after(grammarAccess.getTagOperatorAccess().getParametersTagElementParserRuleCall_3_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__TagOperator__StreamAssignment_5
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getTagOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_5_0()); }
+	ruleStreamOperatorParameter{ after(grammarAccess.getTagOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_5_0()); }
 )
 
 ;

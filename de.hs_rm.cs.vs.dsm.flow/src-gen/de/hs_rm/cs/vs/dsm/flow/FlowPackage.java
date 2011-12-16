@@ -884,13 +884,22 @@ public interface FlowPackage extends EPackage
   int TAG_OPERATOR__PARAMETERS = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Stream</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TAG_OPERATOR__STREAM = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Tag Operator</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TAG_OPERATOR_FEATURE_COUNT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
+  int TAG_OPERATOR_FEATURE_COUNT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.SPARQLOperatorImpl <em>SPARQL Operator</em>}' class.
@@ -3362,6 +3371,17 @@ public interface FlowPackage extends EPackage
   EReference getTagOperator_Parameters();
 
   /**
+   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.TagOperator#getStream <em>Stream</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Stream</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.TagOperator#getStream()
+   * @see #getTagOperator()
+   * @generated
+   */
+  EReference getTagOperator_Stream();
+
+  /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.SPARQLOperator <em>SPARQL Operator</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5384,6 +5404,14 @@ public interface FlowPackage extends EPackage
      * @generated
      */
     EReference TAG_OPERATOR__PARAMETERS = eINSTANCE.getTagOperator_Parameters();
+
+    /**
+     * The meta object literal for the '<em><b>Stream</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TAG_OPERATOR__STREAM = eINSTANCE.getTagOperator_Stream();
 
     /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.SPARQLOperatorImpl <em>SPARQL Operator</em>}' class.

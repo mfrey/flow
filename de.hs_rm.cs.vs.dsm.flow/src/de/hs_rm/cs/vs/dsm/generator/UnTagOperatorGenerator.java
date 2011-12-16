@@ -23,6 +23,8 @@ public class UnTagOperatorGenerator extends AbstractOperatorGenerator {
 	private final String OPERATOR_TYPE = "UnTag";
 	/** The internal representation of the count operator */
 	private UnTagOperator mOperator = null;
+	/** The identifier of the operator in LUA */
+	private String mStream = "";
 	
 	public UnTagOperatorGenerator(final StreamStatement pStatement){
 		// Call the constructor of the abstract operator class
@@ -33,6 +35,8 @@ public class UnTagOperatorGenerator extends AbstractOperatorGenerator {
 		this.getInputStreams().add(this.mOperator.getStream().getStream().getName());
 		// Set the operator type
 		this.setOperatorType(OPERATOR_TYPE);
+		// Set the stream
+		mStream = this.getOperatorStream();
 	}
 
 	/**
@@ -45,8 +49,8 @@ public class UnTagOperatorGenerator extends AbstractOperatorGenerator {
 		
 		for(int i = 0; i < this.mOperator.getParameters().size(); i++){
 			final UnTagElement element = this.mOperator.getParameters().get(i); 
-			result += Util.getInstance().createParameter("todo", "ontology_element", element.getElement().getLocalName());
-			result += Util.getInstance().createParameter("todo", "variable", element.getReference().getElement().getName());
+			result += Util.getInstance().createParameter(mStream, "ontology_element", element.getElement().getLocalName());
+			result += Util.getInstance().createParameter(mStream, "variable", element.getReference().getElement().getName());
 		}
 		
 		return result;

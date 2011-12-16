@@ -1356,6 +1356,16 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getTagOperator_Stream()
+  {
+    return (EReference)tagOperatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getSPARQLOperator()
   {
     return sparqlOperatorEClass;
@@ -2800,6 +2810,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     tagOperatorEClass = createEClass(TAG_OPERATOR);
     createEReference(tagOperatorEClass, TAG_OPERATOR__PARAMETERS);
+    createEReference(tagOperatorEClass, TAG_OPERATOR__STREAM);
 
     sparqlOperatorEClass = createEClass(SPARQL_OPERATOR);
     createEReference(sparqlOperatorEClass, SPARQL_OPERATOR__QUERY);
@@ -3162,6 +3173,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     initEClass(tagOperatorEClass, TagOperator.class, "TagOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTagOperator_Parameters(), this.getTagElement(), null, "parameters", null, 0, -1, TagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTagOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, TagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sparqlOperatorEClass, SPARQLOperator.class, "SPARQLOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSPARQLOperator_Query(), this.getQueryTagOperator(), null, "query", null, 0, 1, SPARQLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

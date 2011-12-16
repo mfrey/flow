@@ -143,7 +143,7 @@ ReturnTypeOperator:
  * The TagOperator rule tags elements of a stream with elements of an ontology
  */
 TagOperator:
-	'tag''('parameters+=TagElement (',' parameters+=TagElement)*')';
+	'tag''('parameters+=TagElement (',' parameters+=TagElement)* ',' stream=StreamOperatorParameter')';
 
 SPARQLOperator:
 	'sparql''(' 

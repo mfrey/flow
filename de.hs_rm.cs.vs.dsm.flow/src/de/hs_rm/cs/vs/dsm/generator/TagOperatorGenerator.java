@@ -34,13 +34,8 @@ public class TagOperatorGenerator extends AbstractOperatorGenerator {
 		super(pStatement);
 		// Store the operator in the attribute
 		this.mOperator = (TagOperator) pStatement.getOperator();
-		// Add the stream used in the parameter list as input streams
-		for(int i = 0; i < this.mOperator.getParameters().size(); i++){
-			String stream = this.mOperator.getParameters().get(i).getReference().getReference().getName();
-			if(!this.getInputStreams().contains(stream)){
-				this.getInputStreams().add(stream);
-			}
-		}
+		// Add the input stream to the list
+		this.getInputStreams().add(this.mOperator.getStream().getStream().getName());
 		// Set the operator type
 		this.setOperatorType(OPERATOR_TYPE);
 		mStream = this.getOperatorStream();
