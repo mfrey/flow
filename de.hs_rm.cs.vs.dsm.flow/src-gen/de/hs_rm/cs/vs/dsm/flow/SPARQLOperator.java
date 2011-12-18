@@ -5,7 +5,6 @@
  */
 package de.hs_rm.cs.vs.dsm.flow;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface SPARQLOperator extends EObject
+public interface SPARQLOperator extends ReturnTypeOperator
 {
   /**
    * Returns the value of the '<em><b>Query</b></em>' containment reference.

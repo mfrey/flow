@@ -1161,6 +1161,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMultiplicationOperatorParserRuleCall_18 = (RuleCall)cAlternatives.eContents().get(18);
 		private final RuleCall cDivisionOperatorParserRuleCall_19 = (RuleCall)cAlternatives.eContents().get(19);
 		private final RuleCall cOutputOperatorParserRuleCall_20 = (RuleCall)cAlternatives.eContents().get(20);
+		private final RuleCall cSPARQLOperatorParserRuleCall_21 = (RuleCall)cAlternatives.eContents().get(21);
 		
 		/// **
 		// * The rule summarizes the operators which have a return type
@@ -1168,13 +1169,13 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//	InputOperator | JoinOperator | LogOperator | DecisionTreeOperator | TagOperator | UnTagOperator | FilterOperator |
 		//	SplitOperator | CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator |
 		//	ModuloOperator | RandomOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator |
-		//	DivisionOperator | OutputOperator;
+		//	DivisionOperator | OutputOperator | SPARQLOperator;
 		public ParserRule getRule() { return rule; }
 
 		//InputOperator | JoinOperator | LogOperator | DecisionTreeOperator | TagOperator | UnTagOperator | FilterOperator |
 		//SplitOperator | CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator |
 		//ModuloOperator | RandomOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator |
-		//DivisionOperator | OutputOperator
+		//DivisionOperator | OutputOperator | SPARQLOperator
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//InputOperator
@@ -1239,6 +1240,9 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 
 		//OutputOperator
 		public RuleCall getOutputOperatorParserRuleCall_20() { return cOutputOperatorParserRuleCall_20; }
+
+		//SPARQLOperator
+		public RuleCall getSPARQLOperatorParserRuleCall_21() { return cSPARQLOperatorParserRuleCall_21; }
 	}
 
 	public class TagOperatorElements extends AbstractParserRuleElementFinder {
@@ -1310,16 +1314,16 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cQueryAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cQueryQueryTagOperatorParserRuleCall_2_0 = (RuleCall)cQueryAssignment_2.eContents().get(0);
-		private final Keyword cCommaSpaceKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cTargetAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cTargetSTRINGTerminalRuleCall_4_0 = (RuleCall)cTargetAssignment_4.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//SPARQLOperator:
-		//	"sparql" "(" query=QueryTagOperator ", " target=STRING ")";
+		//	"sparql" "(" query=QueryTagOperator "," target=STRING ")";
 		public ParserRule getRule() { return rule; }
 
-		//"sparql" "(" query=QueryTagOperator ", " target=STRING ")"
+		//"sparql" "(" query=QueryTagOperator "," target=STRING ")"
 		public Group getGroup() { return cGroup; }
 
 		//"sparql"
@@ -1334,8 +1338,8 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//QueryTagOperator
 		public RuleCall getQueryQueryTagOperatorParserRuleCall_2_0() { return cQueryQueryTagOperatorParserRuleCall_2_0; }
 
-		//", "
-		public Keyword getCommaSpaceKeyword_3() { return cCommaSpaceKeyword_3; }
+		//","
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
 
 		//target=STRING
 		public Assignment getTargetAssignment_4() { return cTargetAssignment_4; }
@@ -3795,7 +3799,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	//	InputOperator | JoinOperator | LogOperator | DecisionTreeOperator | TagOperator | UnTagOperator | FilterOperator |
 	//	SplitOperator | CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator |
 	//	ModuloOperator | RandomOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator |
-	//	DivisionOperator | OutputOperator;
+	//	DivisionOperator | OutputOperator | SPARQLOperator;
 	public ReturnTypeOperatorElements getReturnTypeOperatorAccess() {
 		return (pReturnTypeOperator != null) ? pReturnTypeOperator : (pReturnTypeOperator = new ReturnTypeOperatorElements());
 	}
@@ -3817,7 +3821,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SPARQLOperator:
-	//	"sparql" "(" query=QueryTagOperator ", " target=STRING ")";
+	//	"sparql" "(" query=QueryTagOperator "," target=STRING ")";
 	public SPARQLOperatorElements getSPARQLOperatorAccess() {
 		return (pSPARQLOperator != null) ? pSPARQLOperator : (pSPARQLOperator = new SPARQLOperatorElements());
 	}

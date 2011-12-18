@@ -918,7 +918,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SPARQL_OPERATOR__QUERY = 0;
+  int SPARQL_OPERATOR__QUERY = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' attribute.
@@ -927,7 +927,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SPARQL_OPERATOR__TARGET = 1;
+  int SPARQL_OPERATOR__TARGET = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>SPARQL Operator</em>' class.
@@ -936,7 +936,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SPARQL_OPERATOR_FEATURE_COUNT = 2;
+  int SPARQL_OPERATOR_FEATURE_COUNT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.QueryTagOperatorImpl <em>Query Tag Operator</em>}' class.

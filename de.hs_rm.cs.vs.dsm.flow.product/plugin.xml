@@ -8,10 +8,6 @@
       <product
             application="org.eclipse.ui.ide.workbench"
             name="Flow">
-         <property
-               name="appName"
-               value="Flow">
-         </property>
       </product>
    </extension>
 </plugin>

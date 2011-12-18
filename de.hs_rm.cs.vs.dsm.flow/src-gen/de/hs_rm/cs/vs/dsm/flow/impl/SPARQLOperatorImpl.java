@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +31,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class SPARQLOperatorImpl extends MinimalEObjectImpl.Container implements SPARQLOperator
+public class SPARQLOperatorImpl extends ReturnTypeOperatorImpl implements SPARQLOperator
 {
   /**
    * The cached value of the '{@link #getQuery() <em>Query</em>}' containment reference.

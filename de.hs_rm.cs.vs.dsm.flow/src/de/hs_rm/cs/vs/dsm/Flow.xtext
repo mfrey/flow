@@ -137,7 +137,7 @@ ReturnTypeOperator:
 	TagOperator | UnTagOperator | FilterOperator | SplitOperator | CountOperator | 
 	StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator | ModuloOperator |
 	RandomOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator | 
-	DivisionOperator | OutputOperator;
+	DivisionOperator | OutputOperator | SPARQLOperator;
 
 /**
  * The TagOperator rule tags elements of a stream with elements of an ontology
@@ -146,11 +146,7 @@ TagOperator:
 	'tag''('parameters+=TagElement (',' parameters+=TagElement)* ',' stream=StreamOperatorParameter')';
 
 SPARQLOperator:
-	'sparql''(' 
-		query=QueryTagOperator ', '
-		target=STRING
-	')'
-;
+	'sparql' '(' query=QueryTagOperator ',' target=STRING ')';
 
 /**
  * Basically a query (QueryTagOperator) within the tag Operator (TagOperator) is a 
@@ -161,8 +157,7 @@ QueryTagOperator:
 	'{'
 		queryType = SparqlQueryType
 		query = SparqlQuery
-	'}'
-;
+	'}';
 
 /**
  * 
@@ -173,6 +168,8 @@ SparqlQuery:
 	'}'
 ;
 
+ 
+ 
 /**
  * 
  */

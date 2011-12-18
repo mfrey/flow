@@ -410,7 +410,8 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				}
 				else break;
 			case FlowPackage.SPARQL_OPERATOR:
-				if(context == grammarAccess.getSPARQLOperatorRule()) {
+				if(context == grammarAccess.getReturnTypeOperatorRule() ||
+				   context == grammarAccess.getSPARQLOperatorRule()) {
 					sequence_SPARQLOperator(context, (SPARQLOperator) semanticObject); 
 					return; 
 				}
