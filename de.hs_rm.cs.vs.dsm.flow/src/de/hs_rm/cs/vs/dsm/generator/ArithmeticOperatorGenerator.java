@@ -64,14 +64,6 @@ public class ArithmeticOperatorGenerator extends AbstractOperatorGenerator {
 			mLiteral = ((NumberVariableDefinition)pVariable).getValue().toPlainString();
 		}
 	}
-	
-	/**
-	 * {@inheritDoc} 
-	 */
-	@Override
-	public String setOperatorConnection() {
-		return Util.getInstance().connectOperator(this.getInputStreams(), "in", this.getOutputStreams(), "out");
-	}
 
 	public String getOperationType() {
 		return OPERATION;

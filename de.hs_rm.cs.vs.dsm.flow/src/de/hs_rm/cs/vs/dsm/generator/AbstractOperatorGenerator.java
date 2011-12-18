@@ -103,7 +103,9 @@ public abstract class AbstractOperatorGenerator {
 	 *
 	 * @return A string which includes the connection setting for the operator
 	 */
-	public abstract String setOperatorConnection();
+	public String setOperatorConnection(){
+		return Util.getInstance().connectOperator(this.getInputStreams(), "in", this.getOutputStreams(), "out");
+	}
 	
 	/**
 	 * {@inheritDoc} 

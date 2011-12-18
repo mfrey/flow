@@ -75,17 +75,6 @@ public class OutputOperatorGenerator extends IOOperatorGenerator {
 
 	/**
 	 * (non-Javadoc)
-	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorConnection()
-	 */
-	@Override
-	public String setOperatorConnection() {
-		return Util.getInstance().connectOperator(
-				this.getInputStreams(), "in", this.getOutputStreams(), "out");
-	}
-
-
-	/**
-	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

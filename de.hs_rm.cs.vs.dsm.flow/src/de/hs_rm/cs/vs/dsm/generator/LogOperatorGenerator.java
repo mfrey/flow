@@ -44,13 +44,4 @@ public class LogOperatorGenerator extends AbstractOperatorGenerator  {
 		result += Util.getInstance().createParameter(mStream, "log_format", mOperator.getFormat());
 		return result;
 	}
-
-	/**
-	 * (non-Javadoc)
-	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorConnection()
-	 */
-	@Override
-	public String setOperatorConnection() {
-		return Util.getInstance().connectOperator(getInputStreams(), "in", getOutputStreams(), "out");
-	}
 }

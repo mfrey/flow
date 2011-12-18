@@ -44,13 +44,4 @@ public class RandomOperatorGenerator extends AbstractOperatorGenerator  {
 		result += Util.getInstance().createParameter(mStream, "us_sleep", mOperator.getSleep().toPlainString());
 		return result;
 	}
-
-	/**
-	 * (non-Javadoc)
-	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorConnection()
-	 */
-	@Override
-	public String setOperatorConnection() {
-		return Util.getInstance().connectOperator(getInputStreams(), "in", getOutputStreams(), "out");
-	}
 }

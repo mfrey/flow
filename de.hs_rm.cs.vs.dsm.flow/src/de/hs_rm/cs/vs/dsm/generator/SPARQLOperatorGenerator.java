@@ -37,15 +37,4 @@ public class SPARQLOperatorGenerator extends AbstractOperatorGenerator {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	/**
-	 * (non-Javadoc)
-	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorConnection()
-	 */
-	@Override
-	public String setOperatorConnection() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

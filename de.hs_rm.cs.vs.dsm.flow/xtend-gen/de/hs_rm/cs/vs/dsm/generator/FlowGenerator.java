@@ -18,6 +18,7 @@ import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
 import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration;
 import de.hs_rm.cs.vs.dsm.flow.RandomOperator;
 import de.hs_rm.cs.vs.dsm.flow.ReturnTypeOperator;
+import de.hs_rm.cs.vs.dsm.flow.SPARQLOperator;
 import de.hs_rm.cs.vs.dsm.flow.SplitOperator;
 import de.hs_rm.cs.vs.dsm.flow.StandardDeviationOperator;
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement;
@@ -38,6 +39,7 @@ import de.hs_rm.cs.vs.dsm.generator.ModuloOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.MultiplicationOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.OutputOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.RandomOperatorGenerator;
+import de.hs_rm.cs.vs.dsm.generator.SPARQLOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.SplitOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.StandardDeviationOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.SubtractionOperatorGenerator;
@@ -290,7 +292,17 @@ public class FlowGenerator implements IGenerator {
                                             ReturnTypeOperator _operator_37 = statement.getOperator();
                                             String _write_18 = this.write(((UnTagOperator) _operator_37), statement);
                                             _builder.append(_write_18, "");
-                                            _builder.newLineIfNotEmpty();
+                                            _builder.newLineIfNotEmpty();} else {
+                                            ReturnTypeOperator _operator_38 = statement.getOperator();
+                                            EClass _eClass_19 = _operator_38.eClass();
+                                            String _name_19 = _eClass_19.getName();
+                                            boolean _equals_19 = _name_19.equals("SPARQLOperator");
+                                            if (_equals_19) {
+                                              ReturnTypeOperator _operator_39 = statement.getOperator();
+                                              String _write_19 = this.write(((SPARQLOperator) _operator_39), statement);
+                                              _builder.append(_write_19, "");
+                                              _builder.newLineIfNotEmpty();
+                                            }
                                           }
                                         }
                                       }
@@ -523,6 +535,17 @@ public class FlowGenerator implements IGenerator {
     return _xblockexpression;
   }
   
+  protected String _write(final SPARQLOperator pOperator, final StreamStatement pStatement) {
+    String _xblockexpression = null;
+    {
+      SPARQLOperatorGenerator _sPARQLOperatorGenerator = new SPARQLOperatorGenerator(pStatement);
+      SPARQLOperatorGenerator sparql = _sPARQLOperatorGenerator;
+      String _string = sparql.toString();
+      _xblockexpression = (_string);
+    }
+    return _xblockexpression;
+  }
+  
   public String write(final ReturnTypeOperator pOperator, final StreamStatement pStatement) {
     if ((pOperator instanceof AdditionOperator)
          && (pStatement instanceof StreamStatement)) {
@@ -566,6 +589,9 @@ public class FlowGenerator implements IGenerator {
     } else if ((pOperator instanceof RandomOperator)
          && (pStatement instanceof StreamStatement)) {
       return _write((RandomOperator)pOperator, (StreamStatement)pStatement);
+    } else if ((pOperator instanceof SPARQLOperator)
+         && (pStatement instanceof StreamStatement)) {
+      return _write((SPARQLOperator)pOperator, (StreamStatement)pStatement);
     } else if ((pOperator instanceof SplitOperator)
          && (pStatement instanceof StreamStatement)) {
       return _write((SplitOperator)pOperator, (StreamStatement)pStatement);

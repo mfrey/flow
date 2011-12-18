@@ -103,13 +103,4 @@ public class ElementJoinOperatorGenerator extends AbstractOperatorGenerator {
 
 		return result;
 	}
-
-	/**
-	 * (non-Javadoc)
-	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorConnection()
-	 */
-	@Override
-	public String setOperatorConnection() {
-		return Util.getInstance().connectOperator(this.getInputStreams(), "in", this.getOutputStreams(), "out");
-	}
 }

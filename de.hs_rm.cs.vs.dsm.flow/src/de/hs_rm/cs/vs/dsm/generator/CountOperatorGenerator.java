@@ -43,16 +43,7 @@ public class CountOperatorGenerator extends AbstractOperatorGenerator {
 	public String setOperatorProperties() {
 		return Util.getInstance().createParameter(mStream, "element", this.mOperator.getParameter().getElement().getName());
 	}
-
-	/**
-	 * (non-Javadoc)
-	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setOperatorConnection()
-	 */
-	@Override
-	public String setOperatorConnection() {
-		return Util.getInstance().connectOperator(this.getInputStreams(), "in", this.getOutputStreams(), "out");
-	}
-
+	
 	/**
 	 * (non-Javadoc)
 	 * @see de.hs_rm.cs.vs.dsm.generator.AbstractOperatorGenerator#setBarrier()

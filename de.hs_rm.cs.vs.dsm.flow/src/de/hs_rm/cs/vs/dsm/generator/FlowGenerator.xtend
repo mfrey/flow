@@ -19,6 +19,8 @@ import de.hs_rm.cs.vs.dsm.flow.RandomOperator
 
 import de.hs_rm.cs.vs.dsm.flow.TagOperator
 import de.hs_rm.cs.vs.dsm.flow.UnTagOperator
+import de.hs_rm.cs.vs.dsm.flow.SPARQLOperator
+
 
 import de.hs_rm.cs.vs.dsm.flow.DecisionTreeOperator
 
@@ -120,6 +122,8 @@ class FlowGenerator implements IGenerator {
 		«write((statement.operator as TagOperator),statement)»
 		«ELSEIF statement.operator.eClass.name.equals("UnTagOperator")»
 		«write((statement.operator as UnTagOperator),statement)»
+		«ELSEIF statement.operator.eClass.name.equals("SPARQLOperator")»
+		«write((statement.operator as SPARQLOperator),statement)»
 		«ENDIF»
 	'''
 
@@ -255,5 +259,13 @@ class FlowGenerator implements IGenerator {
 			pStatement
 		)	
 		untag.toString()
+	}
+	
+		
+	def dispatch String write(SPARQLOperator pOperator, StreamStatement pStatement){
+		var SPARQLOperatorGenerator sparql = new SPARQLOperatorGenerator(
+			pStatement
+		)	
+		sparql.toString()
 	}
 }
