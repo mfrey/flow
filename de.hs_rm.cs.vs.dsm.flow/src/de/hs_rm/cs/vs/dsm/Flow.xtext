@@ -167,8 +167,6 @@ SparqlQuery:
 		uri=STRING attribute=STRING
 	'}'
 ;
-
- 
  
 /**
  * 
