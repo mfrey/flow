@@ -58,6 +58,8 @@ public class SPARQLOperatorGenerator extends AbstractOperatorGenerator {
 		super(pStatement);
 		// Store the operator in an attribute
 		mOperator = (SPARQLOperator) pStatement.getOperator();
+		// Add the input stream to the list
+		this.getInputStreams().add(this.mOperator.getStream().getStream().getName());
 		// Set the operator type
 		setOperatorType(OPERATOR_TYPE);
 		// Set the name of the operator

@@ -206,13 +206,14 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTagOperatorAccess().getStreamAssignment_5(), "rule__TagOperator__StreamAssignment_5");
 					put(grammarAccess.getSPARQLOperatorAccess().getQueryAssignment_2(), "rule__SPARQLOperator__QueryAssignment_2");
 					put(grammarAccess.getSPARQLOperatorAccess().getTargetAssignment_4(), "rule__SPARQLOperator__TargetAssignment_4");
+					put(grammarAccess.getSPARQLOperatorAccess().getStreamAssignment_6(), "rule__SPARQLOperator__StreamAssignment_6");
 					put(grammarAccess.getQueryTagOperatorAccess().getQueryTypeAssignment_1(), "rule__QueryTagOperator__QueryTypeAssignment_1");
 					put(grammarAccess.getQueryTagOperatorAccess().getQueryAssignment_2(), "rule__QueryTagOperator__QueryAssignment_2");
 					put(grammarAccess.getSparqlQueryAccess().getVariableAssignment_0(), "rule__SparqlQuery__VariableAssignment_0");
 					put(grammarAccess.getSparqlQueryAccess().getUriAssignment_3(), "rule__SparqlQuery__UriAssignment_3");
 					put(grammarAccess.getSparqlQueryAccess().getAttributeAssignment_4(), "rule__SparqlQuery__AttributeAssignment_4");
 					put(grammarAccess.getSparqlQueryVariableAccess().getVariableAssignment_1(), "rule__SparqlQueryVariable__VariableAssignment_1");
-					put(grammarAccess.getSparqlQueryVariableAccess().getVariableAssignment_2_1(), "rule__SparqlQueryVariable__VariableAssignment_2_1");
+					put(grammarAccess.getSparqlQueryVariableAccess().getVariableAssignment_2_2(), "rule__SparqlQueryVariable__VariableAssignment_2_2");
 					put(grammarAccess.getUnTagOperatorAccess().getParametersAssignment_2(), "rule__UnTagOperator__ParametersAssignment_2");
 					put(grammarAccess.getUnTagOperatorAccess().getParametersAssignment_3_1(), "rule__UnTagOperator__ParametersAssignment_3_1");
 					put(grammarAccess.getUnTagOperatorAccess().getStreamAssignment_5(), "rule__UnTagOperator__StreamAssignment_5");

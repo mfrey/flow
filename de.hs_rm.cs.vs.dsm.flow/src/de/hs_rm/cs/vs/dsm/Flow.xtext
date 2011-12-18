@@ -146,7 +146,7 @@ TagOperator:
 	'tag''('parameters+=TagElement (',' parameters+=TagElement)* ',' stream=StreamOperatorParameter')';
 
 SPARQLOperator:
-	'sparql' '(' query=QueryTagOperator ',' target=STRING ')';
+	'sparql' '(' query=QueryTagOperator ',' target=STRING ',' stream=StreamOperatorParameter ')';
 
 /**
  * Basically a query (QueryTagOperator) within the tag Operator (TagOperator) is a 
@@ -172,7 +172,7 @@ SparqlQuery:
  * 
  */
 SparqlQueryVariable:
-	'?' variable+=STRING ('?' variable+=STRING)*
+	'?' variable+=STRING (',' '?' variable+=STRING)*
 ;
 
 enum SparqlQueryType:

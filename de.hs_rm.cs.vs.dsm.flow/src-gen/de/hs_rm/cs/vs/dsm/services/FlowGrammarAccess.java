@@ -1317,13 +1317,16 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cTargetAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cTargetSTRINGTerminalRuleCall_4_0 = (RuleCall)cTargetAssignment_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cStreamAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cStreamStreamOperatorParameterParserRuleCall_6_0 = (RuleCall)cStreamAssignment_6.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//SPARQLOperator:
-		//	"sparql" "(" query=QueryTagOperator "," target=STRING ")";
+		//	"sparql" "(" query=QueryTagOperator "," target=STRING "," stream=StreamOperatorParameter ")";
 		public ParserRule getRule() { return rule; }
 
-		//"sparql" "(" query=QueryTagOperator "," target=STRING ")"
+		//"sparql" "(" query=QueryTagOperator "," target=STRING "," stream=StreamOperatorParameter ")"
 		public Group getGroup() { return cGroup; }
 
 		//"sparql"
@@ -1347,8 +1350,17 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getTargetSTRINGTerminalRuleCall_4_0() { return cTargetSTRINGTerminalRuleCall_4_0; }
 
+		//","
+		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
+
+		//stream=StreamOperatorParameter
+		public Assignment getStreamAssignment_6() { return cStreamAssignment_6; }
+
+		//StreamOperatorParameter
+		public RuleCall getStreamStreamOperatorParameterParserRuleCall_6_0() { return cStreamStreamOperatorParameterParserRuleCall_6_0; }
+
 		//")"
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 	}
 
 	public class QueryTagOperatorElements extends AbstractParserRuleElementFinder {
@@ -1448,17 +1460,18 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cVariableAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cVariableSTRINGTerminalRuleCall_1_0 = (RuleCall)cVariableAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cQuestionMarkKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cVariableAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cVariableSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cVariableAssignment_2_1.eContents().get(0);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cQuestionMarkKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Assignment cVariableAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cVariableSTRINGTerminalRuleCall_2_2_0 = (RuleCall)cVariableAssignment_2_2.eContents().get(0);
 		
 		/// **
 		// * 
 		// * / SparqlQueryVariable:
-		//	"?" variable+=STRING ("?" variable+=STRING)*;
+		//	"?" variable+=STRING ("," "?" variable+=STRING)*;
 		public ParserRule getRule() { return rule; }
 
-		//"?" variable+=STRING ("?" variable+=STRING)*
+		//"?" variable+=STRING ("," "?" variable+=STRING)*
 		public Group getGroup() { return cGroup; }
 
 		//"?"
@@ -1470,17 +1483,20 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getVariableSTRINGTerminalRuleCall_1_0() { return cVariableSTRINGTerminalRuleCall_1_0; }
 
-		//("?" variable+=STRING)*
+		//("," "?" variable+=STRING)*
 		public Group getGroup_2() { return cGroup_2; }
 
+		//","
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+
 		//"?"
-		public Keyword getQuestionMarkKeyword_2_0() { return cQuestionMarkKeyword_2_0; }
+		public Keyword getQuestionMarkKeyword_2_1() { return cQuestionMarkKeyword_2_1; }
 
 		//variable+=STRING
-		public Assignment getVariableAssignment_2_1() { return cVariableAssignment_2_1; }
+		public Assignment getVariableAssignment_2_2() { return cVariableAssignment_2_2; }
 
 		//STRING
-		public RuleCall getVariableSTRINGTerminalRuleCall_2_1_0() { return cVariableSTRINGTerminalRuleCall_2_1_0; }
+		public RuleCall getVariableSTRINGTerminalRuleCall_2_2_0() { return cVariableSTRINGTerminalRuleCall_2_2_0; }
 	}
 
 	public class UnTagOperatorElements extends AbstractParserRuleElementFinder {
@@ -3821,7 +3837,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SPARQLOperator:
-	//	"sparql" "(" query=QueryTagOperator "," target=STRING ")";
+	//	"sparql" "(" query=QueryTagOperator "," target=STRING "," stream=StreamOperatorParameter ")";
 	public SPARQLOperatorElements getSPARQLOperatorAccess() {
 		return (pSPARQLOperator != null) ? pSPARQLOperator : (pSPARQLOperator = new SPARQLOperatorElements());
 	}
@@ -3859,7 +3875,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	/// **
 	// * 
 	// * / SparqlQueryVariable:
-	//	"?" variable+=STRING ("?" variable+=STRING)*;
+	//	"?" variable+=STRING ("," "?" variable+=STRING)*;
 	public SparqlQueryVariableElements getSparqlQueryVariableAccess() {
 		return (pSparqlQueryVariable != null) ? pSparqlQueryVariable : (pSparqlQueryVariable = new SparqlQueryVariableElements());
 	}

@@ -1396,6 +1396,16 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getSPARQLOperator_Stream()
+  {
+    return (EReference)sparqlOperatorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getQueryTagOperator()
   {
     return queryTagOperatorEClass;
@@ -2815,6 +2825,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     sparqlOperatorEClass = createEClass(SPARQL_OPERATOR);
     createEReference(sparqlOperatorEClass, SPARQL_OPERATOR__QUERY);
     createEAttribute(sparqlOperatorEClass, SPARQL_OPERATOR__TARGET);
+    createEReference(sparqlOperatorEClass, SPARQL_OPERATOR__STREAM);
 
     queryTagOperatorEClass = createEClass(QUERY_TAG_OPERATOR);
     createEAttribute(queryTagOperatorEClass, QUERY_TAG_OPERATOR__QUERY_TYPE);
@@ -3179,6 +3190,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEClass(sparqlOperatorEClass, SPARQLOperator.class, "SPARQLOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSPARQLOperator_Query(), this.getQueryTagOperator(), null, "query", null, 0, 1, SPARQLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSPARQLOperator_Target(), ecorePackage.getEString(), "target", null, 0, 1, SPARQLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSPARQLOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, SPARQLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(queryTagOperatorEClass, QueryTagOperator.class, "QueryTagOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getQueryTagOperator_QueryType(), this.getSparqlQueryType(), "queryType", null, 0, 1, QueryTagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

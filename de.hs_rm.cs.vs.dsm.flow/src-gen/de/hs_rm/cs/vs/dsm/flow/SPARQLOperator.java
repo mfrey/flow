@@ -16,6 +16,7 @@ package de.hs_rm.cs.vs.dsm.flow;
  * <ul>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SPARQLOperator#getQuery <em>Query</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SPARQLOperator#getTarget <em>Target</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SPARQLOperator#getStream <em>Stream</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,5 +77,31 @@ public interface SPARQLOperator extends ReturnTypeOperator
    * @generated
    */
   void setTarget(String value);
+
+  /**
+   * Returns the value of the '<em><b>Stream</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Stream</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Stream</em>' containment reference.
+   * @see #setStream(StreamOperatorParameter)
+   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getSPARQLOperator_Stream()
+   * @model containment="true"
+   * @generated
+   */
+  StreamOperatorParameter getStream();
+
+  /**
+   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.SPARQLOperator#getStream <em>Stream</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Stream</em>' containment reference.
+   * @see #getStream()
+   * @generated
+   */
+  void setStream(StreamOperatorParameter value);
 
 } // SPARQLOperator

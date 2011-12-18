@@ -8,6 +8,7 @@ package de.hs_rm.cs.vs.dsm.flow.impl;
 import de.hs_rm.cs.vs.dsm.flow.FlowPackage;
 import de.hs_rm.cs.vs.dsm.flow.QueryTagOperator;
 import de.hs_rm.cs.vs.dsm.flow.SPARQLOperator;
+import de.hs_rm.cs.vs.dsm.flow.StreamOperatorParameter;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -26,6 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SPARQLOperatorImpl#getQuery <em>Query</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SPARQLOperatorImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SPARQLOperatorImpl#getStream <em>Stream</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,6 +64,16 @@ public class SPARQLOperatorImpl extends ReturnTypeOperatorImpl implements SPARQL
    * @ordered
    */
   protected String target = TARGET_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getStream() <em>Stream</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStream()
+   * @generated
+   * @ordered
+   */
+  protected StreamOperatorParameter stream;
 
   /**
    * <!-- begin-user-doc -->
@@ -160,6 +172,54 @@ public class SPARQLOperatorImpl extends ReturnTypeOperatorImpl implements SPARQL
    * <!-- end-user-doc -->
    * @generated
    */
+  public StreamOperatorParameter getStream()
+  {
+    return stream;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetStream(StreamOperatorParameter newStream, NotificationChain msgs)
+  {
+    StreamOperatorParameter oldStream = stream;
+    stream = newStream;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FlowPackage.SPARQL_OPERATOR__STREAM, oldStream, newStream);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setStream(StreamOperatorParameter newStream)
+  {
+    if (newStream != stream)
+    {
+      NotificationChain msgs = null;
+      if (stream != null)
+        msgs = ((InternalEObject)stream).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FlowPackage.SPARQL_OPERATOR__STREAM, null, msgs);
+      if (newStream != null)
+        msgs = ((InternalEObject)newStream).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FlowPackage.SPARQL_OPERATOR__STREAM, null, msgs);
+      msgs = basicSetStream(newStream, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.SPARQL_OPERATOR__STREAM, newStream, newStream));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -167,6 +227,8 @@ public class SPARQLOperatorImpl extends ReturnTypeOperatorImpl implements SPARQL
     {
       case FlowPackage.SPARQL_OPERATOR__QUERY:
         return basicSetQuery(null, msgs);
+      case FlowPackage.SPARQL_OPERATOR__STREAM:
+        return basicSetStream(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -185,6 +247,8 @@ public class SPARQLOperatorImpl extends ReturnTypeOperatorImpl implements SPARQL
         return getQuery();
       case FlowPackage.SPARQL_OPERATOR__TARGET:
         return getTarget();
+      case FlowPackage.SPARQL_OPERATOR__STREAM:
+        return getStream();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -204,6 +268,9 @@ public class SPARQLOperatorImpl extends ReturnTypeOperatorImpl implements SPARQL
         return;
       case FlowPackage.SPARQL_OPERATOR__TARGET:
         setTarget((String)newValue);
+        return;
+      case FlowPackage.SPARQL_OPERATOR__STREAM:
+        setStream((StreamOperatorParameter)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -225,6 +292,9 @@ public class SPARQLOperatorImpl extends ReturnTypeOperatorImpl implements SPARQL
       case FlowPackage.SPARQL_OPERATOR__TARGET:
         setTarget(TARGET_EDEFAULT);
         return;
+      case FlowPackage.SPARQL_OPERATOR__STREAM:
+        setStream((StreamOperatorParameter)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -243,6 +313,8 @@ public class SPARQLOperatorImpl extends ReturnTypeOperatorImpl implements SPARQL
         return query != null;
       case FlowPackage.SPARQL_OPERATOR__TARGET:
         return TARGET_EDEFAULT == null ? target != null : !TARGET_EDEFAULT.equals(target);
+      case FlowPackage.SPARQL_OPERATOR__STREAM:
+        return stream != null;
     }
     return super.eIsSet(featureID);
   }

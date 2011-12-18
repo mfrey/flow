@@ -1315,11 +1315,12 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (query=QueryTagOperator target=STRING)
+	 *     (query=QueryTagOperator target=STRING stream=StreamOperatorParameter)
 	 *
 	 * Features:
 	 *    query[1, 1]
 	 *    target[1, 1]
+	 *    stream[1, 1]
 	 */
 	protected void sequence_SPARQLOperator(EObject context, SPARQLOperator semanticObject) {
 		if(errorAcceptor != null) {
@@ -1327,11 +1328,14 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.SPARQL_OPERATOR__QUERY));
 			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.SPARQL_OPERATOR__TARGET) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.SPARQL_OPERATOR__TARGET));
+			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.SPARQL_OPERATOR__STREAM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.SPARQL_OPERATOR__STREAM));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getSPARQLOperatorAccess().getQueryQueryTagOperatorParserRuleCall_2_0(), semanticObject.getQuery());
 		feeder.accept(grammarAccess.getSPARQLOperatorAccess().getTargetSTRINGTerminalRuleCall_4_0(), semanticObject.getTarget());
+		feeder.accept(grammarAccess.getSPARQLOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_6_0(), semanticObject.getStream());
 		feeder.finish();
 	}
 	

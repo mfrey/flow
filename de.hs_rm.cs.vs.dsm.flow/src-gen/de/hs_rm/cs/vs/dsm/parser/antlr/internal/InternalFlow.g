@@ -2061,9 +2061,31 @@ ruleSPARQLOperator returns [EObject current=null]
 	    }
 
 )
-)	otherlv_5=')' 
+)	otherlv_5=',' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getSPARQLOperatorAccess().getRightParenthesisKeyword_5());
+    	newLeafNode(otherlv_5, grammarAccess.getSPARQLOperatorAccess().getCommaKeyword_5());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSPARQLOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_6_0()); 
+	    }
+		lv_stream_6_0=ruleStreamOperatorParameter		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSPARQLOperatorRule());
+	        }
+       		set(
+       			$current, 
+       			"stream",
+        		lv_stream_6_0, 
+        		"StreamOperatorParameter");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_7=')' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getSPARQLOperatorAccess().getRightParenthesisKeyword_7());
     }
 )
 ;
@@ -2260,15 +2282,19 @@ ruleSparqlQueryVariable returns [EObject current=null]
 	    }
 
 )
-)(	otherlv_2='?' 
+)(	otherlv_2=',' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getSparqlQueryVariableAccess().getQuestionMarkKeyword_2_0());
+    	newLeafNode(otherlv_2, grammarAccess.getSparqlQueryVariableAccess().getCommaKeyword_2_0());
+    }
+	otherlv_3='?' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getSparqlQueryVariableAccess().getQuestionMarkKeyword_2_1());
     }
 (
 (
-		lv_variable_3_0=RULE_STRING
+		lv_variable_4_0=RULE_STRING
 		{
-			newLeafNode(lv_variable_3_0, grammarAccess.getSparqlQueryVariableAccess().getVariableSTRINGTerminalRuleCall_2_1_0()); 
+			newLeafNode(lv_variable_4_0, grammarAccess.getSparqlQueryVariableAccess().getVariableSTRINGTerminalRuleCall_2_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -2277,7 +2303,7 @@ ruleSparqlQueryVariable returns [EObject current=null]
        		addWithLastConsumed(
        			$current, 
        			"variable",
-        		lv_variable_3_0, 
+        		lv_variable_4_0, 
         		"STRING");
 	    }
 
