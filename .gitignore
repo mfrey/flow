@@ -1,4 +1,6 @@
 *.class
+*.aux
+*.blg
 *.*~
 *.swp
 *.toc
@@ -13,3 +15,4 @@ target/
 build/
 bin/
 *.owl
+*.ini

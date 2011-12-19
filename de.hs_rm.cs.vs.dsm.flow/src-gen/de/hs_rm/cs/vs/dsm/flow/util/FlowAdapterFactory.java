@@ -278,12 +278,16 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
         return createStandardDeviationOperatorAdapter();
       }
       @Override
+<<<<<<< HEAD
       public Adapter caseAverageOperator(AverageOperator object)
       {
         return createAverageOperatorAdapter();
       }
       @Override
       public Adapter caseAdditionOperator(AdditionOperator object)
+=======
+      public Adapter caseCountOperator(CountOperator object)
+>>>>>>> master
       {
         return createAdditionOperatorAdapter();
       }
@@ -1055,6 +1059,7 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+<<<<<<< HEAD
    * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.AverageOperator <em>Average Operator</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1071,6 +1076,9 @@ public class FlowAdapterFactory extends AdapterFactoryImpl
 
   /**
    * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.AdditionOperator <em>Addition Operator</em>}'.
+=======
+   * Creates a new adapter for an object of class '{@link de.hs_rm.cs.vs.dsm.flow.CountOperator <em>Count Operator</em>}'.
+>>>>>>> master
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.

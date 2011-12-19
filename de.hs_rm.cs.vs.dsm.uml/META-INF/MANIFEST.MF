@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: UML
+Bundle-SymbolicName: de.hs_rm.cs.vs.dsm.uml
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Hochschule RheinMain
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.xtext;bundle-version="2.0.0",
+ org.eclipse.uml2.uml;bundle-version="3.2.0"
+Export-Package: de.hs_rm.cs.vs.dsm.uml

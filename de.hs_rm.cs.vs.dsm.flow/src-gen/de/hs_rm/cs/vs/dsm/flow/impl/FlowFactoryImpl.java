@@ -623,6 +623,7 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * <!-- end-user-doc -->
    * @generated
    */
+<<<<<<< HEAD
   public AverageOperator createAverageOperator()
   {
     AverageOperatorImpl averageOperator = new AverageOperatorImpl();
@@ -635,6 +636,9 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * @generated
    */
   public AdditionOperator createAdditionOperator()
+=======
+  public CountOperator createCountOperator()
+>>>>>>> master
   {
     AdditionOperatorImpl additionOperator = new AdditionOperatorImpl();
     return additionOperator;

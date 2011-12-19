@@ -385,6 +385,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+<<<<<<< HEAD
   private EClass averageOperatorEClass = null;
 
   /**
@@ -393,6 +394,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * @generated
    */
   private EClass additionOperatorEClass = null;
+=======
+  private EClass countOperatorEClass = null;
+>>>>>>> master
 
   /**
    * <!-- begin-user-doc -->
@@ -1836,6 +1840,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+<<<<<<< HEAD
   public EReference getStandardDeviationOperator_Parameter()
   {
     return (EReference)standardDeviationOperatorEClass.getEStructuralFeatures().get(0);
@@ -1867,6 +1872,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * @generated
    */
   public EReference getAverageOperator_Parameter()
+=======
+  public EClass getCountOperator()
+>>>>>>> master
   {
     return (EReference)averageOperatorEClass.getEStructuralFeatures().get(0);
   }

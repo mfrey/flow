@@ -545,10 +545,14 @@ public class AbstractFlowProposalProvider extends AbstractJavaBasedContentPropos
 	public void complete_StandardDeviationOperator(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
+<<<<<<< HEAD
 	public void complete_AverageOperator(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
 	public void complete_AdditionOperator(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+=======
+	public void complete_CountOperator(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+>>>>>>> master
 		// subclasses may override
 	}
 	public void complete_SubtractionOperator(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {

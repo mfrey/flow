@@ -12,6 +12,9 @@
 %\usepackage{babel}
 \usepackage{setspace}
 \usepackage{epsfig}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{textcomp}
 
 \usepackage[
   pdftex, 
@@ -27,6 +30,16 @@
 	pdftitle={Bla},
 	pdfauthor={Michael Frey}
 ]{hyperref}
+
+% Definition fuer Farbschema Rot (RGB: 193, 24, 24)
+\definecolor{defred}{rgb}{0.75,0.09,0.09}
+% Definition fuer Farbschema Gruen (RGB: 193, 24, 24)
+\definecolor{defgreen}{rgb}{0.43,0.68,0.18}
+% Definition fuer Farbschema Blau (RGB: 41, 104, 208)
+\definecolor{defblue}{rgb}{0.16,0.4,0.81}
+% Definition fuer Farbschema Orange (RGB: 255, 139, 0)
+\definecolor{deforange}{rgb}{1,0.54,0}
+
 
 \lstloadlanguages{Java}
 \lstset{
@@ -57,10 +70,108 @@
 	aboveskip=25pt,										% Space between text and the top of the listing
 }
 
+
+\lstdefinelanguage{Flow}{
+  morekeywords={structure, stream, processing, datatype, package, using, namespace, use, tag, join, ejoin, map, std, avg, in, out, untag,
+  count, int, float, string, boolean, now, last, elements, min, hrs, sec, match, split, import, if, else, return, operator, filter, log,
+  diff, sdif, swrl, ocl, add, sub, div, mult, mod},
+  sensitive=false,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]",
+  keywordstyle=\bfseries\color{defblue},
+  commentstyle=\bfseries\color{defgreen},
+  stringstyle=\bfseries\color{defgreen},
+  identifierstyle=\bfseries\color{deforange},
+  basicstyle=\scriptsize\ttfamily,	
+  showstringspaces=false,
+  numberstyle=\scriptsize,					
+  captionpos=b,
+  tabsize=4,
+  stepnumber=1,										
+  breaklines=true
+}
+
+\lstdefinelanguage{Lua}{
+  morekeywords={fm, create_operator_of_type, set_parameter, connect_operators},
+  sensitive=false,
+  morecomment=[l]{--},
+  morecomment=[s]{--[[}{--]]},
+  morestring=[b]",
+  keywordstyle=\bfseries\color{defblue},
+  commentstyle=\bfseries\color{defred},
+  stringstyle=\bfseries\color{defgreen},
+  identifierstyle=\bfseries\color{deforange},
+  basicstyle=\scriptsize\ttfamily,	
+  showstringspaces=false,
+  numberstyle=\scriptsize,					
+  captionpos=b,
+  tabsize=4,
+  stepnumber=1,										
+  breaklines=true
+}
+
+
+\lstdefinelanguage{CMD}{
+  morekeywords={mvn, package, Dtycho, javadoc, targetPlatform, test},
+  sensitive=false,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]",
+  keywordstyle=\bfseries\color{defblue},
+  commentstyle=\bfseries\color{defgreen},
+  stringstyle=\bfseries\color{defgreen},
+  identifierstyle=\bfseries\color{deforange},
+  basicstyle=\scriptsize\ttfamily,	
+  showstringspaces=false,
+  numberstyle=\scriptsize,					
+  captionpos=b,
+  tabsize=4,
+  stepnumber=1,										
+  breaklines=true
+}
+
+\lstdefinelanguage{Xtext}{
+  morekeywords={grammar, generate, with, returns, import, as},
+  sensitive=false,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  keywordstyle=\bfseries\color{deforange},
+  commentstyle=\bfseries\color{defgreen},
+  stringstyle=\bfseries\color{defred},
+  identifierstyle=\bfseries\color{defblue},
+  basicstyle=\scriptsize\ttfamily,	
+  showstringspaces=false,
+  numberstyle=\scriptsize,					
+  captionpos=b,
+  tabsize=4,
+  stepnumber=1,										
+  breaklines=true
+}
+
+\lstdefinelanguage{MWE2}{
+  morekeywords={fragment, component, language, referencedGenModels, 
+   fileExtensions, composedCheck, generatorProjectName, modelFileExtension, 
+   uri},
+  sensitive=false,
+  morecomment=[l]{//},
+  morestring=[b]",
+  keywordstyle=\bfseries\color{defblue},
+  commentstyle=\bfseries\color{defred},
+  stringstyle=\bfseries\color{deforange},
+  identifierstyle=\bfseries\color{defgreen},
+  basicstyle=\scriptsize\ttfamily,	
+  showstringspaces=false,
+  numberstyle=\scriptsize,					
+  captionpos=b,
+  tabsize=4,
+  stepnumber=1,										
+  breaklines=true
+}
+
 \begin{document}
 \begin{titlepage}   
-
-\bibliographystyle{alphadin}
 
 \topmargin0mm   
 
@@ -81,8 +192,8 @@
 \smallskip  \centering
   \begin{minipage}{\textwidth}     \centering     \vspace{5cm}
     \renewcommand{\baselinestretch}{1.8}    \small\normalsize     {\Huge \bf
-    Documentation \\ \normalsize Subtitle \\ Another Subtitle}\\ \vspace{2cm} {\normalsize \bf Michael Frey}\\  \vspace{6cm} {\small \bf
-    Last Update: 4 September 2011 }\\    \renewcommand{\baselinestretch}{1}
+    A LUA Code Generator for the Flow Query Language \\ \normalsize Documentation Service Contract}\\ \vspace{2cm} {\normalsize \bf Michael Frey}\\  \vspace{6cm} {\small \bf
+    Last Update: 12th December 2011 }\\    \renewcommand{\baselinestretch}{1}
     \small\normalsize   \end{minipage}   
 \clearpage 
 \end{titlepage} 
@@ -90,7 +201,12 @@
 \newpage
 \tableofcontents
 \newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
 \lstlistoflistings
+
 
 \include{introduction}
 \include{installation}
@@ -99,7 +215,7 @@
 \include{summary}
 
 \addcontentsline{toc}{section}{Literature}
-\bibliographystyle{plain}
+\bibliographystyle{alphadin}
 \bibliography{doc}
 
 \end{document}

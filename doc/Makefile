@@ -1,49 +1,36 @@
-TEXFILE=doc.tex
-FILE=doc.tex
-FILE2=doc
-BIBFILE=doc.bib
-PDFFILE=doc.pdf
-DVIFILE=doc.dvi
-PSFILE=doc.ps
+ECHOCMD:=/bin/echo -e
+LATEX:=pdflatex
+BIBTEX:=bibtex
+DVIPDF:=dvipdf
 
-BIBTEX=bibtex
-PDF=pdflatex
-TEX=latex
-PDFPROG=acroread
+TARGET:=doc
 
-all: ps2pdf 
+default: main
 
-ps2pdf:$(FILE)
-	pdflatex $(FILE)        \
-	&& pdflatex $(FILE)    \
-	&& bibtex $(FILE2)    \
-	&& bibtex $(FILE2)   \
-	&& pdflatex $(FILE)     \
-	&& pdflatex $(FILE)    \
-	&& pdflatex $(FILE)
-
-#	latex $(FILE)
-#	latex $(FILE)
-#	dvips $(DVIFILE)
-#	ps2pdf $(PSFILE)
-
-# PDF erzeugen
-pdflatex: $(TEXFILE) 
-	$(PDF) $(TEXFILE) 
-
-bibtex: $(TEXFILE) 
-	$(TEX) $(TEXFILE) 
-	$(BIBTEX) $(BIBFILE)
-	$(TEX) $(TEXFILE) 
-	$(TEX) $(TEXFILE) 
-
-bib:
-	$(BIBTEX) $(BIBFILE)
-
-show:
-	$(PDFPROG) $(PDFFILE)&
+main:
+	@$(LATEX)  $(TARGET)
+	@$(BIBTEX) $(TARGET)
+	@$(LATEX)  $(TARGET)
+	@$(LATEX)  $(TARGET)
+#	@$(DVIPDF) $(TARGET)
 
 .PHONY: clean
+
 clean:
-	rm -f *.dvi *.toc *.log *.aux *.b*
-	rm -f doc.pdf *.out
+	@rm -f $(TARGET).aux \
+	       $(TARGET).log \
+	       $(TARGET).nav \
+	       $(TARGET).out \
+	       $(TARGET).snm \
+	       $(TARGET).toc \
+	       $(TARGET).vrb \
+	       $(TARGET).pdf \
+	       $(TARGET).dvi \
+	       $(TARGET).ps  \
+	       $(TARGET).bbl \
+	       $(TARGET).blg \
+	       $(TARGET).thm \
+	       $(TARGET).brf \
+	       missfont.log  \
+	       *.log
+	@rm -f *~

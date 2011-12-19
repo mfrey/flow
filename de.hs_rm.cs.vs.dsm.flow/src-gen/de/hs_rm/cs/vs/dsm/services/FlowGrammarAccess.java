@@ -1157,6 +1157,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAverageOperatorParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
 		private final RuleCall cElementJoinOperatorParserRuleCall_11 = (RuleCall)cAlternatives.eContents().get(11);
 		private final RuleCall cMatchOperatorParserRuleCall_12 = (RuleCall)cAlternatives.eContents().get(12);
+<<<<<<< HEAD
 		private final RuleCall cModuloOperatorParserRuleCall_13 = (RuleCall)cAlternatives.eContents().get(13);
 		private final RuleCall cRandomOperatorParserRuleCall_14 = (RuleCall)cAlternatives.eContents().get(14);
 		private final RuleCall cSWRLOperatorParserRuleCall_15 = (RuleCall)cAlternatives.eContents().get(15);
@@ -1166,10 +1167,14 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDivisionOperatorParserRuleCall_19 = (RuleCall)cAlternatives.eContents().get(19);
 		private final RuleCall cOutputOperatorParserRuleCall_20 = (RuleCall)cAlternatives.eContents().get(20);
 		private final RuleCall cSPARQLOperatorParserRuleCall_21 = (RuleCall)cAlternatives.eContents().get(21);
+=======
+		private final RuleCall cSWRLOperatorParserRuleCall_13 = (RuleCall)cAlternatives.eContents().get(13);
+>>>>>>> master
 		
 		/// **
 		// * The rule summarizes the operators which have a return type
 		// * / ReturnTypeOperator:
+<<<<<<< HEAD
 		//	InputOperator | JoinOperator | LogOperator | DecisionTreeOperator | TagOperator | UnTagOperator | FilterOperator |
 		//	SplitOperator | CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator |
 		//	ModuloOperator | RandomOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator |
@@ -1180,6 +1185,16 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//SplitOperator | CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator |
 		//ModuloOperator | RandomOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator |
 		//DivisionOperator | OutputOperator | SPARQLOperator
+=======
+		//	InputOperator | JoinOperator | SymmetricDifferenceOperator | DifferenceOperator | TagOperator | UnTagOperator |
+		//	FilterOperator | SplitOperator | CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator |
+		//	MatchOperator | SWRLOperator;
+		public ParserRule getRule() { return rule; }
+
+		//InputOperator | JoinOperator | SymmetricDifferenceOperator | DifferenceOperator | TagOperator | UnTagOperator |
+		//FilterOperator | SplitOperator | CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator |
+		//MatchOperator | SWRLOperator
+>>>>>>> master
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//InputOperator
@@ -1221,6 +1236,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//MatchOperator
 		public RuleCall getMatchOperatorParserRuleCall_12() { return cMatchOperatorParserRuleCall_12; }
 
+<<<<<<< HEAD
 		//ModuloOperator
 		public RuleCall getModuloOperatorParserRuleCall_13() { return cModuloOperatorParserRuleCall_13; }
 
@@ -1229,6 +1245,11 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 
 		//SWRLOperator
 		public RuleCall getSWRLOperatorParserRuleCall_15() { return cSWRLOperatorParserRuleCall_15; }
+=======
+		//SWRLOperator
+		public RuleCall getSWRLOperatorParserRuleCall_13() { return cSWRLOperatorParserRuleCall_13; }
+	}
+>>>>>>> master
 
 		//AdditionOperator
 		public RuleCall getAdditionOperatorParserRuleCall_16() { return cAdditionOperatorParserRuleCall_16; }
@@ -1576,16 +1597,16 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cReferenceStreamAccessParserRuleCall_2_0 = (RuleCall)cReferenceAssignment_2.eContents().get(0);
 		
 		//UnTagElement:
-		//	element=[OWL::OWLClass|STRING] "is" reference=StreamAccess;
+		//	element=[owl::OWLClass|STRING] "is" reference=StreamAccess;
 		public ParserRule getRule() { return rule; }
 
-		//element=[OWL::OWLClass|STRING] "is" reference=StreamAccess
+		//element=[owl::OWLClass|STRING] "is" reference=StreamAccess
 		public Group getGroup() { return cGroup; }
 
-		//element=[OWL::OWLClass|STRING]
+		//element=[owl::OWLClass|STRING]
 		public Assignment getElementAssignment_0() { return cElementAssignment_0; }
 
-		//[OWL::OWLClass|STRING]
+		//[owl::OWLClass|STRING]
 		public CrossReference getElementOWLClassCrossReference_0_0() { return cElementOWLClassCrossReference_0_0; }
 
 		//STRING
@@ -1643,10 +1664,10 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		/// **
 		// * The tag element for a owl class
 		// * / TagClassElement:
-		//	reference=StreamAccess "is" "class" element=[OWL::OWLClass|STRING];
+		//	reference=StreamAccess "is" "class" element=[owl::OWLClass|STRING];
 		public ParserRule getRule() { return rule; }
 
-		//reference=StreamAccess "is" "class" element=[OWL::OWLClass|STRING]
+		//reference=StreamAccess "is" "class" element=[owl::OWLClass|STRING]
 		public Group getGroup() { return cGroup; }
 
 		//reference=StreamAccess
@@ -1661,10 +1682,10 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//"class"
 		public Keyword getClassKeyword_2() { return cClassKeyword_2; }
 
-		//element=[OWL::OWLClass|STRING]
+		//element=[owl::OWLClass|STRING]
 		public Assignment getElementAssignment_3() { return cElementAssignment_3; }
 
-		//[OWL::OWLClass|STRING]
+		//[owl::OWLClass|STRING]
 		public CrossReference getElementOWLClassCrossReference_3_0() { return cElementOWLClassCrossReference_3_0; }
 
 		//STRING
@@ -1685,10 +1706,10 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		/// **
 		// * The tag element for a owl object property
 		// * / TagObjectPropertyElement:
-		//	reference=StreamAccess "is" "objectproperty" element=[OWL::OWLObjectProperty|STRING];
+		//	reference=StreamAccess "is" "objectproperty" element=[owl::OWLObjectProperty|STRING];
 		public ParserRule getRule() { return rule; }
 
-		//reference=StreamAccess "is" "objectproperty" element=[OWL::OWLObjectProperty|STRING]
+		//reference=StreamAccess "is" "objectproperty" element=[owl::OWLObjectProperty|STRING]
 		public Group getGroup() { return cGroup; }
 
 		//reference=StreamAccess
@@ -1703,10 +1724,10 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//"objectproperty"
 		public Keyword getObjectpropertyKeyword_2() { return cObjectpropertyKeyword_2; }
 
-		//element=[OWL::OWLObjectProperty|STRING]
+		//element=[owl::OWLObjectProperty|STRING]
 		public Assignment getElementAssignment_3() { return cElementAssignment_3; }
 
-		//[OWL::OWLObjectProperty|STRING]
+		//[owl::OWLObjectProperty|STRING]
 		public CrossReference getElementOWLObjectPropertyCrossReference_3_0() { return cElementOWLObjectPropertyCrossReference_3_0; }
 
 		//STRING
@@ -1727,10 +1748,10 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		/// **
 		// * The tag element for a datatype property
 		// * / TagDataTypePropertyElement:
-		//	reference=StreamAccess "is" "datatype" element=[OWL::OWLDatatypeProperty|STRING];
+		//	reference=StreamAccess "is" "datatype" element=[owl::OWLDatatypeProperty|STRING];
 		public ParserRule getRule() { return rule; }
 
-		//reference=StreamAccess "is" "datatype" element=[OWL::OWLDatatypeProperty|STRING]
+		//reference=StreamAccess "is" "datatype" element=[owl::OWLDatatypeProperty|STRING]
 		public Group getGroup() { return cGroup; }
 
 		//reference=StreamAccess
@@ -1745,10 +1766,10 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//"datatype"
 		public Keyword getDatatypeKeyword_2() { return cDatatypeKeyword_2; }
 
-		//element=[OWL::OWLDatatypeProperty|STRING]
+		//element=[owl::OWLDatatypeProperty|STRING]
 		public Assignment getElementAssignment_3() { return cElementAssignment_3; }
 
-		//[OWL::OWLDatatypeProperty|STRING]
+		//[owl::OWLDatatypeProperty|STRING]
 		public CrossReference getElementOWLDatatypePropertyCrossReference_3_0() { return cElementOWLDatatypePropertyCrossReference_3_0; }
 
 		//STRING
@@ -1987,19 +2008,24 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cVariableStreamAccessParserRuleCall_4_2_0 = (RuleCall)cVariableAssignment_4_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
+<<<<<<< HEAD
 		/// **
 		// * TODO
 		// * / Rule:
 		//	name=[OWL::OWLObjectProperty|STRING] "(" "?" variable+=StreamAccess ("," "?" variable+=StreamAccess)* ")";
+=======
+		//Rule:
+		//	name=[owl::OWLObjectProperty|STRING] "(" "?" variable+=StreamAccess ("," "?" variable+=StreamAccess)* ")";
+>>>>>>> master
 		public ParserRule getRule() { return rule; }
 
-		//name=[OWL::OWLObjectProperty|STRING] "(" "?" variable+=StreamAccess ("," "?" variable+=StreamAccess)* ")"
+		//name=[owl::OWLObjectProperty|STRING] "(" "?" variable+=StreamAccess ("," "?" variable+=StreamAccess)* ")"
 		public Group getGroup() { return cGroup; }
 
-		//name=[OWL::OWLObjectProperty|STRING]
+		//name=[owl::OWLObjectProperty|STRING]
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 
-		//[OWL::OWLObjectProperty|STRING]
+		//[owl::OWLObjectProperty|STRING]
 		public CrossReference getNameOWLObjectPropertyCrossReference_0_0() { return cNameOWLObjectPropertyCrossReference_0_0; }
 
 		//STRING
@@ -2038,6 +2064,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class CountOperatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CountOperator");
+<<<<<<< HEAD
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cCountKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -2085,6 +2112,8 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class StandardDeviationOperatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StandardDeviationOperator");
+=======
+>>>>>>> master
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cStdKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -3812,10 +3841,16 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	/// **
 	// * The rule summarizes the operators which have a return type
 	// * / ReturnTypeOperator:
+<<<<<<< HEAD
 	//	InputOperator | JoinOperator | LogOperator | DecisionTreeOperator | TagOperator | UnTagOperator | FilterOperator |
 	//	SplitOperator | CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator |
 	//	ModuloOperator | RandomOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator |
 	//	DivisionOperator | OutputOperator | SPARQLOperator;
+=======
+	//	InputOperator | JoinOperator | SymmetricDifferenceOperator | DifferenceOperator | TagOperator | UnTagOperator |
+	//	FilterOperator | SplitOperator | CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator |
+	//	MatchOperator | SWRLOperator;
+>>>>>>> master
 	public ReturnTypeOperatorElements getReturnTypeOperatorAccess() {
 		return (pReturnTypeOperator != null) ? pReturnTypeOperator : (pReturnTypeOperator = new ReturnTypeOperatorElements());
 	}
@@ -3907,7 +3942,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//UnTagElement:
-	//	element=[OWL::OWLClass|STRING] "is" reference=StreamAccess;
+	//	element=[owl::OWLClass|STRING] "is" reference=StreamAccess;
 	public UnTagElementElements getUnTagElementAccess() {
 		return (pUnTagElement != null) ? pUnTagElement : (pUnTagElement = new UnTagElementElements());
 	}
@@ -3933,7 +3968,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	/// **
 	// * The tag element for a owl class
 	// * / TagClassElement:
-	//	reference=StreamAccess "is" "class" element=[OWL::OWLClass|STRING];
+	//	reference=StreamAccess "is" "class" element=[owl::OWLClass|STRING];
 	public TagClassElementElements getTagClassElementAccess() {
 		return (pTagClassElement != null) ? pTagClassElement : (pTagClassElement = new TagClassElementElements());
 	}
@@ -3945,7 +3980,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	/// **
 	// * The tag element for a owl object property
 	// * / TagObjectPropertyElement:
-	//	reference=StreamAccess "is" "objectproperty" element=[OWL::OWLObjectProperty|STRING];
+	//	reference=StreamAccess "is" "objectproperty" element=[owl::OWLObjectProperty|STRING];
 	public TagObjectPropertyElementElements getTagObjectPropertyElementAccess() {
 		return (pTagObjectPropertyElement != null) ? pTagObjectPropertyElement : (pTagObjectPropertyElement = new TagObjectPropertyElementElements());
 	}
@@ -3957,7 +3992,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	/// **
 	// * The tag element for a datatype property
 	// * / TagDataTypePropertyElement:
-	//	reference=StreamAccess "is" "datatype" element=[OWL::OWLDatatypeProperty|STRING];
+	//	reference=StreamAccess "is" "datatype" element=[owl::OWLDatatypeProperty|STRING];
 	public TagDataTypePropertyElementElements getTagDataTypePropertyElementAccess() {
 		return (pTagDataTypePropertyElement != null) ? pTagDataTypePropertyElement : (pTagDataTypePropertyElement = new TagDataTypePropertyElementElements());
 	}
@@ -4031,10 +4066,35 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		return getSWRLRuleAccess().getRule();
 	}
 
+<<<<<<< HEAD
 	/// **
 	// * TODO
 	// * / Rule:
 	//	name=[OWL::OWLObjectProperty|STRING] "(" "?" variable+=StreamAccess ("," "?" variable+=StreamAccess)* ")";
+=======
+	//AntecedentRule:
+	//	"Antecedent" "(" atoms+=Rule ("," atoms+=Rule)* ")";
+	public AntecedentRuleElements getAntecedentRuleAccess() {
+		return (pAntecedentRule != null) ? pAntecedentRule : (pAntecedentRule = new AntecedentRuleElements());
+	}
+	
+	public ParserRule getAntecedentRuleRule() {
+		return getAntecedentRuleAccess().getRule();
+	}
+
+	//ConsequentRule:
+	//	"Consequent" "(" atoms+=Rule ("," atoms+=Rule)* ")";
+	public ConsequentRuleElements getConsequentRuleAccess() {
+		return (pConsequentRule != null) ? pConsequentRule : (pConsequentRule = new ConsequentRuleElements());
+	}
+	
+	public ParserRule getConsequentRuleRule() {
+		return getConsequentRuleAccess().getRule();
+	}
+
+	//Rule:
+	//	name=[owl::OWLObjectProperty|STRING] "(" "?" variable+=StreamAccess ("," "?" variable+=StreamAccess)* ")";
+>>>>>>> master
 	public RuleElements getRuleAccess() {
 		return (pRule != null) ? pRule : (pRule = new RuleElements());
 	}

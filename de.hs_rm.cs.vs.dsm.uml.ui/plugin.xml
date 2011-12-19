@@ -1,0 +1,10 @@
+<plugin>
+	<extension
+	      point="org.eclipse.xtext.extension_resourceServiceProvider">
+	    <resourceServiceProvider
+	          class="de.hs_rm.cs.vs.dsm.uml.ui.ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.generic.EmfResourceUIServiceProvider"
+	          uriExtension="uml">
+	    </resourceServiceProvider>
+	</extension>
+
+</plugin>

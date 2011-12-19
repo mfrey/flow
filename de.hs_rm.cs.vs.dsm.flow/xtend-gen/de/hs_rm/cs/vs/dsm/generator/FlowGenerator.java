@@ -1,6 +1,7 @@
 package de.hs_rm.cs.vs.dsm.generator;
 
 import com.google.inject.Inject;
+<<<<<<< HEAD
 import de.hs_rm.cs.vs.dsm.flow.AdditionOperator;
 import de.hs_rm.cs.vs.dsm.flow.AverageOperator;
 import de.hs_rm.cs.vs.dsm.flow.CountOperator;
@@ -47,9 +48,10 @@ import de.hs_rm.cs.vs.dsm.generator.StandardDeviationOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.SubtractionOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.TagOperatorGenerator;
 import de.hs_rm.cs.vs.dsm.generator.UnTagOperatorGenerator;
+=======
+import de.hs_rm.cs.vs.dsm.flow.PackageDeclaration;
+>>>>>>> master
 import de.hs_rm.cs.vs.dsm.generator.Util;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.IFileSystemAccess;
@@ -84,6 +86,7 @@ public class FlowGenerator implements IGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("fm = get_instance();");
     _builder.newLine();
+<<<<<<< HEAD
     {
       EList<ModelElement> _elements = e.getElements();
       for(final ModelElement elements : _elements) {
@@ -92,6 +95,9 @@ public class FlowGenerator implements IGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
+=======
+    _builder.newLine();
+>>>>>>> master
     Util _instance = Util.getInstance();
     String _startOperators = _instance.getStartOperators();
     _builder.append(_startOperators, "");
@@ -105,6 +111,7 @@ public class FlowGenerator implements IGenerator {
     _builder.newLineIfNotEmpty();
     return _builder;
   }
+<<<<<<< HEAD
   
   public StringConcatenation compile(final ModelElement m) {
     StringConcatenation _builder = new StringConcatenation();
@@ -638,4 +645,6 @@ public class FlowGenerator implements IGenerator {
         java.util.Arrays.<Object>asList(pOperator, pStatement).toString());
     }
   }
+=======
+>>>>>>> master
 }

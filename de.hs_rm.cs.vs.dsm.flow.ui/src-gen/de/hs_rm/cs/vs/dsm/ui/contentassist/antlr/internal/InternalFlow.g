@@ -1159,6 +1159,7 @@ finally {
 
 
 
+<<<<<<< HEAD
 // Entry rule entryRuleAdditionOperator
 entryRuleAdditionOperator 
 :
@@ -1189,6 +1190,10 @@ finally {
 
 // Entry rule entryRuleSubtractionOperator
 entryRuleSubtractionOperator 
+=======
+// Entry rule entryRuleCountOperator
+entryRuleCountOperator 
+>>>>>>> master
 :
 { before(grammarAccess.getSubtractionOperatorRule()); }
 	 ruleSubtractionOperator
@@ -2155,6 +2160,7 @@ rule__ReturnTypeOperator__Alternatives
 )
 
     |(
+<<<<<<< HEAD
 { before(grammarAccess.getReturnTypeOperatorAccess().getModuloOperatorParserRuleCall_13()); }
 	ruleModuloOperator
 { after(grammarAccess.getReturnTypeOperatorAccess().getModuloOperatorParserRuleCall_13()); }
@@ -2170,6 +2176,11 @@ rule__ReturnTypeOperator__Alternatives
 { before(grammarAccess.getReturnTypeOperatorAccess().getSWRLOperatorParserRuleCall_15()); }
 	ruleSWRLOperator
 { after(grammarAccess.getReturnTypeOperatorAccess().getSWRLOperatorParserRuleCall_15()); }
+=======
+{ before(grammarAccess.getReturnTypeOperatorAccess().getSWRLOperatorParserRuleCall_13()); }
+	ruleSWRLOperator
+{ after(grammarAccess.getReturnTypeOperatorAccess().getSWRLOperatorParserRuleCall_13()); }
+>>>>>>> master
 )
 
     |(
@@ -10159,6 +10170,7 @@ finally {
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -10359,6 +10371,9 @@ finally {
 
 
 rule__MultiplicationOperator__Group__0
+=======
+rule__CountOperator__Group__0
+>>>>>>> master
     @init {
 		int stackSize = keepStackSize();
     }
@@ -15540,6 +15555,7 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+<<<<<<< HEAD
 rule__DivisionOperator__ParameterAssignment_2
     @init {
 		int stackSize = keepStackSize();
@@ -15571,6 +15587,9 @@ finally {
 }
 
 rule__DivisionOperator__StreamElementAssignment_4_1
+=======
+rule__CountOperator__ParameterAssignment_2
+>>>>>>> master
     @init {
 		int stackSize = keepStackSize();
     }

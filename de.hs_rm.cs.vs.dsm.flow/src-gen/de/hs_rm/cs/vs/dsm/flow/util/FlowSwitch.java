@@ -1278,6 +1278,7 @@ public class FlowSwitch<T> extends Switch<T>
   }
 
   /**
+<<<<<<< HEAD
    * Returns the result of interpreting the object as an instance of '<em>Average Operator</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1295,6 +1296,9 @@ public class FlowSwitch<T> extends Switch<T>
 
   /**
    * Returns the result of interpreting the object as an instance of '<em>Addition Operator</em>'.
+=======
+   * Returns the result of interpreting the object as an instance of '<em>Count Operator</em>'.
+>>>>>>> master
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.

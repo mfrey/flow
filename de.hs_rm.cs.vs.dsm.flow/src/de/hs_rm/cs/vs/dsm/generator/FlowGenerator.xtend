@@ -53,10 +53,9 @@ class FlowGenerator implements IGenerator {
 	@Inject extension IQualifiedNameProvider nameProvider
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-		/***
-		 * Iterate through the elements
-		 */
+		/** Iterate through the elements */
     	for(model : resource.allContentsIterable.filter(typeof(PackageDeclaration))) {
+
     		    fsa.generateFile(
     		    	/** Generate a *.lua file for each package */
                		model.fullyQualifiedName.toString.replace(".", "/") + ".lua",
