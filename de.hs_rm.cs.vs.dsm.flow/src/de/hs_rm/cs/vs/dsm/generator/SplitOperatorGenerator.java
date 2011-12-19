@@ -37,8 +37,14 @@ public class SplitOperatorGenerator extends AbstractOperatorGenerator {
 		this.getInputStreams().add(this.mOperator.getParameter().getStream().getName());
 		// Set the name of the operator
 		this.setOperatorType(OPERATOR_TYPE);
+		
+		if(this.getOutputStreams().size()== 2){
+			mStream = this.getOutputStreams().get(0);
+			this.setOperatorStream(mStream);
+		}
+		
 		// Set the identifier of the operator in LUA
-		mStream = this.getOperatorStream();
+		//mStream = this.getOperatorStream();
 	}
 
 	/**

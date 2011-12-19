@@ -248,7 +248,7 @@ SWRLOperator:
  * TODO
  */
 SWRLRule:
-	atoms+=Rule ('∧' '(' atoms+=Rule)* '⇒' consequent=Rule;
+	atoms+=Rule ('∧' atoms+=Rule)* '⇒' consequent=Rule;
 
 /**
  * TODO

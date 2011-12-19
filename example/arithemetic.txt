@@ -1,22 +1,32 @@
-package StreamStatementExample {
-	
-	stream integerStreamz {
+package arithmetic {
+
+	stream integerStream {
 		int element;
+		float anotherElement;
 	}
 	
-	int az = 1;
-	int bz = 2;
-	int cz = 3;
+	int newElement = 2;
+	int o = 42;
 	
-	integerStream r;
-	integerStream s;
-	integerStream t;
-	integerStream u;
-	integerStream v;
-	
-	
-	r = add(s.element, 5, s[now]);
-	t = sub(r.element, 42.3, s[now]);
-	u = mult(t.element, r.element, r[now]);
-	v = div(u.element, 9, u[last 10 elements]);
+	integerStream a;
+	integerStream b;
+	integerStream c;
+	integerStream d;
+	integerStream e;
+	integerStream f;
+	integerStream g;
+	integerStream h;
+
+	a = in("http://www.test.de", "localhost", 9595);
+	// Operation: d = a.element + 2
+	d = add(a.element, 2);
+	// Operation: e = d.element - o
+	e = sub(d.element, o);
+	// Operation: f = e.element * e.anotherElement
+	f = mult(e.element, e.anotherElement);
+	// Operation: g = f.element / 3
+	g = div(f.element, 3);
+	// Operation: h = g.element % 2
+	h = mod(g.element, 2);
 }
+

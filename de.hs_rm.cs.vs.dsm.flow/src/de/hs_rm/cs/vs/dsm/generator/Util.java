@@ -334,7 +334,6 @@ public class Util {
 			}
 
 			// Replace the string 
-			result += "DEBUG " + stream + " with " + pOut.get((pOut.size()-1)) + "\n";
 			generator.replaceStream(stream, pOut.get((pOut.size()-1)));
 			// Store the result
 			result += generator.toString();

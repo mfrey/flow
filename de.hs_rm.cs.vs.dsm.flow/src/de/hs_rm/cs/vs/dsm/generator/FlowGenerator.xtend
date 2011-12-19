@@ -19,9 +19,8 @@ import de.hs_rm.cs.vs.dsm.flow.RandomOperator
 
 import de.hs_rm.cs.vs.dsm.flow.TagOperator
 import de.hs_rm.cs.vs.dsm.flow.UnTagOperator
+import de.hs_rm.cs.vs.dsm.flow.SWRLOperator
 import de.hs_rm.cs.vs.dsm.flow.SPARQLOperator
-
-
 import de.hs_rm.cs.vs.dsm.flow.DecisionTreeOperator
 
 import de.hs_rm.cs.vs.dsm.flow.StreamStatement
@@ -124,6 +123,8 @@ class FlowGenerator implements IGenerator {
 		«write((statement.operator as UnTagOperator),statement)»
 		«ELSEIF statement.operator.eClass.name.equals("SPARQLOperator")»
 		«write((statement.operator as SPARQLOperator),statement)»
+		«ELSEIF statement.operator.eClass.name.equals("SWRLOperator")»
+		«write((statement.operator as SWRLOperator),statement)»
 		«ENDIF»
 	'''
 
@@ -267,5 +268,12 @@ class FlowGenerator implements IGenerator {
 			pStatement
 		)	
 		sparql.toString()
+	}
+	
+	def dispatch String write(SWRLOperator pOperator, StreamStatement pStatement){
+		var SWRLOperatorGenerator swrl = new SWRLOperatorGenerator(
+			pStatement
+		)	
+		swrl.toString()
 	}
 }

@@ -233,7 +233,7 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSWRLOperatorAccess().getRuleAssignment_2(), "rule__SWRLOperator__RuleAssignment_2");
 					put(grammarAccess.getSWRLOperatorAccess().getStreamAssignment_4(), "rule__SWRLOperator__StreamAssignment_4");
 					put(grammarAccess.getSWRLRuleAccess().getAtomsAssignment_0(), "rule__SWRLRule__AtomsAssignment_0");
-					put(grammarAccess.getSWRLRuleAccess().getAtomsAssignment_1_2(), "rule__SWRLRule__AtomsAssignment_1_2");
+					put(grammarAccess.getSWRLRuleAccess().getAtomsAssignment_1_1(), "rule__SWRLRule__AtomsAssignment_1_1");
 					put(grammarAccess.getSWRLRuleAccess().getConsequentAssignment_3(), "rule__SWRLRule__ConsequentAssignment_3");
 					put(grammarAccess.getRuleAccess().getNameAssignment_0(), "rule__Rule__NameAssignment_0");
 					put(grammarAccess.getRuleAccess().getVariableAssignment_3(), "rule__Rule__VariableAssignment_3");

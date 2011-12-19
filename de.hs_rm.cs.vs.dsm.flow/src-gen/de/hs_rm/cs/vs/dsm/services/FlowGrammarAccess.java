@@ -1923,9 +1923,8 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAtomsRuleParserRuleCall_0_0 = (RuleCall)cAtomsAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cLogicalAndKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cAtomsAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cAtomsRuleParserRuleCall_1_2_0 = (RuleCall)cAtomsAssignment_1_2.eContents().get(0);
+		private final Assignment cAtomsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cAtomsRuleParserRuleCall_1_1_0 = (RuleCall)cAtomsAssignment_1_1.eContents().get(0);
 		private final Keyword cRightwardsDoubleArrowKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cConsequentAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cConsequentRuleParserRuleCall_3_0 = (RuleCall)cConsequentAssignment_3.eContents().get(0);
@@ -1933,10 +1932,10 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		/// **
 		// * TODO
 		// * / SWRLRule:
-		//	atoms+=Rule ("∧" "(" atoms+=Rule)* "⇒" consequent=Rule;
+		//	atoms+=Rule ("∧" atoms+=Rule)* "⇒" consequent=Rule;
 		public ParserRule getRule() { return rule; }
 
-		//atoms+=Rule ("∧" "(" atoms+=Rule)* "⇒" consequent=Rule
+		//atoms+=Rule ("∧" atoms+=Rule)* "⇒" consequent=Rule
 		public Group getGroup() { return cGroup; }
 
 		//atoms+=Rule
@@ -1945,20 +1944,17 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//Rule
 		public RuleCall getAtomsRuleParserRuleCall_0_0() { return cAtomsRuleParserRuleCall_0_0; }
 
-		//("∧" "(" atoms+=Rule)*
+		//("∧" atoms+=Rule)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"∧"
 		public Keyword getLogicalAndKeyword_1_0() { return cLogicalAndKeyword_1_0; }
 
-		//"("
-		public Keyword getLeftParenthesisKeyword_1_1() { return cLeftParenthesisKeyword_1_1; }
-
 		//atoms+=Rule
-		public Assignment getAtomsAssignment_1_2() { return cAtomsAssignment_1_2; }
+		public Assignment getAtomsAssignment_1_1() { return cAtomsAssignment_1_1; }
 
 		//Rule
-		public RuleCall getAtomsRuleParserRuleCall_1_2_0() { return cAtomsRuleParserRuleCall_1_2_0; }
+		public RuleCall getAtomsRuleParserRuleCall_1_1_0() { return cAtomsRuleParserRuleCall_1_1_0; }
 
 		//"⇒"
 		public Keyword getRightwardsDoubleArrowKeyword_2() { return cRightwardsDoubleArrowKeyword_2; }
@@ -4022,7 +4018,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	/// **
 	// * TODO
 	// * / SWRLRule:
-	//	atoms+=Rule ("∧" "(" atoms+=Rule)* "⇒" consequent=Rule;
+	//	atoms+=Rule ("∧" atoms+=Rule)* "⇒" consequent=Rule;
 	public SWRLRuleElements getSWRLRuleAccess() {
 		return (pSWRLRule != null) ? pSWRLRule : (pSWRLRule = new SWRLRuleElements());
 	}
