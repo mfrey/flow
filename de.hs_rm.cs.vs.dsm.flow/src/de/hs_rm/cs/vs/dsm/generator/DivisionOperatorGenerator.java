@@ -39,16 +39,19 @@ public class DivisionOperatorGenerator extends ArithmeticOperatorGenerator {
 		mOperator = (DivisionOperator) pStatement.getOperator();
 		// Set the operator type
 		this.setOperationType(OPERATOR_TYPE);
-
+		
 		this.getInputStreams().add(mOperator.getParameter().getReference().getName());
+		this.setStreamParameter(mOperator.getParameter());
 		
 		if(mOperator.getLiteral() != null){
 			this.setLiteral(mOperator.getLiteral().toPlainString());
 		}else if(mOperator.getVariable() != null){
 			this.setVariableDefinition(mOperator.getVariable());
 		}else{
-			this.getInputStreams().add(mOperator.getStreamElement().getReference().getName());
-			this.setStreamParameter(mOperator.getStreamElement());
+			if(this.getInputStreams().get(0) != mOperator.getStreamElement().getReference().getName()){
+				this.getInputStreams().add(mOperator.getStreamElement().getReference().getName());
+			}
+			this.setStreamParameterOperand(mOperator.getStreamElement());
 		}
 	}
 }

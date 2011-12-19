@@ -15,6 +15,8 @@ public class ArithmeticOperatorGenerator extends AbstractOperatorGenerator {
 	private BarrierOperator mBarrier;
 	/** The stream and its element which is used in an arithmetic operation */ 
 	private StreamAccess mStreamParameter;
+	/** The operand (stream and its element) which is used in an arithmetic operation */ 
+	private StreamAccess mStreamParameterOperand;
 	/** The literal which is used in an arithmetic operation */
 	private String mLiteral = "";
 	/** The name of the output stream */
@@ -44,12 +46,17 @@ public class ArithmeticOperatorGenerator extends AbstractOperatorGenerator {
 		if(mStreamParameter != null){
 			result += Util.getInstance().createParameter(mStream, "stream", mStreamParameter.getReference().getName());
 			result += Util.getInstance().createParameter(mStream, "element", mStreamParameter.getElement().getName());
-		}else if(!mLiteral.equals("")){
-			result += Util.getInstance().createParameter(mStream, "literal", mLiteral);
-		}else{
-			// Shouldn't happen
 		}
 		
+		if(!mLiteral.equals("")){
+			result += Util.getInstance().createParameter(mStream, "literal", mLiteral);
+		}
+		
+		if(mStreamParameterOperand != null){
+			result += Util.getInstance().createParameter(mStream, "stream_op", mStreamParameterOperand.getReference().getName());
+			result += Util.getInstance().createParameter(mStream, "element_op", mStreamParameterOperand.getElement().getName());		
+		}
+	
 		return result;
 	}
 
@@ -92,5 +99,13 @@ public class ArithmeticOperatorGenerator extends AbstractOperatorGenerator {
 
 	public void setLiteral(String pLiteral) {
 		this.mLiteral = pLiteral;
+	}
+
+	public StreamAccess getStreamParameterOperand() {
+		return mStreamParameterOperand;
+	}
+
+	public void setStreamParameterOperand(StreamAccess pOperand) {
+		this.mStreamParameterOperand = pOperand;
 	}
 }
