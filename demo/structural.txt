@@ -1,0 +1,34 @@
+package structural {
+	
+	stream integerStream {
+		int element;
+		float anotherElement;
+	}
+	
+	stream newIntegerStream {
+		int elementNew;
+		float anotherElementNew;
+		int oNew;
+	}
+	
+	int newElement = 2;
+	int o = 42;
+	
+	integerStream a;
+	integerStream b;
+	integerStream c;
+	newIntegerStream d;
+	integerStream e;
+	integerStream f;
+	newIntegerStream g;
+	newIntegerStream h;
+	newIntegerStream i;
+	
+	a = in("http://www.test.de", "localhost", 9595);
+	b = in("http://www.anothertest.de", "localhost", 9596);
+	c = join(a, b);
+	d = ejoin(o, c);
+	g, h = split(d);
+	i = filter(g.oNew >= 42, g);
+}
+

@@ -1,0 +1,42 @@
+package StreamStatementExample {
+	import "file:///home/michael/Desktop/Projekte/workspace/runtime-EclipseApplication/TestFlowProject/src/model/cim-meta.owl"
+	
+	stream integerStream {
+		int element;
+		float anotherElement;
+	}
+
+	
+	integerStream a;
+	integerStream b;
+	integerStream c;
+	integerStream d;
+	integerStream e;
+	integerStream f;
+	integerStream g;
+	
+	
+	//g = in("test", "und noch einmal" ,42);
+	
+	a = in("http://www.anothertest.de", "localhost", 9595);
+	
+	b = sparql({SELECT ?"x" WHERE {"foo" "blubber"}},"target", a);
+	
+	c = tag(b.anotherElement is class "<http://vs.cs.hs-rm.de/cim-meta.owl#CIM_Composition>", b);
+	
+	d = swrl("<http://vs.cs.hs-rm.de/cim-meta.owl#CIM_Association__Ref>"(?c.anotherElement, ?c.element) ∧
+		"<http://vs.cs.hs-rm.de/cim-meta.owl#CIM_Association__Role>"(?c.element) ⇒ "<http://vs.cs.hs-rm.de/cim-meta.owl#CIM_Aggregation__Parent>"(?c.anotherElement), c
+	);
+	
+	e = untag("<http://vs.cs.hs-rm.de/cim-meta.owl#CIM_Array>" is d.element, d);
+	
+	f = dtree("PERSON" {"IN", "OUT"}, 
+		"LIGHTOUT" {"YES", "NO"}, 
+		"LIGHTIN" {"YES", "NO"}, 
+		"TEMPERATURE" {"NORMAL", "HIGH", "LOW"}, 
+		"TV" {"ON", "OFF"}, 
+		"WINDOW" {"OPEN", "CLOSED"}, 
+		0.0001, 0.025, 0.98, 450, "ZALUZIE" {"YES", "NO"}, e);
+
+}
+

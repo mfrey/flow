@@ -1,0 +1,18 @@
+package analysis {
+	
+	stream integerStream {
+		int element;
+		float anotherElement;
+	}
+	
+	integerStream a;
+	integerStream b;
+	integerStream c;
+	integerStream d;
+
+	a = in("http://www.test.de", "localhost", 9595);
+	b = avg(a.element, a[last 10 min]);
+	c = count(b.anotherElement, a[last 30 sec]);
+	d = std(c.element, c[last 2 hrs]);
+}
+
