@@ -865,6 +865,25 @@ public interface FlowPackage extends EPackage
   int INPUT_OPERATOR_FEATURE_COUNT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 3;
 
   /**
+   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.NoReturnTypeOperatorImpl <em>No Return Type Operator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.NoReturnTypeOperatorImpl
+   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getNoReturnTypeOperator()
+   * @generated
+   */
+  int NO_RETURN_TYPE_OPERATOR = 21;
+
+  /**
+   * The number of structural features of the '<em>No Return Type Operator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NO_RETURN_TYPE_OPERATOR_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.TagOperatorImpl <em>Tag Operator</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -872,7 +891,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getTagOperator()
    * @generated
    */
-  int TAG_OPERATOR = 21;
+  int TAG_OPERATOR = 22;
 
   /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -909,7 +928,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSPARQLOperator()
    * @generated
    */
-  int SPARQL_OPERATOR = 22;
+  int SPARQL_OPERATOR = 23;
 
   /**
    * The feature id for the '<em><b>Query</b></em>' containment reference.
@@ -955,7 +974,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getQueryTagOperator()
    * @generated
    */
-  int QUERY_TAG_OPERATOR = 23;
+  int QUERY_TAG_OPERATOR = 24;
 
   /**
    * The feature id for the '<em><b>Query Type</b></em>' attribute.
@@ -992,7 +1011,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSparqlQuery()
    * @generated
    */
-  int SPARQL_QUERY = 24;
+  int SPARQL_QUERY = 25;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' containment reference.
@@ -1038,7 +1057,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSparqlQueryVariable()
    * @generated
    */
-  int SPARQL_QUERY_VARIABLE = 25;
+  int SPARQL_QUERY_VARIABLE = 26;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' attribute list.
@@ -1066,7 +1085,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getUnTagOperator()
    * @generated
    */
-  int UN_TAG_OPERATOR = 26;
+  int UN_TAG_OPERATOR = 27;
 
   /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -1103,7 +1122,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getUnTagElement()
    * @generated
    */
-  int UN_TAG_ELEMENT = 27;
+  int UN_TAG_ELEMENT = 28;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' reference.
@@ -1140,7 +1159,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getTagElement()
    * @generated
    */
-  int TAG_ELEMENT = 28;
+  int TAG_ELEMENT = 29;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' containment reference.
@@ -1168,7 +1187,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getTagClassElement()
    * @generated
    */
-  int TAG_CLASS_ELEMENT = 29;
+  int TAG_CLASS_ELEMENT = 30;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' containment reference.
@@ -1205,7 +1224,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getTagObjectPropertyElement()
    * @generated
    */
-  int TAG_OBJECT_PROPERTY_ELEMENT = 30;
+  int TAG_OBJECT_PROPERTY_ELEMENT = 31;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' containment reference.
@@ -1242,7 +1261,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getTagDataTypePropertyElement()
    * @generated
    */
-  int TAG_DATA_TYPE_PROPERTY_ELEMENT = 31;
+  int TAG_DATA_TYPE_PROPERTY_ELEMENT = 32;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' containment reference.
@@ -1279,7 +1298,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBarrierOperator()
    * @generated
    */
-  int BARRIER_OPERATOR = 32;
+  int BARRIER_OPERATOR = 33;
 
   /**
    * The number of structural features of the '<em>Barrier Operator</em>' class.
@@ -1298,7 +1317,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getWindowOperator()
    * @generated
    */
-  int WINDOW_OPERATOR = 33;
+  int WINDOW_OPERATOR = 34;
 
   /**
    * The feature id for the '<em><b>Setting</b></em>' attribute.
@@ -1344,7 +1363,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMarkerOperator()
    * @generated
    */
-  int MARKER_OPERATOR = 34;
+  int MARKER_OPERATOR = 35;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1372,7 +1391,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSWRLOperator()
    * @generated
    */
-  int SWRL_OPERATOR = 35;
+  int SWRL_OPERATOR = 36;
 
   /**
    * The feature id for the '<em><b>Rule</b></em>' containment reference.
@@ -1409,7 +1428,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSWRLRule()
    * @generated
    */
-  int SWRL_RULE = 36;
+  int SWRL_RULE = 37;
 
   /**
    * The feature id for the '<em><b>Atoms</b></em>' containment reference list.
@@ -1446,7 +1465,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getRule()
    * @generated
    */
-  int RULE = 37;
+  int RULE = 38;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' reference.
@@ -1483,11 +1502,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getCountOperator()
    * @generated
    */
-<<<<<<< HEAD
-  int COUNT_OPERATOR = 38;
-=======
   int COUNT_OPERATOR = 39;
->>>>>>> master
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1524,11 +1539,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStandardDeviationOperator()
    * @generated
    */
-<<<<<<< HEAD
-  int STANDARD_DEVIATION_OPERATOR = 39;
-=======
   int STANDARD_DEVIATION_OPERATOR = 40;
->>>>>>> master
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1565,11 +1576,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getAverageOperator()
    * @generated
    */
-<<<<<<< HEAD
-  int AVERAGE_OPERATOR = 40;
-=======
   int AVERAGE_OPERATOR = 41;
->>>>>>> master
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1606,11 +1613,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getAdditionOperator()
    * @generated
    */
-<<<<<<< HEAD
-  int ADDITION_OPERATOR = 41;
-=======
-  int OUTPUT_OPERATOR = 42;
->>>>>>> master
+  int ADDITION_OPERATOR = 42;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1665,7 +1668,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSubtractionOperator()
    * @generated
    */
-  int SUBTRACTION_OPERATOR = 42;
+  int SUBTRACTION_OPERATOR = 43;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1720,7 +1723,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMultiplicationOperator()
    * @generated
    */
-  int MULTIPLICATION_OPERATOR = 43;
+  int MULTIPLICATION_OPERATOR = 44;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1775,7 +1778,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getDivisionOperator()
    * @generated
    */
-  int DIVISION_OPERATOR = 44;
+  int DIVISION_OPERATOR = 45;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1830,7 +1833,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getModuloOperator()
    * @generated
    */
-  int MODULO_OPERATOR = 45;
+  int MODULO_OPERATOR = 46;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' containment reference.
@@ -1885,7 +1888,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getOutputOperator()
    * @generated
    */
-  int OUTPUT_OPERATOR = 46;
+  int OUTPUT_OPERATOR = 47;
 
   /**
    * The feature id for the '<em><b>Stream</b></em>' containment reference.
@@ -1912,11 +1915,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-<<<<<<< HEAD
   int OUTPUT_OPERATOR__ADDRESS = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
-=======
-  int OUTPUT_OPERATOR_PARAMETER = 43;
->>>>>>> master
 
   /**
    * The feature id for the '<em><b>Port</b></em>' attribute.
@@ -1944,11 +1943,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getVariableDefinition()
    * @generated
    */
-<<<<<<< HEAD
-  int VARIABLE_DEFINITION = 47;
-=======
-  int VARIABLE_DEFINITION = 44;
->>>>>>> master
+  int VARIABLE_DEFINITION = 48;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1976,11 +1971,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStreamElement()
    * @generated
    */
-<<<<<<< HEAD
-  int STREAM_ELEMENT = 54;
-=======
-  int STREAM_ELEMENT = 51;
->>>>>>> master
+  int STREAM_ELEMENT = 55;
 
   /**
    * The number of structural features of the '<em>Stream Element</em>' class.
@@ -1999,11 +1990,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getVariableDeclaration()
    * @generated
    */
-<<<<<<< HEAD
-  int VARIABLE_DECLARATION = 48;
-=======
-  int VARIABLE_DECLARATION = 45;
->>>>>>> master
+  int VARIABLE_DECLARATION = 49;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -2040,11 +2027,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getNumberVariableDefinition()
    * @generated
    */
-<<<<<<< HEAD
-  int NUMBER_VARIABLE_DEFINITION = 49;
-=======
-  int NUMBER_VARIABLE_DEFINITION = 46;
->>>>>>> master
+  int NUMBER_VARIABLE_DEFINITION = 50;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2090,11 +2073,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStringVariableDefinition()
    * @generated
    */
-<<<<<<< HEAD
-  int STRING_VARIABLE_DEFINITION = 50;
-=======
-  int STRING_VARIABLE_DEFINITION = 47;
->>>>>>> master
+  int STRING_VARIABLE_DEFINITION = 51;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2140,11 +2119,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBooleanVariableDefinition()
    * @generated
    */
-<<<<<<< HEAD
-  int BOOLEAN_VARIABLE_DEFINITION = 51;
-=======
-  int BOOLEAN_VARIABLE_DEFINITION = 48;
->>>>>>> master
+  int BOOLEAN_VARIABLE_DEFINITION = 52;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2190,11 +2165,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStructureDeclaration()
    * @generated
    */
-<<<<<<< HEAD
-  int STRUCTURE_DECLARATION = 52;
-=======
-  int STRUCTURE_DECLARATION = 49;
->>>>>>> master
+  int STRUCTURE_DECLARATION = 53;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2231,11 +2202,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStreamDeclaration()
    * @generated
    */
-<<<<<<< HEAD
-  int STREAM_DECLARATION = 53;
-=======
-  int STREAM_DECLARATION = 50;
->>>>>>> master
+  int STREAM_DECLARATION = 54;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2272,11 +2239,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStructureElements()
    * @generated
    */
-<<<<<<< HEAD
-  int STRUCTURE_ELEMENTS = 55;
-=======
-  int STRUCTURE_ELEMENTS = 52;
->>>>>>> master
+  int STRUCTURE_ELEMENTS = 56;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' reference.
@@ -2304,11 +2267,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getExpression()
    * @generated
    */
-<<<<<<< HEAD
-  int EXPRESSION = 56;
-=======
-  int EXPRESSION = 53;
->>>>>>> master
+  int EXPRESSION = 57;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -2327,11 +2286,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getDataType()
    * @generated
    */
-<<<<<<< HEAD
-  int DATA_TYPE = 57;
-=======
-  int DATA_TYPE = 54;
->>>>>>> master
+  int DATA_TYPE = 58;
 
   /**
    * The number of structural features of the '<em>Data Type</em>' class.
@@ -2350,11 +2305,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSimpleDataType()
    * @generated
    */
-<<<<<<< HEAD
-  int SIMPLE_DATA_TYPE = 58;
-=======
-  int SIMPLE_DATA_TYPE = 55;
->>>>>>> master
+  int SIMPLE_DATA_TYPE = 59;
 
   /**
    * The number of structural features of the '<em>Simple Data Type</em>' class.
@@ -2373,11 +2324,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getComplexDataType()
    * @generated
    */
-<<<<<<< HEAD
-  int COMPLEX_DATA_TYPE = 59;
-=======
-  int COMPLEX_DATA_TYPE = 56;
->>>>>>> master
+  int COMPLEX_DATA_TYPE = 60;
 
   /**
    * The number of structural features of the '<em>Complex Data Type</em>' class.
@@ -2396,11 +2343,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getIntegerDataType()
    * @generated
    */
-<<<<<<< HEAD
-  int INTEGER_DATA_TYPE = 60;
-=======
-  int INTEGER_DATA_TYPE = 57;
->>>>>>> master
+  int INTEGER_DATA_TYPE = 61;
 
   /**
    * The number of structural features of the '<em>Integer Data Type</em>' class.
@@ -2419,11 +2362,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBooleanDataType()
    * @generated
    */
-<<<<<<< HEAD
-  int BOOLEAN_DATA_TYPE = 61;
-=======
-  int BOOLEAN_DATA_TYPE = 58;
->>>>>>> master
+  int BOOLEAN_DATA_TYPE = 62;
 
   /**
    * The number of structural features of the '<em>Boolean Data Type</em>' class.
@@ -2442,11 +2381,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getFloatDataType()
    * @generated
    */
-<<<<<<< HEAD
-  int FLOAT_DATA_TYPE = 62;
-=======
-  int FLOAT_DATA_TYPE = 59;
->>>>>>> master
+  int FLOAT_DATA_TYPE = 63;
 
   /**
    * The number of structural features of the '<em>Float Data Type</em>' class.
@@ -2465,11 +2400,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getStringDataType()
    * @generated
    */
-<<<<<<< HEAD
-  int STRING_DATA_TYPE = 63;
-=======
-  int STRING_DATA_TYPE = 60;
->>>>>>> master
+  int STRING_DATA_TYPE = 64;
 
   /**
    * The number of structural features of the '<em>String Data Type</em>' class.
@@ -2488,11 +2419,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getBooleanOperation()
    * @generated
    */
-<<<<<<< HEAD
-  int BOOLEAN_OPERATION = 64;
-=======
-  int INTERNATIONALIZED_RESOURCE_IDENTIFIER = 61;
->>>>>>> master
+  int BOOLEAN_OPERATION = 65;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2538,78 +2465,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getPlus()
    * @generated
    */
-  int PLUS = 65;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PLUS__LEFT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-<<<<<<< HEAD
-  int PLUS__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
-=======
-  int BOOLEAN_OPERATION = 62;
->>>>>>> master
-
-  /**
-   * The number of structural features of the '<em>Plus</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PLUS_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.MinusImpl <em>Minus</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.MinusImpl
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMinus()
-   * @generated
-   */
-  int MINUS = 66;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MINUS__LEFT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MINUS__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-<<<<<<< HEAD
-=======
-   * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.PlusImpl <em>Plus</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.PlusImpl
-   * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getPlus()
-   * @generated
-   */
-  int PLUS = 63;
+  int PLUS = 66;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2646,7 +2502,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMinus()
    * @generated
    */
-  int MINUS = 64;
+  int MINUS = 67;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2667,7 +2523,6 @@ public interface FlowPackage extends EPackage
   int MINUS__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
->>>>>>> master
    * The number of structural features of the '<em>Minus</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2684,11 +2539,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getMulti()
    * @generated
    */
-<<<<<<< HEAD
-  int MULTI = 67;
-=======
-  int MULTI = 65;
->>>>>>> master
+  int MULTI = 68;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2725,11 +2576,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getDiv()
    * @generated
    */
-<<<<<<< HEAD
-  int DIV = 68;
-=======
-  int DIV = 66;
->>>>>>> master
+  int DIV = 69;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2766,11 +2613,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getNumberLiteral()
    * @generated
    */
-<<<<<<< HEAD
-  int NUMBER_LITERAL = 69;
-=======
-  int NUMBER_LITERAL = 67;
->>>>>>> master
+  int NUMBER_LITERAL = 70;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2798,11 +2641,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getVariableCall()
    * @generated
    */
-<<<<<<< HEAD
-  int VARIABLE_CALL = 70;
-=======
-  int VARIABLE_CALL = 68;
->>>>>>> master
+  int VARIABLE_CALL = 71;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' reference.
@@ -2830,10 +2669,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getSparqlQueryType()
    * @generated
    */
-<<<<<<< HEAD
-  int SPARQL_QUERY_TYPE = 71;
-=======
-  int SPARQL_QUERY_TYPE = 69;
+  int SPARQL_QUERY_TYPE = 72;
 
   /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.Scheme <em>Scheme</em>}' enum.
@@ -2843,8 +2679,7 @@ public interface FlowPackage extends EPackage
    * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getScheme()
    * @generated
    */
-  int SCHEME = 70;
->>>>>>> master
+  int SCHEME = 73;
 
 
   /**
@@ -3551,6 +3386,16 @@ public interface FlowPackage extends EPackage
    * @generated
    */
   EClass getReturnTypeOperator();
+
+  /**
+   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.NoReturnTypeOperator <em>No Return Type Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>No Return Type Operator</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.NoReturnTypeOperator
+   * @generated
+   */
+  EClass getNoReturnTypeOperator();
 
   /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.TagOperator <em>Tag Operator</em>}'.
@@ -4278,7 +4123,6 @@ public interface FlowPackage extends EPackage
   EAttribute getMultiplicationOperator_Literal();
 
   /**
-<<<<<<< HEAD
    * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator#getStreamElement <em>Stream Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4312,9 +4156,6 @@ public interface FlowPackage extends EPackage
 
   /**
    * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.DivisionOperator#getParameter <em>Parameter</em>}'.
-=======
-   * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.CountOperator <em>Count Operator</em>}'.
->>>>>>> master
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Parameter</em>'.
@@ -5013,6 +4854,16 @@ public interface FlowPackage extends EPackage
   EEnum getSparqlQueryType();
 
   /**
+   * Returns the meta object for enum '{@link de.hs_rm.cs.vs.dsm.flow.Scheme <em>Scheme</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Scheme</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.Scheme
+   * @generated
+   */
+  EEnum getScheme();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5606,6 +5457,16 @@ public interface FlowPackage extends EPackage
     EClass RETURN_TYPE_OPERATOR = eINSTANCE.getReturnTypeOperator();
 
     /**
+     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.NoReturnTypeOperatorImpl <em>No Return Type Operator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.NoReturnTypeOperatorImpl
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getNoReturnTypeOperator()
+     * @generated
+     */
+    EClass NO_RETURN_TYPE_OPERATOR = eINSTANCE.getNoReturnTypeOperator();
+
+    /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.TagOperatorImpl <em>Tag Operator</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6060,7 +5921,6 @@ public interface FlowPackage extends EPackage
     EReference STANDARD_DEVIATION_OPERATOR__STREAM = eINSTANCE.getStandardDeviationOperator_Stream();
 
     /**
-<<<<<<< HEAD
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.AverageOperatorImpl <em>Average Operator</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6088,9 +5948,6 @@ public interface FlowPackage extends EPackage
 
     /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.AdditionOperatorImpl <em>Addition Operator</em>}' class.
-=======
-     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.CountOperatorImpl <em>Count Operator</em>}' class.
->>>>>>> master
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see de.hs_rm.cs.vs.dsm.flow.impl.AdditionOperatorImpl
@@ -6806,6 +6663,16 @@ public interface FlowPackage extends EPackage
      * @generated
      */
     EEnum SPARQL_QUERY_TYPE = eINSTANCE.getSparqlQueryType();
+
+    /**
+     * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.Scheme <em>Scheme</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.hs_rm.cs.vs.dsm.flow.Scheme
+     * @see de.hs_rm.cs.vs.dsm.flow.impl.FlowPackageImpl#getScheme()
+     * @generated
+     */
+    EEnum SCHEME = eINSTANCE.getScheme();
 
   }
 

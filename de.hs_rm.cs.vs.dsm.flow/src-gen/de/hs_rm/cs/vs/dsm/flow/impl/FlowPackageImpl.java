@@ -37,6 +37,7 @@ import de.hs_rm.cs.vs.dsm.flow.ModelElement;
 import de.hs_rm.cs.vs.dsm.flow.ModuloOperator;
 import de.hs_rm.cs.vs.dsm.flow.Multi;
 import de.hs_rm.cs.vs.dsm.flow.MultiplicationOperator;
+import de.hs_rm.cs.vs.dsm.flow.NoReturnTypeOperator;
 import de.hs_rm.cs.vs.dsm.flow.NumberLiteral;
 import de.hs_rm.cs.vs.dsm.flow.NumberVariableDefinition;
 import de.hs_rm.cs.vs.dsm.flow.OutputOperator;
@@ -49,6 +50,7 @@ import de.hs_rm.cs.vs.dsm.flow.Rule;
 import de.hs_rm.cs.vs.dsm.flow.SPARQLOperator;
 import de.hs_rm.cs.vs.dsm.flow.SWRLOperator;
 import de.hs_rm.cs.vs.dsm.flow.SWRLRule;
+import de.hs_rm.cs.vs.dsm.flow.Scheme;
 import de.hs_rm.cs.vs.dsm.flow.SimpleDataType;
 import de.hs_rm.cs.vs.dsm.flow.SparqlQuery;
 import de.hs_rm.cs.vs.dsm.flow.SparqlQueryType;
@@ -252,6 +254,13 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass noReturnTypeOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass tagOperatorEClass = null;
 
   /**
@@ -385,7 +394,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-<<<<<<< HEAD
   private EClass averageOperatorEClass = null;
 
   /**
@@ -394,9 +402,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * @generated
    */
   private EClass additionOperatorEClass = null;
-=======
-  private EClass countOperatorEClass = null;
->>>>>>> master
 
   /**
    * <!-- begin-user-doc -->
@@ -607,6 +612,13 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * @generated
    */
   private EEnum sparqlQueryTypeEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum schemeEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -1340,6 +1352,16 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getNoReturnTypeOperator()
+  {
+    return noReturnTypeOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getTagOperator()
   {
     return tagOperatorEClass;
@@ -1840,7 +1862,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-<<<<<<< HEAD
   public EReference getStandardDeviationOperator_Parameter()
   {
     return (EReference)standardDeviationOperatorEClass.getEStructuralFeatures().get(0);
@@ -1872,9 +1893,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * @generated
    */
   public EReference getAverageOperator_Parameter()
-=======
-  public EClass getCountOperator()
->>>>>>> master
   {
     return (EReference)averageOperatorEClass.getEStructuralFeatures().get(0);
   }
@@ -2714,6 +2732,16 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EEnum getScheme()
+  {
+    return schemeEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public FlowFactory getFlowFactory()
   {
     return (FlowFactory)getEFactoryInstance();
@@ -2825,6 +2853,8 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     createEAttribute(inputOperatorEClass, INPUT_OPERATOR__PORT);
 
     returnTypeOperatorEClass = createEClass(RETURN_TYPE_OPERATOR);
+
+    noReturnTypeOperatorEClass = createEClass(NO_RETURN_TYPE_OPERATOR);
 
     tagOperatorEClass = createEClass(TAG_OPERATOR);
     createEReference(tagOperatorEClass, TAG_OPERATOR__PARAMETERS);
@@ -3014,6 +3044,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     // Create enums
     sparqlQueryTypeEEnum = createEEnum(SPARQL_QUERY_TYPE);
+    schemeEEnum = createEEnum(SCHEME);
   }
 
   /**
@@ -3081,6 +3112,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     divisionOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     moduloOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
     outputOperatorEClass.getESuperTypes().add(this.getReturnTypeOperator());
+    outputOperatorEClass.getESuperTypes().add(this.getNoReturnTypeOperator());
     variableDefinitionEClass.getESuperTypes().add(this.getModelElement());
     variableDeclarationEClass.getESuperTypes().add(this.getStreamElement());
     numberVariableDefinitionEClass.getESuperTypes().add(this.getVariableDefinition());
@@ -3190,6 +3222,8 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     initEAttribute(getInputOperator_Port(), ecorePackage.getEBigDecimal(), "port", null, 0, 1, InputOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(returnTypeOperatorEClass, ReturnTypeOperator.class, "ReturnTypeOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(noReturnTypeOperatorEClass, NoReturnTypeOperator.class, "NoReturnTypeOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(tagOperatorEClass, TagOperator.class, "TagOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTagOperator_Parameters(), this.getTagElement(), null, "parameters", null, 0, -1, TagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3383,6 +3417,11 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
     addEEnumLiteral(sparqlQueryTypeEEnum, SparqlQueryType.CONSTRUCT);
     addEEnumLiteral(sparqlQueryTypeEEnum, SparqlQueryType.ASK);
     addEEnumLiteral(sparqlQueryTypeEEnum, SparqlQueryType.DESCRIBE);
+
+    initEEnum(schemeEEnum, Scheme.class, "Scheme");
+    addEEnumLiteral(schemeEEnum, Scheme.HTTP);
+    addEEnumLiteral(schemeEEnum, Scheme.FTP);
+    addEEnumLiteral(schemeEEnum, Scheme.FILE);
 
     // Create resource
     createResource(eNS_URI);

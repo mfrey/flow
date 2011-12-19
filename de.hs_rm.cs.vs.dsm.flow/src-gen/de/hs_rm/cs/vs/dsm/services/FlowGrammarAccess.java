@@ -1157,7 +1157,6 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAverageOperatorParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
 		private final RuleCall cElementJoinOperatorParserRuleCall_11 = (RuleCall)cAlternatives.eContents().get(11);
 		private final RuleCall cMatchOperatorParserRuleCall_12 = (RuleCall)cAlternatives.eContents().get(12);
-<<<<<<< HEAD
 		private final RuleCall cModuloOperatorParserRuleCall_13 = (RuleCall)cAlternatives.eContents().get(13);
 		private final RuleCall cRandomOperatorParserRuleCall_14 = (RuleCall)cAlternatives.eContents().get(14);
 		private final RuleCall cSWRLOperatorParserRuleCall_15 = (RuleCall)cAlternatives.eContents().get(15);
@@ -1167,14 +1166,10 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDivisionOperatorParserRuleCall_19 = (RuleCall)cAlternatives.eContents().get(19);
 		private final RuleCall cOutputOperatorParserRuleCall_20 = (RuleCall)cAlternatives.eContents().get(20);
 		private final RuleCall cSPARQLOperatorParserRuleCall_21 = (RuleCall)cAlternatives.eContents().get(21);
-=======
-		private final RuleCall cSWRLOperatorParserRuleCall_13 = (RuleCall)cAlternatives.eContents().get(13);
->>>>>>> master
 		
 		/// **
 		// * The rule summarizes the operators which have a return type
 		// * / ReturnTypeOperator:
-<<<<<<< HEAD
 		//	InputOperator | JoinOperator | LogOperator | DecisionTreeOperator | TagOperator | UnTagOperator | FilterOperator |
 		//	SplitOperator | CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator |
 		//	ModuloOperator | RandomOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator |
@@ -1185,16 +1180,6 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//SplitOperator | CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator |
 		//ModuloOperator | RandomOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator |
 		//DivisionOperator | OutputOperator | SPARQLOperator
-=======
-		//	InputOperator | JoinOperator | SymmetricDifferenceOperator | DifferenceOperator | TagOperator | UnTagOperator |
-		//	FilterOperator | SplitOperator | CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator |
-		//	MatchOperator | SWRLOperator;
-		public ParserRule getRule() { return rule; }
-
-		//InputOperator | JoinOperator | SymmetricDifferenceOperator | DifferenceOperator | TagOperator | UnTagOperator |
-		//FilterOperator | SplitOperator | CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator |
-		//MatchOperator | SWRLOperator
->>>>>>> master
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//InputOperator
@@ -1236,7 +1221,6 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//MatchOperator
 		public RuleCall getMatchOperatorParserRuleCall_12() { return cMatchOperatorParserRuleCall_12; }
 
-<<<<<<< HEAD
 		//ModuloOperator
 		public RuleCall getModuloOperatorParserRuleCall_13() { return cModuloOperatorParserRuleCall_13; }
 
@@ -1245,11 +1229,6 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 
 		//SWRLOperator
 		public RuleCall getSWRLOperatorParserRuleCall_15() { return cSWRLOperatorParserRuleCall_15; }
-=======
-		//SWRLOperator
-		public RuleCall getSWRLOperatorParserRuleCall_13() { return cSWRLOperatorParserRuleCall_13; }
-	}
->>>>>>> master
 
 		//AdditionOperator
 		public RuleCall getAdditionOperatorParserRuleCall_16() { return cAdditionOperatorParserRuleCall_16; }
@@ -1268,6 +1247,20 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 
 		//SPARQLOperator
 		public RuleCall getSPARQLOperatorParserRuleCall_21() { return cSPARQLOperatorParserRuleCall_21; }
+	}
+
+	public class NoReturnTypeOperatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NoReturnTypeOperator");
+		private final RuleCall cOutputOperatorParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		/// **
+		// * The rule summarizes the operators which have no return type
+		// * / NoReturnTypeOperator:
+		//	OutputOperator;
+		public ParserRule getRule() { return rule; }
+
+		//OutputOperator
+		public RuleCall getOutputOperatorParserRuleCall() { return cOutputOperatorParserRuleCall; }
 	}
 
 	public class TagOperatorElements extends AbstractParserRuleElementFinder {
@@ -2008,15 +2001,10 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cVariableStreamAccessParserRuleCall_4_2_0 = (RuleCall)cVariableAssignment_4_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-<<<<<<< HEAD
 		/// **
 		// * TODO
 		// * / Rule:
-		//	name=[OWL::OWLObjectProperty|STRING] "(" "?" variable+=StreamAccess ("," "?" variable+=StreamAccess)* ")";
-=======
-		//Rule:
 		//	name=[owl::OWLObjectProperty|STRING] "(" "?" variable+=StreamAccess ("," "?" variable+=StreamAccess)* ")";
->>>>>>> master
 		public ParserRule getRule() { return rule; }
 
 		//name=[owl::OWLObjectProperty|STRING] "(" "?" variable+=StreamAccess ("," "?" variable+=StreamAccess)* ")"
@@ -2064,7 +2052,6 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class CountOperatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CountOperator");
-<<<<<<< HEAD
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cCountKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -2112,8 +2099,6 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class StandardDeviationOperatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StandardDeviationOperator");
-=======
->>>>>>> master
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cStdKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -3502,6 +3487,45 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//"DESCRIBE"
 		public Keyword getDESCRIBEDESCRIBEKeyword_3_0() { return cDESCRIBEDESCRIBEKeyword_3_0; }
 	}
+
+	public class SchemeElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "Scheme");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cHTTPEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cHTTPHttpKeyword_0_0 = (Keyword)cHTTPEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cFTPEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cFTPFtpKeyword_1_0 = (Keyword)cFTPEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cFILEEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cFILEFileKeyword_2_0 = (Keyword)cFILEEnumLiteralDeclaration_2.eContents().get(0);
+		
+		/// ** 
+		// * The enumeration defines the available scheme values for the InternationalizedResourceIdentifier 
+		// * rule.
+		// * / enum Scheme:
+		//	HTTP="http" | FTP="ftp" | FILE="file";
+		public EnumRule getRule() { return rule; }
+
+		//HTTP="http" | FTP="ftp" | FILE="file"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//HTTP="http"
+		public EnumLiteralDeclaration getHTTPEnumLiteralDeclaration_0() { return cHTTPEnumLiteralDeclaration_0; }
+
+		//"http"
+		public Keyword getHTTPHttpKeyword_0_0() { return cHTTPHttpKeyword_0_0; }
+
+		//FTP="ftp"
+		public EnumLiteralDeclaration getFTPEnumLiteralDeclaration_1() { return cFTPEnumLiteralDeclaration_1; }
+
+		//"ftp"
+		public Keyword getFTPFtpKeyword_1_0() { return cFTPFtpKeyword_1_0; }
+
+		//FILE="file"
+		public EnumLiteralDeclaration getFILEEnumLiteralDeclaration_2() { return cFILEEnumLiteralDeclaration_2; }
+
+		//"file"
+		public Keyword getFILEFileKeyword_2_0() { return cFILEFileKeyword_2_0; }
+	}
 	
 	private ModelElements pModel;
 	private PackageDeclarationElements pPackageDeclaration;
@@ -3524,6 +3548,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	private MatchOperatorElements pMatchOperator;
 	private InputOperatorElements pInputOperator;
 	private ReturnTypeOperatorElements pReturnTypeOperator;
+	private NoReturnTypeOperatorElements pNoReturnTypeOperator;
 	private TagOperatorElements pTagOperator;
 	private SPARQLOperatorElements pSPARQLOperator;
 	private QueryTagOperatorElements pQueryTagOperator;
@@ -3577,6 +3602,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	private BooleanDataTypeElements pBooleanDataType;
 	private FloatDataTypeElements pFloatDataType;
 	private StringDataTypeElements pStringDataType;
+	private SchemeElements unknownRuleScheme;
 	private TerminalRule tID;
 	private TerminalRule tSTRING;
 	private TerminalRule tML_COMMENT;
@@ -3841,22 +3867,28 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	/// **
 	// * The rule summarizes the operators which have a return type
 	// * / ReturnTypeOperator:
-<<<<<<< HEAD
 	//	InputOperator | JoinOperator | LogOperator | DecisionTreeOperator | TagOperator | UnTagOperator | FilterOperator |
 	//	SplitOperator | CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator | MatchOperator |
 	//	ModuloOperator | RandomOperator | SWRLOperator | AdditionOperator | SubtractionOperator | MultiplicationOperator |
 	//	DivisionOperator | OutputOperator | SPARQLOperator;
-=======
-	//	InputOperator | JoinOperator | SymmetricDifferenceOperator | DifferenceOperator | TagOperator | UnTagOperator |
-	//	FilterOperator | SplitOperator | CountOperator | StandardDeviationOperator | AverageOperator | ElementJoinOperator |
-	//	MatchOperator | SWRLOperator;
->>>>>>> master
 	public ReturnTypeOperatorElements getReturnTypeOperatorAccess() {
 		return (pReturnTypeOperator != null) ? pReturnTypeOperator : (pReturnTypeOperator = new ReturnTypeOperatorElements());
 	}
 	
 	public ParserRule getReturnTypeOperatorRule() {
 		return getReturnTypeOperatorAccess().getRule();
+	}
+
+	/// **
+	// * The rule summarizes the operators which have no return type
+	// * / NoReturnTypeOperator:
+	//	OutputOperator;
+	public NoReturnTypeOperatorElements getNoReturnTypeOperatorAccess() {
+		return (pNoReturnTypeOperator != null) ? pNoReturnTypeOperator : (pNoReturnTypeOperator = new NoReturnTypeOperatorElements());
+	}
+	
+	public ParserRule getNoReturnTypeOperatorRule() {
+		return getNoReturnTypeOperatorAccess().getRule();
 	}
 
 	/// **
@@ -4066,35 +4098,10 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		return getSWRLRuleAccess().getRule();
 	}
 
-<<<<<<< HEAD
 	/// **
 	// * TODO
 	// * / Rule:
-	//	name=[OWL::OWLObjectProperty|STRING] "(" "?" variable+=StreamAccess ("," "?" variable+=StreamAccess)* ")";
-=======
-	//AntecedentRule:
-	//	"Antecedent" "(" atoms+=Rule ("," atoms+=Rule)* ")";
-	public AntecedentRuleElements getAntecedentRuleAccess() {
-		return (pAntecedentRule != null) ? pAntecedentRule : (pAntecedentRule = new AntecedentRuleElements());
-	}
-	
-	public ParserRule getAntecedentRuleRule() {
-		return getAntecedentRuleAccess().getRule();
-	}
-
-	//ConsequentRule:
-	//	"Consequent" "(" atoms+=Rule ("," atoms+=Rule)* ")";
-	public ConsequentRuleElements getConsequentRuleAccess() {
-		return (pConsequentRule != null) ? pConsequentRule : (pConsequentRule = new ConsequentRuleElements());
-	}
-	
-	public ParserRule getConsequentRuleRule() {
-		return getConsequentRuleAccess().getRule();
-	}
-
-	//Rule:
 	//	name=[owl::OWLObjectProperty|STRING] "(" "?" variable+=StreamAccess ("," "?" variable+=StreamAccess)* ")";
->>>>>>> master
 	public RuleElements getRuleAccess() {
 		return (pRule != null) ? pRule : (pRule = new RuleElements());
 	}
@@ -4469,6 +4476,19 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getStringDataTypeRule() {
 		return getStringDataTypeAccess().getRule();
+	}
+
+	/// ** 
+	// * The enumeration defines the available scheme values for the InternationalizedResourceIdentifier 
+	// * rule.
+	// * / enum Scheme:
+	//	HTTP="http" | FTP="ftp" | FILE="file";
+	public SchemeElements getSchemeAccess() {
+		return (unknownRuleScheme != null) ? unknownRuleScheme : (unknownRuleScheme = new SchemeElements());
+	}
+	
+	public EnumRule getSchemeRule() {
+		return getSchemeAccess().getRule();
 	}
 
 	/// **

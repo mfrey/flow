@@ -215,6 +215,15 @@ public interface FlowFactory extends EFactory
   ReturnTypeOperator createReturnTypeOperator();
 
   /**
+   * Returns a new object of class '<em>No Return Type Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>No Return Type Operator</em>'.
+   * @generated
+   */
+  NoReturnTypeOperator createNoReturnTypeOperator();
+
+  /**
    * Returns a new object of class '<em>Tag Operator</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -386,7 +395,6 @@ public interface FlowFactory extends EFactory
   StandardDeviationOperator createStandardDeviationOperator();
 
   /**
-<<<<<<< HEAD
    * Returns a new object of class '<em>Average Operator</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -397,9 +405,6 @@ public interface FlowFactory extends EFactory
 
   /**
    * Returns a new object of class '<em>Addition Operator</em>'.
-=======
-   * Returns a new object of class '<em>Count Operator</em>'.
->>>>>>> master
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return a new object of class '<em>Addition Operator</em>'.

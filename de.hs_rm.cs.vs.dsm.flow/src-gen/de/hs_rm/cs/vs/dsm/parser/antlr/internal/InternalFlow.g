@@ -1814,7 +1814,6 @@ ruleReturnTypeOperator returns [EObject current=null]
 
     |
     { 
-<<<<<<< HEAD
         newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getModuloOperatorParserRuleCall_13()); 
     }
     this_ModuloOperator_13=ruleModuloOperator
@@ -1830,13 +1829,6 @@ ruleReturnTypeOperator returns [EObject current=null]
     this_RandomOperator_14=ruleRandomOperator
     { 
         $current = $this_RandomOperator_14.current; 
-=======
-        newCompositeNode(grammarAccess.getReturnTypeOperatorAccess().getSWRLOperatorParserRuleCall_13()); 
-    }
-    this_SWRLOperator_13=ruleSWRLOperator
-    { 
-        $current = $this_SWRLOperator_13.current; 
->>>>>>> master
         afterParserOrEnumRuleCall();
     }
 
@@ -1911,6 +1903,8 @@ ruleReturnTypeOperator returns [EObject current=null]
     }
 )
 ;
+
+
 
 
 
@@ -3486,7 +3480,6 @@ ruleAdditionOperator returns [EObject current=null]
 
 
 
-<<<<<<< HEAD
 // Entry rule entryRuleSubtractionOperator
 entryRuleSubtractionOperator returns [EObject current=null] 
 	:
@@ -3595,10 +3588,6 @@ ruleSubtractionOperator returns [EObject current=null]
 
 // Entry rule entryRuleMultiplicationOperator
 entryRuleMultiplicationOperator returns [EObject current=null] 
-=======
-// Entry rule entryRuleCountOperator
-entryRuleCountOperator returns [EObject current=null] 
->>>>>>> master
 	:
 	{ newCompositeNode(grammarAccess.getMultiplicationOperatorRule()); }
 	 iv_ruleMultiplicationOperator=ruleMultiplicationOperator 
@@ -5452,6 +5441,8 @@ ruleSparqlQueryType returns [Enumerator current=null]
         newLeafNode(enumLiteral_3, grammarAccess.getSparqlQueryTypeAccess().getDESCRIBEEnumLiteralDeclaration_3()); 
     }
 ));
+
+
 
 
 

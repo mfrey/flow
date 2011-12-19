@@ -58,6 +58,7 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDataTypeAccess().getAlternatives(), "rule__DataType__Alternatives");
 					put(grammarAccess.getSimpleDataTypeAccess().getAlternatives(), "rule__SimpleDataType__Alternatives");
 					put(grammarAccess.getSparqlQueryTypeAccess().getAlternatives(), "rule__SparqlQueryType__Alternatives");
+					put(grammarAccess.getSchemeAccess().getAlternatives(), "rule__Scheme__Alternatives");
 					put(grammarAccess.getPackageDeclarationAccess().getGroup(), "rule__PackageDeclaration__Group__0");
 					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 					put(grammarAccess.getStreamStatementAccess().getGroup(), "rule__StreamStatement__Group__0");

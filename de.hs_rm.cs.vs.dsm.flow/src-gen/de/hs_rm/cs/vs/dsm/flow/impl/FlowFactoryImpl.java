@@ -89,6 +89,7 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
       case FlowPackage.MATCH_OPERATOR: return createMatchOperator();
       case FlowPackage.INPUT_OPERATOR: return createInputOperator();
       case FlowPackage.RETURN_TYPE_OPERATOR: return createReturnTypeOperator();
+      case FlowPackage.NO_RETURN_TYPE_OPERATOR: return createNoReturnTypeOperator();
       case FlowPackage.TAG_OPERATOR: return createTagOperator();
       case FlowPackage.SPARQL_OPERATOR: return createSPARQLOperator();
       case FlowPackage.QUERY_TAG_OPERATOR: return createQueryTagOperator();
@@ -156,6 +157,8 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
     {
       case FlowPackage.SPARQL_QUERY_TYPE:
         return createSparqlQueryTypeFromString(eDataType, initialValue);
+      case FlowPackage.SCHEME:
+        return createSchemeFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -173,6 +176,8 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
     {
       case FlowPackage.SPARQL_QUERY_TYPE:
         return convertSparqlQueryTypeToString(eDataType, instanceValue);
+      case FlowPackage.SCHEME:
+        return convertSchemeToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -414,6 +419,17 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public NoReturnTypeOperator createNoReturnTypeOperator()
+  {
+    NoReturnTypeOperatorImpl noReturnTypeOperator = new NoReturnTypeOperatorImpl();
+    return noReturnTypeOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public TagOperator createTagOperator()
   {
     TagOperatorImpl tagOperator = new TagOperatorImpl();
@@ -623,7 +639,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * <!-- end-user-doc -->
    * @generated
    */
-<<<<<<< HEAD
   public AverageOperator createAverageOperator()
   {
     AverageOperatorImpl averageOperator = new AverageOperatorImpl();
@@ -636,9 +651,6 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * @generated
    */
   public AdditionOperator createAdditionOperator()
-=======
-  public CountOperator createCountOperator()
->>>>>>> master
   {
     AdditionOperatorImpl additionOperator = new AdditionOperatorImpl();
     return additionOperator;
@@ -981,6 +993,28 @@ public class FlowFactoryImpl extends EFactoryImpl implements FlowFactory
    * @generated
    */
   public String convertSparqlQueryTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Scheme createSchemeFromString(EDataType eDataType, String initialValue)
+  {
+    Scheme result = Scheme.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertSchemeToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

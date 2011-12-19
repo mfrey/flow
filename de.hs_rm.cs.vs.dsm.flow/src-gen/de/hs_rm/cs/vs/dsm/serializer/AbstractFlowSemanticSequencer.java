@@ -105,16 +105,10 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == FlowPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-<<<<<<< HEAD
 			case FlowPackage.ADDITION_OPERATOR:
 				if(context == grammarAccess.getAdditionOperatorRule() ||
 				   context == grammarAccess.getReturnTypeOperatorRule()) {
 					sequence_AdditionOperator(context, (AdditionOperator) semanticObject); 
-=======
-			case FlowPackage.ANTECEDENT_RULE:
-				if(context == grammarAccess.getAntecedentRuleRule()) {
-					sequence_AntecedentRule(context, (AntecedentRule) semanticObject); 
->>>>>>> master
 					return; 
 				}
 				else break;
@@ -160,7 +154,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
-<<<<<<< HEAD
 			case FlowPackage.COUNT_OPERATOR:
 				if(context == grammarAccess.getCountOperatorRule() ||
 				   context == grammarAccess.getReturnTypeOperatorRule()) {
@@ -171,29 +164,13 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 			case FlowPackage.DECISION_TREE_ATTRIBUTE:
 				if(context == grammarAccess.getDecisionTreeAttributeRule()) {
 					sequence_DecisionTreeAttribute(context, (DecisionTreeAttribute) semanticObject); 
-=======
-			case FlowPackage.CONSEQUENT_RULE:
-				if(context == grammarAccess.getConsequentRuleRule()) {
-					sequence_ConsequentRule(context, (ConsequentRule) semanticObject); 
-					return; 
-				}
-				else break;
-			case FlowPackage.COUNT_OPERATOR:
-				if(context == grammarAccess.getCountOperatorRule() ||
-				   context == grammarAccess.getReturnTypeOperatorRule()) {
-					sequence_CountOperator(context, (CountOperator) semanticObject); 
->>>>>>> master
 					return; 
 				}
 				else break;
 			case FlowPackage.DECISION_TREE_OPERATOR:
 				if(context == grammarAccess.getDecisionTreeOperatorRule() ||
 				   context == grammarAccess.getReturnTypeOperatorRule()) {
-<<<<<<< HEAD
 					sequence_DecisionTreeOperator(context, (DecisionTreeOperator) semanticObject); 
-=======
-					sequence_DifferenceOperator(context, (DifferenceOperator) semanticObject); 
->>>>>>> master
 					return; 
 				}
 				else break;
@@ -213,7 +190,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				   context == grammarAccess.getRelationalExpressionRule() ||
 				   context == grammarAccess.getRelationalExpressionAccess().getBooleanOperationLeftAction_1_0()) {
 					sequence_Multiplication(context, (Div) semanticObject); 
-<<<<<<< HEAD
 					return; 
 				}
 				else break;
@@ -221,8 +197,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				if(context == grammarAccess.getDivisionOperatorRule() ||
 				   context == grammarAccess.getReturnTypeOperatorRule()) {
 					sequence_DivisionOperator(context, (DivisionOperator) semanticObject); 
-=======
->>>>>>> master
 					return; 
 				}
 				else break;
@@ -270,27 +244,17 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
-<<<<<<< HEAD
 			case FlowPackage.JOIN_OPERATOR:
 				if(context == grammarAccess.getJoinOperatorRule() ||
 				   context == grammarAccess.getReturnTypeOperatorRule()) {
 					sequence_JoinOperator(context, (JoinOperator) semanticObject); 
-=======
-			case FlowPackage.INTERNATIONALIZED_RESOURCE_IDENTIFIER:
-				if(context == grammarAccess.getInternationalizedResourceIdentifierRule()) {
-					sequence_InternationalizedResourceIdentifier(context, (InternationalizedResourceIdentifier) semanticObject); 
->>>>>>> master
 					return; 
 				}
 				else break;
 			case FlowPackage.LOG_OPERATOR:
 				if(context == grammarAccess.getLogOperatorRule() ||
 				   context == grammarAccess.getReturnTypeOperatorRule()) {
-<<<<<<< HEAD
 					sequence_LogOperator(context, (LogOperator) semanticObject); 
-=======
-					sequence_JoinOperator(context, (JoinOperator) semanticObject); 
->>>>>>> master
 					return; 
 				}
 				else break;
@@ -330,7 +294,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 			case FlowPackage.MODEL:
 				if(context == grammarAccess.getModelRule()) {
 					sequence_Model(context, (Model) semanticObject); 
-<<<<<<< HEAD
 					return; 
 				}
 				else break;
@@ -338,8 +301,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				if(context == grammarAccess.getModuloOperatorRule() ||
 				   context == grammarAccess.getReturnTypeOperatorRule()) {
 					sequence_ModuloOperator(context, (ModuloOperator) semanticObject); 
-=======
->>>>>>> master
 					return; 
 				}
 				else break;
@@ -362,16 +323,10 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
-<<<<<<< HEAD
 			case FlowPackage.MULTIPLICATION_OPERATOR:
 				if(context == grammarAccess.getMultiplicationOperatorRule() ||
 				   context == grammarAccess.getReturnTypeOperatorRule()) {
 					sequence_MultiplicationOperator(context, (MultiplicationOperator) semanticObject); 
-=======
-			case FlowPackage.NEW_TAG_OPERATOR:
-				if(context == grammarAccess.getNewTagOperatorRule()) {
-					sequence_NewTagOperator(context, (NewTagOperator) semanticObject); 
->>>>>>> master
 					return; 
 				}
 				else break;
@@ -403,22 +358,10 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				}
 				else break;
 			case FlowPackage.OUTPUT_OPERATOR:
-<<<<<<< HEAD
-				if(context == grammarAccess.getOutputOperatorRule() ||
+				if(context == grammarAccess.getNoReturnTypeOperatorRule() ||
+				   context == grammarAccess.getOutputOperatorRule() ||
 				   context == grammarAccess.getReturnTypeOperatorRule()) {
 					sequence_OutputOperator(context, (OutputOperator) semanticObject); 
-=======
-				if(context == grammarAccess.getModelElementRule() ||
-				   context == grammarAccess.getNoReturnTypeOperatorRule() ||
-				   context == grammarAccess.getOutputOperatorRule()) {
-					sequence_OutputOperator(context, (OutputOperator) semanticObject); 
-					return; 
-				}
-				else break;
-			case FlowPackage.OUTPUT_OPERATOR_PARAMETER:
-				if(context == grammarAccess.getOutputOperatorParameterRule()) {
-					sequence_OutputOperatorParameter(context, (OutputOperatorParameter) semanticObject); 
->>>>>>> master
 					return; 
 				}
 				else break;
@@ -451,7 +394,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 			case FlowPackage.QUERY_TAG_OPERATOR:
 				if(context == grammarAccess.getQueryTagOperatorRule()) {
 					sequence_QueryTagOperator(context, (QueryTagOperator) semanticObject); 
-<<<<<<< HEAD
 					return; 
 				}
 				else break;
@@ -459,15 +401,12 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				if(context == grammarAccess.getRandomOperatorRule() ||
 				   context == grammarAccess.getReturnTypeOperatorRule()) {
 					sequence_RandomOperator(context, (RandomOperator) semanticObject); 
-=======
->>>>>>> master
 					return; 
 				}
 				else break;
 			case FlowPackage.RULE:
 				if(context == grammarAccess.getRuleRule()) {
 					sequence_Rule(context, (Rule) semanticObject); 
-<<<<<<< HEAD
 					return; 
 				}
 				else break;
@@ -475,8 +414,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 				if(context == grammarAccess.getReturnTypeOperatorRule() ||
 				   context == grammarAccess.getSPARQLOperatorRule()) {
 					sequence_SPARQLOperator(context, (SPARQLOperator) semanticObject); 
-=======
->>>>>>> master
 					return; 
 				}
 				else break;
@@ -612,17 +549,10 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
-<<<<<<< HEAD
 			case FlowPackage.SUBTRACTION_OPERATOR:
 				if(context == grammarAccess.getReturnTypeOperatorRule() ||
 				   context == grammarAccess.getSubtractionOperatorRule()) {
 					sequence_SubtractionOperator(context, (SubtractionOperator) semanticObject); 
-=======
-			case FlowPackage.SYMMETRIC_DIFFERENCE_OPERATOR:
-				if(context == grammarAccess.getReturnTypeOperatorRule() ||
-				   context == grammarAccess.getSymmetricDifferenceOperatorRule()) {
-					sequence_SymmetricDifferenceOperator(context, (SymmetricDifferenceOperator) semanticObject); 
->>>>>>> master
 					return; 
 				}
 				else break;
@@ -794,25 +724,8 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 *    left[0, 3]
 	 *    operator[0, 8]
 	 *    right[0, 3]
-<<<<<<< HEAD
 	 */
 	protected void sequence_And(EObject context, BooleanOperation semanticObject) {
-=======
-	 */
-	protected void sequence_And(EObject context, BooleanOperation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (atoms+=Rule atoms+=Rule*)
-	 *
-	 * Features:
-	 *    atoms[1, *]
-	 */
-	protected void sequence_AntecedentRule(EObject context, AntecedentRule semanticObject) {
->>>>>>> master
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -869,21 +782,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-<<<<<<< HEAD
-=======
-	 *     (atoms+=Rule atoms+=Rule*)
-	 *
-	 * Features:
-	 *    atoms[1, *]
-	 */
-	protected void sequence_ConsequentRule(EObject context, ConsequentRule semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
->>>>>>> master
 	 *     (parameter=StreamAccess stream=StreamOperatorParameter)
 	 *
 	 * Features:
@@ -1006,11 +904,7 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 *         EXCLUDE_IF_SET literal
 	 *         EXCLUDE_IF_SET streamElement
 	 */
-<<<<<<< HEAD
 	protected void sequence_DivisionOperator(EObject context, DivisionOperator semanticObject) {
-=======
-	protected void sequence_DifferenceOperator(EObject context, DifferenceOperator semanticObject) {
->>>>>>> master
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1087,11 +981,7 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 * Features:
 	 *    parameters[2, *]
 	 */
-<<<<<<< HEAD
 	protected void sequence_JoinOperator(EObject context, JoinOperator semanticObject) {
-=======
-	protected void sequence_InternationalizedResourceIdentifier(EObject context, InternationalizedResourceIdentifier semanticObject) {
->>>>>>> master
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1105,7 +995,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 *    format[1, 1]
 	 *    stream[1, 1]
 	 */
-<<<<<<< HEAD
 	protected void sequence_LogOperator(EObject context, LogOperator semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.LOG_OPERATOR__LOCATION) == ValueTransient.YES)
@@ -1121,10 +1010,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 		feeder.accept(grammarAccess.getLogOperatorAccess().getFormatSTRINGTerminalRuleCall_4_0(), semanticObject.getFormat());
 		feeder.accept(grammarAccess.getLogOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_6_0(), semanticObject.getStream());
 		feeder.finish();
-=======
-	protected void sequence_JoinOperator(EObject context, JoinOperator semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
->>>>>>> master
 	}
 	
 	
@@ -1169,7 +1054,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 *    models[1, *]
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
-<<<<<<< HEAD
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1212,8 +1096,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 *         EXCLUDE_IF_SET streamElement
 	 */
 	protected void sequence_MultiplicationOperator(EObject context, MultiplicationOperator semanticObject) {
-=======
->>>>>>> master
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1266,32 +1148,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-<<<<<<< HEAD
-=======
-	 *     (query=QueryTagOperator target=STRING)
-	 *
-	 * Features:
-	 *    query[1, 1]
-	 *    target[1, 1]
-	 */
-	protected void sequence_NewTagOperator(EObject context, NewTagOperator semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.NEW_TAG_OPERATOR__QUERY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.NEW_TAG_OPERATOR__QUERY));
-			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.NEW_TAG_OPERATOR__TARGET) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.NEW_TAG_OPERATOR__TARGET));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getNewTagOperatorAccess().getQueryQueryTagOperatorParserRuleCall_2_0(), semanticObject.getQuery());
-		feeder.accept(grammarAccess.getNewTagOperatorAccess().getTargetSTRINGTerminalRuleCall_4_0(), semanticObject.getTarget());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
->>>>>>> master
 	 *     (type=SimpleDataType name=ID value=NUMBER)
 	 *
 	 * Features:
@@ -1319,29 +1175,9 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-<<<<<<< HEAD
 	 *     (stream=StreamOperatorParameter iri+=STRING iri+=STRING* address=STRING port=NUMBER)
 	 *
 	 * Features:
-=======
-	 *     (element+=StreamAccess element+=StreamAccess*)
-	 *
-	 * Features:
-	 *    element[1, *]
-	 */
-	protected void sequence_OutputOperatorParameter(EObject context, OutputOperatorParameter semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (parameter=OutputOperatorParameter location=STRING stream+=StreamOperatorParameter)
-	 *
-	 * Features:
-	 *    parameter[1, 1]
-	 *    location[1, 1]
->>>>>>> master
 	 *    stream[1, 1]
 	 *    iri[1, *]
 	 *    address[1, 1]
@@ -1487,7 +1323,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 *    target[1, 1]
 	 *    stream[1, 1]
 	 */
-<<<<<<< HEAD
 	protected void sequence_SPARQLOperator(EObject context, SPARQLOperator semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.SPARQL_OPERATOR__QUERY) == ValueTransient.YES)
@@ -1503,10 +1338,6 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 		feeder.accept(grammarAccess.getSPARQLOperatorAccess().getTargetSTRINGTerminalRuleCall_4_0(), semanticObject.getTarget());
 		feeder.accept(grammarAccess.getSPARQLOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_6_0(), semanticObject.getStream());
 		feeder.finish();
-=======
-	protected void sequence_SWRLOperator(EObject context, SWRLOperator semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
->>>>>>> master
 	}
 	
 	
@@ -1518,11 +1349,7 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 *    rule[1, 1]
 	 *    stream[1, 1]
 	 */
-<<<<<<< HEAD
 	protected void sequence_SWRLOperator(EObject context, SWRLOperator semanticObject) {
-=======
-	protected void sequence_SWRLRule(EObject context, SWRLRule semanticObject) {
->>>>>>> master
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, FlowPackage.Literals.SWRL_OPERATOR__RULE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowPackage.Literals.SWRL_OPERATOR__RULE));
@@ -1827,11 +1654,7 @@ public class AbstractFlowSemanticSequencer extends AbstractSemanticSequencer {
 	 *         EXCLUDE_IF_SET literal
 	 *         EXCLUDE_IF_SET streamElement
 	 */
-<<<<<<< HEAD
 	protected void sequence_SubtractionOperator(EObject context, SubtractionOperator semanticObject) {
-=======
-	protected void sequence_SymmetricDifferenceOperator(EObject context, SymmetricDifferenceOperator semanticObject) {
->>>>>>> master
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
