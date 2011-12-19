@@ -111,8 +111,8 @@ RandomOperator:
 	'rand' '('maximum=NUMBER ',' sleep=NUMBER ',' stream=StreamOperatorParameter ')';
 
 DecisionTreeOperator:
-	'dtree' '('attributes+=DecisionTreeAttribute ',' (attributes+=DecisionTreeAttribute ',')* delta=NUMBER ',' tau=NUMBER ',' barrier= NUMBER ',' frequency= NUMBER 
-		classAttributes+=DecisionTreeAttribute (',' classAttributes+=DecisionTreeAttribute)* ',' stream=StreamOperatorParameter ')';
+	'dtree' '('attributes+=DecisionTreeAttribute ',' (attributes+=DecisionTreeAttribute ',')* delta=NUMBER ',' tau=NUMBER ',' barrier= NUMBER ',' 
+	    frequency= NUMBER ',' classAttributes+=DecisionTreeAttribute (',' classAttributes+=DecisionTreeAttribute)* ',' stream=StreamOperatorParameter ')';
 	
 DecisionTreeAttribute:
 	key = STRING '{' value+=STRING (',' value+=STRING)* '}';
