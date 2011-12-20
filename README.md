@@ -53,6 +53,7 @@ Known Issues
 
 2. Build
 	- maven/tycho setup is broken
+	- error in eclipse product export
 
 Bug tracker
 -----------
