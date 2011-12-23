@@ -12,4 +12,5 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<groupId>de.hs_rm.cs.vs.dsm</groupId>
 	<packaging>eclipse-application</packaging>
+
 </project>
