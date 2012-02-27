@@ -940,7 +940,7 @@ public interface FlowPackage extends EPackage
   int SPARQL_OPERATOR__QUERY = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Target</b></em>' attribute.
+   * The feature id for the '<em><b>Target</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -949,13 +949,13 @@ public interface FlowPackage extends EPackage
   int SPARQL_OPERATOR__TARGET = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Stream</b></em>' containment reference.
+   * The feature id for the '<em><b>Input</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SPARQL_OPERATOR__STREAM = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
+  int SPARQL_OPERATOR__INPUT = RETURN_TYPE_OPERATOR_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>SPARQL Operator</em>' class.
@@ -1023,22 +1023,31 @@ public interface FlowPackage extends EPackage
   int SPARQL_QUERY__VARIABLE = 0;
 
   /**
-   * The feature id for the '<em><b>Uri</b></em>' attribute.
+   * The feature id for the '<em><b>Subject</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SPARQL_QUERY__URI = 1;
+  int SPARQL_QUERY__SUBJECT = 1;
 
   /**
-   * The feature id for the '<em><b>Attribute</b></em>' attribute.
+   * The feature id for the '<em><b>Predicate</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SPARQL_QUERY__ATTRIBUTE = 2;
+  int SPARQL_QUERY__PREDICATE = 2;
+
+  /**
+   * The feature id for the '<em><b>Object</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPARQL_QUERY__OBJECT = 3;
 
   /**
    * The number of structural features of the '<em>Sparql Query</em>' class.
@@ -1047,7 +1056,7 @@ public interface FlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SPARQL_QUERY_FEATURE_COUNT = 3;
+  int SPARQL_QUERY_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.SparqlQueryVariableImpl <em>Sparql Query Variable</em>}' class.
@@ -3451,26 +3460,26 @@ public interface FlowPackage extends EPackage
   EReference getSPARQLOperator_Query();
 
   /**
-   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.SPARQLOperator#getTarget <em>Target</em>}'.
+   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.SPARQLOperator#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Target</em>'.
+   * @return the meta object for the containment reference '<em>Target</em>'.
    * @see de.hs_rm.cs.vs.dsm.flow.SPARQLOperator#getTarget()
    * @see #getSPARQLOperator()
    * @generated
    */
-  EAttribute getSPARQLOperator_Target();
+  EReference getSPARQLOperator_Target();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.SPARQLOperator#getStream <em>Stream</em>}'.
+   * Returns the meta object for the containment reference '{@link de.hs_rm.cs.vs.dsm.flow.SPARQLOperator#getInput <em>Input</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Stream</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.SPARQLOperator#getStream()
+   * @return the meta object for the containment reference '<em>Input</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.SPARQLOperator#getInput()
    * @see #getSPARQLOperator()
    * @generated
    */
-  EReference getSPARQLOperator_Stream();
+  EReference getSPARQLOperator_Input();
 
   /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.QueryTagOperator <em>Query Tag Operator</em>}'.
@@ -3526,26 +3535,37 @@ public interface FlowPackage extends EPackage
   EReference getSparqlQuery_Variable();
 
   /**
-   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.SparqlQuery#getUri <em>Uri</em>}'.
+   * Returns the meta object for the attribute list '{@link de.hs_rm.cs.vs.dsm.flow.SparqlQuery#getSubject <em>Subject</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Uri</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.SparqlQuery#getUri()
+   * @return the meta object for the attribute list '<em>Subject</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.SparqlQuery#getSubject()
    * @see #getSparqlQuery()
    * @generated
    */
-  EAttribute getSparqlQuery_Uri();
+  EAttribute getSparqlQuery_Subject();
 
   /**
-   * Returns the meta object for the attribute '{@link de.hs_rm.cs.vs.dsm.flow.SparqlQuery#getAttribute <em>Attribute</em>}'.
+   * Returns the meta object for the attribute list '{@link de.hs_rm.cs.vs.dsm.flow.SparqlQuery#getPredicate <em>Predicate</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Attribute</em>'.
-   * @see de.hs_rm.cs.vs.dsm.flow.SparqlQuery#getAttribute()
+   * @return the meta object for the attribute list '<em>Predicate</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.SparqlQuery#getPredicate()
    * @see #getSparqlQuery()
    * @generated
    */
-  EAttribute getSparqlQuery_Attribute();
+  EAttribute getSparqlQuery_Predicate();
+
+  /**
+   * Returns the meta object for the attribute list '{@link de.hs_rm.cs.vs.dsm.flow.SparqlQuery#getObject <em>Object</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Object</em>'.
+   * @see de.hs_rm.cs.vs.dsm.flow.SparqlQuery#getObject()
+   * @see #getSparqlQuery()
+   * @generated
+   */
+  EAttribute getSparqlQuery_Object();
 
   /**
    * Returns the meta object for class '{@link de.hs_rm.cs.vs.dsm.flow.SparqlQueryVariable <em>Sparql Query Variable</em>}'.
@@ -5511,20 +5531,20 @@ public interface FlowPackage extends EPackage
     EReference SPARQL_OPERATOR__QUERY = eINSTANCE.getSPARQLOperator_Query();
 
     /**
-     * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Target</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SPARQL_OPERATOR__TARGET = eINSTANCE.getSPARQLOperator_Target();
+    EReference SPARQL_OPERATOR__TARGET = eINSTANCE.getSPARQLOperator_Target();
 
     /**
-     * The meta object literal for the '<em><b>Stream</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Input</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SPARQL_OPERATOR__STREAM = eINSTANCE.getSPARQLOperator_Stream();
+    EReference SPARQL_OPERATOR__INPUT = eINSTANCE.getSPARQLOperator_Input();
 
     /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.QueryTagOperatorImpl <em>Query Tag Operator</em>}' class.
@@ -5571,20 +5591,28 @@ public interface FlowPackage extends EPackage
     EReference SPARQL_QUERY__VARIABLE = eINSTANCE.getSparqlQuery_Variable();
 
     /**
-     * The meta object literal for the '<em><b>Uri</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Subject</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SPARQL_QUERY__URI = eINSTANCE.getSparqlQuery_Uri();
+    EAttribute SPARQL_QUERY__SUBJECT = eINSTANCE.getSparqlQuery_Subject();
 
     /**
-     * The meta object literal for the '<em><b>Attribute</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Predicate</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SPARQL_QUERY__ATTRIBUTE = eINSTANCE.getSparqlQuery_Attribute();
+    EAttribute SPARQL_QUERY__PREDICATE = eINSTANCE.getSparqlQuery_Predicate();
+
+    /**
+     * The meta object literal for the '<em><b>Object</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SPARQL_QUERY__OBJECT = eINSTANCE.getSparqlQuery_Object();
 
     /**
      * The meta object literal for the '{@link de.hs_rm.cs.vs.dsm.flow.impl.SparqlQueryVariableImpl <em>Sparql Query Variable</em>}' class.

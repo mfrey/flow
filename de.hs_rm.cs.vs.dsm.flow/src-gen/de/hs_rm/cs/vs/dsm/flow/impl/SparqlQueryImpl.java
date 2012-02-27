@@ -9,14 +9,20 @@ import de.hs_rm.cs.vs.dsm.flow.FlowPackage;
 import de.hs_rm.cs.vs.dsm.flow.SparqlQuery;
 import de.hs_rm.cs.vs.dsm.flow.SparqlQueryVariable;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,8 +32,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SparqlQueryImpl#getVariable <em>Variable</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SparqlQueryImpl#getUri <em>Uri</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SparqlQueryImpl#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SparqlQueryImpl#getSubject <em>Subject</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SparqlQueryImpl#getPredicate <em>Predicate</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SparqlQueryImpl#getObject <em>Object</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,44 +53,34 @@ public class SparqlQueryImpl extends MinimalEObjectImpl.Container implements Spa
   protected SparqlQueryVariable variable;
 
   /**
-   * The default value of the '{@link #getUri() <em>Uri</em>}' attribute.
+   * The cached value of the '{@link #getSubject() <em>Subject</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUri()
+   * @see #getSubject()
    * @generated
    * @ordered
    */
-  protected static final String URI_EDEFAULT = null;
+  protected EList<String> subject;
 
   /**
-   * The cached value of the '{@link #getUri() <em>Uri</em>}' attribute.
+   * The cached value of the '{@link #getPredicate() <em>Predicate</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUri()
+   * @see #getPredicate()
    * @generated
    * @ordered
    */
-  protected String uri = URI_EDEFAULT;
+  protected EList<String> predicate;
 
   /**
-   * The default value of the '{@link #getAttribute() <em>Attribute</em>}' attribute.
+   * The cached value of the '{@link #getObject() <em>Object</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAttribute()
+   * @see #getObject()
    * @generated
    * @ordered
    */
-  protected static final String ATTRIBUTE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAttribute()
-   * @generated
-   * @ordered
-   */
-  protected String attribute = ATTRIBUTE_EDEFAULT;
+  protected EList<String> object;
 
   /**
    * <!-- begin-user-doc -->
@@ -159,9 +156,13 @@ public class SparqlQueryImpl extends MinimalEObjectImpl.Container implements Spa
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getUri()
+  public EList<String> getSubject()
   {
-    return uri;
+    if (subject == null)
+    {
+      subject = new EDataTypeEList<String>(String.class, this, FlowPackage.SPARQL_QUERY__SUBJECT);
+    }
+    return subject;
   }
 
   /**
@@ -169,12 +170,13 @@ public class SparqlQueryImpl extends MinimalEObjectImpl.Container implements Spa
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setUri(String newUri)
+  public EList<String> getPredicate()
   {
-    String oldUri = uri;
-    uri = newUri;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.SPARQL_QUERY__URI, oldUri, uri));
+    if (predicate == null)
+    {
+      predicate = new EDataTypeEList<String>(String.class, this, FlowPackage.SPARQL_QUERY__PREDICATE);
+    }
+    return predicate;
   }
 
   /**
@@ -182,22 +184,13 @@ public class SparqlQueryImpl extends MinimalEObjectImpl.Container implements Spa
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getAttribute()
+  public EList<String> getObject()
   {
-    return attribute;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setAttribute(String newAttribute)
-  {
-    String oldAttribute = attribute;
-    attribute = newAttribute;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.SPARQL_QUERY__ATTRIBUTE, oldAttribute, attribute));
+    if (object == null)
+    {
+      object = new EDataTypeEList<String>(String.class, this, FlowPackage.SPARQL_QUERY__OBJECT);
+    }
+    return object;
   }
 
   /**
@@ -228,10 +221,12 @@ public class SparqlQueryImpl extends MinimalEObjectImpl.Container implements Spa
     {
       case FlowPackage.SPARQL_QUERY__VARIABLE:
         return getVariable();
-      case FlowPackage.SPARQL_QUERY__URI:
-        return getUri();
-      case FlowPackage.SPARQL_QUERY__ATTRIBUTE:
-        return getAttribute();
+      case FlowPackage.SPARQL_QUERY__SUBJECT:
+        return getSubject();
+      case FlowPackage.SPARQL_QUERY__PREDICATE:
+        return getPredicate();
+      case FlowPackage.SPARQL_QUERY__OBJECT:
+        return getObject();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -241,6 +236,7 @@ public class SparqlQueryImpl extends MinimalEObjectImpl.Container implements Spa
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -249,11 +245,17 @@ public class SparqlQueryImpl extends MinimalEObjectImpl.Container implements Spa
       case FlowPackage.SPARQL_QUERY__VARIABLE:
         setVariable((SparqlQueryVariable)newValue);
         return;
-      case FlowPackage.SPARQL_QUERY__URI:
-        setUri((String)newValue);
+      case FlowPackage.SPARQL_QUERY__SUBJECT:
+        getSubject().clear();
+        getSubject().addAll((Collection<? extends String>)newValue);
         return;
-      case FlowPackage.SPARQL_QUERY__ATTRIBUTE:
-        setAttribute((String)newValue);
+      case FlowPackage.SPARQL_QUERY__PREDICATE:
+        getPredicate().clear();
+        getPredicate().addAll((Collection<? extends String>)newValue);
+        return;
+      case FlowPackage.SPARQL_QUERY__OBJECT:
+        getObject().clear();
+        getObject().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -272,11 +274,14 @@ public class SparqlQueryImpl extends MinimalEObjectImpl.Container implements Spa
       case FlowPackage.SPARQL_QUERY__VARIABLE:
         setVariable((SparqlQueryVariable)null);
         return;
-      case FlowPackage.SPARQL_QUERY__URI:
-        setUri(URI_EDEFAULT);
+      case FlowPackage.SPARQL_QUERY__SUBJECT:
+        getSubject().clear();
         return;
-      case FlowPackage.SPARQL_QUERY__ATTRIBUTE:
-        setAttribute(ATTRIBUTE_EDEFAULT);
+      case FlowPackage.SPARQL_QUERY__PREDICATE:
+        getPredicate().clear();
+        return;
+      case FlowPackage.SPARQL_QUERY__OBJECT:
+        getObject().clear();
         return;
     }
     super.eUnset(featureID);
@@ -294,10 +299,12 @@ public class SparqlQueryImpl extends MinimalEObjectImpl.Container implements Spa
     {
       case FlowPackage.SPARQL_QUERY__VARIABLE:
         return variable != null;
-      case FlowPackage.SPARQL_QUERY__URI:
-        return URI_EDEFAULT == null ? uri != null : !URI_EDEFAULT.equals(uri);
-      case FlowPackage.SPARQL_QUERY__ATTRIBUTE:
-        return ATTRIBUTE_EDEFAULT == null ? attribute != null : !ATTRIBUTE_EDEFAULT.equals(attribute);
+      case FlowPackage.SPARQL_QUERY__SUBJECT:
+        return subject != null && !subject.isEmpty();
+      case FlowPackage.SPARQL_QUERY__PREDICATE:
+        return predicate != null && !predicate.isEmpty();
+      case FlowPackage.SPARQL_QUERY__OBJECT:
+        return object != null && !object.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -313,10 +320,12 @@ public class SparqlQueryImpl extends MinimalEObjectImpl.Container implements Spa
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (uri: ");
-    result.append(uri);
-    result.append(", attribute: ");
-    result.append(attribute);
+    result.append(" (subject: ");
+    result.append(subject);
+    result.append(", predicate: ");
+    result.append(predicate);
+    result.append(", object: ");
+    result.append(object);
     result.append(')');
     return result.toString();
   }

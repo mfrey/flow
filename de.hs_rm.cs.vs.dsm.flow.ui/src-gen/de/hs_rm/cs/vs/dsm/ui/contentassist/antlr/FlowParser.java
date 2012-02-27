@@ -93,6 +93,7 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSPARQLOperatorAccess().getGroup(), "rule__SPARQLOperator__Group__0");
 					put(grammarAccess.getQueryTagOperatorAccess().getGroup(), "rule__QueryTagOperator__Group__0");
 					put(grammarAccess.getSparqlQueryAccess().getGroup(), "rule__SparqlQuery__Group__0");
+					put(grammarAccess.getSparqlQueryAccess().getGroup_8(), "rule__SparqlQuery__Group_8__0");
 					put(grammarAccess.getSparqlQueryVariableAccess().getGroup(), "rule__SparqlQueryVariable__Group__0");
 					put(grammarAccess.getSparqlQueryVariableAccess().getGroup_2(), "rule__SparqlQueryVariable__Group_2__0");
 					put(grammarAccess.getUnTagOperatorAccess().getGroup(), "rule__UnTagOperator__Group__0");
@@ -207,12 +208,16 @@ public class FlowParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTagOperatorAccess().getStreamAssignment_5(), "rule__TagOperator__StreamAssignment_5");
 					put(grammarAccess.getSPARQLOperatorAccess().getQueryAssignment_2(), "rule__SPARQLOperator__QueryAssignment_2");
 					put(grammarAccess.getSPARQLOperatorAccess().getTargetAssignment_4(), "rule__SPARQLOperator__TargetAssignment_4");
-					put(grammarAccess.getSPARQLOperatorAccess().getStreamAssignment_6(), "rule__SPARQLOperator__StreamAssignment_6");
+					put(grammarAccess.getSPARQLOperatorAccess().getInputAssignment_6(), "rule__SPARQLOperator__InputAssignment_6");
 					put(grammarAccess.getQueryTagOperatorAccess().getQueryTypeAssignment_1(), "rule__QueryTagOperator__QueryTypeAssignment_1");
 					put(grammarAccess.getQueryTagOperatorAccess().getQueryAssignment_2(), "rule__QueryTagOperator__QueryAssignment_2");
 					put(grammarAccess.getSparqlQueryAccess().getVariableAssignment_0(), "rule__SparqlQuery__VariableAssignment_0");
-					put(grammarAccess.getSparqlQueryAccess().getUriAssignment_3(), "rule__SparqlQuery__UriAssignment_3");
-					put(grammarAccess.getSparqlQueryAccess().getAttributeAssignment_4(), "rule__SparqlQuery__AttributeAssignment_4");
+					put(grammarAccess.getSparqlQueryAccess().getSubjectAssignment_4(), "rule__SparqlQuery__SubjectAssignment_4");
+					put(grammarAccess.getSparqlQueryAccess().getPredicateAssignment_5(), "rule__SparqlQuery__PredicateAssignment_5");
+					put(grammarAccess.getSparqlQueryAccess().getObjectAssignment_7(), "rule__SparqlQuery__ObjectAssignment_7");
+					put(grammarAccess.getSparqlQueryAccess().getSubjectAssignment_8_2(), "rule__SparqlQuery__SubjectAssignment_8_2");
+					put(grammarAccess.getSparqlQueryAccess().getPredicateAssignment_8_3(), "rule__SparqlQuery__PredicateAssignment_8_3");
+					put(grammarAccess.getSparqlQueryAccess().getObjectAssignment_8_5(), "rule__SparqlQuery__ObjectAssignment_8_5");
 					put(grammarAccess.getSparqlQueryVariableAccess().getVariableAssignment_1(), "rule__SparqlQueryVariable__VariableAssignment_1");
 					put(grammarAccess.getSparqlQueryVariableAccess().getVariableAssignment_2_2(), "rule__SparqlQueryVariable__VariableAssignment_2_2");
 					put(grammarAccess.getUnTagOperatorAccess().getParametersAssignment_2(), "rule__UnTagOperator__ParametersAssignment_2");

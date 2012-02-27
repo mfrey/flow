@@ -5,6 +5,8 @@
  */
 package de.hs_rm.cs.vs.dsm.flow;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,8 +18,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SparqlQuery#getVariable <em>Variable</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SparqlQuery#getUri <em>Uri</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SparqlQuery#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SparqlQuery#getSubject <em>Subject</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SparqlQuery#getPredicate <em>Predicate</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SparqlQuery#getObject <em>Object</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,55 +57,51 @@ public interface SparqlQuery extends EObject
   void setVariable(SparqlQueryVariable value);
 
   /**
-   * Returns the value of the '<em><b>Uri</b></em>' attribute.
+   * Returns the value of the '<em><b>Subject</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Uri</em>' attribute isn't clear,
+   * If the meaning of the '<em>Subject</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Uri</em>' attribute.
-   * @see #setUri(String)
-   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getSparqlQuery_Uri()
-   * @model
+   * @return the value of the '<em>Subject</em>' attribute list.
+   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getSparqlQuery_Subject()
+   * @model unique="false"
    * @generated
    */
-  String getUri();
+  EList<String> getSubject();
 
   /**
-   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.SparqlQuery#getUri <em>Uri</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Uri</em>' attribute.
-   * @see #getUri()
-   * @generated
-   */
-  void setUri(String value);
-
-  /**
-   * Returns the value of the '<em><b>Attribute</b></em>' attribute.
+   * Returns the value of the '<em><b>Predicate</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Attribute</em>' attribute isn't clear,
+   * If the meaning of the '<em>Predicate</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Attribute</em>' attribute.
-   * @see #setAttribute(String)
-   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getSparqlQuery_Attribute()
-   * @model
+   * @return the value of the '<em>Predicate</em>' attribute list.
+   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getSparqlQuery_Predicate()
+   * @model unique="false"
    * @generated
    */
-  String getAttribute();
+  EList<String> getPredicate();
 
   /**
-   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.SparqlQuery#getAttribute <em>Attribute</em>}' attribute.
+   * Returns the value of the '<em><b>Object</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Object</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Attribute</em>' attribute.
-   * @see #getAttribute()
+   * @return the value of the '<em>Object</em>' attribute list.
+   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getSparqlQuery_Object()
+   * @model unique="false"
    * @generated
    */
-  void setAttribute(String value);
+  EList<String> getObject();
 
 } // SparqlQuery

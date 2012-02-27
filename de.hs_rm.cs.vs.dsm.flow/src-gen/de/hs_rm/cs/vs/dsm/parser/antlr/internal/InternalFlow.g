@@ -2051,19 +2051,19 @@ ruleSPARQLOperator returns [EObject current=null]
     }
 (
 (
-		lv_target_4_0=RULE_STRING
-		{
-			newLeafNode(lv_target_4_0, grammarAccess.getSPARQLOperatorAccess().getTargetSTRINGTerminalRuleCall_4_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getSPARQLOperatorAccess().getTargetStreamAccessParserRuleCall_4_0()); 
+	    }
+		lv_target_4_0=ruleStreamAccess		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getSPARQLOperatorRule());
+	            $current = createModelElementForParent(grammarAccess.getSPARQLOperatorRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"target",
         		lv_target_4_0, 
-        		"STRING");
+        		"StreamAccess");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -2074,16 +2074,16 @@ ruleSPARQLOperator returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSPARQLOperatorAccess().getStreamStreamOperatorParameterParserRuleCall_6_0()); 
+	        newCompositeNode(grammarAccess.getSPARQLOperatorAccess().getInputStreamOperatorParameterParserRuleCall_6_0()); 
 	    }
-		lv_stream_6_0=ruleStreamOperatorParameter		{
+		lv_input_6_0=ruleStreamOperatorParameter		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSPARQLOperatorRule());
 	        }
        		set(
        			$current, 
-       			"stream",
-        		lv_stream_6_0, 
+       			"input",
+        		lv_input_6_0, 
         		"StreamOperatorParameter");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -2205,45 +2205,137 @@ ruleSparqlQuery returns [EObject current=null]
     {
     	newLeafNode(otherlv_2, grammarAccess.getSparqlQueryAccess().getLeftCurlyBracketKeyword_2());
     }
+	otherlv_3='?' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getSparqlQueryAccess().getQuestionMarkKeyword_3());
+    }
 (
 (
-		lv_uri_3_0=RULE_STRING
+		lv_subject_4_0=RULE_STRING
 		{
-			newLeafNode(lv_uri_3_0, grammarAccess.getSparqlQueryAccess().getUriSTRINGTerminalRuleCall_3_0()); 
+			newLeafNode(lv_subject_4_0, grammarAccess.getSparqlQueryAccess().getSubjectSTRINGTerminalRuleCall_4_0()); 
 		}
 		{
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getSparqlQueryRule());
 	        }
-       		setWithLastConsumed(
+       		addWithLastConsumed(
        			$current, 
-       			"uri",
-        		lv_uri_3_0, 
+       			"subject",
+        		lv_subject_4_0, 
         		"STRING");
 	    }
 
 )
 )(
 (
-		lv_attribute_4_0=RULE_STRING
+		lv_predicate_5_0=RULE_STRING
 		{
-			newLeafNode(lv_attribute_4_0, grammarAccess.getSparqlQueryAccess().getAttributeSTRINGTerminalRuleCall_4_0()); 
+			newLeafNode(lv_predicate_5_0, grammarAccess.getSparqlQueryAccess().getPredicateSTRINGTerminalRuleCall_5_0()); 
 		}
 		{
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getSparqlQueryRule());
 	        }
-       		setWithLastConsumed(
+       		addWithLastConsumed(
        			$current, 
-       			"attribute",
-        		lv_attribute_4_0, 
+       			"predicate",
+        		lv_predicate_5_0, 
         		"STRING");
 	    }
 
 )
-)	otherlv_5='}' 
+)	otherlv_6='?' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getSparqlQueryAccess().getRightCurlyBracketKeyword_5());
+    	newLeafNode(otherlv_6, grammarAccess.getSparqlQueryAccess().getQuestionMarkKeyword_6());
+    }
+(
+(
+		lv_object_7_0=RULE_STRING
+		{
+			newLeafNode(lv_object_7_0, grammarAccess.getSparqlQueryAccess().getObjectSTRINGTerminalRuleCall_7_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSparqlQueryRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"object",
+        		lv_object_7_0, 
+        		"STRING");
+	    }
+
+)
+)(	otherlv_8='.' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getSparqlQueryAccess().getFullStopKeyword_8_0());
+    }
+	otherlv_9='?' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getSparqlQueryAccess().getQuestionMarkKeyword_8_1());
+    }
+(
+(
+		lv_subject_10_0=RULE_STRING
+		{
+			newLeafNode(lv_subject_10_0, grammarAccess.getSparqlQueryAccess().getSubjectSTRINGTerminalRuleCall_8_2_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSparqlQueryRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"subject",
+        		lv_subject_10_0, 
+        		"STRING");
+	    }
+
+)
+)(
+(
+		lv_predicate_11_0=RULE_STRING
+		{
+			newLeafNode(lv_predicate_11_0, grammarAccess.getSparqlQueryAccess().getPredicateSTRINGTerminalRuleCall_8_3_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSparqlQueryRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"predicate",
+        		lv_predicate_11_0, 
+        		"STRING");
+	    }
+
+)
+)	otherlv_12='?' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getSparqlQueryAccess().getQuestionMarkKeyword_8_4());
+    }
+(
+(
+		lv_object_13_0=RULE_STRING
+		{
+			newLeafNode(lv_object_13_0, grammarAccess.getSparqlQueryAccess().getObjectSTRINGTerminalRuleCall_8_5_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSparqlQueryRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"object",
+        		lv_object_13_0, 
+        		"STRING");
+	    }
+
+)
+))*	otherlv_14='}' 
+    {
+    	newLeafNode(otherlv_14, grammarAccess.getSparqlQueryAccess().getRightCurlyBracketKeyword_9());
     }
 )
 ;

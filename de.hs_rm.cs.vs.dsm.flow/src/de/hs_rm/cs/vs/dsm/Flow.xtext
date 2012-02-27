@@ -151,10 +151,10 @@ NoReturnTypeOperator:
  * The TagOperator rule tags elements of a stream with elements of an ontology
  */
 TagOperator:
-	'tag''('parameters+=TagElement (',' parameters+=TagElement)* ',' stream=StreamOperatorParameter')';
+	'tag' '('parameters+=TagElement (',' parameters+=TagElement)* ',' stream=StreamOperatorParameter ')';
 
 SPARQLOperator:
-	'sparql' '(' query=QueryTagOperator ',' target=STRING ',' stream=StreamOperatorParameter ')';
+	'sparql' '(' query=QueryTagOperator ',' target=StreamAccess ',' input=StreamOperatorParameter ')';
 
 /**
  * Basically a query (QueryTagOperator) within the tag Operator (TagOperator) is a 
@@ -172,7 +172,7 @@ QueryTagOperator:
  */
 SparqlQuery:
 	variable=SparqlQueryVariable 'WHERE' '{' 
-		uri=STRING attribute=STRING
+		'?' subject+=STRING  predicate+=STRING '?' object+=STRING ('.' '?' subject+=STRING  predicate+=STRING '?' object+=STRING)*
 	'}'
 ;
  

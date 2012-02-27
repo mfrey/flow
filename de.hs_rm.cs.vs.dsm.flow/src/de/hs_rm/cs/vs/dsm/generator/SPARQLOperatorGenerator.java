@@ -59,7 +59,7 @@ public class SPARQLOperatorGenerator extends AbstractOperatorGenerator {
 		// Store the operator in an attribute
 		mOperator = (SPARQLOperator) pStatement.getOperator();
 		// Add the input stream to the list
-		this.getInputStreams().add(this.mOperator.getStream().getStream().getName());
+		this.getInputStreams().add(this.mOperator.getInput().getStream().getName());
 		// Set the operator type
 		setOperatorType(OPERATOR_TYPE);
 		// Set the name of the operator
@@ -79,31 +79,24 @@ public class SPARQLOperatorGenerator extends AbstractOperatorGenerator {
 			String variable = mOperator.getQuery().getQuery().getVariable().getVariable().get(i);
 			result += Util.getInstance().createParameter(mStream, "variable_" + i, variable);
 		}
-		// Set the URI of the query
-		result += getURI();
-		// Set the URI attribute of the query
-		result += getAttribtute();
-		// Set the target of the SPARQL query
+		
+		for(int i = 0; i < mOperator.getQuery().getQuery().getObject().size(); i++){
+			result += Util.getInstance().createParameter(mStream, "object_" + i, mOperator.getQuery().getQuery().getObject().get(i));
+			result += Util.getInstance().createParameter(mStream, "predicate_" + i, mOperator.getQuery().getQuery().getPredicate().get(i));
+			result += Util.getInstance().createParameter(mStream, "subject_" + i, mOperator.getQuery().getQuery().getSubject().get(i));
+		}
+		
 		result += getTarget();
+		
 		// Return the result
 		return result;
 	}
 	
 	private String getTarget(){
-		return Util.getInstance().createParameter(mStream, "target", mOperator.getTarget());
+		return Util.getInstance().createParameter(mStream, "target", mOperator.getTarget().getElement().getName());
 	}
 	
 	private String getQueryType(){
 		return Util.getInstance().createParameter(mStream, "query_type", mOperator.getQuery().getQueryType().getName());
 	}
-	
-	private String getURI(){
-		return Util.getInstance().createParameter(mStream, "uri", mOperator.getQuery().getQuery().getUri());
-	}
-	
-	private String getAttribtute(){
-		return Util.getInstance().createParameter(mStream, "uri_attribute", mOperator.getQuery().getQuery().getAttribute());
-	}
-	
-	
 }

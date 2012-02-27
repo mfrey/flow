@@ -1412,9 +1412,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSPARQLOperator_Target()
+  public EReference getSPARQLOperator_Target()
   {
-    return (EAttribute)sparqlOperatorEClass.getEStructuralFeatures().get(1);
+    return (EReference)sparqlOperatorEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1422,7 +1422,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSPARQLOperator_Stream()
+  public EReference getSPARQLOperator_Input()
   {
     return (EReference)sparqlOperatorEClass.getEStructuralFeatures().get(2);
   }
@@ -1482,7 +1482,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSparqlQuery_Uri()
+  public EAttribute getSparqlQuery_Subject()
   {
     return (EAttribute)sparqlQueryEClass.getEStructuralFeatures().get(1);
   }
@@ -1492,9 +1492,19 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSparqlQuery_Attribute()
+  public EAttribute getSparqlQuery_Predicate()
   {
     return (EAttribute)sparqlQueryEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSparqlQuery_Object()
+  {
+    return (EAttribute)sparqlQueryEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2862,8 +2872,8 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     sparqlOperatorEClass = createEClass(SPARQL_OPERATOR);
     createEReference(sparqlOperatorEClass, SPARQL_OPERATOR__QUERY);
-    createEAttribute(sparqlOperatorEClass, SPARQL_OPERATOR__TARGET);
-    createEReference(sparqlOperatorEClass, SPARQL_OPERATOR__STREAM);
+    createEReference(sparqlOperatorEClass, SPARQL_OPERATOR__TARGET);
+    createEReference(sparqlOperatorEClass, SPARQL_OPERATOR__INPUT);
 
     queryTagOperatorEClass = createEClass(QUERY_TAG_OPERATOR);
     createEAttribute(queryTagOperatorEClass, QUERY_TAG_OPERATOR__QUERY_TYPE);
@@ -2871,8 +2881,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     sparqlQueryEClass = createEClass(SPARQL_QUERY);
     createEReference(sparqlQueryEClass, SPARQL_QUERY__VARIABLE);
-    createEAttribute(sparqlQueryEClass, SPARQL_QUERY__URI);
-    createEAttribute(sparqlQueryEClass, SPARQL_QUERY__ATTRIBUTE);
+    createEAttribute(sparqlQueryEClass, SPARQL_QUERY__SUBJECT);
+    createEAttribute(sparqlQueryEClass, SPARQL_QUERY__PREDICATE);
+    createEAttribute(sparqlQueryEClass, SPARQL_QUERY__OBJECT);
 
     sparqlQueryVariableEClass = createEClass(SPARQL_QUERY_VARIABLE);
     createEAttribute(sparqlQueryVariableEClass, SPARQL_QUERY_VARIABLE__VARIABLE);
@@ -3231,8 +3242,8 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     initEClass(sparqlOperatorEClass, SPARQLOperator.class, "SPARQLOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSPARQLOperator_Query(), this.getQueryTagOperator(), null, "query", null, 0, 1, SPARQLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSPARQLOperator_Target(), ecorePackage.getEString(), "target", null, 0, 1, SPARQLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSPARQLOperator_Stream(), this.getStreamOperatorParameter(), null, "stream", null, 0, 1, SPARQLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSPARQLOperator_Target(), this.getStreamAccess(), null, "target", null, 0, 1, SPARQLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSPARQLOperator_Input(), this.getStreamOperatorParameter(), null, "input", null, 0, 1, SPARQLOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(queryTagOperatorEClass, QueryTagOperator.class, "QueryTagOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getQueryTagOperator_QueryType(), this.getSparqlQueryType(), "queryType", null, 0, 1, QueryTagOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3240,8 +3251,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage
 
     initEClass(sparqlQueryEClass, SparqlQuery.class, "SparqlQuery", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSparqlQuery_Variable(), this.getSparqlQueryVariable(), null, "variable", null, 0, 1, SparqlQuery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSparqlQuery_Uri(), ecorePackage.getEString(), "uri", null, 0, 1, SparqlQuery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSparqlQuery_Attribute(), ecorePackage.getEString(), "attribute", null, 0, 1, SparqlQuery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSparqlQuery_Subject(), ecorePackage.getEString(), "subject", null, 0, -1, SparqlQuery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSparqlQuery_Predicate(), ecorePackage.getEString(), "predicate", null, 0, -1, SparqlQuery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSparqlQuery_Object(), ecorePackage.getEString(), "object", null, 0, -1, SparqlQuery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sparqlQueryVariableEClass, SparqlQueryVariable.class, "SparqlQueryVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSparqlQueryVariable_Variable(), ecorePackage.getEString(), "variable", null, 0, -1, SparqlQueryVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

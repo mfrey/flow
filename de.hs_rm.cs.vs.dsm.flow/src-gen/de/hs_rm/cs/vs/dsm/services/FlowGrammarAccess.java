@@ -1334,17 +1334,17 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cQueryQueryTagOperatorParserRuleCall_2_0 = (RuleCall)cQueryAssignment_2.eContents().get(0);
 		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cTargetAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cTargetSTRINGTerminalRuleCall_4_0 = (RuleCall)cTargetAssignment_4.eContents().get(0);
+		private final RuleCall cTargetStreamAccessParserRuleCall_4_0 = (RuleCall)cTargetAssignment_4.eContents().get(0);
 		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cStreamAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cStreamStreamOperatorParameterParserRuleCall_6_0 = (RuleCall)cStreamAssignment_6.eContents().get(0);
+		private final Assignment cInputAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cInputStreamOperatorParameterParserRuleCall_6_0 = (RuleCall)cInputAssignment_6.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//SPARQLOperator:
-		//	"sparql" "(" query=QueryTagOperator "," target=STRING "," stream=StreamOperatorParameter ")";
+		//	"sparql" "(" query=QueryTagOperator "," target=StreamAccess "," input=StreamOperatorParameter ")";
 		public ParserRule getRule() { return rule; }
 
-		//"sparql" "(" query=QueryTagOperator "," target=STRING "," stream=StreamOperatorParameter ")"
+		//"sparql" "(" query=QueryTagOperator "," target=StreamAccess "," input=StreamOperatorParameter ")"
 		public Group getGroup() { return cGroup; }
 
 		//"sparql"
@@ -1362,20 +1362,20 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//","
 		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
 
-		//target=STRING
+		//target=StreamAccess
 		public Assignment getTargetAssignment_4() { return cTargetAssignment_4; }
 
-		//STRING
-		public RuleCall getTargetSTRINGTerminalRuleCall_4_0() { return cTargetSTRINGTerminalRuleCall_4_0; }
+		//StreamAccess
+		public RuleCall getTargetStreamAccessParserRuleCall_4_0() { return cTargetStreamAccessParserRuleCall_4_0; }
 
 		//","
 		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
 
-		//stream=StreamOperatorParameter
-		public Assignment getStreamAssignment_6() { return cStreamAssignment_6; }
+		//input=StreamOperatorParameter
+		public Assignment getInputAssignment_6() { return cInputAssignment_6; }
 
 		//StreamOperatorParameter
-		public RuleCall getStreamStreamOperatorParameterParserRuleCall_6_0() { return cStreamStreamOperatorParameterParserRuleCall_6_0; }
+		public RuleCall getInputStreamOperatorParameterParserRuleCall_6_0() { return cInputStreamOperatorParameterParserRuleCall_6_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
@@ -1428,19 +1428,35 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cVariableSparqlQueryVariableParserRuleCall_0_0 = (RuleCall)cVariableAssignment_0.eContents().get(0);
 		private final Keyword cWHEREKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cUriAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cUriSTRINGTerminalRuleCall_3_0 = (RuleCall)cUriAssignment_3.eContents().get(0);
-		private final Assignment cAttributeAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cAttributeSTRINGTerminalRuleCall_4_0 = (RuleCall)cAttributeAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cQuestionMarkKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cSubjectAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cSubjectSTRINGTerminalRuleCall_4_0 = (RuleCall)cSubjectAssignment_4.eContents().get(0);
+		private final Assignment cPredicateAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cPredicateSTRINGTerminalRuleCall_5_0 = (RuleCall)cPredicateAssignment_5.eContents().get(0);
+		private final Keyword cQuestionMarkKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cObjectAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cObjectSTRINGTerminalRuleCall_7_0 = (RuleCall)cObjectAssignment_7.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cFullStopKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cQuestionMarkKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Assignment cSubjectAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final RuleCall cSubjectSTRINGTerminalRuleCall_8_2_0 = (RuleCall)cSubjectAssignment_8_2.eContents().get(0);
+		private final Assignment cPredicateAssignment_8_3 = (Assignment)cGroup_8.eContents().get(3);
+		private final RuleCall cPredicateSTRINGTerminalRuleCall_8_3_0 = (RuleCall)cPredicateAssignment_8_3.eContents().get(0);
+		private final Keyword cQuestionMarkKeyword_8_4 = (Keyword)cGroup_8.eContents().get(4);
+		private final Assignment cObjectAssignment_8_5 = (Assignment)cGroup_8.eContents().get(5);
+		private final RuleCall cObjectSTRINGTerminalRuleCall_8_5_0 = (RuleCall)cObjectAssignment_8_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		/// **
 		// * 
 		// * / SparqlQuery:
-		//	variable=SparqlQueryVariable "WHERE" "{" uri=STRING attribute=STRING "}";
+		//	variable=SparqlQueryVariable "WHERE" "{" "?" subject+=STRING predicate+=STRING "?" object+=STRING ("." "?"
+		//	subject+=STRING predicate+=STRING "?" object+=STRING)* "}";
 		public ParserRule getRule() { return rule; }
 
-		//variable=SparqlQueryVariable "WHERE" "{" uri=STRING attribute=STRING "}"
+		//variable=SparqlQueryVariable "WHERE" "{" "?" subject+=STRING predicate+=STRING "?" object+=STRING ("." "?"
+		//subject+=STRING predicate+=STRING "?" object+=STRING)* "}"
 		public Group getGroup() { return cGroup; }
 
 		//variable=SparqlQueryVariable
@@ -1455,20 +1471,62 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//uri=STRING
-		public Assignment getUriAssignment_3() { return cUriAssignment_3; }
+		//"?"
+		public Keyword getQuestionMarkKeyword_3() { return cQuestionMarkKeyword_3; }
+
+		//subject+=STRING
+		public Assignment getSubjectAssignment_4() { return cSubjectAssignment_4; }
 
 		//STRING
-		public RuleCall getUriSTRINGTerminalRuleCall_3_0() { return cUriSTRINGTerminalRuleCall_3_0; }
+		public RuleCall getSubjectSTRINGTerminalRuleCall_4_0() { return cSubjectSTRINGTerminalRuleCall_4_0; }
 
-		//attribute=STRING
-		public Assignment getAttributeAssignment_4() { return cAttributeAssignment_4; }
+		//predicate+=STRING
+		public Assignment getPredicateAssignment_5() { return cPredicateAssignment_5; }
 
 		//STRING
-		public RuleCall getAttributeSTRINGTerminalRuleCall_4_0() { return cAttributeSTRINGTerminalRuleCall_4_0; }
+		public RuleCall getPredicateSTRINGTerminalRuleCall_5_0() { return cPredicateSTRINGTerminalRuleCall_5_0; }
+
+		//"?"
+		public Keyword getQuestionMarkKeyword_6() { return cQuestionMarkKeyword_6; }
+
+		//object+=STRING
+		public Assignment getObjectAssignment_7() { return cObjectAssignment_7; }
+
+		//STRING
+		public RuleCall getObjectSTRINGTerminalRuleCall_7_0() { return cObjectSTRINGTerminalRuleCall_7_0; }
+
+		//("." "?" subject+=STRING predicate+=STRING "?" object+=STRING)*
+		public Group getGroup_8() { return cGroup_8; }
+
+		//"."
+		public Keyword getFullStopKeyword_8_0() { return cFullStopKeyword_8_0; }
+
+		//"?"
+		public Keyword getQuestionMarkKeyword_8_1() { return cQuestionMarkKeyword_8_1; }
+
+		//subject+=STRING
+		public Assignment getSubjectAssignment_8_2() { return cSubjectAssignment_8_2; }
+
+		//STRING
+		public RuleCall getSubjectSTRINGTerminalRuleCall_8_2_0() { return cSubjectSTRINGTerminalRuleCall_8_2_0; }
+
+		//predicate+=STRING
+		public Assignment getPredicateAssignment_8_3() { return cPredicateAssignment_8_3; }
+
+		//STRING
+		public RuleCall getPredicateSTRINGTerminalRuleCall_8_3_0() { return cPredicateSTRINGTerminalRuleCall_8_3_0; }
+
+		//"?"
+		public Keyword getQuestionMarkKeyword_8_4() { return cQuestionMarkKeyword_8_4; }
+
+		//object+=STRING
+		public Assignment getObjectAssignment_8_5() { return cObjectAssignment_8_5; }
+
+		//STRING
+		public RuleCall getObjectSTRINGTerminalRuleCall_8_5_0() { return cObjectSTRINGTerminalRuleCall_8_5_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 
 	public class SparqlQueryVariableElements extends AbstractParserRuleElementFinder {
@@ -3904,7 +3962,7 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SPARQLOperator:
-	//	"sparql" "(" query=QueryTagOperator "," target=STRING "," stream=StreamOperatorParameter ")";
+	//	"sparql" "(" query=QueryTagOperator "," target=StreamAccess "," input=StreamOperatorParameter ")";
 	public SPARQLOperatorElements getSPARQLOperatorAccess() {
 		return (pSPARQLOperator != null) ? pSPARQLOperator : (pSPARQLOperator = new SPARQLOperatorElements());
 	}
@@ -3930,7 +3988,8 @@ public class FlowGrammarAccess extends AbstractGrammarElementFinder {
 	/// **
 	// * 
 	// * / SparqlQuery:
-	//	variable=SparqlQueryVariable "WHERE" "{" uri=STRING attribute=STRING "}";
+	//	variable=SparqlQueryVariable "WHERE" "{" "?" subject+=STRING predicate+=STRING "?" object+=STRING ("." "?"
+	//	subject+=STRING predicate+=STRING "?" object+=STRING)* "}";
 	public SparqlQueryElements getSparqlQueryAccess() {
 		return (pSparqlQuery != null) ? pSparqlQuery : (pSparqlQuery = new SparqlQueryElements());
 	}

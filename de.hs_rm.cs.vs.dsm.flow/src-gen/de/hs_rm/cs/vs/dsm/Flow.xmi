@@ -538,10 +538,10 @@
       </elements>
       <elements xsi:type="xtext:Keyword" value=","/>
       <elements xsi:type="xtext:Assignment" feature="target" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.77"/>
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.6"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value=","/>
-      <elements xsi:type="xtext:Assignment" feature="stream" operator="=">
+      <elements xsi:type="xtext:Assignment" feature="input" operator="=">
         <terminal xsi:type="xtext:RuleCall" rule="//@rules.10"/>
       </elements>
       <elements xsi:type="xtext:Keyword" value=")"/>
@@ -572,11 +572,30 @@
       </elements>
       <elements xsi:type="xtext:Keyword" value="WHERE"/>
       <elements xsi:type="xtext:Keyword" value="{"/>
-      <elements xsi:type="xtext:Assignment" feature="uri" operator="=">
+      <elements xsi:type="xtext:Keyword" value="?"/>
+      <elements xsi:type="xtext:Assignment" feature="subject" operator="+=">
         <terminal xsi:type="xtext:RuleCall" rule="//@rules.77"/>
       </elements>
-      <elements xsi:type="xtext:Assignment" feature="attribute" operator="=">
+      <elements xsi:type="xtext:Assignment" feature="predicate" operator="+=">
         <terminal xsi:type="xtext:RuleCall" rule="//@rules.77"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="?"/>
+      <elements xsi:type="xtext:Assignment" feature="object" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.77"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:Keyword" value="."/>
+        <elements xsi:type="xtext:Keyword" value="?"/>
+        <elements xsi:type="xtext:Assignment" feature="subject" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.77"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="predicate" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.77"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="?"/>
+        <elements xsi:type="xtext:Assignment" feature="object" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.77"/>
+        </elements>
       </elements>
       <elements xsi:type="xtext:Keyword" value="}"/>
     </alternatives>

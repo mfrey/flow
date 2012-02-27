@@ -112,8 +112,8 @@
     </genClasses>
     <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SPARQLOperator">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SPARQLOperator/query"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SPARQLOperator/target"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SPARQLOperator/stream"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SPARQLOperator/target"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SPARQLOperator/input"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//QueryTagOperator">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//QueryTagOperator/queryType"/>
@@ -121,8 +121,9 @@
     </genClasses>
     <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SparqlQuery">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SparqlQuery/variable"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SparqlQuery/uri"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SparqlQuery/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SparqlQuery/subject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SparqlQuery/predicate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SparqlQuery/object"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SparqlQueryVariable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SparqlQueryVariable/variable"/>

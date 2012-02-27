@@ -16,7 +16,7 @@ package de.hs_rm.cs.vs.dsm.flow;
  * <ul>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SPARQLOperator#getQuery <em>Query</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SPARQLOperator#getTarget <em>Target</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SPARQLOperator#getStream <em>Stream</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.SPARQLOperator#getInput <em>Input</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,55 +53,55 @@ public interface SPARQLOperator extends ReturnTypeOperator
   void setQuery(QueryTagOperator value);
 
   /**
-   * Returns the value of the '<em><b>Target</b></em>' attribute.
+   * Returns the value of the '<em><b>Target</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Target</em>' attribute isn't clear,
+   * If the meaning of the '<em>Target</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Target</em>' attribute.
-   * @see #setTarget(String)
+   * @return the value of the '<em>Target</em>' containment reference.
+   * @see #setTarget(StreamAccess)
    * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getSPARQLOperator_Target()
-   * @model
-   * @generated
-   */
-  String getTarget();
-
-  /**
-   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.SPARQLOperator#getTarget <em>Target</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Target</em>' attribute.
-   * @see #getTarget()
-   * @generated
-   */
-  void setTarget(String value);
-
-  /**
-   * Returns the value of the '<em><b>Stream</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Stream</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Stream</em>' containment reference.
-   * @see #setStream(StreamOperatorParameter)
-   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getSPARQLOperator_Stream()
    * @model containment="true"
    * @generated
    */
-  StreamOperatorParameter getStream();
+  StreamAccess getTarget();
 
   /**
-   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.SPARQLOperator#getStream <em>Stream</em>}' containment reference.
+   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.SPARQLOperator#getTarget <em>Target</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Stream</em>' containment reference.
-   * @see #getStream()
+   * @param value the new value of the '<em>Target</em>' containment reference.
+   * @see #getTarget()
    * @generated
    */
-  void setStream(StreamOperatorParameter value);
+  void setTarget(StreamAccess value);
+
+  /**
+   * Returns the value of the '<em><b>Input</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Input</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Input</em>' containment reference.
+   * @see #setInput(StreamOperatorParameter)
+   * @see de.hs_rm.cs.vs.dsm.flow.FlowPackage#getSPARQLOperator_Input()
+   * @model containment="true"
+   * @generated
+   */
+  StreamOperatorParameter getInput();
+
+  /**
+   * Sets the value of the '{@link de.hs_rm.cs.vs.dsm.flow.SPARQLOperator#getInput <em>Input</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Input</em>' containment reference.
+   * @see #getInput()
+   * @generated
+   */
+  void setInput(StreamOperatorParameter value);
 
 } // SPARQLOperator

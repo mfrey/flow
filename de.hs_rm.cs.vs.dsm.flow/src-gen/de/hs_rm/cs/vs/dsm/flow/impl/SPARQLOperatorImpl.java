@@ -8,6 +8,7 @@ package de.hs_rm.cs.vs.dsm.flow.impl;
 import de.hs_rm.cs.vs.dsm.flow.FlowPackage;
 import de.hs_rm.cs.vs.dsm.flow.QueryTagOperator;
 import de.hs_rm.cs.vs.dsm.flow.SPARQLOperator;
+import de.hs_rm.cs.vs.dsm.flow.StreamAccess;
 import de.hs_rm.cs.vs.dsm.flow.StreamOperatorParameter;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -27,7 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SPARQLOperatorImpl#getQuery <em>Query</em>}</li>
  *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SPARQLOperatorImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SPARQLOperatorImpl#getStream <em>Stream</em>}</li>
+ *   <li>{@link de.hs_rm.cs.vs.dsm.flow.impl.SPARQLOperatorImpl#getInput <em>Input</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,34 +47,24 @@ public class SPARQLOperatorImpl extends ReturnTypeOperatorImpl implements SPARQL
   protected QueryTagOperator query;
 
   /**
-   * The default value of the '{@link #getTarget() <em>Target</em>}' attribute.
+   * The cached value of the '{@link #getTarget() <em>Target</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTarget()
    * @generated
    * @ordered
    */
-  protected static final String TARGET_EDEFAULT = null;
+  protected StreamAccess target;
 
   /**
-   * The cached value of the '{@link #getTarget() <em>Target</em>}' attribute.
+   * The cached value of the '{@link #getInput() <em>Input</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTarget()
+   * @see #getInput()
    * @generated
    * @ordered
    */
-  protected String target = TARGET_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getStream() <em>Stream</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getStream()
-   * @generated
-   * @ordered
-   */
-  protected StreamOperatorParameter stream;
+  protected StreamOperatorParameter input;
 
   /**
    * <!-- begin-user-doc -->
@@ -149,7 +140,7 @@ public class SPARQLOperatorImpl extends ReturnTypeOperatorImpl implements SPARQL
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getTarget()
+  public StreamAccess getTarget()
   {
     return target;
   }
@@ -159,36 +150,13 @@ public class SPARQLOperatorImpl extends ReturnTypeOperatorImpl implements SPARQL
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTarget(String newTarget)
+  public NotificationChain basicSetTarget(StreamAccess newTarget, NotificationChain msgs)
   {
-    String oldTarget = target;
+    StreamAccess oldTarget = target;
     target = newTarget;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.SPARQL_OPERATOR__TARGET, oldTarget, target));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public StreamOperatorParameter getStream()
-  {
-    return stream;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetStream(StreamOperatorParameter newStream, NotificationChain msgs)
-  {
-    StreamOperatorParameter oldStream = stream;
-    stream = newStream;
-    if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FlowPackage.SPARQL_OPERATOR__STREAM, oldStream, newStream);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FlowPackage.SPARQL_OPERATOR__TARGET, oldTarget, newTarget);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -199,20 +167,68 @@ public class SPARQLOperatorImpl extends ReturnTypeOperatorImpl implements SPARQL
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setStream(StreamOperatorParameter newStream)
+  public void setTarget(StreamAccess newTarget)
   {
-    if (newStream != stream)
+    if (newTarget != target)
     {
       NotificationChain msgs = null;
-      if (stream != null)
-        msgs = ((InternalEObject)stream).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FlowPackage.SPARQL_OPERATOR__STREAM, null, msgs);
-      if (newStream != null)
-        msgs = ((InternalEObject)newStream).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FlowPackage.SPARQL_OPERATOR__STREAM, null, msgs);
-      msgs = basicSetStream(newStream, msgs);
+      if (target != null)
+        msgs = ((InternalEObject)target).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FlowPackage.SPARQL_OPERATOR__TARGET, null, msgs);
+      if (newTarget != null)
+        msgs = ((InternalEObject)newTarget).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FlowPackage.SPARQL_OPERATOR__TARGET, null, msgs);
+      msgs = basicSetTarget(newTarget, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.SPARQL_OPERATOR__STREAM, newStream, newStream));
+      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.SPARQL_OPERATOR__TARGET, newTarget, newTarget));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StreamOperatorParameter getInput()
+  {
+    return input;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetInput(StreamOperatorParameter newInput, NotificationChain msgs)
+  {
+    StreamOperatorParameter oldInput = input;
+    input = newInput;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FlowPackage.SPARQL_OPERATOR__INPUT, oldInput, newInput);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setInput(StreamOperatorParameter newInput)
+  {
+    if (newInput != input)
+    {
+      NotificationChain msgs = null;
+      if (input != null)
+        msgs = ((InternalEObject)input).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FlowPackage.SPARQL_OPERATOR__INPUT, null, msgs);
+      if (newInput != null)
+        msgs = ((InternalEObject)newInput).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FlowPackage.SPARQL_OPERATOR__INPUT, null, msgs);
+      msgs = basicSetInput(newInput, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FlowPackage.SPARQL_OPERATOR__INPUT, newInput, newInput));
   }
 
   /**
@@ -227,8 +243,10 @@ public class SPARQLOperatorImpl extends ReturnTypeOperatorImpl implements SPARQL
     {
       case FlowPackage.SPARQL_OPERATOR__QUERY:
         return basicSetQuery(null, msgs);
-      case FlowPackage.SPARQL_OPERATOR__STREAM:
-        return basicSetStream(null, msgs);
+      case FlowPackage.SPARQL_OPERATOR__TARGET:
+        return basicSetTarget(null, msgs);
+      case FlowPackage.SPARQL_OPERATOR__INPUT:
+        return basicSetInput(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -247,8 +265,8 @@ public class SPARQLOperatorImpl extends ReturnTypeOperatorImpl implements SPARQL
         return getQuery();
       case FlowPackage.SPARQL_OPERATOR__TARGET:
         return getTarget();
-      case FlowPackage.SPARQL_OPERATOR__STREAM:
-        return getStream();
+      case FlowPackage.SPARQL_OPERATOR__INPUT:
+        return getInput();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -267,10 +285,10 @@ public class SPARQLOperatorImpl extends ReturnTypeOperatorImpl implements SPARQL
         setQuery((QueryTagOperator)newValue);
         return;
       case FlowPackage.SPARQL_OPERATOR__TARGET:
-        setTarget((String)newValue);
+        setTarget((StreamAccess)newValue);
         return;
-      case FlowPackage.SPARQL_OPERATOR__STREAM:
-        setStream((StreamOperatorParameter)newValue);
+      case FlowPackage.SPARQL_OPERATOR__INPUT:
+        setInput((StreamOperatorParameter)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -290,10 +308,10 @@ public class SPARQLOperatorImpl extends ReturnTypeOperatorImpl implements SPARQL
         setQuery((QueryTagOperator)null);
         return;
       case FlowPackage.SPARQL_OPERATOR__TARGET:
-        setTarget(TARGET_EDEFAULT);
+        setTarget((StreamAccess)null);
         return;
-      case FlowPackage.SPARQL_OPERATOR__STREAM:
-        setStream((StreamOperatorParameter)null);
+      case FlowPackage.SPARQL_OPERATOR__INPUT:
+        setInput((StreamOperatorParameter)null);
         return;
     }
     super.eUnset(featureID);
@@ -312,28 +330,11 @@ public class SPARQLOperatorImpl extends ReturnTypeOperatorImpl implements SPARQL
       case FlowPackage.SPARQL_OPERATOR__QUERY:
         return query != null;
       case FlowPackage.SPARQL_OPERATOR__TARGET:
-        return TARGET_EDEFAULT == null ? target != null : !TARGET_EDEFAULT.equals(target);
-      case FlowPackage.SPARQL_OPERATOR__STREAM:
-        return stream != null;
+        return target != null;
+      case FlowPackage.SPARQL_OPERATOR__INPUT:
+        return input != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (target: ");
-    result.append(target);
-    result.append(')');
-    return result.toString();
   }
 
 } //SPARQLOperatorImpl
