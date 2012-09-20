@@ -11,10 +11,10 @@ Installation from git
 
 2. Install the dependencies for your distribution (packages names can differ):
 
-	* maven (>= 3.0)
-	* tycho (>= 0.11.0)
-	* eclipse (>= 3.7)
-	* eclipse delta pack (>= 3.7)
+		* maven (>= 3.0)
+		* tycho (>= 0.11.0)
+		* eclipse (>= 3.7)
+		* eclipse delta pack (>= 3.7)
 
 3. Configure the software (especially maven/tycho and eclipse). Please, be refered to the documentation of the
 corresponding software.
