@@ -1,7 +1,7 @@
 Flow
 ====
-Flow is a query/analysis language for the DataStreamMiner complex event processing system developed at
-the Distributed Systems Lab (Dopsy) at Hochschule RheinMain.
+Flow is a query/analysis language for the [DataStreamMiner][1] complex event processing system developed at
+the [Distributed Systems Lab (Dopsy)][2] at [Hochschule RheinMain][3]. 
 
 Installation from git
 ---------------------
@@ -33,3 +33,6 @@ License
 -------
 tba.
 
+[1]: https://wwwvs.cs.hs-rm.de/projekte/dsminer.html
+[2]: https://wwwvs.cs.hs-rm.de
+[3]: http://www.hs-rm.de/dcsm/studiengaenge/informatik-msc/index.html
