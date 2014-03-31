@@ -36,6 +36,11 @@ Publications
 2. Andreas Textor, Fabian Meyer, Marcus Thoss, Jan Sch&auml;fer, Reinhold Kr&ouml;ger, Michael Frey, **An Architecture for Semantically Enriched Data Stream Mining**, [First International Conference on Data Analytics](http://www.iaria.org/conferences2012/ProgramDATAANALYTICS12.html), September 2012
 
 
+License
+-------
+tba.
+
+
 [1]: https://wwwvs.cs.hs-rm.de/projekte/dsminer.html
 [2]: https://wwwvs.cs.hs-rm.de
 [3]: http://www.hs-rm.de/dcsm/studiengaenge/informatik-msc/index.html
