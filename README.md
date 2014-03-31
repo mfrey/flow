@@ -29,9 +29,12 @@ Have a bug or feature request? Please create an issue here on GitHub!
 
 https://github.com/mfrey/flow/issues
 
-License
--------
-tba.
+
+Publications
+------------
+1. Michael Frey, **Ein Ansatz für eine Spezifikationssprache zur Generierung von Verarbeitungsvorschriften für hetereogene Complex-Event-Processing-Systeme**. Master Thesis, October 2010
+2. Andreas Textor, Fabian Meyer, Marcus Thoss, Jan Sch&auml;fer, Reinhold Kr&ouml;ger, Michael Frey, **An Architecture for Semantically Enriched Data Stream Mining**, [First International Conference on Data Analytics](http://www.iaria.org/conferences2012/ProgramDATAANALYTICS12.html), September 2012
+
 
 [1]: https://wwwvs.cs.hs-rm.de/projekte/dsminer.html
 [2]: https://wwwvs.cs.hs-rm.de
